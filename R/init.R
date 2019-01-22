@@ -27,14 +27,14 @@ whitebox_init <- function() {
   print(exe_zip)
 
   if(!file.exists(exe_zip)) {
-    download.file(url = url, destfile = exe_zip)
+    utils::download.file(url = url, destfile = exe_zip)
   }
 
   print(paste("Unzipping", filename, "..."))
   if(file.exists(exe_zip) & os == "Windows") {
-    unzip(exe_zip, exdir = pkg_dir)
+    utils::unzip(exe_zip, exdir = pkg_dir)
   } else {
-    untar(exe_zip, exdir = pkg_dir)
+    utils::untar(exe_zip, exdir = pkg_dir)
   }
 }
 
