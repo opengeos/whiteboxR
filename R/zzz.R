@@ -1,10 +1,4 @@
-#' Title
-#'
-#' @return
-#' @export
-#'
-#' @examples
-whitebox_init <- function() {
+.onLoad <- function(libname, pkgname) {
   os <- Sys.info()['sysname']
   if (os == "Linux") {
     print("OS: Linux")
@@ -37,6 +31,3 @@ whitebox_init <- function() {
     utils::untar(exe_zip, exdir = pkg_dir)
   }
 }
-
-# whitebox_init()
-
