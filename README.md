@@ -1,5 +1,6 @@
 # whiteboxR
 
+[![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **WhiteboxTools** R frontend.

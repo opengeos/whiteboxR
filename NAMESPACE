@@ -1,3 +1,5 @@
+importFrom("utils", "download.file", "untar", "unzip")
+
 exportPattern("^[[:alpha:]]+")
 export(whitebox_init)
 export(breach_depressions)
