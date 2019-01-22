@@ -13,11 +13,11 @@ whitebox_init <- function() {
     print("Unsupported operating system")
   }
 
-  pkg_dir = find.package("whiteboxR")
+  pkg_dir <- find.package("whitebox")
   # print(pkg_dir)
   filename <- basename(url)
   print(paste("Downloading", filename, "..."))
-  exe_zip = file.path(pkg_dir, filename)
+  exe_zip <- file.path(pkg_dir, filename)
   print(exe_zip)
 
   if(!file.exists(exe_zip)) {

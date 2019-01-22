@@ -1,4 +1,4 @@
-Package: whiteboxR
+Package: whitebox
 Type: Package
 Title: WhiteboxTools R frontend
 Version: 0.1.0
