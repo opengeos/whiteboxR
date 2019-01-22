@@ -8,4 +8,3 @@ breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL) {
   cmd <- paste(exe_path, '-r=breach_depressions', '-v', paste0('--dem=', dem), paste0('--output=', output))
   system(cmd)
 }
-
