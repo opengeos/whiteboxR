@@ -21,7 +21,7 @@ The **whitebox** R package is built on **WhiteboxTools**, an advanced geospatial
 ## Installation
 
 ```R
-if (!'devtools' %in% installed.packages()) install.packages('devtools')
+if (!require(devtools)) install.packages('devtools')
 require(devtools)
 devtools::install_github("giswqs/whiteboxR")
 ```
