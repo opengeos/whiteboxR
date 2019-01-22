@@ -1,3 +1,9 @@
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 whitebox_init <- function() {
   os <- Sys.info()['sysname']
   if (os == "Linux") {

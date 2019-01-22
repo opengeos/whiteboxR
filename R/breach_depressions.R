@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param max_depth Optional maximum breach depth (default is Inf).
+#' @param max_length Optional maximum breach channel length (in grid cells; default is Inf).
+#'
+#' @return
+#' @export
+#'
+#' @examples
 breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL) {
   pkg_name <- 'whitebox'
   pkg_dir <- find.package(pkg_name)
