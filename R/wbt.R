@@ -4,8 +4,8 @@
 #' @export
 #'
 #' @examples
-#' wbt_exe <- get_whitebox_exe()
-get_whitebox_exe <- function() {
+#' wbt_exe <- get_wbt_exe()
+get_wbt_exe <- function() {
   os <- Sys.info()["sysname"]
   if (os == "Windows") {
     exe_name <- "whitebox_tools.exe"
@@ -24,9 +24,9 @@ get_whitebox_exe <- function() {
 #' @export
 #'
 #' @examples
-#' whitebox_license()
-whitebox_license <- function() {
-  wbt_exe <- get_whitebox_exe()
+#' wbt_license()
+wbt_license <- function() {
+  wbt_exe <- get_wbt_exe()
   args <- paste(wbt_exe, "--license")
   ret <- system(args, intern = TRUE)
   return(ret)
@@ -40,10 +40,27 @@ whitebox_license <- function() {
 #' @export
 #'
 #' @examples
-#' whitebox_version()
-whitebox_version <- function() {
-  wbt_exe <- get_whitebox_exe()
+#' wbt_version()
+wbt_version <- function() {
+  wbt_exe <- get_wbt_exe()
   args <- paste(wbt_exe, "--version")
   ret <- system(args, intern = TRUE)
   return(ret)
 }
+
+
+
+#' Retrieves the help description for WhiteboxTools.
+#'
+#' @return Returns the help description for WhiteboxTools as an R character vector.
+#' @export
+#'
+#' @examples
+#' wbt_help()
+wbt_help <- function() {
+  wbt_exe <- get_wbt_exe()
+  args <- paste(wbt_exe, "--help")
+  ret <- system(args, intern = TRUE)
+  return(ret)
+}
+
