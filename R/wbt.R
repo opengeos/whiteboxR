@@ -123,7 +123,7 @@ wbt_tool_help <- function(tool_name=NULL) {
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--toolhelp=")
   if (!is.null(tool_name)) {
-    args <- paste(args, tool_name)
+    args <- paste0(args, tool_name)
   }
   ret <- system(args, intern = TRUE)
   return(ret[ret != ""])
