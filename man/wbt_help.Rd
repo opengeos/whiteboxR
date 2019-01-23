@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_help}
 \alias{wbt_help}
-\title{Retrieves the help description for WhiteboxTools.}
+\title{Help description for WhiteboxTools.}
 \usage{
 wbt_help()
 }
@@ -10,7 +10,7 @@ wbt_help()
 Returns the help description for WhiteboxTools as an R character vector.
 }
 \description{
-Retrieves the help description for WhiteboxTools.
+Help description for WhiteboxTools.
 }
 \examples{
 wbt_help()

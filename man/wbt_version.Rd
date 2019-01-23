@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_version}
 \alias{wbt_version}
-\title{Retrieves the version information for WhiteboxTools.}
+\title{Version information for WhiteboxTools.}
 \usage{
 wbt_version()
 }
@@ -10,7 +10,7 @@ wbt_version()
 Returns the version information for WhiteboxTools as an R character vector.
 }
 \description{
-Retrieves the version information for WhiteboxTools.
+Version information for WhiteboxTools.
 }
 \examples{
 wbt_version()
