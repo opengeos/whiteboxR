@@ -1,4 +1,4 @@
-.onLoad <- function(libname, pkgname) {
+.onAttach <- function(libname, pkgname) {
   os <- Sys.info()['sysname']
   if (os == "Linux") {
     url <- "http://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
@@ -7,26 +7,26 @@
   } else if (os == "Darwin") {
     url <- "http://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
   } else {
-    print("Unsupported operating system")
+    packageStartupMessage("Unsupported operating system")
     url <- "http://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
   }
 
   pkg_dir <- find.package("whitebox")
   filename <- basename(url)
-  print("Downloading WhiteboxTools executable ...")
+  packageStartupMessage("Downloading WhiteboxTools executable ...")
   exe_zip <- file.path(pkg_dir, filename)
 
   if(!file.exists(exe_zip)) {
     utils::download.file(url = url, destfile = exe_zip)
   }
 
-  print(paste("Decompressing", filename, "..."))
+  packageStartupMessage(paste("Decompressing", filename, "..."))
   if(file.exists(exe_zip) & os == "Windows") {
     utils::unzip(exe_zip, exdir = pkg_dir)
   } else {
     utils::untar(exe_zip, exdir = pkg_dir)
   }
 
-  print(paste("WhiteboxTools executable is located at:", file.path(pkg_dir, "WBT")))
-  print("Installation completed!")
+  packageStartupMessage(paste("WhiteboxTools executable is located at:", file.path(pkg_dir, "WBT")))
+  packageStartupMessage("Installation completed!")
 }
