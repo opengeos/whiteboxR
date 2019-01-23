@@ -4,12 +4,14 @@
 \alias{wbt_run_tool}
 \title{Run a tool.}
 \usage{
-wbt_run_tool(tool_name, args)
+wbt_run_tool(tool_name, args, verbose_mode = TRUE)
 }
 \arguments{
 \item{tool_name}{The name of the tool to run.}
 
 \item{args}{Tool arguments.}
+
+\item{verbose_mode}{Verbose mode. Without this flag, tool outputs will not be printed.}
 }
 \value{
 Returns the output descriptions of the tool.

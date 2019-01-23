@@ -175,6 +175,7 @@ wbt_view_code <- function(tool_name) {
 #'
 #' @param tool_name The name of the tool to run.
 #' @param args Tool arguments.
+#' @param verbose_mode Verbose mode. Without this flag, tool outputs will not be printed.
 #'
 #' @return Returns the output descriptions of the tool.
 #' @export
@@ -187,10 +188,13 @@ wbt_view_code <- function(tool_name) {
 #' arg2 <- paste0("--output=", output)
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
-wbt_run_tool <- function(tool_name, args) {
+wbt_run_tool <- function(tool_name, args, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   arg1 <- paste0("--run=", tool_name)
-  args2 <- paste(wbt_exe, arg1, args, "-v")
+  args2 <- paste(wbt_exe, arg1, args)
+  if (verbose_mode) {
+    args2 <- paste(args2, "-v")
+  }
   ret <- system(args2, intern = TRUE)
   return(ret)
 }
