@@ -1,0 +1,79 @@
+---
+title: "whitebox examples"
+author: "Qiusheng Wu"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## About WhiteboxTools
+
+Load the whitebox R package.
+```{r message=FALSE, warning=FALSE}
+library(whitebox)
+```
+
+Prints the whitebox-tools help...a listing of available commands.
+```{r}
+print(wbt_help())
+```
+
+Prints the whitebox-tools license.
+```{r}
+print(wbt_license())
+```
+ 
+Prints the whitebox-tools version.
+```{r}
+print(wbt_version())
+```
+
+Prints the toolbox for a specific tool.
+```{r eval=FALSE, message=FALSE}
+print(wbt_toolbox())
+```
+
+
+List all available tools in whitebox-tools.
+```{r eval=FALSE, message=FALSE}
+print(wbt_list_tools())
+```
+
+
+Lists tools with 'lidar' in tool name or description.
+```{r eval=FALSE, message=FALSE}
+print(wbt_list_tools("lidar"))
+```
+
+Prints the help for a specific tool.
+```{r}
+print(wbt_tool_help("lidar_info"))
+```
+
+Retrieves the tool parameter descriptions for a specific tool.
+```{r}
+print(wbt_tool_parameters("slope"))
+```
+
+View the source code for a specific tool on the source code repository.
+```{r}
+print(wbt_view_code("breach_depressions"))
+```
+
+
+## How to run tools?
+```{r eval=FALSE}
+library(whitebox)
+
+# Set input raster DEM file
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+
+# Run tools
+feature_preserving_denoise(dem, "./smoothed.tif", filter=9)
+breach_depressions("./smoothed.tif", "./breached.tif")
+d_inf_flow_accumulation(dem, "./flow_accum.tif", verbose_mode = FALSE)
+```
+

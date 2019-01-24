@@ -1,3 +1,4 @@
+inst/doc
 .Rproj.user
 .Rhistory
 .RData
@@ -6,3 +7,5 @@ inst/extdata/output.tif
 WhiteboxTools_linux_amd64.tar.xz
 WBT/
 output.tif
+vignettes/*.tif
+vignettes/*.log
