@@ -80,11 +80,10 @@ library(whitebox)
 # Set input raster DEM file
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 
-# Set onput raster file
-output <- file.path(getwd(), "output.tif")
-
-# Run the tool
-breach_depressions(dem, output, verbose_mode = TRUE)
+# Run tools
+feature_preserving_denoise(dem, "./smoothed.tif", filter=9)
+breach_depressions("./smoothed.tif", "./breached.tif")
+d_inf_flow_accumulation(dem, "./flow_accum.tif", verbose_mode = FALSE)
 ```
 
 
