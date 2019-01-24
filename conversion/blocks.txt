@@ -1,0 +1,5562 @@
+add_point_coordinates_to_table <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+convert_nodata_to_zero <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+convert_raster_format <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(headers)) {
+    args <- paste(args, paste0("--headers=", headers))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--pkey=", pkey))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--fkey=", fkey))
+  args <- paste(args, paste0("--import_field=", import_field))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lines_to_polygons <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--pkey=", pkey))
+  args <- paste(args, paste0("--csv=", csv))
+  args <- paste(args, paste0("--fkey=", fkey))
+  if (!is.null(import_field)) {
+    args <- paste(args, paste0("--import_field=", import_field))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+merge_vectors <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(exclude_holes)) {
+    args <- paste(args, paste0("--exclude_holes=", exclude_holes))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+new_raster_from_base <- function(base, output, value="nodata", data_type="float", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(value)) {
+    args <- paste(args, paste0("--value=", value))
+  }
+  if (!is.null(data_type)) {
+    args <- paste(args, paste0("--data_type=", data_type))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+polygons_to_lines <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+print_geo_tiff_tags <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raster_to_vector_lines <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raster_to_vector_points <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+reinitialize_attribute_table <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+remove_polygon_holes <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(back_value)) {
+    args <- paste(args, paste0("--back_value=", back_value))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(nodata)) {
+    args <- paste(args, paste0("--nodata=", nodata))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(assign)) {
+    args <- paste(args, paste0("--assign=", assign))
+  }
+  if (!is.null(nodata)) {
+    args <- paste(args, paste0("--nodata=", nodata))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(nodata)) {
+    args <- paste(args, paste0("--nodata=", nodata))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+aggregate_raster <- function(input, output, agg_factor=2, type="mean", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(agg_factor)) {
+    args <- paste(args, paste0("--agg_factor=", agg_factor))
+  }
+  if (!is.null(type)) {
+    args <- paste(args, paste0("--type=", type))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(use_z)) {
+    args <- paste(args, paste0("--use_z=", use_z))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(use_z)) {
+    args <- paste(args, paste0("--use_z=", use_z))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+centroid <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(text_output)) {
+    args <- paste(args, paste0("--text_output=", text_output))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+centroid_vector <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(diag)) {
+    args <- paste(args, paste0("--diag=", diag))
+  }
+  if (!is.null(zero_back)) {
+    args <- paste(args, paste0("--zero_back=", zero_back))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(use_z)) {
+    args <- paste(args, paste0("--use_z=", use_z))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+create_hexagonal_vector_grid <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--width=", width))
+  if (!is.null(orientation)) {
+    args <- paste(args, paste0("--orientation=", orientation))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(gradient)) {
+    args <- paste(args, paste0("--gradient=", gradient))
+  }
+  if (!is.null(aspect)) {
+    args <- paste(args, paste0("--aspect=", aspect))
+  }
+  if (!is.null(constant)) {
+    args <- paste(args, paste0("--constant=", constant))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+create_rectangular_vector_grid <- function(input, output, width, height, xorig=0, yorig=0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--width=", width))
+  args <- paste(args, paste0("--height=", height))
+  if (!is.null(xorig)) {
+    args <- paste(args, paste0("--xorig=", xorig))
+  }
+  if (!is.null(yorig)) {
+    args <- paste(args, paste0("--yorig=", yorig))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+dissolve <- function(input, output, field=NULL, snap=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(snap)) {
+    args <- paste(args, paste0("--snap=", snap))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+eliminate_coincident_points <- function(input, output, tolerance, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--tolerance=", tolerance))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+extend_vector_lines <- function(input, output, dist, extend="both ends", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dist=", dist))
+  if (!is.null(extend)) {
+    args <- paste(args, paste0("--extend=", extend))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+extract_nodes <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+extract_raster_values_at_points <- function(inputs, points, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--points=", points))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_lowest_or_highest_points <- function(input, output, out_type="lowest", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, radius=NULL, min_points=NULL, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(use_z)) {
+    args <- paste(args, paste0("--use_z=", use_z))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(min_points)) {
+    args <- paste(args, paste0("--min_points=", min_points))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+layer_footprint <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+medoid <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+minimum_bounding_box <- function(input, output, criterion="area", features=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(criterion)) {
+    args <- paste(args, paste0("--criterion=", criterion))
+  }
+  if (!is.null(features)) {
+    args <- paste(args, paste0("--features=", features))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(features)) {
+    args <- paste(args, paste0("--features=", features))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(features)) {
+    args <- paste(args, paste0("--features=", features))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(features)) {
+    args <- paste(args, paste0("--features=", features))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, max_dist=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(use_z)) {
+    args <- paste(args, paste0("--use_z=", use_z))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+polygon_area <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+polygon_long_axis <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+polygon_perimeter <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+polygon_short_axis <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raster_cell_assignment <- function(input, output, assign="column", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(assign)) {
+    args <- paste(args, paste0("--assign=", assign))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--reclass_vals=", reclass_vals))
+  if (!is.null(assign_mode)) {
+    args <- paste(args, paste0("--assign_mode=", assign_mode))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+reclass_equal_interval <- function(input, output, interval=10.0, start_val=NULL, end_val=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(interval)) {
+    args <- paste(args, paste0("--interval=", interval))
+  }
+  if (!is.null(start_val)) {
+    args <- paste(args, paste0("--start_val=", start_val))
+  }
+  if (!is.null(end_val)) {
+    args <- paste(args, paste0("--end_val=", end_val))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+reclass_from_file <- function(input, reclass_file, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--reclass_file=", reclass_file))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+smooth_vectors <- function(input, output, filter=3, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--resolution=", resolution))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(use_z)) {
+    args <- paste(args, paste0("--use_z=", use_z))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+vector_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--width=", width))
+  if (!is.null(orientation)) {
+    args <- paste(args, paste0("--orientation=", orientation))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+voronoi_diagram <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--size=", size))
+  if (!is.null(gridcells)) {
+    args <- paste(args, paste0("--gridcells=", gridcells))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cost_allocation <- function(source, backlink, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--source=", source))
+  args <- paste(args, paste0("--backlink=", backlink))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cost_distance <- function(source, cost, out_accum, out_backlink, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--source=", source))
+  args <- paste(args, paste0("--cost=", cost))
+  args <- paste(args, paste0("--out_accum=", out_accum))
+  args <- paste(args, paste0("--out_backlink=", out_backlink))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cost_pathway <- function(destination, backlink, output, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--destination=", destination))
+  args <- paste(args, paste0("--backlink=", backlink))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+euclidean_allocation <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+euclidean_distance <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+average_overlay <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+clip <- function(input, clip, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--clip=", clip))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--polygons=", polygons))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(maintain_dimensions)) {
+    args <- paste(args, paste0("--maintain_dimensions=", maintain_dimensions))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+count_if <- function(inputs, output, value, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--value=", value))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+difference <- function(input, overlay, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--overlay=", overlay))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+erase <- function(input, erase, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--erase=", erase))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+erase_polygon_from_raster <- function(input, polygons, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--polygons=", polygons))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+highest_position <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+intersect <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--overlay=", overlay))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(snap)) {
+    args <- paste(args, paste0("--snap=", snap))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+line_intersections <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lowest_position <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_overlay <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+min_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+min_overlay <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+percent_equal_to <- function(inputs, comparison, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--comparison=", comparison))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+percent_greater_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--comparison=", comparison))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+percent_less_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--comparison=", comparison))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+pick_from_list <- function(inputs, pos_input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--pos_input=", pos_input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+polygonize <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+split_with_lines <- function(input, split, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--split=", split))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sum_overlay <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+symmetrical_difference <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--overlay=", overlay))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(snap)) {
+    args <- paste(args, paste0("--snap=", snap))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+union <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--overlay=", overlay))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(snap)) {
+    args <- paste(args, paste0("--snap=", snap))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+weighted_overlay <- function(factors, weights, output, cost=NULL, constraints=NULL, scale_max=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--factors=", factors))
+  args <- paste(args, paste0("--weights=", weights))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(cost)) {
+    args <- paste(args, paste0("--cost=", cost))
+  }
+  if (!is.null(constraints)) {
+    args <- paste(args, paste0("--constraints=", constraints))
+  }
+  if (!is.null(scale_max)) {
+    args <- paste(args, paste0("--scale_max=", scale_max))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+weighted_sum <- function(inputs, weights, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--weights=", weights))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+compactness_ratio <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(output_text)) {
+    args <- paste(args, paste0("--output_text=", output_text))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elongation_ratio <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_patch_or_class_edge_cells <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+hole_proportion <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+linearity_index <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+patch_orientation <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+perimeter_area_ratio <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(text_output)) {
+    args <- paste(args, paste0("--text_output=", text_output))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+related_circumscribing_circle <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+shape_complexity_index <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+aspect <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(drop)) {
+    args <- paste(args, paste0("--drop=", drop))
+  }
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+drainage_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=10, max_diff=2.0, reduction=80.0, dfm=0.15, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(norm_diff)) {
+    args <- paste(args, paste0("--norm_diff=", norm_diff))
+  }
+  if (!is.null(num_iter)) {
+    args <- paste(args, paste0("--num_iter=", num_iter))
+  }
+  if (!is.null(max_diff)) {
+    args <- paste(args, paste0("--max_diff=", max_diff))
+  }
+  if (!is.null(reduction)) {
+    args <- paste(args, paste0("--reduction=", reduction))
+  }
+  if (!is.null(dfm)) {
+    args <- paste(args, paste0("--dfm=", dfm))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elev_above_pit <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(sig_digits)) {
+    args <- paste(args, paste0("--sig_digits=", sig_digits))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elev_relative_to_min_max <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--watersheds=", watersheds))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+feature_preserving_denoise <- function(dem, output, filter=11, norm_diff=15.0, num_iter=10, max_diff=2.0, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(norm_diff)) {
+    args <- paste(args, paste0("--norm_diff=", norm_diff))
+  }
+  if (!is.null(num_iter)) {
+    args <- paste(args, paste0("--num_iter=", num_iter))
+  }
+  if (!is.null(max_diff)) {
+    args <- paste(args, paste0("--max_diff=", max_diff))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(hgt_inc)) {
+    args <- paste(args, paste0("--hgt_inc=", hgt_inc))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(line_thin)) {
+    args <- paste(args, paste0("--line_thin=", line_thin))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(altitude)) {
+    args <- paste(args, paste0("--altitude=", altitude))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(watershed)) {
+    args <- paste(args, paste0("--watershed=", watershed))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--points=", points))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_branch_length <- function(dem, output, log=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(log)) {
+    args <- paste(args, paste0("--log=", log))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--min_scale=", min_scale))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_downslope_elev_change <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--points=", points))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--min_scale=", min_scale))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--min_scale=", min_scale))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+min_downslope_elev_change <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--points=", points))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--max_scale=", max_scale))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--local=", local))
+  args <- paste(args, paste0("--meso=", meso))
+  args <- paste(args, paste0("--broad=", broad))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(lightness)) {
+    args <- paste(args, paste0("--lightness=", lightness))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+num_downslope_neighbours <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+num_upslope_neighbours <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(slope)) {
+    args <- paste(args, paste0("--slope=", slope))
+  }
+  if (!is.null(prof)) {
+    args <- paste(args, paste0("--prof=", prof))
+  }
+  if (!is.null(plan)) {
+    args <- paste(args, paste0("--plan=", plan))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+profile <- function(lines, surface, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--lines=", lines))
+  args <- paste(args, paste0("--surface=", surface))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--sca=", sca))
+  args <- paste(args, paste0("--slope=", slope))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+relative_topographic_position <- function(dem, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(slope)) {
+    args <- paste(args, paste0("--slope=", slope))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--sca=", sca))
+  args <- paste(args, paste0("--slope=", slope))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sca_exponent)) {
+    args <- paste(args, paste0("--sca_exponent=", sca_exponent))
+  }
+  if (!is.null(slope_exponent)) {
+    args <- paste(args, paste0("--slope_exponent=", slope_exponent))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+slope <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(watershed)) {
+    args <- paste(args, paste0("--watershed=", watershed))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+viewshed <- function(dem, stations, output, height=2.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--stations=", stations))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
+  }
+  if (!is.null(res_factor)) {
+    args <- paste(args, paste0("--res_factor=", res_factor))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+wetness_index <- function(sca, slope, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--sca=", sca))
+  args <- paste(args, paste0("--slope=", slope))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+average_flowpath_slope <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+average_upslope_flowpath_length <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(max_depth)) {
+    args <- paste(args, paste0("--max_depth=", max_depth))
+  }
+  if (!is.null(max_length)) {
+    args <- paste(args, paste0("--max_length=", max_length))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+breach_single_cell_pits <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(log)) {
+    args <- paste(args, paste0("--log=", log))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--loading=", loading))
+  args <- paste(args, paste0("--efficiency=", efficiency))
+  args <- paste(args, paste0("--absorption=", absorption))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(log)) {
+    args <- paste(args, paste0("--log=", log))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--loading=", loading))
+  args <- paste(args, paste0("--efficiency=", efficiency))
+  args <- paste(args, paste0("--absorption=", absorption))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+d_inf_pointer <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=NULL, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(watersheds)) {
+    args <- paste(args, paste0("--watersheds=", watersheds))
+  }
+  if (!is.null(weights)) {
+    args <- paste(args, paste0("--weights=", weights))
+  }
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elevation_above_stream <- function(dem, streams, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fd8_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(log)) {
+    args <- paste(args, paste0("--log=", log))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fd8_pointer <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fill_burn <- function(dem, streams, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(fix_flats)) {
+    args <- paste(args, paste0("--fix_flats=", fix_flats))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fill_single_cell_pits <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_no_flow_cells <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+flatten_lakes <- function(dem, lakes, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--lakes=", lakes))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+flood_order <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, out_type="Specific Contributing Area", log=FALSE, clip=FALSE, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_dem=", out_dem))
+  args <- paste(args, paste0("--out_pntr=", out_pntr))
+  args <- paste(args, paste0("--out_accum=", out_accum))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(log)) {
+    args <- paste(args, paste0("--log=", log))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+impoundment_index <- function(dem, output, damlength, out_type="depth", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--damlength=", damlength))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+isobasins <- function(dem, output, size, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--size=", size))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--pour_pts=", pour_pts))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--snap_dist=", snap_dist))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+longest_flowpath <- function(dem, basins, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--basins=", basins))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max_upslope_flowpath_length <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+num_inflowing_neighbours <- function(dem, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(breach)) {
+    args <- paste(args, paste0("--breach=", breach))
+  }
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sink <- function(dem, output, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--pour_pts=", pour_pts))
+  args <- paste(args, paste0("--flow_accum=", flow_accum))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--snap_dist=", snap_dist))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=1000, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--rmse=", rmse))
+  args <- paste(args, paste0("--range=", range))
+  if (!is.null(iterations)) {
+    args <- paste(args, paste0("--iterations=", iterations))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--seed_pts=", seed_pts))
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--pour_pts=", pour_pts))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--pour_pts=", pour_pts))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--date1=", date1))
+  args <- paste(args, paste0("--date2=", date2))
+  args <- paste(args, paste0("--magnitude=", magnitude))
+  args <- paste(args, paste0("--direction=", direction))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+closing <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+create_colour_composite <- function(red, green, blue, output, opacity=NULL, enhance=TRUE, zeros=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--red=", red))
+  args <- paste(args, paste0("--green=", green))
+  args <- paste(args, paste0("--blue=", blue))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(opacity)) {
+    args <- paste(args, paste0("--opacity=", opacity))
+  }
+  if (!is.null(enhance)) {
+    args <- paste(args, paste0("--enhance=", enhance))
+  }
+  if (!is.null(zeros)) {
+    args <- paste(args, paste0("--zeros=", zeros))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+flip_image <- function(input, output, direction="vertical", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(direction)) {
+    args <- paste(args, paste0("--direction=", direction))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, output=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--intensity=", intensity))
+  args <- paste(args, paste0("--hue=", hue))
+  args <- paste(args, paste0("--saturation=", saturation))
+  if (!is.null(red)) {
+    args <- paste(args, paste0("--red=", red))
+  }
+  if (!is.null(green)) {
+    args <- paste(args, paste0("--green=", green))
+  }
+  if (!is.null(blue)) {
+    args <- paste(args, paste0("--blue=", blue))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+image_stack_profile <- function(inputs, points, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--points=", points))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+integral_image <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--classes=", classes))
+  if (!is.null(out_html)) {
+    args <- paste(args, paste0("--out_html=", out_html))
+  }
+  if (!is.null(max_iterations)) {
+    args <- paste(args, paste0("--max_iterations=", max_iterations))
+  }
+  if (!is.null(class_change)) {
+    args <- paste(args, paste0("--class_change=", class_change))
+  }
+  if (!is.null(initialize)) {
+    args <- paste(args, paste0("--initialize=", initialize))
+  }
+  if (!is.null(min_class_size)) {
+    args <- paste(args, paste0("--min_class_size=", min_class_size))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+line_thinning <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merger_dist=NULL, max_iterations=10, class_change=2.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_html)) {
+    args <- paste(args, paste0("--out_html=", out_html))
+  }
+  if (!is.null(start_clusters)) {
+    args <- paste(args, paste0("--start_clusters=", start_clusters))
+  }
+  if (!is.null(merger_dist)) {
+    args <- paste(args, paste0("--merger_dist=", merger_dist))
+  }
+  if (!is.null(max_iterations)) {
+    args <- paste(args, paste0("--max_iterations=", max_iterations))
+  }
+  if (!is.null(class_change)) {
+    args <- paste(args, paste0("--class_change=", class_change))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+mosaic <- function(inputs, output, method="cc", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(method)) {
+    args <- paste(args, paste0("--method=", method))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(method)) {
+    args <- paste(args, paste0("--method=", method))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+normalized_difference_vegetation_index <- function(nir, red, output, clip=0.0, osavi=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--nir=", nir))
+  args <- paste(args, paste0("--red=", red))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  if (!is.null(osavi)) {
+    args <- paste(args, paste0("--osavi=", osavi))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+opening <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+remove_spurs <- function(input, output, iterations=10, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(iterations)) {
+    args <- paste(args, paste0("--iterations=", iterations))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+resample <- function(inputs, destination, method="cc", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--destination=", destination))
+  if (!is.null(method)) {
+    args <- paste(args, paste0("--method=", method))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, composite=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--intensity=", intensity))
+  args <- paste(args, paste0("--hue=", hue))
+  args <- paste(args, paste0("--saturation=", saturation))
+  if (!is.null(red)) {
+    args <- paste(args, paste0("--red=", red))
+  }
+  if (!is.null(green)) {
+    args <- paste(args, paste0("--green=", green))
+  }
+  if (!is.null(blue)) {
+    args <- paste(args, paste0("--blue=", blue))
+  }
+  if (!is.null(composite)) {
+    args <- paste(args, paste0("--composite=", composite))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+split_colour_composite <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+thicken_raster_line <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+tophat_transform <- function(input, output, filterx=11, filtery=11, variant="white", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(variant)) {
+    args <- paste(args, paste0("--variant=", variant))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+write_function_memory_insertion <- function(input1, input2, output, input3=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(input3)) {
+    args <- paste(args, paste0("--input3=", input3))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma_dist)) {
+    args <- paste(args, paste0("--sigma_dist=", sigma_dist))
+  }
+  if (!is.null(sigma_int)) {
+    args <- paste(args, paste0("--sigma_int=", sigma_int))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+corner_detection <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma1)) {
+    args <- paste(args, paste0("--sigma1=", sigma1))
+  }
+  if (!is.null(sigma2)) {
+    args <- paste(args, paste0("--sigma2=", sigma2))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+edge_preserving_mean_filter <- function(input, output, threshold, filter=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--threshold=", threshold))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(direction)) {
+    args <- paste(args, paste0("--direction=", direction))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(sig_digits)) {
+    args <- paste(args, paste0("--sig_digits=", sig_digits))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(k)) {
+    args <- paste(args, paste0("--k=", k))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(variant)) {
+    args <- paste(args, paste0("--variant=", variant))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  if (!is.null(m)) {
+    args <- paste(args, paste0("--m=", m))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+line_detection_filter <- function(input, output, variant="vertical", absvals=FALSE, clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(variant)) {
+    args <- paste(args, paste0("--variant=", variant))
+  }
+  if (!is.null(absvals)) {
+    args <- paste(args, paste0("--absvals=", absvals))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(sig_digits)) {
+    args <- paste(args, paste0("--sig_digits=", sig_digits))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  if (!is.null(sig_digits)) {
+    args <- paste(args, paste0("--sig_digits=", sig_digits))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+prewitt_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+scharr_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(variant)) {
+    args <- paste(args, paste0("--variant=", variant))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+standard_deviation_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filterx)) {
+    args <- paste(args, paste0("--filterx=", filterx))
+  }
+  if (!is.null(filtery)) {
+    args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  if (!is.null(amount)) {
+    args <- paste(args, paste0("--amount=", amount))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+user_defined_weights_filter <- function(input, weights, output, center="center", normalize=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--weights=", weights))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(center)) {
+    args <- paste(args, paste0("--center=", center))
+  }
+  if (!is.null(normalize)) {
+    args <- paste(args, paste0("--normalize=", normalize))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(band_mean)) {
+    args <- paste(args, paste0("--band_mean=", band_mean))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+correct_vignetting <- function(input, pp, output, focal_length=304.8, image_width=228.6, n=4.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--pp=", pp))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(focal_length)) {
+    args <- paste(args, paste0("--focal_length=", focal_length))
+  }
+  if (!is.null(image_width)) {
+    args <- paste(args, paste0("--image_width=", image_width))
+  }
+  if (!is.null(n)) {
+    args <- paste(args, paste0("--n=", n))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(k)) {
+    args <- paste(args, paste0("--k=", k))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+gamma_correction <- function(input, output, gamma=0.5, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(gamma)) {
+    args <- paste(args, paste0("--gamma=", gamma))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_tones)) {
+    args <- paste(args, paste0("--num_tones=", num_tones))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+histogram_equalization <- function(input, output, num_tones=256, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_tones)) {
+    args <- paste(args, paste0("--num_tones=", num_tones))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+histogram_matching <- function(input, histo_file, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--histo_file=", histo_file))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+histogram_matching_two_images <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=256, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--min_val=", min_val))
+  args <- paste(args, paste0("--max_val=", max_val))
+  if (!is.null(num_tones)) {
+    args <- paste(args, paste0("--num_tones=", num_tones))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL, composite=NULL, method="brovey", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--pan=", pan))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(red)) {
+    args <- paste(args, paste0("--red=", red))
+  }
+  if (!is.null(green)) {
+    args <- paste(args, paste0("--green=", green))
+  }
+  if (!is.null(blue)) {
+    args <- paste(args, paste0("--blue=", blue))
+  }
+  if (!is.null(composite)) {
+    args <- paste(args, paste0("--composite=", composite))
+  }
+  if (!is.null(method)) {
+    args <- paste(args, paste0("--method=", method))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+percentage_contrast_stretch <- function(input, output, clip=0.0, tail="both", num_tones=256, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  if (!is.null(tail)) {
+    args <- paste(args, paste0("--tail=", tail))
+  }
+  if (!is.null(num_tones)) {
+    args <- paste(args, paste0("--num_tones=", num_tones))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_tones=256, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(cutoff)) {
+    args <- paste(args, paste0("--cutoff=", cutoff))
+  }
+  if (!is.null(gain)) {
+    args <- paste(args, paste0("--gain=", gain))
+  }
+  if (!is.null(num_tones)) {
+    args <- paste(args, paste0("--num_tones=", num_tones))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_tones=256, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(stdev)) {
+    args <- paste(args, paste0("--stdev=", stdev))
+  }
+  if (!is.null(num_tones)) {
+    args <- paste(args, paste0("--num_tones=", num_tones))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+clip_lidar_to_polygon <- function(input, polygons, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--polygons=", polygons))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--polygons=", polygons))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+filter_lidar_scan_angles <- function(input, output, threshold, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--threshold=", threshold))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_flightline_edge_points <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+flightline_overlap <- function(i=NULL, output=NULL, resolution=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+las_to_ascii <- function(inputs, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+las_to_multipoint_shapefile <- function(i=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+las_to_shapefile <- function(i=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_block_maximum <- function(i=NULL, output=NULL, resolution=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_block_minimum <- function(i=NULL, output=NULL, resolution=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--subset=", subset))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--subset_class=", subset_class))
+  if (!is.null(nonsubset_class)) {
+    args <- paste(args, paste0("--nonsubset_class=", nonsubset_class))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_colourize <- function(in_lidar, in_image, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--in_lidar=", in_lidar))
+  args <- paste(args, paste0("--in_image=", in_image))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_construct_vector_tin <- function(i=NULL, output=NULL, returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  if (!is.null(cls)) {
+    args <- paste(args, paste0("--cls=", cls))
+  }
+  if (!is.null(inclassval)) {
+    args <- paste(args, paste0("--inclassval=", inclassval))
+  }
+  if (!is.null(outclassval)) {
+    args <- paste(args, paste0("--outclassval=", outclassval))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(min_neighbours)) {
+    args <- paste(args, paste0("--min_neighbours=", min_neighbours))
+  }
+  if (!is.null(slope_threshold)) {
+    args <- paste(args, paste0("--slope_threshold=", slope_threshold))
+  }
+  if (!is.null(height_threshold)) {
+    args <- paste(args, paste0("--height_threshold=", height_threshold))
+  }
+  if (!is.null(classify)) {
+    args <- paste(args, paste0("--classify=", classify))
+  }
+  if (!is.null(slope_norm)) {
+    args <- paste(args, paste0("--slope_norm=", slope_norm))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--width=", width))
+  if (!is.null(orientation)) {
+    args <- paste(args, paste0("--orientation=", orientation))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(altitude)) {
+    args <- paste(args, paste0("--altitude=", altitude))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(clip)) {
+    args <- paste(args, paste0("--clip=", clip))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_idw_interpolation <- function(i=NULL, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_info <- function(input, output=NULL, vlr=FALSE, geokeys=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(vlr)) {
+    args <- paste(args, paste0("--vlr=", vlr))
+  }
+  if (!is.null(geokeys)) {
+    args <- paste(args, paste0("--geokeys=", geokeys))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_join <- function(inputs, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--class_accuracy=", class_accuracy))
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_nearest_neighbour_gridding <- function(i=NULL, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_point_density <- function(i=NULL, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_point_stats <- function(i=NULL, resolution=1.0, num_points=TRUE, num_pulses=FALSE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(num_points)) {
+    args <- paste(args, paste0("--num_points=", num_points))
+  }
+  if (!is.null(num_pulses)) {
+    args <- paste(args, paste0("--num_pulses=", num_pulses))
+  }
+  if (!is.null(z_range)) {
+    args <- paste(args, paste0("--z_range=", z_range))
+  }
+  if (!is.null(intensity_range)) {
+    args <- paste(args, paste0("--intensity_range=", intensity_range))
+  }
+  if (!is.null(predom_class)) {
+    args <- paste(args, paste0("--predom_class=", predom_class))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(include_z)) {
+    args <- paste(args, paste0("--include_z=", include_z))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(elev_diff)) {
+    args <- paste(args, paste0("--elev_diff=", elev_diff))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdiff=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(norm_diff)) {
+    args <- paste(args, paste0("--norm_diff=", norm_diff))
+  }
+  if (!is.null(maxzdiff)) {
+    args <- paste(args, paste0("--maxzdiff=", maxzdiff))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(norm_diff)) {
+    args <- paste(args, paste0("--norm_diff=", norm_diff))
+  }
+  if (!is.null(maxzdiff)) {
+    args <- paste(args, paste0("--maxzdiff=", maxzdiff))
+  }
+  if (!is.null(classify)) {
+    args <- paste(args, paste0("--classify=", classify))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(method)) {
+    args <- paste(args, paste0("--method=", method))
+  }
+  if (!is.null(save_filtered)) {
+    args <- paste(args, paste0("--save_filtered=", save_filtered))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--density=", density))
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(save_filtered)) {
+    args <- paste(args, paste0("--save_filtered=", save_filtered))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_tile <- function(input, width_x=1000.0, width_y=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(width_x)) {
+    args <- paste(args, paste0("--width_x=", width_x))
+  }
+  if (!is.null(width_y)) {
+    args <- paste(args, paste0("--width_y=", width_y))
+  }
+  if (!is.null(origin_x)) {
+    args <- paste(args, paste0("--origin_x=", origin_x))
+  }
+  if (!is.null(origin_y)) {
+    args <- paste(args, paste0("--origin_y=", origin_y))
+  }
+  if (!is.null(min_points)) {
+    args <- paste(args, paste0("--min_points=", min_points))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_tile_footprint <- function(output, i=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_tin_gridding <- function(i=NULL, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+lidar_tophat_transform <- function(input, output, radius=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+normal_vectors <- function(input, output, radius=1.0, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+select_tiles_by_polygon <- function(indir, outdir, polygons, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--indir=", indir))
+  args <- paste(args, paste0("--outdir=", outdir))
+  args <- paste(args, paste0("--polygons=", polygons))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+And <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+Not <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+Or <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+absolute_value <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+add <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+anova <- function(input, features, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--features=", features))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+arc_cos <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+arc_sin <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+arc_tan <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+atan2 <- function(input_y, input_x, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input_y=", input_y))
+  args <- paste(args, paste0("--input_x=", input_x))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+attribute_correlation <- function(input, output=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+attribute_histogram <- function(input, field, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--fieldx=", fieldx))
+  args <- paste(args, paste0("--fieldy=", fieldy))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(trendline)) {
+    args <- paste(args, paste0("--trendline=", trendline))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+ceil <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cos <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cosh <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+crispness_index <- function(input, output=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cross_tabulation <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+cumulative_distribution <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+decrement <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+divide <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+equal_to <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+exp <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+exp2 <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+extract_raster_statistics <- function(input, features, output=NULL, stat="average", out_table=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--features=", features))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(stat)) {
+    args <- paste(args, paste0("--stat=", stat))
+  }
+  if (!is.null(out_table)) {
+    args <- paste(args, paste0("--out_table=", out_table))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+floor <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(incl_equals)) {
+    args <- paste(args, paste0("--incl_equals=", incl_equals))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(contiguity)) {
+    args <- paste(args, paste0("--contiguity=", contiguity))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+image_correlation <- function(inputs, output=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_residuals)) {
+    args <- paste(args, paste0("--out_residuals=", out_residuals))
+  }
+  if (!is.null(standardize)) {
+    args <- paste(args, paste0("--standardize=", standardize))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+in_place_add <- function(input1, input2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+in_place_divide <- function(input1, input2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+in_place_multiply <- function(input1, input2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+in_place_subtract <- function(input1, input2, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+increment <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+integer_division <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+is_no_data <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+kappa_index <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(incl_equals)) {
+    args <- paste(args, paste0("--incl_equals=", incl_equals))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+list_unique_values <- function(input, field, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+ln <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+log10 <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+log2 <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+max <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+min <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+modulo <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+multiply <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+negate <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+not_equal_to <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+power <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+principal_component_analysis <- function(inputs, out_html, num_comp=NULL, standardized=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--out_html=", out_html))
+  if (!is.null(num_comp)) {
+    args <- paste(args, paste0("--num_comp=", num_comp))
+  }
+  if (!is.null(standardized)) {
+    args <- paste(args, paste0("--standardized=", standardized))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+quantiles <- function(input, output, num_quantiles=5, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_quantiles)) {
+    args <- paste(args, paste0("--num_quantiles=", num_quantiles))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+random_field <- function(base, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+random_sample <- function(base, output, num_samples=1000, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raster_histogram <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raster_summary_stats <- function(input, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+reciprocal <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_min=NULL, clip_max=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--out_min_val=", out_min_val))
+  args <- paste(args, paste0("--out_max_val=", out_max_val))
+  if (!is.null(clip_min)) {
+    args <- paste(args, paste0("--clip_min=", clip_min))
+  }
+  if (!is.null(clip_max)) {
+    args <- paste(args, paste0("--clip_max=", clip_max))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+root_mean_square_error <- function(input, base, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--base=", base))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+round <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sin <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+sinh <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+square <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+square_root <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+subtract <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+tan <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+tanh <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+to_degrees <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+to_radians <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+trend_surface <- function(input, output, order=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(order)) {
+    args <- paste(args, paste0("--order=", order))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+trend_surface_vector_points <- function(input, field, output, cell_size, order=1, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--cell_size=", cell_size))
+  if (!is.null(order)) {
+    args <- paste(args, paste0("--order=", order))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+truncate <- function(input, output, num_decimals=NULL, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_decimals)) {
+    args <- paste(args, paste0("--num_decimals=", num_decimals))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+turning_bands_simulation <- function(base, output, range, iterations=1000, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--range=", range))
+  if (!is.null(iterations)) {
+    args <- paste(args, paste0("--iterations=", iterations))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+xor <- function(input1, input2, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+z_scores <- function(input, output, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--flow_accum=", flow_accum))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--threshold=", threshold))
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+extract_valleys <- function(dem, output, variant="Lower Quartile", line_thin=TRUE, filter=5, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(variant)) {
+    args <- paste(args, paste0("--variant=", variant))
+  }
+  if (!is.null(line_thin)) {
+    args <- paste(args, paste0("--line_thin=", line_thin))
+  }
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--points=", points))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(nodata)) {
+    args <- paste(args, paste0("--nodata=", nodata))
+  }
+  if (!is.null(feature_id)) {
+    args <- paste(args, paste0("--feature_id=", feature_id))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--min_length=", min_length))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--linkid=", linkid))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--linkid=", linkid))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
+  wbt_exe <- wbt_exe_path()
+  args <- ""
+  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(esri_pntr)) {
+    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  }
+  if (!is.null(zero_background)) {
+    args <- paste(args, paste0("--zero_background=", zero_background))
+  }
+  tool_name <- match.call()[[1]]
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
