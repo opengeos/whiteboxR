@@ -6,6 +6,7 @@
 ^\.travis\.yml$
 WhiteboxTools_linux_amd64.tar.xz
 WBT/
+CRAN/
 output.tif
 PY2R/
 

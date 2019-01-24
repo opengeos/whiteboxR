@@ -33,7 +33,6 @@ The **whitebox** R package is built on **WhiteboxTools**, an advanced geospatial
 
 ```R
 if (!require(devtools)) install.packages('devtools')
-require(devtools)
 devtools::install_github("giswqs/whiteboxR")
 ```
 

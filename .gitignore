@@ -6,6 +6,7 @@ inst/doc
 inst/extdata/output.tif
 WhiteboxTools_linux_amd64.tar.xz
 WBT/
+CRAN/
 output.tif
 vignettes/*.tif
 vignettes/*.log
