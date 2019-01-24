@@ -2,7 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{breach_depressions}
 \alias{breach_depressions}
-\title{Breaches all of the depressions in a DEM}
+\title{Breach depressions}
 \usage{
 breach_depressions(dem, output, max_depth = NULL, max_length = NULL,
   verbose_mode = TRUE)
@@ -23,9 +23,4 @@ Returns the tool text outputs.
 }
 \description{
 Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.
-}
-\examples{
-dem <- system.file("extdata", "DEM.tif", package="whitebox")
-output <- file.path(getwd(), "output.tif")
-breach_depressions(dem, output, verbose_mode = TRUE)
 }

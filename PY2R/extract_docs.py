@@ -6,6 +6,8 @@ wbt_py = os.path.join(dir_path, "whitebox_tools.py")
 def function_header(line):
     if line.startswith("def"):
         line = line.replace("self, i,", "input,")
+        line = line.replace("self, i=None,", "input,")
+        line = line.replace("self, output, i=None,", "input, output,")
         line = line.replace("self, ", "")
         line = line.replace("callback=None", "verbose_mode=TRUE")
         line = line.replace("False", "FALSE")
@@ -44,15 +46,34 @@ def function_block(line, ff):
     ff.write('\n\n')
 
 
-ff = open(os.path.join(dir_path, "docs.txt"), "w")
+toolboxes = {
+    "# Data Tools #": "data_tools.R",
+    "# GIS Analysis #": "gis_analysis.R",
+    "# Geomorphometric Analysis #": "terrain_analysis.R",
+    "# Hydrological Analysis #": "hydro_analysis.R",
+    "# Image Processing Tools #": "image_analysis.R",
+    "# LiDAR Tools #": "lidar_analysis.R",
+    "# Math and Stats Tools #": "math_stat_analysis.R",
+    "# Stream Network Analysis #": "stream_network_analysis.R"
+}
+
 
 # Generate R functions with documentation
+ff = None
+
 with open(wbt_py) as f:
     lines = f.readlines()
-    print(len(lines))
+
     for index, line in enumerate(lines):
-        if index > 360:
+        if index > 360:            
             line = line.strip()
+
+            # Create an R script for each toolbox
+            if line in toolboxes:
+                script_path = os.path.join(dir_path, "scripts", toolboxes[line])
+                ff = open(script_path, "w")
+                print(script_path)
+
             if line.startswith("def"):
                 title = line.replace("def", "").strip().split("(")[0]
                 title = title.replace("_", " ")
@@ -71,7 +92,8 @@ with open(wbt_py) as f:
                     elif ("--" in doc_line) and (doc_line.startswith("callback") == False):
                         if doc_line.startswith('i --'):
                             doc_line = doc_line.replace('i --', 'input --')
-                        param = doc_line.replace('-- ', "")
+                        doc_line = doc_line.replace('-- ', "")
+                        param = doc_line.replace("%", " percent")
                         ff.write("#' @param {}\n".format(param))
                     i = i + 1
                 ff.write("#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.\n")
@@ -84,4 +106,4 @@ with open(wbt_py) as f:
                 fun_head = function_header(line)
                 function_block(fun_head, ff)
 
-ff.close()
+# ff.close()
