@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whiteboxR/master?urlpath=rstudio)
+[![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whiteboxR/master?urlpath=rstudio)
+
 
 **WhiteboxTools** R Frontend.
 
@@ -31,7 +34,7 @@ The **whitebox** R package is built on **WhiteboxTools**, an advanced geospatial
 
 ## Installation
 
-**whitebox** is now available on [CRAN](https://cran.r-project.org/web/packages/whitebox), so you can install it with:
+**whitebox** is now available on CRAN, so you can install it with:
 
 ```R
 install.packages("whitebox")
