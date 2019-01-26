@@ -43,7 +43,7 @@ def function_block(line, ff):
     argument = line[start:end]
     function_head = function_name + " <- function(" + argument + ") {"
     ff.write(function_head + "\n")
-    ff.write("  wbt_exe <- wbt_exe_path()" + "\n")
+    # ff.write("  wbt_exe <- wbt_exe_path()" + "\n")
     ff.write('  args <- ""' + "\n")
     arguments = argument.split(",")
     for item in arguments:
