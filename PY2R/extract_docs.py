@@ -18,6 +18,22 @@ def function_header(line):
     return line
 
 
+# Extract function name
+def function_name(line):
+    line = line.strip()
+    name = line[0:line.find("(")]
+    return name
+
+
+# Check if a string can be converted to float
+def is_float(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
+
 # Generate R function block
 def function_block(line, ff):
     line = line.strip()
@@ -44,6 +60,111 @@ def function_block(line, ff):
     ff.write('  wbt_run_tool(tool_name, args, verbose_mode)' + '\n')
     ff.write('}' + "\n")
     ff.write('\n\n')
+
+
+# Extract function example usage
+def function_example(fun_name):
+    exe_path = os.path.join(os.path.dirname(dir_path), "WBT/whitebox_tools")
+    cmd = exe_path + " --toolhelp=" + fun_name
+    msg = os.popen(cmd).read().strip()
+    ii = msg.find("usage:") + 7
+    example = msg[ii:].split(">>")[1].strip()
+    example = example.replace("-i=", "--input=")
+    example = example.replace("-o=", "--output=")
+    example = example.replace("--filter=25", "")
+    example = example.replace(";", " ")  # semicolon in R is new line
+
+    # function examples with problems
+    problems = []
+    problems.append("average_flowpath_slope")
+    problems.append("average_upslope_flowpath_length")
+    problems.append("directional_relief")
+    problems.append("elevation_above_stream_euclidean")
+    problems.append("fetch_analysis")
+    problems.append("hillshade")
+    problems.append("horizon_angle")
+    problems.append("longest_flowpath")
+    problems.append("max_upslope_flowpath_length")
+    problems.append("num_inflowing_neighbours")
+    problems.append("num_downslope_neighbours")
+    problems.append("num_upslope_neighbours")
+    problems.append("percent_elev_range")
+
+    if fun_name in problems:
+        example = example.replace("input", "dem")
+
+    if fun_name == "write_function_memory_insertion":
+        example = example.replace("-i", "--i")
+
+    two_inputs_problems = []
+    two_inputs_problems.append("cross_tabulation")
+    two_inputs_problems.append("histogram_matching_two_images")
+    two_inputs_problems.append("image_regression")
+    two_inputs_problems.append("line_intersections")
+    two_inputs_problems.append("write_function_memory_insertion")
+    two_inputs_problems.append("lidar_kappa_index")
+    two_inputs_problems.append("kappa_index")
+    two_inputs_problems.append("join_tables")
+
+    if fun_name in two_inputs_problems:
+        example = example.replace("--i1", "--input1")
+        example = example.replace("--i2", "--input2")
+
+    if fun_name == "average_overlay":
+        example = example.replace("input", "inputs")
+
+    if fun_name == "corner_detection":
+        example = example.replace("--sigma=2.0", "")
+    if fun_name == "buffer_raster":
+        example = example + "--size=5"
+    if fun_name == "d_inf_pointer":
+        example = example + "--output=output.tif"
+
+    hyphen_problems = []
+    hyphen_problems.append("difference")
+    hyphen_problems.append("dissolve")
+    hyphen_problems.append("intersect")
+    if fun_name in hyphen_problems:
+        example = example.replace("-input", "--input")
+
+    if fun_name == "extract_raster_values_at_points":
+        example = example.replace("-points", "--points")
+        example = example.replace("input", "inputs")
+    if fun_name == "find_parallel_flow":
+        example = example + "--streams=streams.tif"
+
+    duplicate_problems = []
+    duplicate_problems.append("lidar_block_minimum")
+    duplicate_problems.append("lidar_block_maximum")
+    duplicate_problems.append("flightline_overlap")
+    if fun_name in duplicate_problems:
+        example = example.replace("--input=file.las --output=outfile.tif", "", 1)
+        example = example.replace("--palette=light_quant.plt", "")
+
+    if fun_name == "k_nearest_mean_filter":
+        example = example.replace("--filter=9 -k=5", "")
+    if fun_name == "las_to_ascii":
+        example = 'inputs="file1.las file2.las file3.las"'
+    if fun_name == "lee_filter":
+        example = '--input="image.tif" --output="output.tif"'
+
+    params = example.split('--')
+    ret = fun_name + "("
+    for item in params:
+        item = item.strip()
+        if ("-r=" not in item) and ("wd=" not in item):
+            values = item.split("=")            
+            if len(values) > 1:
+                key = values[0]
+                val = values[1]
+                val = val.replace("'", '"')
+                if (is_float(val) == False) :
+                    val = val.replace('"', '')
+                    val = '"' + val + '"'
+
+                ret = ret + key + "=" + val + ", "
+    ret = ret + "verbose_mode=TRUE)"
+    return(ret)
 
 
 toolboxes = {
@@ -104,6 +225,15 @@ with open(wbt_py) as f:
                 ff.write("#' @examples\n")
                 
                 fun_head = function_header(line)
+                # fun_name = function_name(fun_head)                
+                # example = function_example(fun_name)
+                # ff.write("#' {}\n".format(example))
+                
                 function_block(fun_head, ff)
 
-# ff.close()
+ff.close()
+
+scripts_path = os.path.join(dir_path, "scripts", "*.R")
+R_scripts = os.path.join(os.path.dirname(dir_path), "R/")
+cmd = "\\cp " + scripts_path + " " + R_scripts
+os.system(cmd)
