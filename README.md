@@ -1,10 +1,11 @@
 # whiteboxR
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
+[![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
-[![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
+[![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
 
 
 **WhiteboxTools** R Frontend.
@@ -52,7 +53,7 @@ You’ll also need to make sure your machine is able to build packages from sour
 
 ## Usage
 
-**How to get information about WhiteboxTools?**
+**About WhiteboxTools?**
 
 ```R
 library(whitebox)
