@@ -10,8 +10,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -36,8 +34,6 @@ change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 closing <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -69,8 +65,6 @@ closing <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 create_colour_composite <- function(red, green, blue, output, opacity=NULL, enhance=TRUE, zeros=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -103,8 +97,6 @@ create_colour_composite <- function(red, green, blue, output, opacity=NULL, enha
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 flip_image <- function(input, output, direction="vertical", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -133,8 +125,6 @@ flip_image <- function(input, output, direction="vertical", verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, output=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -169,8 +159,6 @@ ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 image_stack_profile <- function(inputs, points, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -192,8 +180,6 @@ image_stack_profile <- function(inputs, points, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 integral_image <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -220,8 +206,6 @@ integral_image <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -258,8 +242,6 @@ k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_itera
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 line_thinning <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -285,8 +267,6 @@ line_thinning <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merger_dist=NULL, max_iterations=10, class_change=2.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -323,8 +303,6 @@ modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clu
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 mosaic <- function(inputs, output, method="cc", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -351,8 +329,6 @@ mosaic <- function(inputs, output, method="cc", verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -383,8 +359,6 @@ mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 normalized_difference_vegetation_index <- function(nir, red, output, clip=0.0, osavi=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -414,8 +388,6 @@ normalized_difference_vegetation_index <- function(nir, red, output, clip=0.0, o
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 opening <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -443,8 +415,6 @@ opening <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 remove_spurs <- function(input, output, iterations=10, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -469,8 +439,6 @@ remove_spurs <- function(input, output, iterations=10, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 resample <- function(inputs, destination, method="cc", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -499,8 +467,6 @@ resample <- function(inputs, destination, method="cc", verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, composite=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -534,8 +500,6 @@ rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 split_colour_composite <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -556,8 +520,6 @@ split_colour_composite <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 thicken_raster_line <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -581,8 +543,6 @@ thicken_raster_line <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 tophat_transform <- function(input, output, filterx=11, filtery=11, variant="white", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -614,8 +574,6 @@ tophat_transform <- function(input, output, filterx=11, filtery=11, variant="whi
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 write_function_memory_insertion <- function(input1, input2, output, input3=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -643,8 +601,6 @@ write_function_memory_insertion <- function(input1, input2, output, input3=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -676,8 +632,6 @@ adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -706,8 +660,6 @@ bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -734,8 +686,6 @@ conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 corner_detection <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -758,8 +708,6 @@ corner_detection <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -788,8 +736,6 @@ diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -818,8 +764,6 @@ diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 edge_preserving_mean_filter <- function(input, output, threshold, filter=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -846,8 +790,6 @@ edge_preserving_mean_filter <- function(input, output, threshold, filter=11, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -875,8 +817,6 @@ emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -901,8 +841,6 @@ fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -928,8 +866,6 @@ gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -959,8 +895,6 @@ high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -993,8 +927,6 @@ high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_d
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1026,8 +958,6 @@ k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1055,8 +985,6 @@ laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1084,8 +1012,6 @@ laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1121,8 +1047,6 @@ lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 line_detection_filter <- function(input, output, variant="vertical", absvals=FALSE, clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1154,8 +1078,6 @@ line_detection_filter <- function(input, output, variant="vertical", absvals=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1184,8 +1106,6 @@ majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1214,8 +1134,6 @@ maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1245,8 +1163,6 @@ mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1278,8 +1194,6 @@ median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1308,8 +1222,6 @@ minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1339,8 +1251,6 @@ olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1371,8 +1281,6 @@ percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 prewitt_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1398,8 +1306,6 @@ prewitt_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1427,8 +1333,6 @@ range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1453,8 +1357,6 @@ roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 scharr_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1480,8 +1382,6 @@ scharr_filter <- function(input, output, clip=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1510,8 +1410,6 @@ sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 standard_deviation_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1540,8 +1438,6 @@ standard_deviation_filter <- function(input, output, filterx=11, filtery=11, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1571,8 +1467,6 @@ total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=TRU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1605,8 +1499,6 @@ unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 user_defined_weights_filter <- function(input, weights, output, center="center", normalize=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1635,8 +1527,6 @@ user_defined_weights_filter <- function(input, weights, output, center="center",
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1664,8 +1554,6 @@ balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 correct_vignetting <- function(input, pp, output, focal_length=304.8, image_width=228.6, n=4.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1698,8 +1586,6 @@ correct_vignetting <- function(input, pp, output, focal_length=304.8, image_widt
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1727,8 +1613,6 @@ direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 gamma_correction <- function(input, output, gamma=0.5, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1753,8 +1637,6 @@ gamma_correction <- function(input, output, gamma=0.5, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1779,8 +1661,6 @@ gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 histogram_equalization <- function(input, output, num_tones=256, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1805,8 +1685,6 @@ histogram_equalization <- function(input, output, num_tones=256, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 histogram_matching <- function(input, histo_file, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1829,8 +1707,6 @@ histogram_matching <- function(input, histo_file, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 histogram_matching_two_images <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1855,8 +1731,6 @@ histogram_matching_two_images <- function(input1, input2, output, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=256, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1887,8 +1761,6 @@ min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL, composite=NULL, method="brovey", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1927,8 +1799,6 @@ panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 percentage_contrast_stretch <- function(input, output, clip=0.0, tail="both", num_tones=256, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1961,8 +1831,6 @@ percentage_contrast_stretch <- function(input, output, clip=0.0, tail="both", nu
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_tones=256, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1994,8 +1862,6 @@ sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_tones=256, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

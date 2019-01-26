@@ -10,8 +10,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 aggregate_raster <- function(input, output, agg_factor=2, type="mean", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -42,8 +40,6 @@ aggregate_raster <- function(input, output, agg_factor=2, type="mean", verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -78,8 +74,6 @@ block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -111,8 +105,6 @@ block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 centroid <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -136,8 +128,6 @@ centroid <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 centroid_vector <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -160,8 +150,6 @@ centroid_vector <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -190,8 +178,6 @@ clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -220,8 +206,6 @@ construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 create_hexagonal_vector_grid <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -249,8 +233,6 @@ create_hexagonal_vector_grid <- function(input, output, width, orientation="hori
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -284,8 +266,6 @@ create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=0.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 create_rectangular_vector_grid <- function(input, output, width, height, xorig=0, yorig=0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -316,8 +296,6 @@ create_rectangular_vector_grid <- function(input, output, width, height, xorig=0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 dissolve <- function(input, output, field=NULL, snap=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -345,8 +323,6 @@ dissolve <- function(input, output, field=NULL, snap=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 eliminate_coincident_points <- function(input, output, tolerance, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -370,8 +346,6 @@ eliminate_coincident_points <- function(input, output, tolerance, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 extend_vector_lines <- function(input, output, dist, extend="both ends", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -396,8 +370,6 @@ extend_vector_lines <- function(input, output, dist, extend="both ends", verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 extract_nodes <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -418,8 +390,6 @@ extract_nodes <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 extract_raster_values_at_points <- function(inputs, points, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -441,8 +411,6 @@ extract_raster_values_at_points <- function(inputs, points, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_lowest_or_highest_points <- function(input, output, out_type="lowest", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -473,8 +441,6 @@ find_lowest_or_highest_points <- function(input, output, out_type="lowest", verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, radius=NULL, min_points=NULL, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -514,8 +480,6 @@ idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, rad
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 layer_footprint <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -536,8 +500,6 @@ layer_footprint <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 medoid <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -560,8 +522,6 @@ medoid <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 minimum_bounding_box <- function(input, output, criterion="area", features=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -589,8 +549,6 @@ minimum_bounding_box <- function(input, output, criterion="area", features=TRUE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -615,8 +573,6 @@ minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -641,8 +597,6 @@ minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -671,8 +625,6 @@ minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, max_dist=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -705,8 +657,6 @@ nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 polygon_area <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -726,8 +676,6 @@ polygon_area <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 polygon_long_axis <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -747,8 +695,6 @@ polygon_long_axis <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 polygon_perimeter <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -768,8 +714,6 @@ polygon_perimeter <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 polygon_short_axis <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -791,8 +735,6 @@ polygon_short_axis <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raster_cell_assignment <- function(input, output, assign="column", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -818,8 +760,6 @@ raster_cell_assignment <- function(input, output, assign="column", verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -847,8 +787,6 @@ reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 reclass_equal_interval <- function(input, output, interval=10.0, start_val=NULL, end_val=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -879,8 +817,6 @@ reclass_equal_interval <- function(input, output, interval=10.0, start_val=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 reclass_from_file <- function(input, reclass_file, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -903,8 +839,6 @@ reclass_from_file <- function(input, reclass_file, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 smooth_vectors <- function(input, output, filter=3, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -931,8 +865,6 @@ smooth_vectors <- function(input, output, filter=3, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -962,8 +894,6 @@ tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 vector_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -988,8 +918,6 @@ vector_hex_binning <- function(input, output, width, orientation="horizontal", v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 voronoi_diagram <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1012,8 +940,6 @@ voronoi_diagram <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1039,8 +965,6 @@ buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=TRU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cost_allocation <- function(source, backlink, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1064,8 +988,6 @@ cost_allocation <- function(source, backlink, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cost_distance <- function(source, cost, out_accum, out_backlink, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1090,8 +1012,6 @@ cost_distance <- function(source, cost, out_accum, out_backlink, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cost_pathway <- function(destination, backlink, output, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1116,8 +1036,6 @@ cost_pathway <- function(destination, backlink, output, zero_background=FALSE, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 euclidean_allocation <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1138,8 +1056,6 @@ euclidean_allocation <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 euclidean_distance <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1160,8 +1076,6 @@ euclidean_distance <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 average_overlay <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1183,8 +1097,6 @@ average_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 clip <- function(input, clip, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1208,8 +1120,6 @@ clip <- function(input, clip, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1235,8 +1145,6 @@ clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 count_if <- function(inputs, output, value, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1259,8 +1167,6 @@ count_if <- function(inputs, output, value, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 difference <- function(input, overlay, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1283,8 +1189,6 @@ difference <- function(input, overlay, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 erase <- function(input, erase, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1307,8 +1211,6 @@ erase <- function(input, erase, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 erase_polygon_from_raster <- function(input, polygons, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1330,8 +1232,6 @@ erase_polygon_from_raster <- function(input, polygons, output, verbose_mode=TRUE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 highest_position <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1354,8 +1254,6 @@ highest_position <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 intersect <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1381,8 +1279,6 @@ intersect <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 line_intersections <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1404,8 +1300,6 @@ line_intersections <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lowest_position <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1426,8 +1320,6 @@ lowest_position <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1448,8 +1340,6 @@ max_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_overlay <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1470,8 +1360,6 @@ max_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 min_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1492,8 +1380,6 @@ min_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 min_overlay <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1515,8 +1401,6 @@ min_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 percent_equal_to <- function(inputs, comparison, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1539,8 +1423,6 @@ percent_equal_to <- function(inputs, comparison, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 percent_greater_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1563,8 +1445,6 @@ percent_greater_than <- function(inputs, comparison, output, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 percent_less_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1587,8 +1467,6 @@ percent_less_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 pick_from_list <- function(inputs, pos_input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1610,8 +1488,6 @@ pick_from_list <- function(inputs, pos_input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 polygonize <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1633,8 +1509,6 @@ polygonize <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 split_with_lines <- function(input, split, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1656,8 +1530,6 @@ split_with_lines <- function(input, split, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sum_overlay <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1680,8 +1552,6 @@ sum_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 symmetrical_difference <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1708,8 +1578,6 @@ symmetrical_difference <- function(input, overlay, output, snap=0.0, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 union <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1738,8 +1606,6 @@ union <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 weighted_overlay <- function(factors, weights, output, cost=NULL, constraints=NULL, scale_max=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1771,8 +1637,6 @@ weighted_overlay <- function(factors, weights, output, cost=NULL, constraints=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 weighted_sum <- function(inputs, weights, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1793,8 +1657,6 @@ weighted_sum <- function(inputs, weights, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 compactness_ratio <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1815,8 +1677,6 @@ compactness_ratio <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1839,8 +1699,6 @@ edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elongation_ratio <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1860,8 +1718,6 @@ elongation_ratio <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_patch_or_class_edge_cells <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1881,8 +1737,6 @@ find_patch_or_class_edge_cells <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 hole_proportion <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1901,8 +1755,6 @@ hole_proportion <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 linearity_index <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1921,8 +1773,6 @@ linearity_index <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 patch_orientation <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1941,8 +1791,6 @@ patch_orientation <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 perimeter_area_ratio <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1963,8 +1811,6 @@ perimeter_area_ratio <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1987,8 +1833,6 @@ radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 related_circumscribing_circle <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -2007,8 +1851,6 @@ related_circumscribing_circle <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 shape_complexity_index <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

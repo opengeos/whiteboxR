@@ -10,8 +10,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -39,8 +37,6 @@ classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 clip_lidar_to_polygon <- function(input, polygons, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -63,8 +59,6 @@ clip_lidar_to_polygon <- function(input, polygons, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -87,8 +81,6 @@ erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 filter_lidar_scan_angles <- function(input, output, threshold, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -110,8 +102,6 @@ filter_lidar_scan_angles <- function(input, output, threshold, verbose_mode=TRUE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_flightline_edge_points <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -133,8 +123,6 @@ find_flightline_edge_points <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -159,8 +147,6 @@ flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 las_to_ascii <- function(inputs, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -179,8 +165,6 @@ las_to_ascii <- function(inputs, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 las_to_multipoint_shapefile <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -199,8 +183,6 @@ las_to_multipoint_shapefile <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 las_to_shapefile <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -221,8 +203,6 @@ las_to_shapefile <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_block_maximum <- function(input, output=NULL, resolution=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -249,8 +229,6 @@ lidar_block_maximum <- function(input, output=NULL, resolution=1.0, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_block_minimum <- function(input, output=NULL, resolution=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -279,8 +257,6 @@ lidar_block_minimum <- function(input, output=NULL, resolution=1.0, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -307,8 +283,6 @@ lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_colourize <- function(in_lidar, in_image, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -334,8 +308,6 @@ lidar_colourize <- function(in_lidar, in_image, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_construct_vector_tin <- function(input, output=NULL, returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -375,8 +347,6 @@ lidar_construct_vector_tin <- function(input, output=NULL, returns="all", exclud
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -418,8 +388,6 @@ lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -460,8 +428,6 @@ lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -489,8 +455,6 @@ lidar_hex_binning <- function(input, output, width, orientation="horizontal", ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -522,8 +486,6 @@ lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -558,8 +520,6 @@ lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -608,8 +568,6 @@ lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", r
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_info <- function(input, output=NULL, vlr=FALSE, geokeys=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -638,8 +596,6 @@ lidar_info <- function(input, output=NULL, vlr=FALSE, geokeys=FALSE, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_join <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -663,8 +619,6 @@ lidar_join <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -697,8 +651,6 @@ lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -748,8 +700,6 @@ lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elev
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -795,8 +745,6 @@ lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -835,8 +783,6 @@ lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -862,8 +808,6 @@ lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -893,8 +837,6 @@ lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdiff=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -928,8 +870,6 @@ lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdi
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -965,8 +905,6 @@ lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -999,8 +937,6 @@ lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filt
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1032,8 +968,6 @@ lidar_thin_high_density <- function(input, output, density, resolution=1.0, save
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_tile <- function(input, width_x=1000.0, width_y=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1068,8 +1002,6 @@ lidar_tile <- function(input, width_x=1000.0, width_y=1000.0, origin_x=0.0, orig
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_tile_footprint <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1096,8 +1028,6 @@ lidar_tile_footprint <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1139,8 +1069,6 @@ lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", return
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lidar_tophat_transform <- function(input, output, radius=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1165,8 +1093,6 @@ lidar_tophat_transform <- function(input, output, radius=1.0, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 normal_vectors <- function(input, output, radius=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1191,8 +1117,6 @@ normal_vectors <- function(input, output, radius=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 select_tiles_by_polygon <- function(indir, outdir, polygons, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

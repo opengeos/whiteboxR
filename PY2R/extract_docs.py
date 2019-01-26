@@ -221,8 +221,8 @@ with open(wbt_py) as f:
                 ff.write("#'\n")
                 ff.write("#' @return Returns the tool text outputs.\n")
                 ff.write("#' @export\n")
-                ff.write("#'\n")
-                ff.write("#' @examples\n")
+                # ff.write("#'\n")
+                # ff.write("#' @examples\n")
                 
                 fun_head = function_header(line)
                 # fun_name = function_name(fun_head)                

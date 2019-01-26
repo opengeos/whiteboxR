@@ -9,8 +9,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 And <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -33,8 +31,6 @@ And <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 Not <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -57,8 +53,6 @@ Not <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 Or <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -80,8 +74,6 @@ Or <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 absolute_value <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -103,8 +95,6 @@ absolute_value <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 add <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -127,8 +117,6 @@ add <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 anova <- function(input, features, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -150,8 +138,6 @@ anova <- function(input, features, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 arc_cos <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -172,8 +158,6 @@ arc_cos <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 arc_sin <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -194,8 +178,6 @@ arc_sin <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 arc_tan <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -217,8 +199,6 @@ arc_tan <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 atan2 <- function(input_y, input_x, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -240,8 +220,6 @@ atan2 <- function(input_y, input_x, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 attribute_correlation <- function(input, output=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -265,8 +243,6 @@ attribute_correlation <- function(input, output=NULL, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 attribute_histogram <- function(input, field, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -291,8 +267,6 @@ attribute_histogram <- function(input, field, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -318,8 +292,6 @@ attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 ceil <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -340,8 +312,6 @@ ceil <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cos <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -362,8 +332,6 @@ cos <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cosh <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -384,8 +352,6 @@ cosh <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 crispness_index <- function(input, output=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -409,8 +375,6 @@ crispness_index <- function(input, output=NULL, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cross_tabulation <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -432,8 +396,6 @@ cross_tabulation <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 cumulative_distribution <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -454,8 +416,6 @@ cumulative_distribution <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 decrement <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -477,8 +437,6 @@ decrement <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 divide <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -501,8 +459,6 @@ divide <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 equal_to <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -524,8 +480,6 @@ equal_to <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 exp <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -546,8 +500,6 @@ exp <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 exp2 <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -571,8 +523,6 @@ exp2 <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 extract_raster_statistics <- function(input, features, output=NULL, stat="average", out_table=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -602,8 +552,6 @@ extract_raster_statistics <- function(input, features, output=NULL, stat="averag
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 floor <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -626,8 +574,6 @@ floor <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -653,8 +599,6 @@ greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -678,8 +622,6 @@ image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 image_correlation <- function(inputs, output=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -705,8 +647,6 @@ image_correlation <- function(inputs, output=NULL, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -734,8 +674,6 @@ image_regression <- function(input1, input2, output, out_residuals=NULL, standar
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 in_place_add <- function(input1, input2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -756,8 +694,6 @@ in_place_add <- function(input1, input2, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 in_place_divide <- function(input1, input2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -778,8 +714,6 @@ in_place_divide <- function(input1, input2, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 in_place_multiply <- function(input1, input2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -800,8 +734,6 @@ in_place_multiply <- function(input1, input2, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 in_place_subtract <- function(input1, input2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -822,8 +754,6 @@ in_place_subtract <- function(input1, input2, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 increment <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -845,8 +775,6 @@ increment <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 integer_division <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -868,8 +796,6 @@ integer_division <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 is_no_data <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -891,8 +817,6 @@ is_no_data <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 kappa_index <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -915,8 +839,6 @@ kappa_index <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -942,8 +864,6 @@ ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -969,8 +889,6 @@ less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 list_unique_values <- function(input, field, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -992,8 +910,6 @@ list_unique_values <- function(input, field, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 ln <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1014,8 +930,6 @@ ln <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 log10 <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1036,8 +950,6 @@ log10 <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 log2 <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1059,8 +971,6 @@ log2 <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1083,8 +993,6 @@ max <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 min <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1107,8 +1015,6 @@ min <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 modulo <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1131,8 +1037,6 @@ modulo <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 multiply <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1154,8 +1058,6 @@ multiply <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 negate <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1177,8 +1079,6 @@ negate <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 not_equal_to <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1201,8 +1101,6 @@ not_equal_to <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 power <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1226,8 +1124,6 @@ power <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 principal_component_analysis <- function(inputs, out_html, num_comp=NULL, standardized=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1255,8 +1151,6 @@ principal_component_analysis <- function(inputs, out_html, num_comp=NULL, standa
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 quantiles <- function(input, output, num_quantiles=5, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1280,8 +1174,6 @@ quantiles <- function(input, output, num_quantiles=5, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 random_field <- function(base, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1303,8 +1195,6 @@ random_field <- function(base, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 random_sample <- function(base, output, num_samples=1000, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1328,8 +1218,6 @@ random_sample <- function(base, output, num_samples=1000, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raster_histogram <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1349,8 +1237,6 @@ raster_histogram <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raster_summary_stats <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1370,8 +1256,6 @@ raster_summary_stats <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 reciprocal <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1396,8 +1280,6 @@ reciprocal <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_min=NULL, clip_max=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1426,8 +1308,6 @@ rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_mi
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 root_mean_square_error <- function(input, base, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1448,8 +1328,6 @@ root_mean_square_error <- function(input, base, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 round <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1470,8 +1348,6 @@ round <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sin <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1492,8 +1368,6 @@ sin <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sinh <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1514,8 +1388,6 @@ sinh <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 square <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1536,8 +1408,6 @@ square <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 square_root <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1559,8 +1429,6 @@ square_root <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 subtract <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1582,8 +1450,6 @@ subtract <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 tan <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1604,8 +1470,6 @@ tan <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 tanh <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1626,8 +1490,6 @@ tanh <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 to_degrees <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1648,8 +1510,6 @@ to_degrees <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 to_radians <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1671,8 +1531,6 @@ to_radians <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 trend_surface <- function(input, output, order=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1699,8 +1557,6 @@ trend_surface <- function(input, output, order=1, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 trend_surface_vector_points <- function(input, field, output, cell_size, order=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1727,8 +1583,6 @@ trend_surface_vector_points <- function(input, field, output, cell_size, order=1
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 truncate <- function(input, output, num_decimals=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1754,8 +1608,6 @@ truncate <- function(input, output, num_decimals=NULL, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 turning_bands_simulation <- function(base, output, range, iterations=1000, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1781,8 +1633,6 @@ turning_bands_simulation <- function(base, output, range, iterations=1000, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 xor <- function(input1, input2, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1804,8 +1654,6 @@ xor <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 z_scores <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

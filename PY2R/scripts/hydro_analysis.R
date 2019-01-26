@@ -8,8 +8,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 average_flowpath_slope <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -30,8 +28,6 @@ average_flowpath_slope <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 average_upslope_flowpath_length <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -53,8 +49,6 @@ average_upslope_flowpath_length <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -80,8 +74,6 @@ basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -108,8 +100,6 @@ breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 breach_single_cell_pits <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -133,8 +123,6 @@ breach_single_cell_pits <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -167,8 +155,6 @@ d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -193,8 +179,6 @@ d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -222,8 +206,6 @@ d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -259,8 +241,6 @@ d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -284,8 +264,6 @@ d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbos
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 d_inf_pointer <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -307,8 +285,6 @@ d_inf_pointer <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -333,8 +309,6 @@ depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -359,8 +333,6 @@ downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=TRUE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=NULL, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -391,8 +363,6 @@ downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elevation_above_stream <- function(dem, streams, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -415,8 +385,6 @@ elevation_above_stream <- function(dem, streams, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -443,8 +411,6 @@ elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fd8_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -480,8 +446,6 @@ fd8_flow_accumulation <- function(dem, output, out_type="specific contributing a
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fd8_pointer <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -503,8 +467,6 @@ fd8_pointer <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fill_burn <- function(dem, streams, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -527,8 +489,6 @@ fill_burn <- function(dem, streams, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -552,8 +512,6 @@ fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fill_single_cell_pits <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -574,8 +532,6 @@ fill_single_cell_pits <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_no_flow_cells <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -597,8 +553,6 @@ find_no_flow_cells <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -621,8 +575,6 @@ find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 flatten_lakes <- function(dem, lakes, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -644,8 +596,6 @@ flatten_lakes <- function(dem, lakes, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 flood_order <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -672,8 +622,6 @@ flood_order <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, out_type="Specific Contributing Area", log=FALSE, clip=FALSE, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -709,8 +657,6 @@ flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, o
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -736,8 +682,6 @@ flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -764,8 +708,6 @@ hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 impoundment_index <- function(dem, output, damlength, out_type="depth", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -791,8 +733,6 @@ impoundment_index <- function(dem, output, damlength, out_type="depth", verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 isobasins <- function(dem, output, size, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -816,8 +756,6 @@ isobasins <- function(dem, output, size, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -841,8 +779,6 @@ jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbos
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 longest_flowpath <- function(dem, basins, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -864,8 +800,6 @@ longest_flowpath <- function(dem, basins, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_upslope_flowpath_length <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -886,8 +820,6 @@ max_upslope_flowpath_length <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 num_inflowing_neighbours <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -911,8 +843,6 @@ num_inflowing_neighbours <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -941,8 +871,6 @@ raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -967,8 +895,6 @@ rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sink <- function(dem, output, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -994,8 +920,6 @@ sink <- function(dem, output, zero_background=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1021,8 +945,6 @@ snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=1000, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1050,8 +972,6 @@ stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1078,8 +998,6 @@ strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1107,8 +1025,6 @@ subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1138,8 +1054,6 @@ trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1166,8 +1080,6 @@ unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

@@ -7,8 +7,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 add_point_coordinates_to_table <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -28,8 +26,6 @@ add_point_coordinates_to_table <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 convert_nodata_to_zero <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -50,8 +46,6 @@ convert_nodata_to_zero <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 convert_raster_format <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -73,8 +67,6 @@ convert_raster_format <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -101,8 +93,6 @@ export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -126,8 +116,6 @@ join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 lines_to_polygons <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -151,8 +139,6 @@ lines_to_polygons <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -178,8 +164,6 @@ merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 merge_vectors <- function(inputs, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -201,8 +185,6 @@ merge_vectors <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -228,8 +210,6 @@ multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 new_raster_from_base <- function(base, output, value="nodata", data_type="float", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -256,8 +236,6 @@ new_raster_from_base <- function(base, output, value="nodata", data_type="float"
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 polygons_to_lines <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -277,8 +255,6 @@ polygons_to_lines <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 print_geo_tiff_tags <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -298,8 +274,6 @@ print_geo_tiff_tags <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raster_to_vector_lines <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -320,8 +294,6 @@ raster_to_vector_lines <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raster_to_vector_points <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -341,8 +313,6 @@ raster_to_vector_points <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 reinitialize_attribute_table <- function(input, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -362,8 +332,6 @@ reinitialize_attribute_table <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 remove_polygon_holes <- function(input, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -385,8 +353,6 @@ remove_polygon_holes <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -411,8 +377,6 @@ set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -440,8 +404,6 @@ single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -479,8 +441,6 @@ vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -520,8 +480,6 @@ vector_points_to_raster <- function(input, output, field="FID", assign="last", n
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

@@ -9,8 +9,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 aspect <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -36,8 +34,6 @@ aspect <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -66,8 +62,6 @@ dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -96,8 +90,6 @@ diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -126,8 +118,6 @@ directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -161,8 +151,6 @@ downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 drainage_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=10, max_diff=2.0, reduction=80.0, dfm=0.15, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -204,8 +192,6 @@ drainage_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elev_above_pit <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -229,8 +215,6 @@ elev_above_pit <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -260,8 +244,6 @@ elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elev_relative_to_min_max <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -283,8 +265,6 @@ elev_relative_to_min_max <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -311,8 +291,6 @@ elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 feature_preserving_denoise <- function(dem, output, filter=11, norm_diff=15.0, num_iter=10, max_diff=2.0, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -350,8 +328,6 @@ feature_preserving_denoise <- function(dem, output, filter=11, norm_diff=15.0, n
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -380,8 +356,6 @@ fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -409,8 +383,6 @@ fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -437,8 +409,6 @@ find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -470,8 +440,6 @@ hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -499,8 +467,6 @@ horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -528,8 +494,6 @@ hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -562,8 +526,6 @@ max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -593,8 +555,6 @@ max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_sca
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_branch_length <- function(dem, output, log=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -622,8 +582,6 @@ max_branch_length <- function(dem, output, log=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -650,8 +608,6 @@ max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_sca
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_downslope_elev_change <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -676,8 +632,6 @@ max_downslope_elev_change <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -708,8 +662,6 @@ max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, st
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -736,8 +688,6 @@ max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scal
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 min_downslope_elev_change <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -762,8 +712,6 @@ min_downslope_elev_change <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -796,8 +744,6 @@ multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -829,8 +775,6 @@ multiscale_roughness_signature <- function(dem, points, output, max_scale, min_s
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -856,8 +800,6 @@ multiscale_topographic_position_image <- function(local, meso, broad, output, li
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 num_downslope_neighbours <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -878,8 +820,6 @@ num_downslope_neighbours <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 num_upslope_neighbours <- function(dem, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -904,8 +844,6 @@ num_upslope_neighbours <- function(dem, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -940,8 +878,6 @@ pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, z
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -969,8 +905,6 @@ percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -995,8 +929,6 @@ plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 profile <- function(lines, surface, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1019,8 +951,6 @@ profile <- function(lines, surface, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1046,8 +976,6 @@ profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1076,8 +1004,6 @@ relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1104,8 +1030,6 @@ relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbos
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 relative_topographic_position <- function(dem, output, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1134,8 +1058,6 @@ relative_topographic_position <- function(dem, output, filterx=11, filtery=11, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1163,8 +1085,6 @@ remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1191,8 +1111,6 @@ ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1221,8 +1139,6 @@ sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 slope <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1247,8 +1163,6 @@ slope <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1275,8 +1189,6 @@ slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, filtery=11, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1307,8 +1219,6 @@ standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1333,8 +1243,6 @@ tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1360,8 +1268,6 @@ total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 viewshed <- function(dem, stations, output, height=2.0, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1388,8 +1294,6 @@ viewshed <- function(dem, stations, output, height=2.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -1417,8 +1321,6 @@ visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 wetness_index <- function(sca, slope, output, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""

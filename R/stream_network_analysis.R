@@ -11,8 +11,6 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -42,8 +40,6 @@ distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -71,8 +67,6 @@ extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 extract_valleys <- function(dem, output, variant="Lower Quartile", line_thin=TRUE, filter=5, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -105,8 +99,6 @@ extract_valleys <- function(dem, output, variant="Lower Quartile", line_thin=TRU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -137,8 +129,6 @@ farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -169,8 +159,6 @@ find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_backg
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -201,8 +189,6 @@ hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_ba
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -233,8 +219,6 @@ horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -265,8 +249,6 @@ length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -295,8 +277,6 @@ long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -324,8 +304,6 @@ long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -353,8 +331,6 @@ raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -385,8 +361,6 @@ rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -415,8 +389,6 @@ remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -447,8 +419,6 @@ shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -479,8 +449,6 @@ strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -511,8 +479,6 @@ stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_ba
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -543,8 +509,6 @@ stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -576,8 +540,6 @@ stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_ba
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -610,8 +572,6 @@ stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zer
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -643,8 +603,6 @@ stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
@@ -675,8 +633,6 @@ topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-#'
-#' @examples
 tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=TRUE) {
   wbt_exe <- wbt_exe_path()
   args <- ""
