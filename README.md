@@ -88,6 +88,9 @@ print(wbt_view_code("breach_depressions"))
 
 **How to run tools?**
 
+
+Tool names in the whitebox R package can be called using the snake_case (e.g. lidar_info). See below for an example. If you are interested in using the WhiteboxTools command-line program, check [WhiteboxTools Usage](https://github.com/jblindsay/whitebox-tools#3-usage).
+
 ```R
 library(whitebox)
 
