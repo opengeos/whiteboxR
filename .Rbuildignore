@@ -10,5 +10,6 @@ CRAN/
 output.tif
 PY2R/
 binder/
+docs/
 cran-comments.md
 
