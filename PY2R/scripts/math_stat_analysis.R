@@ -9,7 +9,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-And <- function(input1, input2, output, verbose_mode=FALSE) {
+and <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
@@ -30,7 +30,7 @@ And <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-Not <- function(input1, input2, output, verbose_mode=FALSE) {
+not <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
@@ -51,7 +51,7 @@ Not <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-Or <- function(input1, input2, output, verbose_mode=FALSE) {
+or <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))

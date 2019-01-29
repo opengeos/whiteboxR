@@ -15,6 +15,10 @@ def function_header(line):
         line = line.replace("None", "NULL")
         line = line.replace("def ", "")
         line = line.replace(":", "")
+        line = line.replace("And", "and")
+        line = line.replace("Not", "not")
+        line = line.replace("Or", "or")
+
     return line
 
 
