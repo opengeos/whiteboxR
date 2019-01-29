@@ -4,7 +4,7 @@
 \alias{image_stack_profile}
 \title{Image stack profile}
 \usage{
-image_stack_profile(inputs, points, output, verbose_mode = TRUE)
+image_stack_profile(inputs, points, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input multispectral image files.}

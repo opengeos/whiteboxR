@@ -5,7 +5,7 @@
 \title{Laplacian filter}
 \usage{
 laplacian_filter(input, output, variant = "3x3(1)", clip = 0,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,7 +4,7 @@
 \alias{max_downslope_elev_change}
 \title{Max downslope elev change}
 \usage{
-max_downslope_elev_change(dem, output, verbose_mode = TRUE)
+max_downslope_elev_change(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -5,7 +5,7 @@
 \title{Trend surface vector points}
 \usage{
 trend_surface_vector_points(input, field, output, cell_size, order = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector Points file.}

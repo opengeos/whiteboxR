@@ -4,7 +4,7 @@
 \alias{roberts_cross_filter}
 \title{Roberts cross filter}
 \usage{
-roberts_cross_filter(input, output, clip = 0, verbose_mode = TRUE)
+roberts_cross_filter(input, output, clip = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

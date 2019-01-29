@@ -4,7 +4,7 @@
 \alias{flatten_lakes}
 \title{Flatten lakes}
 \usage{
-flatten_lakes(dem, lakes, output, verbose_mode = TRUE)
+flatten_lakes(dem, lakes, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

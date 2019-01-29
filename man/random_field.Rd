@@ -4,7 +4,7 @@
 \alias{random_field}
 \title{Random field}
 \usage{
-random_field(base, output, verbose_mode = TRUE)
+random_field(base, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input raster file.}

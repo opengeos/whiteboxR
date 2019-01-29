@@ -5,7 +5,7 @@
 \title{Find lowest or highest points}
 \usage{
 find_lowest_or_highest_points(input, output, out_type = "lowest",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

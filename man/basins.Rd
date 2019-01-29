@@ -4,7 +4,7 @@
 \alias{basins}
 \title{Basins}
 \usage{
-basins(d8_pntr, output, esri_pntr = FALSE, verbose_mode = TRUE)
+basins(d8_pntr, output, esri_pntr = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

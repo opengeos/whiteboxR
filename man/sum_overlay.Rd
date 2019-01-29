@@ -4,7 +4,7 @@
 \alias{sum_overlay}
 \title{Sum overlay}
 \usage{
-sum_overlay(inputs, output, verbose_mode = TRUE)
+sum_overlay(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

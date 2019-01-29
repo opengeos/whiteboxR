@@ -4,7 +4,7 @@
 \alias{max_absolute_overlay}
 \title{Max absolute overlay}
 \usage{
-max_absolute_overlay(inputs, output, verbose_mode = TRUE)
+max_absolute_overlay(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

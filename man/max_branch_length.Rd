@@ -4,7 +4,7 @@
 \alias{max_branch_length}
 \title{Max branch length}
 \usage{
-max_branch_length(dem, output, log = FALSE, verbose_mode = TRUE)
+max_branch_length(dem, output, log = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

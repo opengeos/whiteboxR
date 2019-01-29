@@ -4,7 +4,7 @@
 \alias{cross_tabulation}
 \title{Cross tabulation}
 \usage{
-cross_tabulation(input1, input2, output, verbose_mode = TRUE)
+cross_tabulation(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file 1.}

@@ -4,7 +4,7 @@
 \alias{ruggedness_index}
 \title{Ruggedness index}
 \usage{
-ruggedness_index(dem, output, zfactor = 1, verbose_mode = TRUE)
+ruggedness_index(dem, output, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,7 +4,7 @@
 \alias{find_no_flow_cells}
 \title{Find no flow cells}
 \usage{
-find_no_flow_cells(dem, output, verbose_mode = TRUE)
+find_no_flow_cells(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

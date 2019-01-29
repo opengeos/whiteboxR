@@ -5,7 +5,7 @@
 \title{Lidar segmentation}
 \usage{
 lidar_segmentation(input, output, radius = 5, norm_diff = 10,
-  maxzdiff = 1, verbose_mode = TRUE)
+  maxzdiff = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

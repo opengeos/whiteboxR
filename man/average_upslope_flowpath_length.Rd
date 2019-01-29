@@ -4,7 +4,7 @@
 \alias{average_upslope_flowpath_length}
 \title{Average upslope flowpath length}
 \usage{
-average_upslope_flowpath_length(dem, output, verbose_mode = TRUE)
+average_upslope_flowpath_length(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

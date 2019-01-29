@@ -5,7 +5,7 @@
 \title{Buffer raster}
 \usage{
 buffer_raster(input, output, size, gridcells = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

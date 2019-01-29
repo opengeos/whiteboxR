@@ -4,7 +4,7 @@
 \alias{select_tiles_by_polygon}
 \title{Select tiles by polygon}
 \usage{
-select_tiles_by_polygon(indir, outdir, polygons, verbose_mode = TRUE)
+select_tiles_by_polygon(indir, outdir, polygons, verbose_mode = FALSE)
 }
 \arguments{
 \item{indir}{Input LAS file source directory.}

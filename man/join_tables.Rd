@@ -5,7 +5,7 @@
 \title{Join tables}
 \usage{
 join_tables(input1, pkey, input2, fkey, import_field,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input primary vector file (i.e. the table to be modified).}

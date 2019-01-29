@@ -5,7 +5,7 @@
 \title{Raise walls}
 \usage{
 raise_walls(input, dem, output, breach = NULL, height = 100,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector lines or polygons file.}

@@ -5,7 +5,7 @@
 \title{Reclass}
 \usage{
 reclass(input, output, reclass_vals, assign_mode = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

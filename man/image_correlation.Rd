@@ -4,7 +4,7 @@
 \alias{image_correlation}
 \title{Image correlation}
 \usage{
-image_correlation(inputs, output = NULL, verbose_mode = TRUE)
+image_correlation(inputs, output = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

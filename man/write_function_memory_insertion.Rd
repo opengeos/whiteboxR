@@ -5,7 +5,7 @@
 \title{Write function memory insertion}
 \usage{
 write_function_memory_insertion(input1, input2, output, input3 = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file associated with the first date.}

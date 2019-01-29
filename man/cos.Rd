@@ -4,7 +4,7 @@
 \alias{cos}
 \title{Cos}
 \usage{
-cos(input, output, verbose_mode = TRUE)
+cos(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

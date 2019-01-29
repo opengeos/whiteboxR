@@ -5,7 +5,7 @@
 \title{Clip raster to polygon}
 \usage{
 clip_raster_to_polygon(input, polygons, output,
-  maintain_dimensions = FALSE, verbose_mode = TRUE)
+  maintain_dimensions = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

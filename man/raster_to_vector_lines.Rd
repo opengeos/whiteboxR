@@ -4,7 +4,7 @@
 \alias{raster_to_vector_lines}
 \title{Raster to vector lines}
 \usage{
-raster_to_vector_lines(input, output, verbose_mode = TRUE)
+raster_to_vector_lines(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster lines file.}

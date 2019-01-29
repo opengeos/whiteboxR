@@ -5,7 +5,7 @@
 \title{Multi part to single part}
 \usage{
 multi_part_to_single_part(input, output, exclude_holes = TRUE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector line or polygon file.}

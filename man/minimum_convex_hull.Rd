@@ -5,7 +5,7 @@
 \title{Minimum convex hull}
 \usage{
 minimum_convex_hull(input, output, features = TRUE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

@@ -4,7 +4,7 @@
 \alias{set_nodata_value}
 \title{Set nodata value}
 \usage{
-set_nodata_value(input, output, back_value = 0, verbose_mode = TRUE)
+set_nodata_value(input, output, back_value = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

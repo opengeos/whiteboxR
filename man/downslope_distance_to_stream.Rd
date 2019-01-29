@@ -4,7 +4,7 @@
 \alias{downslope_distance_to_stream}
 \title{Downslope distance to stream}
 \usage{
-downslope_distance_to_stream(dem, streams, output, verbose_mode = TRUE)
+downslope_distance_to_stream(dem, streams, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

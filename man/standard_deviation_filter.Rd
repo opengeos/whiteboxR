@@ -5,7 +5,7 @@
 \title{Standard deviation filter}
 \usage{
 standard_deviation_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,7 +4,7 @@
 \alias{erase}
 \title{Erase}
 \usage{
-erase(input, erase, output, verbose_mode = TRUE)
+erase(input, erase, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

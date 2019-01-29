@@ -4,7 +4,7 @@
 \alias{plan_curvature}
 \title{Plan curvature}
 \usage{
-plan_curvature(dem, output, zfactor = 1, verbose_mode = TRUE)
+plan_curvature(dem, output, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

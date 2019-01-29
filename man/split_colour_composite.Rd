@@ -4,7 +4,7 @@
 \alias{split_colour_composite}
 \title{Split colour composite}
 \usage{
-split_colour_composite(input, output, verbose_mode = TRUE)
+split_colour_composite(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input colour composite image file.}

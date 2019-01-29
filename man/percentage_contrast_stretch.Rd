@@ -5,7 +5,7 @@
 \title{Percentage contrast stretch}
 \usage{
 percentage_contrast_stretch(input, output, clip = 0, tail = "both",
-  num_tones = 256, verbose_mode = TRUE)
+  num_tones = 256, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

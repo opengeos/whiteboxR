@@ -6,7 +6,7 @@
 \usage{
 nearest_neighbour_gridding(input, field, output, use_z = FALSE,
   cell_size = NULL, base = NULL, max_dist = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector Points file.}

@@ -5,7 +5,7 @@
 \title{Normalized difference vegetation index}
 \usage{
 normalized_difference_vegetation_index(nir, red, output, clip = 0,
-  osavi = FALSE, verbose_mode = TRUE)
+  osavi = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{nir}{Input near-infrared band image.}

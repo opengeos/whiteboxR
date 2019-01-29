@@ -5,7 +5,7 @@
 \title{Gaussian contrast stretch}
 \usage{
 gaussian_contrast_stretch(input, output, num_tones = 256,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

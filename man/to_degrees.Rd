@@ -4,7 +4,7 @@
 \alias{to_degrees}
 \title{To degrees}
 \usage{
-to_degrees(input, output, verbose_mode = TRUE)
+to_degrees(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

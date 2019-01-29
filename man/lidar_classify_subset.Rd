@@ -5,7 +5,7 @@
 \title{Lidar classify subset}
 \usage{
 lidar_classify_subset(base, subset, output, subset_class,
-  nonsubset_class = NULL, verbose_mode = TRUE)
+  nonsubset_class = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input base LiDAR file.}

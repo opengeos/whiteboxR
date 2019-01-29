@@ -5,7 +5,7 @@
 \title{Construct vector tin}
 \usage{
 construct_vector_tin(input, output, field = NULL, use_z = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector points file.}

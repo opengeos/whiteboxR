@@ -4,7 +4,7 @@
 \alias{max_upslope_flowpath_length}
 \title{Max upslope flowpath length}
 \usage{
-max_upslope_flowpath_length(dem, output, verbose_mode = TRUE)
+max_upslope_flowpath_length(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

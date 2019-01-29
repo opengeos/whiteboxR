@@ -4,7 +4,7 @@
 \alias{atan2}
 \title{Atan2}
 \usage{
-atan2(input_y, input_x, output, verbose_mode = TRUE)
+atan2(input_y, input_x, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input_y}{Input y raster file or constant value (rise).}

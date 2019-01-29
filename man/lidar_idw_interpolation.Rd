@@ -7,7 +7,7 @@
 lidar_idw_interpolation(input, output = NULL, parameter = "elevation",
   returns = "all", resolution = 1, weight = 1, radius = 2.5,
   exclude_cls = NULL, minz = NULL, maxz = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

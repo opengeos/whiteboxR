@@ -4,7 +4,7 @@
 \alias{normal_vectors}
 \title{Normal vectors}
 \usage{
-normal_vectors(input, output, radius = 1, verbose_mode = TRUE)
+normal_vectors(input, output, radius = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

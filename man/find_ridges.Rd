@@ -4,7 +4,7 @@
 \alias{find_ridges}
 \title{Find ridges}
 \usage{
-find_ridges(dem, output, line_thin = TRUE, verbose_mode = TRUE)
+find_ridges(dem, output, line_thin = TRUE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

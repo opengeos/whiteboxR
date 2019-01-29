@@ -5,7 +5,7 @@
 \title{Sediment transport index}
 \usage{
 sediment_transport_index(sca, slope, output, sca_exponent = 0.4,
-  slope_exponent = 1.3, verbose_mode = TRUE)
+  slope_exponent = 1.3, verbose_mode = FALSE)
 }
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}

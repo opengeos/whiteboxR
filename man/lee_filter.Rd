@@ -5,7 +5,7 @@
 \title{Lee filter}
 \usage{
 lee_filter(input, output, filterx = 11, filtery = 11, sigma = 10,
-  m = 5, verbose_mode = TRUE)
+  m = 5, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -5,7 +5,7 @@
 \title{Sigmoidal contrast stretch}
 \usage{
 sigmoidal_contrast_stretch(input, output, cutoff = 0, gain = 1,
-  num_tones = 256, verbose_mode = TRUE)
+  num_tones = 256, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

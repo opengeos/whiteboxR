@@ -5,7 +5,7 @@
 \title{K nearest mean filter}
 \usage{
 k_nearest_mean_filter(input, output, filterx = 11, filtery = 11,
-  k = 5, verbose_mode = TRUE)
+  k = 5, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

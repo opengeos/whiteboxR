@@ -5,7 +5,7 @@
 \title{Extract streams}
 \usage{
 extract_streams(flow_accum, output, threshold, zero_background = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{flow_accum}{Input raster D8 flow accumulation file.}

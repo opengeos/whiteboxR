@@ -5,7 +5,7 @@
 \title{Lidar block minimum}
 \usage{
 lidar_block_minimum(input, output = NULL, resolution = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

@@ -5,7 +5,7 @@
 \title{Downslope flowpath length}
 \usage{
 downslope_flowpath_length(d8_pntr, output, watersheds = NULL,
-  weights = NULL, esri_pntr = FALSE, verbose_mode = TRUE)
+  weights = NULL, esri_pntr = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

@@ -4,7 +4,7 @@
 \alias{remove_spurs}
 \title{Remove spurs}
 \usage{
-remove_spurs(input, output, iterations = 10, verbose_mode = TRUE)
+remove_spurs(input, output, iterations = 10, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

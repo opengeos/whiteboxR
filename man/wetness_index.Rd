@@ -4,7 +4,7 @@
 \alias{wetness_index}
 \title{Wetness index}
 \usage{
-wetness_index(sca, slope, output, verbose_mode = TRUE)
+wetness_index(sca, slope, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}

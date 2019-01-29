@@ -5,7 +5,7 @@
 \title{Raster streams to vector}
 \usage{
 raster_streams_to_vector(streams, d8_pntr, output, esri_pntr = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{streams}{Input raster streams file.}

@@ -4,7 +4,7 @@
 \alias{mosaic}
 \title{Mosaic}
 \usage{
-mosaic(inputs, output, method = "cc", verbose_mode = TRUE)
+mosaic(inputs, output, method = "cc", verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

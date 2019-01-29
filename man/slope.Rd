@@ -4,7 +4,7 @@
 \alias{slope}
 \title{Slope}
 \usage{
-slope(dem, output, zfactor = 1, verbose_mode = TRUE)
+slope(dem, output, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

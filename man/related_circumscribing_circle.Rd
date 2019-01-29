@@ -4,7 +4,7 @@
 \alias{related_circumscribing_circle}
 \title{Related circumscribing circle}
 \usage{
-related_circumscribing_circle(input, verbose_mode = TRUE)
+related_circumscribing_circle(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

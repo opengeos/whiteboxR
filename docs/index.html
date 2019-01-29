@@ -125,7 +125,7 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found at: <a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="uri">https://giswqs.github.io/whiteboxR/reference/index.html</a>. Also check this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html">demo</a>.</p>
+<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://giswqs.github.io/whiteboxR/reference/index.html">HERE</a>. Check out this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html">demo</a> for examples.</p>
 <p><strong>About WhiteboxTools?</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(whitebox)</a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
@@ -163,9 +163,9 @@
 <a class="sourceLine" id="cb4-4" title="4">dem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="dt">package=</span><span class="st">"whitebox"</span>)</a>
 <a class="sourceLine" id="cb4-5" title="5"></a>
 <a class="sourceLine" id="cb4-6" title="6"><span class="co"># Run tools</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="kw"><a href="reference/feature_preserving_denoise.html">feature_preserving_denoise</a></span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw"><a href="reference/feature_preserving_denoise.html">feature_preserving_denoise</a></span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>, <span class="dt">verbose_mode =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb4-8" title="8"><span class="kw"><a href="reference/breach_depressions.html">breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)</a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="kw"><a href="reference/d_inf_flow_accumulation.html">d_inf_flow_accumulation</a></span>(dem, <span class="st">"./flow_accum.tif"</span>, <span class="dt">verbose_mode =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb4-9" title="9"><span class="kw"><a href="reference/d_inf_flow_accumulation.html">d_inf_flow_accumulation</a></span>(dem, <span class="st">"./flow_accum.tif"</span>)</a></code></pre></div>
 </div>
 <div id="available-tools" class="section level2">
 <h2 class="hasAnchor">

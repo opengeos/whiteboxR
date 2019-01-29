@@ -4,7 +4,7 @@
 \alias{polygon_short_axis}
 \title{Polygon short axis}
 \usage{
-polygon_short_axis(input, output, verbose_mode = TRUE)
+polygon_short_axis(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygons file.}

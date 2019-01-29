@@ -4,7 +4,7 @@
 \alias{lidar_tile_footprint}
 \title{Lidar tile footprint}
 \usage{
-lidar_tile_footprint(input, output, verbose_mode = TRUE)
+lidar_tile_footprint(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

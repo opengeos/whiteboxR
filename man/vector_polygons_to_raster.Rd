@@ -5,7 +5,7 @@
 \title{Vector polygons to raster}
 \usage{
 vector_polygons_to_raster(input, output, field = "FID", nodata = TRUE,
-  cell_size = NULL, base = NULL, verbose_mode = TRUE)
+  cell_size = NULL, base = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygons file.}

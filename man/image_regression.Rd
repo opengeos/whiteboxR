@@ -5,7 +5,7 @@
 \title{Image regression}
 \usage{
 image_regression(input1, input2, output, out_residuals = NULL,
-  standardize = FALSE, verbose_mode = TRUE)
+  standardize = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file (independent variable, X).}

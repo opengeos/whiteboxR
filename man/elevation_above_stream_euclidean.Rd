@@ -5,7 +5,7 @@
 \title{Elevation above stream euclidean}
 \usage{
 elevation_above_stream_euclidean(dem, streams, output,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

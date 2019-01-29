@@ -5,7 +5,7 @@
 \title{Lidar remove outliers}
 \usage{
 lidar_remove_outliers(input, output, radius = 2, elev_diff = 50,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

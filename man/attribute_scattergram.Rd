@@ -5,7 +5,7 @@
 \title{Attribute scattergram}
 \usage{
 attribute_scattergram(input, fieldx, fieldy, output, trendline = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

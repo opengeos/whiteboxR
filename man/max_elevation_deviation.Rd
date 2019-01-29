@@ -5,7 +5,7 @@
 \title{Max elevation deviation}
 \usage{
 max_elevation_deviation(dem, out_mag, out_scale, min_scale, max_scale,
-  step = 1, verbose_mode = TRUE)
+  step = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

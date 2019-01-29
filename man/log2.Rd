@@ -4,7 +4,7 @@
 \alias{log2}
 \title{Log2}
 \usage{
-log2(input, output, verbose_mode = TRUE)
+log2(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

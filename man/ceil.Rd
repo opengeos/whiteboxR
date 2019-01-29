@@ -4,7 +4,7 @@
 \alias{ceil}
 \title{Ceil}
 \usage{
-ceil(input, output, verbose_mode = TRUE)
+ceil(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

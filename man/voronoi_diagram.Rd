@@ -4,7 +4,7 @@
 \alias{voronoi_diagram}
 \title{Voronoi diagram}
 \usage{
-voronoi_diagram(input, output, verbose_mode = TRUE)
+voronoi_diagram(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector points file.}

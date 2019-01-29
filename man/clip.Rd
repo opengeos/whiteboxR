@@ -4,7 +4,7 @@
 \alias{clip}
 \title{Clip}
 \usage{
-clip(input, clip, output, verbose_mode = TRUE)
+clip(input, clip, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

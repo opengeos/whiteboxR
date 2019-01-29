@@ -4,7 +4,7 @@
 \alias{aspect}
 \title{Aspect}
 \usage{
-aspect(dem, output, zfactor = 1, verbose_mode = TRUE)
+aspect(dem, output, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

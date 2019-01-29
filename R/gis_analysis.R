@@ -10,7 +10,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-aggregate_raster <- function(input, output, agg_factor=2, type="mean", verbose_mode=TRUE) {
+aggregate_raster <- function(input, output, agg_factor=2, type="mean", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -39,7 +39,7 @@ aggregate_raster <- function(input, output, agg_factor=2, type="mean", verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
@@ -72,7 +72,7 @@ block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
@@ -102,7 +102,7 @@ block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-centroid <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
+centroid <- function(input, output, text_output=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -124,7 +124,7 @@ centroid <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-centroid_vector <- function(input, output, verbose_mode=TRUE) {
+centroid_vector <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -145,7 +145,7 @@ centroid_vector <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=TRUE) {
+clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -172,7 +172,7 @@ clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose_mode=TRUE) {
+construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -199,7 +199,7 @@ construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-create_hexagonal_vector_grid <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
+create_hexagonal_vector_grid <- function(input, output, width, orientation="horizontal", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -225,7 +225,7 @@ create_hexagonal_vector_grid <- function(input, output, width, orientation="hori
 #'
 #' @return Returns the tool text outputs.
 #' @export
-create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=0.0, verbose_mode=TRUE) {
+create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=0.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--base=", base))
   args <- paste(args, paste0("--output=", output))
@@ -257,7 +257,7 @@ create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=0.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-create_rectangular_vector_grid <- function(input, output, width, height, xorig=0, yorig=0, verbose_mode=TRUE) {
+create_rectangular_vector_grid <- function(input, output, width, height, xorig=0, yorig=0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -286,7 +286,7 @@ create_rectangular_vector_grid <- function(input, output, width, height, xorig=0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-dissolve <- function(input, output, field=NULL, snap=0.0, verbose_mode=TRUE) {
+dissolve <- function(input, output, field=NULL, snap=0.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -312,7 +312,7 @@ dissolve <- function(input, output, field=NULL, snap=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-eliminate_coincident_points <- function(input, output, tolerance, verbose_mode=TRUE) {
+eliminate_coincident_points <- function(input, output, tolerance, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -334,7 +334,7 @@ eliminate_coincident_points <- function(input, output, tolerance, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-extend_vector_lines <- function(input, output, dist, extend="both ends", verbose_mode=TRUE) {
+extend_vector_lines <- function(input, output, dist, extend="both ends", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -357,7 +357,7 @@ extend_vector_lines <- function(input, output, dist, extend="both ends", verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-extract_nodes <- function(input, output, verbose_mode=TRUE) {
+extract_nodes <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -376,7 +376,7 @@ extract_nodes <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-extract_raster_values_at_points <- function(inputs, points, verbose_mode=TRUE) {
+extract_raster_values_at_points <- function(inputs, points, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--points=", points))
@@ -396,7 +396,7 @@ extract_raster_values_at_points <- function(inputs, points, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-find_lowest_or_highest_points <- function(input, output, out_type="lowest", verbose_mode=TRUE) {
+find_lowest_or_highest_points <- function(input, output, out_type="lowest", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -425,7 +425,7 @@ find_lowest_or_highest_points <- function(input, output, out_type="lowest", verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, radius=NULL, min_points=NULL, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, radius=NULL, min_points=NULL, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
@@ -463,7 +463,7 @@ idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, rad
 #'
 #' @return Returns the tool text outputs.
 #' @export
-layer_footprint <- function(input, output, verbose_mode=TRUE) {
+layer_footprint <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -482,7 +482,7 @@ layer_footprint <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-medoid <- function(input, output, verbose_mode=TRUE) {
+medoid <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -503,7 +503,7 @@ medoid <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-minimum_bounding_box <- function(input, output, criterion="area", features=TRUE, verbose_mode=TRUE) {
+minimum_bounding_box <- function(input, output, criterion="area", features=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -529,7 +529,7 @@ minimum_bounding_box <- function(input, output, criterion="area", features=TRUE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=TRUE) {
+minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -552,7 +552,7 @@ minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode=TRUE) {
+minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -575,7 +575,7 @@ minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=TRUE) {
+minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -602,7 +602,7 @@ minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, max_dist=NULL, verbose_mode=TRUE) {
+nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_size=NULL, base=NULL, max_dist=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
@@ -633,7 +633,7 @@ nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #'
 #' @return Returns the tool text outputs.
 #' @export
-polygon_area <- function(input, verbose_mode=TRUE) {
+polygon_area <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -651,7 +651,7 @@ polygon_area <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-polygon_long_axis <- function(input, output, verbose_mode=TRUE) {
+polygon_long_axis <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -669,7 +669,7 @@ polygon_long_axis <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-polygon_perimeter <- function(input, verbose_mode=TRUE) {
+polygon_perimeter <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -687,7 +687,7 @@ polygon_perimeter <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-polygon_short_axis <- function(input, output, verbose_mode=TRUE) {
+polygon_short_axis <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -707,7 +707,7 @@ polygon_short_axis <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-raster_cell_assignment <- function(input, output, assign="column", verbose_mode=TRUE) {
+raster_cell_assignment <- function(input, output, assign="column", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -731,7 +731,7 @@ raster_cell_assignment <- function(input, output, assign="column", verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode=TRUE) {
+reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -757,7 +757,7 @@ reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-reclass_equal_interval <- function(input, output, interval=10.0, start_val=NULL, end_val=NULL, verbose_mode=TRUE) {
+reclass_equal_interval <- function(input, output, interval=10.0, start_val=NULL, end_val=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -786,7 +786,7 @@ reclass_equal_interval <- function(input, output, interval=10.0, start_val=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-reclass_from_file <- function(input, reclass_file, output, verbose_mode=TRUE) {
+reclass_from_file <- function(input, reclass_file, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--reclass_file=", reclass_file))
@@ -807,7 +807,7 @@ reclass_from_file <- function(input, reclass_file, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-smooth_vectors <- function(input, output, filter=3, verbose_mode=TRUE) {
+smooth_vectors <- function(input, output, filter=3, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -832,7 +832,7 @@ smooth_vectors <- function(input, output, filter=3, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, verbose_mode=TRUE) {
+tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -860,7 +860,7 @@ tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-vector_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=TRUE) {
+vector_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -883,7 +883,7 @@ vector_hex_binning <- function(input, output, width, orientation="horizontal", v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-voronoi_diagram <- function(input, output, verbose_mode=TRUE) {
+voronoi_diagram <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -904,7 +904,7 @@ voronoi_diagram <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=TRUE) {
+buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -928,7 +928,7 @@ buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=TRU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-cost_allocation <- function(source, backlink, output, verbose_mode=TRUE) {
+cost_allocation <- function(source, backlink, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--source=", source))
   args <- paste(args, paste0("--backlink=", backlink))
@@ -950,7 +950,7 @@ cost_allocation <- function(source, backlink, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-cost_distance <- function(source, cost, out_accum, out_backlink, verbose_mode=TRUE) {
+cost_distance <- function(source, cost, out_accum, out_backlink, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--source=", source))
   args <- paste(args, paste0("--cost=", cost))
@@ -973,7 +973,7 @@ cost_distance <- function(source, cost, out_accum, out_backlink, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-cost_pathway <- function(destination, backlink, output, zero_background=FALSE, verbose_mode=TRUE) {
+cost_pathway <- function(destination, backlink, output, zero_background=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--destination=", destination))
   args <- paste(args, paste0("--backlink=", backlink))
@@ -996,7 +996,7 @@ cost_pathway <- function(destination, backlink, output, zero_background=FALSE, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-euclidean_allocation <- function(input, output, verbose_mode=TRUE) {
+euclidean_allocation <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -1015,7 +1015,7 @@ euclidean_allocation <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-euclidean_distance <- function(input, output, verbose_mode=TRUE) {
+euclidean_distance <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -1034,7 +1034,7 @@ euclidean_distance <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-average_overlay <- function(inputs, output, verbose_mode=TRUE) {
+average_overlay <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1054,7 +1054,7 @@ average_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-clip <- function(input, clip, output, verbose_mode=TRUE) {
+clip <- function(input, clip, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--clip=", clip))
@@ -1076,7 +1076,7 @@ clip <- function(input, clip, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=FALSE, verbose_mode=TRUE) {
+clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--polygons=", polygons))
@@ -1100,7 +1100,7 @@ clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-count_if <- function(inputs, output, value, verbose_mode=TRUE) {
+count_if <- function(inputs, output, value, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1121,7 +1121,7 @@ count_if <- function(inputs, output, value, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-difference <- function(input, overlay, output, verbose_mode=TRUE) {
+difference <- function(input, overlay, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--overlay=", overlay))
@@ -1142,7 +1142,7 @@ difference <- function(input, overlay, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-erase <- function(input, erase, output, verbose_mode=TRUE) {
+erase <- function(input, erase, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--erase=", erase))
@@ -1163,7 +1163,7 @@ erase <- function(input, erase, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-erase_polygon_from_raster <- function(input, polygons, output, verbose_mode=TRUE) {
+erase_polygon_from_raster <- function(input, polygons, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--polygons=", polygons))
@@ -1183,7 +1183,7 @@ erase_polygon_from_raster <- function(input, polygons, output, verbose_mode=TRUE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-highest_position <- function(inputs, output, verbose_mode=TRUE) {
+highest_position <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1204,7 +1204,7 @@ highest_position <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-intersect <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
+intersect <- function(input, overlay, output, snap=0.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--overlay=", overlay))
@@ -1228,7 +1228,7 @@ intersect <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-line_intersections <- function(input1, input2, output, verbose_mode=TRUE) {
+line_intersections <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
@@ -1248,7 +1248,7 @@ line_intersections <- function(input1, input2, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lowest_position <- function(inputs, output, verbose_mode=TRUE) {
+lowest_position <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1267,7 +1267,7 @@ lowest_position <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
+max_absolute_overlay <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1286,7 +1286,7 @@ max_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_overlay <- function(inputs, output, verbose_mode=TRUE) {
+max_overlay <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1305,7 +1305,7 @@ max_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-min_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
+min_absolute_overlay <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1324,7 +1324,7 @@ min_absolute_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-min_overlay <- function(inputs, output, verbose_mode=TRUE) {
+min_overlay <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1344,7 +1344,7 @@ min_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percent_equal_to <- function(inputs, comparison, output, verbose_mode=TRUE) {
+percent_equal_to <- function(inputs, comparison, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--comparison=", comparison))
@@ -1365,7 +1365,7 @@ percent_equal_to <- function(inputs, comparison, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percent_greater_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
+percent_greater_than <- function(inputs, comparison, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--comparison=", comparison))
@@ -1386,7 +1386,7 @@ percent_greater_than <- function(inputs, comparison, output, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percent_less_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
+percent_less_than <- function(inputs, comparison, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--comparison=", comparison))
@@ -1407,7 +1407,7 @@ percent_less_than <- function(inputs, comparison, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-pick_from_list <- function(inputs, pos_input, output, verbose_mode=TRUE) {
+pick_from_list <- function(inputs, pos_input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--pos_input=", pos_input))
@@ -1427,7 +1427,7 @@ pick_from_list <- function(inputs, pos_input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-polygonize <- function(inputs, output, verbose_mode=TRUE) {
+polygonize <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1447,7 +1447,7 @@ polygonize <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-split_with_lines <- function(input, split, output, verbose_mode=TRUE) {
+split_with_lines <- function(input, split, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--split=", split))
@@ -1467,7 +1467,7 @@ split_with_lines <- function(input, split, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-sum_overlay <- function(inputs, output, verbose_mode=TRUE) {
+sum_overlay <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -1488,7 +1488,7 @@ sum_overlay <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-symmetrical_difference <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
+symmetrical_difference <- function(input, overlay, output, snap=0.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--overlay=", overlay))
@@ -1513,7 +1513,7 @@ symmetrical_difference <- function(input, overlay, output, snap=0.0, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-union <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
+union <- function(input, overlay, output, snap=0.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--overlay=", overlay))
@@ -1540,7 +1540,7 @@ union <- function(input, overlay, output, snap=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-weighted_overlay <- function(factors, weights, output, cost=NULL, constraints=NULL, scale_max=1.0, verbose_mode=TRUE) {
+weighted_overlay <- function(factors, weights, output, cost=NULL, constraints=NULL, scale_max=1.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--factors=", factors))
   args <- paste(args, paste0("--weights=", weights))
@@ -1570,7 +1570,7 @@ weighted_overlay <- function(factors, weights, output, cost=NULL, constraints=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-weighted_sum <- function(inputs, weights, output, verbose_mode=TRUE) {
+weighted_sum <- function(inputs, weights, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--weights=", weights))
@@ -1589,7 +1589,7 @@ weighted_sum <- function(inputs, weights, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-compactness_ratio <- function(input, verbose_mode=TRUE) {
+compactness_ratio <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1608,7 +1608,7 @@ compactness_ratio <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=TRUE) {
+edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -1629,7 +1629,7 @@ edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=TRUE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-elongation_ratio <- function(input, verbose_mode=TRUE) {
+elongation_ratio <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1647,7 +1647,7 @@ elongation_ratio <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-find_patch_or_class_edge_cells <- function(input, output, verbose_mode=TRUE) {
+find_patch_or_class_edge_cells <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -1665,7 +1665,7 @@ find_patch_or_class_edge_cells <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-hole_proportion <- function(input, verbose_mode=TRUE) {
+hole_proportion <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1682,7 +1682,7 @@ hole_proportion <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-linearity_index <- function(input, verbose_mode=TRUE) {
+linearity_index <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1699,7 +1699,7 @@ linearity_index <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-patch_orientation <- function(input, verbose_mode=TRUE) {
+patch_orientation <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1716,7 +1716,7 @@ patch_orientation <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-perimeter_area_ratio <- function(input, verbose_mode=TRUE) {
+perimeter_area_ratio <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1735,7 +1735,7 @@ perimeter_area_ratio <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=TRUE) {
+radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -1756,7 +1756,7 @@ radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-related_circumscribing_circle <- function(input, verbose_mode=TRUE) {
+related_circumscribing_circle <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -1773,7 +1773,7 @@ related_circumscribing_circle <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-shape_complexity_index <- function(input, verbose_mode=TRUE) {
+shape_complexity_index <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]

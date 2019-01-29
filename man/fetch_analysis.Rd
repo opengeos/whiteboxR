@@ -5,7 +5,7 @@
 \title{Fetch analysis}
 \usage{
 fetch_analysis(dem, output, azimuth = 0, hgt_inc = 0.05,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

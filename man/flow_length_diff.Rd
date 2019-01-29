@@ -5,7 +5,7 @@
 \title{Flow length diff}
 \usage{
 flow_length_diff(d8_pntr, output, esri_pntr = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

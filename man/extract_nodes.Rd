@@ -4,7 +4,7 @@
 \alias{extract_nodes}
 \title{Extract nodes}
 \usage{
-extract_nodes(input, output, verbose_mode = TRUE)
+extract_nodes(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector lines or polygon file.}

@@ -5,7 +5,7 @@
 \title{Mosaic with feathering}
 \usage{
 mosaic_with_feathering(input1, input2, output, method = "cc",
-  weight = 4, verbose_mode = TRUE)
+  weight = 4, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file to modify.}

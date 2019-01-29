@@ -4,7 +4,7 @@
 \alias{remove_polygon_holes}
 \title{Remove polygon holes}
 \usage{
-remove_polygon_holes(input, output, verbose_mode = TRUE)
+remove_polygon_holes(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

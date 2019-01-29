@@ -5,7 +5,7 @@
 \title{Remove short streams}
 \usage{
 remove_short_streams(d8_pntr, streams, output, min_length,
-  esri_pntr = FALSE, verbose_mode = TRUE)
+  esri_pntr = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

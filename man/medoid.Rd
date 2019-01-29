@@ -4,7 +4,7 @@
 \alias{medoid}
 \title{Medoid}
 \usage{
-medoid(input, output, verbose_mode = TRUE)
+medoid(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

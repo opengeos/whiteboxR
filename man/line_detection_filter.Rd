@@ -5,7 +5,7 @@
 \title{Line detection filter}
 \usage{
 line_detection_filter(input, output, variant = "vertical",
-  absvals = FALSE, clip = 0, verbose_mode = TRUE)
+  absvals = FALSE, clip = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

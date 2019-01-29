@@ -5,7 +5,7 @@
 \title{Topological stream order}
 \usage{
 topological_stream_order(d8_pntr, streams, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = TRUE)
+  zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

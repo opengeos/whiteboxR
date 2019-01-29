@@ -4,7 +4,7 @@
 \alias{lidar_join}
 \title{Lidar join}
 \usage{
-lidar_join(inputs, output, verbose_mode = TRUE)
+lidar_join(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input LiDAR files.}

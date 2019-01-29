@@ -4,7 +4,7 @@
 \alias{exp2}
 \title{Exp2}
 \usage{
-exp2(input, output, verbose_mode = TRUE)
+exp2(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

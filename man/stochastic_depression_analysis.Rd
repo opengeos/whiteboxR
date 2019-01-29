@@ -5,7 +5,7 @@
 \title{Stochastic depression analysis}
 \usage{
 stochastic_depression_analysis(dem, output, rmse, range,
-  iterations = 1000, verbose_mode = TRUE)
+  iterations = 1000, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -5,7 +5,7 @@
 \title{Relative stream power index}
 \usage{
 relative_stream_power_index(sca, slope, output, exponent = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}

@@ -4,7 +4,7 @@
 \alias{extract_raster_values_at_points}
 \title{Extract raster values at points}
 \usage{
-extract_raster_values_at_points(inputs, points, verbose_mode = TRUE)
+extract_raster_values_at_points(inputs, points, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

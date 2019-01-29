@@ -5,7 +5,7 @@
 \title{Extend vector lines}
 \usage{
 extend_vector_lines(input, output, dist, extend = "both ends",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polyline file.}

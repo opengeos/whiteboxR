@@ -5,7 +5,7 @@
 \title{Conservative smoothing filter}
 \usage{
 conservative_smoothing_filter(input, output, filterx = 3, filtery = 3,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

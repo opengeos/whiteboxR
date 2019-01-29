@@ -5,7 +5,7 @@
 \title{Aggregate raster}
 \usage{
 aggregate_raster(input, output, agg_factor = 2, type = "mean",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

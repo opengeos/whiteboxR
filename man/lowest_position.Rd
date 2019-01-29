@@ -4,7 +4,7 @@
 \alias{lowest_position}
 \title{Lowest position}
 \usage{
-lowest_position(inputs, output, verbose_mode = TRUE)
+lowest_position(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

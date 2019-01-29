@@ -4,7 +4,7 @@
 \alias{find_parallel_flow}
 \title{Find parallel flow}
 \usage{
-find_parallel_flow(d8_pntr, streams, output, verbose_mode = TRUE)
+find_parallel_flow(d8_pntr, streams, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

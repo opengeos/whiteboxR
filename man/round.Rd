@@ -4,7 +4,7 @@
 \alias{round}
 \title{Round}
 \usage{
-round(input, output, verbose_mode = TRUE)
+round(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,7 +4,7 @@
 \alias{average_flowpath_slope}
 \title{Average flowpath slope}
 \usage{
-average_flowpath_slope(dem, output, verbose_mode = TRUE)
+average_flowpath_slope(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

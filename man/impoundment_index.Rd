@@ -5,7 +5,7 @@
 \title{Impoundment index}
 \usage{
 impoundment_index(dem, output, damlength, out_type = "depth",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

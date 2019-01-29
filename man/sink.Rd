@@ -4,7 +4,7 @@
 \alias{sink}
 \title{Sink}
 \usage{
-sink(dem, output, zero_background = FALSE, verbose_mode = TRUE)
+sink(dem, output, zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

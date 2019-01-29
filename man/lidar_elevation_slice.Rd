@@ -6,7 +6,7 @@
 \usage{
 lidar_elevation_slice(input, output, minz = NULL, maxz = NULL,
   cls = FALSE, inclassval = 2, outclassval = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

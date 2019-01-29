@@ -4,7 +4,7 @@
 \alias{intersect}
 \title{Intersect}
 \usage{
-intersect(input, overlay, output, snap = 0, verbose_mode = TRUE)
+intersect(input, overlay, output, snap = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

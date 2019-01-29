@@ -4,7 +4,7 @@
 \alias{raster_histogram}
 \title{Raster histogram}
 \usage{
-raster_histogram(input, output, verbose_mode = TRUE)
+raster_histogram(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

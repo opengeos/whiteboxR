@@ -5,7 +5,7 @@
 \title{Max difference from mean}
 \usage{
 max_difference_from_mean(dem, out_mag, out_scale, min_scale, max_scale,
-  step = 1, verbose_mode = TRUE)
+  step = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

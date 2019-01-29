@@ -4,7 +4,7 @@
 \alias{merge_vectors}
 \title{Merge vectors}
 \usage{
-merge_vectors(inputs, output, verbose_mode = TRUE)
+merge_vectors(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input vector files.}

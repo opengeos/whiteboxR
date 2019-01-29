@@ -4,7 +4,7 @@
 \alias{quantiles}
 \title{Quantiles}
 \usage{
-quantiles(input, output, num_quantiles = 5, verbose_mode = TRUE)
+quantiles(input, output, num_quantiles = 5, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,7 +4,7 @@
 \alias{not_equal_to}
 \title{Not equal to}
 \usage{
-not_equal_to(input1, input2, output, verbose_mode = TRUE)
+not_equal_to(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

@@ -5,7 +5,7 @@
 \title{New raster from base}
 \usage{
 new_raster_from_base(base, output, value = "nodata",
-  data_type = "float", verbose_mode = TRUE)
+  data_type = "float", verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input base raster file.}

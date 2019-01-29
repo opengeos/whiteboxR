@@ -4,7 +4,7 @@
 \alias{las_to_ascii}
 \title{Las to ascii}
 \usage{
-las_to_ascii(inputs, verbose_mode = TRUE)
+las_to_ascii(inputs, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input LiDAR files.}

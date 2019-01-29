@@ -4,7 +4,7 @@
 \alias{sin}
 \title{Sin}
 \usage{
-sin(input, output, verbose_mode = TRUE)
+sin(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

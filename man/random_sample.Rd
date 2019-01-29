@@ -4,7 +4,7 @@
 \alias{random_sample}
 \title{Random sample}
 \usage{
-random_sample(base, output, num_samples = 1000, verbose_mode = TRUE)
+random_sample(base, output, num_samples = 1000, verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input raster file.}

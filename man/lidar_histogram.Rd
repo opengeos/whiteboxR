@@ -5,7 +5,7 @@
 \title{Lidar histogram}
 \usage{
 lidar_histogram(input, output, parameter = "elevation", clip = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

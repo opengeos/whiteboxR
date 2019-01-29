@@ -5,7 +5,7 @@
 \title{D8 mass flux}
 \usage{
 d8_mass_flux(dem, loading, efficiency, absorption, output,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

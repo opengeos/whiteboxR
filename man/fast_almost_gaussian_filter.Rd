@@ -5,7 +5,7 @@
 \title{Fast almost gaussian filter}
 \usage{
 fast_almost_gaussian_filter(input, output, sigma = 1.8,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

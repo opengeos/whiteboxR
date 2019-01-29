@@ -5,7 +5,7 @@
 \title{Principal component analysis}
 \usage{
 principal_component_analysis(inputs, out_html, num_comp = NULL,
-  standardized = FALSE, verbose_mode = TRUE)
+  standardized = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

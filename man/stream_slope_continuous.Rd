@@ -5,7 +5,7 @@
 \title{Stream slope continuous}
 \usage{
 stream_slope_continuous(d8_pntr, streams, dem, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = TRUE)
+  zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

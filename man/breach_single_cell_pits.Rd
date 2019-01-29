@@ -4,7 +4,7 @@
 \alias{breach_single_cell_pits}
 \title{Breach single cell pits}
 \usage{
-breach_single_cell_pits(dem, output, verbose_mode = TRUE)
+breach_single_cell_pits(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

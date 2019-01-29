@@ -5,7 +5,7 @@
 \title{Unsharp masking}
 \usage{
 unsharp_masking(input, output, sigma = 0.75, amount = 100,
-  threshold = 0, verbose_mode = TRUE)
+  threshold = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

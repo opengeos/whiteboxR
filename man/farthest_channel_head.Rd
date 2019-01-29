@@ -5,7 +5,7 @@
 \title{Farthest channel head}
 \usage{
 farthest_channel_head(d8_pntr, streams, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = TRUE)
+  zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

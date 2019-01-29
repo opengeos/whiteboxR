@@ -6,7 +6,7 @@
 \usage{
 panchromatic_sharpening(pan, output, red = NULL, green = NULL,
   blue = NULL, composite = NULL, method = "brovey",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{pan}{Input panchromatic band file.}

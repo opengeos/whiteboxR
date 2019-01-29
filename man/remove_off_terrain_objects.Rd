@@ -5,7 +5,7 @@
 \title{Remove off terrain objects}
 \usage{
 remove_off_terrain_objects(dem, output, filter = 11, slope = 15,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

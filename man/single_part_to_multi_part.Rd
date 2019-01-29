@@ -5,7 +5,7 @@
 \title{Single part to multi part}
 \usage{
 single_part_to_multi_part(input, output, field = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector line or polygon file.}

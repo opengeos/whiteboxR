@@ -4,7 +4,7 @@
 \alias{subtract}
 \title{Subtract}
 \usage{
-subtract(input1, input2, output, verbose_mode = TRUE)
+subtract(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

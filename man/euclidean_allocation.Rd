@@ -4,7 +4,7 @@
 \alias{euclidean_allocation}
 \title{Euclidean allocation}
 \usage{
-euclidean_allocation(input, output, verbose_mode = TRUE)
+euclidean_allocation(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

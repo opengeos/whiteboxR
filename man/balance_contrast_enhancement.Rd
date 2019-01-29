@@ -5,7 +5,7 @@
 \title{Balance contrast enhancement}
 \usage{
 balance_contrast_enhancement(input, output, band_mean = 100,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input colour composite image file.}

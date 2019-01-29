@@ -5,7 +5,7 @@
 \title{Flightline overlap}
 \usage{
 flightline_overlap(input, output = NULL, resolution = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

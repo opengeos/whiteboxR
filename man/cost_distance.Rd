@@ -4,7 +4,8 @@
 \alias{cost_distance}
 \title{Cost distance}
 \usage{
-cost_distance(source, cost, out_accum, out_backlink, verbose_mode = TRUE)
+cost_distance(source, cost, out_accum, out_backlink,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{source}{Input source raster file.}

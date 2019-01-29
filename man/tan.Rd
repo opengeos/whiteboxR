@@ -4,7 +4,7 @@
 \alias{tan}
 \title{Tan}
 \usage{
-tan(input, output, verbose_mode = TRUE)
+tan(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

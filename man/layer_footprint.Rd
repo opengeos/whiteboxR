@@ -4,7 +4,7 @@
 \alias{layer_footprint}
 \title{Layer footprint}
 \usage{
-layer_footprint(input, output, verbose_mode = TRUE)
+layer_footprint(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster or vector file.}

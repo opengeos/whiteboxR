@@ -4,7 +4,7 @@
 \alias{elev_relative_to_min_max}
 \title{Elev relative to min max}
 \usage{
-elev_relative_to_min_max(dem, output, verbose_mode = TRUE)
+elev_relative_to_min_max(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

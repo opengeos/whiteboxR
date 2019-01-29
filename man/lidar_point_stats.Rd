@@ -6,7 +6,7 @@
 \usage{
 lidar_point_stats(input, resolution = 1, num_points = TRUE,
   num_pulses = FALSE, z_range = FALSE, intensity_range = FALSE,
-  predom_class = FALSE, verbose_mode = TRUE)
+  predom_class = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

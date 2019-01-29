@@ -4,7 +4,7 @@
 \alias{union}
 \title{Union}
 \usage{
-union(input, overlay, output, snap = 0, verbose_mode = TRUE)
+union(input, overlay, output, snap = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

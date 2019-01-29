@@ -4,7 +4,7 @@
 \alias{integer_division}
 \title{Integer division}
 \usage{
-integer_division(input1, input2, output, verbose_mode = TRUE)
+integer_division(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

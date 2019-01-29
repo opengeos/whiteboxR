@@ -4,7 +4,7 @@
 \alias{pick_from_list}
 \title{Pick from list}
 \usage{
-pick_from_list(inputs, pos_input, output, verbose_mode = TRUE)
+pick_from_list(inputs, pos_input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

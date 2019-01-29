@@ -4,7 +4,7 @@
 \alias{convert_raster_format}
 \title{Convert raster format}
 \usage{
-convert_raster_format(input, output, verbose_mode = TRUE)
+convert_raster_format(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

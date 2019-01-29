@@ -9,7 +9,7 @@ def function_header(line):
         line = line.replace("self, i=None,", "input,")
         line = line.replace("self, output, i=None,", "input, output,")
         line = line.replace("self, ", "")
-        line = line.replace("callback=None", "verbose_mode=TRUE")
+        line = line.replace("callback=None", "verbose_mode=FALSE")
         line = line.replace("False", "FALSE")
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")

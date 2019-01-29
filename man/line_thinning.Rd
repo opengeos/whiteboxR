@@ -4,7 +4,7 @@
 \alias{line_thinning}
 \title{Line thinning}
 \usage{
-line_thinning(input, output, verbose_mode = TRUE)
+line_thinning(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

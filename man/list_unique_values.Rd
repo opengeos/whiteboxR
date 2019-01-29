@@ -4,7 +4,7 @@
 \alias{list_unique_values}
 \title{List unique values}
 \usage{
-list_unique_values(input, field, output, verbose_mode = TRUE)
+list_unique_values(input, field, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

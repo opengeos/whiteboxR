@@ -4,7 +4,7 @@
 \alias{polygon_perimeter}
 \title{Polygon perimeter}
 \usage{
-polygon_perimeter(input, verbose_mode = TRUE)
+polygon_perimeter(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

@@ -4,7 +4,7 @@
 \alias{add_point_coordinates_to_table}
 \title{Add point coordinates to table}
 \usage{
-add_point_coordinates_to_table(input, verbose_mode = TRUE)
+add_point_coordinates_to_table(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector Points file.}

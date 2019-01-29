@@ -5,7 +5,7 @@
 \title{Change vector analysis}
 \usage{
 change_vector_analysis(date1, date2, magnitude, direction,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{date1}{Input raster files for the earlier date.}

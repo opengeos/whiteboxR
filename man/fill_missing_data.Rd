@@ -5,7 +5,7 @@
 \title{Fill missing data}
 \usage{
 fill_missing_data(input, output, filter = 11, weight = 2,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

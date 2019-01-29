@@ -5,7 +5,7 @@
 \title{Standard deviation contrast stretch}
 \usage{
 standard_deviation_contrast_stretch(input, output, stdev = 2,
-  num_tones = 256, verbose_mode = TRUE)
+  num_tones = 256, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

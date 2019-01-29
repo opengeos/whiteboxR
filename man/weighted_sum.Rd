@@ -4,7 +4,7 @@
 \alias{weighted_sum}
 \title{Weighted sum}
 \usage{
-weighted_sum(inputs, weights, output, verbose_mode = TRUE)
+weighted_sum(inputs, weights, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

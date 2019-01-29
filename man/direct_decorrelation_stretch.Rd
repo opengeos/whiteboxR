@@ -5,7 +5,7 @@
 \title{Direct decorrelation stretch}
 \usage{
 direct_decorrelation_stretch(input, output, k = 0.5, clip = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input colour composite image file.}

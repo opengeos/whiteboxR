@@ -4,7 +4,7 @@
 \alias{centroid}
 \title{Centroid}
 \usage{
-centroid(input, output, text_output = FALSE, verbose_mode = TRUE)
+centroid(input, output, text_output = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

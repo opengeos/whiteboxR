@@ -4,7 +4,7 @@
 \alias{highest_position}
 \title{Highest position}
 \usage{
-highest_position(inputs, output, verbose_mode = TRUE)
+highest_position(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

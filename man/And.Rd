@@ -4,7 +4,7 @@
 \alias{And}
 \title{And}
 \usage{
-And(input1, input2, output, verbose_mode = TRUE)
+And(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file.}

@@ -5,7 +5,7 @@
 \title{Reclass equal interval}
 \usage{
 reclass_equal_interval(input, output, interval = 10, start_val = NULL,
-  end_val = NULL, verbose_mode = TRUE)
+  end_val = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

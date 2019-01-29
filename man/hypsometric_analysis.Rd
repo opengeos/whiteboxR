@@ -5,7 +5,7 @@
 \title{Hypsometric analysis}
 \usage{
 hypsometric_analysis(inputs, output, watershed = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input DEM files.}

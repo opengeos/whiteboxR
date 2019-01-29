@@ -4,7 +4,7 @@
 \alias{find_flightline_edge_points}
 \title{Find flightline edge points}
 \usage{
-find_flightline_edge_points(input, output, verbose_mode = TRUE)
+find_flightline_edge_points(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

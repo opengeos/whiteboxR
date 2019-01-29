@@ -5,7 +5,7 @@
 \title{Range filter}
 \usage{
 range_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

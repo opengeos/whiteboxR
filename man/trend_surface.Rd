@@ -4,7 +4,7 @@
 \alias{trend_surface}
 \title{Trend surface}
 \usage{
-trend_surface(input, output, order = 1, verbose_mode = TRUE)
+trend_surface(input, output, order = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

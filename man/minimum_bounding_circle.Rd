@@ -5,7 +5,7 @@
 \title{Minimum bounding circle}
 \usage{
 minimum_bounding_circle(input, output, features = TRUE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

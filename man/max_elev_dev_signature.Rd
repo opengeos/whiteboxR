@@ -5,7 +5,7 @@
 \title{Max elev dev signature}
 \usage{
 max_elev_dev_signature(dem, points, output, min_scale, max_scale,
-  step = 10, verbose_mode = TRUE)
+  step = 10, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

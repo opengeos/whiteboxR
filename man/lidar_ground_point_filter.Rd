@@ -6,7 +6,7 @@
 \usage{
 lidar_ground_point_filter(input, output, radius = 2,
   min_neighbours = 0, slope_threshold = 45, height_threshold = 1,
-  classify = TRUE, slope_norm = TRUE, verbose_mode = TRUE)
+  classify = TRUE, slope_norm = TRUE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

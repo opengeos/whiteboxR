@@ -5,7 +5,7 @@
 \title{Elev percentile}
 \usage{
 elev_percentile(dem, output, filterx = 11, filtery = 11,
-  sig_digits = 2, verbose_mode = TRUE)
+  sig_digits = 2, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

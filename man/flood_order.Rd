@@ -4,7 +4,7 @@
 \alias{flood_order}
 \title{Flood order}
 \usage{
-flood_order(dem, output, verbose_mode = TRUE)
+flood_order(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

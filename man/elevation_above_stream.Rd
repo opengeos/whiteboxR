@@ -4,7 +4,7 @@
 \alias{elevation_above_stream}
 \title{Elevation above stream}
 \usage{
-elevation_above_stream(dem, streams, output, verbose_mode = TRUE)
+elevation_above_stream(dem, streams, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

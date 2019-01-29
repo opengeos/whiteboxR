@@ -4,7 +4,7 @@
 \alias{line_intersections}
 \title{Line intersections}
 \usage{
-line_intersections(input1, input2, output, verbose_mode = TRUE)
+line_intersections(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input vector polyline file.}

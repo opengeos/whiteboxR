@@ -4,7 +4,7 @@
 \alias{Or}
 \title{Or}
 \usage{
-Or(input1, input2, output, verbose_mode = TRUE)
+Or(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file.}

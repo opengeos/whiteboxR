@@ -4,7 +4,7 @@
 \alias{cost_allocation}
 \title{Cost allocation}
 \usage{
-cost_allocation(source, backlink, output, verbose_mode = TRUE)
+cost_allocation(source, backlink, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{source}{Input source raster file.}

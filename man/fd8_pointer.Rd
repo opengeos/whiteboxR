@@ -4,7 +4,7 @@
 \alias{fd8_pointer}
 \title{Fd8 pointer}
 \usage{
-fd8_pointer(dem, output, verbose_mode = TRUE)
+fd8_pointer(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

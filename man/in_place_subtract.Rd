@@ -4,7 +4,7 @@
 \alias{in_place_subtract}
 \title{In place subtract}
 \usage{
-in_place_subtract(input1, input2, verbose_mode = TRUE)
+in_place_subtract(input1, input2, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file.}

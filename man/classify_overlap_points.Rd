@@ -5,7 +5,7 @@
 \title{Classify overlap points}
 \usage{
 classify_overlap_points(input, output, resolution = 2, filter = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

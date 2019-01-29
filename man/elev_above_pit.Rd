@@ -4,7 +4,7 @@
 \alias{elev_above_pit}
 \title{Elev above pit}
 \usage{
-elev_above_pit(dem, output, verbose_mode = TRUE)
+elev_above_pit(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

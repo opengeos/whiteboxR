@@ -4,7 +4,7 @@
 \alias{corner_detection}
 \title{Corner detection}
 \usage{
-corner_detection(input, output, verbose_mode = TRUE)
+corner_detection(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input boolean image.}

@@ -4,7 +4,7 @@
 \alias{polygonize}
 \title{Polygonize}
 \usage{
-polygonize(inputs, output, verbose_mode = TRUE)
+polygonize(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input vector polyline file.}

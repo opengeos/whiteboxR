@@ -5,7 +5,7 @@
 \title{Minimum bounding box}
 \usage{
 minimum_bounding_box(input, output, criterion = "area",
-  features = TRUE, verbose_mode = TRUE)
+  features = TRUE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

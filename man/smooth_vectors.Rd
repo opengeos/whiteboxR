@@ -4,7 +4,7 @@
 \alias{smooth_vectors}
 \title{Smooth vectors}
 \usage{
-smooth_vectors(input, output, filter = 3, verbose_mode = TRUE)
+smooth_vectors(input, output, filter = 3, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector POLYLINE or POLYGON file.}

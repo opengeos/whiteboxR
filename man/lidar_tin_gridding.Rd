@@ -6,7 +6,7 @@
 \usage{
 lidar_tin_gridding(input, output = NULL, parameter = "elevation",
   returns = "all", resolution = 1, exclude_cls = NULL, minz = NULL,
-  maxz = NULL, verbose_mode = TRUE)
+  maxz = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

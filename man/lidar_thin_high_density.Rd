@@ -5,7 +5,7 @@
 \title{Lidar thin high density}
 \usage{
 lidar_thin_high_density(input, output, density, resolution = 1,
-  save_filtered = FALSE, verbose_mode = TRUE)
+  save_filtered = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

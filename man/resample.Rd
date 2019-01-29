@@ -4,7 +4,7 @@
 \alias{resample}
 \title{Resample}
 \usage{
-resample(inputs, destination, method = "cc", verbose_mode = TRUE)
+resample(inputs, destination, method = "cc", verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

@@ -5,7 +5,7 @@
 \title{Extract raster statistics}
 \usage{
 extract_raster_statistics(input, features, output = NULL,
-  stat = "average", out_table = NULL, verbose_mode = TRUE)
+  stat = "average", out_table = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input data raster file.}

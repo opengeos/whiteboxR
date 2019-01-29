@@ -5,7 +5,7 @@
 \title{Emboss filter}
 \usage{
 emboss_filter(input, output, direction = "n", clip = 0,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

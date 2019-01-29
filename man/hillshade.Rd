@@ -5,7 +5,7 @@
 \title{Hillshade}
 \usage{
 hillshade(dem, output, azimuth = 315, altitude = 30, zfactor = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

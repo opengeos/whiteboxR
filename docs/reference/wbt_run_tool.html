@@ -125,7 +125,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_run_tool</span>(<span class='no'>tool_name</span>, <span class='no'>args</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>wbt_run_tool</span>(<span class='no'>tool_name</span>, <span class='no'>args</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,61 +156,7 @@
 <span class='no'>arg1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste0</a></span>(<span class='st'>"--dem="</span>, <span class='no'>dem</span>)
 <span class='no'>arg2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste0</a></span>(<span class='st'>"--output="</span>, <span class='no'>output</span>)
 <span class='no'>args</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste</a></span>(<span class='no'>arg1</span>, <span class='no'>arg2</span>)
-<span class='fu'>wbt_run_tool</span>(<span class='no'>tool_name</span>, <span class='no'>args</span>)</div><div class='output co'>#&gt;   [1] "********************************"   "* Welcome to BreachDepressions *"  
-#&gt;   [3] "********************************"   "Reading data..."                   
-#&gt;   [5] "progress: 0%"                       "progress: 1%"                      
-#&gt;   [7] "Progress: 2%"                       "Progress: 3%"                      
-#&gt;   [9] "Progress: 4%"                       "Progress: 5%"                      
-#&gt;  [11] "Progress: 6%"                       "Progress: 7%"                      
-#&gt;  [13] "Progress: 8%"                       "Progress: 9%"                      
-#&gt;  [15] "Progress: 10%"                      "Progress: 11%"                     
-#&gt;  [17] "Progress: 12%"                      "Progress: 13%"                     
-#&gt;  [19] "Progress: 14%"                      "Progress: 15%"                     
-#&gt;  [21] "Progress: 16%"                      "Progress: 17%"                     
-#&gt;  [23] "Progress: 18%"                      "Progress: 19%"                     
-#&gt;  [25] "Progress: 20%"                      "Progress: 21%"                     
-#&gt;  [27] "Progress: 22%"                      "Progress: 23%"                     
-#&gt;  [29] "Progress: 24%"                      "Progress: 25%"                     
-#&gt;  [31] "Progress: 26%"                      "Progress: 27%"                     
-#&gt;  [33] "Progress: 28%"                      "Progress: 29%"                     
-#&gt;  [35] "Progress: 30%"                      "Progress: 31%"                     
-#&gt;  [37] "Progress: 32%"                      "Progress: 33%"                     
-#&gt;  [39] "Progress: 34%"                      "Progress: 35%"                     
-#&gt;  [41] "Progress: 36%"                      "Progress: 37%"                     
-#&gt;  [43] "Progress: 38%"                      "Progress: 39%"                     
-#&gt;  [45] "Progress: 40%"                      "Progress: 41%"                     
-#&gt;  [47] "Progress: 42%"                      "Progress: 43%"                     
-#&gt;  [49] "Progress: 44%"                      "Progress: 45%"                     
-#&gt;  [51] "Progress: 46%"                      "Progress: 47%"                     
-#&gt;  [53] "Progress: 48%"                      "Progress: 49%"                     
-#&gt;  [55] "Progress: 50%"                      "Progress: 51%"                     
-#&gt;  [57] "Progress: 52%"                      "Progress: 53%"                     
-#&gt;  [59] "Progress: 54%"                      "Progress: 55%"                     
-#&gt;  [61] "Progress: 56%"                      "Progress: 57%"                     
-#&gt;  [63] "Progress: 58%"                      "Progress: 59%"                     
-#&gt;  [65] "Progress: 60%"                      "Progress: 61%"                     
-#&gt;  [67] "Progress: 62%"                      "Progress: 63%"                     
-#&gt;  [69] "Progress: 64%"                      "Progress: 65%"                     
-#&gt;  [71] "Progress: 66%"                      "Progress: 67%"                     
-#&gt;  [73] "Progress: 68%"                      "Progress: 69%"                     
-#&gt;  [75] "Progress: 70%"                      "Progress: 71%"                     
-#&gt;  [77] "Progress: 72%"                      "Progress: 73%"                     
-#&gt;  [79] "Progress: 74%"                      "Progress: 75%"                     
-#&gt;  [81] "Progress: 76%"                      "Progress: 77%"                     
-#&gt;  [83] "Progress: 78%"                      "Progress: 79%"                     
-#&gt;  [85] "Progress: 80%"                      "Progress: 81%"                     
-#&gt;  [87] "Progress: 82%"                      "Progress: 83%"                     
-#&gt;  [89] "Progress: 84%"                      "Progress: 85%"                     
-#&gt;  [91] "Progress: 86%"                      "Progress: 87%"                     
-#&gt;  [93] "Progress: 88%"                      "Progress: 89%"                     
-#&gt;  [95] "Progress: 90%"                      "Progress: 91%"                     
-#&gt;  [97] "Progress: 92%"                      "Progress: 93%"                     
-#&gt;  [99] "Progress: 94%"                      "Progress: 95%"                     
-#&gt; [101] "Progress: 96%"                      "Progress: 97%"                     
-#&gt; [103] "Progress: 98%"                      "Progress: 99%"                     
-#&gt; [105] "Progress: 100%"                     "Progress: 101%"                    
-#&gt; [107] "Saving data..."                     "Output file written"               
-#&gt; [109] "Elapsed Time (excluding I/O): 0.8s"</div></pre>
+<span class='fu'>wbt_run_tool</span>(<span class='no'>tool_name</span>, <span class='no'>args</span>)</div><div class='output co'>#&gt; [1] "breach_depressions - Elapsed Time (excluding I/O): 0.6s"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

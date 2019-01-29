@@ -5,7 +5,7 @@
 \title{Lidar remove duplicates}
 \usage{
 lidar_remove_duplicates(input, output, include_z = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

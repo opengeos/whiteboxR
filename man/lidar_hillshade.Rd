@@ -5,7 +5,7 @@
 \title{Lidar hillshade}
 \usage{
 lidar_hillshade(input, output, azimuth = 315, altitude = 30,
-  radius = 1, verbose_mode = TRUE)
+  radius = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

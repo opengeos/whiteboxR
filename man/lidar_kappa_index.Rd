@@ -5,7 +5,7 @@
 \title{Lidar kappa index}
 \usage{
 lidar_kappa_index(input1, input2, output, class_accuracy, resolution = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input LiDAR classification file.}

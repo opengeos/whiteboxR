@@ -4,7 +4,7 @@
 \alias{perimeter_area_ratio}
 \title{Perimeter area ratio}
 \usage{
-perimeter_area_ratio(input, verbose_mode = TRUE)
+perimeter_area_ratio(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

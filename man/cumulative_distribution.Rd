@@ -4,7 +4,7 @@
 \alias{cumulative_distribution}
 \title{Cumulative distribution}
 \usage{
-cumulative_distribution(input, output, verbose_mode = TRUE)
+cumulative_distribution(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

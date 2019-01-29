@@ -5,7 +5,7 @@
 \title{Subbasins}
 \usage{
 subbasins(d8_pntr, streams, output, esri_pntr = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

@@ -5,7 +5,7 @@
 \title{Lidar info}
 \usage{
 lidar_info(input, output = NULL, vlr = FALSE, geokeys = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

@@ -4,7 +4,7 @@
 \alias{clip_lidar_to_polygon}
 \title{Clip lidar to polygon}
 \usage{
-clip_lidar_to_polygon(input, polygons, output, verbose_mode = TRUE)
+clip_lidar_to_polygon(input, polygons, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

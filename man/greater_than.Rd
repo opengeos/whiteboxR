@@ -5,7 +5,7 @@
 \title{Greater than}
 \usage{
 greater_than(input1, input2, output, incl_equals = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

@@ -5,7 +5,7 @@
 \title{Adaptive filter}
 \usage{
 adaptive_filter(input, output, filterx = 11, filtery = 11,
-  threshold = 2, verbose_mode = TRUE)
+  threshold = 2, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

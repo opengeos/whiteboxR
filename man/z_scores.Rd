@@ -4,7 +4,7 @@
 \alias{z_scores}
 \title{Z scores}
 \usage{
-z_scores(input, output, verbose_mode = TRUE)
+z_scores(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

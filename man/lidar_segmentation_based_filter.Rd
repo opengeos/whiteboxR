@@ -6,7 +6,7 @@
 \usage{
 lidar_segmentation_based_filter(input, output, radius = 5,
   norm_diff = 2, maxzdiff = 1, classify = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

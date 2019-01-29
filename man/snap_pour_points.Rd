@@ -5,7 +5,7 @@
 \title{Snap pour points}
 \usage{
 snap_pour_points(pour_pts, flow_accum, output, snap_dist,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{pour_pts}{Input vector pour points (outlet) file.}

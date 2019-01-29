@@ -4,7 +4,7 @@
 \alias{lidar_colourize}
 \title{Lidar colourize}
 \usage{
-lidar_colourize(in_lidar, in_image, output, verbose_mode = TRUE)
+lidar_colourize(in_lidar, in_image, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{in_lidar}{Input LiDAR file.}

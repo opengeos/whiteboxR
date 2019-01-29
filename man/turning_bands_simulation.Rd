@@ -5,7 +5,7 @@
 \title{Turning bands simulation}
 \usage{
 turning_bands_simulation(base, output, range, iterations = 1000,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input base raster file.}

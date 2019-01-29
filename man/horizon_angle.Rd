@@ -5,7 +5,7 @@
 \title{Horizon angle}
 \usage{
 horizon_angle(dem, output, azimuth = 0, max_dist = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

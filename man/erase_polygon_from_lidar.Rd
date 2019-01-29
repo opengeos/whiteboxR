@@ -4,7 +4,7 @@
 \alias{erase_polygon_from_lidar}
 \title{Erase polygon from lidar}
 \usage{
-erase_polygon_from_lidar(input, polygons, output, verbose_mode = TRUE)
+erase_polygon_from_lidar(input, polygons, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

@@ -4,7 +4,7 @@
 \alias{arc_sin}
 \title{Arc sin}
 \usage{
-arc_sin(input, output, verbose_mode = TRUE)
+arc_sin(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

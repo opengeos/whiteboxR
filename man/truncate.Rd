@@ -4,7 +4,7 @@
 \alias{truncate}
 \title{Truncate}
 \usage{
-truncate(input, output, num_decimals = NULL, verbose_mode = TRUE)
+truncate(input, output, num_decimals = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

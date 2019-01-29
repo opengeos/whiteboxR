@@ -5,7 +5,7 @@
 \title{Block maximum gridding}
 \usage{
 block_maximum_gridding(input, field, output, use_z = FALSE,
-  cell_size = NULL, base = NULL, verbose_mode = TRUE)
+  cell_size = NULL, base = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector Points file.}

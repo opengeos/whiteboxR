@@ -4,7 +4,7 @@
 \alias{lines_to_polygons}
 \title{Lines to polygons}
 \usage{
-lines_to_polygons(input, output, verbose_mode = TRUE)
+lines_to_polygons(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector line file.}

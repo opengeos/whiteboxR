@@ -5,7 +5,7 @@
 \title{Edge proportion}
 \usage{
 edge_proportion(input, output, output_text = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

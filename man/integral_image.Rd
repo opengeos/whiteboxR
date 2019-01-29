@@ -4,7 +4,7 @@
 \alias{integral_image}
 \title{Integral image}
 \usage{
-integral_image(input, output, verbose_mode = TRUE)
+integral_image(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

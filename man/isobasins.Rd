@@ -4,7 +4,7 @@
 \alias{isobasins}
 \title{Isobasins}
 \usage{
-isobasins(dem, output, size, verbose_mode = TRUE)
+isobasins(dem, output, size, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

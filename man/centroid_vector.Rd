@@ -4,7 +4,7 @@
 \alias{centroid_vector}
 \title{Centroid vector}
 \usage{
-centroid_vector(input, output, verbose_mode = TRUE)
+centroid_vector(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

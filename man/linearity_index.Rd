@@ -4,7 +4,7 @@
 \alias{linearity_index}
 \title{Linearity index}
 \usage{
-linearity_index(input, verbose_mode = TRUE)
+linearity_index(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

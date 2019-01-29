@@ -4,7 +4,7 @@
 \alias{fill_burn}
 \title{Fill burn}
 \usage{
-fill_burn(dem, streams, output, verbose_mode = TRUE)
+fill_burn(dem, streams, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

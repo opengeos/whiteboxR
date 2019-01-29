@@ -5,7 +5,7 @@
 \title{Jenson snap pour points}
 \usage{
 jenson_snap_pour_points(pour_pts, streams, output, snap_dist,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{pour_pts}{Input vector pour points (outlet) file.}

@@ -4,7 +4,7 @@
 \alias{d8_pointer}
 \title{D8 pointer}
 \usage{
-d8_pointer(dem, output, esri_pntr = FALSE, verbose_mode = TRUE)
+d8_pointer(dem, output, esri_pntr = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

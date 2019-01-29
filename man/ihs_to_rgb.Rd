@@ -5,7 +5,7 @@
 \title{Ihs to rgb}
 \usage{
 ihs_to_rgb(intensity, hue, saturation, red = NULL, green = NULL,
-  blue = NULL, output = NULL, verbose_mode = TRUE)
+  blue = NULL, output = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{intensity}{Input intensity file.}

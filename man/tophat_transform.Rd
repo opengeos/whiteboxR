@@ -5,7 +5,7 @@
 \title{Tophat transform}
 \usage{
 tophat_transform(input, output, filterx = 11, filtery = 11,
-  variant = "white", verbose_mode = TRUE)
+  variant = "white", verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

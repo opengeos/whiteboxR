@@ -188,13 +188,13 @@ wbt_view_code <- function(tool_name) {
 #' arg2 <- paste0("--output=", output)
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
-wbt_run_tool <- function(tool_name, args, verbose_mode=TRUE) {
+wbt_run_tool <- function(tool_name, args, verbose_mode=FALSE) {
   wbt_exe <- wbt_exe_path()
   arg1 <- paste0("--run=", tool_name)
-  args2 <- paste(wbt_exe, arg1, args)
-  if (verbose_mode) {
-    args2 <- paste(args2, "-v")
-  }
+  args2 <- paste(wbt_exe, arg1, args, "-v")
   ret <- system(args2, intern = TRUE)
+  if (verbose_mode == FALSE) {
+    ret <- paste(tool_name, "-", utils::tail(ret, n=1))
+  }
   return(ret)
 }

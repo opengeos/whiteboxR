@@ -4,7 +4,7 @@
 \alias{split_with_lines}
 \title{Split with lines}
 \usage{
-split_with_lines(input, split, output, verbose_mode = TRUE)
+split_with_lines(input, split, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector line or polygon file.}

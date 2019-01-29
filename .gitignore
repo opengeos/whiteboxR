@@ -10,3 +10,4 @@ CRAN/
 output.tif
 vignettes/*.tif
 vignettes/*.log
+*.tif

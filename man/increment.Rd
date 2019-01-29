@@ -4,7 +4,7 @@
 \alias{increment}
 \title{Increment}
 \usage{
-increment(input, output, verbose_mode = TRUE)
+increment(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

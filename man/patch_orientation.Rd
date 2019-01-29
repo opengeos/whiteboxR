@@ -4,7 +4,7 @@
 \alias{patch_orientation}
 \title{Patch orientation}
 \usage{
-patch_orientation(input, verbose_mode = TRUE)
+patch_orientation(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

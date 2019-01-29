@@ -4,7 +4,7 @@
 \alias{attribute_correlation}
 \title{Attribute correlation}
 \usage{
-attribute_correlation(input, output = NULL, verbose_mode = TRUE)
+attribute_correlation(input, output = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

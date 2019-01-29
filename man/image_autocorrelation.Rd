@@ -5,7 +5,7 @@
 \title{Image autocorrelation}
 \usage{
 image_autocorrelation(inputs, output, contiguity = "Rook",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

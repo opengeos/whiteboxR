@@ -4,7 +4,7 @@
 \alias{arc_cos}
 \title{Arc cos}
 \usage{
-arc_cos(input, output, verbose_mode = TRUE)
+arc_cos(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

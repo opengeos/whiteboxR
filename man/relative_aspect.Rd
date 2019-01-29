@@ -5,7 +5,7 @@
 \title{Relative aspect}
 \usage{
 relative_aspect(dem, output, azimuth = 0, zfactor = 1,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

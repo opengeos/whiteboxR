@@ -4,7 +4,7 @@
 \alias{print_geo_tiff_tags}
 \title{Print geo tiff tags}
 \usage{
-print_geo_tiff_tags(input, verbose_mode = TRUE)
+print_geo_tiff_tags(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input GeoTIFF file.}

@@ -4,7 +4,7 @@
 \alias{reclass_from_file}
 \title{Reclass from file}
 \usage{
-reclass_from_file(input, reclass_file, output, verbose_mode = TRUE)
+reclass_from_file(input, reclass_file, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

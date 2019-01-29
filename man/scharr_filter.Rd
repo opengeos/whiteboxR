@@ -4,7 +4,7 @@
 \alias{scharr_filter}
 \title{Scharr filter}
 \usage{
-scharr_filter(input, output, clip = 0, verbose_mode = TRUE)
+scharr_filter(input, output, clip = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

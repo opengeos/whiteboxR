@@ -4,7 +4,7 @@
 \alias{attribute_histogram}
 \title{Attribute histogram}
 \usage{
-attribute_histogram(input, field, output, verbose_mode = TRUE)
+attribute_histogram(input, field, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

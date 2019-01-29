@@ -4,7 +4,7 @@
 \alias{hole_proportion}
 \title{Hole proportion}
 \usage{
-hole_proportion(input, verbose_mode = TRUE)
+hole_proportion(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

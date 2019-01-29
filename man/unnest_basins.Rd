@@ -5,7 +5,7 @@
 \title{Unnest basins}
 \usage{
 unnest_basins(d8_pntr, pour_pts, output, esri_pntr = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

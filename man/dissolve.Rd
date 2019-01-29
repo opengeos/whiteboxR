@@ -4,7 +4,7 @@
 \alias{dissolve}
 \title{Dissolve}
 \usage{
-dissolve(input, output, field = NULL, snap = 0, verbose_mode = TRUE)
+dissolve(input, output, field = NULL, snap = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

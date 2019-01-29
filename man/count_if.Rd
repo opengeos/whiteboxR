@@ -4,7 +4,7 @@
 \alias{count_if}
 \title{Count if}
 \usage{
-count_if(inputs, output, value, verbose_mode = TRUE)
+count_if(inputs, output, value, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

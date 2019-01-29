@@ -5,7 +5,7 @@
 \title{Merge table with csv}
 \usage{
 merge_table_with_csv(input, pkey, csv, fkey, import_field = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input primary vector file (i.e. the table to be modified).}

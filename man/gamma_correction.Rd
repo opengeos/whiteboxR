@@ -4,7 +4,7 @@
 \alias{gamma_correction}
 \title{Gamma correction}
 \usage{
-gamma_correction(input, output, gamma = 0.5, verbose_mode = TRUE)
+gamma_correction(input, output, gamma = 0.5, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

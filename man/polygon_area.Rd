@@ -4,7 +4,7 @@
 \alias{polygon_area}
 \title{Polygon area}
 \usage{
-polygon_area(input, verbose_mode = TRUE)
+polygon_area(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

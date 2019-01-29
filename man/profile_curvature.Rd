@@ -4,7 +4,7 @@
 \alias{profile_curvature}
 \title{Profile curvature}
 \usage{
-profile_curvature(dem, output, zfactor = 1, verbose_mode = TRUE)
+profile_curvature(dem, output, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

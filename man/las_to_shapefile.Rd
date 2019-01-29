@@ -4,7 +4,7 @@
 \alias{las_to_shapefile}
 \title{Las to shapefile}
 \usage{
-las_to_shapefile(input, verbose_mode = TRUE)
+las_to_shapefile(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

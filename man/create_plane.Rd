@@ -5,7 +5,7 @@
 \title{Create plane}
 \usage{
 create_plane(base, output, gradient = 15, aspect = 90, constant = 0,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input base raster file.}

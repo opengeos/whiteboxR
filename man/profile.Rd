@@ -4,7 +4,7 @@
 \alias{profile}
 \title{Profile}
 \usage{
-profile(lines, surface, output, verbose_mode = TRUE)
+profile(lines, surface, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{lines}{Input vector line file.}

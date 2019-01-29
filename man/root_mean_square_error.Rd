@@ -4,7 +4,7 @@
 \alias{root_mean_square_error}
 \title{Root mean square error}
 \usage{
-root_mean_square_error(input, base, verbose_mode = TRUE)
+root_mean_square_error(input, base, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

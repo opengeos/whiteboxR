@@ -5,7 +5,7 @@
 \title{Multiscale roughness}
 \usage{
 multiscale_roughness(dem, out_mag, out_scale, max_scale, min_scale = 1,
-  step = 1, verbose_mode = TRUE)
+  step = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

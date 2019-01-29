@@ -4,7 +4,7 @@
 \alias{find_patch_or_class_edge_cells}
 \title{Find patch or class edge cells}
 \usage{
-find_patch_or_class_edge_cells(input, output, verbose_mode = TRUE)
+find_patch_or_class_edge_cells(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

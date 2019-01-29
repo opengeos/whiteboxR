@@ -5,7 +5,7 @@
 \title{Lidar tile}
 \usage{
 lidar_tile(input, width_x = 1000, width_y = 1000, origin_x = 0,
-  origin_y = 0, min_points = 2, verbose_mode = TRUE)
+  origin_y = 0, min_points = 2, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

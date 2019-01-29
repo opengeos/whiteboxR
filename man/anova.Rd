@@ -4,7 +4,7 @@
 \alias{anova}
 \title{Anova}
 \usage{
-anova(input, features, output, verbose_mode = TRUE)
+anova(input, features, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

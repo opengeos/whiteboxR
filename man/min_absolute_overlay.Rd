@@ -4,7 +4,7 @@
 \alias{min_absolute_overlay}
 \title{Min absolute overlay}
 \usage{
-min_absolute_overlay(inputs, output, verbose_mode = TRUE)
+min_absolute_overlay(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

@@ -5,7 +5,7 @@
 \title{Edge preserving mean filter}
 \usage{
 edge_preserving_mean_filter(input, output, threshold, filter = 11,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

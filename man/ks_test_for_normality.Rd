@@ -5,7 +5,7 @@
 \title{Ks test for normality}
 \usage{
 ks_test_for_normality(input, output, num_samples = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

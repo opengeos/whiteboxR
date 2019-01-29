@@ -6,7 +6,7 @@
 \usage{
 modified_k_means_clustering(inputs, output, out_html = NULL,
   start_clusters = 1000, merger_dist = NULL, max_iterations = 10,
-  class_change = 2, verbose_mode = TRUE)
+  class_change = 2, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

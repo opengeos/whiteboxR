@@ -4,7 +4,7 @@
 \alias{percent_less_than}
 \title{Percent less than}
 \usage{
-percent_less_than(inputs, comparison, output, verbose_mode = TRUE)
+percent_less_than(inputs, comparison, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

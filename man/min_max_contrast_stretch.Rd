@@ -5,7 +5,7 @@
 \title{Min max contrast stretch}
 \usage{
 min_max_contrast_stretch(input, output, min_val, max_val,
-  num_tones = 256, verbose_mode = TRUE)
+  num_tones = 256, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

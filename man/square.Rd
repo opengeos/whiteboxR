@@ -4,7 +4,7 @@
 \alias{square}
 \title{Square}
 \usage{
-square(input, output, verbose_mode = TRUE)
+square(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

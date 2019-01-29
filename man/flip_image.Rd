@@ -4,7 +4,7 @@
 \alias{flip_image}
 \title{Flip image}
 \usage{
-flip_image(input, output, direction = "vertical", verbose_mode = TRUE)
+flip_image(input, output, direction = "vertical", verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

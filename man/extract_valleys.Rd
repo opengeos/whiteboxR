@@ -5,7 +5,7 @@
 \title{Extract valleys}
 \usage{
 extract_valleys(dem, output, variant = "Lower Quartile",
-  line_thin = TRUE, filter = 5, verbose_mode = TRUE)
+  line_thin = TRUE, filter = 5, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

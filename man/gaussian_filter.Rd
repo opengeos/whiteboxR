@@ -4,7 +4,7 @@
 \alias{gaussian_filter}
 \title{Gaussian filter}
 \usage{
-gaussian_filter(input, output, sigma = 0.75, verbose_mode = TRUE)
+gaussian_filter(input, output, sigma = 0.75, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

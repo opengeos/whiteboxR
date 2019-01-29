@@ -4,7 +4,7 @@
 \alias{equal_to}
 \title{Equal to}
 \usage{
-equal_to(input1, input2, output, verbose_mode = TRUE)
+equal_to(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

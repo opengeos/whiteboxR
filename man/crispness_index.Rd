@@ -4,7 +4,7 @@
 \alias{crispness_index}
 \title{Crispness index}
 \usage{
-crispness_index(input, output = NULL, verbose_mode = TRUE)
+crispness_index(input, output = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

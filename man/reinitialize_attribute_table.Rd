@@ -4,7 +4,7 @@
 \alias{reinitialize_attribute_table}
 \title{Reinitialize attribute table}
 \usage{
-reinitialize_attribute_table(input, verbose_mode = TRUE)
+reinitialize_attribute_table(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

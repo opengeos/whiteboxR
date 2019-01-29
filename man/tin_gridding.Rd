@@ -5,7 +5,7 @@
 \title{Tin gridding}
 \usage{
 tin_gridding(input, output, resolution, field = NULL, use_z = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector points file.}

@@ -5,7 +5,7 @@
 \title{D8 flow accumulation}
 \usage{
 d8_flow_accumulation(dem, output, out_type = "cells", log = FALSE,
-  clip = FALSE, verbose_mode = TRUE)
+  clip = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

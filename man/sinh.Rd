@@ -4,7 +4,7 @@
 \alias{sinh}
 \title{Sinh}
 \usage{
-sinh(input, output, verbose_mode = TRUE)
+sinh(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -5,7 +5,7 @@
 \title{Breach depressions}
 \usage{
 breach_depressions(dem, output, max_depth = NULL, max_length = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

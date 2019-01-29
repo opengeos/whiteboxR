@@ -4,7 +4,7 @@
 \alias{kappa_index}
 \title{Kappa index}
 \usage{
-kappa_index(input1, input2, output, verbose_mode = TRUE)
+kappa_index(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input classification raster file.}

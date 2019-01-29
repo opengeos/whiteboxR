@@ -5,7 +5,7 @@
 \title{Rasterize streams}
 \usage{
 rasterize_streams(streams, base, output, nodata = TRUE,
-  feature_id = FALSE, verbose_mode = TRUE)
+  feature_id = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{streams}{Input vector streams file.}

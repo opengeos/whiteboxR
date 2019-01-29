@@ -5,7 +5,7 @@
 \title{Percent elev range}
 \usage{
 percent_elev_range(dem, output, filterx = 3, filtery = 3,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

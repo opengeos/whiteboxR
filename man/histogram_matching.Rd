@@ -4,7 +4,7 @@
 \alias{histogram_matching}
 \title{Histogram matching}
 \usage{
-histogram_matching(input, histo_file, output, verbose_mode = TRUE)
+histogram_matching(input, histo_file, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

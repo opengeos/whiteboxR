@@ -4,7 +4,7 @@
 \alias{las_to_multipoint_shapefile}
 \title{Las to multipoint shapefile}
 \usage{
-las_to_multipoint_shapefile(input, verbose_mode = TRUE)
+las_to_multipoint_shapefile(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

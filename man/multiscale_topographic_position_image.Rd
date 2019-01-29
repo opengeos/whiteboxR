@@ -5,7 +5,7 @@
 \title{Multiscale topographic position image}
 \usage{
 multiscale_topographic_position_image(local, meso, broad, output,
-  lightness = 1.2, verbose_mode = TRUE)
+  lightness = 1.2, verbose_mode = FALSE)
 }
 \arguments{
 \item{local}{Input local-scale topographic position (DEVmax) raster file.}

@@ -4,7 +4,7 @@
 \alias{shape_complexity_index}
 \title{Shape complexity index}
 \usage{
-shape_complexity_index(input, verbose_mode = TRUE)
+shape_complexity_index(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

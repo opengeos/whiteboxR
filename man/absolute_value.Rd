@@ -4,7 +4,7 @@
 \alias{absolute_value}
 \title{Absolute value}
 \usage{
-absolute_value(input, output, verbose_mode = TRUE)
+absolute_value(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

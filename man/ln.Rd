@@ -4,7 +4,7 @@
 \alias{ln}
 \title{Ln}
 \usage{
-ln(input, output, verbose_mode = TRUE)
+ln(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

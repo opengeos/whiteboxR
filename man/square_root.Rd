@@ -4,7 +4,7 @@
 \alias{square_root}
 \title{Square root}
 \usage{
-square_root(input, output, verbose_mode = TRUE)
+square_root(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

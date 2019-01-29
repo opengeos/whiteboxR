@@ -5,7 +5,7 @@
 \title{Radius of gyration}
 \usage{
 radius_of_gyration(input, output, text_output = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

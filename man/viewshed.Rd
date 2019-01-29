@@ -4,7 +4,7 @@
 \alias{viewshed}
 \title{Viewshed}
 \usage{
-viewshed(dem, stations, output, height = 2, verbose_mode = TRUE)
+viewshed(dem, stations, output, height = 2, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

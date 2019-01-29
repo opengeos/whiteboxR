@@ -4,7 +4,7 @@
 \alias{is_no_data}
 \title{Is no data}
 \usage{
-is_no_data(input, output, verbose_mode = TRUE)
+is_no_data(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -5,7 +5,7 @@
 \title{Rescale value range}
 \usage{
 rescale_value_range(input, output, out_min_val, out_max_val,
-  clip_min = NULL, clip_max = NULL, verbose_mode = TRUE)
+  clip_min = NULL, clip_max = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

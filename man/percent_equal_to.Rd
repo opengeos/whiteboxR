@@ -4,7 +4,7 @@
 \alias{percent_equal_to}
 \title{Percent equal to}
 \usage{
-percent_equal_to(inputs, comparison, output, verbose_mode = TRUE)
+percent_equal_to(inputs, comparison, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

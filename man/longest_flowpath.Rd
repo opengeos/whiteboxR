@@ -4,7 +4,7 @@
 \alias{longest_flowpath}
 \title{Longest flowpath}
 \usage{
-longest_flowpath(dem, basins, output, verbose_mode = TRUE)
+longest_flowpath(dem, basins, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -5,7 +5,7 @@
 \title{Create hexagonal vector grid}
 \usage{
 create_hexagonal_vector_grid(input, output, width,
-  orientation = "horizontal", verbose_mode = TRUE)
+  orientation = "horizontal", verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input base file.}

@@ -5,7 +5,7 @@
 \title{Lidar thin}
 \usage{
 lidar_thin(input, output, resolution = 2, method = "lowest",
-  save_filtered = FALSE, verbose_mode = TRUE)
+  save_filtered = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

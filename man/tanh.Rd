@@ -4,7 +4,7 @@
 \alias{tanh}
 \title{Tanh}
 \usage{
-tanh(input, output, verbose_mode = TRUE)
+tanh(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

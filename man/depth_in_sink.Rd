@@ -5,7 +5,7 @@
 \title{Depth in sink}
 \usage{
 depth_in_sink(dem, output, zero_background = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

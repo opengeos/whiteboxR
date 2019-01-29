@@ -4,7 +4,7 @@
 \alias{thicken_raster_line}
 \title{Thicken raster line}
 \usage{
-thicken_raster_line(input, output, verbose_mode = TRUE)
+thicken_raster_line(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

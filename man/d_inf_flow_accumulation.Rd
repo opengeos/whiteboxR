@@ -6,7 +6,7 @@
 \usage{
 d_inf_flow_accumulation(dem, output,
   out_type = "Specific Contributing Area", threshold = NULL,
-  log = FALSE, clip = FALSE, verbose_mode = TRUE)
+  log = FALSE, clip = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

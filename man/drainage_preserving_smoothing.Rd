@@ -6,7 +6,7 @@
 \usage{
 drainage_preserving_smoothing(dem, output, filter = 11, norm_diff = 15,
   num_iter = 10, max_diff = 2, reduction = 80, dfm = 0.15,
-  zfactor = 1, verbose_mode = TRUE)
+  zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

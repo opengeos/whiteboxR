@@ -4,7 +4,7 @@
 \alias{percent_greater_than}
 \title{Percent greater than}
 \usage{
-percent_greater_than(inputs, comparison, output, verbose_mode = TRUE)
+percent_greater_than(inputs, comparison, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

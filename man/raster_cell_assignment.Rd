@@ -5,7 +5,7 @@
 \title{Raster cell assignment}
 \usage{
 raster_cell_assignment(input, output, assign = "column",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,7 +4,7 @@
 \alias{num_downslope_neighbours}
 \title{Num downslope neighbours}
 \usage{
-num_downslope_neighbours(dem, output, verbose_mode = TRUE)
+num_downslope_neighbours(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

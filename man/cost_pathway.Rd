@@ -5,7 +5,7 @@
 \title{Cost pathway}
 \usage{
 cost_pathway(destination, backlink, output, zero_background = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{destination}{Input destination raster file.}

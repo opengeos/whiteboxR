@@ -4,7 +4,7 @@
 \alias{rho8_pointer}
 \title{Rho8 pointer}
 \usage{
-rho8_pointer(dem, output, esri_pntr = FALSE, verbose_mode = TRUE)
+rho8_pointer(dem, output, esri_pntr = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

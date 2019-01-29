@@ -4,7 +4,7 @@
 \alias{Not}
 \title{Not}
 \usage{
-Not(input1, input2, output, verbose_mode = TRUE)
+Not(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file.}

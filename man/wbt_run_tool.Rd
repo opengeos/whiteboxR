@@ -4,7 +4,7 @@
 \alias{wbt_run_tool}
 \title{Run a tool.}
 \usage{
-wbt_run_tool(tool_name, args, verbose_mode = TRUE)
+wbt_run_tool(tool_name, args, verbose_mode = FALSE)
 }
 \arguments{
 \item{tool_name}{The name of the tool to run.}

@@ -5,7 +5,7 @@
 \title{Elev relative to watershed min max}
 \usage{
 elev_relative_to_watershed_min_max(dem, watersheds, output,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,7 +4,7 @@
 \alias{fill_single_cell_pits}
 \title{Fill single cell pits}
 \usage{
-fill_single_cell_pits(dem, output, verbose_mode = TRUE)
+fill_single_cell_pits(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

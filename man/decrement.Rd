@@ -4,7 +4,7 @@
 \alias{decrement}
 \title{Decrement}
 \usage{
-decrement(input, output, verbose_mode = TRUE)
+decrement(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

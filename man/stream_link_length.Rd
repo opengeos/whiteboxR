@@ -5,7 +5,7 @@
 \title{Stream link length}
 \usage{
 stream_link_length(d8_pntr, linkid, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = TRUE)
+  zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

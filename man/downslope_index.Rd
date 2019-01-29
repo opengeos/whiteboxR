@@ -5,7 +5,7 @@
 \title{Downslope index}
 \usage{
 downslope_index(dem, output, drop = 2, out_type = "tangent",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

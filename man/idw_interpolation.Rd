@@ -6,7 +6,7 @@
 \usage{
 idw_interpolation(input, field, output, use_z = FALSE, weight = 2,
   radius = NULL, min_points = NULL, cell_size = NULL, base = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector Points file.}

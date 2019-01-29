@@ -5,7 +5,7 @@
 \title{Histogram equalization}
 \usage{
 histogram_equalization(input, output, num_tones = 256,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

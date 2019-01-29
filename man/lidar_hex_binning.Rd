@@ -5,7 +5,7 @@
 \title{Lidar hex binning}
 \usage{
 lidar_hex_binning(input, output, width, orientation = "horizontal",
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input base file.}

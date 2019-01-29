@@ -5,7 +5,7 @@
 \title{User ined weights filter}
 \usage{
 user_defined_weights_filter(input, weights, output, center = "center",
-  normalize = FALSE, verbose_mode = TRUE)
+  normalize = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

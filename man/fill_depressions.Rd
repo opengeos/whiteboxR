@@ -4,7 +4,7 @@
 \alias{fill_depressions}
 \title{Fill depressions}
 \usage{
-fill_depressions(dem, output, fix_flats = TRUE, verbose_mode = TRUE)
+fill_depressions(dem, output, fix_flats = TRUE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

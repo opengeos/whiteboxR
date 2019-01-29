@@ -4,7 +4,7 @@
 \alias{power}
 \title{Power}
 \usage{
-power(input1, input2, output, verbose_mode = TRUE)
+power(input1, input2, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

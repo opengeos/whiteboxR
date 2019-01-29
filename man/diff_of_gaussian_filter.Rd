@@ -5,7 +5,7 @@
 \title{Diff of gaussian filter}
 \usage{
 diff_of_gaussian_filter(input, output, sigma1 = 2, sigma2 = 4,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

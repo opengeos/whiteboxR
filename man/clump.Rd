@@ -5,7 +5,7 @@
 \title{Clump}
 \usage{
 clump(input, output, diag = TRUE, zero_back = FALSE,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

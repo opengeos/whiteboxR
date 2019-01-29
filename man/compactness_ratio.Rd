@@ -4,7 +4,7 @@
 \alias{compactness_ratio}
 \title{Compactness ratio}
 \usage{
-compactness_ratio(input, verbose_mode = TRUE)
+compactness_ratio(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

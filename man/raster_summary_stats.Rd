@@ -4,7 +4,7 @@
 \alias{raster_summary_stats}
 \title{Raster summary stats}
 \usage{
-raster_summary_stats(input, verbose_mode = TRUE)
+raster_summary_stats(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

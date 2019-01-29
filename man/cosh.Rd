@@ -4,7 +4,7 @@
 \alias{cosh}
 \title{Cosh}
 \usage{
-cosh(input, output, verbose_mode = TRUE)
+cosh(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

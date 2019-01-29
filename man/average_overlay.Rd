@@ -4,7 +4,7 @@
 \alias{average_overlay}
 \title{Average overlay}
 \usage{
-average_overlay(inputs, output, verbose_mode = TRUE)
+average_overlay(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

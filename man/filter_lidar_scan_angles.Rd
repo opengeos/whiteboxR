@@ -4,7 +4,7 @@
 \alias{filter_lidar_scan_angles}
 \title{Filter lidar scan angles}
 \usage{
-filter_lidar_scan_angles(input, output, threshold, verbose_mode = TRUE)
+filter_lidar_scan_angles(input, output, threshold, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

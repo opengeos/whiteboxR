@@ -4,7 +4,7 @@
 \alias{num_inflowing_neighbours}
 \title{Num inflowing neighbours}
 \usage{
-num_inflowing_neighbours(dem, output, verbose_mode = TRUE)
+num_inflowing_neighbours(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

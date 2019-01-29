@@ -4,7 +4,7 @@
 \alias{erase_polygon_from_raster}
 \title{Erase polygon from raster}
 \usage{
-erase_polygon_from_raster(input, polygons, output, verbose_mode = TRUE)
+erase_polygon_from_raster(input, polygons, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

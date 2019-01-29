@@ -4,7 +4,7 @@
 \alias{reciprocal}
 \title{Reciprocal}
 \usage{
-reciprocal(input, output, verbose_mode = TRUE)
+reciprocal(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

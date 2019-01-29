@@ -4,7 +4,7 @@
 \alias{raster_to_vector_points}
 \title{Raster to vector points}
 \usage{
-raster_to_vector_points(input, output, verbose_mode = TRUE)
+raster_to_vector_points(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

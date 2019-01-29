@@ -4,7 +4,7 @@
 \alias{d_inf_pointer}
 \title{D inf pointer}
 \usage{
-d_inf_pointer(dem, output, verbose_mode = TRUE)
+d_inf_pointer(dem, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

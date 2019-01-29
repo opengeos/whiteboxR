@@ -6,7 +6,7 @@
 \usage{
 lidar_point_density(input, output = NULL, returns = "all",
   resolution = 1, radius = 2.5, exclude_cls = NULL, minz = NULL,
-  maxz = NULL, verbose_mode = TRUE)
+  maxz = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

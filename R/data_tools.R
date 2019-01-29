@@ -7,7 +7,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-add_point_coordinates_to_table <- function(input, verbose_mode=TRUE) {
+add_point_coordinates_to_table <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -25,7 +25,7 @@ add_point_coordinates_to_table <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-convert_nodata_to_zero <- function(input, output, verbose_mode=TRUE) {
+convert_nodata_to_zero <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -44,7 +44,7 @@ convert_nodata_to_zero <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-convert_raster_format <- function(input, output, verbose_mode=TRUE) {
+convert_raster_format <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -64,7 +64,7 @@ convert_raster_format <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=TRUE) {
+export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -89,7 +89,7 @@ export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=TRUE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=TRUE) {
+join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--pkey=", pkey))
@@ -111,7 +111,7 @@ join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=T
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lines_to_polygons <- function(input, output, verbose_mode=TRUE) {
+lines_to_polygons <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -133,7 +133,7 @@ lines_to_polygons <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verbose_mode=TRUE) {
+merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--pkey=", pkey))
@@ -157,7 +157,7 @@ merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-merge_vectors <- function(inputs, output, verbose_mode=TRUE) {
+merge_vectors <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
@@ -177,7 +177,7 @@ merge_vectors <- function(inputs, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose_mode=TRUE) {
+multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -201,7 +201,7 @@ multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-new_raster_from_base <- function(base, output, value="nodata", data_type="float", verbose_mode=TRUE) {
+new_raster_from_base <- function(base, output, value="nodata", data_type="float", verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--base=", base))
   args <- paste(args, paste0("--output=", output))
@@ -226,7 +226,7 @@ new_raster_from_base <- function(base, output, value="nodata", data_type="float"
 #'
 #' @return Returns the tool text outputs.
 #' @export
-polygons_to_lines <- function(input, output, verbose_mode=TRUE) {
+polygons_to_lines <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -244,7 +244,7 @@ polygons_to_lines <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-print_geo_tiff_tags <- function(input, verbose_mode=TRUE) {
+print_geo_tiff_tags <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -262,7 +262,7 @@ print_geo_tiff_tags <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-raster_to_vector_lines <- function(input, output, verbose_mode=TRUE) {
+raster_to_vector_lines <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -281,7 +281,7 @@ raster_to_vector_lines <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-raster_to_vector_points <- function(input, output, verbose_mode=TRUE) {
+raster_to_vector_points <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -299,7 +299,7 @@ raster_to_vector_points <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-reinitialize_attribute_table <- function(input, verbose_mode=TRUE) {
+reinitialize_attribute_table <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- match.call()[[1]]
@@ -317,7 +317,7 @@ reinitialize_attribute_table <- function(input, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-remove_polygon_holes <- function(input, output, verbose_mode=TRUE) {
+remove_polygon_holes <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -337,7 +337,7 @@ remove_polygon_holes <- function(input, output, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=TRUE) {
+set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -360,7 +360,7 @@ set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=TRUE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=TRUE) {
+single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -386,7 +386,7 @@ single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=TR
 #'
 #' @return Returns the tool text outputs.
 #' @export
-vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -422,7 +422,7 @@ vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell
 #'
 #' @return Returns the tool text outputs.
 #' @export
-vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
@@ -460,7 +460,7 @@ vector_points_to_raster <- function(input, output, field="FID", assign="last", n
 #'
 #' @return Returns the tool text outputs.
 #' @export
-vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=TRUE) {
+vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))

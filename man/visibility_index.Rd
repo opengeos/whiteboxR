@@ -5,7 +5,7 @@
 \title{Visibility index}
 \usage{
 visibility_index(dem, output, height = 2, res_factor = 2,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -5,7 +5,7 @@
 \title{Slope vs elevation plot}
 \usage{
 slope_vs_elevation_plot(inputs, output, watershed = NULL,
-  verbose_mode = TRUE)
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input DEM files.}

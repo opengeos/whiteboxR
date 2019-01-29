@@ -4,7 +4,7 @@
 \alias{min_overlay}
 \title{Min overlay}
 \usage{
-min_overlay(inputs, output, verbose_mode = TRUE)
+min_overlay(inputs, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

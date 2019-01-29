@@ -4,7 +4,7 @@
 \alias{elongation_ratio}
 \title{Elongation ratio}
 \usage{
-elongation_ratio(input, verbose_mode = TRUE)
+elongation_ratio(input, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}

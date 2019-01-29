@@ -5,7 +5,7 @@
 \title{Multiscale roughness signature}
 \usage{
 multiscale_roughness_signature(dem, points, output, max_scale,
-  min_scale = 1, step = 1, verbose_mode = TRUE)
+  min_scale = 1, step = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

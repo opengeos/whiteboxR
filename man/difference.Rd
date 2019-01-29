@@ -4,7 +4,7 @@
 \alias{difference}
 \title{Difference}
 \usage{
-difference(input, overlay, output, verbose_mode = TRUE)
+difference(input, overlay, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

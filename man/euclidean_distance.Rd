@@ -4,7 +4,7 @@
 \alias{euclidean_distance}
 \title{Euclidean distance}
 \usage{
-euclidean_distance(input, output, verbose_mode = TRUE)
+euclidean_distance(input, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
