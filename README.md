@@ -4,6 +4,7 @@
 [![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR)
+[![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
 
@@ -52,6 +53,8 @@ devtools::install_github("giswqs/whiteboxR")
 You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](http://www.rstudio.com/ide/docs/packages/prerequisites) for the tools needed for your operating system.
 
 ## Usage
+
+A complete list of functions available in the **whitebox** R package can be found [HERE](https://giswqs.github.io/whiteboxR/reference/index.html). Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for examples. 
 
 **About WhiteboxTools?**
 
