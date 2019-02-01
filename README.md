@@ -37,13 +37,27 @@ The **whitebox** R package is built on **WhiteboxTools**, an advanced geospatial
 
 ## Installation
 
-**whitebox** is now available on CRAN, so you can install it with:
+There are three ways to install the **whitebox** R package.
+
+### 1. CRAN
+
+**whitebox** will be available on CRAN soon. Once it is available on CRAN, you can install it with:
 
 ```R
 install.packages("whitebox")
 ```
 
-You can alternatively install the development version of **whitebox** from GitHub as follows:
+### 2. R-Forge
+
+**whitebox** is now available on [R-Forge](https://r-forge.r-project.org/R/?group_id=2337), so you can install it with:
+
+```R
+install.packages("whitebox", repos="http://R-Forge.R-project.org")
+```
+
+### 3. GitHub
+
+You can alternatively install the development version of **whitebox** from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
 
 ```R
 if (!require(devtools)) install.packages('devtools')
@@ -54,7 +68,7 @@ You’ll also need to make sure your machine is able to build packages from sour
 
 ## Usage
 
-A complete list of functions available in the **whitebox** R package can be found [HERE](https://giswqs.github.io/whiteboxR/reference/index.html). Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for examples. 
+A complete list of functions available in the **whitebox** R package can be found [HERE](https://giswqs.github.io/whiteboxR/reference/index.html). Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for examples.
 
 **About WhiteboxTools?**
 
@@ -101,9 +115,9 @@ library(whitebox)
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 
 # Run tools
-feature_preserving_denoise(dem, "./smoothed.tif", filter=9, verbose_mode = TRUE)
+feature_preserving_denoise(dem, "./smoothed.tif", filter=9)
 breach_depressions("./smoothed.tif", "./breached.tif")
-d_inf_flow_accumulation(dem, "./flow_accum.tif")
+d_inf_flow_accumulation(dem, "./flow_accum.tif", verbose_mode = FALSE)
 ```
 
 
