@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Calculates the absolute value of every cell in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+absolute_value(input = dem, output = 'output.tif')
+}

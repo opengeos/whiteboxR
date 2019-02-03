@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the reciprocal (i.e. 1 / z) of values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+reciprocal(input = dem, output = 'output.tif')
+}

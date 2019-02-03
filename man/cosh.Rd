@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the hyperbolic cosine (cosh) of each values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+cosh(input = dem, output = 'output.tif')
+}

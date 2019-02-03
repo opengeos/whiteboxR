@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+ceil(input = dem, output = 'output.tif')
+}

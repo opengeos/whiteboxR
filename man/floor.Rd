@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+floor(input = dem, output = 'output.tif')
+}

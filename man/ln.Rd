@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the natural logarithm of values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+ln(input = dem, output = 'output.tif')
+}

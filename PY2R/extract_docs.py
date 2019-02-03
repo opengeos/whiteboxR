@@ -185,6 +185,7 @@ toolboxes = {
 
 # Generate R functions with documentation
 ff = None
+add_example = False
 
 with open(wbt_py) as f:
     lines = f.readlines()
@@ -198,6 +199,12 @@ with open(wbt_py) as f:
                 script_path = os.path.join(dir_path, "scripts", toolboxes[line])
                 ff = open(script_path, "w")
                 print(script_path)
+
+                # add code example to documentation
+                if toolboxes[line] == "math_stat_analysis.R":
+                    add_example = True
+                else:
+                    add_example = False
 
             if line.startswith("def"):
                 title = line.replace("def", "").strip().split("(")[0]
@@ -229,6 +236,26 @@ with open(wbt_py) as f:
                 # ff.write("#' @examples\n")
                 
                 fun_head = function_header(line)
+                print(fun_head)
+
+                if add_example:
+                    fun_name = function_name(fun_head) 
+                    fun_params = fun_head[fun_head.index('('):]
+
+                    if (fun_params == "(input, output, verbose_mode=FALSE)") and (fun_name != "raster_histogram"):
+                        print(fun_name)
+                        output_name = fun_name + ".tif"
+                        print(fun_params)
+                        line1 = "#' " + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")' + "\n" 
+                        line2 = "#' " + fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
+                        ff.write("#'\n")
+                        ff.write("#' @examples\n")
+                        ff.write(line1)
+                        ff.write(line2)
+                        print(line1)
+                        print(line2)
+
+
                 # fun_name = function_name(fun_head)                
                 # example = function_example(fun_name)
                 # ff.write("#' {}\n".format(example))

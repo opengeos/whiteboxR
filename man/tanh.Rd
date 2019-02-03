@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the hyperbolic tangent (tanh) of each values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+tanh(input = dem, output = 'output.tif')
+}

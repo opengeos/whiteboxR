@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Converts a raster from degrees to radians.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+to_radians(input = dem, output = 'output.tif')
+}

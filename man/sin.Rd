@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the sine (sin) of each values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+sin(input = dem, output = 'output.tif')
+}

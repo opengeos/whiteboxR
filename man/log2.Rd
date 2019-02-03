@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the base-2 logarithm of values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+log2(input = dem, output = 'output.tif')
+}

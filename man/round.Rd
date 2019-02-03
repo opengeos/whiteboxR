@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Rounds the values in an input raster to the nearest integer value.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+round(input = dem, output = 'output.tif')
+}

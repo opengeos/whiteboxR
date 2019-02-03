@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the square root of the values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+square_root(input = dem, output = 'output.tif')
+}

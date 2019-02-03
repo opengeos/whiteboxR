@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Squares the values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+square(input = dem, output = 'output.tif')
+}

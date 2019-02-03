@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhiteboxTools R Frontend • whitebox</title>
+<title>'WhiteboxTools' R Frontend • whitebox</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="WhiteboxTools R Frontend">
-<meta property="og:description" content="An R frontend of the WhiteboxTools library, which is an advanced geospatial data analysis platform developed by Prof. John Lindsay at the University of Guelph's Geomorphometry and Hydrogeomatics Research Group. WhiteboxTools can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. WhiteboxTools also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. Suggested citation: Lindsay (2016) &lt;doi:10.1016/j.cageo.2016.07.003&gt;.">
+<script src="pkgdown.js"></script><meta property="og:title" content="'WhiteboxTools' R Frontend">
+<meta property="og:description" content="An R frontend of the 'WhiteboxTools' library, which is an advanced geospatial data analysis platform developed by Prof. John Lindsay at the University of Guelph's Geomorphometry and Hydrogeomatics Research Group. 'WhiteboxTools' can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. 'WhiteboxTools' also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. Suggested citation: Lindsay (2016) &lt;doi:10.1016/j.cageo.2016.07.003&gt;.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -115,57 +115,72 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p><strong>whitebox</strong> is now available on CRAN, so you can install it with:</p>
+<p>There are three ways to install the <strong>whitebox</strong> R package.</p>
+<div id="1-cran" class="section level3">
+<h3 class="hasAnchor">
+<a href="#1-cran" class="anchor"></a>1. CRAN</h3>
+<p><strong>whitebox</strong> will be available on CRAN soon. Once it is available on CRAN, you can install it with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"whitebox"</span>)</a></code></pre></div>
-<p>You can alternatively install the development version of <strong>whitebox</strong> from GitHub as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(devtools)) <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">'devtools'</span>)</a>
-<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"giswqs/whiteboxR"</span>)</a></code></pre></div>
+</div>
+<div id="2-r-forge" class="section level3">
+<h3 class="hasAnchor">
+<a href="#2-r-forge" class="anchor"></a>2. R-Forge</h3>
+<p><strong>whitebox</strong> is now available on <a href="https://r-forge.r-project.org/R/?group_id=2337">R-Forge</a>, so you can install it with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"whitebox"</span>, <span class="dt">repos=</span><span class="st">"http://R-Forge.R-project.org"</span>)</a></code></pre></div>
+</div>
+<div id="3-github" class="section level3">
+<h3 class="hasAnchor">
+<a href="#3-github" class="anchor"></a>3. GitHub</h3>
+<p>You can alternatively install the development version of <strong>whitebox</strong> from <a href="https://github.com/giswqs/whiteboxR">GitHub</a> as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(devtools)) <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">'devtools'</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"giswqs/whiteboxR"</span>)</a></code></pre></div>
 <p>You’ll also need to make sure your machine is able to build packages from source. See <a href="http://www.rstudio.com/ide/docs/packages/prerequisites">Package Development Prerequisites</a> for the tools needed for your operating system.</p>
+</div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://giswqs.github.io/whiteboxR/reference/index.html">HERE</a>. Check out this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html">demo</a> for examples.</p>
 <p><strong>About WhiteboxTools?</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(whitebox)</a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co"># Prints the whitebox-tools help...a listing of available commands</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_help.html">wbt_help</a></span>())</a>
-<a class="sourceLine" id="cb3-5" title="5"></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co"># Prints the whitebox-tools license</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_license.html">wbt_license</a></span>())</a>
-<a class="sourceLine" id="cb3-8" title="8"></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co"># Prints the whitebox-tools version</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_version.html">wbt_version</a></span>())</a>
-<a class="sourceLine" id="cb3-11" title="11"></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co"># Prints the toolbox for a specific tool.</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_toolbox.html">wbt_toolbox</a></span>())</a>
-<a class="sourceLine" id="cb3-14" title="14"></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co"># List all available tools in whitebox-tools</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span>())</a>
-<a class="sourceLine" id="cb3-17" title="17"></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co"># Lists tools with 'lidar' in tool name or description.</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span>(<span class="st">"lidar"</span>))</a>
-<a class="sourceLine" id="cb3-20" title="20"></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co"># Prints the help for a specific tool.</span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_tool_help.html">wbt_tool_help</a></span>(<span class="st">"lidar_info"</span>))</a>
-<a class="sourceLine" id="cb3-23" title="23"></a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="co"># Retrieves the tool parameter descriptions for a specific tool.</span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span>(<span class="st">"slope"</span>))</a>
-<a class="sourceLine" id="cb3-26" title="26"></a>
-<a class="sourceLine" id="cb3-27" title="27"><span class="co"># View the source code for a specific tool on the source code repository.</span></a>
-<a class="sourceLine" id="cb3-28" title="28"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_view_code.html">wbt_view_code</a></span>(<span class="st">"breach_depressions"</span>))</a></code></pre></div>
-<p><strong>How to run tools?</strong></p>
-<p>Tool names in the whitebox R package can be called using the snake_case (e.g. lidar_info). See below for an example. If you are interested in using the WhiteboxTools command-line program, check <a href="https://github.com/jblindsay/whitebox-tools#3-usage">WhiteboxTools Usage</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(whitebox)</a>
 <a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="co"># Set input raster DEM file</span></a>
-<a class="sourceLine" id="cb4-4" title="4">dem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="dt">package=</span><span class="st">"whitebox"</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co"># Prints the whitebox-tools help...a listing of available commands</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_help.html">wbt_help</a></span>())</a>
 <a class="sourceLine" id="cb4-5" title="5"></a>
-<a class="sourceLine" id="cb4-6" title="6"><span class="co"># Run tools</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="kw"><a href="reference/feature_preserving_denoise.html">feature_preserving_denoise</a></span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>, <span class="dt">verbose_mode =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb4-8" title="8"><span class="kw"><a href="reference/breach_depressions.html">breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)</a>
-<a class="sourceLine" id="cb4-9" title="9"><span class="kw"><a href="reference/d_inf_flow_accumulation.html">d_inf_flow_accumulation</a></span>(dem, <span class="st">"./flow_accum.tif"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co"># Prints the whitebox-tools license</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_license.html">wbt_license</a></span>())</a>
+<a class="sourceLine" id="cb4-8" title="8"></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co"># Prints the whitebox-tools version</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_version.html">wbt_version</a></span>())</a>
+<a class="sourceLine" id="cb4-11" title="11"></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co"># Prints the toolbox for a specific tool.</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_toolbox.html">wbt_toolbox</a></span>())</a>
+<a class="sourceLine" id="cb4-14" title="14"></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co"># List all available tools in whitebox-tools</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span>())</a>
+<a class="sourceLine" id="cb4-17" title="17"></a>
+<a class="sourceLine" id="cb4-18" title="18"><span class="co"># Lists tools with 'lidar' in tool name or description.</span></a>
+<a class="sourceLine" id="cb4-19" title="19"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span>(<span class="st">"lidar"</span>))</a>
+<a class="sourceLine" id="cb4-20" title="20"></a>
+<a class="sourceLine" id="cb4-21" title="21"><span class="co"># Prints the help for a specific tool.</span></a>
+<a class="sourceLine" id="cb4-22" title="22"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_tool_help.html">wbt_tool_help</a></span>(<span class="st">"lidar_info"</span>))</a>
+<a class="sourceLine" id="cb4-23" title="23"></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="co"># Retrieves the tool parameter descriptions for a specific tool.</span></a>
+<a class="sourceLine" id="cb4-25" title="25"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span>(<span class="st">"slope"</span>))</a>
+<a class="sourceLine" id="cb4-26" title="26"></a>
+<a class="sourceLine" id="cb4-27" title="27"><span class="co"># View the source code for a specific tool on the source code repository.</span></a>
+<a class="sourceLine" id="cb4-28" title="28"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="reference/wbt_view_code.html">wbt_view_code</a></span>(<span class="st">"breach_depressions"</span>))</a></code></pre></div>
+<p><strong>How to run tools?</strong></p>
+<p>Tool names in the whitebox R package can be called using the snake_case (e.g. lidar_info). See below for an example. If you are interested in using the WhiteboxTools command-line program, check <a href="https://github.com/jblindsay/whitebox-tools#3-usage">WhiteboxTools Usage</a>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(whitebox)</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co"># Set input raster DEM file</span></a>
+<a class="sourceLine" id="cb5-4" title="4">dem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="dt">package=</span><span class="st">"whitebox"</span>)</a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co"># Run tools</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="kw"><a href="reference/feature_preserving_denoise.html">feature_preserving_denoise</a></span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="kw"><a href="reference/breach_depressions.html">breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)</a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="kw"><a href="reference/d_inf_flow_accumulation.html">d_inf_flow_accumulation</a></span>(dem, <span class="st">"./flow_accum.tif"</span>, <span class="dt">verbose_mode =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 </div>
 <div id="available-tools" class="section level2">
 <h2 class="hasAnchor">

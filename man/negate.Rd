@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Changes the sign of values in a raster or the 0-1 values of a Boolean raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+negate(input = dem, output = 'output.tif')
+}

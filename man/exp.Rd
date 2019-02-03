@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the exponential (base e) of values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+exp(input = dem, output = 'output.tif')
+}

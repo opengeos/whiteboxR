@@ -19,3 +19,7 @@ Returns the tool text outputs.
 \description{
 Returns the inverse tangent (arctan) of each values in a raster.
 }
+\examples{
+dem <- system.file("extdata", "DEM.tif", package="whitebox")
+arc_tan(input = dem, output = 'output.tif')
+}
