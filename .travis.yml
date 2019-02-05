@@ -1,6 +1,15 @@
 language: r
-sudo: false
+sudo: required
 cache: packages
 os:
   - linux
   - osx
+r_packages:
+  - covr
+  - devtools
+
+r_github_packages:
+  - giswqs/whiteboxR
+
+after_success:
+  - Rscript -e 'library(covr);codecov()'

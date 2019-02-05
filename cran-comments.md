@@ -15,3 +15,7 @@ There was 1 NOTE:
     WBT  20.0Mb
 
   WhiteboxTools (WBT) is a required backend of the whitebox R package.
+
+## Comments
+* Added single quotes to software names in Title and Description.
+* Added code examples for 30 functions. 
