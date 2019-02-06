@@ -186,6 +186,7 @@ toolboxes = {
 # Generate R functions with documentation
 ff = None
 add_example = False
+desc = ""
 
 with open(wbt_py) as f:
     lines = f.readlines()
@@ -219,6 +220,7 @@ with open(wbt_py) as f:
                         break
                     elif doc_line.startswith('"""'):
                         description = doc_line[3:] + '\n'
+                        desc = description.strip().replace(".", "")                        
                         ff.write("#' {}".format(description))
                         ff.write("#'\n")
                     elif ("--" in doc_line) and (doc_line.startswith("callback") == False):
@@ -236,24 +238,37 @@ with open(wbt_py) as f:
                 # ff.write("#' @examples\n")
                 
                 fun_head = function_header(line)
-                print(fun_head)
+                # print(fun_head)
 
                 if add_example:
                     fun_name = function_name(fun_head) 
                     fun_params = fun_head[fun_head.index('('):]
 
                     if (fun_params == "(input, output, verbose_mode=FALSE)") and (fun_name != "raster_histogram"):
-                        print(fun_name)
+                        # print(fun_name)
                         output_name = fun_name + ".tif"
-                        print(fun_params)
+                        # print(fun_params)
                         line1 = "#' " + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")' + "\n" 
                         line2 = "#' " + fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
                         ff.write("#'\n")
                         ff.write("#' @examples\n")
                         ff.write(line1)
                         ff.write(line2)
-                        print(line1)
-                        print(line2)
+                        # print(line1)
+                        # print(line2)
+
+                        # write test scripts
+                        test_file_name = "test-" + fun_name + ".R"
+                        test_file_path = os.path.join(dir_path, "tests", test_file_name)
+                        f = open(test_file_path, "w")
+                        f.write('context("{}")\n\n'.format(fun_name))
+                        f.write('test_that("' + desc + '", {\n\n')
+                        f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
+                        f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(fun_name))
+                        f.write('  expect_match( ret, "Elapsed Time" )\n\n')
+                        f.write('})\n')
+                        print(test_file_path)
+                        f.close()
 
 
                 # fun_name = function_name(fun_head)                
@@ -267,4 +282,9 @@ ff.close()
 scripts_path = os.path.join(dir_path, "scripts", "*.R")
 R_scripts = os.path.join(os.path.dirname(dir_path), "R/")
 cmd = "\\cp " + scripts_path + " " + R_scripts
+os.system(cmd)
+
+tests_path = os.path.join(dir_path, "tests", "*.R")
+test_scripts = os.path.join(os.path.dirname(dir_path), "tests/testthat/")
+cmd = "\\cp " + tests_path + " " + test_scripts
 os.system(cmd)
