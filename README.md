@@ -1,5 +1,6 @@
 # whiteboxR
 
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
@@ -17,6 +18,7 @@ This repository is related to the **whitebox** R package for geospatial analysis
 * Authors: Dr. John Lindsay (<http://www.uoguelph.ca/~hydrogeo/index.html>)
 * Contributors: Dr. Qiusheng Wu (<https://wetlands.io>)
 * GitHub repo: <https://github.com/giswqs/whiteboxR>
+* CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
 * User Manual: <https://jblindsay.github.io/wbt_book>
 * Free software: [MIT license](https://opensource.org/licenses/MIT)
@@ -42,7 +44,7 @@ There are three ways to install the **whitebox** R package.
 
 ### 1. CRAN
 
-**whitebox** will be available on CRAN soon. Once it is available on CRAN, you can install it with:
+**whitebox** is now available on [CRAN](https://cran.r-project.org/package=whitebox), so you can install it with:
 
 ```R
 install.packages("whitebox")
@@ -50,7 +52,7 @@ install.packages("whitebox")
 
 ### 2. R-Forge
 
-**whitebox** is now available on [R-Forge](https://r-forge.r-project.org/R/?group_id=2337), so you can install it with:
+**whitebox** is also available on [R-Forge](https://r-forge.r-project.org/R/?group_id=2337), so you can install it with:
 
 ```R
 install.packages("whitebox", repos="http://R-Forge.R-project.org")
