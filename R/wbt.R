@@ -65,7 +65,7 @@ wbt_version <- function() {
 }
 
 
-#' Al available tools in WhiteboxTools.
+#' All available tools in WhiteboxTools.
 #'
 #' @param keywords Keywords may be used to search available tools.
 #'
