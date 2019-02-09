@@ -119,9 +119,9 @@ library(whitebox)
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 
 # Run tools
-feature_preserving_denoise(dem, "./smoothed.tif", filter=9)
+feature_preserving_denoise(dem, "./smoothed.tif", filter=9, verbose_mode = TRUE)
 breach_depressions("./smoothed.tif", "./breached.tif")
-d_inf_flow_accumulation(dem, "./flow_accum.tif", verbose_mode = FALSE)
+d_inf_flow_accumulation(dem, "./flow_accum.tif")
 ```
 
 

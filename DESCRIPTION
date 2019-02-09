@@ -15,4 +15,5 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
+SystemRequirements: The 'WhiteboxTools' library (https://github.com/jblindsay/whitebox-tools)
 VignetteBuilder: knitr
