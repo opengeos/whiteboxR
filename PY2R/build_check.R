@@ -11,6 +11,10 @@ rhub::check_with_rpatched()
 rhub::check_with_rrelease()
 rhub::check_with_roldrel()
 
+rhub::check_on_windows()
+
+rhub::list_my_checks()
+
 pkgdown::build_site()
 devtools::submit_cran()
 

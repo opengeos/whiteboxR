@@ -1,4 +1,4 @@
-.onAttach <- function(libname, pkgname) {
+.onLoad <- function(libname, pkgname) {
   os <- Sys.info()["sysname"]
   if (os == "Linux") {
     url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
@@ -21,16 +21,17 @@
 
   if (!file.exists(exe_path)) {
     filename <- basename(url)
-    packageStartupMessage("Downloading WhiteboxTools executable for first time use ...")
+    # packageStartupMessage("Downloading WhiteboxTools executable for first time use ...")
     exe_zip <- file.path(pkg_dir, filename)
     utils::download.file(url = url, destfile = exe_zip)
-    packageStartupMessage(paste("Decompressing", filename, "..."))
+    # packageStartupMessage(paste("Decompressing", filename, "..."))
     if (os == "Windows") {
       utils::unzip(exe_zip, exdir = pkg_dir)
     } else {
       utils::untar(exe_zip, exdir = pkg_dir)
     }
-    packageStartupMessage(paste("WhiteboxTools executable is located at:", exe_path))
-    packageStartupMessage("WhiteboxTools installation completed!")
+    # packageStartupMessage(paste("WhiteboxTools executable is located at:", exe_path))
+    # packageStartupMessage("WhiteboxTools installation completed!")
   }
+
 }
