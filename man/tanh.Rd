@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the hyperbolic tangent (tanh) of each values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 tanh(input = dem, output = 'output.tif')
+}
 }

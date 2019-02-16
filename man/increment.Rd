@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd).
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 increment(input = dem, output = 'output.tif')
+}
 }

@@ -253,9 +253,10 @@ with open(wbt_py) as f:
                         line2 = "#' " + fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
                         ff.write("#'\n")
                         ff.write("#' @examples\n")
-                        # ff.write(line0)
+                        ff.write("#' \dontrun{\n")
                         ff.write(line1)
                         ff.write(line2)
+                        ff.write("#' }\n")
                         # print(line1)
                         # print(line2)
 
@@ -265,7 +266,7 @@ with open(wbt_py) as f:
                         f = open(test_file_path, "w")
                         f.write('context("{}")\n\n'.format(fun_name))
                         f.write('test_that("' + desc + '", {\n\n')
-                        # f.write("  wbt_init()\n")
+                        f.write("  skip_on_cran()\n")
                         f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
                         f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(fun_name))
                         f.write('  expect_match( ret, "Elapsed Time" )\n\n')

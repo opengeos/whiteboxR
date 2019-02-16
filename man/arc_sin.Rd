@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the inverse sine (arcsin) of each values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 arc_sin(input = dem, output = 'output.tif')
+}
 }

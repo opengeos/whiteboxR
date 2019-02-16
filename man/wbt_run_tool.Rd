@@ -20,6 +20,7 @@ Returns the output descriptions of the tool.
 Runs a tool and specifies tool arguments.
 }
 \examples{
+\dontrun{
 tool_name <- "breach_depressions"
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 output <- "./output.tif"
@@ -27,4 +28,5 @@ arg1 <- paste0("--dem=", dem)
 arg2 <- paste0("--output=", output)
 args <- paste(arg1, arg2)
 wbt_run_tool(tool_name, args)
+}
 }

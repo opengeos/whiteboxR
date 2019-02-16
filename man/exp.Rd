@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the exponential (base e) of values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 exp(input = dem, output = 'output.tif')
+}
 }

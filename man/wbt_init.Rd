@@ -13,5 +13,7 @@ Prints out the location of the WhiteboxTools binary
 This function downloads the WhiteboxTools binary if needed.
 }
 \examples{
+\dontrun{
 wbt_init()
+}
 }

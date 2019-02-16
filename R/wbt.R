@@ -6,13 +6,15 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_init()
+#' }
 wbt_init <- function() {
   os <- Sys.info()["sysname"]
   if (os == "Windows") {
-    exe_name = "whitebox_tools.exe"
+    exe_name  <- "whitebox_tools.exe"
   } else {
-    exe_name = "whitebox_tools"
+    exe_name  <- "whitebox_tools"
   }
 
   pkg_dir <- find.package("whitebox")
@@ -54,7 +56,9 @@ wbt_init <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_exe <- wbt_exe_path()
+#' }
 wbt_exe_path <- function() {
   wbt_init()
   os <- Sys.info()["sysname"]
@@ -75,7 +79,9 @@ wbt_exe_path <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_help()
+#' }
 wbt_help <- function() {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -91,7 +97,9 @@ wbt_help <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_license()
+#' }
 wbt_license <- function() {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -107,7 +115,9 @@ wbt_license <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_version()
+#' }
 wbt_version <- function() {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -125,7 +135,9 @@ wbt_version <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_list_tools("lidar")
+#' }
 wbt_list_tools <- function(keywords=NULL) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -149,7 +161,9 @@ wbt_list_tools <- function(keywords=NULL) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_toolbox("breach_depressions")
+#' }
 wbt_toolbox <- function(tool_name=NULL) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -172,7 +186,9 @@ wbt_toolbox <- function(tool_name=NULL) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_tool_help("lidar_info")
+#' }
 wbt_tool_help <- function(tool_name=NULL) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -195,7 +211,9 @@ wbt_tool_help <- function(tool_name=NULL) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_tool_parameters("lidar_info")
+#' }
 wbt_tool_parameters <- function(tool_name) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -215,7 +233,9 @@ wbt_tool_parameters <- function(tool_name) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_view_code("breach_depressions")
+#' }
 wbt_view_code <- function(tool_name) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -238,6 +258,7 @@ wbt_view_code <- function(tool_name) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' tool_name <- "breach_depressions"
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' output <- "./output.tif"
@@ -245,6 +266,7 @@ wbt_view_code <- function(tool_name) {
 #' arg2 <- paste0("--output=", output)
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
+#' }
 wbt_run_tool <- function(tool_name, args, verbose_mode=FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
@@ -252,7 +274,7 @@ wbt_run_tool <- function(tool_name, args, verbose_mode=FALSE) {
   args2 <- paste(wbt_exe, arg1, args, "-v")
   ret <- system(args2, intern = TRUE)
   if (verbose_mode == FALSE) {
-    ret <- paste(tool_name, "-", utils::tail(ret, n=1))
+    ret <- paste(tool_name, "-", utils::tail(ret, n = 1))
   }
   return(ret)
 }

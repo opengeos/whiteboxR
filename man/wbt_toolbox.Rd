@@ -16,5 +16,7 @@ Returns the toolbox for a specific tool.
 Retrieve the toolbox for a specific tool.
 }
 \examples{
+\dontrun{
 wbt_toolbox("breach_depressions")
+}
 }

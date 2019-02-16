@@ -76,8 +76,10 @@ or <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' absolute_value(input = dem, output = 'output.tif')
+#' }
 absolute_value <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -144,8 +146,10 @@ anova <- function(input, features, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' arc_cos(input = dem, output = 'output.tif')
+#' }
 arc_cos <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -168,8 +172,10 @@ arc_cos <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' arc_sin(input = dem, output = 'output.tif')
+#' }
 arc_sin <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -192,8 +198,10 @@ arc_sin <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' arc_tan(input = dem, output = 'output.tif')
+#' }
 arc_tan <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -310,8 +318,10 @@ attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' ceil(input = dem, output = 'output.tif')
+#' }
 ceil <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -334,8 +344,10 @@ ceil <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' cos(input = dem, output = 'output.tif')
+#' }
 cos <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -358,8 +370,10 @@ cos <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' cosh(input = dem, output = 'output.tif')
+#' }
 cosh <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -426,8 +440,10 @@ cross_tabulation <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' cumulative_distribution(input = dem, output = 'output.tif')
+#' }
 cumulative_distribution <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -450,8 +466,10 @@ cumulative_distribution <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' decrement(input = dem, output = 'output.tif')
+#' }
 decrement <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -518,8 +536,10 @@ equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' exp(input = dem, output = 'output.tif')
+#' }
 exp <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -542,8 +562,10 @@ exp <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' exp2(input = dem, output = 'output.tif')
+#' }
 exp2 <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -598,8 +620,10 @@ extract_raster_statistics <- function(input, features, output=NULL, stat="averag
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' floor(input = dem, output = 'output.tif')
+#' }
 floor <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -804,8 +828,10 @@ in_place_subtract <- function(input1, input2, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' increment(input = dem, output = 'output.tif')
+#' }
 increment <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -850,8 +876,10 @@ integer_division <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' is_no_data(input = dem, output = 'output.tif')
+#' }
 is_no_data <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -968,8 +996,10 @@ list_unique_values <- function(input, field, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' ln(input = dem, output = 'output.tif')
+#' }
 ln <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -992,8 +1022,10 @@ ln <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' log10(input = dem, output = 'output.tif')
+#' }
 log10 <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1016,8 +1048,10 @@ log10 <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' log2(input = dem, output = 'output.tif')
+#' }
 log2 <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1128,8 +1162,10 @@ multiply <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' negate(input = dem, output = 'output.tif')
+#' }
 negate <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1330,8 +1366,10 @@ raster_summary_stats <- function(input, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' reciprocal(input = dem, output = 'output.tif')
+#' }
 reciprocal <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1406,8 +1444,10 @@ root_mean_square_error <- function(input, base, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' round(input = dem, output = 'output.tif')
+#' }
 round <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1430,8 +1470,10 @@ round <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' sin(input = dem, output = 'output.tif')
+#' }
 sin <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1454,8 +1496,10 @@ sin <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' sinh(input = dem, output = 'output.tif')
+#' }
 sinh <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1478,8 +1522,10 @@ sinh <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' square(input = dem, output = 'output.tif')
+#' }
 square <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1502,8 +1548,10 @@ square <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' square_root(input = dem, output = 'output.tif')
+#' }
 square_root <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1548,8 +1596,10 @@ subtract <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' tan(input = dem, output = 'output.tif')
+#' }
 tan <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1572,8 +1622,10 @@ tan <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' tanh(input = dem, output = 'output.tif')
+#' }
 tanh <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1596,8 +1648,10 @@ tanh <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' to_degrees(input = dem, output = 'output.tif')
+#' }
 to_degrees <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1620,8 +1674,10 @@ to_degrees <- function(input, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' to_radians(input = dem, output = 'output.tif')
+#' }
 to_radians <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
@@ -1768,8 +1824,10 @@ xor <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
 #' z_scores(input = dem, output = 'output.tif')
+#' }
 z_scores <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""

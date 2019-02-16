@@ -13,5 +13,7 @@ Returns the license information for WhiteboxTools as an R character vector.
 License information for WhiteboxTools.
 }
 \examples{
+\dontrun{
 wbt_license()
+}
 }

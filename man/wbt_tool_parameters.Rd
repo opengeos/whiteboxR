@@ -16,5 +16,7 @@ Returns the tool parameter descriptions for a specific tool.
 Retrieves the tool parameter descriptions for a specific tool.
 }
 \examples{
+\dontrun{
 wbt_tool_parameters("lidar_info")
+}
 }

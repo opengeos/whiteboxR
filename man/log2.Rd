@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the base-2 logarithm of values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 log2(input = dem, output = 'output.tif')
+}
 }

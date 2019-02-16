@@ -1,6 +1,9 @@
 if (!require(devtools)) install.packages('devtools')
 if (!require(pkgdown)) install.packages('pkgdown')
 if (!require(rhub)) install.packages('rhub')
+if (!require(lintr)) install.packages('lintr')
+
+lintr::lint_package()
 
 devtools::check()
 devtools::test()
