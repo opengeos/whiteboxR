@@ -1,3 +1,51 @@
+#' Initialize whitebox
+#'
+#' This function downloads the WhiteboxTools binary if needed.
+#'
+#' @return Prints out the location of the WhiteboxTools binary
+#' @export
+#'
+#' @examples
+#' wbt_init()
+wbt_init <- function() {
+  os <- Sys.info()["sysname"]
+  if (os == "Windows") {
+    exe_name = "whitebox_tools.exe"
+  } else {
+    exe_name = "whitebox_tools"
+  }
+
+  pkg_dir <- find.package("whitebox")
+  exe_path <- file.path(pkg_dir, "WBT", exe_name)
+
+  # Check for binary file in 'WBT' directory.
+
+  if (!file.exists(exe_path)) {
+    if (os == "Linux") {
+      url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
+    } else if (os == "Windows") {
+      url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_win_amd64.zip"
+    } else if (os == "Darwin") {
+      url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_darwin_amd64.zip"
+    } else {
+      stop("Sorry, whitebox is unsupported for your operating system!")
+    }
+    filename <- basename(url)
+    cat("Performing one-time download of WhiteboxTools binary from\n")
+    cat("    ", url, "\n")
+    cat("(This could take a few minutes, please be patient...)\n")
+    exe_zip <- file.path(pkg_dir, filename)
+    utils::download.file(url = url, destfile = exe_zip)
+    if (os == "Windows") {
+      utils::unzip(exe_zip, exdir = pkg_dir)
+    } else {
+      utils::untar(exe_zip, exdir = pkg_dir)
+    }
+    cat("WhiteboxTools binary is located at: ", exe_path, "\n")
+  }
+}
+
+
 #' File path of the WhiteboxTools executable.
 #'
 #' Get the file path of the WhiteboxTools executable.
@@ -8,6 +56,7 @@
 #' @examples
 #' wbt_exe <- wbt_exe_path()
 wbt_exe_path <- function() {
+  wbt_init()
   os <- Sys.info()["sysname"]
   if (os == "Windows") {
     exe_name <- "whitebox_tools.exe"
@@ -28,6 +77,7 @@ wbt_exe_path <- function() {
 #' @examples
 #' wbt_help()
 wbt_help <- function() {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--help")
   ret <- system(args, intern = TRUE)
@@ -43,6 +93,7 @@ wbt_help <- function() {
 #' @examples
 #' wbt_license()
 wbt_license <- function() {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--license")
   ret <- system(args, intern = TRUE)
@@ -58,6 +109,7 @@ wbt_license <- function() {
 #' @examples
 #' wbt_version()
 wbt_version <- function() {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--version")
   ret <- system(args, intern = TRUE)
@@ -75,6 +127,7 @@ wbt_version <- function() {
 #' @examples
 #' wbt_list_tools("lidar")
 wbt_list_tools <- function(keywords=NULL) {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--listtools")
   if (!is.null(keywords)) {
@@ -98,6 +151,7 @@ wbt_list_tools <- function(keywords=NULL) {
 #' @examples
 #' wbt_toolbox("breach_depressions")
 wbt_toolbox <- function(tool_name=NULL) {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--toolbox=")
   if (!is.null(tool_name)) {
@@ -120,6 +174,7 @@ wbt_toolbox <- function(tool_name=NULL) {
 #' @examples
 #' wbt_tool_help("lidar_info")
 wbt_tool_help <- function(tool_name=NULL) {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--toolhelp=")
   if (!is.null(tool_name)) {
@@ -142,6 +197,7 @@ wbt_tool_help <- function(tool_name=NULL) {
 #' @examples
 #' wbt_tool_parameters("lidar_info")
 wbt_tool_parameters <- function(tool_name) {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste0("--toolparameters=", tool_name)
   args <- paste(wbt_exe, args)
@@ -161,6 +217,7 @@ wbt_tool_parameters <- function(tool_name) {
 #' @examples
 #' wbt_view_code("breach_depressions")
 wbt_view_code <- function(tool_name) {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   args <- paste0("--viewcode=", tool_name)
   args <- paste(wbt_exe, args)
@@ -189,6 +246,7 @@ wbt_view_code <- function(tool_name) {
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
 wbt_run_tool <- function(tool_name, args, verbose_mode=FALSE) {
+  wbt_init()
   wbt_exe <- wbt_exe_path()
   arg1 <- paste0("--run=", tool_name)
   args2 <- paste(wbt_exe, arg1, args, "-v")

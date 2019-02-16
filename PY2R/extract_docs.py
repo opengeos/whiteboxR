@@ -47,7 +47,7 @@ def function_block(line, ff):
     argument = line[start:end]
     function_head = function_name + " <- function(" + argument + ") {"
     ff.write(function_head + "\n")
-    # ff.write("  wbt_exe <- wbt_exe_path()" + "\n")
+    ff.write("  wbt_init()" + "\n")
     ff.write('  args <- ""' + "\n")
     arguments = argument.split(",")
     for item in arguments:
@@ -248,10 +248,12 @@ with open(wbt_py) as f:
                         # print(fun_name)
                         output_name = fun_name + ".tif"
                         # print(fun_params)
+                        # line0 = "#' " + "wbt_init()\n"
                         line1 = "#' " + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")' + "\n" 
                         line2 = "#' " + fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
                         ff.write("#'\n")
                         ff.write("#' @examples\n")
+                        # ff.write(line0)
                         ff.write(line1)
                         ff.write(line2)
                         # print(line1)
@@ -263,6 +265,7 @@ with open(wbt_py) as f:
                         f = open(test_file_path, "w")
                         f.write('context("{}")\n\n'.format(fun_name))
                         f.write('test_that("' + desc + '", {\n\n')
+                        # f.write("  wbt_init()\n")
                         f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
                         f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(fun_name))
                         f.write('  expect_match( ret, "Elapsed Time" )\n\n')

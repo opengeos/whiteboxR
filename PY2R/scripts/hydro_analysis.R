@@ -9,6 +9,7 @@
 #' @return Returns the tool text outputs.
 #' @export
 average_flowpath_slope <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -28,6 +29,7 @@ average_flowpath_slope <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 average_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -48,6 +50,7 @@ average_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
@@ -72,6 +75,7 @@ basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -97,6 +101,7 @@ breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, ver
 #' @return Returns the tool text outputs.
 #' @export
 breach_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -119,6 +124,7 @@ breach_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -150,6 +156,7 @@ d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=
 #' @return Returns the tool text outputs.
 #' @export
 d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--loading=", loading))
@@ -173,6 +180,7 @@ d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_m
 #' @return Returns the tool text outputs.
 #' @export
 d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -199,6 +207,7 @@ d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -233,6 +242,7 @@ d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing
 #' @return Returns the tool text outputs.
 #' @export
 d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--loading=", loading))
@@ -255,6 +265,7 @@ d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbos
 #' @return Returns the tool text outputs.
 #' @export
 d_inf_pointer <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -275,6 +286,7 @@ d_inf_pointer <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -298,6 +310,7 @@ depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE
 #' @return Returns the tool text outputs.
 #' @export
 downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
@@ -321,6 +334,7 @@ downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=FALS
 #' @return Returns the tool text outputs.
 #' @export
 downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=NULL, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
@@ -350,6 +364,7 @@ downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=
 #' @return Returns the tool text outputs.
 #' @export
 elevation_above_stream <- function(dem, streams, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
@@ -371,6 +386,7 @@ elevation_above_stream <- function(dem, streams, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
@@ -396,6 +412,7 @@ elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=
 #' @return Returns the tool text outputs.
 #' @export
 fd8_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -430,6 +447,7 @@ fd8_flow_accumulation <- function(dem, output, out_type="specific contributing a
 #' @return Returns the tool text outputs.
 #' @export
 fd8_pointer <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -450,6 +468,7 @@ fd8_pointer <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
@@ -471,6 +490,7 @@ fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -493,6 +513,7 @@ fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 fill_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -512,6 +533,7 @@ fill_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 find_no_flow_cells <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -532,6 +554,7 @@ find_no_flow_cells <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
@@ -553,6 +576,7 @@ find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 flatten_lakes <- function(dem, lakes, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--lakes=", lakes))
@@ -573,6 +597,7 @@ flatten_lakes <- function(dem, lakes, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 flood_order <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -598,6 +623,7 @@ flood_order <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, out_type="Specific Contributing Area", log=FALSE, clip=FALSE, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--out_dem=", out_dem))
@@ -632,6 +658,7 @@ flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, o
 #' @return Returns the tool text outputs.
 #' @export
 flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
@@ -656,6 +683,7 @@ flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALS
 #' @return Returns the tool text outputs.
 #' @export
 hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
@@ -681,6 +709,7 @@ hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=F
 #' @return Returns the tool text outputs.
 #' @export
 impoundment_index <- function(dem, output, damlength, out_type="depth", verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -705,6 +734,7 @@ impoundment_index <- function(dem, output, damlength, out_type="depth", verbose_
 #' @return Returns the tool text outputs.
 #' @export
 isobasins <- function(dem, output, size, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -727,6 +757,7 @@ isobasins <- function(dem, output, size, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--pour_pts=", pour_pts))
   args <- paste(args, paste0("--streams=", streams))
@@ -749,6 +780,7 @@ jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbos
 #' @return Returns the tool text outputs.
 #' @export
 longest_flowpath <- function(dem, basins, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--basins=", basins))
@@ -769,6 +801,7 @@ longest_flowpath <- function(dem, basins, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 max_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -788,6 +821,7 @@ max_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 num_inflowing_neighbours <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -810,6 +844,7 @@ num_inflowing_neighbours <- function(dem, output, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--dem=", dem))
@@ -837,6 +872,7 @@ raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_m
 #' @return Returns the tool text outputs.
 #' @export
 rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -860,6 +896,7 @@ rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -884,6 +921,7 @@ sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
 #' @return Returns the tool text outputs.
 #' @export
 snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--pour_pts=", pour_pts))
   args <- paste(args, paste0("--flow_accum=", flow_accum))
@@ -908,6 +946,7 @@ snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mo
 #' @return Returns the tool text outputs.
 #' @export
 stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=1000, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
@@ -934,6 +973,7 @@ stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=
 #' @return Returns the tool text outputs.
 #' @export
 strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
@@ -959,6 +999,7 @@ strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, ver
 #' @return Returns the tool text outputs.
 #' @export
 subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
@@ -985,6 +1026,7 @@ subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FA
 #' @return Returns the tool text outputs.
 #' @export
 trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--seed_pts=", seed_pts))
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -1013,6 +1055,7 @@ trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE
 #' @return Returns the tool text outputs.
 #' @export
 unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--pour_pts=", pour_pts))
@@ -1038,6 +1081,7 @@ unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mo
 #' @return Returns the tool text outputs.
 #' @export
 watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+  wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--pour_pts=", pour_pts))
