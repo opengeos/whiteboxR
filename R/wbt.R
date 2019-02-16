@@ -44,6 +44,9 @@ wbt_init <- function() {
       utils::untar(exe_zip, exdir = pkg_dir)
     }
     cat("WhiteboxTools binary is located at: ", exe_path, "\n")
+    cat("You can now start using whitebox\n")
+    cat("    > library(whitebox)\n")
+    cat("    > wbt_version()\n")
   }
 }
 
