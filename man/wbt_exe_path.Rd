@@ -13,5 +13,7 @@ Returns the file path of WhiteboxTools executable.
 Get the file path of the WhiteboxTools executable.
 }
 \examples{
+\dontrun{
 wbt_exe <- wbt_exe_path()
+}
 }

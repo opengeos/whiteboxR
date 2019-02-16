@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@
       <h1>whitebox examples</h1>
                         <h4 class="author">Qiusheng Wu</h4>
             
-            <h4 class="date">2019-02-08</h4>
+            <h4 class="date">2019-02-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/vignettes/demo.Rmd"><code>vignettes/demo.Rmd</code></a></small>
       <div class="hidden name"><code>demo.Rmd</code></div>
@@ -172,14 +172,13 @@
 <h2 class="hasAnchor">
 <a href="#how-to-run-tools" class="anchor"></a>How to run tools?</h2>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(whitebox)</a>
-<a class="sourceLine" id="cb17-2" title="2"></a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="co"># Set input raster DEM file</span></a>
-<a class="sourceLine" id="cb17-4" title="4">dem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="dt">package=</span><span class="st">"whitebox"</span>)</a>
-<a class="sourceLine" id="cb17-5" title="5"></a>
-<a class="sourceLine" id="cb17-6" title="6"><span class="co"># Run tools</span></a>
-<a class="sourceLine" id="cb17-7" title="7"><span class="kw"><a href="../reference/feature_preserving_denoise.html">feature_preserving_denoise</a></span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>, <span class="dt">verbose_mode =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb17-8" title="8"><span class="kw"><a href="../reference/breach_depressions.html">breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)</a>
-<a class="sourceLine" id="cb17-9" title="9"><span class="kw"><a href="../reference/d_inf_flow_accumulation.html">d_inf_flow_accumulation</a></span>(dem, <span class="st">"./flow_accum.tif"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb17-2" title="2"><span class="co"># Set input raster DEM file</span></a>
+<a class="sourceLine" id="cb17-3" title="3">dem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="dt">package=</span><span class="st">"whitebox"</span>)</a>
+<a class="sourceLine" id="cb17-4" title="4"></a>
+<a class="sourceLine" id="cb17-5" title="5"><span class="co"># Run tools</span></a>
+<a class="sourceLine" id="cb17-6" title="6"><span class="kw"><a href="../reference/feature_preserving_denoise.html">feature_preserving_denoise</a></span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>, <span class="dt">verbose_mode =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="kw"><a href="../reference/breach_depressions.html">breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)</a>
+<a class="sourceLine" id="cb17-8" title="8"><span class="kw"><a href="../reference/d_inf_flow_accumulation.html">d_inf_flow_accumulation</a></span>(dem, <span class="st">"./flow_accum.tif"</span>)</a></code></pre></div>
 </div>
   </div>
 

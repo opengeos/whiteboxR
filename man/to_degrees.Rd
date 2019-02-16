@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Converts a raster from radians to degrees.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 to_degrees(input = dem, output = 'output.tif')
+}
 }

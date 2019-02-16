@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Standardizes the values in an input raster by converting to z-scores.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 z_scores(input = dem, output = 'output.tif')
+}
 }

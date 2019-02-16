@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Converts a raster image to its cumulative distribution function.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 cumulative_distribution(input = dem, output = 'output.tif')
+}
 }

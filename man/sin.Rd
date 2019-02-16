@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the sine (sin) of each values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 sin(input = dem, output = 'output.tif')
+}
 }

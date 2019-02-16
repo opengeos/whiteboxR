@@ -13,5 +13,7 @@ Returns the help description for WhiteboxTools as an R character vector.
 Help description for WhiteboxTools.
 }
 \examples{
+\dontrun{
 wbt_help()
+}
 }

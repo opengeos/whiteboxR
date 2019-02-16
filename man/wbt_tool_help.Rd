@@ -16,5 +16,7 @@ Returns the help description for a specific tool.
 Retrieves the help description for a specific tool.
 }
 \examples{
+\dontrun{
 wbt_tool_help("lidar_info")
+}
 }

@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 floor(input = dem, output = 'output.tif')
+}
 }

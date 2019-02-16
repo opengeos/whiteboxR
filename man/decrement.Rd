@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 decrement(input = dem, output = 'output.tif')
+}
 }

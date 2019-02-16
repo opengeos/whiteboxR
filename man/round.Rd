@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Rounds the values in an input raster to the nearest integer value.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 round(input = dem, output = 'output.tif')
+}
 }

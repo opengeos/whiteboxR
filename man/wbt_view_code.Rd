@@ -16,5 +16,7 @@ Returns a GitHub URL to view the source code of the tool.
 Opens a web browser to view the source code for a specific tool on the projects source code repository.
 }
 \examples{
+\dontrun{
 wbt_view_code("breach_depressions")
+}
 }

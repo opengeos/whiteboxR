@@ -13,5 +13,7 @@ Returns the version information for WhiteboxTools as an R character vector.
 Version information for WhiteboxTools.
 }
 \examples{
+\dontrun{
 wbt_version()
+}
 }

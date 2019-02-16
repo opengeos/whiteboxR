@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Calculates the absolute value of every cell in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 absolute_value(input = dem, output = 'output.tif')
+}
 }

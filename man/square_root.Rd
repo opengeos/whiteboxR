@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Returns the square root of the values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 square_root(input = dem, output = 'output.tif')
+}
 }

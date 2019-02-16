@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Identifies NoData valued pixels in an image.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 is_no_data(input = dem, output = 'output.tif')
+}
 }

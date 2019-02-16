@@ -16,5 +16,7 @@ Return all available tools in WhiteboxTools that contain the keywords.
 All available tools in WhiteboxTools.
 }
 \examples{
+\dontrun{
 wbt_list_tools("lidar")
+}
 }

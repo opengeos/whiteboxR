@@ -20,6 +20,8 @@ Returns the tool text outputs.
 Squares the values in a raster.
 }
 \examples{
+\dontrun{
 dem <- system.file("extdata", "DEM.tif", package="whitebox")
 square(input = dem, output = 'output.tif')
+}
 }
