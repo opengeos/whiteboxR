@@ -11,3 +11,4 @@ output.tif
 vignettes/*.tif
 vignettes/*.log
 *.tif
+.vscode/

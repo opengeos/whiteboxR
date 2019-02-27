@@ -17,7 +17,8 @@ aspect <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -45,7 +46,8 @@ dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode
   if (!is.null(filtery)) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -73,7 +75,8 @@ diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mod
   if (!is.null(filtery)) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -101,7 +104,8 @@ directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_
   if (!is.null(max_dist)) {
     args <- paste(args, paste0("--max_dist=", max_dist))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -129,7 +133,8 @@ downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_m
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -177,7 +182,8 @@ drainage_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -197,7 +203,8 @@ elev_above_pit <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -229,7 +236,8 @@ elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, v
   if (!is.null(sig_digits)) {
     args <- paste(args, paste0("--sig_digits=", sig_digits))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -249,7 +257,8 @@ elev_relative_to_min_max <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -271,7 +280,8 @@ elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--watersheds=", watersheds))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -311,7 +321,8 @@ feature_preserving_denoise <- function(dem, output, filter=11, norm_diff=15.0, n
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -339,7 +350,8 @@ fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=
   if (!is.null(hgt_inc)) {
     args <- paste(args, paste0("--hgt_inc=", hgt_inc))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -367,7 +379,8 @@ fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode
   if (!is.null(weight)) {
     args <- paste(args, paste0("--weight=", weight))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -391,7 +404,8 @@ find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=FALSE) {
   if (!is.null(line_thin)) {
     args <- paste(args, paste0("--line_thin=", line_thin))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -423,7 +437,8 @@ hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, ve
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -451,7 +466,8 @@ horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=
   if (!is.null(max_dist)) {
     args <- paste(args, paste0("--max_dist=", max_dist))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -475,7 +491,8 @@ hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=FA
   if (!is.null(watershed)) {
     args <- paste(args, paste0("--watershed=", watershed))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -507,7 +524,8 @@ max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, 
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -539,7 +557,8 @@ max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_sca
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -563,7 +582,8 @@ max_branch_length <- function(dem, output, log=FALSE, verbose_mode=FALSE) {
   if (!is.null(log)) {
     args <- paste(args, paste0("--log=", log))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -593,7 +613,8 @@ max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_sca
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -613,7 +634,8 @@ max_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -643,7 +665,8 @@ max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, st
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -673,7 +696,8 @@ max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scal
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -693,7 +717,8 @@ min_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -725,7 +750,8 @@ multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -757,7 +783,8 @@ multiscale_roughness_signature <- function(dem, points, output, max_scale, min_s
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -785,7 +812,8 @@ multiscale_topographic_position_image <- function(local, meso, broad, output, li
   if (!is.null(lightness)) {
     args <- paste(args, paste0("--lightness=", lightness))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -805,7 +833,8 @@ num_downslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -825,7 +854,8 @@ num_upslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -861,7 +891,8 @@ pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, z
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -889,7 +920,8 @@ percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=F
   if (!is.null(filtery)) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -913,7 +945,8 @@ plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -935,7 +968,8 @@ profile <- function(lines, surface, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--lines=", lines))
   args <- paste(args, paste0("--surface=", surface))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -959,7 +993,8 @@ profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -987,7 +1022,8 @@ relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1013,7 +1049,8 @@ relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbos
   if (!is.null(exponent)) {
     args <- paste(args, paste0("--exponent=", exponent))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1041,7 +1078,8 @@ relative_topographic_position <- function(dem, output, filterx=11, filtery=11, v
   if (!is.null(filtery)) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1069,7 +1107,8 @@ remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbo
   if (!is.null(slope)) {
     args <- paste(args, paste0("--slope=", slope))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1093,7 +1132,8 @@ ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1123,7 +1163,8 @@ sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope
   if (!is.null(slope_exponent)) {
     args <- paste(args, paste0("--slope_exponent=", slope_exponent))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1147,7 +1188,8 @@ slope <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1171,7 +1213,8 @@ slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode
   if (!is.null(watershed)) {
     args <- paste(args, paste0("--watershed=", watershed))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1203,7 +1246,8 @@ standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, 
   if (!is.null(filtery)) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1227,7 +1271,8 @@ tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1251,7 +1296,8 @@ total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1277,7 +1323,8 @@ viewshed <- function(dem, stations, output, height=2.0, verbose_mode=FALSE) {
   if (!is.null(height)) {
     args <- paste(args, paste0("--height=", height))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1305,7 +1352,8 @@ visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode
   if (!is.null(res_factor)) {
     args <- paste(args, paste0("--res_factor=", res_factor))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1327,7 +1375,8 @@ wetness_index <- function(sca, slope, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--sca=", sca))
   args <- paste(args, paste0("--slope=", slope))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 

@@ -13,7 +13,8 @@ average_flowpath_slope <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -33,7 +34,8 @@ average_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -57,7 +59,8 @@ basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -85,7 +88,8 @@ breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, ver
   if (!is.null(max_length)) {
     args <- paste(args, paste0("--max_length=", max_length))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -105,7 +109,8 @@ breach_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -137,7 +142,8 @@ d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -163,7 +169,8 @@ d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_m
   args <- paste(args, paste0("--efficiency=", efficiency))
   args <- paste(args, paste0("--absorption=", absorption))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -187,7 +194,8 @@ d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -223,7 +231,8 @@ d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -249,7 +258,8 @@ d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbos
   args <- paste(args, paste0("--efficiency=", efficiency))
   args <- paste(args, paste0("--absorption=", absorption))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -269,7 +279,8 @@ d_inf_pointer <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -293,7 +304,8 @@ depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -315,7 +327,8 @@ downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=FALS
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -347,7 +360,8 @@ downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -369,7 +383,8 @@ elevation_above_stream <- function(dem, streams, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -391,7 +406,8 @@ elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -431,7 +447,8 @@ fd8_flow_accumulation <- function(dem, output, out_type="specific contributing a
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -451,7 +468,8 @@ fd8_pointer <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -473,7 +491,8 @@ fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -497,7 +516,8 @@ fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=FALSE) {
   if (!is.null(fix_flats)) {
     args <- paste(args, paste0("--fix_flats=", fix_flats))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -517,7 +537,8 @@ fill_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -537,7 +558,8 @@ find_no_flow_cells <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -559,7 +581,8 @@ find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -581,7 +604,8 @@ flatten_lakes <- function(dem, lakes, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--lakes=", lakes))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -601,7 +625,8 @@ flood_order <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -641,7 +666,8 @@ flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, o
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -665,7 +691,8 @@ flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALS
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -691,7 +718,8 @@ hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=F
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -717,7 +745,8 @@ impoundment_index <- function(dem, output, damlength, out_type="depth", verbose_
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -739,7 +768,8 @@ isobasins <- function(dem, output, size, verbose_mode=FALSE) {
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--size=", size))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -763,7 +793,8 @@ jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbos
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--snap_dist=", snap_dist))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -785,7 +816,8 @@ longest_flowpath <- function(dem, basins, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--basins=", basins))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -805,7 +837,8 @@ max_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -825,7 +858,8 @@ num_inflowing_neighbours <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -855,7 +889,8 @@ raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_m
   if (!is.null(height)) {
     args <- paste(args, paste0("--height=", height))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -879,7 +914,8 @@ rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -903,7 +939,8 @@ sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -927,7 +964,8 @@ snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mo
   args <- paste(args, paste0("--flow_accum=", flow_accum))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--snap_dist=", snap_dist))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -955,7 +993,8 @@ stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=
   if (!is.null(iterations)) {
     args <- paste(args, paste0("--iterations=", iterations))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -981,7 +1020,8 @@ strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, ver
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1007,7 +1047,8 @@ subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FA
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1037,7 +1078,8 @@ trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1063,7 +1105,8 @@ unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mo
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1089,7 +1132,8 @@ watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=F
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 

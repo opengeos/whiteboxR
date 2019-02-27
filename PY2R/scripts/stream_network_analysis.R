@@ -23,7 +23,8 @@ distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -49,7 +50,8 @@ extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -81,7 +83,8 @@ extract_valleys <- function(dem, output, variant="Lower Quartile", line_thin=TRU
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -111,7 +114,8 @@ farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -141,7 +145,8 @@ find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_backg
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -171,7 +176,8 @@ hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_ba
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -201,7 +207,8 @@ horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -231,7 +238,8 @@ length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALS
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -259,7 +267,8 @@ long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, verbose
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -287,7 +296,8 @@ long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FAL
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -313,7 +323,8 @@ raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, 
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -343,7 +354,8 @@ rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FAL
   if (!is.null(feature_id)) {
     args <- paste(args, paste0("--feature_id=", feature_id))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -371,7 +383,8 @@ remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr
   if (!is.null(esri_pntr)) {
     args <- paste(args, paste0("--esri_pntr=", esri_pntr))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -401,7 +414,8 @@ shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -431,7 +445,8 @@ strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -461,7 +476,8 @@ stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_ba
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -491,7 +507,8 @@ stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -521,7 +538,8 @@ stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_ba
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -553,7 +571,8 @@ stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zer
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -585,7 +604,8 @@ stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FAL
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -615,7 +635,8 @@ topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -645,7 +666,8 @@ tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero
   if (!is.null(zero_background)) {
     args <- paste(args, paste0("--zero_background=", zero_background))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 

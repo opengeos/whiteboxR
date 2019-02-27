@@ -15,7 +15,8 @@ and <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -37,7 +38,8 @@ not <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -59,7 +61,8 @@ or <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -85,7 +88,8 @@ absolute_value <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -107,7 +111,8 @@ add <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -129,7 +134,8 @@ anova <- function(input, features, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--features=", features))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -155,7 +161,8 @@ arc_cos <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -181,7 +188,8 @@ arc_sin <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -207,7 +215,8 @@ arc_tan <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -229,7 +238,8 @@ atan2 <- function(input_y, input_x, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input_y=", input_y))
   args <- paste(args, paste0("--input_x=", input_x))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -251,7 +261,8 @@ attribute_correlation <- function(input, output=NULL, verbose_mode=FALSE) {
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -273,7 +284,8 @@ attribute_histogram <- function(input, field, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -301,7 +313,8 @@ attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE
   if (!is.null(trendline)) {
     args <- paste(args, paste0("--trendline=", trendline))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -327,7 +340,8 @@ ceil <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -353,7 +367,8 @@ cos <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -379,7 +394,8 @@ cosh <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -401,7 +417,8 @@ crispness_index <- function(input, output=NULL, verbose_mode=FALSE) {
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -423,7 +440,8 @@ cross_tabulation <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -449,7 +467,8 @@ cumulative_distribution <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -475,7 +494,8 @@ decrement <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -497,7 +517,8 @@ divide <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -519,7 +540,8 @@ equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -545,7 +567,8 @@ exp <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -571,7 +594,8 @@ exp2 <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -603,7 +627,8 @@ extract_raster_statistics <- function(input, features, output=NULL, stat="averag
   if (!is.null(out_table)) {
     args <- paste(args, paste0("--out_table=", out_table))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -629,7 +654,8 @@ floor <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -655,7 +681,8 @@ greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode
   if (!is.null(incl_equals)) {
     args <- paste(args, paste0("--incl_equals=", incl_equals))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -679,7 +706,8 @@ image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mod
   if (!is.null(contiguity)) {
     args <- paste(args, paste0("--contiguity=", contiguity))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -701,7 +729,8 @@ image_correlation <- function(inputs, output=NULL, verbose_mode=FALSE) {
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -731,7 +760,8 @@ image_regression <- function(input1, input2, output, out_residuals=NULL, standar
   if (!is.null(standardize)) {
     args <- paste(args, paste0("--standardize=", standardize))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -751,7 +781,8 @@ in_place_add <- function(input1, input2, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -771,7 +802,8 @@ in_place_divide <- function(input1, input2, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -791,7 +823,8 @@ in_place_multiply <- function(input1, input2, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -811,7 +844,8 @@ in_place_subtract <- function(input1, input2, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -837,7 +871,8 @@ increment <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -859,7 +894,8 @@ integer_division <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -885,7 +921,8 @@ is_no_data <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -907,7 +944,8 @@ kappa_index <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -931,7 +969,8 @@ ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -957,7 +996,8 @@ less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FA
   if (!is.null(incl_equals)) {
     args <- paste(args, paste0("--incl_equals=", incl_equals))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -979,7 +1019,8 @@ list_unique_values <- function(input, field, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1005,7 +1046,8 @@ ln <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1031,7 +1073,8 @@ log10 <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1057,7 +1100,8 @@ log2 <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1079,7 +1123,8 @@ max <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1101,7 +1146,8 @@ min <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1123,7 +1169,8 @@ modulo <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1145,7 +1192,8 @@ multiply <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1171,7 +1219,8 @@ negate <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1193,7 +1242,8 @@ not_equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1215,7 +1265,8 @@ power <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1243,7 +1294,8 @@ principal_component_analysis <- function(inputs, out_html, num_comp=NULL, standa
   if (!is.null(standardized)) {
     args <- paste(args, paste0("--standardized=", standardized))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1267,7 +1319,8 @@ quantiles <- function(input, output, num_quantiles=5, verbose_mode=FALSE) {
   if (!is.null(num_quantiles)) {
     args <- paste(args, paste0("--num_quantiles=", num_quantiles))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1287,7 +1340,8 @@ random_field <- function(base, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--base=", base))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1311,7 +1365,8 @@ random_sample <- function(base, output, num_samples=1000, verbose_mode=FALSE) {
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1331,7 +1386,8 @@ raster_histogram <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1349,7 +1405,8 @@ raster_summary_stats <- function(input, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1375,7 +1432,8 @@ reciprocal <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1407,7 +1465,8 @@ rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_mi
   if (!is.null(clip_max)) {
     args <- paste(args, paste0("--clip_max=", clip_max))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1427,7 +1486,8 @@ root_mean_square_error <- function(input, base, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--base=", base))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1453,7 +1513,8 @@ round <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1479,7 +1540,8 @@ sin <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1505,7 +1567,8 @@ sinh <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1531,7 +1594,8 @@ square <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1557,7 +1621,8 @@ square_root <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1579,7 +1644,8 @@ subtract <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1605,7 +1671,8 @@ tan <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1631,7 +1698,8 @@ tanh <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1657,7 +1725,8 @@ to_degrees <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1683,7 +1752,8 @@ to_radians <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1707,7 +1777,8 @@ trend_surface <- function(input, output, order=1, verbose_mode=FALSE) {
   if (!is.null(order)) {
     args <- paste(args, paste0("--order=", order))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1735,7 +1806,8 @@ trend_surface_vector_points <- function(input, field, output, cell_size, order=1
   if (!is.null(order)) {
     args <- paste(args, paste0("--order=", order))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1759,7 +1831,8 @@ truncate <- function(input, output, num_decimals=NULL, verbose_mode=FALSE) {
   if (!is.null(num_decimals)) {
     args <- paste(args, paste0("--num_decimals=", num_decimals))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1785,7 +1858,8 @@ turning_bands_simulation <- function(base, output, range, iterations=1000, verbo
   if (!is.null(iterations)) {
     args <- paste(args, paste0("--iterations=", iterations))
   }
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1807,7 +1881,8 @@ xor <- function(input1, input2, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1833,7 +1908,8 @@ z_scores <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  tool_name <- match.call()[[1]]
+  tool_name <- as.character(match.call()[[1]])
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
