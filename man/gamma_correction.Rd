@@ -19,5 +19,5 @@ gamma_correction(input, output, gamma = 0.5, verbose_mode = FALSE)
 Returns the tool text outputs.
 }
 \description{
-Performs a sigmoidal contrast stretch on input images.
+Performs a gamma correction on an input images.
 }

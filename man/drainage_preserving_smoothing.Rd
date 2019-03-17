@@ -5,7 +5,7 @@
 \title{Drainage preserving smoothing}
 \usage{
 drainage_preserving_smoothing(dem, output, filter = 11, norm_diff = 15,
-  num_iter = 10, max_diff = 2, reduction = 80, dfm = 0.15,
+  num_iter = 3, max_diff = 0.5, reduction = 80, dfm = 0.15,
   zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{

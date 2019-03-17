@@ -12,7 +12,7 @@ lidar_histogram(input, output, parameter = "elevation", clip = 1,
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 
-\item{parameter}{Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class.}
+\item{parameter}{Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class'.}
 
 \item{clip}{Amount to clip distribution tails (in percent).}
 
@@ -22,5 +22,5 @@ lidar_histogram(input, output, parameter = "elevation", clip = 1,
 Returns the tool text outputs.
 }
 \description{
-Creates a histogram from LiDAR data.
+Creates a histogram of LiDAR data.
 }

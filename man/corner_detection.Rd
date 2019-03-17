@@ -17,5 +17,5 @@ corner_detection(input, output, verbose_mode = FALSE)
 Returns the tool text outputs.
 }
 \description{
-Identifies corner patterns in boolean images using hit-and-miss pattern mattching.
+Identifies corner patterns in boolean images using hit-and-miss pattern matching.
 }

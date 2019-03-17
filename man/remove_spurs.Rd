@@ -19,5 +19,5 @@ remove_spurs(input, output, iterations = 10, verbose_mode = FALSE)
 Returns the tool text outputs.
 }
 \description{
-Removes the spurs (pruning operation) from a Boolean line image.; intended to be used on the output of the LineThinning tool.
+Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
 }

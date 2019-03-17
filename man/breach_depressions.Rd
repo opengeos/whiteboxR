@@ -5,7 +5,7 @@
 \title{Breach depressions}
 \usage{
 breach_depressions(dem, output, max_depth = NULL, max_length = NULL,
-  verbose_mode = FALSE)
+  flat_increment = NULL, fill_pits = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -15,6 +15,10 @@ breach_depressions(dem, output, max_depth = NULL, max_length = NULL,
 \item{max_depth}{Optional maximum breach depth (default is Inf).}
 
 \item{max_length}{Optional maximum breach channel length (in grid cells; default is Inf).}
+
+\item{flat_increment}{Optional elevation increment applied to flat areas.}
+
+\item{fill_pits}{Optional flag indicating whether to fill single-cell pits.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }
