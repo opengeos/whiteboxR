@@ -45,7 +45,9 @@ There are three ways to install the **whitebox** R package.
 
 ### 1. CRAN
 
-**whitebox** is now available on [CRAN](https://cran.r-project.org/package=whitebox), so you can install it with:
+**Note:** **whitebox** has been temporarily taken down from [CRAN](https://cran.r-project.org/package=whitebox) due to [policy violation](https://cran.r-project.org/web/packages/policies.html) (*Downloads of WhiteboxTools binary as part of package installation*). An updated version will be released once I figure out how to solve this issue. For the time being, you can install **whitebox** from [R-Forge](https://r-forge.r-project.org/R/?group_id=2337) or [GitHub](https://github.com/giswqs/whiteboxR).
+
+~~**whitebox** is now available on [CRAN](https://cran.r-project.org/package=whitebox), so you can install it with:~~
 
 ```R
 install.packages("whitebox")

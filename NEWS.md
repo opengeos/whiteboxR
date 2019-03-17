@@ -1,3 +1,7 @@
+# whitebox 0.3.0
+
+* update to [WhiteboxTools v0.15.0](https://github.com/jblindsay/whitebox-tools/releases)
+
 # whitebox 0.2.0
 
 * Change the way to download WBT binaries

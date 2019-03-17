@@ -15,5 +15,5 @@ raster_summary_stats(input, verbose_mode = FALSE)
 Returns the tool text outputs.
 }
 \description{
-Measures a rasters average, standard deviation, num. non-nodata cells, and total.
+Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total.
 }

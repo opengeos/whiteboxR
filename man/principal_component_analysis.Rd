@@ -4,13 +4,13 @@
 \alias{principal_component_analysis}
 \title{Principal component analysis}
 \usage{
-principal_component_analysis(inputs, out_html, num_comp = NULL,
+principal_component_analysis(inputs, output, num_comp = NULL,
   standardized = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
 
-\item{out_html}{Output HTML report file.}
+\item{output}{Output HTML report file.}
 
 \item{num_comp}{Number of component images to output; <= to num. input images.}
 

@@ -6,7 +6,7 @@
 \usage{
 lidar_tin_gridding(input, output = NULL, parameter = "elevation",
   returns = "all", resolution = 1, exclude_cls = NULL, minz = NULL,
-  maxz = NULL, verbose_mode = FALSE)
+  maxz = NULL, max_triangle_edge_length = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}
@@ -24,6 +24,8 @@ lidar_tin_gridding(input, output = NULL, parameter = "elevation",
 \item{minz}{Optional minimum elevation for inclusion in interpolation.}
 
 \item{maxz}{Optional maximum elevation for inclusion in interpolation.}
+
+\item{max_triangle_edge_length}{Optional maximum triangle edge length; triangles larger than this size will not be gridded.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -22,5 +22,5 @@ fill_missing_data(input, output, filter = 11, weight = 2,
 Returns the tool text outputs.
 }
 \description{
-Fills nodata holes in a DEM.
+Fills NoData holes in a DEM.
 }

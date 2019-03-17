@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -126,7 +126,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>breach_depressions</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='kw'>max_depth</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>max_length</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>flat_increment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>fill_pits</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,6 +146,14 @@
     <tr>
       <th>max_length</th>
       <td><p>Optional maximum breach channel length (in grid cells; default is Inf).</p></td>
+    </tr>
+    <tr>
+      <th>flat_increment</th>
+      <td><p>Optional elevation increment applied to flat areas.</p></td>
+    </tr>
+    <tr>
+      <th>fill_pits</th>
+      <td><p>Optional flag indicating whether to fill single-cell pits.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

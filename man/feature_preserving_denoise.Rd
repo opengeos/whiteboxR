@@ -5,7 +5,7 @@
 \title{Feature preserving denoise}
 \usage{
 feature_preserving_denoise(dem, output, filter = 11, norm_diff = 15,
-  num_iter = 10, max_diff = 2, zfactor = 1, verbose_mode = FALSE)
+  num_iter = 3, max_diff = 0.5, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

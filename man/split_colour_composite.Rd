@@ -9,7 +9,7 @@ split_colour_composite(input, output, verbose_mode = FALSE)
 \arguments{
 \item{input}{Input colour composite image file.}
 
-\item{output}{Output raster file (suffixes of '_r', '_g', and '_b' will be appended).}
+\item{output}{Output raster file (suffixes of _r, _g, and _b will be appended).}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

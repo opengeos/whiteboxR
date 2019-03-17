@@ -4,15 +4,15 @@
 \alias{lidar_tile}
 \title{Lidar tile}
 \usage{
-lidar_tile(input, width_x = 1000, width_y = 1000, origin_x = 0,
+lidar_tile(input, width = 1000, height = 1000, origin_x = 0,
   origin_y = 0, min_points = 2, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
 
-\item{width_x}{Width of tiles in the X dimension; default 1000.0.}
+\item{width}{Width of tiles in the X dimension; default 1000.0.}
 
-\item{width_y}{Width of tiles in the Y dimension.}
+\item{height}{Height of tiles in the Y dimension.}
 
 \item{origin_x}{Origin point X coordinate for tile grid.}
 

@@ -12,7 +12,6 @@ add_point_coordinates_to_table <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -33,7 +32,6 @@ convert_nodata_to_zero <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -54,7 +52,6 @@ convert_raster_format <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -79,7 +76,6 @@ export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=FALSE)
     args <- paste(args, paste0("--headers=", headers))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -106,7 +102,6 @@ join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=F
   args <- paste(args, paste0("--fkey=", fkey))
   args <- paste(args, paste0("--import_field=", import_field))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -127,7 +122,6 @@ lines_to_polygons <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -156,7 +150,6 @@ merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verb
     args <- paste(args, paste0("--import_field=", import_field))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -177,7 +170,6 @@ merge_vectors <- function(inputs, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -202,7 +194,6 @@ multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose
     args <- paste(args, paste0("--exclude_holes=", exclude_holes))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -231,7 +222,6 @@ new_raster_from_base <- function(base, output, value="nodata", data_type="float"
     args <- paste(args, paste0("--data_type=", data_type))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -252,7 +242,6 @@ polygons_to_lines <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -271,7 +260,6 @@ print_geo_tiff_tags <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -292,7 +280,6 @@ raster_to_vector_lines <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -313,7 +300,6 @@ raster_to_vector_points <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -332,7 +318,6 @@ reinitialize_attribute_table <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -353,7 +338,6 @@ remove_polygon_holes <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -378,7 +362,6 @@ set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=FALSE) 
     args <- paste(args, paste0("--back_value=", back_value))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -403,7 +386,6 @@ single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=FA
     args <- paste(args, paste0("--field=", field))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -440,7 +422,6 @@ vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell
     args <- paste(args, paste0("--base=", base))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -481,7 +462,6 @@ vector_points_to_raster <- function(input, output, field="FID", assign="last", n
     args <- paste(args, paste0("--base=", base))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -518,8 +498,5 @@ vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, c
     args <- paste(args, paste0("--base=", base))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
-
-

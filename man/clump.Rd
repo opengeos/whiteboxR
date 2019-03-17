@@ -22,5 +22,5 @@ clump(input, output, diag = TRUE, zero_back = FALSE,
 Returns the tool text outputs.
 }
 \description{
-Groups cells that form physically discrete areas, assigning them unique identifiers.
+Groups cells that form discrete areas, assigning them unique identifiers.
 }

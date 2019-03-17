@@ -14,7 +14,7 @@ extract_raster_statistics(input, features, output = NULL,
 
 \item{output}{Output raster file.}
 
-\item{stat}{Statistic to extract.}
+\item{stat}{Statistic to extract, including 'average', 'minimum', 'maximum', 'range', 'standard deviation', and 'total'.}
 
 \item{out_table}{Output HTML Table file.}
 

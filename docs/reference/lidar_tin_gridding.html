@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -127,7 +127,7 @@
 
     <pre class="usage"><span class='fu'>lidar_tin_gridding</span>(<span class='no'>input</span>, <span class='kw'>output</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>parameter</span> <span class='kw'>=</span> <span class='st'>"elevation"</span>,
   <span class='kw'>returns</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>resolution</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>exclude_cls</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>minz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>maxz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>maxz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>max_triangle_edge_length</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,6 +163,10 @@
     <tr>
       <th>maxz</th>
       <td><p>Optional maximum elevation for inclusion in interpolation.</p></td>
+    </tr>
+    <tr>
+      <th>max_triangle_edge_length</th>
+      <td><p>Optional maximum triangle edge length; triangles larger than this size will not be gridded.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

@@ -18,7 +18,6 @@ change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_m
   args <- paste(args, paste0("--magnitude=", magnitude))
   args <- paste(args, paste0("--direction=", direction))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -47,7 +46,6 @@ closing <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -84,7 +82,6 @@ create_colour_composite <- function(red, green, blue, output, opacity=NULL, enha
     args <- paste(args, paste0("--zeros=", zeros))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -109,7 +106,6 @@ flip_image <- function(input, output, direction="vertical", verbose_mode=FALSE) 
     args <- paste(args, paste0("--direction=", direction))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -148,7 +144,6 @@ ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
     args <- paste(args, paste0("--output=", output))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -171,7 +166,6 @@ image_stack_profile <- function(inputs, points, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--points=", points))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -192,7 +186,6 @@ integral_image <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -235,7 +228,6 @@ k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_itera
     args <- paste(args, paste0("--min_class_size=", min_class_size))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -256,7 +248,6 @@ line_thinning <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -297,7 +288,6 @@ modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clu
     args <- paste(args, paste0("--class_change=", class_change))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -322,7 +312,6 @@ mosaic <- function(inputs, output, method="cc", verbose_mode=FALSE) {
     args <- paste(args, paste0("--method=", method))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -353,38 +342,36 @@ mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4
     args <- paste(args, paste0("--weight=", weight))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
 
-#' Normalized difference vegetation index
+#' Normalized difference index
 #'
-#' Calculates the normalized difference vegetation index (NDVI) from near-infrared and red imagery.
+#' Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
 #'
-#' @param nir Input near-infrared band image.
-#' @param red Input red band image.
+#' @param input1 Input image 1 (e.g. near-infrared band).
+#' @param input2 Input image 2 (e.g. red band).
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
-#' @param osavi Optional flag indicating whether the optimized soil-adjusted veg index (OSAVI) should be used.
+#' @param correction Optional adjustment value (e.g. 1, or 0.16 for the optimal soil adjusted vegetation index, OSAVI).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-normalized_difference_vegetation_index <- function(nir, red, output, clip=0.0, osavi=FALSE, verbose_mode=FALSE) {
+normalized_difference_index <- function(input1, input2, output, clip=0.0, correction=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--nir=", nir))
-  args <- paste(args, paste0("--red=", red))
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
   }
-  if (!is.null(osavi)) {
-    args <- paste(args, paste0("--osavi=", osavi))
+  if (!is.null(correction)) {
+    args <- paste(args, paste0("--correction=", correction))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -413,14 +400,13 @@ opening <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
 
 #' Remove spurs
 #'
-#' Removes the spurs (pruning operation) from a Boolean line image.; intended to be used on the output of the LineThinning tool.
+#' Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -438,7 +424,6 @@ remove_spurs <- function(input, output, iterations=10, verbose_mode=FALSE) {
     args <- paste(args, paste0("--iterations=", iterations))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -463,7 +448,6 @@ resample <- function(inputs, destination, method="cc", verbose_mode=FALSE) {
     args <- paste(args, paste0("--method=", method))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -502,7 +486,6 @@ rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
     args <- paste(args, paste0("--composite=", composite))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -512,7 +495,7 @@ rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
 #' This tool splits an RGB colour composite image into seperate multispectral images.
 #'
 #' @param input Input colour composite image file.
-#' @param output Output raster file (suffixes of '_r', '_g', and '_b' will be appended).
+#' @param output Output raster file (suffixes of _r, _g, and _b will be appended).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
@@ -523,7 +506,6 @@ split_colour_composite <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -544,7 +526,6 @@ thicken_raster_line <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -577,7 +558,6 @@ tophat_transform <- function(input, output, filterx=11, filtery=11, variant="whi
     args <- paste(args, paste0("--variant=", variant))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -604,7 +584,6 @@ write_function_memory_insertion <- function(input1, input2, output, input3=NULL,
     args <- paste(args, paste0("--input3=", input3))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -637,7 +616,6 @@ adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0
     args <- paste(args, paste0("--threshold=", threshold))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -666,7 +644,6 @@ bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verb
     args <- paste(args, paste0("--sigma_int=", sigma_int))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -695,14 +672,13 @@ conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, v
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
 
 #' Corner detection
 #'
-#' Identifies corner patterns in boolean images using hit-and-miss pattern mattching.
+#' Identifies corner patterns in boolean images using hit-and-miss pattern matching.
 #'
 #' @param input Input boolean image.
 #' @param output Output raster file.
@@ -716,7 +692,6 @@ corner_detection <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -745,7 +720,6 @@ diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbo
     args <- paste(args, paste0("--sigma2=", sigma2))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -774,7 +748,6 @@ diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -801,7 +774,6 @@ edge_preserving_mean_filter <- function(input, output, threshold, filter=11, ver
     args <- paste(args, paste0("--filter=", filter))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -830,7 +802,6 @@ emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=F
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -855,7 +826,6 @@ fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=F
     args <- paste(args, paste0("--sigma=", sigma))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -880,7 +850,6 @@ gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=FALSE) {
     args <- paste(args, paste0("--sigma=", sigma))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -909,7 +878,6 @@ high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -942,7 +910,6 @@ high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_d
     args <- paste(args, paste0("--sig_digits=", sig_digits))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -975,7 +942,6 @@ k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, ve
     args <- paste(args, paste0("--k=", k))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1004,7 +970,6 @@ laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1029,7 +994,6 @@ laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode
     args <- paste(args, paste0("--sigma=", sigma))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1066,7 +1030,6 @@ lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0,
     args <- paste(args, paste0("--m=", m))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1099,7 +1062,6 @@ line_detection_filter <- function(input, output, variant="vertical", absvals=FAL
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1128,7 +1090,6 @@ majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1157,7 +1118,6 @@ maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=F
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1186,7 +1146,6 @@ mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=FALSE)
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1219,7 +1178,6 @@ median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, v
     args <- paste(args, paste0("--sig_digits=", sig_digits))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1248,7 +1206,6 @@ minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=F
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1277,7 +1234,6 @@ olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=F
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1310,7 +1266,6 @@ percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
     args <- paste(args, paste0("--sig_digits=", sig_digits))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1335,7 +1290,6 @@ prewitt_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1364,7 +1318,6 @@ range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FAL
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1389,7 +1342,6 @@ roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1414,7 +1366,6 @@ scharr_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1443,7 +1394,6 @@ sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=FA
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1472,7 +1422,6 @@ standard_deviation_filter <- function(input, output, filterx=11, filtery=11, ver
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1501,7 +1450,6 @@ total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FAL
     args <- paste(args, paste0("--filtery=", filtery))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1534,7 +1482,6 @@ unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0
     args <- paste(args, paste0("--threshold=", threshold))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1565,7 +1512,6 @@ user_defined_weights_filter <- function(input, weights, output, center="center",
     args <- paste(args, paste0("--normalize=", normalize))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1590,7 +1536,6 @@ balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose
     args <- paste(args, paste0("--band_mean=", band_mean))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1625,7 +1570,6 @@ correct_vignetting <- function(input, pp, output, focal_length=304.8, image_widt
     args <- paste(args, paste0("--n=", n))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1654,14 +1598,13 @@ direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
 
 #' Gamma correction
 #'
-#' Performs a sigmoidal contrast stretch on input images.
+#' Performs a gamma correction on an input images.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1679,7 +1622,6 @@ gamma_correction <- function(input, output, gamma=0.5, verbose_mode=FALSE) {
     args <- paste(args, paste0("--gamma=", gamma))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1704,7 +1646,6 @@ gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode
     args <- paste(args, paste0("--num_tones=", num_tones))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1729,7 +1670,6 @@ histogram_equalization <- function(input, output, num_tones=256, verbose_mode=FA
     args <- paste(args, paste0("--num_tones=", num_tones))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1752,7 +1692,6 @@ histogram_matching <- function(input, histo_file, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--histo_file=", histo_file))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1775,7 +1714,6 @@ histogram_matching_two_images <- function(input1, input2, output, verbose_mode=F
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1804,7 +1742,6 @@ min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=
     args <- paste(args, paste0("--num_tones=", num_tones))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1845,7 +1782,6 @@ panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL
     args <- paste(args, paste0("--method=", method))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1863,7 +1799,7 @@ panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percentage_contrast_stretch <- function(input, output, clip=0.0, tail="both", num_tones=256, verbose_mode=FALSE) {
+percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both", num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1878,7 +1814,6 @@ percentage_contrast_stretch <- function(input, output, clip=0.0, tail="both", nu
     args <- paste(args, paste0("--num_tones=", num_tones))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1911,7 +1846,6 @@ sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_
     args <- paste(args, paste0("--num_tones=", num_tones))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1940,7 +1874,6 @@ standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_to
     args <- paste(args, paste0("--num_tones=", num_tones))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 

@@ -273,6 +273,7 @@ wbt_view_code <- function(tool_name) {
 wbt_run_tool <- function(tool_name, args, verbose_mode=FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
+  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   arg1 <- paste0("--run=", tool_name)
   args2 <- paste(wbt_exe, arg1, args, "-v")
   ret <- system(args2, intern = TRUE)

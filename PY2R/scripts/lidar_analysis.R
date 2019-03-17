@@ -22,7 +22,6 @@ classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE,
     args <- paste(args, paste0("--filter=", filter))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -45,7 +44,6 @@ clip_lidar_to_polygon <- function(input, polygons, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--polygons=", polygons))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -68,7 +66,6 @@ erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=FALSE
   args <- paste(args, paste0("--polygons=", polygons))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -91,7 +88,6 @@ filter_lidar_scan_angles <- function(input, output, threshold, verbose_mode=FALS
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--threshold=", threshold))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -112,7 +108,6 @@ find_flightline_edge_points <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -139,7 +134,6 @@ flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_mode=
     args <- paste(args, paste0("--resolution=", resolution))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -158,7 +152,6 @@ las_to_ascii <- function(inputs, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -177,7 +170,6 @@ las_to_multipoint_shapefile <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -196,7 +188,6 @@ las_to_shapefile <- function(input, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -223,7 +214,6 @@ lidar_block_maximum <- function(input, output=NULL, resolution=1.0, verbose_mode
     args <- paste(args, paste0("--resolution=", resolution))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -250,7 +240,6 @@ lidar_block_minimum <- function(input, output=NULL, resolution=1.0, verbose_mode
     args <- paste(args, paste0("--resolution=", resolution))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -279,7 +268,6 @@ lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_
     args <- paste(args, paste0("--nonsubset_class=", nonsubset_class))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -302,7 +290,6 @@ lidar_colourize <- function(in_lidar, in_image, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--in_image=", in_image))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -341,7 +328,6 @@ lidar_construct_vector_tin <- function(input, output=NULL, returns="all", exclud
     args <- paste(args, paste0("--maxz=", maxz))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -382,7 +368,6 @@ lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE
     args <- paste(args, paste0("--outclassval=", outclassval))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -427,7 +412,6 @@ lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=
     args <- paste(args, paste0("--slope_norm=", slope_norm))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -454,7 +438,6 @@ lidar_hex_binning <- function(input, output, width, orientation="horizontal", ve
     args <- paste(args, paste0("--orientation=", orientation))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -487,18 +470,17 @@ lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=
     args <- paste(args, paste0("--radius=", radius))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
 
 #' Lidar histogram
 #'
-#' Creates a histogram from LiDAR data.
+#' Creates a histogram of LiDAR data.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
-#' @param parameter Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class.
+#' @param parameter Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class'.
 #' @param clip Amount to clip distribution tails (in percent).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
@@ -516,7 +498,6 @@ lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, verb
     args <- paste(args, paste0("--clip=", clip))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -571,7 +552,6 @@ lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", r
     args <- paste(args, paste0("--maxz=", maxz))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -602,7 +582,6 @@ lidar_info <- function(input, output=NULL, vlr=FALSE, geokeys=FALSE, verbose_mod
     args <- paste(args, paste0("--geokeys=", geokeys))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -623,7 +602,6 @@ lidar_join <- function(inputs, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -652,7 +630,6 @@ lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution
     args <- paste(args, paste0("--resolution=", resolution))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -703,7 +680,6 @@ lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elev
     args <- paste(args, paste0("--maxz=", maxz))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -750,7 +726,6 @@ lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.
     args <- paste(args, paste0("--maxz=", maxz))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -793,7 +768,6 @@ lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses
     args <- paste(args, paste0("--predom_class=", predom_class))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -818,7 +792,6 @@ lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode
     args <- paste(args, paste0("--include_z=", include_z))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -847,7 +820,6 @@ lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, ver
     args <- paste(args, paste0("--elev_diff=", elev_diff))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -880,7 +852,6 @@ lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdi
     args <- paste(args, paste0("--maxzdiff=", maxzdiff))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -917,7 +888,6 @@ lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff
     args <- paste(args, paste0("--classify=", classify))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -950,7 +920,6 @@ lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filt
     args <- paste(args, paste0("--save_filtered=", save_filtered))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -981,7 +950,6 @@ lidar_thin_high_density <- function(input, output, density, resolution=1.0, save
     args <- paste(args, paste0("--save_filtered=", save_filtered))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -991,8 +959,8 @@ lidar_thin_high_density <- function(input, output, density, resolution=1.0, save
 #' Tiles a LiDAR LAS file into multiple LAS files.
 #'
 #' @param input Input LiDAR file.
-#' @param width_x Width of tiles in the X dimension; default 1000.0.
-#' @param width_y Width of tiles in the Y dimension.
+#' @param width Width of tiles in the X dimension; default 1000.0.
+#' @param height Height of tiles in the Y dimension.
 #' @param origin_x Origin point X coordinate for tile grid.
 #' @param origin_y Origin point Y coordinate for tile grid.
 #' @param min_points Minimum number of points contained in a tile for it to be saved.
@@ -1000,15 +968,15 @@ lidar_thin_high_density <- function(input, output, density, resolution=1.0, save
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_tile <- function(input, width_x=1000.0, width_y=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, verbose_mode=FALSE) {
+lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
-  if (!is.null(width_x)) {
-    args <- paste(args, paste0("--width_x=", width_x))
+  if (!is.null(width)) {
+    args <- paste(args, paste0("--width=", width))
   }
-  if (!is.null(width_y)) {
-    args <- paste(args, paste0("--width_y=", width_y))
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
   }
   if (!is.null(origin_x)) {
     args <- paste(args, paste0("--origin_x=", origin_x))
@@ -1020,7 +988,6 @@ lidar_tile <- function(input, width_x=1000.0, width_y=1000.0, origin_x=0.0, orig
     args <- paste(args, paste0("--min_points=", min_points))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1041,7 +1008,6 @@ lidar_tile_footprint <- function(input, output, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1058,11 +1024,12 @@ lidar_tile_footprint <- function(input, output, verbose_mode=FALSE) {
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=FALSE) {
+lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1087,8 +1054,10 @@ lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", return
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
   }
+  if (!is.null(max_triangle_edge_length)) {
+    args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
+  }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1113,7 +1082,6 @@ lidar_tophat_transform <- function(input, output, radius=1.0, verbose_mode=FALSE
     args <- paste(args, paste0("--radius=", radius))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1138,7 +1106,6 @@ normal_vectors <- function(input, output, radius=1.0, verbose_mode=FALSE) {
     args <- paste(args, paste0("--radius=", radius))
   }
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1161,7 +1128,6 @@ select_tiles_by_polygon <- function(indir, outdir, polygons, verbose_mode=FALSE)
   args <- paste(args, paste0("--outdir=", outdir))
   args <- paste(args, paste0("--polygons=", polygons))
   tool_name <- as.character(match.call()[[1]])
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
