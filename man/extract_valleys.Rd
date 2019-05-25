@@ -12,7 +12,7 @@ extract_valleys(dem, output, variant = "Lower Quartile",
 
 \item{output}{Output raster file.}
 
-\item{variant}{Options include 'lq' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'lq'.}
+\item{variant}{Options include 'LQ' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'LQ'.}
 
 \item{line_thin}{Optional flag indicating whether post-processing line-thinning should be performed.}
 

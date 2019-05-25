@@ -4,12 +4,17 @@
 \alias{split_colour_composite}
 \title{Split colour composite}
 \usage{
-split_colour_composite(input, output, verbose_mode = FALSE)
+split_colour_composite(input, red = NULL, green = NULL, blue = NULL,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input colour composite image file.}
 
-\item{output}{Output raster file (suffixes of _r, _g, and _b will be appended).}
+\item{red}{Output red band file.}
+
+\item{green}{Output green band file.}
+
+\item{blue}{Output blue band file.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

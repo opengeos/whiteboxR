@@ -60,7 +60,7 @@ extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param variant Options include 'lq' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'lq'.
+#' @param variant Options include 'LQ' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'LQ'.
 #' @param line_thin Optional flag indicating whether post-processing line-thinning should be performed.
 #' @param filter Optional argument (only used when variant='lq') providing the filter size, in grid cells, used for lq-filtering (default is 5).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.

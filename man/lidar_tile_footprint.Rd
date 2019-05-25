@@ -4,12 +4,14 @@
 \alias{lidar_tile_footprint}
 \title{Lidar tile footprint}
 \usage{
-lidar_tile_footprint(input, output, verbose_mode = FALSE)
+lidar_tile_footprint(input, output, hull = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
 
 \item{output}{Output vector polygon file.}
+
+\item{hull}{Identify the convex hull around points.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

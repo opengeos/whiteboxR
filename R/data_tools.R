@@ -500,3 +500,5 @@ vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, c
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
+
+

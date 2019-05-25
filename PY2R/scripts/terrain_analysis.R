@@ -22,12 +22,36 @@ aspect <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 }
 
 
+#' Average normal vector angular deviation
+#'
+#' Calculates the circular variance of aspect at a scale for a DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param filter Size of the filter kernel.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+average_normal_vector_angular_deviation <- function(dem, output, filter=11, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Circular variance of aspect
 #'
 #' Calculates the circular variance of aspect at a scale for a DEM.
 #'
 #' @param dem Input raster DEM file.
-#' @param output Output raster roughness scale file.
+#' @param output Output raster file.
 #' @param filter Size of the filter kernel.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
@@ -1226,6 +1250,30 @@ slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode
   args <- paste(args, paste0("--output=", output))
   if (!is.null(watershed)) {
     args <- paste(args, paste0("--watershed=", watershed))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Spherical std dev of normals
+#'
+#' Calculates the spherical standard deviation of surface normals for a DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param filter Size of the filter kernel.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+spherical_std_dev_of_normals <- function(dem, output, filter=11, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
