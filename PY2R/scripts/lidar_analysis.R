@@ -998,15 +998,19 @@ lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_
 #'
 #' @param input Input LiDAR file.
 #' @param output Output vector polygon file.
+#' @param hull Identify the convex hull around points.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_tile_footprint <- function(input, output, verbose_mode=FALSE) {
+lidar_tile_footprint <- function(input, output, hull=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(hull)) {
+    args <- paste(args, paste0("--hull=", hull))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }

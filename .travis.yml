@@ -11,5 +11,5 @@ r_packages:
 r_github_packages:
   - giswqs/whiteboxR
 
-after_success:
-  - Rscript -e 'library(covr);codecov()'
+# after_success:
+#   - Rscript -e 'library(covr);codecov()'

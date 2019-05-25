@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stochastic depression analysis — stochastic_depression_analysis • whitebox</title>
+<title>Average normal vector angular deviation — average_normal_vector_angular_deviation • whitebox</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Stochastic depression analysis — stochastic_depression_analysis" />
+<meta property="og:title" content="Average normal vector angular deviation — average_normal_vector_angular_deviation" />
 
-<meta property="og:description" content="Preforms a stochastic analysis of depressions within a DEM." />
+<meta property="og:description" content="Calculates the circular variance of aspect at a scale for a DEM." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,19 +114,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stochastic depression analysis</h1>
-    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/hydro_analysis.R'><code>R/hydro_analysis.R</code></a></small>
-    <div class="hidden name"><code>stochastic_depression_analysis.Rd</code></div>
+    <h1>Average normal vector angular deviation</h1>
+    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/terrain_analysis.R'><code>R/terrain_analysis.R</code></a></small>
+    <div class="hidden name"><code>average_normal_vector_angular_deviation.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Preforms a stochastic analysis of depressions within a DEM.</p>
+    <p>Calculates the circular variance of aspect at a scale for a DEM.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>stochastic_depression_analysis</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='no'>rmse</span>, <span class='no'>range</span>,
-  <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>average_normal_vector_angular_deviation</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='kw'>filter</span> <span class='kw'>=</span> <span class='fl'>11</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,19 +137,11 @@
     </tr>
     <tr>
       <th>output</th>
-      <td><p>Output file.</p></td>
+      <td><p>Output raster file.</p></td>
     </tr>
     <tr>
-      <th>rmse</th>
-      <td><p>The DEM's root-mean-square-error (RMSE), in z units. This determines error magnitude.</p></td>
-    </tr>
-    <tr>
-      <th>range</th>
-      <td><p>The error field's correlation length, in xy-units.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>The number of iterations.</p></td>
+      <th>filter</th>
+      <td><p>Size of the filter kernel.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

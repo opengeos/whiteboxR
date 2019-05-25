@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stochastic depression analysis — stochastic_depression_analysis • whitebox</title>
+<title>Merge line segments — merge_line_segments • whitebox</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Stochastic depression analysis — stochastic_depression_analysis" />
+<meta property="og:title" content="Merge line segments — merge_line_segments" />
 
-<meta property="og:description" content="Preforms a stochastic analysis of depressions within a DEM." />
+<meta property="og:description" content="Merges vector line segments into larger features." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,42 +114,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Stochastic depression analysis</h1>
-    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/hydro_analysis.R'><code>R/hydro_analysis.R</code></a></small>
-    <div class="hidden name"><code>stochastic_depression_analysis.Rd</code></div>
+    <h1>Merge line segments</h1>
+    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/gis_analysis.R'><code>R/gis_analysis.R</code></a></small>
+    <div class="hidden name"><code>merge_line_segments.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Preforms a stochastic analysis of depressions within a DEM.</p>
+    <p>Merges vector line segments into larger features.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>stochastic_depression_analysis</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='no'>rmse</span>, <span class='no'>range</span>,
-  <span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>merge_line_segments</span>(<span class='no'>input</span>, <span class='no'>output</span>, <span class='kw'>snap</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dem</th>
-      <td><p>Input raster DEM file.</p></td>
+      <th>input</th>
+      <td><p>Input vector file.</p></td>
     </tr>
     <tr>
       <th>output</th>
-      <td><p>Output file.</p></td>
+      <td><p>Output vector file.</p></td>
     </tr>
     <tr>
-      <th>rmse</th>
-      <td><p>The DEM's root-mean-square-error (RMSE), in z units. This determines error magnitude.</p></td>
-    </tr>
-    <tr>
-      <th>range</th>
-      <td><p>The error field's correlation length, in xy-units.</p></td>
-    </tr>
-    <tr>
-      <th>iterations</th>
-      <td><p>The number of iterations.</p></td>
+      <th>snap</th>
+      <td><p>Snap tolerance.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

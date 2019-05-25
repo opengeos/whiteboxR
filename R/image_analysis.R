@@ -260,14 +260,14 @@ line_thinning <- function(input, output, verbose_mode=FALSE) {
 #' @param output Output raster file.
 #' @param out_html Output HTML report file.
 #' @param start_clusters Initial number of clusters.
-#' @param merger_dist Cluster merger distance.
+#' @param merge_dist Cluster merger distance.
 #' @param max_iterations Maximum number of iterations.
 #' @param class_change Minimum percent of cells changed between iterations before completion.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merger_dist=NULL, max_iterations=10, class_change=2.0, verbose_mode=FALSE) {
+modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merge_dist=NULL, max_iterations=10, class_change=2.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -278,8 +278,8 @@ modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clu
   if (!is.null(start_clusters)) {
     args <- paste(args, paste0("--start_clusters=", start_clusters))
   }
-  if (!is.null(merger_dist)) {
-    args <- paste(args, paste0("--merger_dist=", merger_dist))
+  if (!is.null(merge_dist)) {
+    args <- paste(args, paste0("--merge_dist=", merge_dist))
   }
   if (!is.null(max_iterations)) {
     args <- paste(args, paste0("--max_iterations=", max_iterations))
@@ -495,16 +495,26 @@ rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
 #' This tool splits an RGB colour composite image into seperate multispectral images.
 #'
 #' @param input Input colour composite image file.
-#' @param output Output raster file (suffixes of _r, _g, and _b will be appended).
+#' @param red Output red band file.
+#' @param green Output green band file.
+#' @param blue Output blue band file.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-split_colour_composite <- function(input, output, verbose_mode=FALSE) {
+split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  if (!is.null(red)) {
+    args <- paste(args, paste0("--red=", red))
+  }
+  if (!is.null(green)) {
+    args <- paste(args, paste0("--green=", green))
+  }
+  if (!is.null(blue)) {
+    args <- paste(args, paste0("--blue=", blue))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }

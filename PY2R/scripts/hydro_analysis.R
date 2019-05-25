@@ -953,7 +953,7 @@ snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=1000, verbose_mode=FALSE) {
+stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=100, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))

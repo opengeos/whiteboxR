@@ -1388,6 +1388,30 @@ max_overlay <- function(inputs, output, verbose_mode=FALSE) {
 }
 
 
+#' Merge line segments
+#'
+#' Merges vector line segments into larger features.
+#'
+#' @param input Input vector file.
+#' @param output Output vector file.
+#' @param snap Snap tolerance.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+merge_line_segments <- function(input, output, snap=0.0, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(snap)) {
+    args <- paste(args, paste0("--snap=", snap))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Min absolute overlay
 #'
 #' Evaluates the minimum absolute value for each grid cell from a stack of input rasters.

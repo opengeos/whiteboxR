@@ -5,7 +5,7 @@
 \title{Modified k means clustering}
 \usage{
 modified_k_means_clustering(inputs, output, out_html = NULL,
-  start_clusters = 1000, merger_dist = NULL, max_iterations = 10,
+  start_clusters = 1000, merge_dist = NULL, max_iterations = 10,
   class_change = 2, verbose_mode = FALSE)
 }
 \arguments{
@@ -17,7 +17,7 @@ modified_k_means_clustering(inputs, output, out_html = NULL,
 
 \item{start_clusters}{Initial number of clusters.}
 
-\item{merger_dist}{Cluster merger distance.}
+\item{merge_dist}{Cluster merger distance.}
 
 \item{max_iterations}{Maximum number of iterations.}
 

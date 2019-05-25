@@ -125,7 +125,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>split_colour_composite</span>(<span class='no'>input</span>, <span class='no'>output</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>split_colour_composite</span>(<span class='no'>input</span>, <span class='kw'>red</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>green</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>blue</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -135,8 +136,16 @@
       <td><p>Input colour composite image file.</p></td>
     </tr>
     <tr>
-      <th>output</th>
-      <td><p>Output raster file (suffixes of _r, _g, and _b will be appended).</p></td>
+      <th>red</th>
+      <td><p>Output red band file.</p></td>
+    </tr>
+    <tr>
+      <th>green</th>
+      <td><p>Output green band file.</p></td>
+    </tr>
+    <tr>
+      <th>blue</th>
+      <td><p>Output blue band file.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>
