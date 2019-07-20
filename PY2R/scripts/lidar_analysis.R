@@ -18,8 +18,8 @@ classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE,
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
-  if (!is.null(filter)) {
-    args <- paste(args, paste0("--filter=", filter))
+  if (filter) {
+    args <- paste(args, "--filter")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -358,8 +358,8 @@ lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
   }
-  if (!is.null(cls)) {
-    args <- paste(args, paste0("--cls=", cls))
+  if (cls) {
+    args <- paste(args, "--cls")
   }
   if (!is.null(inclassval)) {
     args <- paste(args, paste0("--inclassval=", inclassval))
@@ -405,11 +405,11 @@ lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=
   if (!is.null(height_threshold)) {
     args <- paste(args, paste0("--height_threshold=", height_threshold))
   }
-  if (!is.null(classify)) {
-    args <- paste(args, paste0("--classify=", classify))
+  if (classify) {
+    args <- paste(args, "--classify")
   }
-  if (!is.null(slope_norm)) {
-    args <- paste(args, paste0("--slope_norm=", slope_norm))
+  if (slope_norm) {
+    args <- paste(args, "--slope_norm")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -575,11 +575,11 @@ lidar_info <- function(input, output=NULL, vlr=FALSE, geokeys=FALSE, verbose_mod
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
-  if (!is.null(vlr)) {
-    args <- paste(args, paste0("--vlr=", vlr))
+  if (vlr) {
+    args <- paste(args, "--vlr")
   }
-  if (!is.null(geokeys)) {
-    args <- paste(args, paste0("--geokeys=", geokeys))
+  if (geokeys) {
+    args <- paste(args, "--geokeys")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -752,20 +752,20 @@ lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
-  if (!is.null(num_points)) {
-    args <- paste(args, paste0("--num_points=", num_points))
+  if (num_points) {
+    args <- paste(args, "--num_points")
   }
-  if (!is.null(num_pulses)) {
-    args <- paste(args, paste0("--num_pulses=", num_pulses))
+  if (num_pulses) {
+    args <- paste(args, "--num_pulses")
   }
-  if (!is.null(z_range)) {
-    args <- paste(args, paste0("--z_range=", z_range))
+  if (z_range) {
+    args <- paste(args, "--z_range")
   }
-  if (!is.null(intensity_range)) {
-    args <- paste(args, paste0("--intensity_range=", intensity_range))
+  if (intensity_range) {
+    args <- paste(args, "--intensity_range")
   }
-  if (!is.null(predom_class)) {
-    args <- paste(args, paste0("--predom_class=", predom_class))
+  if (predom_class) {
+    args <- paste(args, "--predom_class")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -788,8 +788,8 @@ lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(include_z)) {
-    args <- paste(args, paste0("--include_z=", include_z))
+  if (include_z) {
+    args <- paste(args, "--include_z")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -884,8 +884,8 @@ lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff
   if (!is.null(maxzdiff)) {
     args <- paste(args, paste0("--maxzdiff=", maxzdiff))
   }
-  if (!is.null(classify)) {
-    args <- paste(args, paste0("--classify=", classify))
+  if (classify) {
+    args <- paste(args, "--classify")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -916,8 +916,8 @@ lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filt
   if (!is.null(method)) {
     args <- paste(args, paste0("--method=", method))
   }
-  if (!is.null(save_filtered)) {
-    args <- paste(args, paste0("--save_filtered=", save_filtered))
+  if (save_filtered) {
+    args <- paste(args, "--save_filtered")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -946,8 +946,8 @@ lidar_thin_high_density <- function(input, output, density, resolution=1.0, save
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
-  if (!is.null(save_filtered)) {
-    args <- paste(args, paste0("--save_filtered=", save_filtered))
+  if (save_filtered) {
+    args <- paste(args, "--save_filtered")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1008,8 +1008,8 @@ lidar_tile_footprint <- function(input, output, hull=FALSE, verbose_mode=FALSE) 
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(hull)) {
-    args <- paste(args, paste0("--hull=", hull))
+  if (hull) {
+    args <- paste(args, "--hull")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

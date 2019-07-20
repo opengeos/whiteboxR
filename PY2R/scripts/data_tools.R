@@ -72,8 +72,8 @@ export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=FALSE)
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(headers)) {
-    args <- paste(args, paste0("--headers=", headers))
+  if (headers) {
+    args <- paste(args, "--headers")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -190,8 +190,8 @@ multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(exclude_holes)) {
-    args <- paste(args, paste0("--exclude_holes=", exclude_holes))
+  if (exclude_holes) {
+    args <- paste(args, "--exclude_holes")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -412,8 +412,8 @@ vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
   }
-  if (!is.null(nodata)) {
-    args <- paste(args, paste0("--nodata=", nodata))
+  if (nodata) {
+    args <- paste(args, "--nodata")
   }
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
@@ -452,8 +452,8 @@ vector_points_to_raster <- function(input, output, field="FID", assign="last", n
   if (!is.null(assign)) {
     args <- paste(args, paste0("--assign=", assign))
   }
-  if (!is.null(nodata)) {
-    args <- paste(args, paste0("--nodata=", nodata))
+  if (nodata) {
+    args <- paste(args, "--nodata")
   }
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
@@ -488,8 +488,8 @@ vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, c
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
   }
-  if (!is.null(nodata)) {
-    args <- paste(args, paste0("--nodata=", nodata))
+  if (nodata) {
+    args <- paste(args, "--nodata")
   }
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
