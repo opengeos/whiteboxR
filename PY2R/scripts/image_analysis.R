@@ -75,11 +75,11 @@ create_colour_composite <- function(red, green, blue, output, opacity=NULL, enha
   if (!is.null(opacity)) {
     args <- paste(args, paste0("--opacity=", opacity))
   }
-  if (!is.null(enhance)) {
-    args <- paste(args, paste0("--enhance=", enhance))
+  if (enhance) {
+    args <- paste(args, "--enhance")
   }
-  if (!is.null(zeros)) {
-    args <- paste(args, paste0("--zeros=", zeros))
+  if (zeros) {
+    args <- paste(args, "--zeros")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1065,8 +1065,8 @@ line_detection_filter <- function(input, output, variant="vertical", absvals=FAL
   if (!is.null(variant)) {
     args <- paste(args, paste0("--variant=", variant))
   }
-  if (!is.null(absvals)) {
-    args <- paste(args, paste0("--absvals=", absvals))
+  if (absvals) {
+    args <- paste(args, "--absvals")
   }
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
@@ -1518,8 +1518,8 @@ user_defined_weights_filter <- function(input, weights, output, center="center",
   if (!is.null(center)) {
     args <- paste(args, paste0("--center=", center))
   }
-  if (!is.null(normalize)) {
-    args <- paste(args, paste0("--normalize=", normalize))
+  if (normalize) {
+    args <- paste(args, "--normalize")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

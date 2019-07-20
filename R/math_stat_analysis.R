@@ -298,8 +298,8 @@ attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE
   args <- paste(args, paste0("--fieldx=", fieldx))
   args <- paste(args, paste0("--fieldy=", fieldy))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(trendline)) {
-    args <- paste(args, paste0("--trendline=", trendline))
+  if (trendline) {
+    args <- paste(args, "--trendline")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -652,8 +652,8 @@ greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(incl_equals)) {
-    args <- paste(args, paste0("--incl_equals=", incl_equals))
+  if (incl_equals) {
+    args <- paste(args, "--incl_equals")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -728,8 +728,8 @@ image_regression <- function(input1, input2, output, out_residuals=NULL, standar
   if (!is.null(out_residuals)) {
     args <- paste(args, paste0("--out_residuals=", out_residuals))
   }
-  if (!is.null(standardize)) {
-    args <- paste(args, paste0("--standardize=", standardize))
+  if (standardize) {
+    args <- paste(args, "--standardize")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -954,8 +954,8 @@ less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FA
   args <- paste(args, paste0("--input1=", input1))
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(incl_equals)) {
-    args <- paste(args, paste0("--incl_equals=", incl_equals))
+  if (incl_equals) {
+    args <- paste(args, "--incl_equals")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1240,8 +1240,8 @@ principal_component_analysis <- function(inputs, output, num_comp=NULL, standard
   if (!is.null(num_comp)) {
     args <- paste(args, paste0("--num_comp=", num_comp))
   }
-  if (!is.null(standardized)) {
-    args <- paste(args, paste0("--standardized=", standardized))
+  if (standardized) {
+    args <- paste(args, "--standardized")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

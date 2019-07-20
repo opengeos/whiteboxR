@@ -22,3 +22,4 @@ pkgdown::build_site()
 devtools::submit_cran()
 
 devtools::install_github("giswqs/whiteboxR")
+devtools::install_github("giswqs/whiteboxR@develop")

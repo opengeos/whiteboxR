@@ -17,11 +17,11 @@ distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -46,8 +46,8 @@ extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE
   args <- paste(args, paste0("--flow_accum=", flow_accum))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--threshold=", threshold))
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -75,8 +75,8 @@ extract_valleys <- function(dem, output, variant="Lower Quartile", line_thin=TRU
   if (!is.null(variant)) {
     args <- paste(args, paste0("--variant=", variant))
   }
-  if (!is.null(line_thin)) {
-    args <- paste(args, paste0("--line_thin=", line_thin))
+  if (line_thin) {
+    args <- paste(args, "--line_thin")
   }
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
@@ -105,11 +105,11 @@ farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -135,11 +135,11 @@ find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_backg
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -165,11 +165,11 @@ hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_ba
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -195,11 +195,11 @@ horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -225,11 +225,11 @@ length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALS
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -256,8 +256,8 @@ long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, verbose
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -284,8 +284,8 @@ long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FAL
   args <- paste(args, paste0("--points=", points))
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -310,8 +310,8 @@ raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, 
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -337,11 +337,11 @@ rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FAL
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--base=", base))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(nodata)) {
-    args <- paste(args, paste0("--nodata=", nodata))
+  if (nodata) {
+    args <- paste(args, "--nodata")
   }
-  if (!is.null(feature_id)) {
-    args <- paste(args, paste0("--feature_id=", feature_id))
+  if (feature_id) {
+    args <- paste(args, "--feature_id")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -368,8 +368,8 @@ remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--min_length=", min_length))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -395,11 +395,11 @@ shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -425,11 +425,11 @@ strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -455,11 +455,11 @@ stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_ba
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -485,11 +485,11 @@ stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -515,11 +515,11 @@ stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_ba
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--linkid=", linkid))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -547,11 +547,11 @@ stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zer
   args <- paste(args, paste0("--linkid=", linkid))
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -579,11 +579,11 @@ stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FAL
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -609,11 +609,11 @@ topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -639,11 +639,11 @@ tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

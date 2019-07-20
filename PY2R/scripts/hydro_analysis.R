@@ -54,8 +54,8 @@ basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -90,8 +90,8 @@ breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, fla
   if (!is.null(flat_increment)) {
     args <- paste(args, paste0("--flat_increment=", flat_increment))
   }
-  if (!is.null(fill_pits)) {
-    args <- paste(args, paste0("--fill_pits=", fill_pits))
+  if (fill_pits) {
+    args <- paste(args, "--fill_pits")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -139,11 +139,11 @@ d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
-  if (!is.null(log)) {
-    args <- paste(args, paste0("--log=", log))
+  if (log) {
+    args <- paste(args, "--log")
   }
-  if (!is.null(clip)) {
-    args <- paste(args, paste0("--clip=", clip))
+  if (clip) {
+    args <- paste(args, "--clip")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -192,8 +192,8 @@ d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -225,11 +225,11 @@ d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing
   if (!is.null(threshold)) {
     args <- paste(args, paste0("--threshold=", threshold))
   }
-  if (!is.null(log)) {
-    args <- paste(args, paste0("--log=", log))
+  if (log) {
+    args <- paste(args, "--log")
   }
-  if (!is.null(clip)) {
-    args <- paste(args, paste0("--clip=", clip))
+  if (clip) {
+    args <- paste(args, "--clip")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -298,8 +298,8 @@ depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -352,8 +352,8 @@ downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=
   if (!is.null(weights)) {
     args <- paste(args, paste0("--weights=", weights))
   }
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -433,11 +433,11 @@ fd8_flow_accumulation <- function(dem, output, out_type="specific contributing a
   if (!is.null(threshold)) {
     args <- paste(args, paste0("--threshold=", threshold))
   }
-  if (!is.null(log)) {
-    args <- paste(args, paste0("--log=", log))
+  if (log) {
+    args <- paste(args, "--log")
   }
-  if (!is.null(clip)) {
-    args <- paste(args, paste0("--clip=", clip))
+  if (clip) {
+    args <- paste(args, "--clip")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -502,8 +502,8 @@ fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(fix_flats)) {
-    args <- paste(args, paste0("--fix_flats=", fix_flats))
+  if (fix_flats) {
+    args <- paste(args, "--fix_flats")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -640,14 +640,14 @@ flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, o
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
-  if (!is.null(log)) {
-    args <- paste(args, paste0("--log=", log))
+  if (log) {
+    args <- paste(args, "--log")
   }
-  if (!is.null(clip)) {
-    args <- paste(args, paste0("--clip=", clip))
+  if (clip) {
+    args <- paste(args, "--clip")
   }
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -670,8 +670,8 @@ flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALS
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -696,8 +696,8 @@ hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=F
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -884,8 +884,8 @@ rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -908,8 +908,8 @@ sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -986,8 +986,8 @@ strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, ver
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1012,8 +1012,8 @@ subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FA
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1039,11 +1039,11 @@ trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE
   args <- paste(args, paste0("--seed_pts=", seed_pts))
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1068,8 +1068,8 @@ unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mo
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--pour_pts=", pour_pts))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1094,8 +1094,8 @@ watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=F
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--pour_pts=", pour_pts))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(esri_pntr)) {
-    args <- paste(args, paste0("--esri_pntr=", esri_pntr))
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

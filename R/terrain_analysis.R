@@ -468,8 +468,8 @@ find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(line_thin)) {
-    args <- paste(args, paste0("--line_thin=", line_thin))
+  if (line_thin) {
+    args <- paste(args, "--line_thin")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -640,8 +640,8 @@ max_branch_length <- function(dem, output, log=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(log)) {
-    args <- paste(args, paste0("--log=", log))
+  if (log) {
+    args <- paste(args, "--log")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

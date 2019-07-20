@@ -46,8 +46,8 @@ block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_size=
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(use_z)) {
-    args <- paste(args, paste0("--use_z=", use_z))
+  if (use_z) {
+    args <- paste(args, "--use_z")
   }
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
@@ -80,8 +80,8 @@ block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_size=
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(use_z)) {
-    args <- paste(args, paste0("--use_z=", use_z))
+  if (use_z) {
+    args <- paste(args, "--use_z")
   }
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
@@ -110,8 +110,8 @@ centroid <- function(input, output, text_output=FALSE, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(text_output)) {
-    args <- paste(args, paste0("--text_output=", text_output))
+  if (text_output) {
+    args <- paste(args, "--text_output")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -155,11 +155,11 @@ clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=FALSE)
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(diag)) {
-    args <- paste(args, paste0("--diag=", diag))
+  if (diag) {
+    args <- paste(args, "--diag")
   }
-  if (!is.null(zero_back)) {
-    args <- paste(args, paste0("--zero_back=", zero_back))
+  if (zero_back) {
+    args <- paste(args, "--zero_back")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -186,8 +186,8 @@ construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
   }
-  if (!is.null(use_z)) {
-    args <- paste(args, paste0("--use_z=", use_z))
+  if (use_z) {
+    args <- paste(args, "--use_z")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -396,8 +396,8 @@ extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, verb
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--points=", points))
-  if (!is.null(out_text)) {
-    args <- paste(args, paste0("--out_text=", out_text))
+  if (out_text) {
+    args <- paste(args, "--out_text")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -451,8 +451,8 @@ idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0, rad
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(use_z)) {
-    args <- paste(args, paste0("--use_z=", use_z))
+  if (use_z) {
+    args <- paste(args, "--use_z")
   }
   if (!is.null(weight)) {
     args <- paste(args, paste0("--weight=", weight))
@@ -534,8 +534,8 @@ minimum_bounding_box <- function(input, output, criterion="area", features=TRUE,
   if (!is.null(criterion)) {
     args <- paste(args, paste0("--criterion=", criterion))
   }
-  if (!is.null(features)) {
-    args <- paste(args, paste0("--features=", features))
+  if (features) {
+    args <- paste(args, "--features")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -558,8 +558,8 @@ minimum_bounding_circle <- function(input, output, features=TRUE, verbose_mode=F
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(features)) {
-    args <- paste(args, paste0("--features=", features))
+  if (features) {
+    args <- paste(args, "--features")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -582,8 +582,8 @@ minimum_bounding_envelope <- function(input, output, features=TRUE, verbose_mode
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(features)) {
-    args <- paste(args, paste0("--features=", features))
+  if (features) {
+    args <- paste(args, "--features")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -606,8 +606,8 @@ minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=FALSE
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(features)) {
-    args <- paste(args, paste0("--features=", features))
+  if (features) {
+    args <- paste(args, "--features")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -635,8 +635,8 @@ nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, cell_s
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--field=", field))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(use_z)) {
-    args <- paste(args, paste0("--use_z=", use_z))
+  if (use_z) {
+    args <- paste(args, "--use_z")
   }
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
@@ -748,14 +748,14 @@ raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cells", 
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
-  if (!is.null(out_text)) {
-    args <- paste(args, paste0("--out_text=", out_text))
+  if (out_text) {
+    args <- paste(args, "--out_text")
   }
   if (!is.null(units)) {
     args <- paste(args, paste0("--units=", units))
   }
-  if (!is.null(zero_back)) {
-    args <- paste(args, paste0("--zero_back=", zero_back))
+  if (zero_back) {
+    args <- paste(args, "--zero_back")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -804,8 +804,8 @@ reclass <- function(input, output, reclass_vals, assign_mode=FALSE, verbose_mode
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--reclass_vals=", reclass_vals))
-  if (!is.null(assign_mode)) {
-    args <- paste(args, paste0("--assign_mode=", assign_mode))
+  if (assign_mode) {
+    args <- paste(args, "--assign_mode")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -912,8 +912,8 @@ tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, ver
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
   }
-  if (!is.null(use_z)) {
-    args <- paste(args, paste0("--use_z=", use_z))
+  if (use_z) {
+    args <- paste(args, "--use_z")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -984,8 +984,8 @@ buffer_raster <- function(input, output, size, gridcells=FALSE, verbose_mode=FAL
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--size=", size))
-  if (!is.null(gridcells)) {
-    args <- paste(args, paste0("--gridcells=", gridcells))
+  if (gridcells) {
+    args <- paste(args, "--gridcells")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1056,8 +1056,8 @@ cost_pathway <- function(destination, backlink, output, zero_background=FALSE, v
   args <- paste(args, paste0("--destination=", destination))
   args <- paste(args, paste0("--backlink=", backlink))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(zero_background)) {
-    args <- paste(args, paste0("--zero_background=", zero_background))
+  if (zero_background) {
+    args <- paste(args, "--zero_background")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1164,8 +1164,8 @@ clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensions=
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--polygons=", polygons))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(maintain_dimensions)) {
-    args <- paste(args, paste0("--maintain_dimensions=", maintain_dimensions))
+  if (maintain_dimensions) {
+    args <- paste(args, "--maintain_dimensions")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1764,8 +1764,8 @@ edge_proportion <- function(input, output, output_text=FALSE, verbose_mode=FALSE
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(output_text)) {
-    args <- paste(args, paste0("--output_text=", output_text))
+  if (output_text) {
+    args <- paste(args, "--output_text")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1918,8 +1918,8 @@ radius_of_gyration <- function(input, output, text_output=FALSE, verbose_mode=FA
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(text_output)) {
-    args <- paste(args, paste0("--text_output=", text_output))
+  if (text_output) {
+    args <- paste(args, "--text_output")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

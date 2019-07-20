@@ -54,6 +54,18 @@ def function_block(line, ff):
         item = item.strip()
         if "=" not in item:
             ff.write('  args <- paste(args, paste0("--' + item + '=", ' + item + '))' + "\n")
+        elif "verbose" in item:
+            continue
+        elif "=FALSE" in item:
+            para = item.split("=")[0]
+            ff.write('  if (' + para + ') {' + "\n")
+            ff.write('    args <- paste(args, "--' + para + '")' + "\n")
+            ff.write('  }' + "\n")
+        elif "=TRUE" in item:
+            para = item.split("=")[0]
+            ff.write('  if (' + para + ') {' + "\n")
+            ff.write('    args <- paste(args, "--' + para + '")' + "\n")
+            ff.write('  }' + "\n")
         elif "verbose" not in item:
             para = item.split("=")[0]
             ff.write('  if (!is.null(' + para + ')) {' + "\n")
