@@ -5,7 +5,8 @@
 \title{Image regression}
 \usage{
 image_regression(input1, input2, output, out_residuals = NULL,
-  standardize = FALSE, verbose_mode = FALSE)
+  standardize = FALSE, scattergram = FALSE, num_samples = 1000,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file (independent variable, X).}
@@ -17,6 +18,10 @@ image_regression(input1, input2, output, out_residuals = NULL,
 \item{out_residuals}{Output raster regression resdidual file.}
 
 \item{standardize}{Optional flag indicating whether to standardize the residuals map.}
+
+\item{scattergram}{Optional flag indicating whether to output a scattergram.}
+
+\item{num_samples}{Number of samples used to create scattergram.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -5,17 +5,20 @@
 \title{Lidar point stats}
 \usage{
 lidar_point_stats(input, resolution = 1, num_points = TRUE,
-  num_pulses = FALSE, z_range = FALSE, intensity_range = FALSE,
-  predom_class = FALSE, verbose_mode = FALSE)
+  num_pulses = FALSE, avg_points_per_pulse = TRUE, z_range = FALSE,
+  intensity_range = FALSE, predom_class = FALSE,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
 
 \item{resolution}{Output raster's grid resolution.}
 
-\item{num_points}{Flag indicating whether or not to output the number of points raster.}
+\item{num_points}{Flag indicating whether or not to output the number of points (returns) raster.}
 
 \item{num_pulses}{Flag indicating whether or not to output the number of pulses raster.}
+
+\item{avg_points_per_pulse}{Flag indicating whether or not to output the average number of points (returns) per pulse raster.}
 
 \item{z_range}{Flag indicating whether or not to output the elevation range raster.}
 

@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -126,7 +126,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>image_regression</span>(<span class='no'>input1</span>, <span class='no'>input2</span>, <span class='no'>output</span>, <span class='kw'>out_residuals</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>standardize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>standardize</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>scattergram</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>num_samples</span> <span class='kw'>=</span> <span class='fl'>1000</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,6 +151,14 @@
     <tr>
       <th>standardize</th>
       <td><p>Optional flag indicating whether to standardize the residuals map.</p></td>
+    </tr>
+    <tr>
+      <th>scattergram</th>
+      <td><p>Optional flag indicating whether to output a scattergram.</p></td>
+    </tr>
+    <tr>
+      <th>num_samples</th>
+      <td><p>Number of samples used to create scattergram.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

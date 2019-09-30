@@ -70,6 +70,30 @@ erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=FALSE
 }
 
 
+#' Filter lidar classes
+#'
+#' Removes points in a LAS file with certain specified class values.
+#'
+#' @param input Input LiDAR file.
+#' @param output Output LiDAR file.
+#' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+filter_lidar_classes <- function(input, output, exclude_cls=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Filter lidar scan angles
 #'
 #' Removes points in a LAS file with scan angles greater than a threshold.
@@ -384,11 +408,12 @@ lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE
 #' @param height_threshold Inter-point height difference to be considered an off-terrain point.
 #' @param classify Classify points as ground (2) or off-ground (1).
 #' @param slope_norm Perform initial ground slope normalization?.
+#' @param height_above_ground Transform output to height above average ground elevation?.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, verbose_mode=FALSE) {
+lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, height_above_ground=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -410,6 +435,9 @@ lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=
   }
   if (slope_norm) {
     args <- paste(args, "--slope_norm")
+  }
+  if (height_above_ground) {
+    args <- paste(args, "--height_above_ground")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -508,7 +536,7 @@ lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, verb
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
-#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'scan angle', 'user data'.
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
 #' @param resolution Output raster's grid resolution.
 #' @param weight IDW weight value.
@@ -640,7 +668,7 @@ lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
-#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'scan angle', 'user data'.
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
 #' @param resolution Output raster's grid resolution.
 #' @param radius Search Radius.
@@ -736,8 +764,9 @@ lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.
 #'
 #' @param input Input LiDAR file.
 #' @param resolution Output raster's grid resolution.
-#' @param num_points Flag indicating whether or not to output the number of points raster.
+#' @param num_points Flag indicating whether or not to output the number of points (returns) raster.
 #' @param num_pulses Flag indicating whether or not to output the number of pulses raster.
+#' @param avg_points_per_pulse Flag indicating whether or not to output the average number of points (returns) per pulse raster.
 #' @param z_range Flag indicating whether or not to output the elevation range raster.
 #' @param intensity_range Flag indicating whether or not to output the intensity range raster.
 #' @param predom_class Flag indicating whether or not to output the predominant classification raster.
@@ -745,7 +774,7 @@ lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, verbose_mode=FALSE) {
+lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, avg_points_per_pulse=TRUE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -758,6 +787,9 @@ lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses
   if (num_pulses) {
     args <- paste(args, "--num_pulses")
   }
+  if (avg_points_per_pulse) {
+    args <- paste(args, "--avg_points_per_pulse")
+  }
   if (z_range) {
     args <- paste(args, "--z_range")
   }
@@ -766,6 +798,50 @@ lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses
   }
   if (predom_class) {
     args <- paste(args, "--predom_class")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Lidar ransac planes
+#'
+#' Removes outliers (high and low points) in a LiDAR point cloud.
+#'
+#' @param input Input LiDAR file.
+#' @param output Output LiDAR file.
+#' @param radius Search Radius.
+#' @param num_iter Number of iterations.
+#' @param num_samples Number of sample points on which to build the model.
+#' @param threshold Threshold used to determine inliner points.
+#' @param model_size Acceptable model size.
+#' @param classify Classify points as ground (2) or off-ground (1).
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, classify=FALSE, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(num_iter)) {
+    args <- paste(args, paste0("--num_iter=", num_iter))
+  }
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(model_size)) {
+    args <- paste(args, paste0("--model_size=", model_size))
+  }
+  if (classify) {
+    args <- paste(args, "--classify")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -804,11 +880,13 @@ lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
 #' @param elev_diff Max. elevation difference.
+#' @param use_median Optional flag indicating whether to use the difference from median elevation rather than mean.
+#' @param classify Classify points as ground (2) or off-ground (1).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, verbose_mode=FALSE) {
+lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, use_median=FALSE, classify=TRUE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -818,6 +896,12 @@ lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, ver
   }
   if (!is.null(elev_diff)) {
     args <- paste(args, paste0("--elev_diff=", elev_diff))
+  }
+  if (use_median) {
+    args <- paste(args, "--use_median")
+  }
+  if (classify) {
+    args <- paste(args, "--classify")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -833,11 +917,13 @@ lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, ver
 #' @param radius Search Radius.
 #' @param norm_diff Maximum difference in normal vectors, in degrees.
 #' @param maxzdiff Maximum difference in elevation (z units) between neighbouring points of the same segment.
+#' @param classes Segments don't cross class boundaries.
+#' @param min_size Minimum segment size (number of points).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdiff=1.0, verbose_mode=FALSE) {
+lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, min_size=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -850,6 +936,12 @@ lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdi
   }
   if (!is.null(maxzdiff)) {
     args <- paste(args, paste0("--maxzdiff=", maxzdiff))
+  }
+  if (classes) {
+    args <- paste(args, "--classes")
+  }
+  if (!is.null(min_size)) {
+    args <- paste(args, paste0("--min_size=", min_size))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1022,7 +1114,7 @@ lidar_tile_footprint <- function(input, output, hull=FALSE, verbose_mode=FALSE) 
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
-#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'scan angle', 'user data'.
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
 #' @param resolution Output raster's grid resolution.
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.

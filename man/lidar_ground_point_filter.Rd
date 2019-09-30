@@ -6,7 +6,8 @@
 \usage{
 lidar_ground_point_filter(input, output, radius = 2,
   min_neighbours = 0, slope_threshold = 45, height_threshold = 1,
-  classify = TRUE, slope_norm = TRUE, verbose_mode = FALSE)
+  classify = TRUE, slope_norm = TRUE, height_above_ground = FALSE,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -24,6 +25,8 @@ lidar_ground_point_filter(input, output, radius = 2,
 \item{classify}{Classify points as ground (2) or off-ground (1).}
 
 \item{slope_norm}{Perform initial ground slope normalization?.}
+
+\item{height_above_ground}{Transform output to height above average ground elevation?.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

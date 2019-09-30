@@ -16,6 +16,26 @@ add_point_coordinates_to_table <- function(input, verbose_mode=FALSE) {
 }
 
 
+#' Clean vector
+#'
+#' Removes null features and lines/polygons with fewer than the required number of vertices.
+#'
+#' @param input Input vector file.
+#' @param output Output vector file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+clean_vector <- function(input, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Convert nodata to zero
 #'
 #' Converts nodata values in a raster to zero.
@@ -51,6 +71,38 @@ convert_raster_format <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Csv points to vector
+#'
+#' Converts a CSV text file to vector points.
+#'
+#' @param input Input CSV file (i.e. source of data to be imported).
+#' @param output Output vector file.
+#' @param xfield X field number (e.g. 0 for first field).
+#' @param yfield Y field number (e.g. 1 for second field).
+#' @param epsg EPSG projection (e.g. 2958).
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(xfield)) {
+    args <- paste(args, paste0("--xfield=", xfield))
+  }
+  if (!is.null(yfield)) {
+    args <- paste(args, paste0("--yfield=", yfield))
+  }
+  if (!is.null(epsg)) {
+    args <- paste(args, paste0("--epsg=", epsg))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -169,6 +221,28 @@ merge_vectors <- function(inputs, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Modify no data value
+#'
+#' Converts nodata values in a raster to zero.
+#'
+#' @param input Input raster file.
+#' @param new_value New NoData value.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+modify_no_data_value <- function(input, new_value="-32768.0", verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(new_value)) {
+    args <- paste(args, paste0("--new_value=", new_value))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }

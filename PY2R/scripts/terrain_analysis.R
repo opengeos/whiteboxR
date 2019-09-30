@@ -182,54 +182,6 @@ downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_m
 }
 
 
-#' Drainage preserving smoothing
-#'
-#' Reduces short-scale variation in an input DEM while preserving breaks-in-slope and small drainage features using a modified Sun et al. (2007) algorithm.
-#'
-#' @param dem Input raster DEM file.
-#' @param output Output raster file.
-#' @param filter Size of the filter kernel.
-#' @param norm_diff Maximum difference in normal vectors, in degrees.
-#' @param num_iter Number of iterations.
-#' @param max_diff Maximum allowable absolute elevation change (optional).
-#' @param reduction Maximum Amount to reduce the threshold angle by (0 = full smoothing; 100 = no smoothing).
-#' @param dfm Difference from median threshold (in z-units), determines when a location is low-lying.
-#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-drainage_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, reduction=80.0, dfm=0.15, zfactor=1.0, verbose_mode=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  if (!is.null(filter)) {
-    args <- paste(args, paste0("--filter=", filter))
-  }
-  if (!is.null(norm_diff)) {
-    args <- paste(args, paste0("--norm_diff=", norm_diff))
-  }
-  if (!is.null(num_iter)) {
-    args <- paste(args, paste0("--num_iter=", num_iter))
-  }
-  if (!is.null(max_diff)) {
-    args <- paste(args, paste0("--max_diff=", max_diff))
-  }
-  if (!is.null(reduction)) {
-    args <- paste(args, paste0("--reduction=", reduction))
-  }
-  if (!is.null(dfm)) {
-    args <- paste(args, paste0("--dfm=", dfm))
-  }
-  if (!is.null(zfactor)) {
-    args <- paste(args, paste0("--zfactor=", zfactor))
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' Edge density
 #'
 #' Calculates the density of edges, or breaks-in-slope within DEMs.
@@ -356,7 +308,7 @@ elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_
 }
 
 
-#' Feature preserving denoise
+#' Feature preserving smoothing
 #'
 #' Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.
 #'
@@ -371,7 +323,7 @@ elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-feature_preserving_denoise <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=1.0, verbose_mode=FALSE) {
+feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -836,6 +788,82 @@ multiscale_roughness_signature <- function(dem, points, output, max_scale, min_s
   }
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Multiscale std dev normals
+#'
+#' Calculates surface roughness over a range of spatial scales.
+#'
+#' @param dem Input raster DEM file.
+#' @param out_mag Output raster roughness magnitude file.
+#' @param out_scale Output raster roughness scale file.
+#' @param min_scale Minimum search neighbourhood radius in grid cells.
+#' @param step Step size as any positive non-zero integer.
+#' @param num_steps Number of steps.
+#' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(step_nonlinearity)) {
+    args <- paste(args, paste0("--step_nonlinearity=", step_nonlinearity))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Multiscale std dev normals signature
+#'
+#' Calculates the surface roughness for points over a range of spatial scales.
+#'
+#' @param dem Input raster DEM file.
+#' @param points Input vector points file.
+#' @param output Output HTML file.
+#' @param min_scale Minimum search neighbourhood radius in grid cells.
+#' @param step Step size as any positive non-zero integer.
+#' @param num_steps Number of steps.
+#' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--points=", points))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(step_nonlinearity)) {
+    args <- paste(args, paste0("--step_nonlinearity=", step_nonlinearity))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

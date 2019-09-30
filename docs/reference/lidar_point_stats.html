@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -126,8 +126,9 @@
     </div>
 
     <pre class="usage"><span class='fu'>lidar_point_stats</span>(<span class='no'>input</span>, <span class='kw'>resolution</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>num_points</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>num_pulses</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>z_range</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>intensity_range</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>predom_class</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>num_pulses</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>avg_points_per_pulse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>z_range</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>intensity_range</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>predom_class</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,11 +143,15 @@
     </tr>
     <tr>
       <th>num_points</th>
-      <td><p>Flag indicating whether or not to output the number of points raster.</p></td>
+      <td><p>Flag indicating whether or not to output the number of points (returns) raster.</p></td>
     </tr>
     <tr>
       <th>num_pulses</th>
       <td><p>Flag indicating whether or not to output the number of pulses raster.</p></td>
+    </tr>
+    <tr>
+      <th>avg_points_per_pulse</th>
+      <td><p>Flag indicating whether or not to output the average number of points (returns) per pulse raster.</p></td>
     </tr>
     <tr>
       <th>z_range</th>

@@ -493,17 +493,21 @@ fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
+#' @param flat_increment Optional elevation increment applied to flat areas.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-fill_depressions <- function(dem, output, fix_flats=TRUE, verbose_mode=FALSE) {
+fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   if (fix_flats) {
     args <- paste(args, "--fix_flats")
+  }
+  if (!is.null(flat_increment)) {
+    args <- paste(args, paste0("--flat_increment=", flat_increment))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

@@ -13,7 +13,7 @@ lidar_tin_gridding(input, output = NULL, parameter = "elevation",
 
 \item{output}{Output raster file (including extension).}
 
-\item{parameter}{Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'scan angle', 'user data'.}
+\item{parameter}{Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.}
 
 \item{returns}{Point return types to include; options are 'all' (default), 'last', 'first'.}
 

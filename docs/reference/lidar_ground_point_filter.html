@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -127,7 +127,8 @@
 
     <pre class="usage"><span class='fu'>lidar_ground_point_filter</span>(<span class='no'>input</span>, <span class='no'>output</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>,
   <span class='kw'>min_neighbours</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>slope_threshold</span> <span class='kw'>=</span> <span class='fl'>45</span>, <span class='kw'>height_threshold</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>classify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>slope_norm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>classify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>slope_norm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>height_above_ground</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,6 +164,10 @@
     <tr>
       <th>slope_norm</th>
       <td><p>Perform initial ground slope normalization?.</p></td>
+    </tr>
+    <tr>
+      <th>height_above_ground</th>
+      <td><p>Transform output to height above average ground elevation?.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

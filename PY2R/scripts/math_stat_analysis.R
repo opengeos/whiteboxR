@@ -576,38 +576,6 @@ exp2 <- function(input, output, verbose_mode=FALSE) {
 }
 
 
-#' Extract raster statistics
-#'
-#' Extracts descriptive statistics for a group of patches in a raster.
-#'
-#' @param input Input data raster file.
-#' @param features Input feature definition raster file.
-#' @param output Output raster file.
-#' @param stat Statistic to extract, including 'average', 'minimum', 'maximum', 'range', 'standard deviation', and 'total'.
-#' @param out_table Output HTML Table file.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-extract_raster_statistics <- function(input, features, output=NULL, stat="average", out_table=NULL, verbose_mode=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--features=", features))
-  if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
-  }
-  if (!is.null(stat)) {
-    args <- paste(args, paste0("--stat=", stat))
-  }
-  if (!is.null(out_table)) {
-    args <- paste(args, paste0("--out_table=", out_table))
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' Floor
 #'
 #' Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
@@ -715,11 +683,13 @@ image_correlation <- function(inputs, output=NULL, verbose_mode=FALSE) {
 #' @param output Output HTML file for regression summary report.
 #' @param out_residuals Output raster regression resdidual file.
 #' @param standardize Optional flag indicating whether to standardize the residuals map.
+#' @param scattergram Optional flag indicating whether to output a scattergram.
+#' @param num_samples Number of samples used to create scattergram.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, verbose_mode=FALSE) {
+image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, scattergram=FALSE, num_samples=1000, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -730,6 +700,12 @@ image_regression <- function(input1, input2, output, out_residuals=NULL, standar
   }
   if (standardize) {
     args <- paste(args, "--standardize")
+  }
+  if (scattergram) {
+    args <- paste(args, "--scattergram")
+  }
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1833,6 +1809,38 @@ z_scores <- function(input, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Zonal statistics
+#'
+#' Extracts descriptive statistics for a group of patches in a raster.
+#'
+#' @param input Input data raster file.
+#' @param features Input feature definition raster file.
+#' @param output Output raster file.
+#' @param stat Statistic to extract, including 'mean', 'median', 'minimum', 'maximum', 'range', 'standard deviation', and 'total'.
+#' @param out_table Output HTML Table file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+zonal_statistics <- function(input, features, output=NULL, stat="mean", out_table=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--features=", features))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(stat)) {
+    args <- paste(args, paste0("--stat=", stat))
+  }
+  if (!is.null(out_table)) {
+    args <- paste(args, paste0("--out_table=", out_table))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }

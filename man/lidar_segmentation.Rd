@@ -5,7 +5,8 @@
 \title{Lidar segmentation}
 \usage{
 lidar_segmentation(input, output, radius = 5, norm_diff = 10,
-  maxzdiff = 1, verbose_mode = FALSE)
+  maxzdiff = 1, classes = FALSE, min_size = 1,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -17,6 +18,10 @@ lidar_segmentation(input, output, radius = 5, norm_diff = 10,
 \item{norm_diff}{Maximum difference in normal vectors, in degrees.}
 
 \item{maxzdiff}{Maximum difference in elevation (z units) between neighbouring points of the same segment.}
+
+\item{classes}{Segments don't cross class boundaries.}
+
+\item{min_size}{Minimum segment size (number of points).}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

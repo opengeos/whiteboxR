@@ -4,7 +4,8 @@
 \alias{fill_depressions}
 \title{Fill depressions}
 \usage{
-fill_depressions(dem, output, fix_flats = TRUE, verbose_mode = FALSE)
+fill_depressions(dem, output, fix_flats = TRUE, flat_increment = NULL,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +13,8 @@ fill_depressions(dem, output, fix_flats = TRUE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{fix_flats}{Optional flag indicating whether flat areas should have a small gradient applied.}
+
+\item{flat_increment}{Optional elevation increment applied to flat areas.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

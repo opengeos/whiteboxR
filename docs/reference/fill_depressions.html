@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -125,7 +125,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>fill_depressions</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='kw'>fix_flats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>fill_depressions</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='kw'>fix_flats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>flat_increment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -141,6 +142,10 @@
     <tr>
       <th>fix_flats</th>
       <td><p>Optional flag indicating whether flat areas should have a small gradient applied.</p></td>
+    </tr>
+    <tr>
+      <th>flat_increment</th>
+      <td><p>Optional elevation increment applied to flat areas.</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

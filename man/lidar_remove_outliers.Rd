@@ -5,7 +5,7 @@
 \title{Lidar remove outliers}
 \usage{
 lidar_remove_outliers(input, output, radius = 2, elev_diff = 50,
-  verbose_mode = FALSE)
+  use_median = FALSE, classify = TRUE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -15,6 +15,10 @@ lidar_remove_outliers(input, output, radius = 2, elev_diff = 50,
 \item{radius}{Search Radius.}
 
 \item{elev_diff}{Max. elevation difference.}
+
+\item{use_median}{Optional flag indicating whether to use the difference from median elevation rather than mean.}
+
+\item{classify}{Classify points as ground (2) or off-ground (1).}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

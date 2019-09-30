@@ -67,7 +67,7 @@ extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-extract_valleys <- function(dem, output, variant="Lower Quartile", line_thin=TRUE, filter=5, verbose_mode=FALSE) {
+extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filter=5, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))

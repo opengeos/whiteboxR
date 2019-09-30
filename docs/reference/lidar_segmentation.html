@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -126,7 +126,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>lidar_segmentation</span>(<span class='no'>input</span>, <span class='no'>output</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>norm_diff</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>maxzdiff</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>maxzdiff</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>classes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>min_size</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,6 +151,14 @@
     <tr>
       <th>maxzdiff</th>
       <td><p>Maximum difference in elevation (z units) between neighbouring points of the same segment.</p></td>
+    </tr>
+    <tr>
+      <th>classes</th>
+      <td><p>Segments don't cross class boundaries.</p></td>
+    </tr>
+    <tr>
+      <th>min_size</th>
+      <td><p>Minimum segment size (number of points).</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>

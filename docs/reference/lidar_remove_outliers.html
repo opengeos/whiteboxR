@@ -63,7 +63,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -126,7 +126,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>lidar_remove_outliers</span>(<span class='no'>input</span>, <span class='no'>output</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>elev_diff</span> <span class='kw'>=</span> <span class='fl'>50</span>,
-  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>use_median</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>classify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,6 +146,14 @@
     <tr>
       <th>elev_diff</th>
       <td><p>Max. elevation difference.</p></td>
+    </tr>
+    <tr>
+      <th>use_median</th>
+      <td><p>Optional flag indicating whether to use the difference from median elevation rather than mean.</p></td>
+    </tr>
+    <tr>
+      <th>classify</th>
+      <td><p>Classify points as ground (2) or off-ground (1).</p></td>
     </tr>
     <tr>
       <th>verbose_mode</th>
