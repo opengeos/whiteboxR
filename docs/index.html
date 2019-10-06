@@ -181,7 +181,7 @@
 <span id="cb5-4"><a href="#cb5-4"></a>dem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="dt">package=</span><span class="st">"whitebox"</span>)</span>
 <span id="cb5-5"><a href="#cb5-5"></a></span>
 <span id="cb5-6"><a href="#cb5-6"></a><span class="co"># Run tools</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="kw">feature_preserving_denoise</span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>, <span class="dt">verbose_mode =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="kw">feature_preserving_smoothing</span>(dem, <span class="st">"./smoothed.tif"</span>, <span class="dt">filter=</span><span class="dv">9</span>, <span class="dt">verbose_mode =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="kw">breach_depressions</span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)</span>
 <span id="cb5-9"><a href="#cb5-9"></a><span class="kw">d_inf_flow_accumulation</span>(dem, <span class="st">"./flow_accum.tif"</span>)</span></code></pre></div>
 </div>
