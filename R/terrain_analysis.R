@@ -9,7 +9,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-aspect <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_aspect <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -33,7 +33,7 @@ aspect <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-average_normal_vector_angular_deviation <- function(dem, output, filter=11, verbose_mode=FALSE) {
+wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -57,7 +57,7 @@ average_normal_vector_angular_deviation <- function(dem, output, filter=11, verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-circular_variance_of_aspect <- function(dem, output, filter=11, verbose_mode=FALSE) {
+wbt_circular_variance_of_aspect <- function(dem, output, filter=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -82,7 +82,7 @@ circular_variance_of_aspect <- function(dem, output, filter=11, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -110,7 +110,7 @@ dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -138,7 +138,7 @@ diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=FALSE) {
+wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -166,7 +166,7 @@ directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_mode=FALSE) {
+wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -195,7 +195,7 @@ downslope_index <- function(dem, output, drop=2.0, out_type="tangent", verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=1.0, verbose_mode=FALSE) {
+wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -224,7 +224,7 @@ edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=1.0, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-elev_above_pit <- function(dem, output, verbose_mode=FALSE) {
+wbt_elev_above_pit <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -247,7 +247,7 @@ elev_above_pit <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
+wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -276,7 +276,7 @@ elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-elev_relative_to_min_max <- function(dem, output, verbose_mode=FALSE) {
+wbt_elev_relative_to_min_max <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -297,7 +297,7 @@ elev_relative_to_min_max <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_mode=FALSE) {
+wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -323,7 +323,7 @@ elev_relative_to_watershed_min_max <- function(dem, watersheds, output, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=1.0, verbose_mode=FALSE) {
+wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -360,7 +360,7 @@ feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=FALSE) {
+wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -388,7 +388,7 @@ fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode=FALSE) {
+wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -415,7 +415,7 @@ fill_missing_data <- function(input, output, filter=11, weight=2.0, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=FALSE) {
+wbt_find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -441,7 +441,7 @@ find_ridges <- function(dem, output, line_thin=TRUE, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, verbose_mode=FALSE) {
+wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -472,7 +472,7 @@ hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=FALSE) {
+wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -499,7 +499,7 @@ horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=FALSE) {
+wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -526,7 +526,7 @@ hypsometric_analysis <- function(inputs, output, watershed=NULL, verbose_mode=FA
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, verbose_mode=FALSE) {
+wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -558,7 +558,7 @@ max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=FALSE) {
+wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -587,7 +587,7 @@ max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_sca
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_branch_length <- function(dem, output, log=FALSE, verbose_mode=FALSE) {
+wbt_max_branch_length <- function(dem, output, log=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -614,7 +614,7 @@ max_branch_length <- function(dem, output, log=FALSE, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=FALSE) {
+wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -640,7 +640,7 @@ max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_sca
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
+wbt_max_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -664,7 +664,7 @@ max_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, verbose_mode=FALSE) {
+wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -694,7 +694,7 @@ max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, st
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=FALSE) {
+wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -720,7 +720,7 @@ max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scal
 #'
 #' @return Returns the tool text outputs.
 #' @export
-min_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
+wbt_min_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -744,7 +744,7 @@ min_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, verbose_mode=FALSE) {
+wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -776,7 +776,7 @@ multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=FALSE) {
+wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -809,7 +809,7 @@ multiscale_roughness_signature <- function(dem, points, output, max_scale, min_s
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
+wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -847,7 +847,7 @@ multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, ste
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
+wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -883,7 +883,7 @@ multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, verbose_mode=FALSE) {
+wbt_multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--local=", local))
@@ -908,7 +908,7 @@ multiscale_topographic_position_image <- function(local, meso, broad, output, li
 #'
 #' @return Returns the tool text outputs.
 #' @export
-num_downslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
+wbt_num_downslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -928,7 +928,7 @@ num_downslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-num_upslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
+wbt_num_upslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -952,7 +952,7 @@ num_upslope_neighbours <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=1.0, verbose_mode=FALSE) {
+wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -986,7 +986,7 @@ pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, z
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=FALSE) {
+wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1013,7 +1013,7 @@ percent_elev_range <- function(dem, output, filterx=3, filtery=3, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1037,7 +1037,7 @@ plan_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-profile <- function(lines, surface, output, verbose_mode=FALSE) {
+wbt_profile <- function(lines, surface, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--lines=", lines))
@@ -1059,7 +1059,7 @@ profile <- function(lines, surface, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1084,7 +1084,7 @@ profile_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=FALSE) {
+wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1112,7 +1112,7 @@ relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbose_mode=FALSE) {
+wbt_relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--sca=", sca))
@@ -1138,7 +1138,7 @@ relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbos
 #'
 #' @return Returns the tool text outputs.
 #' @export
-relative_topographic_position <- function(dem, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1166,7 +1166,7 @@ relative_topographic_position <- function(dem, output, filterx=11, filtery=11, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbose_mode=FALSE) {
+wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1193,7 +1193,7 @@ remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1219,7 +1219,7 @@ ruggedness_index <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, verbose_mode=FALSE) {
+wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--sca=", sca))
@@ -1247,7 +1247,7 @@ sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope
 #'
 #' @return Returns the tool text outputs.
 #' @export
-slope <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_slope <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1271,7 +1271,7 @@ slope <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode=FALSE) {
+wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -1295,7 +1295,7 @@ slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-spherical_std_dev_of_normals <- function(dem, output, filter=11, verbose_mode=FALSE) {
+wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1321,7 +1321,7 @@ spherical_std_dev_of_normals <- function(dem, output, filter=11, verbose_mode=FA
 #'
 #' @return Returns the tool text outputs.
 #' @export
-standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1350,7 +1350,7 @@ standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-surface_area_ratio <- function(dem, output, verbose_mode=FALSE) {
+wbt_surface_area_ratio <- function(dem, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1371,7 +1371,7 @@ surface_area_ratio <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1395,7 +1395,7 @@ tangential_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
+wbt_total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1420,7 +1420,7 @@ total_curvature <- function(dem, output, zfactor=1.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-viewshed <- function(dem, stations, output, height=2.0, verbose_mode=FALSE) {
+wbt_viewshed <- function(dem, stations, output, height=2.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1446,7 +1446,7 @@ viewshed <- function(dem, stations, output, height=2.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode=FALSE) {
+wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1473,7 +1473,7 @@ visibility_index <- function(dem, output, height=2.0, res_factor=2, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wetness_index <- function(sca, slope, output, verbose_mode=FALSE) {
+wbt_wetness_index <- function(sca, slope, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--sca=", sca))
