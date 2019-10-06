@@ -9,7 +9,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-and <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_and <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -31,7 +31,7 @@ and <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-not <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_not <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -53,7 +53,7 @@ not <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-or <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_or <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -78,9 +78,9 @@ or <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' absolute_value(input = dem, output = 'output.tif')
+#' wbt_absolute_value(input = dem, output = 'output.tif')
 #' }
-absolute_value <- function(input, output, verbose_mode=FALSE) {
+wbt_absolute_value <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -101,7 +101,7 @@ absolute_value <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-add <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_add <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -123,7 +123,7 @@ add <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-anova <- function(input, features, output, verbose_mode=FALSE) {
+wbt_anova <- function(input, features, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -148,9 +148,9 @@ anova <- function(input, features, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' arc_cos(input = dem, output = 'output.tif')
+#' wbt_arc_cos(input = dem, output = 'output.tif')
 #' }
-arc_cos <- function(input, output, verbose_mode=FALSE) {
+wbt_arc_cos <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -174,9 +174,9 @@ arc_cos <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' arc_sin(input = dem, output = 'output.tif')
+#' wbt_arc_sin(input = dem, output = 'output.tif')
 #' }
-arc_sin <- function(input, output, verbose_mode=FALSE) {
+wbt_arc_sin <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -200,9 +200,9 @@ arc_sin <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' arc_tan(input = dem, output = 'output.tif')
+#' wbt_arc_tan(input = dem, output = 'output.tif')
 #' }
-arc_tan <- function(input, output, verbose_mode=FALSE) {
+wbt_arc_tan <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -223,7 +223,7 @@ arc_tan <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-atan2 <- function(input_y, input_x, output, verbose_mode=FALSE) {
+wbt_atan2 <- function(input_y, input_x, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input_y=", input_y))
@@ -244,7 +244,7 @@ atan2 <- function(input_y, input_x, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-attribute_correlation <- function(input, output=NULL, verbose_mode=FALSE) {
+wbt_attribute_correlation <- function(input, output=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -267,7 +267,7 @@ attribute_correlation <- function(input, output=NULL, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-attribute_histogram <- function(input, field, output, verbose_mode=FALSE) {
+wbt_attribute_histogram <- function(input, field, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -291,7 +291,7 @@ attribute_histogram <- function(input, field, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE, verbose_mode=FALSE) {
+wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -320,9 +320,9 @@ attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' ceil(input = dem, output = 'output.tif')
+#' wbt_ceil(input = dem, output = 'output.tif')
 #' }
-ceil <- function(input, output, verbose_mode=FALSE) {
+wbt_ceil <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -346,9 +346,9 @@ ceil <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' cos(input = dem, output = 'output.tif')
+#' wbt_cos(input = dem, output = 'output.tif')
 #' }
-cos <- function(input, output, verbose_mode=FALSE) {
+wbt_cos <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -372,9 +372,9 @@ cos <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' cosh(input = dem, output = 'output.tif')
+#' wbt_cosh(input = dem, output = 'output.tif')
 #' }
-cosh <- function(input, output, verbose_mode=FALSE) {
+wbt_cosh <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -394,7 +394,7 @@ cosh <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-crispness_index <- function(input, output=NULL, verbose_mode=FALSE) {
+wbt_crispness_index <- function(input, output=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -417,7 +417,7 @@ crispness_index <- function(input, output=NULL, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-cross_tabulation <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_cross_tabulation <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -442,9 +442,9 @@ cross_tabulation <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' cumulative_distribution(input = dem, output = 'output.tif')
+#' wbt_cumulative_distribution(input = dem, output = 'output.tif')
 #' }
-cumulative_distribution <- function(input, output, verbose_mode=FALSE) {
+wbt_cumulative_distribution <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -468,9 +468,9 @@ cumulative_distribution <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' decrement(input = dem, output = 'output.tif')
+#' wbt_decrement(input = dem, output = 'output.tif')
 #' }
-decrement <- function(input, output, verbose_mode=FALSE) {
+wbt_decrement <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -491,7 +491,7 @@ decrement <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-divide <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_divide <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -513,7 +513,7 @@ divide <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -538,9 +538,9 @@ equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' exp(input = dem, output = 'output.tif')
+#' wbt_exp(input = dem, output = 'output.tif')
 #' }
-exp <- function(input, output, verbose_mode=FALSE) {
+wbt_exp <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -564,9 +564,9 @@ exp <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' exp2(input = dem, output = 'output.tif')
+#' wbt_exp2(input = dem, output = 'output.tif')
 #' }
-exp2 <- function(input, output, verbose_mode=FALSE) {
+wbt_exp2 <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -590,9 +590,9 @@ exp2 <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' floor(input = dem, output = 'output.tif')
+#' wbt_floor(input = dem, output = 'output.tif')
 #' }
-floor <- function(input, output, verbose_mode=FALSE) {
+wbt_floor <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -614,7 +614,7 @@ floor <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FALSE) {
+wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -639,7 +639,7 @@ greater_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mode=FALSE) {
+wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -662,7 +662,7 @@ image_autocorrelation <- function(inputs, output, contiguity="Rook", verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-image_correlation <- function(inputs, output=NULL, verbose_mode=FALSE) {
+wbt_image_correlation <- function(inputs, output=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -689,7 +689,7 @@ image_correlation <- function(inputs, output=NULL, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, scattergram=FALSE, num_samples=1000, verbose_mode=FALSE) {
+wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, scattergram=FALSE, num_samples=1000, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -722,7 +722,7 @@ image_regression <- function(input1, input2, output, out_residuals=NULL, standar
 #'
 #' @return Returns the tool text outputs.
 #' @export
-in_place_add <- function(input1, input2, verbose_mode=FALSE) {
+wbt_in_place_add <- function(input1, input2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -742,7 +742,7 @@ in_place_add <- function(input1, input2, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-in_place_divide <- function(input1, input2, verbose_mode=FALSE) {
+wbt_in_place_divide <- function(input1, input2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -762,7 +762,7 @@ in_place_divide <- function(input1, input2, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-in_place_multiply <- function(input1, input2, verbose_mode=FALSE) {
+wbt_in_place_multiply <- function(input1, input2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -782,7 +782,7 @@ in_place_multiply <- function(input1, input2, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-in_place_subtract <- function(input1, input2, verbose_mode=FALSE) {
+wbt_in_place_subtract <- function(input1, input2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -806,9 +806,9 @@ in_place_subtract <- function(input1, input2, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' increment(input = dem, output = 'output.tif')
+#' wbt_increment(input = dem, output = 'output.tif')
 #' }
-increment <- function(input, output, verbose_mode=FALSE) {
+wbt_increment <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -829,7 +829,7 @@ increment <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-integer_division <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_integer_division <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -854,9 +854,9 @@ integer_division <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' is_no_data(input = dem, output = 'output.tif')
+#' wbt_is_no_data(input = dem, output = 'output.tif')
 #' }
-is_no_data <- function(input, output, verbose_mode=FALSE) {
+wbt_is_no_data <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -877,7 +877,7 @@ is_no_data <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-kappa_index <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_kappa_index <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -899,7 +899,7 @@ kappa_index <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=FALSE) {
+wbt_ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -924,7 +924,7 @@ ks_test_for_normality <- function(input, output, num_samples=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FALSE) {
+wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -949,7 +949,7 @@ less_than <- function(input1, input2, output, incl_equals=FALSE, verbose_mode=FA
 #'
 #' @return Returns the tool text outputs.
 #' @export
-list_unique_values <- function(input, field, output, verbose_mode=FALSE) {
+wbt_list_unique_values <- function(input, field, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -974,9 +974,9 @@ list_unique_values <- function(input, field, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' ln(input = dem, output = 'output.tif')
+#' wbt_ln(input = dem, output = 'output.tif')
 #' }
-ln <- function(input, output, verbose_mode=FALSE) {
+wbt_ln <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1000,9 +1000,9 @@ ln <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' log10(input = dem, output = 'output.tif')
+#' wbt_log10(input = dem, output = 'output.tif')
 #' }
-log10 <- function(input, output, verbose_mode=FALSE) {
+wbt_log10 <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1026,9 +1026,9 @@ log10 <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' log2(input = dem, output = 'output.tif')
+#' wbt_log2(input = dem, output = 'output.tif')
 #' }
-log2 <- function(input, output, verbose_mode=FALSE) {
+wbt_log2 <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1049,7 +1049,7 @@ log2 <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-max <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_max <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1071,7 +1071,7 @@ max <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-min <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_min <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1093,7 +1093,7 @@ min <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-modulo <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_modulo <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1115,7 +1115,7 @@ modulo <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-multiply <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_multiply <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1140,9 +1140,9 @@ multiply <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' negate(input = dem, output = 'output.tif')
+#' wbt_negate(input = dem, output = 'output.tif')
 #' }
-negate <- function(input, output, verbose_mode=FALSE) {
+wbt_negate <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1163,7 +1163,7 @@ negate <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-not_equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_not_equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1185,7 +1185,7 @@ not_equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-power <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_power <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1208,7 +1208,7 @@ power <- function(input1, input2, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-principal_component_analysis <- function(inputs, output, num_comp=NULL, standardized=FALSE, verbose_mode=FALSE) {
+wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, standardized=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -1235,7 +1235,7 @@ principal_component_analysis <- function(inputs, output, num_comp=NULL, standard
 #'
 #' @return Returns the tool text outputs.
 #' @export
-quantiles <- function(input, output, num_quantiles=5, verbose_mode=FALSE) {
+wbt_quantiles <- function(input, output, num_quantiles=5, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1258,7 +1258,7 @@ quantiles <- function(input, output, num_quantiles=5, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-random_field <- function(base, output, verbose_mode=FALSE) {
+wbt_random_field <- function(base, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -1279,7 +1279,7 @@ random_field <- function(base, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-random_sample <- function(base, output, num_samples=1000, verbose_mode=FALSE) {
+wbt_random_sample <- function(base, output, num_samples=1000, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -1302,7 +1302,7 @@ random_sample <- function(base, output, num_samples=1000, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-raster_histogram <- function(input, output, verbose_mode=FALSE) {
+wbt_raster_histogram <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1321,7 +1321,7 @@ raster_histogram <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-raster_summary_stats <- function(input, verbose_mode=FALSE) {
+wbt_raster_summary_stats <- function(input, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1344,9 +1344,9 @@ raster_summary_stats <- function(input, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' reciprocal(input = dem, output = 'output.tif')
+#' wbt_reciprocal(input = dem, output = 'output.tif')
 #' }
-reciprocal <- function(input, output, verbose_mode=FALSE) {
+wbt_reciprocal <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1370,7 +1370,7 @@ reciprocal <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_min=NULL, clip_max=NULL, verbose_mode=FALSE) {
+wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_min=NULL, clip_max=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1398,7 +1398,7 @@ rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_mi
 #'
 #' @return Returns the tool text outputs.
 #' @export
-root_mean_square_error <- function(input, base, verbose_mode=FALSE) {
+wbt_root_mean_square_error <- function(input, base, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1422,9 +1422,9 @@ root_mean_square_error <- function(input, base, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' round(input = dem, output = 'output.tif')
+#' wbt_round(input = dem, output = 'output.tif')
 #' }
-round <- function(input, output, verbose_mode=FALSE) {
+wbt_round <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1448,9 +1448,9 @@ round <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' sin(input = dem, output = 'output.tif')
+#' wbt_sin(input = dem, output = 'output.tif')
 #' }
-sin <- function(input, output, verbose_mode=FALSE) {
+wbt_sin <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1474,9 +1474,9 @@ sin <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' sinh(input = dem, output = 'output.tif')
+#' wbt_sinh(input = dem, output = 'output.tif')
 #' }
-sinh <- function(input, output, verbose_mode=FALSE) {
+wbt_sinh <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1500,9 +1500,9 @@ sinh <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' square(input = dem, output = 'output.tif')
+#' wbt_square(input = dem, output = 'output.tif')
 #' }
-square <- function(input, output, verbose_mode=FALSE) {
+wbt_square <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1526,9 +1526,9 @@ square <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' square_root(input = dem, output = 'output.tif')
+#' wbt_square_root(input = dem, output = 'output.tif')
 #' }
-square_root <- function(input, output, verbose_mode=FALSE) {
+wbt_square_root <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1549,7 +1549,7 @@ square_root <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-subtract <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_subtract <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1574,9 +1574,9 @@ subtract <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' tan(input = dem, output = 'output.tif')
+#' wbt_tan(input = dem, output = 'output.tif')
 #' }
-tan <- function(input, output, verbose_mode=FALSE) {
+wbt_tan <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1600,9 +1600,9 @@ tan <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' tanh(input = dem, output = 'output.tif')
+#' wbt_tanh(input = dem, output = 'output.tif')
 #' }
-tanh <- function(input, output, verbose_mode=FALSE) {
+wbt_tanh <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1626,9 +1626,9 @@ tanh <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' to_degrees(input = dem, output = 'output.tif')
+#' wbt_to_degrees(input = dem, output = 'output.tif')
 #' }
-to_degrees <- function(input, output, verbose_mode=FALSE) {
+wbt_to_degrees <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1652,9 +1652,9 @@ to_degrees <- function(input, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' to_radians(input = dem, output = 'output.tif')
+#' wbt_to_radians(input = dem, output = 'output.tif')
 #' }
-to_radians <- function(input, output, verbose_mode=FALSE) {
+wbt_to_radians <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1675,7 +1675,7 @@ to_radians <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-trend_surface <- function(input, output, order=1, verbose_mode=FALSE) {
+wbt_trend_surface <- function(input, output, order=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1701,7 +1701,7 @@ trend_surface <- function(input, output, order=1, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-trend_surface_vector_points <- function(input, field, output, cell_size, order=1, verbose_mode=FALSE) {
+wbt_trend_surface_vector_points <- function(input, field, output, cell_size, order=1, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1727,7 +1727,7 @@ trend_surface_vector_points <- function(input, field, output, cell_size, order=1
 #'
 #' @return Returns the tool text outputs.
 #' @export
-truncate <- function(input, output, num_decimals=NULL, verbose_mode=FALSE) {
+wbt_truncate <- function(input, output, num_decimals=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1752,7 +1752,7 @@ truncate <- function(input, output, num_decimals=NULL, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-turning_bands_simulation <- function(base, output, range, iterations=1000, verbose_mode=FALSE) {
+wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -1777,7 +1777,7 @@ turning_bands_simulation <- function(base, output, range, iterations=1000, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-xor <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_xor <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1802,9 +1802,9 @@ xor <- function(input1, input2, output, verbose_mode=FALSE) {
 #' @examples
 #' \dontrun{
 #' dem <- system.file("extdata", "DEM.tif", package="whitebox")
-#' z_scores(input = dem, output = 'output.tif')
+#' wbt_z_scores(input = dem, output = 'output.tif')
 #' }
-z_scores <- function(input, output, verbose_mode=FALSE) {
+wbt_z_scores <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1827,7 +1827,7 @@ z_scores <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-zonal_statistics <- function(input, features, output=NULL, stat="mean", out_table=NULL, verbose_mode=FALSE) {
+wbt_zonal_statistics <- function(input, features, output=NULL, stat="mean", out_table=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))

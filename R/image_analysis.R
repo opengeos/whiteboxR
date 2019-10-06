@@ -10,7 +10,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_mode=FALSE) {
+wbt_change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--date1=", date1))
@@ -34,7 +34,7 @@ change_vector_analysis <- function(date1, date2, magnitude, direction, verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-closing <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_closing <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -65,7 +65,7 @@ closing <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-create_colour_composite <- function(red, green, blue, output, opacity=NULL, enhance=TRUE, zeros=FALSE, verbose_mode=FALSE) {
+wbt_create_colour_composite <- function(red, green, blue, output, opacity=NULL, enhance=TRUE, zeros=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--red=", red))
@@ -97,7 +97,7 @@ create_colour_composite <- function(red, green, blue, output, opacity=NULL, enha
 #'
 #' @return Returns the tool text outputs.
 #' @export
-flip_image <- function(input, output, direction="vertical", verbose_mode=FALSE) {
+wbt_flip_image <- function(input, output, direction="vertical", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -125,7 +125,7 @@ flip_image <- function(input, output, direction="vertical", verbose_mode=FALSE) 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, output=NULL, verbose_mode=FALSE) {
+wbt_ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, output=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--intensity=", intensity))
@@ -159,7 +159,7 @@ ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-image_stack_profile <- function(inputs, points, output, verbose_mode=FALSE) {
+wbt_image_stack_profile <- function(inputs, points, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -180,7 +180,7 @@ image_stack_profile <- function(inputs, points, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-integral_image <- function(input, output, verbose_mode=FALSE) {
+wbt_integral_image <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -206,7 +206,7 @@ integral_image <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, verbose_mode=FALSE) {
+wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -242,7 +242,7 @@ k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_itera
 #'
 #' @return Returns the tool text outputs.
 #' @export
-line_thinning <- function(input, output, verbose_mode=FALSE) {
+wbt_line_thinning <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -267,7 +267,7 @@ line_thinning <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merge_dist=NULL, max_iterations=10, class_change=2.0, verbose_mode=FALSE) {
+wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merge_dist=NULL, max_iterations=10, class_change=2.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -303,7 +303,7 @@ modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clu
 #'
 #' @return Returns the tool text outputs.
 #' @export
-mosaic <- function(inputs, output, method="cc", verbose_mode=FALSE) {
+wbt_mosaic <- function(inputs, output, method="cc", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -329,7 +329,7 @@ mosaic <- function(inputs, output, method="cc", verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4.0, verbose_mode=FALSE) {
+wbt_mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -359,7 +359,7 @@ mosaic_with_feathering <- function(input1, input2, output, method="cc", weight=4
 #'
 #' @return Returns the tool text outputs.
 #' @export
-normalized_difference_index <- function(input1, input2, output, clip=0.0, correction=0.0, verbose_mode=FALSE) {
+wbt_normalized_difference_index <- function(input1, input2, output, clip=0.0, correction=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -388,7 +388,7 @@ normalized_difference_index <- function(input1, input2, output, clip=0.0, correc
 #'
 #' @return Returns the tool text outputs.
 #' @export
-opening <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_opening <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -415,7 +415,7 @@ opening <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-remove_spurs <- function(input, output, iterations=10, verbose_mode=FALSE) {
+wbt_remove_spurs <- function(input, output, iterations=10, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -439,7 +439,7 @@ remove_spurs <- function(input, output, iterations=10, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-resample <- function(inputs, destination, method="cc", verbose_mode=FALSE) {
+wbt_resample <- function(inputs, destination, method="cc", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -467,7 +467,7 @@ resample <- function(inputs, destination, method="cc", verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, composite=NULL, verbose_mode=FALSE) {
+wbt_rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NULL, composite=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--intensity=", intensity))
@@ -502,7 +502,7 @@ rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blue=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, verbose_mode=FALSE) {
+wbt_split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -530,7 +530,7 @@ split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-thicken_raster_line <- function(input, output, verbose_mode=FALSE) {
+wbt_thicken_raster_line <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -553,7 +553,7 @@ thicken_raster_line <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-tophat_transform <- function(input, output, filterx=11, filtery=11, variant="white", verbose_mode=FALSE) {
+wbt_tophat_transform <- function(input, output, filterx=11, filtery=11, variant="white", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -584,7 +584,7 @@ tophat_transform <- function(input, output, filterx=11, filtery=11, variant="whi
 #'
 #' @return Returns the tool text outputs.
 #' @export
-write_function_memory_insertion <- function(input1, input2, output, input3=NULL, verbose_mode=FALSE) {
+wbt_write_function_memory_insertion <- function(input1, input2, output, input3=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -611,7 +611,7 @@ write_function_memory_insertion <- function(input1, input2, output, input3=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0, verbose_mode=FALSE) {
+wbt_adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -642,7 +642,7 @@ adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold=2.0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verbose_mode=FALSE) {
+wbt_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -670,7 +670,7 @@ bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, verb
 #'
 #' @return Returns the tool text outputs.
 #' @export
-conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=FALSE) {
+wbt_conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -696,7 +696,7 @@ conservative_smoothing_filter <- function(input, output, filterx=3, filtery=3, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-corner_detection <- function(input, output, verbose_mode=FALSE) {
+wbt_corner_detection <- function(input, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -718,7 +718,7 @@ corner_detection <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbose_mode=FALSE) {
+wbt_diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -746,7 +746,7 @@ diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -774,7 +774,7 @@ diversity_filter <- function(input, output, filterx=11, filtery=11, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-edge_preserving_mean_filter <- function(input, output, threshold, filter=11, verbose_mode=FALSE) {
+wbt_edge_preserving_mean_filter <- function(input, output, threshold, filter=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -800,7 +800,7 @@ edge_preserving_mean_filter <- function(input, output, threshold, filter=11, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=FALSE) {
+wbt_emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -827,7 +827,7 @@ emboss_filter <- function(input, output, direction="n", clip=0.0, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=FALSE) {
+wbt_fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -851,7 +851,7 @@ fast_almost_gaussian_filter <- function(input, output, sigma=1.8, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=FALSE) {
+wbt_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -876,7 +876,7 @@ gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -905,7 +905,7 @@ high_pass_filter <- function(input, output, filterx=11, filtery=11, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
+wbt_high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -937,7 +937,7 @@ high_pass_median_filter <- function(input, output, filterx=11, filtery=11, sig_d
 #'
 #' @return Returns the tool text outputs.
 #' @export
-k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, verbose_mode=FALSE) {
+wbt_k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -968,7 +968,7 @@ k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_mode=FALSE) {
+wbt_laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -995,7 +995,7 @@ laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=FALSE) {
+wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1022,7 +1022,7 @@ laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0, verbose_mode=FALSE) {
+wbt_lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1057,7 +1057,7 @@ lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-line_detection_filter <- function(input, output, variant="vertical", absvals=FALSE, clip=0.0, verbose_mode=FALSE) {
+wbt_line_detection_filter <- function(input, output, variant="vertical", absvals=FALSE, clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1088,7 +1088,7 @@ line_detection_filter <- function(input, output, variant="vertical", absvals=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1116,7 +1116,7 @@ majority_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1144,7 +1144,7 @@ maximum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=FALSE) {
+wbt_mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1173,7 +1173,7 @@ mean_filter <- function(input, output, filterx=3, filtery=3, verbose_mode=FALSE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
+wbt_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1204,7 +1204,7 @@ median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1232,7 +1232,7 @@ minimum_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1261,7 +1261,7 @@ olympic_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
+wbt_percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=2, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1291,7 +1291,7 @@ percentile_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-prewitt_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
+wbt_prewitt_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1316,7 +1316,7 @@ prewitt_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1343,7 +1343,7 @@ range_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
+wbt_roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1367,7 +1367,7 @@ roberts_cross_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-scharr_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
+wbt_scharr_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1392,7 +1392,7 @@ scharr_filter <- function(input, output, clip=0.0, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=FALSE) {
+wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1420,7 +1420,7 @@ sobel_filter <- function(input, output, variant="3x3", clip=0.0, verbose_mode=FA
 #'
 #' @return Returns the tool text outputs.
 #' @export
-standard_deviation_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_standard_deviation_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1448,7 +1448,7 @@ standard_deviation_filter <- function(input, output, filterx=11, filtery=11, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
+wbt_total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1477,7 +1477,7 @@ total_filter <- function(input, output, filterx=11, filtery=11, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0.0, verbose_mode=FALSE) {
+wbt_unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1509,7 +1509,7 @@ unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, threshold=0
 #'
 #' @return Returns the tool text outputs.
 #' @export
-user_defined_weights_filter <- function(input, weights, output, center="center", normalize=FALSE, verbose_mode=FALSE) {
+wbt_user_defined_weights_filter <- function(input, weights, output, center="center", normalize=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1537,7 +1537,7 @@ user_defined_weights_filter <- function(input, weights, output, center="center",
 #'
 #' @return Returns the tool text outputs.
 #' @export
-balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose_mode=FALSE) {
+wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1564,7 +1564,7 @@ balance_contrast_enhancement <- function(input, output, band_mean=100.0, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-correct_vignetting <- function(input, pp, output, focal_length=304.8, image_width=228.6, n=4.0, verbose_mode=FALSE) {
+wbt_correct_vignetting <- function(input, pp, output, focal_length=304.8, image_width=228.6, n=4.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1596,7 +1596,7 @@ correct_vignetting <- function(input, pp, output, focal_length=304.8, image_widt
 #'
 #' @return Returns the tool text outputs.
 #' @export
-direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose_mode=FALSE) {
+wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1623,7 +1623,7 @@ direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-gamma_correction <- function(input, output, gamma=0.5, verbose_mode=FALSE) {
+wbt_gamma_correction <- function(input, output, gamma=0.5, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1647,7 +1647,7 @@ gamma_correction <- function(input, output, gamma=0.5, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode=FALSE) {
+wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1671,7 +1671,7 @@ gaussian_contrast_stretch <- function(input, output, num_tones=256, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-histogram_equalization <- function(input, output, num_tones=256, verbose_mode=FALSE) {
+wbt_histogram_equalization <- function(input, output, num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1695,7 +1695,7 @@ histogram_equalization <- function(input, output, num_tones=256, verbose_mode=FA
 #'
 #' @return Returns the tool text outputs.
 #' @export
-histogram_matching <- function(input, histo_file, output, verbose_mode=FALSE) {
+wbt_histogram_matching <- function(input, histo_file, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1717,7 +1717,7 @@ histogram_matching <- function(input, histo_file, output, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-histogram_matching_two_images <- function(input1, input2, output, verbose_mode=FALSE) {
+wbt_histogram_matching_two_images <- function(input1, input2, output, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -1741,7 +1741,7 @@ histogram_matching_two_images <- function(input1, input2, output, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=256, verbose_mode=FALSE) {
+wbt_min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1771,7 +1771,7 @@ min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL, composite=NULL, method="brovey", verbose_mode=FALSE) {
+wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL, composite=NULL, method="brovey", verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--pan=", pan))
@@ -1809,7 +1809,7 @@ panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both", num_tones=256, verbose_mode=FALSE) {
+wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both", num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1841,7 +1841,7 @@ percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both", nu
 #'
 #' @return Returns the tool text outputs.
 #' @export
-sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_tones=256, verbose_mode=FALSE) {
+wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1872,7 +1872,7 @@ sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_tones=256, verbose_mode=FALSE) {
+wbt_standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_tones=256, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))

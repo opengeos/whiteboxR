@@ -45,7 +45,7 @@ def function_block(line, ff):
     start = line.find("(") + 1
     end = len(line) -1
     argument = line[start:end]
-    function_head = function_name + " <- function(" + argument + ") {"
+    function_head = "wbt_" + function_name + " <- function(" + argument + ") {"
     ff.write(function_head + "\n")
     ff.write("  wbt_init()" + "\n")
     ff.write('  args <- ""' + "\n")
@@ -261,6 +261,7 @@ with open(wbt_py) as f:
                     if (fun_params == "(input, output, verbose_mode=FALSE)") and (fun_name != "raster_histogram"):
                         # print(fun_name)
                         output_name = fun_name + ".tif"
+                        fun_name = "wbt_" + fun_name
                         # print(fun_params)
                         # line0 = "#' " + "wbt_init()\n"
                         line1 = "#' " + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")' + "\n" 
