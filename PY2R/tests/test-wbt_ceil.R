@@ -5,6 +5,6 @@ test_that("Returns the smallest (closest to negative infinity) value that is gre
   skip_on_cran()
   dem <- system.file("extdata", "DEM.tif", package = "whitebox")
   ret <- wbt_ceil(input = dem, output = "output.tif")
-  expect_match( ret, "Elapsed Time" )
+  expect_match(ret, "Elapsed Time")
 
 })

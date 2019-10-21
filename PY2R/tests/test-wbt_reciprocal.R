@@ -5,6 +5,6 @@ test_that("Returns the reciprocal (ie 1 / z) of values in a raster", {
   skip_on_cran()
   dem <- system.file("extdata", "DEM.tif", package = "whitebox")
   ret <- wbt_reciprocal(input = dem, output = "output.tif")
-  expect_match( ret, "Elapsed Time" )
+  expect_match(ret, "Elapsed Time")
 
 })

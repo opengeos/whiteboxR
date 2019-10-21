@@ -24,11 +24,11 @@ wbt_init <- function() {
 
   if (!file.exists(exe_path)) {
     if (os == "Linux") {
-      url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
+      url <- "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
     } else if (os == "Windows") {
-      url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_win_amd64.zip"
+      url <- "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_win_amd64.zip"
     } else if (os == "Darwin") {
-      url <- "https://www.uoguelph.ca/~hydrogeo/WhiteboxTools/WhiteboxTools_darwin_amd64.zip"
+      url <- "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_darwin_amd64.zip"
     } else {
       stop("Sorry, whitebox is unsupported for your operating system!")
     }

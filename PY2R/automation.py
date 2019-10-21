@@ -284,7 +284,7 @@ with open(wbt_py) as f:
                         f.write("  skip_on_cran()\n")
                         f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
                         f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(fun_name))
-                        f.write('  expect_match( ret, "Elapsed Time" )\n\n')
+                        f.write('  expect_match(ret, "Elapsed Time")\n\n')
                         f.write('})\n')
                         print(test_file_path)
                         f.close()
