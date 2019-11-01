@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1>whitebox examples</h1>
                         <h4 class="author">Qiusheng Wu</h4>
             
-            <h4 class="date">2019-10-21</h4>
+            <h4 class="date">2019-11-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/vignettes/demo.Rmd"><code>vignettes/demo.Rmd</code></a></small>
       <div class="hidden name"><code>demo.Rmd</code></div>
@@ -104,7 +104,7 @@
 <pre><code>## Performing one-time download of WhiteboxTools binary from
 ##      https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz 
 ## (This could take a few minutes, please be patient...)
-## WhiteboxTools binary is located at:  /tmp/RtmpRYHrlh/temp_libpath23b329742929/whitebox/WBT/whitebox_tools 
+## WhiteboxTools binary is located at:  /tmp/RtmpcA90KP/temp_libpath39887aa1167b/whitebox/WBT/whitebox_tools 
 ## You can now start using whitebox
 ##     &gt; library(whitebox)
 ##     &gt; wbt_version()
@@ -147,7 +147,7 @@
 ## [17] "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."</code></pre>
 <p>Prints the whitebox-tools version.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw"><a href="../reference/wbt_version.html">wbt_version</a></span>())</span></code></pre></div>
-<pre><code>## [1] "WhiteboxTools v1.0.1 by Dr. John B. Lindsay (c) 2017-2019"                  
+<pre><code>## [1] "WhiteboxTools v1.0.2 by Dr. John B. Lindsay (c) 2017-2019"                  
 ## [2] ""                                                                           
 ## [3] "WhiteboxTools is an advanced geospatial data analysis platform developed at"
 ## [4] "the University of Guelph's Geomorphometry and Hydrogeomatics Research "     
@@ -173,8 +173,8 @@
 ## [10] "--vlr              Flag indicating whether or not to print the variable length records (VLRs)."                                                                                         
 ## [11] "--geokeys          Flag indicating whether or not to print the geokeys."                                                                                                                
 ## [12] "Example usage:"                                                                                                                                                                         
-## [13] "&gt;&gt;./tmpRtmpRYHrlhtemp_libpath23b329742929whiteboxWBTwhitebox_tools -r=LidarInfo -v --wd=\"/path/to/data/\" -i=file.las --vlr --geokeys\""                                               
-## [14] "./tmpRtmpRYHrlhtemp_libpath23b329742929whiteboxWBTwhitebox_tools -r=LidarInfo --wd=\"/path/to/data/\" -i=file.las"</code></pre>
+## [13] "&gt;&gt;./tmpRtmpcA90KPtemp_libpath39887aa1167bwhiteboxWBTwhitebox_tools -r=LidarInfo -v --wd=\"/path/to/data/\" -i=file.las --vlr --geokeys\""                                               
+## [14] "./tmpRtmpcA90KPtemp_libpath39887aa1167bwhiteboxWBTwhitebox_tools -r=LidarInfo --wd=\"/path/to/data/\" -i=file.las"</code></pre>
 <p>Retrieves the tool parameter descriptions for a specific tool.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span>(<span class="st">"slope"</span>))</span></code></pre></div>
 <pre><code>## [1] "{\"parameters\": [{\"name\":\"Input DEM File\",\"flags\":[\"-i\",\"--dem\"],\"description\":\"Input raster DEM file.\",\"parameter_type\":{\"ExistingFile\":\"Raster\"},\"default_value\":null,\"optional\":false},{\"name\":\"Output File\",\"flags\":[\"-o\",\"--output\"],\"description\":\"Output raster file.\",\"parameter_type\":{\"NewFile\":\"Raster\"},\"default_value\":null,\"optional\":false},{\"name\":\"Z Conversion Factor\",\"flags\":[\"--zfactor\"],\"description\":\"Optional multiplier for when the vertical and horizontal units are not the same.\",\"parameter_type\":\"Float\",\"default_value\":\"1.0\",\"optional\":true}]}"</code></pre>

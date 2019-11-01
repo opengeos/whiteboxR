@@ -1,3 +1,31 @@
+#' Burn streams at roads
+#'
+#' Rasterizes vector streams based on Lindsay (2016) method.
+#'
+#' @param dem Input raster digital elevation model (DEM) file.
+#' @param streams Input vector streams file.
+#' @param roads Input vector roads file.
+#' @param output Output raster file.
+#' @param width Maximum road embankment width, in map units.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--roads=", roads))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(width)) {
+    args <- paste(args, paste0("--width=", width))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Distance to outlet
 #'
 #' Calculates the distance of stream grid cells to the channel network outlet cell.

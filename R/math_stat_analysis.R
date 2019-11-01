@@ -212,6 +212,84 @@ wbt_arc_tan <- function(input, output, verbose_mode=FALSE) {
 }
 
 
+#' Arcosh
+#'
+#' Returns the inverse hyperbolic cosine (arcosh) of each values in a raster.
+#'
+#' @param input Input raster file.
+#' @param output Output raster file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' dem <- system.file("extdata", "DEM.tif", package="whitebox")
+#' wbt_arcosh(input = dem, output = 'output.tif')
+#' }
+wbt_arcosh <- function(input, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Arsinh
+#'
+#' Returns the inverse hyperbolic sine (arsinh) of each values in a raster.
+#'
+#' @param input Input raster file.
+#' @param output Output raster file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' dem <- system.file("extdata", "DEM.tif", package="whitebox")
+#' wbt_arsinh(input = dem, output = 'output.tif')
+#' }
+wbt_arsinh <- function(input, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Artanh
+#'
+#' Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.
+#'
+#' @param input Input raster file.
+#' @param output Output raster file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' dem <- system.file("extdata", "DEM.tif", package="whitebox")
+#' wbt_artanh(input = dem, output = 'output.tif')
+#' }
+wbt_artanh <- function(input, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Atan2
 #'
 #' Returns the 2-argument inverse tangent (atan2).
@@ -1174,6 +1252,32 @@ wbt_not_equal_to <- function(input1, input2, output, verbose_mode=FALSE) {
 }
 
 
+#' Paired sample t test
+#'
+#' Performs a 2-sample K-S test for significant differences on two input rasters.
+#'
+#' @param input1 First input raster file.
+#' @param input2 Second input raster file.
+#' @param output Output HTML file.
+#' @param num_samples Number of samples. Leave blank to use whole image.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Power
 #'
 #' Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value.
@@ -1760,6 +1864,58 @@ wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, v
   args <- paste(args, paste0("--range=", range))
   if (!is.null(iterations)) {
     args <- paste(args, paste0("--iterations=", iterations))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Two sample ks test
+#'
+#' Performs a 2-sample K-S test for significant differences on two input rasters.
+#'
+#' @param input1 First input raster file.
+#' @param input2 Second input raster file.
+#' @param output Output HTML file.
+#' @param num_samples Number of samples. Leave blank to use whole image.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_two_sample_ks_test <- function(input1, input2, output, num_samples=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Wilcoxon signed rank test
+#'
+#' Performs a 2-sample K-S test for significant differences on two input rasters.
+#'
+#' @param input1 First input raster file.
+#' @param input2 Second input raster file.
+#' @param output Output HTML file.
+#' @param num_samples Number of samples. Leave blank to use whole image.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

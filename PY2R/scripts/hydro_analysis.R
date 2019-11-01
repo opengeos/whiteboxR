@@ -715,7 +715,7 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mo
 #' @param dem Input raster DEM file.
 #' @param output Output file.
 #' @param out_type Output type; one of 'depth' (default), 'volume', and 'area'.
-#' @param damlength Maximum length of thr dam.
+#' @param damlength Maximum length of the dam.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.

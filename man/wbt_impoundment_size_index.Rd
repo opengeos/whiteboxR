@@ -12,7 +12,7 @@ wbt_impoundment_size_index(dem, output, damlength, out_type = "depth",
 
 \item{output}{Output file.}
 
-\item{damlength}{Maximum length of thr dam.}
+\item{damlength}{Maximum length of the dam.}
 
 \item{out_type}{Output type; one of 'depth' (default), 'volume', and 'area'.}
 

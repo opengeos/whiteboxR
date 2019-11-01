@@ -1100,32 +1100,6 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, verbose_m
 }
 
 
-#' Relative stream power index
-#'
-#' Calculates the relative stream power index.
-#'
-#' @param sca Input raster specific contributing area (SCA) file.
-#' @param slope Input raster slope file.
-#' @param output Output raster file.
-#' @param exponent SCA exponent value.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_relative_stream_power_index <- function(sca, slope, output, exponent=1.0, verbose_mode=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--sca=", sca))
-  args <- paste(args, paste0("--slope=", slope))
-  args <- paste(args, paste0("--output=", output))
-  if (!is.null(exponent)) {
-    args <- paste(args, paste0("--exponent=", exponent))
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' Relative topographic position
 #'
 #' Calculates the relative topographic position index from a DEM.
@@ -1334,6 +1308,32 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=
   }
   if (!is.null(filtery)) {
     args <- paste(args, paste0("--filtery=", filtery))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Stream power index
+#'
+#' Calculates the relative stream power index.
+#'
+#' @param sca Input raster specific contributing area (SCA) file.
+#' @param slope Input raster slope file.
+#' @param output Output raster file.
+#' @param exponent SCA exponent value.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--sca=", sca))
+  args <- paste(args, paste0("--slope=", slope))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

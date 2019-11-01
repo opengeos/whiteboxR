@@ -17,7 +17,7 @@ wbt_lidar_point_density(input, output = NULL, returns = "all",
 
 \item{resolution}{Output raster's grid resolution.}
 
-\item{radius}{Search Radius.}
+\item{radius}{Search radius.}
 
 \item{exclude_cls}{Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.}
 

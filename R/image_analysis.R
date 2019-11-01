@@ -1008,7 +1008,7 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_
 }
 
 
-#' Lee filter
+#' Lee sigma filter
 #'
 #' Performs a Lee (Sigma) smoothing filter on an image.
 #'
@@ -1022,7 +1022,7 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lee_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0, verbose_mode=FALSE) {
+wbt_lee_sigma_filter <- function(input, output, filterx=11, filtery=11, sigma=10.0, m=5.0, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))

@@ -720,7 +720,7 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
 #' @param output Output raster file (including extension).
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
 #' @param resolution Output raster's grid resolution.
-#' @param radius Search Radius.
+#' @param radius Search radius.
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
