@@ -4,10 +4,10 @@
 \alias{wbt_sink}
 \title{Sink}
 \usage{
-wbt_sink(dem, output, zero_background = FALSE, verbose_mode = FALSE)
+wbt_sink(input, output, zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
-\item{dem}{Input raster DEM file.}
+\item{input}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
 

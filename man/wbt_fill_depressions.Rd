@@ -5,7 +5,7 @@
 \title{Fill depressions}
 \usage{
 wbt_fill_depressions(dem, output, fix_flats = TRUE,
-  flat_increment = NULL, verbose_mode = FALSE)
+  flat_increment = NULL, max_depth = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -15,6 +15,8 @@ wbt_fill_depressions(dem, output, fix_flats = TRUE,
 \item{fix_flats}{Optional flag indicating whether flat areas should have a small gradient applied.}
 
 \item{flat_increment}{Optional elevation increment applied to flat areas.}
+
+\item{max_depth}{Optional maximum depression depth to fill.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

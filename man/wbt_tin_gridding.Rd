@@ -4,19 +4,24 @@
 \alias{wbt_tin_gridding}
 \title{Tin gridding}
 \usage{
-wbt_tin_gridding(input, output, resolution, field = NULL,
-  use_z = FALSE, verbose_mode = FALSE)
+wbt_tin_gridding(input, output, field = NULL, use_z = FALSE,
+  resolution = NULL, base = NULL, max_triangle_edge_length = NULL,
+  verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector points file.}
 
 \item{output}{Output raster file.}
 
-\item{resolution}{Output raster's grid resolution.}
-
 \item{field}{Input field name in attribute table.}
 
 \item{use_z}{Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.}
+
+\item{resolution}{Output raster's grid resolution.}
+
+\item{base}{Optionally specified input base raster file. Not used when a cell size is specified.}
+
+\item{max_triangle_edge_length}{Optional maximum triangle edge length; triangles larger than this size will not be gridded.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

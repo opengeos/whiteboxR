@@ -752,6 +752,38 @@ wbt_image_correlation <- function(inputs, output=NULL, verbose_mode=FALSE) {
 }
 
 
+#' Image correlation neighbourhood analysis
+#'
+#' Performs image correlation on two input images neighbourhood search windows.
+#'
+#' @param input1 Input raster file.
+#' @param input2 Input raster file.
+#' @param output1 Output correlation (r-value or rho) raster file.
+#' @param output2 Output significance (p-value) raster file.
+#' @param filter Size of the filter kernel.
+#' @param stat Correlation type; one of 'pearson' (default) and 'spearman'.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1, output2, filter=11, stat="pearson", verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output1=", output1))
+  args <- paste(args, paste0("--output2=", output2))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(stat)) {
+    args <- paste(args, paste0("--stat=", stat))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Image regression
 #'
 #' Performs image regression analysis on two input images.

@@ -1,3 +1,25 @@
+#' Classify buildings in lidar
+#'
+#' Reclassifies a LiDAR points that lie within vector building footprints.
+#'
+#' @param input Input LiDAR file.
+#' @param buildings Input vector polygons file.
+#' @param output Output LiDAR file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_classify_buildings_in_lidar <- function(input, buildings, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--buildings=", buildings))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Classify overlap points
 #'
 #' Classifies or filters LAS points in regions of overlapping flight lines.
@@ -596,7 +618,7 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_info <- function(input, output=NULL, vlr=FALSE, geokeys=FALSE, verbose_mode=FALSE) {
+wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -902,6 +924,68 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
   }
   if (classify) {
     args <- paste(args, "--classify")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Lidar rfb interpolation
+#'
+#' Interpolates LAS files using a radial basis function (RFB) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
+#'
+#' @param input Input LiDAR file (including extension).
+#' @param output Output raster file (including extension).
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
+#' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
+#' @param resolution Output raster's grid resolution.
+#' @param radius Search Radius.
+#' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
+#' @param minz Optional minimum elevation for inclusion in interpolation.
+#' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param func_type Radial basis function type; options are 'ThinPlateSpline' (default), 'PolyHarmonic', 'Gaussian', 'MultiQuadric', 'InverseMultiQuadric'.
+#' @param poly_order Polynomial order; options are 'none' (default), 'constant', 'affine'.
+#' @param weight Weight parameter used in basis function.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_lidar_rfb_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=0.1, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  if (!is.null(func_type)) {
+    args <- paste(args, paste0("--func_type=", func_type))
+  }
+  if (!is.null(poly_order)) {
+    args <- paste(args, paste0("--poly_order=", poly_order))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
