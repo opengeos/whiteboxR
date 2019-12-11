@@ -5,7 +5,7 @@
 \title{Construct vector tin}
 \usage{
 wbt_construct_vector_tin(input, output, field = NULL, use_z = FALSE,
-  verbose_mode = FALSE)
+  max_triangle_edge_length = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector points file.}
@@ -15,6 +15,8 @@ wbt_construct_vector_tin(input, output, field = NULL, use_z = FALSE,
 \item{field}{Input field name in attribute table.}
 
 \item{use_z}{Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.}
+
+\item{max_triangle_edge_length}{Optional maximum triangle edge length; triangles larger than this size will not be gridded.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -98,6 +98,44 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 }
 
 
+#' Breach depressions least cost
+#'
+#' Breaches the depressions in a DEM using a least-cost pathway method.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param radius .
+#' @param max_cost Optional maximum breach cost (default is Inf).
+#' @param min_dist Optional flag indicating whether to minimize breach distances.
+#' @param flat_increment Optional elevation increment applied to flat areas.
+#' @param fill Optional flag indicating whether to fill any remaining unbreached depressions.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_breach_depressions_least_cost <- function(dem, output, radius, max_cost=NULL, min_dist=TRUE, flat_increment=NULL, fill=TRUE, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--radius=", radius))
+  if (!is.null(max_cost)) {
+    args <- paste(args, paste0("--max_cost=", max_cost))
+  }
+  if (min_dist) {
+    args <- paste(args, "--min_dist")
+  }
+  if (!is.null(flat_increment)) {
+    args <- paste(args, paste0("--flat_increment=", flat_increment))
+  }
+  if (fill) {
+    args <- paste(args, "--fill")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Breach single cell pits
 #'
 #' Removes single-cell pits from an input DEM by breaching.
@@ -113,6 +151,34 @@ wbt_breach_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Burn streams at roads
+#'
+#' Burns-in streams at the sites of road embankments.
+#'
+#' @param dem Input raster digital elevation model (DEM) file.
+#' @param streams Input vector streams file.
+#' @param roads Input vector roads file.
+#' @param output Output raster file.
+#' @param width Maximum road embankment width, in map units.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--roads=", roads))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(width)) {
+    args <- paste(args, paste0("--width=", width))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -494,11 +560,43 @@ wbt_fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
 #' @param output Output raster file.
 #' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
 #' @param flat_increment Optional elevation increment applied to flat areas.
+#' @param max_depth Optional maximum depression depth to fill.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
+wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, max_depth=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (fix_flats) {
+    args <- paste(args, "--fix_flats")
+  }
+  if (!is.null(flat_increment)) {
+    args <- paste(args, paste0("--flat_increment=", flat_increment))
+  }
+  if (!is.null(max_depth)) {
+    args <- paste(args, paste0("--max_depth=", max_depth))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Fill depressions wang and lui
+#'
+#' Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
+#' @param flat_increment Optional elevation increment applied to flat areas.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_fill_depressions_wang_and_lui <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -900,17 +998,17 @@ wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #'
 #' Identifies the depressions in a DEM, giving each feature a unique identifier.
 #'
-#' @param dem Input raster DEM file.
+#' @param input Input raster DEM file.
 #' @param output Output raster file.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_sink <- function(input, output, zero_background=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (zero_background) {
     args <- paste(args, "--zero_background")
@@ -1075,6 +1173,26 @@ wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbos
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Upslope depression storage
+#'
+#' Estimates the average upslope depression storage depth.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_upslope_depression_storage <- function(dem, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }

@@ -174,11 +174,12 @@ wbt_clump <- function(input, output, diag=TRUE, zero_back=FALSE, verbose_mode=FA
 #' @param field Input field name in attribute table.
 #' @param use_z Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.
 #' @param output Output vector polygon file.
+#' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, verbose_mode=FALSE) {
+wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, max_triangle_edge_length=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -188,6 +189,9 @@ wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, ver
   }
   if (use_z) {
     args <- paste(args, "--use_z")
+  }
+  if (!is.null(max_triangle_edge_length)) {
+    args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -614,6 +618,46 @@ wbt_minimum_convex_hull <- function(input, output, features=TRUE, verbose_mode=F
 }
 
 
+#' Natural neighbour interpolation
+#'
+#' Creates a raster grid based on Sibson's natural neighbour method.
+#'
+#' @param input Input vector points file.
+#' @param field Input field name in attribute table.
+#' @param use_z Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.
+#' @param output Output raster file.
+#' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
+#' @param base Optionally specified input base raster file. Not used when a cell size is specified.
+#' @param clip Clip the data to the convex hull of the points?.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_natural_neighbour_interpolation <- function(input, output, field=NULL, use_z=FALSE, cell_size=NULL, base=NULL, clip=TRUE, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (use_z) {
+    args <- paste(args, "--use_z")
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  if (clip) {
+    args <- paste(args, "--clip")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Nearest neighbour gridding
 #'
 #' Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour.
@@ -899,21 +943,31 @@ wbt_smooth_vectors <- function(input, output, filter=3, verbose_mode=FALSE) {
 #' @param use_z Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.
 #' @param output Output raster file.
 #' @param resolution Output raster's grid resolution.
+#' @param base Optionally specified input base raster file. Not used when a cell size is specified.
+#' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_tin_gridding <- function(input, output, resolution, field=NULL, use_z=FALSE, verbose_mode=FALSE) {
+wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=NULL, base=NULL, max_triangle_edge_length=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--resolution=", resolution))
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
   }
   if (use_z) {
     args <- paste(args, "--use_z")
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  if (!is.null(max_triangle_edge_length)) {
+    args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
