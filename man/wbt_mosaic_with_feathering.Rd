@@ -4,8 +4,14 @@
 \alias{wbt_mosaic_with_feathering}
 \title{Mosaic with feathering}
 \usage{
-wbt_mosaic_with_feathering(input1, input2, output, method = "cc",
-  weight = 4, verbose_mode = FALSE)
+wbt_mosaic_with_feathering(
+  input1,
+  input2,
+  output,
+  method = "cc",
+  weight = 4,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input raster file to modify.}

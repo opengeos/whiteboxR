@@ -4,8 +4,13 @@
 \alias{wbt_wilcoxon_signed_rank_test}
 \title{Wilcoxon signed rank test}
 \usage{
-wbt_wilcoxon_signed_rank_test(input1, input2, output, num_samples = NULL,
-  verbose_mode = FALSE)
+wbt_wilcoxon_signed_rank_test(
+  input1,
+  input2,
+  output,
+  num_samples = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{First input raster file.}

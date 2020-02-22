@@ -4,8 +4,13 @@
 \alias{wbt_lidar_histogram}
 \title{Lidar histogram}
 \usage{
-wbt_lidar_histogram(input, output, parameter = "elevation", clip = 1,
-  verbose_mode = FALSE)
+wbt_lidar_histogram(
+  input,
+  output,
+  parameter = "elevation",
+  clip = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

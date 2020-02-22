@@ -7,7 +7,7 @@
 wbt_attribute_correlation(input, output = NULL, verbose_mode = FALSE)
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input vector file.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 

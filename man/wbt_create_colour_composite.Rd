@@ -4,8 +4,16 @@
 \alias{wbt_create_colour_composite}
 \title{Create colour composite}
 \usage{
-wbt_create_colour_composite(red, green, blue, output, opacity = NULL,
-  enhance = TRUE, zeros = FALSE, verbose_mode = FALSE)
+wbt_create_colour_composite(
+  red,
+  green,
+  blue,
+  output,
+  opacity = NULL,
+  enhance = TRUE,
+  zeros = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{red}{Input red band image file.}

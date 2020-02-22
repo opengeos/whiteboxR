@@ -4,8 +4,13 @@
 \alias{wbt_lidar_hex_binning}
 \title{Lidar hex binning}
 \usage{
-wbt_lidar_hex_binning(input, output, width, orientation = "horizontal",
-  verbose_mode = FALSE)
+wbt_lidar_hex_binning(
+  input,
+  output,
+  width,
+  orientation = "horizontal",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input base file.}

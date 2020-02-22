@@ -4,8 +4,15 @@
 \alias{wbt_rescale_value_range}
 \title{Rescale value range}
 \usage{
-wbt_rescale_value_range(input, output, out_min_val, out_max_val,
-  clip_min = NULL, clip_max = NULL, verbose_mode = FALSE)
+wbt_rescale_value_range(
+  input,
+  output,
+  out_min_val,
+  out_max_val,
+  clip_min = NULL,
+  clip_max = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

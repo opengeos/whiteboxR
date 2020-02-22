@@ -4,9 +4,18 @@
 \alias{wbt_lidar_tin_gridding}
 \title{Lidar tin gridding}
 \usage{
-wbt_lidar_tin_gridding(input, output = NULL, parameter = "elevation",
-  returns = "all", resolution = 1, exclude_cls = NULL, minz = NULL,
-  maxz = NULL, max_triangle_edge_length = NULL, verbose_mode = FALSE)
+wbt_lidar_tin_gridding(
+  input,
+  output = NULL,
+  parameter = "elevation",
+  returns = "all",
+  resolution = 1,
+  exclude_cls = NULL,
+  minz = NULL,
+  maxz = NULL,
+  max_triangle_edge_length = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

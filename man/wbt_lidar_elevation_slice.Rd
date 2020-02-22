@@ -4,9 +4,16 @@
 \alias{wbt_lidar_elevation_slice}
 \title{Lidar elevation slice}
 \usage{
-wbt_lidar_elevation_slice(input, output, minz = NULL, maxz = NULL,
-  cls = FALSE, inclassval = 2, outclassval = 1,
-  verbose_mode = FALSE)
+wbt_lidar_elevation_slice(
+  input,
+  output,
+  minz = NULL,
+  maxz = NULL,
+  cls = FALSE,
+  inclassval = 2,
+  outclassval = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

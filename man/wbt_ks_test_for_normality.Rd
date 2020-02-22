@@ -4,8 +4,12 @@
 \alias{wbt_ks_test_for_normality}
 \title{Ks test for normality}
 \usage{
-wbt_ks_test_for_normality(input, output, num_samples = NULL,
-  verbose_mode = FALSE)
+wbt_ks_test_for_normality(
+  input,
+  output,
+  num_samples = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

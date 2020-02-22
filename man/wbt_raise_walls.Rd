@@ -4,8 +4,14 @@
 \alias{wbt_raise_walls}
 \title{Raise walls}
 \usage{
-wbt_raise_walls(input, dem, output, breach = NULL, height = 100,
-  verbose_mode = FALSE)
+wbt_raise_walls(
+  input,
+  dem,
+  output,
+  breach = NULL,
+  height = 100,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector lines or polygons file.}

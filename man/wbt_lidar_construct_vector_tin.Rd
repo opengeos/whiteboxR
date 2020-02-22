@@ -4,9 +4,15 @@
 \alias{wbt_lidar_construct_vector_tin}
 \title{Lidar construct vector tin}
 \usage{
-wbt_lidar_construct_vector_tin(input, output = NULL, returns = "all",
-  exclude_cls = NULL, minz = NULL, maxz = NULL,
-  verbose_mode = FALSE)
+wbt_lidar_construct_vector_tin(
+  input,
+  output = NULL,
+  returns = "all",
+  exclude_cls = NULL,
+  minz = NULL,
+  maxz = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

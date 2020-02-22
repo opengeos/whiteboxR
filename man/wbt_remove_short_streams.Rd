@@ -4,8 +4,14 @@
 \alias{wbt_remove_short_streams}
 \title{Remove short streams}
 \usage{
-wbt_remove_short_streams(d8_pntr, streams, output, min_length,
-  esri_pntr = FALSE, verbose_mode = FALSE)
+wbt_remove_short_streams(
+  d8_pntr,
+  streams,
+  output,
+  min_length,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

@@ -4,8 +4,7 @@
 \alias{wbt_modify_no_data_value}
 \title{Modify no data value}
 \usage{
-wbt_modify_no_data_value(input, new_value = "-32768.0",
-  verbose_mode = FALSE)
+wbt_modify_no_data_value(input, new_value = "-32768.0", verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,8 +4,14 @@
 \alias{wbt_hillshade}
 \title{Hillshade}
 \usage{
-wbt_hillshade(dem, output, azimuth = 315, altitude = 30, zfactor = 1,
-  verbose_mode = FALSE)
+wbt_hillshade(
+  dem,
+  output,
+  azimuth = 315,
+  altitude = 30,
+  zfactor = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

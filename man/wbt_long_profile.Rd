@@ -4,8 +4,14 @@
 \alias{wbt_long_profile}
 \title{Long profile}
 \usage{
-wbt_long_profile(d8_pntr, streams, dem, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_long_profile(
+  d8_pntr,
+  streams,
+  dem,
+  output,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

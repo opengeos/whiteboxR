@@ -378,6 +378,26 @@ wbt_raster_to_vector_points <- function(input, output, verbose_mode=FALSE) {
 }
 
 
+#' Raster to vector polygons
+#'
+#' Converts a raster dataset to a vector of the POLYGON shapetype.
+#'
+#' @param input Input raster file.
+#' @param output Output vector polygons file.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_raster_to_vector_polygons <- function(input, output, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Reinitialize attribute table
 #'
 #' Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).

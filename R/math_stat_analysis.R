@@ -316,7 +316,7 @@ wbt_atan2 <- function(input_y, input_x, output, verbose_mode=FALSE) {
 #'
 #' Performs a correlation analysis on attribute fields from a vector database.
 #'
-#' @param input Input raster file.
+#' @param input Input vector file.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
@@ -328,6 +328,40 @@ wbt_attribute_correlation <- function(input, output=NULL, verbose_mode=FALSE) {
   args <- paste(args, paste0("--input=", input))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Attribute correlation neighbourhood analysis
+#'
+#' Performs a correlation on two input vector attributes within a neighbourhood search windows.
+#'
+#' @param input Input vector file.
+#' @param field1 First input field name (dependent variable) in attribute table.
+#' @param field2 Second input field name (independent variable) in attribute table.
+#' @param radius Search Radius (in map units).
+#' @param min_points Minimum number of points.
+#' @param stat Correlation type; one of 'pearson' (default) and 'spearman'.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, field2, radius=NULL, min_points=NULL, stat="pearson", verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field1=", field1))
+  args <- paste(args, paste0("--field2=", field2))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(min_points)) {
+    args <- paste(args, paste0("--min_points=", min_points))
+  }
+  if (!is.null(stat)) {
+    args <- paste(args, paste0("--stat=", stat))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

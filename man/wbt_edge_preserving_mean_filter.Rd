@@ -4,8 +4,13 @@
 \alias{wbt_edge_preserving_mean_filter}
 \title{Edge preserving mean filter}
 \usage{
-wbt_edge_preserving_mean_filter(input, output, threshold, filter = 11,
-  verbose_mode = FALSE)
+wbt_edge_preserving_mean_filter(
+  input,
+  output,
+  threshold,
+  filter = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

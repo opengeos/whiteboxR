@@ -4,8 +4,14 @@
 \alias{wbt_length_of_upstream_channels}
 \title{Length of upstream channels}
 \usage{
-wbt_length_of_upstream_channels(d8_pntr, streams, output,
-  esri_pntr = FALSE, zero_background = FALSE, verbose_mode = FALSE)
+wbt_length_of_upstream_channels(
+  d8_pntr,
+  streams,
+  output,
+  esri_pntr = FALSE,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

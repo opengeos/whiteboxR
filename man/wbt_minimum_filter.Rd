@@ -4,8 +4,13 @@
 \alias{wbt_minimum_filter}
 \title{Minimum filter}
 \usage{
-wbt_minimum_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_minimum_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

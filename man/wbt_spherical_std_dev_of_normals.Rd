@@ -4,8 +4,12 @@
 \alias{wbt_spherical_std_dev_of_normals}
 \title{Spherical std dev of normals}
 \usage{
-wbt_spherical_std_dev_of_normals(dem, output, filter = 11,
-  verbose_mode = FALSE)
+wbt_spherical_std_dev_of_normals(
+  dem,
+  output,
+  filter = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

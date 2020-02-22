@@ -4,9 +4,16 @@
 \alias{wbt_multiscale_std_dev_normals}
 \title{Multiscale std dev normals}
 \usage{
-wbt_multiscale_std_dev_normals(dem, out_mag, out_scale, min_scale = 1,
-  step = 1, num_steps = 10, step_nonlinearity = 1,
-  verbose_mode = FALSE)
+wbt_multiscale_std_dev_normals(
+  dem,
+  out_mag,
+  out_scale,
+  min_scale = 1,
+  step = 1,
+  num_steps = 10,
+  step_nonlinearity = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

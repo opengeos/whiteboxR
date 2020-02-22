@@ -4,8 +4,13 @@
 \alias{wbt_fill_missing_data}
 \title{Fill missing data}
 \usage{
-wbt_fill_missing_data(input, output, filter = 11, weight = 2,
-  verbose_mode = FALSE)
+wbt_fill_missing_data(
+  input,
+  output,
+  filter = 11,
+  weight = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

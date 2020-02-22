@@ -4,8 +4,13 @@
 \alias{wbt_create_hexagonal_vector_grid}
 \title{Create hexagonal vector grid}
 \usage{
-wbt_create_hexagonal_vector_grid(input, output, width,
-  orientation = "horizontal", verbose_mode = FALSE)
+wbt_create_hexagonal_vector_grid(
+  input,
+  output,
+  width,
+  orientation = "horizontal",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input base file.}

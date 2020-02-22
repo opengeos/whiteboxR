@@ -4,8 +4,13 @@
 \alias{wbt_maximum_filter}
 \title{Maximum filter}
 \usage{
-wbt_maximum_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_maximum_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

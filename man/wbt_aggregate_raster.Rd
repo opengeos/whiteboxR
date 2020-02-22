@@ -4,8 +4,13 @@
 \alias{wbt_aggregate_raster}
 \title{Aggregate raster}
 \usage{
-wbt_aggregate_raster(input, output, agg_factor = 2, type = "mean",
-  verbose_mode = FALSE)
+wbt_aggregate_raster(
+  input,
+  output,
+  agg_factor = 2,
+  type = "mean",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

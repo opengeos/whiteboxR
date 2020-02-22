@@ -4,8 +4,13 @@
 \alias{wbt_range_filter}
 \title{Range filter}
 \usage{
-wbt_range_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_range_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

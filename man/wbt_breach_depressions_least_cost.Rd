@@ -4,16 +4,23 @@
 \alias{wbt_breach_depressions_least_cost}
 \title{Breach depressions least cost}
 \usage{
-wbt_breach_depressions_least_cost(dem, output, radius, max_cost = NULL,
-  min_dist = TRUE, flat_increment = NULL, fill = TRUE,
-  verbose_mode = FALSE)
+wbt_breach_depressions_least_cost(
+  dem,
+  output,
+  dist,
+  max_cost = NULL,
+  min_dist = TRUE,
+  flat_increment = NULL,
+  fill = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
 
-\item{radius}{.}
+\item{dist}{.}
 
 \item{max_cost}{Optional maximum breach cost (default is Inf).}
 

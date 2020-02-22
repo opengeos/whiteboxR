@@ -4,8 +4,14 @@
 \alias{wbt_construct_vector_tin}
 \title{Construct vector tin}
 \usage{
-wbt_construct_vector_tin(input, output, field = NULL, use_z = FALSE,
-  max_triangle_edge_length = NULL, verbose_mode = FALSE)
+wbt_construct_vector_tin(
+  input,
+  output,
+  field = NULL,
+  use_z = FALSE,
+  max_triangle_edge_length = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector points file.}

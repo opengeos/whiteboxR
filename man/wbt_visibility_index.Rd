@@ -4,8 +4,13 @@
 \alias{wbt_visibility_index}
 \title{Visibility index}
 \usage{
-wbt_visibility_index(dem, output, height = 2, res_factor = 2,
-  verbose_mode = FALSE)
+wbt_visibility_index(
+  dem,
+  output,
+  height = 2,
+  res_factor = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

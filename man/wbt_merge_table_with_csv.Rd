@@ -4,8 +4,14 @@
 \alias{wbt_merge_table_with_csv}
 \title{Merge table with csv}
 \usage{
-wbt_merge_table_with_csv(input, pkey, csv, fkey, import_field = NULL,
-  verbose_mode = FALSE)
+wbt_merge_table_with_csv(
+  input,
+  pkey,
+  csv,
+  fkey,
+  import_field = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input primary vector file (i.e. the table to be modified).}

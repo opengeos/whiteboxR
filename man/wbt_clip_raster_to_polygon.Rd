@@ -4,8 +4,13 @@
 \alias{wbt_clip_raster_to_polygon}
 \title{Clip raster to polygon}
 \usage{
-wbt_clip_raster_to_polygon(input, polygons, output,
-  maintain_dimensions = FALSE, verbose_mode = FALSE)
+wbt_clip_raster_to_polygon(
+  input,
+  polygons,
+  output,
+  maintain_dimensions = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

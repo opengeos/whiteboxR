@@ -4,8 +4,15 @@
 \alias{wbt_create_rectangular_vector_grid}
 \title{Create rectangular vector grid}
 \usage{
-wbt_create_rectangular_vector_grid(input, output, width, height,
-  xorig = 0, yorig = 0, verbose_mode = FALSE)
+wbt_create_rectangular_vector_grid(
+  input,
+  output,
+  width,
+  height,
+  xorig = 0,
+  yorig = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input base file.}

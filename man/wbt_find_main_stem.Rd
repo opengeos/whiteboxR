@@ -4,8 +4,14 @@
 \alias{wbt_find_main_stem}
 \title{Find main stem}
 \usage{
-wbt_find_main_stem(d8_pntr, streams, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = FALSE)
+wbt_find_main_stem(
+  d8_pntr,
+  streams,
+  output,
+  esri_pntr = FALSE,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

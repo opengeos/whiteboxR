@@ -4,8 +4,7 @@
 \alias{wbt_percent_greater_than}
 \title{Percent greater than}
 \usage{
-wbt_percent_greater_than(inputs, comparison, output,
-  verbose_mode = FALSE)
+wbt_percent_greater_than(inputs, comparison, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}

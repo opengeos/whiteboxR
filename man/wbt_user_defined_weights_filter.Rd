@@ -4,8 +4,14 @@
 \alias{wbt_user_defined_weights_filter}
 \title{User ined weights filter}
 \usage{
-wbt_user_defined_weights_filter(input, weights, output,
-  center = "center", normalize = FALSE, verbose_mode = FALSE)
+wbt_user_defined_weights_filter(
+  input,
+  weights,
+  output,
+  center = "center",
+  normalize = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

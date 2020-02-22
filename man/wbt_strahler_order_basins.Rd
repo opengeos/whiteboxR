@@ -4,8 +4,13 @@
 \alias{wbt_strahler_order_basins}
 \title{Strahler order basins}
 \usage{
-wbt_strahler_order_basins(d8_pntr, streams, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_strahler_order_basins(
+  d8_pntr,
+  streams,
+  output,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

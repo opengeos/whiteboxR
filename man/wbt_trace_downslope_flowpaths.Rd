@@ -4,8 +4,14 @@
 \alias{wbt_trace_downslope_flowpaths}
 \title{Trace downslope flowpaths}
 \usage{
-wbt_trace_downslope_flowpaths(seed_pts, d8_pntr, output,
-  esri_pntr = FALSE, zero_background = FALSE, verbose_mode = FALSE)
+wbt_trace_downslope_flowpaths(
+  seed_pts,
+  d8_pntr,
+  output,
+  esri_pntr = FALSE,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{seed_pts}{Input vector seed points file.}

@@ -4,8 +4,14 @@
 \alias{wbt_lidar_hillshade}
 \title{Lidar hillshade}
 \usage{
-wbt_lidar_hillshade(input, output, azimuth = 315, altitude = 30,
-  radius = 1, verbose_mode = FALSE)
+wbt_lidar_hillshade(
+  input,
+  output,
+  azimuth = 315,
+  altitude = 30,
+  radius = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

@@ -4,8 +4,12 @@
 \alias{wbt_image_autocorrelation}
 \title{Image autocorrelation}
 \usage{
-wbt_image_autocorrelation(inputs, output, contiguity = "Rook",
-  verbose_mode = FALSE)
+wbt_image_autocorrelation(
+  inputs,
+  output,
+  contiguity = "Rook",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input raster files.}

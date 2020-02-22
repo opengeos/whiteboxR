@@ -4,8 +4,15 @@
 \alias{wbt_vector_lines_to_raster}
 \title{Vector lines to raster}
 \usage{
-wbt_vector_lines_to_raster(input, output, field = "FID", nodata = TRUE,
-  cell_size = NULL, base = NULL, verbose_mode = FALSE)
+wbt_vector_lines_to_raster(
+  input,
+  output,
+  field = "FID",
+  nodata = TRUE,
+  cell_size = NULL,
+  base = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector lines file.}

@@ -4,8 +4,14 @@
 \alias{wbt_adaptive_filter}
 \title{Adaptive filter}
 \usage{
-wbt_adaptive_filter(input, output, filterx = 11, filtery = 11,
-  threshold = 2, verbose_mode = FALSE)
+wbt_adaptive_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  threshold = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

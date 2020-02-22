@@ -184,6 +184,28 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_m
 }
 
 
+#' Height above ground
+#'
+#' Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
+#'
+#' @param input Input LiDAR file (including extension).
+#' @param output Output raster file (including extension).
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_height_above_ground <- function(input, output=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Las to ascii
 #'
 #' Converts one or more LAS files into ASCII text files.
@@ -828,21 +850,22 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
 
 #' Lidar ransac planes
 #'
-#' Removes outliers (high and low points) in a LiDAR point cloud.
+#' Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
 #' @param num_iter Number of iterations.
 #' @param num_samples Number of sample points on which to build the model.
-#' @param threshold Threshold used to determine inliner points.
+#' @param threshold Threshold used to determine inlier points.
 #' @param model_size Acceptable model size.
+#' @param max_slope Maximum planar slope.
 #' @param classify Classify points as ground (2) or off-ground (1).
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, classify=FALSE, verbose_mode=FALSE) {
+wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -862,8 +885,73 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
   if (!is.null(model_size)) {
     args <- paste(args, paste0("--model_size=", model_size))
   }
+  if (!is.null(max_slope)) {
+    args <- paste(args, paste0("--max_slope=", max_slope))
+  }
   if (classify) {
     args <- paste(args, "--classify")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Lidar rbf interpolation
+#'
+#' Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
+#'
+#' @param input Input LiDAR file (including extension).
+#' @param output Output raster file (including extension).
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
+#' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
+#' @param resolution Output raster's grid resolution.
+#' @param num_points Number of points.
+#' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
+#' @param minz Optional minimum elevation for inclusion in interpolation.
+#' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param func_type Radial basis function type; options are 'ThinPlateSpline' (default), 'PolyHarmonic', 'Gaussian', 'MultiQuadric', 'InverseMultiQuadric'.
+#' @param poly_order Polynomial order; options are 'none' (default), 'constant', 'affine'.
+#' @param weight Weight parameter used in basis function.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, num_points=20, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=5, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(num_points)) {
+    args <- paste(args, paste0("--num_points=", num_points))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  if (!is.null(func_type)) {
+    args <- paste(args, paste0("--func_type=", func_type))
+  }
+  if (!is.null(poly_order)) {
+    args <- paste(args, paste0("--poly_order=", poly_order))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -930,90 +1018,48 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 }
 
 
-#' Lidar rfb interpolation
-#'
-#' Interpolates LAS files using a radial basis function (RFB) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
-#'
-#' @param input Input LiDAR file (including extension).
-#' @param output Output raster file (including extension).
-#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
-#' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
-#' @param resolution Output raster's grid resolution.
-#' @param radius Search Radius.
-#' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
-#' @param minz Optional minimum elevation for inclusion in interpolation.
-#' @param maxz Optional maximum elevation for inclusion in interpolation.
-#' @param func_type Radial basis function type; options are 'ThinPlateSpline' (default), 'PolyHarmonic', 'Gaussian', 'MultiQuadric', 'InverseMultiQuadric'.
-#' @param poly_order Polynomial order; options are 'none' (default), 'constant', 'affine'.
-#' @param weight Weight parameter used in basis function.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_lidar_rfb_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=0.1, verbose_mode=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--input=", input))
-  if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
-  }
-  if (!is.null(parameter)) {
-    args <- paste(args, paste0("--parameter=", parameter))
-  }
-  if (!is.null(returns)) {
-    args <- paste(args, paste0("--returns=", returns))
-  }
-  if (!is.null(resolution)) {
-    args <- paste(args, paste0("--resolution=", resolution))
-  }
-  if (!is.null(radius)) {
-    args <- paste(args, paste0("--radius=", radius))
-  }
-  if (!is.null(exclude_cls)) {
-    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
-  }
-  if (!is.null(minz)) {
-    args <- paste(args, paste0("--minz=", minz))
-  }
-  if (!is.null(maxz)) {
-    args <- paste(args, paste0("--maxz=", maxz))
-  }
-  if (!is.null(func_type)) {
-    args <- paste(args, paste0("--func_type=", func_type))
-  }
-  if (!is.null(poly_order)) {
-    args <- paste(args, paste0("--poly_order=", poly_order))
-  }
-  if (!is.null(weight)) {
-    args <- paste(args, paste0("--weight=", weight))
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' Lidar segmentation
 #'
-#' Segments a LiDAR point cloud based on normal vectors.
+#' Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
 #'
 #' @param input Input LiDAR file.
-#' @param output Output file.
+#' @param output Output LiDAR file.
 #' @param radius Search Radius.
+#' @param num_iter Number of iterations.
+#' @param num_samples Number of sample points on which to build the model.
+#' @param threshold Threshold used to determine inlier points.
+#' @param model_size Acceptable model size.
+#' @param max_slope Maximum planar slope.
 #' @param norm_diff Maximum difference in normal vectors, in degrees.
 #' @param maxzdiff Maximum difference in elevation (z units) between neighbouring points of the same segment.
 #' @param classes Segments don't cross class boundaries.
-#' @param min_size Minimum segment size (number of points).
+#' @param ground Classify the largest segment as ground points?.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, min_size=1, verbose_mode=FALSE) {
+wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=80.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, ground=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(num_iter)) {
+    args <- paste(args, paste0("--num_iter=", num_iter))
+  }
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(model_size)) {
+    args <- paste(args, paste0("--model_size=", model_size))
+  }
+  if (!is.null(max_slope)) {
+    args <- paste(args, paste0("--max_slope=", max_slope))
   }
   if (!is.null(norm_diff)) {
     args <- paste(args, paste0("--norm_diff=", norm_diff))
@@ -1024,8 +1070,8 @@ wbt_lidar_segmentation <- function(input, output, radius=5.0, norm_diff=10.0, ma
   if (classes) {
     args <- paste(args, "--classes")
   }
-  if (!is.null(min_size)) {
-    args <- paste(args, paste0("--min_size=", min_size))
+  if (ground) {
+    args <- paste(args, "--ground")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

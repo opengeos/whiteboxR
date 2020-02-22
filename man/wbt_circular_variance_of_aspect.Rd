@@ -4,8 +4,7 @@
 \alias{wbt_circular_variance_of_aspect}
 \title{Circular variance of aspect}
 \usage{
-wbt_circular_variance_of_aspect(dem, output, filter = 11,
-  verbose_mode = FALSE)
+wbt_circular_variance_of_aspect(dem, output, filter = 11, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

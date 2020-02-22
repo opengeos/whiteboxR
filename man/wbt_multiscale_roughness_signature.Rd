@@ -4,8 +4,15 @@
 \alias{wbt_multiscale_roughness_signature}
 \title{Multiscale roughness signature}
 \usage{
-wbt_multiscale_roughness_signature(dem, points, output, max_scale,
-  min_scale = 1, step = 1, verbose_mode = FALSE)
+wbt_multiscale_roughness_signature(
+  dem,
+  points,
+  output,
+  max_scale,
+  min_scale = 1,
+  step = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -441,7 +441,7 @@ wbt_find_lowest_or_highest_points <- function(input, output, out_type="lowest", 
 #' @param use_z Use z-coordinate instead of field?.
 #' @param output Output raster file.
 #' @param weight IDW weight value.
-#' @param radius Search Radius.
+#' @param radius Search Radius in map units.
 #' @param min_points Minimum number of points.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
@@ -772,6 +772,60 @@ wbt_polygon_short_axis <- function(input, output, verbose_mode=FALSE) {
 }
 
 
+#' Radial basis function interpolation
+#'
+#' Interpolates vector points into a raster surface using a radial basis function scheme.
+#'
+#' @param input Input vector points file.
+#' @param field Input field name in attribute table.
+#' @param use_z Use z-coordinate instead of field?.
+#' @param output Output raster file.
+#' @param radius Search Radius (in map units).
+#' @param min_points Minimum number of points.
+#' @param func_type Radial basis function type; options are 'ThinPlateSpline' (default), 'PolyHarmonic', 'Gaussian', 'MultiQuadric', 'InverseMultiQuadric'.
+#' @param poly_order Polynomial order; options are 'none' (default), 'constant', 'affine'.
+#' @param weight Weight parameter used in basis function.
+#' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
+#' @param base Optionally specified input base raster file. Not used when a cell size is specified.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=FALSE, radius=NULL, min_points=NULL, func_type="ThinPlateSpline", poly_order="none", weight=0.1, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (use_z) {
+    args <- paste(args, "--use_z")
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(min_points)) {
+    args <- paste(args, paste0("--min_points=", min_points))
+  }
+  if (!is.null(func_type)) {
+    args <- paste(args, paste0("--func_type=", func_type))
+  }
+  if (!is.null(poly_order)) {
+    args <- paste(args, paste0("--poly_order=", poly_order))
+  }
+  if (!is.null(weight)) {
+    args <- paste(args, paste0("--weight=", weight))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Raster area
 #'
 #' Calculates the area of polygons or classes within a raster image.
@@ -824,6 +878,40 @@ wbt_raster_cell_assignment <- function(input, output, assign="column", verbose_m
   args <- paste(args, paste0("--output=", output))
   if (!is.null(assign)) {
     args <- paste(args, paste0("--assign=", assign))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Raster perimeter
+#'
+#' Calculates the perimeters of polygons or classes within a raster image.
+#'
+#' @param input Input raster file.
+#' @param output Output raster file.
+#' @param out_text Would you like to output polygon areas to text?.
+#' @param units Area units; options include 'grid cells' and 'map units'.
+#' @param zero_back Flag indicating whether zero values should be treated as a background.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid cells", zero_back=FALSE, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (out_text) {
+    args <- paste(args, "--out_text")
+  }
+  if (!is.null(units)) {
+    args <- paste(args, paste0("--units=", units))
+  }
+  if (zero_back) {
+    args <- paste(args, "--zero_back")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

@@ -4,8 +4,13 @@
 \alias{wbt_turning_bands_simulation}
 \title{Turning bands simulation}
 \usage{
-wbt_turning_bands_simulation(base, output, range, iterations = 1000,
-  verbose_mode = FALSE)
+wbt_turning_bands_simulation(
+  base,
+  output,
+  range,
+  iterations = 1000,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{base}{Input base raster file.}

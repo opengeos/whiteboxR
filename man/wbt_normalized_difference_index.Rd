@@ -4,8 +4,14 @@
 \alias{wbt_normalized_difference_index}
 \title{Normalized difference index}
 \usage{
-wbt_normalized_difference_index(input1, input2, output, clip = 0,
-  correction = 0, verbose_mode = FALSE)
+wbt_normalized_difference_index(
+  input1,
+  input2,
+  output,
+  clip = 0,
+  correction = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input image 1 (e.g. near-infrared band).}

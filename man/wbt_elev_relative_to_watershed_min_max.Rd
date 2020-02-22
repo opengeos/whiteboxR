@@ -4,8 +4,12 @@
 \alias{wbt_elev_relative_to_watershed_min_max}
 \title{Elev relative to watershed min max}
 \usage{
-wbt_elev_relative_to_watershed_min_max(dem, watersheds, output,
-  verbose_mode = FALSE)
+wbt_elev_relative_to_watershed_min_max(
+  dem,
+  watersheds,
+  output,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,9 +4,16 @@
 \alias{wbt_vector_points_to_raster}
 \title{Vector points to raster}
 \usage{
-wbt_vector_points_to_raster(input, output, field = "FID",
-  assign = "last", nodata = TRUE, cell_size = NULL, base = NULL,
-  verbose_mode = FALSE)
+wbt_vector_points_to_raster(
+  input,
+  output,
+  field = "FID",
+  assign = "last",
+  nodata = TRUE,
+  cell_size = NULL,
+  base = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector Points file.}

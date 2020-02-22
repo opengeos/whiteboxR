@@ -4,8 +4,14 @@
 \alias{wbt_unsharp_masking}
 \title{Unsharp masking}
 \usage{
-wbt_unsharp_masking(input, output, sigma = 0.75, amount = 100,
-  threshold = 0, verbose_mode = FALSE)
+wbt_unsharp_masking(
+  input,
+  output,
+  sigma = 0.75,
+  amount = 100,
+  threshold = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

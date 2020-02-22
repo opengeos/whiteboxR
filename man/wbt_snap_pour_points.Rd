@@ -4,8 +4,13 @@
 \alias{wbt_snap_pour_points}
 \title{Snap pour points}
 \usage{
-wbt_snap_pour_points(pour_pts, flow_accum, output, snap_dist,
-  verbose_mode = FALSE)
+wbt_snap_pour_points(
+  pour_pts,
+  flow_accum,
+  output,
+  snap_dist,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{pour_pts}{Input vector pour points (outlet) file.}

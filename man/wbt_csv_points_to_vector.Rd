@@ -4,8 +4,14 @@
 \alias{wbt_csv_points_to_vector}
 \title{Csv points to vector}
 \usage{
-wbt_csv_points_to_vector(input, output, xfield = 0, yfield = 1,
-  epsg = NULL, verbose_mode = FALSE)
+wbt_csv_points_to_vector(
+  input,
+  output,
+  xfield = 0,
+  yfield = 1,
+  epsg = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input CSV file (i.e. source of data to be imported).}

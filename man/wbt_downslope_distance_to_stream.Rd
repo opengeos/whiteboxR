@@ -4,8 +4,7 @@
 \alias{wbt_downslope_distance_to_stream}
 \title{Downslope distance to stream}
 \usage{
-wbt_downslope_distance_to_stream(dem, streams, output,
-  verbose_mode = FALSE)
+wbt_downslope_distance_to_stream(dem, streams, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,8 +4,13 @@
 \alias{wbt_fetch_analysis}
 \title{Fetch analysis}
 \usage{
-wbt_fetch_analysis(dem, output, azimuth = 0, hgt_inc = 0.05,
-  verbose_mode = FALSE)
+wbt_fetch_analysis(
+  dem,
+  output,
+  azimuth = 0,
+  hgt_inc = 0.05,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

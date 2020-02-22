@@ -4,8 +4,7 @@
 \alias{wbt_buffer_raster}
 \title{Buffer raster}
 \usage{
-wbt_buffer_raster(input, output, size, gridcells = FALSE,
-  verbose_mode = FALSE)
+wbt_buffer_raster(input, output, size, gridcells = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

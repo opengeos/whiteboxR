@@ -4,8 +4,13 @@
 \alias{wbt_standard_deviation_contrast_stretch}
 \title{Standard deviation contrast stretch}
 \usage{
-wbt_standard_deviation_contrast_stretch(input, output, stdev = 2,
-  num_tones = 256, verbose_mode = FALSE)
+wbt_standard_deviation_contrast_stretch(
+  input,
+  output,
+  stdev = 2,
+  num_tones = 256,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

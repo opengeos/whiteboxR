@@ -4,8 +4,12 @@
 \alias{wbt_slope_vs_elevation_plot}
 \title{Slope vs elevation plot}
 \usage{
-wbt_slope_vs_elevation_plot(inputs, output, watershed = NULL,
-  verbose_mode = FALSE)
+wbt_slope_vs_elevation_plot(
+  inputs,
+  output,
+  watershed = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input DEM files.}

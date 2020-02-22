@@ -4,8 +4,15 @@
 \alias{wbt_correct_vignetting}
 \title{Correct vignetting}
 \usage{
-wbt_correct_vignetting(input, pp, output, focal_length = 304.8,
-  image_width = 228.6, n = 4, verbose_mode = FALSE)
+wbt_correct_vignetting(
+  input,
+  pp,
+  output,
+  focal_length = 304.8,
+  image_width = 228.6,
+  n = 4,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

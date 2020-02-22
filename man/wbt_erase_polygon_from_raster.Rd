@@ -4,8 +4,7 @@
 \alias{wbt_erase_polygon_from_raster}
 \title{Erase polygon from raster}
 \usage{
-wbt_erase_polygon_from_raster(input, polygons, output,
-  verbose_mode = FALSE)
+wbt_erase_polygon_from_raster(input, polygons, output, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

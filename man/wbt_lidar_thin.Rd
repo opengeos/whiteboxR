@@ -4,8 +4,14 @@
 \alias{wbt_lidar_thin}
 \title{Lidar thin}
 \usage{
-wbt_lidar_thin(input, output, resolution = 2, method = "lowest",
-  save_filtered = FALSE, verbose_mode = FALSE)
+wbt_lidar_thin(
+  input,
+  output,
+  resolution = 2,
+  method = "lowest",
+  save_filtered = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

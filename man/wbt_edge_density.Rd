@@ -4,8 +4,14 @@
 \alias{wbt_edge_density}
 \title{Edge density}
 \usage{
-wbt_edge_density(dem, output, filter = 11, norm_diff = 5,
-  zfactor = 1, verbose_mode = FALSE)
+wbt_edge_density(
+  dem,
+  output,
+  filter = 11,
+  norm_diff = 5,
+  zfactor = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

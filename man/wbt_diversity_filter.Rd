@@ -4,8 +4,13 @@
 \alias{wbt_diversity_filter}
 \title{Diversity filter}
 \usage{
-wbt_diversity_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_diversity_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

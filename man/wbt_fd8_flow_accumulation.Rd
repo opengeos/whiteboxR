@@ -4,10 +4,16 @@
 \alias{wbt_fd8_flow_accumulation}
 \title{Fd8 flow accumulation}
 \usage{
-wbt_fd8_flow_accumulation(dem, output,
-  out_type = "specific contributing area", exponent = 1.1,
-  threshold = NULL, log = FALSE, clip = FALSE,
-  verbose_mode = FALSE)
+wbt_fd8_flow_accumulation(
+  dem,
+  output,
+  out_type = "specific contributing area",
+  exponent = 1.1,
+  threshold = NULL,
+  log = FALSE,
+  clip = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,8 +4,13 @@
 \alias{wbt_vector_hex_binning}
 \title{Vector hex binning}
 \usage{
-wbt_vector_hex_binning(input, output, width, orientation = "horizontal",
-  verbose_mode = FALSE)
+wbt_vector_hex_binning(
+  input,
+  output,
+  width,
+  orientation = "horizontal",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input base file.}

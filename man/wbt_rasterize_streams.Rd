@@ -4,8 +4,14 @@
 \alias{wbt_rasterize_streams}
 \title{Rasterize streams}
 \usage{
-wbt_rasterize_streams(streams, base, output, nodata = TRUE,
-  feature_id = FALSE, verbose_mode = FALSE)
+wbt_rasterize_streams(
+  streams,
+  base,
+  output,
+  nodata = TRUE,
+  feature_id = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{streams}{Input vector streams file.}

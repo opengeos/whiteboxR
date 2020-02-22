@@ -4,8 +4,12 @@
 \alias{wbt_lidar_remove_duplicates}
 \title{Lidar remove duplicates}
 \usage{
-wbt_lidar_remove_duplicates(input, output, include_z = FALSE,
-  verbose_mode = FALSE)
+wbt_lidar_remove_duplicates(
+  input,
+  output,
+  include_z = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

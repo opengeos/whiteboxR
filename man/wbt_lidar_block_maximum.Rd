@@ -4,8 +4,12 @@
 \alias{wbt_lidar_block_maximum}
 \title{Lidar block maximum}
 \usage{
-wbt_lidar_block_maximum(input, output = NULL, resolution = 1,
-  verbose_mode = FALSE)
+wbt_lidar_block_maximum(
+  input,
+  output = NULL,
+  resolution = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

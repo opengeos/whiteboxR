@@ -4,8 +4,15 @@
 \alias{wbt_lidar_remove_outliers}
 \title{Lidar remove outliers}
 \usage{
-wbt_lidar_remove_outliers(input, output, radius = 2, elev_diff = 50,
-  use_median = FALSE, classify = TRUE, verbose_mode = FALSE)
+wbt_lidar_remove_outliers(
+  input,
+  output,
+  radius = 2,
+  elev_diff = 50,
+  use_median = FALSE,
+  classify = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

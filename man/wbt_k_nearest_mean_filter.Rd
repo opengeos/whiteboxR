@@ -4,8 +4,14 @@
 \alias{wbt_k_nearest_mean_filter}
 \title{K nearest mean filter}
 \usage{
-wbt_k_nearest_mean_filter(input, output, filterx = 11, filtery = 11,
-  k = 5, verbose_mode = FALSE)
+wbt_k_nearest_mean_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  k = 5,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

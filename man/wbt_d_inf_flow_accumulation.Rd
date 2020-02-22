@@ -4,12 +4,19 @@
 \alias{wbt_d_inf_flow_accumulation}
 \title{D inf flow accumulation}
 \usage{
-wbt_d_inf_flow_accumulation(dem, output,
-  out_type = "Specific Contributing Area", threshold = NULL,
-  log = FALSE, clip = FALSE, verbose_mode = FALSE)
+wbt_d_inf_flow_accumulation(
+  input,
+  output,
+  out_type = "Specific Contributing Area",
+  threshold = NULL,
+  log = FALSE,
+  clip = FALSE,
+  pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
-\item{dem}{Input raster DEM file.}
+\item{input}{Input raster DEM or D-infinity pointer file.}
 
 \item{output}{Output raster file.}
 
@@ -20,6 +27,8 @@ wbt_d_inf_flow_accumulation(dem, output,
 \item{log}{Optional flag to request the output be log-transformed.}
 
 \item{clip}{Optional flag to request clipping the display max by 1 percent.}
+
+\item{pntr}{Is the input raster a D8 flow pointer rather than a DEM?.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

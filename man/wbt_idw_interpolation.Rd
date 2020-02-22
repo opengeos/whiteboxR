@@ -4,9 +4,18 @@
 \alias{wbt_idw_interpolation}
 \title{Idw interpolation}
 \usage{
-wbt_idw_interpolation(input, field, output, use_z = FALSE, weight = 2,
-  radius = NULL, min_points = NULL, cell_size = NULL, base = NULL,
-  verbose_mode = FALSE)
+wbt_idw_interpolation(
+  input,
+  field,
+  output,
+  use_z = FALSE,
+  weight = 2,
+  radius = NULL,
+  min_points = NULL,
+  cell_size = NULL,
+  base = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector Points file.}
@@ -19,7 +28,7 @@ wbt_idw_interpolation(input, field, output, use_z = FALSE, weight = 2,
 
 \item{weight}{IDW weight value.}
 
-\item{radius}{Search Radius.}
+\item{radius}{Search Radius in map units.}
 
 \item{min_points}{Minimum number of points.}
 

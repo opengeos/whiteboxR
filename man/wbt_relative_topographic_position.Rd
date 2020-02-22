@@ -4,8 +4,13 @@
 \alias{wbt_relative_topographic_position}
 \title{Relative topographic position}
 \usage{
-wbt_relative_topographic_position(dem, output, filterx = 11,
-  filtery = 11, verbose_mode = FALSE)
+wbt_relative_topographic_position(
+  dem,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,8 +4,7 @@
 \alias{wbt_mean_filter}
 \title{Mean filter}
 \usage{
-wbt_mean_filter(input, output, filterx = 3, filtery = 3,
-  verbose_mode = FALSE)
+wbt_mean_filter(input, output, filterx = 3, filtery = 3, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

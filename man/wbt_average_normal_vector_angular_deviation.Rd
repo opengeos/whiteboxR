@@ -4,8 +4,12 @@
 \alias{wbt_average_normal_vector_angular_deviation}
 \title{Average normal vector angular deviation}
 \usage{
-wbt_average_normal_vector_angular_deviation(dem, output, filter = 11,
-  verbose_mode = FALSE)
+wbt_average_normal_vector_angular_deviation(
+  dem,
+  output,
+  filter = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

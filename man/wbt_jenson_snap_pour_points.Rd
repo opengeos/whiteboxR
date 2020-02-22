@@ -4,8 +4,13 @@
 \alias{wbt_jenson_snap_pour_points}
 \title{Jenson snap pour points}
 \usage{
-wbt_jenson_snap_pour_points(pour_pts, streams, output, snap_dist,
-  verbose_mode = FALSE)
+wbt_jenson_snap_pour_points(
+  pour_pts,
+  streams,
+  output,
+  snap_dist,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{pour_pts}{Input vector pour points (outlet) file.}

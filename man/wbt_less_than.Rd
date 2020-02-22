@@ -4,8 +4,13 @@
 \alias{wbt_less_than}
 \title{Less than}
 \usage{
-wbt_less_than(input1, input2, output, incl_equals = FALSE,
-  verbose_mode = FALSE)
+wbt_less_than(
+  input1,
+  input2,
+  output,
+  incl_equals = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input raster file or constant value.}

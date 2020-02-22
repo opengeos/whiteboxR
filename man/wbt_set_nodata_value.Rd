@@ -4,8 +4,7 @@
 \alias{wbt_set_nodata_value}
 \title{Set nodata value}
 \usage{
-wbt_set_nodata_value(input, output, back_value = 0,
-  verbose_mode = FALSE)
+wbt_set_nodata_value(input, output, back_value = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

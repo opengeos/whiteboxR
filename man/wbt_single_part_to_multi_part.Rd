@@ -4,8 +4,12 @@
 \alias{wbt_single_part_to_multi_part}
 \title{Single part to multi part}
 \usage{
-wbt_single_part_to_multi_part(input, output, field = NULL,
-  verbose_mode = FALSE)
+wbt_single_part_to_multi_part(
+  input,
+  output,
+  field = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector line or polygon file.}

@@ -4,8 +4,15 @@
 \alias{wbt_weighted_overlay}
 \title{Weighted overlay}
 \usage{
-wbt_weighted_overlay(factors, weights, output, cost = NULL,
-  constraints = NULL, scale_max = 1, verbose_mode = FALSE)
+wbt_weighted_overlay(
+  factors,
+  weights,
+  output,
+  cost = NULL,
+  constraints = NULL,
+  scale_max = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{factors}{Input factor raster files.}

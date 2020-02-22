@@ -4,8 +4,13 @@
 \alias{wbt_relative_aspect}
 \title{Relative aspect}
 \usage{
-wbt_relative_aspect(dem, output, azimuth = 0, zfactor = 1,
-  verbose_mode = FALSE)
+wbt_relative_aspect(
+  dem,
+  output,
+  azimuth = 0,
+  zfactor = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

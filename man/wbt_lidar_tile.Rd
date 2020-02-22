@@ -4,8 +4,15 @@
 \alias{wbt_lidar_tile}
 \title{Lidar tile}
 \usage{
-wbt_lidar_tile(input, width = 1000, height = 1000, origin_x = 0,
-  origin_y = 0, min_points = 2, verbose_mode = FALSE)
+wbt_lidar_tile(
+  input,
+  width = 1000,
+  height = 1000,
+  origin_x = 0,
+  origin_y = 0,
+  min_points = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

@@ -4,8 +4,7 @@
 \alias{wbt_eliminate_coincident_points}
 \title{Eliminate coincident points}
 \usage{
-wbt_eliminate_coincident_points(input, output, tolerance,
-  verbose_mode = FALSE)
+wbt_eliminate_coincident_points(input, output, tolerance, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

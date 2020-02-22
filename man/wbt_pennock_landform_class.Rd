@@ -4,8 +4,15 @@
 \alias{wbt_pennock_landform_class}
 \title{Pennock landform class}
 \usage{
-wbt_pennock_landform_class(dem, output, slope = 3, prof = 0.1,
-  plan = 0, zfactor = 1, verbose_mode = FALSE)
+wbt_pennock_landform_class(
+  dem,
+  output,
+  slope = 3,
+  prof = 0.1,
+  plan = 0,
+  zfactor = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,8 +4,15 @@
 \alias{wbt_block_maximum_gridding}
 \title{Block maximum gridding}
 \usage{
-wbt_block_maximum_gridding(input, field, output, use_z = FALSE,
-  cell_size = NULL, base = NULL, verbose_mode = FALSE)
+wbt_block_maximum_gridding(
+  input,
+  field,
+  output,
+  use_z = FALSE,
+  cell_size = NULL,
+  base = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector Points file.}

@@ -4,8 +4,7 @@
 \alias{wbt_stream_power_index}
 \title{Stream power index}
 \usage{
-wbt_stream_power_index(sca, slope, output, exponent = 1,
-  verbose_mode = FALSE)
+wbt_stream_power_index(sca, slope, output, exponent = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}

@@ -4,8 +4,15 @@
 \alias{wbt_image_correlation_neighbourhood_analysis}
 \title{Image correlation neighbourhood analysis}
 \usage{
-wbt_image_correlation_neighbourhood_analysis(input1, input2, output1,
-  output2, filter = 11, stat = "pearson", verbose_mode = FALSE)
+wbt_image_correlation_neighbourhood_analysis(
+  input1,
+  input2,
+  output1,
+  output2,
+  filter = 11,
+  stat = "pearson",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input raster file.}

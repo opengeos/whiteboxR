@@ -4,8 +4,7 @@
 \alias{wbt_lidar_tile_footprint}
 \title{Lidar tile footprint}
 \usage{
-wbt_lidar_tile_footprint(input, output, hull = FALSE,
-  verbose_mode = FALSE)
+wbt_lidar_tile_footprint(input, output, hull = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

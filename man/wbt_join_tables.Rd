@@ -4,8 +4,7 @@
 \alias{wbt_join_tables}
 \title{Join tables}
 \usage{
-wbt_join_tables(input1, pkey, input2, fkey, import_field,
-  verbose_mode = FALSE)
+wbt_join_tables(input1, pkey, input2, fkey, import_field, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input primary vector file (i.e. the table to be modified).}

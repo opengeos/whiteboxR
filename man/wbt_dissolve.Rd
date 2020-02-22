@@ -4,8 +4,7 @@
 \alias{wbt_dissolve}
 \title{Dissolve}
 \usage{
-wbt_dissolve(input, output, field = NULL, snap = 0,
-  verbose_mode = FALSE)
+wbt_dissolve(input, output, field = NULL, snap = 0, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

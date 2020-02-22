@@ -730,6 +730,48 @@ wbt_min_downslope_elev_change <- function(dem, output, verbose_mode=FALSE) {
 }
 
 
+#' Multiscale elevation percentile
+#'
+#' Calculates surface roughness over a range of spatial scales.
+#'
+#' @param dem Input raster DEM file.
+#' @param out_mag Output raster roughness magnitude file.
+#' @param out_scale Output raster roughness scale file.
+#' @param sig_digits Number of significant digits.
+#' @param min_scale Minimum search neighbourhood radius in grid cells.
+#' @param step Step size as any positive non-zero integer.
+#' @param num_steps Number of steps.
+#' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_digits=3, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  if (!is.null(sig_digits)) {
+    args <- paste(args, paste0("--sig_digits=", sig_digits))
+  }
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(step_nonlinearity)) {
+    args <- paste(args, paste0("--step_nonlinearity=", step_nonlinearity))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Multiscale roughness
 #'
 #' Calculates surface roughness over a range of spatial scales.

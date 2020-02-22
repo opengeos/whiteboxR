@@ -4,8 +4,15 @@
 \alias{wbt_stream_link_slope}
 \title{Stream link slope}
 \usage{
-wbt_stream_link_slope(d8_pntr, linkid, dem, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = FALSE)
+wbt_stream_link_slope(
+  d8_pntr,
+  linkid,
+  dem,
+  output,
+  esri_pntr = FALSE,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

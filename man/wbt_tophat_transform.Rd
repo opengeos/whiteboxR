@@ -4,8 +4,14 @@
 \alias{wbt_tophat_transform}
 \title{Tophat transform}
 \usage{
-wbt_tophat_transform(input, output, filterx = 11, filtery = 11,
-  variant = "white", verbose_mode = FALSE)
+wbt_tophat_transform(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  variant = "white",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

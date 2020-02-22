@@ -4,8 +4,12 @@
 \alias{wbt_laplacian_of_gaussian_filter}
 \title{Laplacian of gaussian filter}
 \usage{
-wbt_laplacian_of_gaussian_filter(input, output, sigma = 0.75,
-  verbose_mode = FALSE)
+wbt_laplacian_of_gaussian_filter(
+  input,
+  output,
+  sigma = 0.75,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

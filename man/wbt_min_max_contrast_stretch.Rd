@@ -4,8 +4,14 @@
 \alias{wbt_min_max_contrast_stretch}
 \title{Min max contrast stretch}
 \usage{
-wbt_min_max_contrast_stretch(input, output, min_val, max_val,
-  num_tones = 256, verbose_mode = FALSE)
+wbt_min_max_contrast_stretch(
+  input,
+  output,
+  min_val,
+  max_val,
+  num_tones = 256,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
