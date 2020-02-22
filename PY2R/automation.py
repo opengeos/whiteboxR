@@ -10,6 +10,8 @@
 # Step 8 - Test intallation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
 # Step 9 - Merge pull request on GitHub
 # Step 10 - Switch to master branch and pull updates: git checkout master | git pull
+# Step 11 - Create R package: RStudio - Build - Build Source Package
+# Step 12 - Upload to R-Forge
 ##################################################################
 
 import os 
