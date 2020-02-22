@@ -4,8 +4,7 @@
 \alias{wbt_filter_lidar_scan_angles}
 \title{Filter lidar scan angles}
 \usage{
-wbt_filter_lidar_scan_angles(input, output, threshold,
-  verbose_mode = FALSE)
+wbt_filter_lidar_scan_angles(input, output, threshold, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

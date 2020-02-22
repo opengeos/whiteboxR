@@ -4,8 +4,15 @@
 \alias{wbt_lee_sigma_filter}
 \title{Lee sigma filter}
 \usage{
-wbt_lee_sigma_filter(input, output, filterx = 11, filtery = 11,
-  sigma = 10, m = 5, verbose_mode = FALSE)
+wbt_lee_sigma_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  sigma = 10,
+  m = 5,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

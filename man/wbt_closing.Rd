@@ -4,8 +4,7 @@
 \alias{wbt_closing}
 \title{Closing}
 \usage{
-wbt_closing(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_closing(input, output, filterx = 11, filtery = 11, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

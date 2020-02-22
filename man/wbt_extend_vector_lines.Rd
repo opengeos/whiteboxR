@@ -4,8 +4,13 @@
 \alias{wbt_extend_vector_lines}
 \title{Extend vector lines}
 \usage{
-wbt_extend_vector_lines(input, output, dist, extend = "both ends",
-  verbose_mode = FALSE)
+wbt_extend_vector_lines(
+  input,
+  output,
+  dist,
+  extend = "both ends",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector polyline file.}

@@ -4,8 +4,12 @@
 \alias{wbt_minimum_bounding_circle}
 \title{Minimum bounding circle}
 \usage{
-wbt_minimum_bounding_circle(input, output, features = TRUE,
-  verbose_mode = FALSE)
+wbt_minimum_bounding_circle(
+  input,
+  output,
+  features = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}

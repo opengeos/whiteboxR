@@ -4,8 +4,12 @@
 \alias{wbt_elevation_above_stream_euclidean}
 \title{Elevation above stream euclidean}
 \usage{
-wbt_elevation_above_stream_euclidean(dem, streams, output,
-  verbose_mode = FALSE)
+wbt_elevation_above_stream_euclidean(
+  dem,
+  streams,
+  output,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

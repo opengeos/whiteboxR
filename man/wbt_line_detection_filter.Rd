@@ -4,8 +4,14 @@
 \alias{wbt_line_detection_filter}
 \title{Line detection filter}
 \usage{
-wbt_line_detection_filter(input, output, variant = "vertical",
-  absvals = FALSE, clip = 0, verbose_mode = FALSE)
+wbt_line_detection_filter(
+  input,
+  output,
+  variant = "vertical",
+  absvals = FALSE,
+  clip = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

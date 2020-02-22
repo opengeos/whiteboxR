@@ -4,10 +4,18 @@
 \alias{wbt_lidar_nearest_neighbour_gridding}
 \title{Lidar nearest neighbour gridding}
 \usage{
-wbt_lidar_nearest_neighbour_gridding(input, output = NULL,
-  parameter = "elevation", returns = "all", resolution = 1,
-  radius = 2.5, exclude_cls = NULL, minz = NULL, maxz = NULL,
-  verbose_mode = FALSE)
+wbt_lidar_nearest_neighbour_gridding(
+  input,
+  output = NULL,
+  parameter = "elevation",
+  returns = "all",
+  resolution = 1,
+  radius = 2.5,
+  exclude_cls = NULL,
+  minz = NULL,
+  maxz = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

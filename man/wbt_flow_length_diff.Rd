@@ -4,8 +4,7 @@
 \alias{wbt_flow_length_diff}
 \title{Flow length diff}
 \usage{
-wbt_flow_length_diff(d8_pntr, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_flow_length_diff(d8_pntr, output, esri_pntr = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

@@ -4,8 +4,13 @@
 \alias{wbt_lidar_info}
 \title{Lidar info}
 \usage{
-wbt_lidar_info(input, output = NULL, vlr = TRUE, geokeys = TRUE,
-  verbose_mode = FALSE)
+wbt_lidar_info(
+  input,
+  output = NULL,
+  vlr = TRUE,
+  geokeys = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

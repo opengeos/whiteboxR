@@ -4,8 +4,13 @@
 \alias{wbt_new_raster_from_base}
 \title{New raster from base}
 \usage{
-wbt_new_raster_from_base(base, output, value = "nodata",
-  data_type = "float", verbose_mode = FALSE)
+wbt_new_raster_from_base(
+  base,
+  output,
+  value = "nodata",
+  data_type = "float",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{base}{Input base raster file.}

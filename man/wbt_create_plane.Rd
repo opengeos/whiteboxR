@@ -4,8 +4,14 @@
 \alias{wbt_create_plane}
 \title{Create plane}
 \usage{
-wbt_create_plane(base, output, gradient = 15, aspect = 90,
-  constant = 0, verbose_mode = FALSE)
+wbt_create_plane(
+  base,
+  output,
+  gradient = 15,
+  aspect = 90,
+  constant = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{base}{Input base raster file.}

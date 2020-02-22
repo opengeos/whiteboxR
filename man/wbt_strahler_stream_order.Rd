@@ -4,8 +4,14 @@
 \alias{wbt_strahler_stream_order}
 \title{Strahler stream order}
 \usage{
-wbt_strahler_stream_order(d8_pntr, streams, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = FALSE)
+wbt_strahler_stream_order(
+  d8_pntr,
+  streams,
+  output,
+  esri_pntr = FALSE,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

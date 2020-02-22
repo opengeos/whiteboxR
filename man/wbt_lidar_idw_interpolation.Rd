@@ -4,10 +4,19 @@
 \alias{wbt_lidar_idw_interpolation}
 \title{Lidar idw interpolation}
 \usage{
-wbt_lidar_idw_interpolation(input, output = NULL,
-  parameter = "elevation", returns = "all", resolution = 1,
-  weight = 1, radius = 2.5, exclude_cls = NULL, minz = NULL,
-  maxz = NULL, verbose_mode = FALSE)
+wbt_lidar_idw_interpolation(
+  input,
+  output = NULL,
+  parameter = "elevation",
+  returns = "all",
+  resolution = 1,
+  weight = 1,
+  radius = 2.5,
+  exclude_cls = NULL,
+  minz = NULL,
+  maxz = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}

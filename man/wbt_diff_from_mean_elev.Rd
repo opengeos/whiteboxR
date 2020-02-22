@@ -4,8 +4,13 @@
 \alias{wbt_diff_from_mean_elev}
 \title{Diff from mean elev}
 \usage{
-wbt_diff_from_mean_elev(dem, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_diff_from_mean_elev(
+  dem,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

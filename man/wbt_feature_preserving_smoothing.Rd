@@ -4,9 +4,16 @@
 \alias{wbt_feature_preserving_smoothing}
 \title{Feature preserving smoothing}
 \usage{
-wbt_feature_preserving_smoothing(dem, output, filter = 11,
-  norm_diff = 15, num_iter = 3, max_diff = 0.5, zfactor = 1,
-  verbose_mode = FALSE)
+wbt_feature_preserving_smoothing(
+  dem,
+  output,
+  filter = 11,
+  norm_diff = 15,
+  num_iter = 3,
+  max_diff = 0.5,
+  zfactor = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

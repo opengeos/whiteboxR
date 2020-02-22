@@ -4,8 +4,13 @@
 \alias{wbt_remove_off_terrain_objects}
 \title{Remove off terrain objects}
 \usage{
-wbt_remove_off_terrain_objects(dem, output, filter = 11, slope = 15,
-  verbose_mode = FALSE)
+wbt_remove_off_terrain_objects(
+  dem,
+  output,
+  filter = 11,
+  slope = 15,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

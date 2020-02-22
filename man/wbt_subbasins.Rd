@@ -4,8 +4,13 @@
 \alias{wbt_subbasins}
 \title{Subbasins}
 \usage{
-wbt_subbasins(d8_pntr, streams, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_subbasins(
+  d8_pntr,
+  streams,
+  output,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

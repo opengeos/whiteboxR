@@ -4,8 +4,12 @@
 \alias{wbt_flightline_overlap}
 \title{Flightline overlap}
 \usage{
-wbt_flightline_overlap(input, output = NULL, resolution = 1,
-  verbose_mode = FALSE)
+wbt_flightline_overlap(
+  input,
+  output = NULL,
+  resolution = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

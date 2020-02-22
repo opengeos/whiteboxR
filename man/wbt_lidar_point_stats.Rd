@@ -4,10 +4,17 @@
 \alias{wbt_lidar_point_stats}
 \title{Lidar point stats}
 \usage{
-wbt_lidar_point_stats(input, resolution = 1, num_points = TRUE,
-  num_pulses = FALSE, avg_points_per_pulse = TRUE, z_range = FALSE,
-  intensity_range = FALSE, predom_class = FALSE,
-  verbose_mode = FALSE)
+wbt_lidar_point_stats(
+  input,
+  resolution = 1,
+  num_points = TRUE,
+  num_pulses = FALSE,
+  avg_points_per_pulse = TRUE,
+  z_range = FALSE,
+  intensity_range = FALSE,
+  predom_class = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

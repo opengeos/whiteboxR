@@ -4,8 +4,13 @@
 \alias{wbt_split_colour_composite}
 \title{Split colour composite}
 \usage{
-wbt_split_colour_composite(input, red = NULL, green = NULL,
-  blue = NULL, verbose_mode = FALSE)
+wbt_split_colour_composite(
+  input,
+  red = NULL,
+  green = NULL,
+  blue = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input colour composite image file.}

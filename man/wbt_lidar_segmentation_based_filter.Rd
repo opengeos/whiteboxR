@@ -4,9 +4,15 @@
 \alias{wbt_lidar_segmentation_based_filter}
 \title{Lidar segmentation based filter}
 \usage{
-wbt_lidar_segmentation_based_filter(input, output, radius = 5,
-  norm_diff = 2, maxzdiff = 1, classify = FALSE,
-  verbose_mode = FALSE)
+wbt_lidar_segmentation_based_filter(
+  input,
+  output,
+  radius = 5,
+  norm_diff = 2,
+  maxzdiff = 1,
+  classify = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

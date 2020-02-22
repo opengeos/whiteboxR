@@ -4,8 +4,13 @@
 \alias{wbt_dev_from_mean_elev}
 \title{Dev from mean elev}
 \usage{
-wbt_dev_from_mean_elev(dem, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_dev_from_mean_elev(
+  dem,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

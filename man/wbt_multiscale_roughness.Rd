@@ -4,8 +4,15 @@
 \alias{wbt_multiscale_roughness}
 \title{Multiscale roughness}
 \usage{
-wbt_multiscale_roughness(dem, out_mag, out_scale, max_scale,
-  min_scale = 1, step = 1, verbose_mode = FALSE)
+wbt_multiscale_roughness(
+  dem,
+  out_mag,
+  out_scale,
+  max_scale,
+  min_scale = 1,
+  step = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

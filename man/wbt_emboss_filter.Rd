@@ -4,8 +4,13 @@
 \alias{wbt_emboss_filter}
 \title{Emboss filter}
 \usage{
-wbt_emboss_filter(input, output, direction = "n", clip = 0,
-  verbose_mode = FALSE)
+wbt_emboss_filter(
+  input,
+  output,
+  direction = "n",
+  clip = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

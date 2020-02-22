@@ -4,8 +4,7 @@
 \alias{wbt_clump}
 \title{Clump}
 \usage{
-wbt_clump(input, output, diag = TRUE, zero_back = FALSE,
-  verbose_mode = FALSE)
+wbt_clump(input, output, diag = TRUE, zero_back = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

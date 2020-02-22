@@ -4,10 +4,18 @@
 \alias{wbt_lidar_ground_point_filter}
 \title{Lidar ground point filter}
 \usage{
-wbt_lidar_ground_point_filter(input, output, radius = 2,
-  min_neighbours = 0, slope_threshold = 45, height_threshold = 1,
-  classify = TRUE, slope_norm = TRUE, height_above_ground = FALSE,
-  verbose_mode = FALSE)
+wbt_lidar_ground_point_filter(
+  input,
+  output,
+  radius = 2,
+  min_neighbours = 0,
+  slope_threshold = 45,
+  height_threshold = 1,
+  classify = TRUE,
+  slope_norm = TRUE,
+  height_above_ground = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

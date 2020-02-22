@@ -4,16 +4,38 @@
 \alias{wbt_lidar_segmentation}
 \title{Lidar segmentation}
 \usage{
-wbt_lidar_segmentation(input, output, radius = 5, norm_diff = 10,
-  maxzdiff = 1, classes = FALSE, min_size = 1,
-  verbose_mode = FALSE)
+wbt_lidar_segmentation(
+  input,
+  output,
+  radius = 2,
+  num_iter = 50,
+  num_samples = 10,
+  threshold = 0.15,
+  model_size = 15,
+  max_slope = 80,
+  norm_diff = 10,
+  maxzdiff = 1,
+  classes = FALSE,
+  ground = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
 
-\item{output}{Output file.}
+\item{output}{Output LiDAR file.}
 
 \item{radius}{Search Radius.}
+
+\item{num_iter}{Number of iterations.}
+
+\item{num_samples}{Number of sample points on which to build the model.}
+
+\item{threshold}{Threshold used to determine inlier points.}
+
+\item{model_size}{Acceptable model size.}
+
+\item{max_slope}{Maximum planar slope.}
 
 \item{norm_diff}{Maximum difference in normal vectors, in degrees.}
 
@@ -21,7 +43,7 @@ wbt_lidar_segmentation(input, output, radius = 5, norm_diff = 10,
 
 \item{classes}{Segments don't cross class boundaries.}
 
-\item{min_size}{Minimum segment size (number of points).}
+\item{ground}{Classify the largest segment as ground points?.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }
@@ -29,5 +51,5 @@ wbt_lidar_segmentation(input, output, radius = 5, norm_diff = 10,
 Returns the tool text outputs.
 }
 \description{
-Segments a LiDAR point cloud based on normal vectors.
+Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
 }

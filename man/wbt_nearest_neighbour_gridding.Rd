@@ -4,9 +4,16 @@
 \alias{wbt_nearest_neighbour_gridding}
 \title{Nearest neighbour gridding}
 \usage{
-wbt_nearest_neighbour_gridding(input, field, output, use_z = FALSE,
-  cell_size = NULL, base = NULL, max_dist = NULL,
-  verbose_mode = FALSE)
+wbt_nearest_neighbour_gridding(
+  input,
+  field,
+  output,
+  use_z = FALSE,
+  cell_size = NULL,
+  base = NULL,
+  max_dist = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector Points file.}

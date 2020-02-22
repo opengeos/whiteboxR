@@ -4,8 +4,7 @@
 \alias{wbt_edge_proportion}
 \title{Edge proportion}
 \usage{
-wbt_edge_proportion(input, output, output_text = FALSE,
-  verbose_mode = FALSE)
+wbt_edge_proportion(input, output, output_text = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

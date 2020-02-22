@@ -4,8 +4,13 @@
 \alias{wbt_principal_component_analysis}
 \title{Principal component analysis}
 \usage{
-wbt_principal_component_analysis(inputs, output, num_comp = NULL,
-  standardized = FALSE, verbose_mode = FALSE)
+wbt_principal_component_analysis(
+  inputs,
+  output,
+  num_comp = NULL,
+  standardized = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input raster files.}

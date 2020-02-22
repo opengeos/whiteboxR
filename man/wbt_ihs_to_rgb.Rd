@@ -4,8 +4,16 @@
 \alias{wbt_ihs_to_rgb}
 \title{Ihs to rgb}
 \usage{
-wbt_ihs_to_rgb(intensity, hue, saturation, red = NULL, green = NULL,
-  blue = NULL, output = NULL, verbose_mode = FALSE)
+wbt_ihs_to_rgb(
+  intensity,
+  hue,
+  saturation,
+  red = NULL,
+  green = NULL,
+  blue = NULL,
+  output = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{intensity}{Input intensity file.}

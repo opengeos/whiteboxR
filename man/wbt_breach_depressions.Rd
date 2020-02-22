@@ -4,9 +4,15 @@
 \alias{wbt_breach_depressions}
 \title{Breach depressions}
 \usage{
-wbt_breach_depressions(dem, output, max_depth = NULL,
-  max_length = NULL, flat_increment = NULL, fill_pits = FALSE,
-  verbose_mode = FALSE)
+wbt_breach_depressions(
+  dem,
+  output,
+  max_depth = NULL,
+  max_length = NULL,
+  flat_increment = NULL,
+  fill_pits = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

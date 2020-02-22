@@ -4,8 +4,14 @@
 \alias{wbt_fill_depressions}
 \title{Fill depressions}
 \usage{
-wbt_fill_depressions(dem, output, fix_flats = TRUE,
-  flat_increment = NULL, max_depth = NULL, verbose_mode = FALSE)
+wbt_fill_depressions(
+  dem,
+  output,
+  fix_flats = TRUE,
+  flat_increment = NULL,
+  max_depth = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

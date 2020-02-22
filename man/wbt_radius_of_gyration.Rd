@@ -4,8 +4,12 @@
 \alias{wbt_radius_of_gyration}
 \title{Radius of gyration}
 \usage{
-wbt_radius_of_gyration(input, output, text_output = FALSE,
-  verbose_mode = FALSE)
+wbt_radius_of_gyration(
+  input,
+  output,
+  text_output = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,9 +4,16 @@
 \alias{wbt_panchromatic_sharpening}
 \title{Panchromatic sharpening}
 \usage{
-wbt_panchromatic_sharpening(pan, output, red = NULL, green = NULL,
-  blue = NULL, composite = NULL, method = "brovey",
-  verbose_mode = FALSE)
+wbt_panchromatic_sharpening(
+  pan,
+  output,
+  red = NULL,
+  green = NULL,
+  blue = NULL,
+  composite = NULL,
+  method = "brovey",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{pan}{Input panchromatic band file.}

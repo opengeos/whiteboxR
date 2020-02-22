@@ -1,6 +1,20 @@
+##################################################################
+# Steps for updating whiteboxR
+# Step 1 - Delete the existing deveop branch: git branch -D deveop  
+# Step 2 - Create a new deveop branch: git checkout -b deveop
+# Step 3 - Delete the old WhiteboxTools_linux_amd64.tar.xz in the root folder if needed
+# Step 4 - Run automation.py
+# Step 5 - Open whiteboxR.Rproj in RStudio and run build_check.R
+# Step 6 - Update version number in DESCRIPTION 
+# Step 5 - Commit and push changes
+# Step 6 - Merge pull request on GitHub
+# Step 7 - Switch to master branch and pull updates: git checkout master | git pull
+##################################################################
+
 import os 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-wbt_py = os.path.join(dir_path, "whitebox_tools.py")
+import shutil
+import tarfile
+import urllib.request
 
 # Extract function header
 def function_header(line):
@@ -196,6 +210,28 @@ toolboxes = {
     "# Stream Network Analysis #": "stream_network_analysis.R"
 }
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+wbt_py = os.path.join(dir_path, "whitebox_tools.py")
+root_dir = os.path.dirname(dir_path)
+WBT_dir = os.path.join(root_dir, 'WBT')
+
+linux_tar = "WhiteboxTools_linux_amd64.tar.xz"
+tar_path = os.path.join(root_dir, linux_tar)
+if not os.path.exists(tar_path):
+    print("Downloading WhiteboxTools binary ...")
+    url = "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
+    urllib.request.urlretrieve(url, tar_path)   # Download WhiteboxTools
+else:
+    print("WhiteboxTools binary already exists.")
+
+if os.path.exists(WBT_dir):
+    shutil.rmtree(WBT_dir)
+
+print("Decompressing {} ...".format(linux_tar))
+with tarfile.open(tar_path, "r") as tar_ref:
+    tar_ref.extractall(root_dir)
+
+shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)
 
 # Generate R functions with documentation
 ff = None

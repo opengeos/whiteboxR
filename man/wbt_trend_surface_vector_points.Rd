@@ -4,8 +4,14 @@
 \alias{wbt_trend_surface_vector_points}
 \title{Trend surface vector points}
 \usage{
-wbt_trend_surface_vector_points(input, field, output, cell_size,
-  order = 1, verbose_mode = FALSE)
+wbt_trend_surface_vector_points(
+  input,
+  field,
+  output,
+  cell_size,
+  order = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector Points file.}

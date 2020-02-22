@@ -4,8 +4,12 @@
 \alias{wbt_find_lowest_or_highest_points}
 \title{Find lowest or highest points}
 \usage{
-wbt_find_lowest_or_highest_points(input, output, out_type = "lowest",
-  verbose_mode = FALSE)
+wbt_find_lowest_or_highest_points(
+  input,
+  output,
+  out_type = "lowest",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

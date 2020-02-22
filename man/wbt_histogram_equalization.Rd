@@ -4,8 +4,12 @@
 \alias{wbt_histogram_equalization}
 \title{Histogram equalization}
 \usage{
-wbt_histogram_equalization(input, output, num_tones = 256,
-  verbose_mode = FALSE)
+wbt_histogram_equalization(
+  input,
+  output,
+  num_tones = 256,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

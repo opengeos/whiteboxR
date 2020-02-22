@@ -4,9 +4,17 @@
 \alias{wbt_flow_accumulation_full_workflow}
 \title{Flow accumulation full workflow}
 \usage{
-wbt_flow_accumulation_full_workflow(dem, out_dem, out_pntr, out_accum,
-  out_type = "Specific Contributing Area", log = FALSE, clip = FALSE,
-  esri_pntr = FALSE, verbose_mode = FALSE)
+wbt_flow_accumulation_full_workflow(
+  dem,
+  out_dem,
+  out_pntr,
+  out_accum,
+  out_type = "Specific Contributing Area",
+  log = FALSE,
+  clip = FALSE,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

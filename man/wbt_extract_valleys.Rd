@@ -4,8 +4,14 @@
 \alias{wbt_extract_valleys}
 \title{Extract valleys}
 \usage{
-wbt_extract_valleys(dem, output, variant = "LQ", line_thin = TRUE,
-  filter = 5, verbose_mode = FALSE)
+wbt_extract_valleys(
+  dem,
+  output,
+  variant = "LQ",
+  line_thin = TRUE,
+  filter = 5,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

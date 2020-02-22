@@ -4,8 +4,13 @@
 \alias{wbt_standard_deviation_filter}
 \title{Standard deviation filter}
 \usage{
-wbt_standard_deviation_filter(input, output, filterx = 11,
-  filtery = 11, verbose_mode = FALSE)
+wbt_standard_deviation_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,8 +4,13 @@
 \alias{wbt_paired_sample_t_test}
 \title{Paired sample t test}
 \usage{
-wbt_paired_sample_t_test(input1, input2, output, num_samples = NULL,
-  verbose_mode = FALSE)
+wbt_paired_sample_t_test(
+  input1,
+  input2,
+  output,
+  num_samples = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{First input raster file.}

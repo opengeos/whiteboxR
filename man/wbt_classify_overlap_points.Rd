@@ -4,8 +4,13 @@
 \alias{wbt_classify_overlap_points}
 \title{Classify overlap points}
 \usage{
-wbt_classify_overlap_points(input, output, resolution = 2,
-  filter = FALSE, verbose_mode = FALSE)
+wbt_classify_overlap_points(
+  input,
+  output,
+  resolution = 2,
+  filter = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

@@ -4,8 +4,12 @@
 \alias{wbt_gaussian_contrast_stretch}
 \title{Gaussian contrast stretch}
 \usage{
-wbt_gaussian_contrast_stretch(input, output, num_tones = 256,
-  verbose_mode = FALSE)
+wbt_gaussian_contrast_stretch(
+  input,
+  output,
+  num_tones = 256,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

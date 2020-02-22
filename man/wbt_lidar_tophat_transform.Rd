@@ -4,8 +4,7 @@
 \alias{wbt_lidar_tophat_transform}
 \title{Lidar tophat transform}
 \usage{
-wbt_lidar_tophat_transform(input, output, radius = 1,
-  verbose_mode = FALSE)
+wbt_lidar_tophat_transform(input, output, radius = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

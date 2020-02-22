@@ -4,8 +4,14 @@
 \alias{wbt_standard_deviation_of_slope}
 \title{Standard deviation of slope}
 \usage{
-wbt_standard_deviation_of_slope(input, output, zfactor = 1,
-  filterx = 11, filtery = 11, verbose_mode = FALSE)
+wbt_standard_deviation_of_slope(
+  input,
+  output,
+  zfactor = 1,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster DEM file.}

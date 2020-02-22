@@ -104,7 +104,7 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param radius .
+#' @param dist .
 #' @param max_cost Optional maximum breach cost (default is Inf).
 #' @param min_dist Optional flag indicating whether to minimize breach distances.
 #' @param flat_increment Optional elevation increment applied to flat areas.
@@ -113,12 +113,12 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_breach_depressions_least_cost <- function(dem, output, radius, max_cost=NULL, min_dist=TRUE, flat_increment=NULL, fill=TRUE, verbose_mode=FALSE) {
+wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, min_dist=TRUE, flat_increment=NULL, fill=TRUE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--radius=", radius))
+  args <- paste(args, paste0("--dist=", dist))
   if (!is.null(max_cost)) {
     args <- paste(args, paste0("--max_cost=", max_cost))
   }
@@ -186,21 +186,23 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, v
 
 #' D8 flow accumulation
 #'
-#' Calculates a D8 flow accumulation raster from an input DEM.
+#' Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
 #'
-#' @param dem Input raster DEM file.
+#' @param input Input raster DEM or D8 pointer file.
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells' (default), 'catchment area', and 'specific contributing area'.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param pntr Is the input raster a D8 flow pointer rather than a DEM?.
+#' @param esri_pntr Input  D8 pointer uses the ESRI style scheme.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE, clip=FALSE, pntr=FALSE, esri_pntr=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
@@ -210,6 +212,12 @@ wbt_d8_flow_accumulation <- function(dem, output, out_type="cells", log=FALSE, c
   }
   if (clip) {
     args <- paste(args, "--clip")
+  }
+  if (pntr) {
+    args <- paste(args, "--pntr")
+  }
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -270,20 +278,21 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #'
 #' Calculates a D-infinity flow accumulation raster from an input DEM.
 #'
-#' @param dem Input raster DEM file.
+#' @param input Input raster DEM or D-infinity pointer file.
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'sca' (default), and 'ca'.
 #' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param pntr Is the input raster a D8 flow pointer rather than a DEM?.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, pntr=FALSE, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
@@ -296,6 +305,9 @@ wbt_d_inf_flow_accumulation <- function(dem, output, out_type="Specific Contribu
   }
   if (clip) {
     args <- paste(args, "--clip")
+  }
+  if (pntr) {
+    args <- paste(args, "--pntr")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -584,9 +596,9 @@ wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NUL
 }
 
 
-#' Fill depressions wang and lui
+#' Fill depressions planchon and darboux
 #'
-#' Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.
+#' Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -596,7 +608,35 @@ wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NUL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_depressions_wang_and_lui <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
+wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (fix_flats) {
+    args <- paste(args, "--fix_flats")
+  }
+  if (!is.null(flat_increment)) {
+    args <- paste(args, paste0("--flat_increment=", flat_increment))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Fill depressions wang and liu
+#'
+#' Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
+#' @param flat_increment Optional elevation increment applied to flat areas.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -832,6 +872,30 @@ wbt_impoundment_size_index <- function(dem, output, damlength, out_type="depth",
 }
 
 
+#' Insert dams
+#'
+#' Calculates the impoundment size resulting from damming a DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param dam_pts Input vector dam points file.
+#' @param output Output file.
+#' @param damlength Maximum length of the dam.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_insert_dams <- function(dem, dam_pts, output, damlength, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--dam_pts=", dam_pts))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--damlength=", damlength))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Isobasins
 #'
 #' Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).
@@ -915,6 +979,46 @@ wbt_max_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Md inf flow accumulation
+#'
+#' Calculates an FD8 flow accumulation raster from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
+#' @param exponent Optional exponent parameter; default is 1.1.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param log Optional flag to request the output be log-transformed.
+#' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (clip) {
+    args <- paste(args, "--clip")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1203,7 +1307,7 @@ wbt_upslope_depression_storage <- function(dem, output, verbose_mode=FALSE) {
 #' Identifies the watershed, or drainage basin, draining to a set of target cells.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
-#' @param pour_pts Input vector pour points (outlet) file.
+#' @param pour_pts Input pour points (outlet) file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.

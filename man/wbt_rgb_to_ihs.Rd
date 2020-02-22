@@ -4,8 +4,16 @@
 \alias{wbt_rgb_to_ihs}
 \title{Rgb to ihs}
 \usage{
-wbt_rgb_to_ihs(intensity, hue, saturation, red = NULL, green = NULL,
-  blue = NULL, composite = NULL, verbose_mode = FALSE)
+wbt_rgb_to_ihs(
+  intensity,
+  hue,
+  saturation,
+  red = NULL,
+  green = NULL,
+  blue = NULL,
+  composite = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{intensity}{Output intensity raster file.}

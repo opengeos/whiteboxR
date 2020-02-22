@@ -4,8 +4,12 @@
 \alias{wbt_minimum_bounding_envelope}
 \title{Minimum bounding envelope}
 \usage{
-wbt_minimum_bounding_envelope(input, output, features = TRUE,
-  verbose_mode = FALSE)
+wbt_minimum_bounding_envelope(
+  input,
+  output,
+  features = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}

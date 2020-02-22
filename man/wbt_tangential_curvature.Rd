@@ -4,8 +4,7 @@
 \alias{wbt_tangential_curvature}
 \title{Tangential curvature}
 \usage{
-wbt_tangential_curvature(dem, output, zfactor = 1,
-  verbose_mode = FALSE)
+wbt_tangential_curvature(dem, output, zfactor = 1, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

@@ -4,8 +4,14 @@
 \alias{wbt_median_filter}
 \title{Median filter}
 \usage{
-wbt_median_filter(input, output, filterx = 11, filtery = 11,
-  sig_digits = 2, verbose_mode = FALSE)
+wbt_median_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  sig_digits = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

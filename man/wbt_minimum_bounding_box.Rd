@@ -4,8 +4,13 @@
 \alias{wbt_minimum_bounding_box}
 \title{Minimum bounding box}
 \usage{
-wbt_minimum_bounding_box(input, output, criterion = "area",
-  features = TRUE, verbose_mode = FALSE)
+wbt_minimum_bounding_box(
+  input,
+  output,
+  criterion = "area",
+  features = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}

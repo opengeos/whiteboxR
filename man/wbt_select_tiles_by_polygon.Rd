@@ -4,8 +4,7 @@
 \alias{wbt_select_tiles_by_polygon}
 \title{Select tiles by polygon}
 \usage{
-wbt_select_tiles_by_polygon(indir, outdir, polygons,
-  verbose_mode = FALSE)
+wbt_select_tiles_by_polygon(indir, outdir, polygons, verbose_mode = FALSE)
 }
 \arguments{
 \item{indir}{Input LAS file source directory.}

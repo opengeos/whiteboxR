@@ -4,8 +4,12 @@
 \alias{wbt_raster_cell_assignment}
 \title{Raster cell assignment}
 \usage{
-wbt_raster_cell_assignment(input, output, assign = "column",
-  verbose_mode = FALSE)
+wbt_raster_cell_assignment(
+  input,
+  output,
+  assign = "column",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

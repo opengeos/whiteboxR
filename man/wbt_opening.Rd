@@ -4,8 +4,7 @@
 \alias{wbt_opening}
 \title{Opening}
 \usage{
-wbt_opening(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_opening(input, output, filterx = 11, filtery = 11, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

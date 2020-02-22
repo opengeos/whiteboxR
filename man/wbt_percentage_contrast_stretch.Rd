@@ -4,8 +4,14 @@
 \alias{wbt_percentage_contrast_stretch}
 \title{Percentage contrast stretch}
 \usage{
-wbt_percentage_contrast_stretch(input, output, clip = 1, tail = "both",
-  num_tones = 256, verbose_mode = FALSE)
+wbt_percentage_contrast_stretch(
+  input,
+  output,
+  clip = 1,
+  tail = "both",
+  num_tones = 256,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

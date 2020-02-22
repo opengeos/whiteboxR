@@ -4,8 +4,13 @@
 \alias{wbt_bilateral_filter}
 \title{Bilateral filter}
 \usage{
-wbt_bilateral_filter(input, output, sigma_dist = 0.75, sigma_int = 1,
-  verbose_mode = FALSE)
+wbt_bilateral_filter(
+  input,
+  output,
+  sigma_dist = 0.75,
+  sigma_int = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,8 +4,13 @@
 \alias{wbt_two_sample_ks_test}
 \title{Two sample ks test}
 \usage{
-wbt_two_sample_ks_test(input1, input2, output, num_samples = NULL,
-  verbose_mode = FALSE)
+wbt_two_sample_ks_test(
+  input1,
+  input2,
+  output,
+  num_samples = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{First input raster file.}

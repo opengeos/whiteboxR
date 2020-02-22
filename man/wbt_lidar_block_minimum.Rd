@@ -4,8 +4,12 @@
 \alias{wbt_lidar_block_minimum}
 \title{Lidar block minimum}
 \usage{
-wbt_lidar_block_minimum(input, output = NULL, resolution = 1,
-  verbose_mode = FALSE)
+wbt_lidar_block_minimum(
+  input,
+  output = NULL,
+  resolution = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

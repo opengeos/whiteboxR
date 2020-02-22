@@ -4,9 +4,16 @@
 \alias{wbt_tin_gridding}
 \title{Tin gridding}
 \usage{
-wbt_tin_gridding(input, output, field = NULL, use_z = FALSE,
-  resolution = NULL, base = NULL, max_triangle_edge_length = NULL,
-  verbose_mode = FALSE)
+wbt_tin_gridding(
+  input,
+  output,
+  field = NULL,
+  use_z = FALSE,
+  resolution = NULL,
+  base = NULL,
+  max_triangle_edge_length = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector points file.}

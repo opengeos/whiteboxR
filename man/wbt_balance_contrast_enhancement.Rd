@@ -4,8 +4,12 @@
 \alias{wbt_balance_contrast_enhancement}
 \title{Balance contrast enhancement}
 \usage{
-wbt_balance_contrast_enhancement(input, output, band_mean = 100,
-  verbose_mode = FALSE)
+wbt_balance_contrast_enhancement(
+  input,
+  output,
+  band_mean = 100,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input colour composite image file.}

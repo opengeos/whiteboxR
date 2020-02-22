@@ -4,8 +4,14 @@
 \alias{wbt_sediment_transport_index}
 \title{Sediment transport index}
 \usage{
-wbt_sediment_transport_index(sca, slope, output, sca_exponent = 0.4,
-  slope_exponent = 1.3, verbose_mode = FALSE)
+wbt_sediment_transport_index(
+  sca,
+  slope,
+  output,
+  sca_exponent = 0.4,
+  slope_exponent = 1.3,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}

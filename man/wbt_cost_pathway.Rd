@@ -4,8 +4,13 @@
 \alias{wbt_cost_pathway}
 \title{Cost pathway}
 \usage{
-wbt_cost_pathway(destination, backlink, output, zero_background = FALSE,
-  verbose_mode = FALSE)
+wbt_cost_pathway(
+  destination,
+  backlink,
+  output,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{destination}{Input destination raster file.}

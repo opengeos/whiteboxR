@@ -4,8 +4,14 @@
 \alias{wbt_attribute_scattergram}
 \title{Attribute scattergram}
 \usage{
-wbt_attribute_scattergram(input, fieldx, fieldy, output,
-  trendline = FALSE, verbose_mode = FALSE)
+wbt_attribute_scattergram(
+  input,
+  fieldx,
+  fieldy,
+  output,
+  trendline = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

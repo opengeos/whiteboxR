@@ -4,8 +4,7 @@
 \alias{wbt_depth_in_sink}
 \title{Depth in sink}
 \usage{
-wbt_depth_in_sink(dem, output, zero_background = FALSE,
-  verbose_mode = FALSE)
+wbt_depth_in_sink(dem, output, zero_background = FALSE, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

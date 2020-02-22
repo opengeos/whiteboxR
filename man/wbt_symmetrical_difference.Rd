@@ -4,8 +4,13 @@
 \alias{wbt_symmetrical_difference}
 \title{Symmetrical difference}
 \usage{
-wbt_symmetrical_difference(input, overlay, output, snap = 0,
-  verbose_mode = FALSE)
+wbt_symmetrical_difference(
+  input,
+  overlay,
+  output,
+  snap = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}

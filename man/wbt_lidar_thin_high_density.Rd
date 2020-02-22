@@ -4,8 +4,14 @@
 \alias{wbt_lidar_thin_high_density}
 \title{Lidar thin high density}
 \usage{
-wbt_lidar_thin_high_density(input, output, density, resolution = 1,
-  save_filtered = FALSE, verbose_mode = FALSE)
+wbt_lidar_thin_high_density(
+  input,
+  output,
+  density,
+  resolution = 1,
+  save_filtered = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

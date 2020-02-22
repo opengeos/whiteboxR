@@ -4,8 +4,12 @@
 \alias{wbt_filter_lidar_classes}
 \title{Filter lidar classes}
 \usage{
-wbt_filter_lidar_classes(input, output, exclude_cls = NULL,
-  verbose_mode = FALSE)
+wbt_filter_lidar_classes(
+  input,
+  output,
+  exclude_cls = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}

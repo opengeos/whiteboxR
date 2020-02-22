@@ -4,8 +4,7 @@
 \alias{wbt_cost_distance}
 \title{Cost distance}
 \usage{
-wbt_cost_distance(source, cost, out_accum, out_backlink,
-  verbose_mode = FALSE)
+wbt_cost_distance(source, cost, out_accum, out_backlink, verbose_mode = FALSE)
 }
 \arguments{
 \item{source}{Input source raster file.}

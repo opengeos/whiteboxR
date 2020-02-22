@@ -4,8 +4,14 @@
 \alias{wbt_reclass_equal_interval}
 \title{Reclass equal interval}
 \usage{
-wbt_reclass_equal_interval(input, output, interval = 10,
-  start_val = NULL, end_val = NULL, verbose_mode = FALSE)
+wbt_reclass_equal_interval(
+  input,
+  output,
+  interval = 10,
+  start_val = NULL,
+  end_val = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

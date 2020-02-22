@@ -4,8 +4,13 @@
 \alias{wbt_write_function_memory_insertion}
 \title{Write function memory insertion}
 \usage{
-wbt_write_function_memory_insertion(input1, input2, output,
-  input3 = NULL, verbose_mode = FALSE)
+wbt_write_function_memory_insertion(
+  input1,
+  input2,
+  output,
+  input3 = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input raster file associated with the first date.}

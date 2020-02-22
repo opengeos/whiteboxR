@@ -4,8 +4,7 @@
 \alias{wbt_flip_image}
 \title{Flip image}
 \usage{
-wbt_flip_image(input, output, direction = "vertical",
-  verbose_mode = FALSE)
+wbt_flip_image(input, output, direction = "vertical", verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}

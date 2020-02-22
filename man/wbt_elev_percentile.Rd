@@ -4,8 +4,14 @@
 \alias{wbt_elev_percentile}
 \title{Elev percentile}
 \usage{
-wbt_elev_percentile(dem, output, filterx = 11, filtery = 11,
-  sig_digits = 2, verbose_mode = FALSE)
+wbt_elev_percentile(
+  dem,
+  output,
+  filterx = 11,
+  filtery = 11,
+  sig_digits = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

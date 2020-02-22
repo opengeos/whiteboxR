@@ -4,8 +4,13 @@
 \alias{wbt_majority_filter}
 \title{Majority filter}
 \usage{
-wbt_majority_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_majority_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

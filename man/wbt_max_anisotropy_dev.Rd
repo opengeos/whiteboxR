@@ -4,8 +4,15 @@
 \alias{wbt_max_anisotropy_dev}
 \title{Max anisotropy dev}
 \usage{
-wbt_max_anisotropy_dev(dem, out_mag, out_scale, max_scale, min_scale = 3,
-  step = 2, verbose_mode = FALSE)
+wbt_max_anisotropy_dev(
+  dem,
+  out_mag,
+  out_scale,
+  max_scale,
+  min_scale = 3,
+  step = 2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

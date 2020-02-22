@@ -4,8 +4,12 @@
 \alias{wbt_hypsometric_analysis}
 \title{Hypsometric analysis}
 \usage{
-wbt_hypsometric_analysis(inputs, output, watershed = NULL,
-  verbose_mode = FALSE)
+wbt_hypsometric_analysis(
+  inputs,
+  output,
+  watershed = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input DEM files.}

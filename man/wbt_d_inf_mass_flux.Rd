@@ -4,8 +4,14 @@
 \alias{wbt_d_inf_mass_flux}
 \title{D inf mass flux}
 \usage{
-wbt_d_inf_mass_flux(dem, loading, efficiency, absorption, output,
-  verbose_mode = FALSE)
+wbt_d_inf_mass_flux(
+  dem,
+  loading,
+  efficiency,
+  absorption,
+  output,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

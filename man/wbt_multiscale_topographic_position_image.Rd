@@ -4,8 +4,14 @@
 \alias{wbt_multiscale_topographic_position_image}
 \title{Multiscale topographic position image}
 \usage{
-wbt_multiscale_topographic_position_image(local, meso, broad, output,
-  lightness = 1.2, verbose_mode = FALSE)
+wbt_multiscale_topographic_position_image(
+  local,
+  meso,
+  broad,
+  output,
+  lightness = 1.2,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{local}{Input local-scale topographic position (DEVmax) raster file.}

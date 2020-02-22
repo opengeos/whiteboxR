@@ -4,9 +4,18 @@
 \alias{wbt_lidar_ransac_planes}
 \title{Lidar ransac planes}
 \usage{
-wbt_lidar_ransac_planes(input, output, radius = 2, num_iter = 50,
-  num_samples = 5, threshold = 0.35, model_size = 8,
-  classify = FALSE, verbose_mode = FALSE)
+wbt_lidar_ransac_planes(
+  input,
+  output,
+  radius = 2,
+  num_iter = 50,
+  num_samples = 5,
+  threshold = 0.35,
+  model_size = 8,
+  max_slope = 80,
+  classify = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -19,9 +28,11 @@ wbt_lidar_ransac_planes(input, output, radius = 2, num_iter = 50,
 
 \item{num_samples}{Number of sample points on which to build the model.}
 
-\item{threshold}{Threshold used to determine inliner points.}
+\item{threshold}{Threshold used to determine inlier points.}
 
 \item{model_size}{Acceptable model size.}
+
+\item{max_slope}{Maximum planar slope.}
 
 \item{classify}{Classify points as ground (2) or off-ground (1).}
 
@@ -31,5 +42,5 @@ wbt_lidar_ransac_planes(input, output, radius = 2, num_iter = 50,
 Returns the tool text outputs.
 }
 \description{
-Removes outliers (high and low points) in a LiDAR point cloud.
+Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
 }

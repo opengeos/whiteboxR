@@ -4,8 +4,7 @@
 \alias{wbt_export_table_to_csv}
 \title{Export table to csv}
 \usage{
-wbt_export_table_to_csv(input, output, headers = TRUE,
-  verbose_mode = FALSE)
+wbt_export_table_to_csv(input, output, headers = TRUE, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}

@@ -4,8 +4,12 @@
 \alias{wbt_extract_raster_values_at_points}
 \title{Extract raster values at points}
 \usage{
-wbt_extract_raster_values_at_points(inputs, points, out_text = FALSE,
-  verbose_mode = FALSE)
+wbt_extract_raster_values_at_points(
+  inputs,
+  points,
+  out_text = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input raster files.}

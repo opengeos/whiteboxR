@@ -4,8 +4,14 @@
 \alias{wbt_burn_streams_at_roads}
 \title{Burn streams at roads}
 \usage{
-wbt_burn_streams_at_roads(dem, streams, roads, output, width = NULL,
-  verbose_mode = FALSE)
+wbt_burn_streams_at_roads(
+  dem,
+  streams,
+  roads,
+  output,
+  width = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster digital elevation model (DEM) file.}

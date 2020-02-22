@@ -4,8 +4,13 @@
 \alias{wbt_sobel_filter}
 \title{Sobel filter}
 \usage{
-wbt_sobel_filter(input, output, variant = "3x3", clip = 0,
-  verbose_mode = FALSE)
+wbt_sobel_filter(
+  input,
+  output,
+  variant = "3x3",
+  clip = 0,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

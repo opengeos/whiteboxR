@@ -4,8 +4,13 @@
 \alias{wbt_impoundment_size_index}
 \title{Impoundment size index}
 \usage{
-wbt_impoundment_size_index(dem, output, damlength, out_type = "depth",
-  verbose_mode = FALSE)
+wbt_impoundment_size_index(
+  dem,
+  output,
+  damlength,
+  out_type = "depth",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

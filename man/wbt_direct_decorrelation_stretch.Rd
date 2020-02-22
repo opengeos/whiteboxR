@@ -4,8 +4,13 @@
 \alias{wbt_direct_decorrelation_stretch}
 \title{Direct decorrelation stretch}
 \usage{
-wbt_direct_decorrelation_stretch(input, output, k = 0.5, clip = 1,
-  verbose_mode = FALSE)
+wbt_direct_decorrelation_stretch(
+  input,
+  output,
+  k = 0.5,
+  clip = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input colour composite image file.}

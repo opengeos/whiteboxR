@@ -4,8 +4,13 @@
 \alias{wbt_unnest_basins}
 \title{Unnest basins}
 \usage{
-wbt_unnest_basins(d8_pntr, pour_pts, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_unnest_basins(
+  d8_pntr,
+  pour_pts,
+  output,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}

@@ -4,8 +4,14 @@
 \alias{wbt_zonal_statistics}
 \title{Zonal statistics}
 \usage{
-wbt_zonal_statistics(input, features, output = NULL, stat = "mean",
-  out_table = NULL, verbose_mode = FALSE)
+wbt_zonal_statistics(
+  input,
+  features,
+  output = NULL,
+  stat = "mean",
+  out_table = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input data raster file.}

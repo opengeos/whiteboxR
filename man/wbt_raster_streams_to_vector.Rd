@@ -4,8 +4,13 @@
 \alias{wbt_raster_streams_to_vector}
 \title{Raster streams to vector}
 \usage{
-wbt_raster_streams_to_vector(streams, d8_pntr, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_raster_streams_to_vector(
+  streams,
+  d8_pntr,
+  output,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{streams}{Input raster streams file.}

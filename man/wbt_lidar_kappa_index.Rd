@@ -4,8 +4,14 @@
 \alias{wbt_lidar_kappa_index}
 \title{Lidar kappa index}
 \usage{
-wbt_lidar_kappa_index(input1, input2, output, class_accuracy,
-  resolution = 1, verbose_mode = FALSE)
+wbt_lidar_kappa_index(
+  input1,
+  input2,
+  output,
+  class_accuracy,
+  resolution = 1,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input LiDAR classification file.}

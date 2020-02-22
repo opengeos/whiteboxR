@@ -4,8 +4,13 @@
 \alias{wbt_horizon_angle}
 \title{Horizon angle}
 \usage{
-wbt_horizon_angle(dem, output, azimuth = 0, max_dist = NULL,
-  verbose_mode = FALSE)
+wbt_horizon_angle(
+  dem,
+  output,
+  azimuth = 0,
+  max_dist = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

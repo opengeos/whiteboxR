@@ -4,9 +4,16 @@
 \alias{wbt_natural_neighbour_interpolation}
 \title{Natural neighbour interpolation}
 \usage{
-wbt_natural_neighbour_interpolation(input, output, field = NULL,
-  use_z = FALSE, cell_size = NULL, base = NULL, clip = TRUE,
-  verbose_mode = FALSE)
+wbt_natural_neighbour_interpolation(
+  input,
+  output,
+  field = NULL,
+  use_z = FALSE,
+  cell_size = NULL,
+  base = NULL,
+  clip = TRUE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector points file.}

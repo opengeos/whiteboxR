@@ -4,8 +4,13 @@
 \alias{wbt_olympic_filter}
 \title{Olympic filter}
 \usage{
-wbt_olympic_filter(input, output, filterx = 11, filtery = 11,
-  verbose_mode = FALSE)
+wbt_olympic_filter(
+  input,
+  output,
+  filterx = 11,
+  filtery = 11,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

@@ -4,8 +4,14 @@
 \alias{wbt_raster_area}
 \title{Raster area}
 \usage{
-wbt_raster_area(input, output = NULL, out_text = FALSE,
-  units = "grid cells", zero_back = FALSE, verbose_mode = FALSE)
+wbt_raster_area(
+  input,
+  output = NULL,
+  out_text = FALSE,
+  units = "grid cells",
+  zero_back = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}

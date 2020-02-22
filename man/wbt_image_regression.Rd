@@ -4,9 +4,16 @@
 \alias{wbt_image_regression}
 \title{Image regression}
 \usage{
-wbt_image_regression(input1, input2, output, out_residuals = NULL,
-  standardize = FALSE, scattergram = FALSE, num_samples = 1000,
-  verbose_mode = FALSE)
+wbt_image_regression(
+  input1,
+  input2,
+  output,
+  out_residuals = NULL,
+  standardize = FALSE,
+  scattergram = FALSE,
+  num_samples = 1000,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input raster file (independent variable, X).}

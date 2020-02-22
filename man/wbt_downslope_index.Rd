@@ -4,8 +4,13 @@
 \alias{wbt_downslope_index}
 \title{Downslope index}
 \usage{
-wbt_downslope_index(dem, output, drop = 2, out_type = "tangent",
-  verbose_mode = FALSE)
+wbt_downslope_index(
+  dem,
+  output,
+  drop = 2,
+  out_type = "tangent",
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

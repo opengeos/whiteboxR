@@ -4,8 +4,14 @@
 \alias{wbt_shreve_stream_magnitude}
 \title{Shreve stream magnitude}
 \usage{
-wbt_shreve_stream_magnitude(d8_pntr, streams, output, esri_pntr = FALSE,
-  zero_background = FALSE, verbose_mode = FALSE)
+wbt_shreve_stream_magnitude(
+  d8_pntr,
+  streams,
+  output,
+  esri_pntr = FALSE,
+  zero_background = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}

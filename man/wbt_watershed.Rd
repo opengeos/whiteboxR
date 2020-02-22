@@ -4,13 +4,18 @@
 \alias{wbt_watershed}
 \title{Watershed}
 \usage{
-wbt_watershed(d8_pntr, pour_pts, output, esri_pntr = FALSE,
-  verbose_mode = FALSE)
+wbt_watershed(
+  d8_pntr,
+  pour_pts,
+  output,
+  esri_pntr = FALSE,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}
 
-\item{pour_pts}{Input vector pour points (outlet) file.}
+\item{pour_pts}{Input pour points (outlet) file.}
 
 \item{output}{Output raster file.}
 

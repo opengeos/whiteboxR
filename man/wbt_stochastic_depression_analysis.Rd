@@ -4,8 +4,14 @@
 \alias{wbt_stochastic_depression_analysis}
 \title{Stochastic depression analysis}
 \usage{
-wbt_stochastic_depression_analysis(dem, output, rmse, range,
-  iterations = 100, verbose_mode = FALSE)
+wbt_stochastic_depression_analysis(
+  dem,
+  output,
+  rmse,
+  range,
+  iterations = 100,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
