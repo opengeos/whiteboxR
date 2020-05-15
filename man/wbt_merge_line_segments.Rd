@@ -4,7 +4,13 @@
 \alias{wbt_merge_line_segments}
 \title{Merge line segments}
 \usage{
-wbt_merge_line_segments(input, output, snap = 0, verbose_mode = FALSE)
+wbt_merge_line_segments(
+  input,
+  output,
+  snap = 0,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -12,6 +18,8 @@ wbt_merge_line_segments(input, output, snap = 0, verbose_mode = FALSE)
 \item{output}{Output vector file.}
 
 \item{snap}{Snap tolerance.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

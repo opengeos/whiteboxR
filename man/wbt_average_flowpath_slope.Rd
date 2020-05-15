@@ -4,12 +4,14 @@
 \alias{wbt_average_flowpath_slope}
 \title{Average flowpath slope}
 \usage{
-wbt_average_flowpath_slope(dem, output, verbose_mode = FALSE)
+wbt_average_flowpath_slope(dem, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

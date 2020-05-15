@@ -9,6 +9,7 @@ wbt_cost_pathway(
   backlink,
   output,
   zero_background = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_cost_pathway(
 \item{output}{Output cost pathway raster file.}
 
 \item{zero_background}{Flag indicating whether zero values should be treated as a background.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

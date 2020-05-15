@@ -4,7 +4,7 @@
 \alias{wbt_isobasins}
 \title{Isobasins}
 \usage{
-wbt_isobasins(dem, output, size, verbose_mode = FALSE)
+wbt_isobasins(dem, output, size, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +12,8 @@ wbt_isobasins(dem, output, size, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{size}{Target basin size, in grid cells.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

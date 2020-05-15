@@ -4,12 +4,19 @@
 \alias{wbt_attribute_correlation}
 \title{Attribute correlation}
 \usage{
-wbt_attribute_correlation(input, output = NULL, verbose_mode = FALSE)
+wbt_attribute_correlation(
+  input,
+  output = NULL,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

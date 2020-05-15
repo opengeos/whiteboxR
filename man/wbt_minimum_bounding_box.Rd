@@ -9,6 +9,7 @@ wbt_minimum_bounding_box(
   output,
   criterion = "area",
   features = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_minimum_bounding_box(
 \item{criterion}{Minimization criterion; options include 'area' (default), 'length', 'width', and 'perimeter'.}
 
 \item{features}{Find the minimum bounding rectangles around each individual vector feature.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

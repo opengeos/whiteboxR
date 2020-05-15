@@ -13,6 +13,7 @@ wbt_k_means_clustering(
   class_change = 2,
   initialize = "diagonal",
   min_class_size = 10,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -32,6 +33,8 @@ wbt_k_means_clustering(
 \item{initialize}{How to initialize cluster centres?.}
 
 \item{min_class_size}{Minimum class size, in pixels.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

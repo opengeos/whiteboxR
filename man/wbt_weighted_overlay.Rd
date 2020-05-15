@@ -11,6 +11,7 @@ wbt_weighted_overlay(
   cost = NULL,
   constraints = NULL,
   scale_max = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_weighted_overlay(
 \item{constraints}{Input constraints raster files.}
 
 \item{scale_max}{Suitability scale maximum value (common values are 1.0, 100.0, and 255.0).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

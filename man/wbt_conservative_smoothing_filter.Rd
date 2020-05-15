@@ -9,6 +9,7 @@ wbt_conservative_smoothing_filter(
   output,
   filterx = 3,
   filtery = 3,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_conservative_smoothing_filter(
 \item{filterx}{Size of the filter kernel in the x-direction.}
 
 \item{filtery}{Size of the filter kernel in the y-direction.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

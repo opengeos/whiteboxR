@@ -3,14 +3,18 @@
 #' Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.
 #'
 #' @param input Input vector Points file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_add_point_coordinates_to_table <- function(input, verbose_mode=FALSE) {
+wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -22,15 +26,19 @@ wbt_add_point_coordinates_to_table <- function(input, verbose_mode=FALSE) {
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_clean_vector <- function(input, output, verbose_mode=FALSE) {
+wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -42,15 +50,19 @@ wbt_clean_vector <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_convert_nodata_to_zero <- function(input, output, verbose_mode=FALSE) {
+wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -62,15 +74,19 @@ wbt_convert_nodata_to_zero <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_convert_raster_format <- function(input, output, verbose_mode=FALSE) {
+wbt_convert_raster_format <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -85,11 +101,12 @@ wbt_convert_raster_format <- function(input, output, verbose_mode=FALSE) {
 #' @param xfield X field number (e.g. 0 for first field).
 #' @param yfield Y field number (e.g. 1 for second field).
 #' @param epsg EPSG projection (e.g. 2958).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NULL, verbose_mode=FALSE) {
+wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -103,6 +120,9 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
   if (!is.null(epsg)) {
     args <- paste(args, paste0("--epsg=", epsg))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -115,17 +135,21 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
 #' @param input Input vector file.
 #' @param output Output raster file.
 #' @param headers Export field names as file header?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=FALSE) {
+wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (headers) {
     args <- paste(args, "--headers")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -141,11 +165,12 @@ wbt_export_table_to_csv <- function(input, output, headers=TRUE, verbose_mode=FA
 #' @param input2 Input foreign vector file (i.e. source of data to be imported).
 #' @param fkey Foreign key field.
 #' @param import_field Imported field (all fields will be imported if not specified).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mode=FALSE) {
+wbt_join_tables <- function(input1, pkey, input2, fkey, import_field, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -153,6 +178,9 @@ wbt_join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mo
   args <- paste(args, paste0("--input2=", input2))
   args <- paste(args, paste0("--fkey=", fkey))
   args <- paste(args, paste0("--import_field=", import_field))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -164,15 +192,19 @@ wbt_join_tables <- function(input1, pkey, input2, fkey, import_field, verbose_mo
 #'
 #' @param input Input vector line file.
 #' @param output Output vector polygon file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lines_to_polygons <- function(input, output, verbose_mode=FALSE) {
+wbt_lines_to_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -187,11 +219,12 @@ wbt_lines_to_polygons <- function(input, output, verbose_mode=FALSE) {
 #' @param csv Input CSV file (i.e. source of data to be imported).
 #' @param fkey Foreign key field.
 #' @param import_field Imported field (all fields will be imported if not specified).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, verbose_mode=FALSE) {
+wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -200,6 +233,9 @@ wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, 
   args <- paste(args, paste0("--fkey=", fkey))
   if (!is.null(import_field)) {
     args <- paste(args, paste0("--import_field=", import_field))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -212,15 +248,19 @@ wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, 
 #'
 #' @param inputs Input vector files.
 #' @param output Output vector file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_merge_vectors <- function(inputs, output, verbose_mode=FALSE) {
+wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -232,16 +272,20 @@ wbt_merge_vectors <- function(inputs, output, verbose_mode=FALSE) {
 #'
 #' @param input Input raster file.
 #' @param new_value New NoData value.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_modify_no_data_value <- function(input, new_value="-32768.0", verbose_mode=FALSE) {
+wbt_modify_no_data_value <- function(input, new_value="-32768.0", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   if (!is.null(new_value)) {
     args <- paste(args, paste0("--new_value=", new_value))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -255,17 +299,21 @@ wbt_modify_no_data_value <- function(input, new_value="-32768.0", verbose_mode=F
 #' @param input Input vector line or polygon file.
 #' @param output Output vector line or polygon file.
 #' @param exclude_holes Exclude hole parts from the feature splitting? (holes will continue to belong to their features in output.).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, verbose_mode=FALSE) {
+wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (exclude_holes) {
     args <- paste(args, "--exclude_holes")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -280,11 +328,12 @@ wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, ver
 #' @param output Output raster file.
 #' @param value Constant value to fill raster with; either 'nodata' or numeric value.
 #' @param data_type Output raster data type; options include 'double' (64-bit), 'float' (32-bit), and 'integer' (signed 16-bit) (default is 'float').
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="float", verbose_mode=FALSE) {
+wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="float", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -294,6 +343,9 @@ wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="fl
   }
   if (!is.null(data_type)) {
     args <- paste(args, paste0("--data_type=", data_type))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -306,15 +358,19 @@ wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="fl
 #'
 #' @param input Input vector polygon file.
 #' @param output Output vector lines file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_polygons_to_lines <- function(input, output, verbose_mode=FALSE) {
+wbt_polygons_to_lines <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -325,14 +381,18 @@ wbt_polygons_to_lines <- function(input, output, verbose_mode=FALSE) {
 #' Prints the tags within a GeoTIFF.
 #'
 #' @param input Input GeoTIFF file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_print_geo_tiff_tags <- function(input, verbose_mode=FALSE) {
+wbt_print_geo_tiff_tags <- function(input, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -344,15 +404,19 @@ wbt_print_geo_tiff_tags <- function(input, verbose_mode=FALSE) {
 #'
 #' @param input Input raster lines file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_to_vector_lines <- function(input, output, verbose_mode=FALSE) {
+wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -364,15 +428,19 @@ wbt_raster_to_vector_lines <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @param input Input raster file.
 #' @param output Output vector points file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_to_vector_points <- function(input, output, verbose_mode=FALSE) {
+wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -384,15 +452,19 @@ wbt_raster_to_vector_points <- function(input, output, verbose_mode=FALSE) {
 #'
 #' @param input Input raster file.
 #' @param output Output vector polygons file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_to_vector_polygons <- function(input, output, verbose_mode=FALSE) {
+wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -403,14 +475,18 @@ wbt_raster_to_vector_polygons <- function(input, output, verbose_mode=FALSE) {
 #' Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
 #'
 #' @param input Input vector file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_reinitialize_attribute_table <- function(input, verbose_mode=FALSE) {
+wbt_reinitialize_attribute_table <- function(input, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -422,15 +498,19 @@ wbt_reinitialize_attribute_table <- function(input, verbose_mode=FALSE) {
 #'
 #' @param input Input vector polygon file.
 #' @param output Output vector polygon file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_polygon_holes <- function(input, output, verbose_mode=FALSE) {
+wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -443,17 +523,21 @@ wbt_remove_polygon_holes <- function(input, output, verbose_mode=FALSE) {
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param back_value Background value to set to nodata.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=FALSE) {
+wbt_set_nodata_value <- function(input, output, back_value=0.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(back_value)) {
     args <- paste(args, paste0("--back_value=", back_value))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -467,17 +551,21 @@ wbt_set_nodata_value <- function(input, output, back_value=0.0, verbose_mode=FAL
 #' @param input Input vector line or polygon file.
 #' @param field Grouping ID field name in attribute table.
 #' @param output Output vector line or polygon file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_single_part_to_multi_part <- function(input, output, field=NULL, verbose_mode=FALSE) {
+wbt_single_part_to_multi_part <- function(input, output, field=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -494,11 +582,12 @@ wbt_single_part_to_multi_part <- function(input, output, field=NULL, verbose_mod
 #' @param nodata Background value to set to NoData. Without this flag, it will be set to 0.0.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
+wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -514,6 +603,9 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
   }
   if (!is.null(base)) {
     args <- paste(args, paste0("--base=", base))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -531,11 +623,12 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
 #' @param nodata Background value to set to NoData. Without this flag, it will be set to 0.0.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
+wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -555,6 +648,9 @@ wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last
   if (!is.null(base)) {
     args <- paste(args, paste0("--base=", base))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -570,11 +666,12 @@ wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last
 #' @param nodata Background value to set to NoData. Without this flag, it will be set to 0.0.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, verbose_mode=FALSE) {
+wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -590,6 +687,9 @@ wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRU
   }
   if (!is.null(base)) {
     args <- paste(args, paste0("--base=", base))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

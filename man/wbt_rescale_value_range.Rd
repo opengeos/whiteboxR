@@ -11,6 +11,7 @@ wbt_rescale_value_range(
   out_max_val,
   clip_min = NULL,
   clip_max = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_rescale_value_range(
 \item{clip_min}{Optional lower tail clip value.}
 
 \item{clip_max}{Optional upper tail clip value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

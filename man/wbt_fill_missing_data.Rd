@@ -9,6 +9,7 @@ wbt_fill_missing_data(
   output,
   filter = 11,
   weight = 2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_fill_missing_data(
 \item{filter}{Filter size (cells).}
 
 \item{weight}{IDW weight value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

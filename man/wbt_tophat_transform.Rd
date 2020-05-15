@@ -10,6 +10,7 @@ wbt_tophat_transform(
   filterx = 11,
   filtery = 11,
   variant = "white",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_tophat_transform(
 \item{filtery}{Size of the filter kernel in the y-direction.}
 
 \item{variant}{Optional variant value. Options include 'white' and 'black'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

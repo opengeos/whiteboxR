@@ -4,7 +4,13 @@
 \alias{wbt_elevation_above_stream}
 \title{Elevation above stream}
 \usage{
-wbt_elevation_above_stream(dem, streams, output, verbose_mode = FALSE)
+wbt_elevation_above_stream(
+  dem,
+  streams,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +18,8 @@ wbt_elevation_above_stream(dem, streams, output, verbose_mode = FALSE)
 \item{streams}{Input raster streams file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

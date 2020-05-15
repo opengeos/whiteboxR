@@ -10,6 +10,7 @@ wbt_reclass_equal_interval(
   interval = 10,
   start_val = NULL,
   end_val = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_reclass_equal_interval(
 \item{start_val}{Optional starting value (default is input minimum value).}
 
 \item{end_val}{Optional ending value (default is input maximum value).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

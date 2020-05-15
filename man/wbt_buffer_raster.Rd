@@ -4,7 +4,14 @@
 \alias{wbt_buffer_raster}
 \title{Buffer raster}
 \usage{
-wbt_buffer_raster(input, output, size, gridcells = FALSE, verbose_mode = FALSE)
+wbt_buffer_raster(
+  input,
+  output,
+  size,
+  gridcells = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -14,6 +21,8 @@ wbt_buffer_raster(input, output, size, gridcells = FALSE, verbose_mode = FALSE)
 \item{size}{Buffer size.}
 
 \item{gridcells}{Optional flag to indicate that the 'size' threshold should be measured in grid cells instead of the default map units.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_remove_short_streams(
   output,
   min_length,
   esri_pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_remove_short_streams(
 \item{min_length}{Minimum tributary length (in map units) used for network prunning.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

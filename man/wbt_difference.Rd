@@ -4,7 +4,7 @@
 \alias{wbt_difference}
 \title{Difference}
 \usage{
-wbt_difference(input, overlay, output, verbose_mode = FALSE)
+wbt_difference(input, overlay, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -12,6 +12,8 @@ wbt_difference(input, overlay, output, verbose_mode = FALSE)
 \item{overlay}{Input overlay vector file.}
 
 \item{output}{Output vector file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

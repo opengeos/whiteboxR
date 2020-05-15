@@ -4,7 +4,14 @@
 \alias{wbt_dissolve}
 \title{Dissolve}
 \usage{
-wbt_dissolve(input, output, field = NULL, snap = 0, verbose_mode = FALSE)
+wbt_dissolve(
+  input,
+  output,
+  field = NULL,
+  snap = 0,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -14,6 +21,8 @@ wbt_dissolve(input, output, field = NULL, snap = 0, verbose_mode = FALSE)
 \item{field}{Dissolve field attribute (optional).}
 
 \item{snap}{Snap tolerance.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

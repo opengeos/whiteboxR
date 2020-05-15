@@ -10,6 +10,7 @@ wbt_burn_streams_at_roads(
   roads,
   output,
   width = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_burn_streams_at_roads(
 \item{output}{Output raster file.}
 
 \item{width}{Maximum road embankment width, in map units.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

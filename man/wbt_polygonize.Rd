@@ -4,12 +4,14 @@
 \alias{wbt_polygonize}
 \title{Polygonize}
 \usage{
-wbt_polygonize(inputs, output, verbose_mode = FALSE)
+wbt_polygonize(inputs, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input vector polyline file.}
 
 \item{output}{Output vector polygon file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

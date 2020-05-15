@@ -12,6 +12,7 @@ wbt_rgb_to_ihs(
   green = NULL,
   blue = NULL,
   composite = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_rgb_to_ihs(
 \item{blue}{Input blue band image file. Optionally specified if colour-composite not specified.}
 
 \item{composite}{Input colour-composite image file. Only used if individual bands are not specified.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

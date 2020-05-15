@@ -4,12 +4,14 @@
 \alias{wbt_cos}
 \title{Cos}
 \usage{
-wbt_cos(input, output, verbose_mode = FALSE)
+wbt_cos(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }
@@ -18,10 +20,4 @@ Returns the tool text outputs.
 }
 \description{
 Returns the cosine (cos) of each values in a raster.
-}
-\examples{
-\dontrun{
-dem <- system.file("extdata", "DEM.tif", package="whitebox")
-wbt_cos(input = dem, output = 'output.tif')
-}
 }

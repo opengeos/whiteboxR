@@ -10,6 +10,7 @@ wbt_stochastic_depression_analysis(
   rmse,
   range,
   iterations = 100,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_stochastic_depression_analysis(
 \item{range}{The error field's correlation length, in xy-units.}
 
 \item{iterations}{The number of iterations.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

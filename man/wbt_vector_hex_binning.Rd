@@ -9,6 +9,7 @@ wbt_vector_hex_binning(
   output,
   width,
   orientation = "horizontal",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_vector_hex_binning(
 \item{width}{The grid cell width.}
 
 \item{orientation}{Grid Orientation, 'horizontal' or 'vertical'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

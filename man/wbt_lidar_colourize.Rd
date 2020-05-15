@@ -4,7 +4,13 @@
 \alias{wbt_lidar_colourize}
 \title{Lidar colourize}
 \usage{
-wbt_lidar_colourize(in_lidar, in_image, output, verbose_mode = FALSE)
+wbt_lidar_colourize(
+  in_lidar,
+  in_image,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{in_lidar}{Input LiDAR file.}
@@ -12,6 +18,8 @@ wbt_lidar_colourize(in_lidar, in_image, output, verbose_mode = FALSE)
 \item{in_image}{Input colour image file.}
 
 \item{output}{Output LiDAR file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

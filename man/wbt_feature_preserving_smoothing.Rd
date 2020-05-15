@@ -12,6 +12,7 @@ wbt_feature_preserving_smoothing(
   num_iter = 3,
   max_diff = 0.5,
   zfactor = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_feature_preserving_smoothing(
 \item{max_diff}{Maximum allowable absolute elevation change (optional).}
 
 \item{zfactor}{Optional multiplier for when the vertical and horizontal units are not the same.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

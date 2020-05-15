@@ -4,7 +4,13 @@
 \alias{wbt_export_table_to_csv}
 \title{Export table to csv}
 \usage{
-wbt_export_table_to_csv(input, output, headers = TRUE, verbose_mode = FALSE)
+wbt_export_table_to_csv(
+  input,
+  output,
+  headers = TRUE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -12,6 +18,8 @@ wbt_export_table_to_csv(input, output, headers = TRUE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{headers}{Export field names as file header?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

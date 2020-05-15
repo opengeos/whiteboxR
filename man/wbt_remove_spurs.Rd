@@ -4,7 +4,13 @@
 \alias{wbt_remove_spurs}
 \title{Remove spurs}
 \usage{
-wbt_remove_spurs(input, output, iterations = 10, verbose_mode = FALSE)
+wbt_remove_spurs(
+  input,
+  output,
+  iterations = 10,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_remove_spurs(input, output, iterations = 10, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{iterations}{Maximum number of iterations.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

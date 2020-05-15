@@ -4,12 +4,14 @@
 \alias{wbt_highest_position}
 \title{Highest position}
 \usage{
-wbt_highest_position(inputs, output, verbose_mode = FALSE)
+wbt_highest_position(inputs, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

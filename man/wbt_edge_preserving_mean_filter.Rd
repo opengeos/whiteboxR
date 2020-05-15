@@ -9,6 +9,7 @@ wbt_edge_preserving_mean_filter(
   output,
   threshold,
   filter = 11,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_edge_preserving_mean_filter(
 \item{threshold}{Maximum difference in values.}
 
 \item{filter}{Size of the filter kernel.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

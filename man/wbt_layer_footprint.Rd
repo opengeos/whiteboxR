@@ -4,12 +4,14 @@
 \alias{wbt_layer_footprint}
 \title{Layer footprint}
 \usage{
-wbt_layer_footprint(input, output, verbose_mode = FALSE)
+wbt_layer_footprint(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster or vector file.}
 
 \item{output}{Output vector polygon file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

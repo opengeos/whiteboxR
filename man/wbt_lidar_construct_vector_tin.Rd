@@ -11,6 +11,7 @@ wbt_lidar_construct_vector_tin(
   exclude_cls = NULL,
   minz = NULL,
   maxz = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_lidar_construct_vector_tin(
 \item{minz}{Optional minimum elevation for inclusion in interpolation.}
 
 \item{maxz}{Optional maximum elevation for inclusion in interpolation.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

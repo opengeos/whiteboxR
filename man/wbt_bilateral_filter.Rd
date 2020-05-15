@@ -9,6 +9,7 @@ wbt_bilateral_filter(
   output,
   sigma_dist = 0.75,
   sigma_int = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_bilateral_filter(
 \item{sigma_dist}{Standard deviation in distance in pixels.}
 
 \item{sigma_int}{Standard deviation in intensity in pixels.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

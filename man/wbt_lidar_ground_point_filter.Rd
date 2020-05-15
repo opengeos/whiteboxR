@@ -14,6 +14,7 @@ wbt_lidar_ground_point_filter(
   classify = TRUE,
   slope_norm = TRUE,
   height_above_ground = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -35,6 +36,8 @@ wbt_lidar_ground_point_filter(
 \item{slope_norm}{Perform initial ground slope normalization?.}
 
 \item{height_above_ground}{Transform output to height above average ground elevation?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

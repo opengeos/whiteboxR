@@ -14,6 +14,7 @@ wbt_lidar_ransac_planes(
   model_size = 8,
   max_slope = 80,
   classify = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -35,6 +36,8 @@ wbt_lidar_ransac_planes(
 \item{max_slope}{Maximum planar slope.}
 
 \item{classify}{Classify points as ground (2) or off-ground (1).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

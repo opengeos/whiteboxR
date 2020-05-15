@@ -5,16 +5,20 @@
 #' @param input Input LiDAR file.
 #' @param buildings Input vector polygons file.
 #' @param output Output LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_classify_buildings_in_lidar <- function(input, buildings, output, verbose_mode=FALSE) {
+wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--buildings=", buildings))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -28,11 +32,12 @@ wbt_classify_buildings_in_lidar <- function(input, buildings, output, verbose_mo
 #' @param output Output LiDAR file.
 #' @param resolution The size of the square area used to evaluate nearby points in the LiDAR data.
 #' @param filter Filter out points from overlapping flightlines? If false, overlaps will simply be classified.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, verbose_mode=FALSE) {
+wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -42,6 +47,9 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FA
   }
   if (filter) {
     args <- paste(args, "--filter")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -55,16 +63,20 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FA
 #' @param input Input LiDAR file.
 #' @param polygons Input vector polygons file.
 #' @param output Output LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_clip_lidar_to_polygon <- function(input, polygons, output, verbose_mode=FALSE) {
+wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--polygons=", polygons))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -77,16 +89,20 @@ wbt_clip_lidar_to_polygon <- function(input, polygons, output, verbose_mode=FALS
 #' @param input Input LiDAR file.
 #' @param polygons Input vector polygons file.
 #' @param output Output LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=FALSE) {
+wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--polygons=", polygons))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -99,17 +115,21 @@ wbt_erase_polygon_from_lidar <- function(input, polygons, output, verbose_mode=F
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, verbose_mode=FALSE) {
+wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(exclude_cls)) {
     args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -123,16 +143,20 @@ wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, verbose_mo
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param threshold Scan angle threshold.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_filter_lidar_scan_angles <- function(input, output, threshold, verbose_mode=FALSE) {
+wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--threshold=", threshold))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -144,15 +168,19 @@ wbt_filter_lidar_scan_angles <- function(input, output, threshold, verbose_mode=
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_flightline_edge_points <- function(input, output, verbose_mode=FALSE) {
+wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -165,11 +193,12 @@ wbt_find_flightline_edge_points <- function(input, output, verbose_mode=FALSE) {
 #' @param input Input LiDAR file.
 #' @param output Output file.
 #' @param resolution Output raster's grid resolution.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_mode=FALSE) {
+wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -178,6 +207,9 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_m
   }
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -190,16 +222,20 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, verbose_m
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_height_above_ground <- function(input, output=NULL, verbose_mode=FALSE) {
+wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -211,14 +247,18 @@ wbt_height_above_ground <- function(input, output=NULL, verbose_mode=FALSE) {
 #' Converts one or more LAS files into ASCII text files.
 #'
 #' @param inputs Input LiDAR files.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_ascii <- function(inputs, verbose_mode=FALSE) {
+wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -229,14 +269,18 @@ wbt_las_to_ascii <- function(inputs, verbose_mode=FALSE) {
 #' Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_multipoint_shapefile <- function(input, verbose_mode=FALSE) {
+wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -247,14 +291,18 @@ wbt_las_to_multipoint_shapefile <- function(input, verbose_mode=FALSE) {
 #' Converts one or more LAS files into a vector Shapefile of POINT ShapeType.
 #'
 #' @param input Input LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_shapefile <- function(input, verbose_mode=FALSE) {
+wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -267,11 +315,12 @@ wbt_las_to_shapefile <- function(input, verbose_mode=FALSE) {
 #' @param input Input LiDAR file.
 #' @param output Output file.
 #' @param resolution Output raster's grid resolution.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, verbose_mode=FALSE) {
+wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -280,6 +329,9 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, verbose_
   }
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -293,11 +345,12 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, verbose_
 #' @param input Input LiDAR file.
 #' @param output Output file.
 #' @param resolution Output raster's grid resolution.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, verbose_mode=FALSE) {
+wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -306,6 +359,9 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, verbose_
   }
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -321,11 +377,12 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, verbose_
 #' @param output Output LiDAR file.
 #' @param subset_class Subset point class value (must be 0-18; see LAS specifications).
 #' @param nonsubset_class Non-subset point class value (must be 0-18; see LAS specifications).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, verbose_mode=FALSE) {
+wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -334,6 +391,9 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
   args <- paste(args, paste0("--subset_class=", subset_class))
   if (!is.null(nonsubset_class)) {
     args <- paste(args, paste0("--nonsubset_class=", nonsubset_class))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -347,16 +407,20 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
 #' @param in_lidar Input LiDAR file.
 #' @param in_image Input colour image file.
 #' @param output Output LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_colourize <- function(in_lidar, in_image, output, verbose_mode=FALSE) {
+wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--in_lidar=", in_lidar))
   args <- paste(args, paste0("--in_image=", in_image))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -372,11 +436,12 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, verbose_mode=FALSE) 
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_construct_vector_tin <- function(input, output=NULL, returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=FALSE) {
+wbt_lidar_construct_vector_tin <- function(input, output=NULL, returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -395,6 +460,9 @@ wbt_lidar_construct_vector_tin <- function(input, output=NULL, returns="all", ex
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -411,11 +479,12 @@ wbt_lidar_construct_vector_tin <- function(input, output=NULL, returns="all", ex
 #' @param cls Optional boolean flag indicating whether points outside the range should be retained in output but reclassified.
 #' @param inclassval Optional parameter specifying the class value assigned to points within the slice.
 #' @param outclassval Optional parameter specifying the class value assigned to points within the slice.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, verbose_mode=FALSE) {
+wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -435,6 +504,9 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
   if (!is.null(outclassval)) {
     args <- paste(args, paste0("--outclassval=", outclassval))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -453,11 +525,12 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 #' @param classify Classify points as ground (2) or off-ground (1).
 #' @param slope_norm Perform initial ground slope normalization?.
 #' @param height_above_ground Transform output to height above average ground elevation?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, height_above_ground=FALSE, verbose_mode=FALSE) {
+wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, height_above_ground=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -483,6 +556,9 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
   if (height_above_ground) {
     args <- paste(args, "--height_above_ground")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -496,11 +572,12 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
 #' @param output Output vector polygon file.
 #' @param width The grid cell width.
 #' @param orientation Grid Orientation, 'horizontal' or 'vertical'.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal", verbose_mode=FALSE) {
+wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -508,6 +585,9 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
   args <- paste(args, paste0("--width=", width))
   if (!is.null(orientation)) {
     args <- paste(args, paste0("--orientation=", orientation))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -523,11 +603,12 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
 #' @param azimuth Illumination source azimuth in degrees.
 #' @param altitude Illumination source altitude in degrees.
 #' @param radius Search Radius.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, verbose_mode=FALSE) {
+wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -540,6 +621,9 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
   }
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -554,11 +638,12 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param parameter Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class'.
 #' @param clip Amount to clip distribution tails (in percent).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, verbose_mode=FALSE) {
+wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -568,6 +653,9 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
   }
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -588,11 +676,12 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=FALSE) {
+wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -623,6 +712,9 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -636,11 +728,12 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
 #' @param output Output HTML file for summary report.
 #' @param vlr Flag indicating whether or not to print the variable length records (VLRs).
 #' @param geokeys Flag indicating whether or not to print the geokeys.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, verbose_mode=FALSE) {
+wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -653,6 +746,9 @@ wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, verbose_m
   if (geokeys) {
     args <- paste(args, "--geokeys")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -664,15 +760,19 @@ wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, verbose_m
 #'
 #' @param inputs Input LiDAR files.
 #' @param output Output LiDAR file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_join <- function(inputs, output, verbose_mode=FALSE) {
+wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -687,11 +787,12 @@ wbt_lidar_join <- function(inputs, output, verbose_mode=FALSE) {
 #' @param output Output HTML file.
 #' @param class_accuracy Output classification accuracy raster file.
 #' @param resolution Output raster's grid resolution.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, verbose_mode=FALSE) {
+wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -700,6 +801,9 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
   args <- paste(args, paste0("--class_accuracy=", class_accuracy))
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -719,11 +823,12 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=FALSE) {
+wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -751,6 +856,9 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -768,11 +876,12 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, verbose_mode=FALSE) {
+wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -797,6 +906,9 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -814,11 +926,12 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
 #' @param z_range Flag indicating whether or not to output the elevation range raster.
 #' @param intensity_range Flag indicating whether or not to output the intensity range raster.
 #' @param predom_class Flag indicating whether or not to output the predominant classification raster.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, avg_points_per_pulse=TRUE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, verbose_mode=FALSE) {
+wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, avg_points_per_pulse=TRUE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -843,6 +956,9 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
   if (predom_class) {
     args <- paste(args, "--predom_class")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -861,11 +977,12 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
 #' @param model_size Acceptable model size.
 #' @param max_slope Maximum planar slope.
 #' @param classify Classify points as ground (2) or off-ground (1).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, verbose_mode=FALSE) {
+wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -891,6 +1008,9 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
   if (classify) {
     args <- paste(args, "--classify")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -912,11 +1032,12 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
 #' @param func_type Radial basis function type; options are 'ThinPlateSpline' (default), 'PolyHarmonic', 'Gaussian', 'MultiQuadric', 'InverseMultiQuadric'.
 #' @param poly_order Polynomial order; options are 'none' (default), 'constant', 'affine'.
 #' @param weight Weight parameter used in basis function.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, num_points=20, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=5, verbose_mode=FALSE) {
+wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, num_points=20, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=5, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -953,6 +1074,9 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
   if (!is.null(weight)) {
     args <- paste(args, paste0("--weight=", weight))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -965,17 +1089,21 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param include_z Include z-values in point comparison?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_mode=FALSE) {
+wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (include_z) {
     args <- paste(args, "--include_z")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -992,11 +1120,12 @@ wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, verbose_
 #' @param elev_diff Max. elevation difference.
 #' @param use_median Optional flag indicating whether to use the difference from median elevation rather than mean.
 #' @param classify Classify points as ground (2) or off-ground (1).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, use_median=FALSE, classify=TRUE, verbose_mode=FALSE) {
+wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, use_median=FALSE, classify=TRUE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1012,6 +1141,9 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
   }
   if (classify) {
     args <- paste(args, "--classify")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1034,11 +1166,12 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 #' @param maxzdiff Maximum difference in elevation (z units) between neighbouring points of the same segment.
 #' @param classes Segments don't cross class boundaries.
 #' @param ground Classify the largest segment as ground points?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=80.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, ground=FALSE, verbose_mode=FALSE) {
+wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=80.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, ground=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1073,6 +1206,9 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
   if (ground) {
     args <- paste(args, "--ground")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1088,11 +1224,12 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
 #' @param norm_diff Maximum difference in normal vectors, in degrees.
 #' @param maxzdiff Maximum difference in elevation (z units) between neighbouring points of the same segment.
 #' @param classify Classify points as ground (2) or off-ground (1).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, verbose_mode=FALSE) {
+wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1109,6 +1246,9 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
   if (classify) {
     args <- paste(args, "--classify")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1123,11 +1263,12 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
 #' @param resolution The size of the square area used to evaluate nearby points in the LiDAR data.
 #' @param method Point selection method; options are 'first', 'last', 'lowest' (default), 'highest', 'nearest'.
 #' @param save_filtered Save filtered points to seperate file?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, verbose_mode=FALSE) {
+wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1140,6 +1281,9 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
   }
   if (save_filtered) {
     args <- paste(args, "--save_filtered")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1155,11 +1299,12 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
 #' @param resolution Output raster's grid resolution.
 #' @param density Max. point density (points / m^3).
 #' @param save_filtered Save filtered points to seperate file?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, verbose_mode=FALSE) {
+wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1170,6 +1315,9 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
   }
   if (save_filtered) {
     args <- paste(args, "--save_filtered")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1186,11 +1334,12 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
 #' @param origin_x Origin point X coordinate for tile grid.
 #' @param origin_y Origin point Y coordinate for tile grid.
 #' @param min_points Minimum number of points contained in a tile for it to be saved.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, verbose_mode=FALSE) {
+wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1209,6 +1358,9 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
   if (!is.null(min_points)) {
     args <- paste(args, paste0("--min_points=", min_points))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1221,17 +1373,21 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
 #' @param input Input LiDAR file.
 #' @param output Output vector polygon file.
 #' @param hull Identify the convex hull around points.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, verbose_mode=FALSE) {
+wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (hull) {
     args <- paste(args, "--hull")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1251,11 +1407,12 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, verbose_mode=FAL
 #' @param minz Optional minimum elevation for inclusion in interpolation.
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
 #' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, verbose_mode=FALSE) {
+wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1283,6 +1440,9 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
   if (!is.null(max_triangle_edge_length)) {
     args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1295,17 +1455,21 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tophat_transform <- function(input, output, radius=1.0, verbose_mode=FALSE) {
+wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1319,17 +1483,21 @@ wbt_lidar_tophat_transform <- function(input, output, radius=1.0, verbose_mode=F
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_normal_vectors <- function(input, output, radius=1.0, verbose_mode=FALSE) {
+wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1343,16 +1511,20 @@ wbt_normal_vectors <- function(input, output, radius=1.0, verbose_mode=FALSE) {
 #' @param indir Input LAS file source directory.
 #' @param outdir Output directory into which LAS files within the polygon are copied.
 #' @param polygons Input vector polygons file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, verbose_mode=FALSE) {
+wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--indir=", indir))
   args <- paste(args, paste0("--outdir=", outdir))
   args <- paste(args, paste0("--polygons=", polygons))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }

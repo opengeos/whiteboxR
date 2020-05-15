@@ -4,12 +4,14 @@
 \alias{wbt_merge_vectors}
 \title{Merge vectors}
 \usage{
-wbt_merge_vectors(inputs, output, verbose_mode = FALSE)
+wbt_merge_vectors(inputs, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input vector files.}
 
 \item{output}{Output vector file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

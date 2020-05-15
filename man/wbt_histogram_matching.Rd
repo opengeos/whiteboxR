@@ -4,7 +4,13 @@
 \alias{wbt_histogram_matching}
 \title{Histogram matching}
 \usage{
-wbt_histogram_matching(input, histo_file, output, verbose_mode = FALSE)
+wbt_histogram_matching(
+  input,
+  histo_file,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_histogram_matching(input, histo_file, output, verbose_mode = FALSE)
 \item{histo_file}{Input reference probability distribution function (pdf) text file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

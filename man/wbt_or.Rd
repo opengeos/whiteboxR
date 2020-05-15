@@ -4,7 +4,7 @@
 \alias{wbt_or}
 \title{Or}
 \usage{
-wbt_or(input1, input2, output, verbose_mode = FALSE)
+wbt_or(input1, input2, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file.}
@@ -12,6 +12,8 @@ wbt_or(input1, input2, output, verbose_mode = FALSE)
 \item{input2}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

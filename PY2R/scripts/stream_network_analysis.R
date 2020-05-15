@@ -7,11 +7,12 @@
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -22,6 +23,9 @@ wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -36,11 +40,12 @@ wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
 #' @param output Output raster file.
 #' @param threshold Threshold in flow accumulation values for channelization.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--flow_accum=", flow_accum))
@@ -48,6 +53,9 @@ wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=F
   args <- paste(args, paste0("--threshold=", threshold))
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -63,11 +71,12 @@ wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=F
 #' @param variant Options include 'LQ' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'LQ'.
 #' @param line_thin Optional flag indicating whether post-processing line-thinning should be performed.
 #' @param filter Optional argument (only used when variant='lq') providing the filter size, in grid cells, used for lq-filtering (default is 5).
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filter=5, verbose_mode=FALSE) {
+wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filter=5, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -80,6 +89,9 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
   }
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -95,11 +107,12 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -110,6 +123,9 @@ wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE,
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -125,11 +141,12 @@ wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -140,6 +157,9 @@ wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -155,11 +175,12 @@ wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -170,6 +191,9 @@ wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -185,11 +209,12 @@ wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -200,6 +225,9 @@ wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -215,11 +243,12 @@ wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -230,6 +259,9 @@ wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -245,11 +277,12 @@ wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=
 #' @param dem Input raster DEM file.
 #' @param output Output HTML file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -258,6 +291,9 @@ wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, ver
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -273,11 +309,12 @@ wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, ver
 #' @param dem Input raster DEM file.
 #' @param output Output HTML file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -286,6 +323,9 @@ wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -300,11 +340,12 @@ wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param output Output vector file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--streams=", streams))
@@ -312,6 +353,9 @@ wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FAL
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -327,11 +371,12 @@ wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FAL
 #' @param output Output raster file.
 #' @param nodata Use NoData value for background?.
 #' @param feature_id Use feature number as output value?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FALSE, verbose_mode=FALSE) {
+wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--streams=", streams))
@@ -342,6 +387,9 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
   }
   if (feature_id) {
     args <- paste(args, "--feature_id")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -357,11 +405,12 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
 #' @param output Output raster file.
 #' @param min_length Minimum tributary length (in map units) used for network prunning.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -370,6 +419,9 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
   args <- paste(args, paste0("--min_length=", min_length))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -385,11 +437,12 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -400,6 +453,9 @@ wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALS
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -415,11 +471,12 @@ wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALS
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -430,6 +487,9 @@ wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE,
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -445,11 +505,12 @@ wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -460,6 +521,9 @@ wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -475,11 +539,12 @@ wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -490,6 +555,9 @@ wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -505,11 +573,12 @@ wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -520,6 +589,9 @@ wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zer
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -536,11 +608,12 @@ wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zer
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -552,6 +625,9 @@ wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE,
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -568,11 +644,12 @@ wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE,
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -584,6 +661,9 @@ wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -599,11 +679,12 @@ wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -614,6 +695,9 @@ wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FAL
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -629,11 +713,12 @@ wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FAL
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -644,6 +729,9 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

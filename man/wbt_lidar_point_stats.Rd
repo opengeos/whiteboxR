@@ -13,6 +13,7 @@ wbt_lidar_point_stats(
   z_range = FALSE,
   intensity_range = FALSE,
   predom_class = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -32,6 +33,8 @@ wbt_lidar_point_stats(
 \item{intensity_range}{Flag indicating whether or not to output the intensity range raster.}
 
 \item{predom_class}{Flag indicating whether or not to output the predominant classification raster.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

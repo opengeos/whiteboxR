@@ -9,6 +9,7 @@ wbt_snap_pour_points(
   flow_accum,
   output,
   snap_dist,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_snap_pour_points(
 \item{output}{Output vector file.}
 
 \item{snap_dist}{Maximum snap distance in map units.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

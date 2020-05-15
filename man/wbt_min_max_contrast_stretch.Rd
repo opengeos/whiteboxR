@@ -10,6 +10,7 @@ wbt_min_max_contrast_stretch(
   min_val,
   max_val,
   num_tones = 256,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_min_max_contrast_stretch(
 \item{max_val}{Upper tail clip value.}
 
 \item{num_tones}{Number of tones in the output image.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

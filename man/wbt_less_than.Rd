@@ -9,6 +9,7 @@ wbt_less_than(
   input2,
   output,
   incl_equals = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_less_than(
 \item{output}{Output raster file.}
 
 \item{incl_equals}{Perform a less-than-or-equal-to operation.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

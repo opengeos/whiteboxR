@@ -10,6 +10,7 @@ wbt_trend_surface_vector_points(
   output,
   cell_size,
   order = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_trend_surface_vector_points(
 \item{cell_size}{Optionally specified cell size of output raster. Not used when base raster is specified.}
 
 \item{order}{Polynomial order (1 to 10).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

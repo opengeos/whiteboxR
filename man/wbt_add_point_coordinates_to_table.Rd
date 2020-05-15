@@ -4,10 +4,12 @@
 \alias{wbt_add_point_coordinates_to_table}
 \title{Add point coordinates to table}
 \usage{
-wbt_add_point_coordinates_to_table(input, verbose_mode = FALSE)
+wbt_add_point_coordinates_to_table(input, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector Points file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

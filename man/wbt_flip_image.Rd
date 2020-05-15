@@ -4,7 +4,13 @@
 \alias{wbt_flip_image}
 \title{Flip image}
 \usage{
-wbt_flip_image(input, output, direction = "vertical", verbose_mode = FALSE)
+wbt_flip_image(
+  input,
+  output,
+  direction = "vertical",
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_flip_image(input, output, direction = "vertical", verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{direction}{Direction of reflection; options include 'v' (vertical), 'h' (horizontal), and 'b' (both).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

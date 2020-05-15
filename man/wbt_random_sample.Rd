@@ -4,7 +4,13 @@
 \alias{wbt_random_sample}
 \title{Random sample}
 \usage{
-wbt_random_sample(base, output, num_samples = 1000, verbose_mode = FALSE)
+wbt_random_sample(
+  base,
+  output,
+  num_samples = 1000,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{base}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_random_sample(base, output, num_samples = 1000, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{num_samples}{Number of samples.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

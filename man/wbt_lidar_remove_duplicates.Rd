@@ -8,6 +8,7 @@ wbt_lidar_remove_duplicates(
   input,
   output,
   include_z = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_lidar_remove_duplicates(
 \item{output}{Output LiDAR file.}
 
 \item{include_z}{Include z-values in point comparison?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

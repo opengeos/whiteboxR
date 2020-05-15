@@ -4,7 +4,13 @@
 \alias{wbt_percent_less_than}
 \title{Percent less than}
 \usage{
-wbt_percent_less_than(inputs, comparison, output, verbose_mode = FALSE)
+wbt_percent_less_than(
+  inputs,
+  comparison,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input raster files.}
@@ -12,6 +18,8 @@ wbt_percent_less_than(inputs, comparison, output, verbose_mode = FALSE)
 \item{comparison}{Input comparison raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

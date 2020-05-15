@@ -11,6 +11,7 @@ wbt_create_rectangular_vector_grid(
   height,
   xorig = 0,
   yorig = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_create_rectangular_vector_grid(
 \item{xorig}{The grid origin x-coordinate.}
 
 \item{yorig}{The grid origin y-coordinate.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

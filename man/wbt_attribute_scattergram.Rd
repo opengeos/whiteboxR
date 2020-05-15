@@ -10,6 +10,7 @@ wbt_attribute_scattergram(
   fieldy,
   output,
   trendline = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_attribute_scattergram(
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 
 \item{trendline}{Draw the trendline.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

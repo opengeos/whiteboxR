@@ -10,6 +10,7 @@ wbt_sediment_transport_index(
   output,
   sca_exponent = 0.4,
   slope_exponent = 1.3,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_sediment_transport_index(
 \item{sca_exponent}{SCA exponent value.}
 
 \item{slope_exponent}{Slope exponent value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

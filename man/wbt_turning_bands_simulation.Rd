@@ -9,6 +9,7 @@ wbt_turning_bands_simulation(
   output,
   range,
   iterations = 1000,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_turning_bands_simulation(
 \item{range}{The field's range, in xy-units, related to the extent of spatial autocorrelation.}
 
 \item{iterations}{The number of iterations.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

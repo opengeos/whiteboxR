@@ -17,6 +17,7 @@ wbt_lidar_segmentation(
   maxzdiff = 1,
   classes = FALSE,
   ground = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -44,6 +45,8 @@ wbt_lidar_segmentation(
 \item{classes}{Segments don't cross class boundaries.}
 
 \item{ground}{Classify the largest segment as ground points?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -9,6 +9,7 @@ wbt_impoundment_size_index(
   output,
   damlength,
   out_type = "depth",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_impoundment_size_index(
 \item{damlength}{Maximum length of the dam.}
 
 \item{out_type}{Output type; one of 'depth' (default), 'volume', and 'area'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

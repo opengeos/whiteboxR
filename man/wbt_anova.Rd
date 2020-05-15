@@ -4,7 +4,7 @@
 \alias{wbt_anova}
 \title{Anova}
 \usage{
-wbt_anova(input, features, output, verbose_mode = FALSE)
+wbt_anova(input, features, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +12,8 @@ wbt_anova(input, features, output, verbose_mode = FALSE)
 \item{features}{Feature definition (or class) raster.}
 
 \item{output}{Output HTML file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

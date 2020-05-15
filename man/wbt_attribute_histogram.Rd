@@ -4,7 +4,7 @@
 \alias{wbt_attribute_histogram}
 \title{Attribute histogram}
 \usage{
-wbt_attribute_histogram(input, field, output, verbose_mode = FALSE)
+wbt_attribute_histogram(input, field, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +12,8 @@ wbt_attribute_histogram(input, field, output, verbose_mode = FALSE)
 \item{field}{Input field name in attribute table.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

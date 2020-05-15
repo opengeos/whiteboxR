@@ -10,6 +10,7 @@ wbt_multiscale_topographic_position_image(
   broad,
   output,
   lightness = 1.2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_multiscale_topographic_position_image(
 \item{output}{Output raster file.}
 
 \item{lightness}{Image lightness value (default is 1.2).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

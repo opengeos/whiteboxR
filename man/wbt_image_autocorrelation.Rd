@@ -8,6 +8,7 @@ wbt_image_autocorrelation(
   inputs,
   output,
   contiguity = "Rook",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_image_autocorrelation(
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 
 \item{contiguity}{Contiguity type.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

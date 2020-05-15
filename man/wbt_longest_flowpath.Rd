@@ -4,7 +4,7 @@
 \alias{wbt_longest_flowpath}
 \title{Longest flowpath}
 \usage{
-wbt_longest_flowpath(dem, basins, output, verbose_mode = FALSE)
+wbt_longest_flowpath(dem, basins, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +12,8 @@ wbt_longest_flowpath(dem, basins, output, verbose_mode = FALSE)
 \item{basins}{Input raster basins file.}
 
 \item{output}{Output vector file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

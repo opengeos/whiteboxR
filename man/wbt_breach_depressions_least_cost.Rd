@@ -12,6 +12,7 @@ wbt_breach_depressions_least_cost(
   min_dist = TRUE,
   flat_increment = NULL,
   fill = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_breach_depressions_least_cost(
 \item{flat_increment}{Optional elevation increment applied to flat areas.}
 
 \item{fill}{Optional flag indicating whether to fill any remaining unbreached depressions.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

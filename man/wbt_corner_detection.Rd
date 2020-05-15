@@ -4,12 +4,14 @@
 \alias{wbt_corner_detection}
 \title{Corner detection}
 \usage{
-wbt_corner_detection(input, output, verbose_mode = FALSE)
+wbt_corner_detection(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input boolean image.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

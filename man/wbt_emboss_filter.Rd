@@ -9,6 +9,7 @@ wbt_emboss_filter(
   output,
   direction = "n",
   clip = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_emboss_filter(
 \item{direction}{Direction of reflection; options include 'n', 's', 'e', 'w', 'ne', 'se', 'nw', 'sw'.}
 
 \item{clip}{Optional amount to clip the distribution tails by, in percent.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

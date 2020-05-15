@@ -8,6 +8,7 @@ wbt_elevation_above_stream_euclidean(
   dem,
   streams,
   output,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_elevation_above_stream_euclidean(
 \item{streams}{Input raster streams file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_user_defined_weights_filter(
   output,
   center = "center",
   normalize = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_user_defined_weights_filter(
 \item{center}{Kernel center cell; options include 'center', 'upper-left', 'upper-right', 'lower-left', 'lower-right'.}
 
 \item{normalize}{Normalize kernel weights? This can reduce edge effects and lessen the impact of data gaps (nodata) but is not suited when the kernel weights sum to zero.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

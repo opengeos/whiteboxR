@@ -4,15 +4,19 @@
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_average_flowpath_slope <- function(dem, output, verbose_mode=FALSE) {
+wbt_average_flowpath_slope <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -24,15 +28,19 @@ wbt_average_flowpath_slope <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_average_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
+wbt_average_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -45,17 +53,21 @@ wbt_average_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE)
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_basins <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -72,11 +84,12 @@ wbt_basins <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #' @param max_length Optional maximum breach channel length (in grid cells; default is Inf).
 #' @param flat_increment Optional elevation increment applied to flat areas.
 #' @param fill_pits Optional flag indicating whether to fill single-cell pits.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, flat_increment=NULL, fill_pits=FALSE, verbose_mode=FALSE) {
+wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, flat_increment=NULL, fill_pits=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -92,6 +105,9 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
   }
   if (fill_pits) {
     args <- paste(args, "--fill_pits")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -109,11 +125,12 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 #' @param min_dist Optional flag indicating whether to minimize breach distances.
 #' @param flat_increment Optional elevation increment applied to flat areas.
 #' @param fill Optional flag indicating whether to fill any remaining unbreached depressions.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, min_dist=TRUE, flat_increment=NULL, fill=TRUE, verbose_mode=FALSE) {
+wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, min_dist=TRUE, flat_increment=NULL, fill=TRUE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -131,6 +148,9 @@ wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, 
   if (fill) {
     args <- paste(args, "--fill")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -142,15 +162,19 @@ wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, 
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_breach_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
+wbt_breach_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -165,11 +189,12 @@ wbt_breach_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
 #' @param roads Input vector roads file.
 #' @param output Output raster file.
 #' @param width Maximum road embankment width, in map units.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, verbose_mode=FALSE) {
+wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -178,6 +203,9 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, v
   args <- paste(args, paste0("--output=", output))
   if (!is.null(width)) {
     args <- paste(args, paste0("--width=", width))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -195,11 +223,12 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, v
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param pntr Is the input raster a D8 flow pointer rather than a DEM?.
 #' @param esri_pntr Input  D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE, clip=FALSE, pntr=FALSE, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE, clip=FALSE, pntr=FALSE, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -219,6 +248,9 @@ wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE,
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -233,11 +265,12 @@ wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE,
 #' @param efficiency Input efficiency raster file.
 #' @param absorption Input absorption raster file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=FALSE) {
+wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -245,6 +278,9 @@ wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbo
   args <- paste(args, paste0("--efficiency=", efficiency))
   args <- paste(args, paste0("--absorption=", absorption))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -257,17 +293,21 @@ wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, verbo
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -285,11 +325,12 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param pntr Is the input raster a D8 flow pointer rather than a DEM?.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, pntr=FALSE, verbose_mode=FALSE) {
+wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -309,6 +350,9 @@ wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contri
   if (pntr) {
     args <- paste(args, "--pntr")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -323,11 +367,12 @@ wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contri
 #' @param efficiency Input efficiency raster file.
 #' @param absorption Input absorption raster file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, verbose_mode=FALSE) {
+wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -335,6 +380,9 @@ wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, ve
   args <- paste(args, paste0("--efficiency=", efficiency))
   args <- paste(args, paste0("--absorption=", absorption))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -346,15 +394,19 @@ wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, ve
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_d_inf_pointer <- function(dem, output, verbose_mode=FALSE) {
+wbt_d_inf_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -367,17 +419,21 @@ wbt_d_inf_pointer <- function(dem, output, verbose_mode=FALSE) {
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param zero_background Flag indicating whether the background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -391,16 +447,20 @@ wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, verbose_mode=F
 #' @param dem Input raster DEM file.
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=FALSE) {
+wbt_downslope_distance_to_stream <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -415,11 +475,12 @@ wbt_downslope_distance_to_stream <- function(dem, streams, output, verbose_mode=
 #' @param weights Optional input weights raster file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=NULL, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=NULL, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -433,6 +494,9 @@ wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weig
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -445,16 +509,20 @@ wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weig
 #' @param dem Input raster DEM file.
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elevation_above_stream <- function(dem, streams, output, verbose_mode=FALSE) {
+wbt_elevation_above_stream <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -467,16 +535,20 @@ wbt_elevation_above_stream <- function(dem, streams, output, verbose_mode=FALSE)
 #' @param dem Input raster DEM file.
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elevation_above_stream_euclidean <- function(dem, streams, output, verbose_mode=FALSE) {
+wbt_elevation_above_stream_euclidean <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -493,11 +565,12 @@ wbt_elevation_above_stream_euclidean <- function(dem, streams, output, verbose_m
 #' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -517,6 +590,9 @@ wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributi
   if (clip) {
     args <- paste(args, "--clip")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -528,15 +604,19 @@ wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributi
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fd8_pointer <- function(dem, output, verbose_mode=FALSE) {
+wbt_fd8_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -549,16 +629,20 @@ wbt_fd8_pointer <- function(dem, output, verbose_mode=FALSE) {
 #' @param dem Input raster DEM file.
 #' @param streams Input vector streams file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
+wbt_fill_burn <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -573,11 +657,12 @@ wbt_fill_burn <- function(dem, streams, output, verbose_mode=FALSE) {
 #' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
 #' @param flat_increment Optional elevation increment applied to flat areas.
 #' @param max_depth Optional maximum depression depth to fill.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, max_depth=NULL, verbose_mode=FALSE) {
+wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, max_depth=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -590,6 +675,9 @@ wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NUL
   }
   if (!is.null(max_depth)) {
     args <- paste(args, paste0("--max_depth=", max_depth))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -604,11 +692,12 @@ wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NUL
 #' @param output Output raster file.
 #' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
 #' @param flat_increment Optional elevation increment applied to flat areas.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
+wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -618,6 +707,9 @@ wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRU
   }
   if (!is.null(flat_increment)) {
     args <- paste(args, paste0("--flat_increment=", flat_increment))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -632,11 +724,12 @@ wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRU
 #' @param output Output raster file.
 #' @param fix_flats Optional flag indicating whether flat areas should have a small gradient applied.
 #' @param flat_increment Optional elevation increment applied to flat areas.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, verbose_mode=FALSE) {
+wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -646,6 +739,9 @@ wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_
   }
   if (!is.null(flat_increment)) {
     args <- paste(args, paste0("--flat_increment=", flat_increment))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -658,15 +754,19 @@ wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
+wbt_fill_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -678,15 +778,19 @@ wbt_fill_single_cell_pits <- function(dem, output, verbose_mode=FALSE) {
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_no_flow_cells <- function(dem, output, verbose_mode=FALSE) {
+wbt_find_no_flow_cells <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -699,16 +803,20 @@ wbt_find_no_flow_cells <- function(dem, output, verbose_mode=FALSE) {
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=FALSE) {
+wbt_find_parallel_flow <- function(d8_pntr, streams, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -721,16 +829,20 @@ wbt_find_parallel_flow <- function(d8_pntr, streams, output, verbose_mode=FALSE)
 #' @param dem Input raster DEM file.
 #' @param lakes Input lakes vector polygons file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_flatten_lakes <- function(dem, lakes, output, verbose_mode=FALSE) {
+wbt_flatten_lakes <- function(dem, lakes, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--lakes=", lakes))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -742,15 +854,19 @@ wbt_flatten_lakes <- function(dem, lakes, output, verbose_mode=FALSE) {
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_flood_order <- function(dem, output, verbose_mode=FALSE) {
+wbt_flood_order <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -768,11 +884,12 @@ wbt_flood_order <- function(dem, output, verbose_mode=FALSE) {
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, out_type="Specific Contributing Area", log=FALSE, clip=FALSE, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, out_type="Specific Contributing Area", log=FALSE, clip=FALSE, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -791,6 +908,9 @@ wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accu
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -803,17 +923,21 @@ wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accu
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -828,11 +952,12 @@ wbt_flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, verbose_mode=
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -840,6 +965,9 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mo
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -854,11 +982,12 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mo
 #' @param output Output file.
 #' @param out_type Output type; one of 'depth' (default), 'volume', and 'area'.
 #' @param damlength Maximum length of the dam.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_impoundment_size_index <- function(dem, output, damlength, out_type="depth", verbose_mode=FALSE) {
+wbt_impoundment_size_index <- function(dem, output, damlength, out_type="depth", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -866,6 +995,9 @@ wbt_impoundment_size_index <- function(dem, output, damlength, out_type="depth",
   args <- paste(args, paste0("--damlength=", damlength))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -880,17 +1012,21 @@ wbt_impoundment_size_index <- function(dem, output, damlength, out_type="depth",
 #' @param dam_pts Input vector dam points file.
 #' @param output Output file.
 #' @param damlength Maximum length of the dam.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_insert_dams <- function(dem, dam_pts, output, damlength, verbose_mode=FALSE) {
+wbt_insert_dams <- function(dem, dam_pts, output, damlength, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--dam_pts=", dam_pts))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--damlength=", damlength))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -903,16 +1039,20 @@ wbt_insert_dams <- function(dem, dam_pts, output, damlength, verbose_mode=FALSE)
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param size Target basin size, in grid cells.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_isobasins <- function(dem, output, size, verbose_mode=FALSE) {
+wbt_isobasins <- function(dem, output, size, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--size=", size))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -926,17 +1066,21 @@ wbt_isobasins <- function(dem, output, size, verbose_mode=FALSE) {
 #' @param streams Input raster streams file.
 #' @param output Output vector file.
 #' @param snap_dist Maximum snap distance in map units.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, verbose_mode=FALSE) {
+wbt_jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--pour_pts=", pour_pts))
   args <- paste(args, paste0("--streams=", streams))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--snap_dist=", snap_dist))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -949,16 +1093,20 @@ wbt_jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, ve
 #' @param dem Input raster DEM file.
 #' @param basins Input raster basins file.
 #' @param output Output vector file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_longest_flowpath <- function(dem, basins, output, verbose_mode=FALSE) {
+wbt_longest_flowpath <- function(dem, basins, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--basins=", basins))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -970,15 +1118,19 @@ wbt_longest_flowpath <- function(dem, basins, output, verbose_mode=FALSE) {
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
+wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -995,11 +1147,12 @@ wbt_max_upslope_flowpath_length <- function(dem, output, verbose_mode=FALSE) {
 #' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, verbose_mode=FALSE) {
+wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1019,6 +1172,9 @@ wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contrib
   if (clip) {
     args <- paste(args, "--clip")
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1030,15 +1186,19 @@ wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contrib
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_num_inflowing_neighbours <- function(dem, output, verbose_mode=FALSE) {
+wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1053,11 +1213,12 @@ wbt_num_inflowing_neighbours <- function(dem, output, verbose_mode=FALSE) {
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param height Wall height.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbose_mode=FALSE) {
+wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1068,6 +1229,9 @@ wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbo
   }
   if (!is.null(height)) {
     args <- paste(args, paste0("--height=", height))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1081,17 +1245,21 @@ wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, verbo
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1105,17 +1273,21 @@ wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, verbose_mode=FALSE) {
 #' @param input Input raster DEM file.
 #' @param output Output raster file.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_sink <- function(input, output, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_sink <- function(input, output, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1130,17 +1302,21 @@ wbt_sink <- function(input, output, zero_background=FALSE, verbose_mode=FALSE) {
 #' @param flow_accum Input raster D8 flow accumulation file.
 #' @param output Output vector file.
 #' @param snap_dist Maximum snap distance in map units.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbose_mode=FALSE) {
+wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--pour_pts=", pour_pts))
   args <- paste(args, paste0("--flow_accum=", flow_accum))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--snap_dist=", snap_dist))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1155,11 +1331,12 @@ wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, verbos
 #' @param rmse The DEM's root-mean-square-error (RMSE), in z units. This determines error magnitude.
 #' @param range The error field's correlation length, in xy-units.
 #' @param iterations The number of iterations.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=100, verbose_mode=FALSE) {
+wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=100, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1168,6 +1345,9 @@ wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterati
   args <- paste(args, paste0("--range=", range))
   if (!is.null(iterations)) {
     args <- paste(args, paste0("--iterations=", iterations))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1182,11 +1362,12 @@ wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterati
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -1194,6 +1375,9 @@ wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE,
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1208,11 +1392,12 @@ wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -1220,6 +1405,9 @@ wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mod
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1235,11 +1423,12 @@ wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, verbose_mod
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param zero_background Flag indicating whether a background value of zero should be used.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE, zero_background=FALSE, verbose_mode=FALSE) {
+wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--seed_pts=", seed_pts))
@@ -1250,6 +1439,9 @@ wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=F
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1264,11 +1456,12 @@ wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=F
 #' @param pour_pts Input vector pour points (outlet) file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -1276,6 +1469,9 @@ wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbos
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1288,15 +1484,19 @@ wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbos
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_upslope_depression_storage <- function(dem, output, verbose_mode=FALSE) {
+wbt_upslope_depression_storage <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1310,11 +1510,12 @@ wbt_upslope_depression_storage <- function(dem, output, verbose_mode=FALSE) {
 #' @param pour_pts Input pour points (outlet) file.
 #' @param output Output raster file.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
+#' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mode=FALSE) {
+wbt_watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", d8_pntr))
@@ -1322,6 +1523,9 @@ wbt_watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, verbose_mo
   args <- paste(args, paste0("--output=", output))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

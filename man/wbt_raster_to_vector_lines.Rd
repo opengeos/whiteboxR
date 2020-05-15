@@ -4,12 +4,14 @@
 \alias{wbt_raster_to_vector_lines}
 \title{Raster to vector lines}
 \usage{
-wbt_raster_to_vector_lines(input, output, verbose_mode = FALSE)
+wbt_raster_to_vector_lines(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster lines file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,13 @@
 \alias{wbt_truncate}
 \title{Truncate}
 \usage{
-wbt_truncate(input, output, num_decimals = NULL, verbose_mode = FALSE)
+wbt_truncate(
+  input,
+  output,
+  num_decimals = NULL,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_truncate(input, output, num_decimals = NULL, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{num_decimals}{Number of decimals left after truncation (default is zero).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

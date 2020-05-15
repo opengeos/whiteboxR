@@ -8,6 +8,7 @@ wbt_elev_relative_to_watershed_min_max(
   dem,
   watersheds,
   output,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_elev_relative_to_watershed_min_max(
 \item{watersheds}{Input raster watersheds file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

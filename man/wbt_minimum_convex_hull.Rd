@@ -4,7 +4,13 @@
 \alias{wbt_minimum_convex_hull}
 \title{Minimum convex hull}
 \usage{
-wbt_minimum_convex_hull(input, output, features = TRUE, verbose_mode = FALSE)
+wbt_minimum_convex_hull(
+  input,
+  output,
+  features = TRUE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -12,6 +18,8 @@ wbt_minimum_convex_hull(input, output, features = TRUE, verbose_mode = FALSE)
 \item{output}{Output vector polygon file.}
 
 \item{features}{Find the hulls around each vector feature.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

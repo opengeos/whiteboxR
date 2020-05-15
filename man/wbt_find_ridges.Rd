@@ -4,7 +4,7 @@
 \alias{wbt_find_ridges}
 \title{Find ridges}
 \usage{
-wbt_find_ridges(dem, output, line_thin = TRUE, verbose_mode = FALSE)
+wbt_find_ridges(dem, output, line_thin = TRUE, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +12,8 @@ wbt_find_ridges(dem, output, line_thin = TRUE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{line_thin}{Optional flag indicating whether post-processing line-thinning should be performed.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

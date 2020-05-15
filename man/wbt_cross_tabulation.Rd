@@ -4,7 +4,7 @@
 \alias{wbt_cross_tabulation}
 \title{Cross tabulation}
 \usage{
-wbt_cross_tabulation(input1, input2, output, verbose_mode = FALSE)
+wbt_cross_tabulation(input1, input2, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file 1.}
@@ -12,6 +12,8 @@ wbt_cross_tabulation(input1, input2, output, verbose_mode = FALSE)
 \item{input2}{Input raster file 1.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

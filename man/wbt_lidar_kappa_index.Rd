@@ -10,6 +10,7 @@ wbt_lidar_kappa_index(
   output,
   class_accuracy,
   resolution = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_lidar_kappa_index(
 \item{class_accuracy}{Output classification accuracy raster file.}
 
 \item{resolution}{Output raster's grid resolution.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

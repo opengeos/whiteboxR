@@ -10,6 +10,7 @@ wbt_sigmoidal_contrast_stretch(
   cutoff = 0,
   gain = 1,
   num_tones = 256,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_sigmoidal_contrast_stretch(
 \item{gain}{Gain value.}
 
 \item{num_tones}{Number of tones in the output image.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

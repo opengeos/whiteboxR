@@ -11,6 +11,7 @@ wbt_breach_depressions(
   max_length = NULL,
   flat_increment = NULL,
   fill_pits = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_breach_depressions(
 \item{flat_increment}{Optional elevation increment applied to flat areas.}
 
 \item{fill_pits}{Optional flag indicating whether to fill single-cell pits.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

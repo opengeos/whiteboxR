@@ -4,7 +4,14 @@
 \alias{wbt_clump}
 \title{Clump}
 \usage{
-wbt_clump(input, output, diag = TRUE, zero_back = FALSE, verbose_mode = FALSE)
+wbt_clump(
+  input,
+  output,
+  diag = TRUE,
+  zero_back = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -14,6 +21,8 @@ wbt_clump(input, output, diag = TRUE, zero_back = FALSE, verbose_mode = FALSE)
 \item{diag}{Flag indicating whether diagonal connections should be considered.}
 
 \item{zero_back}{Flag indicating whether zero values should be treated as a background.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

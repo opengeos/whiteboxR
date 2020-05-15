@@ -9,6 +9,7 @@ wbt_aggregate_raster(
   output,
   agg_factor = 2,
   type = "mean",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_aggregate_raster(
 \item{agg_factor}{Aggregation factor, in pixels.}
 
 \item{type}{Statistic used to fill output pixels.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

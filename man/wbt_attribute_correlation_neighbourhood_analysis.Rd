@@ -11,6 +11,7 @@ wbt_attribute_correlation_neighbourhood_analysis(
   radius = NULL,
   min_points = NULL,
   stat = "pearson",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_attribute_correlation_neighbourhood_analysis(
 \item{min_points}{Minimum number of points.}
 
 \item{stat}{Correlation type; one of 'pearson' (default) and 'spearman'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,13 @@
 \alias{wbt_filter_lidar_scan_angles}
 \title{Filter lidar scan angles}
 \usage{
-wbt_filter_lidar_scan_angles(input, output, threshold, verbose_mode = FALSE)
+wbt_filter_lidar_scan_angles(
+  input,
+  output,
+  threshold,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -12,6 +18,8 @@ wbt_filter_lidar_scan_angles(input, output, threshold, verbose_mode = FALSE)
 \item{output}{Output LiDAR file.}
 
 \item{threshold}{Scan angle threshold.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

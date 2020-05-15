@@ -4,7 +4,14 @@
 \alias{wbt_stream_power_index}
 \title{Stream power index}
 \usage{
-wbt_stream_power_index(sca, slope, output, exponent = 1, verbose_mode = FALSE)
+wbt_stream_power_index(
+  sca,
+  slope,
+  output,
+  exponent = 1,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}
@@ -14,6 +21,8 @@ wbt_stream_power_index(sca, slope, output, exponent = 1, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{exponent}{SCA exponent value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

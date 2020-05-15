@@ -8,6 +8,7 @@ wbt_find_lowest_or_highest_points(
   input,
   output,
   out_type = "lowest",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_find_lowest_or_highest_points(
 \item{output}{Output vector points file.}
 
 \item{out_type}{Output type; one of 'area' (default) and 'volume'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

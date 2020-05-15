@@ -4,7 +4,7 @@
 \alias{wbt_count_if}
 \title{Count if}
 \usage{
-wbt_count_if(inputs, output, value, verbose_mode = FALSE)
+wbt_count_if(inputs, output, value, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
@@ -12,6 +12,8 @@ wbt_count_if(inputs, output, value, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{value}{Search value (e.g. countif value = 5.0).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

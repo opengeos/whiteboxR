@@ -12,6 +12,7 @@ wbt_image_regression(
   standardize = FALSE,
   scattergram = FALSE,
   num_samples = 1000,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_image_regression(
 \item{scattergram}{Optional flag indicating whether to output a scattergram.}
 
 \item{num_samples}{Number of samples used to create scattergram.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

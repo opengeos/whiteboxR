@@ -4,12 +4,14 @@
 \alias{wbt_polygon_short_axis}
 \title{Polygon short axis}
 \usage{
-wbt_polygon_short_axis(input, output, verbose_mode = FALSE)
+wbt_polygon_short_axis(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygons file.}
 
 \item{output}{Output vector polygon file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_lidar_thin(
   resolution = 2,
   method = "lowest",
   save_filtered = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_lidar_thin(
 \item{method}{Point selection method; options are 'first', 'last', 'lowest' (default), 'highest', 'nearest'.}
 
 \item{save_filtered}{Save filtered points to seperate file?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

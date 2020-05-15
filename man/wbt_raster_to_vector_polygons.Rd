@@ -4,12 +4,14 @@
 \alias{wbt_raster_to_vector_polygons}
 \title{Raster to vector polygons}
 \usage{
-wbt_raster_to_vector_polygons(input, output, verbose_mode = FALSE)
+wbt_raster_to_vector_polygons(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output vector polygons file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

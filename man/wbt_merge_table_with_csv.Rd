@@ -10,6 +10,7 @@ wbt_merge_table_with_csv(
   csv,
   fkey,
   import_field = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_merge_table_with_csv(
 \item{fkey}{Foreign key field.}
 
 \item{import_field}{Imported field (all fields will be imported if not specified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

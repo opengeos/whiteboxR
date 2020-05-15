@@ -9,6 +9,7 @@ wbt_classify_overlap_points(
   output,
   resolution = 2,
   filter = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_classify_overlap_points(
 \item{resolution}{The size of the square area used to evaluate nearby points in the LiDAR data.}
 
 \item{filter}{Filter out points from overlapping flightlines? If false, overlaps will simply be classified.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

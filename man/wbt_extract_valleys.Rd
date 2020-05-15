@@ -10,6 +10,7 @@ wbt_extract_valleys(
   variant = "LQ",
   line_thin = TRUE,
   filter = 5,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_extract_valleys(
 \item{line_thin}{Optional flag indicating whether post-processing line-thinning should be performed.}
 
 \item{filter}{Optional argument (only used when variant='lq') providing the filter size, in grid cells, used for lq-filtering (default is 5).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

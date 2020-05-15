@@ -4,7 +4,13 @@
 \alias{wbt_gamma_correction}
 \title{Gamma correction}
 \usage{
-wbt_gamma_correction(input, output, gamma = 0.5, verbose_mode = FALSE)
+wbt_gamma_correction(
+  input,
+  output,
+  gamma = 0.5,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_gamma_correction(input, output, gamma = 0.5, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{gamma}{Gamma value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

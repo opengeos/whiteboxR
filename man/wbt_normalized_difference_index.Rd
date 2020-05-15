@@ -10,6 +10,7 @@ wbt_normalized_difference_index(
   output,
   clip = 0,
   correction = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_normalized_difference_index(
 \item{clip}{Optional amount to clip the distribution tails by, in percent.}
 
 \item{correction}{Optional adjustment value (e.g. 1, or 0.16 for the optimal soil adjusted vegetation index, OSAVI).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

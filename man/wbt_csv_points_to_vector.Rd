@@ -10,6 +10,7 @@ wbt_csv_points_to_vector(
   xfield = 0,
   yfield = 1,
   epsg = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_csv_points_to_vector(
 \item{yfield}{Y field number (e.g. 1 for second field).}
 
 \item{epsg}{EPSG projection (e.g. 2958).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

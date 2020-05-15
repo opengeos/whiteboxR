@@ -12,6 +12,7 @@ wbt_tin_gridding(
   resolution = NULL,
   base = NULL,
   max_triangle_edge_length = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_tin_gridding(
 \item{base}{Optionally specified input base raster file. Not used when a cell size is specified.}
 
 \item{max_triangle_edge_length}{Optional maximum triangle edge length; triangles larger than this size will not be gridded.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_rasterize_streams(
   output,
   nodata = TRUE,
   feature_id = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_rasterize_streams(
 \item{nodata}{Use NoData value for background?.}
 
 \item{feature_id}{Use feature number as output value?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

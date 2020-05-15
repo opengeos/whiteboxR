@@ -10,6 +10,7 @@ wbt_long_profile_from_points(
   dem,
   output,
   esri_pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_long_profile_from_points(
 \item{output}{Output HTML file.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

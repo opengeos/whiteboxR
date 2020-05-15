@@ -4,12 +4,14 @@
 \alias{wbt_extract_nodes}
 \title{Extract nodes}
 \usage{
-wbt_extract_nodes(input, output, verbose_mode = FALSE)
+wbt_extract_nodes(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector lines or polygon file.}
 
 \item{output}{Output vector points file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

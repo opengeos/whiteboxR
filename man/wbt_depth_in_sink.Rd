@@ -4,7 +4,13 @@
 \alias{wbt_depth_in_sink}
 \title{Depth in sink}
 \usage{
-wbt_depth_in_sink(dem, output, zero_background = FALSE, verbose_mode = FALSE)
+wbt_depth_in_sink(
+  dem,
+  output,
+  zero_background = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +18,8 @@ wbt_depth_in_sink(dem, output, zero_background = FALSE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{zero_background}{Flag indicating whether the background value of zero should be used.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

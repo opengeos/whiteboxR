@@ -4,12 +4,14 @@
 \alias{wbt_root_mean_square_error}
 \title{Root mean square error}
 \usage{
-wbt_root_mean_square_error(input, base, verbose_mode = FALSE)
+wbt_root_mean_square_error(input, base, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{base}{Input base raster file used for comparison.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

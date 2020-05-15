@@ -8,6 +8,7 @@ wbt_single_part_to_multi_part(
   input,
   output,
   field = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_single_part_to_multi_part(
 \item{output}{Output vector line or polygon file.}
 
 \item{field}{Grouping ID field name in attribute table.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

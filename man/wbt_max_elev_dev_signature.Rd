@@ -11,6 +11,7 @@ wbt_max_elev_dev_signature(
   min_scale,
   max_scale,
   step = 10,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_max_elev_dev_signature(
 \item{max_scale}{Maximum search neighbourhood radius in grid cells.}
 
 \item{step}{Step size as any positive non-zero integer.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

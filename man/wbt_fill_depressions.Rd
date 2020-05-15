@@ -10,6 +10,7 @@ wbt_fill_depressions(
   fix_flats = TRUE,
   flat_increment = NULL,
   max_depth = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_fill_depressions(
 \item{flat_increment}{Optional elevation increment applied to flat areas.}
 
 \item{max_depth}{Optional maximum depression depth to fill.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

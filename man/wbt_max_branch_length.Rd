@@ -4,7 +4,13 @@
 \alias{wbt_max_branch_length}
 \title{Max branch length}
 \usage{
-wbt_max_branch_length(dem, output, log = FALSE, verbose_mode = FALSE)
+wbt_max_branch_length(
+  dem,
+  output,
+  log = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +18,8 @@ wbt_max_branch_length(dem, output, log = FALSE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{log}{Optional flag to request the output be log-transformed.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

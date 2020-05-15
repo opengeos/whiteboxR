@@ -10,6 +10,7 @@ wbt_line_detection_filter(
   variant = "vertical",
   absvals = FALSE,
   clip = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_line_detection_filter(
 \item{absvals}{Optional flag indicating whether outputs should be absolute values.}
 
 \item{clip}{Optional amount to clip the distribution tails by, in percent.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

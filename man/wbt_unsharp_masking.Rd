@@ -10,6 +10,7 @@ wbt_unsharp_masking(
   sigma = 0.75,
   amount = 100,
   threshold = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_unsharp_masking(
 \item{amount}{A percentage and controls the magnitude of each overshoot.}
 
 \item{threshold}{Controls the minimal brightness change that will be sharpened.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,13 @@
 \alias{wbt_select_tiles_by_polygon}
 \title{Select tiles by polygon}
 \usage{
-wbt_select_tiles_by_polygon(indir, outdir, polygons, verbose_mode = FALSE)
+wbt_select_tiles_by_polygon(
+  indir,
+  outdir,
+  polygons,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{indir}{Input LAS file source directory.}
@@ -12,6 +18,8 @@ wbt_select_tiles_by_polygon(indir, outdir, polygons, verbose_mode = FALSE)
 \item{outdir}{Output directory into which LAS files within the polygon are copied.}
 
 \item{polygons}{Input vector polygons file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

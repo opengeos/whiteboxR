@@ -9,6 +9,7 @@ wbt_fill_depressions_wang_and_liu(
   output,
   fix_flats = TRUE,
   flat_increment = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_fill_depressions_wang_and_liu(
 \item{fix_flats}{Optional flag indicating whether flat areas should have a small gradient applied.}
 
 \item{flat_increment}{Optional elevation increment applied to flat areas.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

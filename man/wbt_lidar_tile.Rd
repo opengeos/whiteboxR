@@ -11,6 +11,7 @@ wbt_lidar_tile(
   origin_x = 0,
   origin_y = 0,
   min_points = 2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_lidar_tile(
 \item{origin_y}{Origin point Y coordinate for tile grid.}
 
 \item{min_points}{Minimum number of points contained in a tile for it to be saved.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

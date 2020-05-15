@@ -4,12 +4,14 @@
 \alias{wbt_average_overlay}
 \title{Average overlay}
 \usage{
-wbt_average_overlay(inputs, output, verbose_mode = FALSE)
+wbt_average_overlay(inputs, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

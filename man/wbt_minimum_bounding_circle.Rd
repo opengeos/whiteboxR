@@ -8,6 +8,7 @@ wbt_minimum_bounding_circle(
   input,
   output,
   features = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_minimum_bounding_circle(
 \item{output}{Output vector polygon file.}
 
 \item{features}{Find the minimum bounding circle around each individual vector feature.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

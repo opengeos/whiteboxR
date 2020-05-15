@@ -9,6 +9,7 @@ wbt_write_function_memory_insertion(
   input2,
   output,
   input3 = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_write_function_memory_insertion(
 \item{output}{Output raster file.}
 
 \item{input3}{Optional input raster file associated with the third date.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

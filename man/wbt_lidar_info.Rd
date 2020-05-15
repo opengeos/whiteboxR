@@ -9,6 +9,7 @@ wbt_lidar_info(
   output = NULL,
   vlr = TRUE,
   geokeys = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_lidar_info(
 \item{vlr}{Flag indicating whether or not to print the variable length records (VLRs).}
 
 \item{geokeys}{Flag indicating whether or not to print the geokeys.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

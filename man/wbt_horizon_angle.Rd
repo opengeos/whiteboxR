@@ -9,6 +9,7 @@ wbt_horizon_angle(
   output,
   azimuth = 0,
   max_dist = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_horizon_angle(
 \item{azimuth}{Wind azimuth in degrees.}
 
 \item{max_dist}{Optional maximum search distance (unspecified if none; in xy units).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

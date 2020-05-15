@@ -13,6 +13,7 @@ wbt_flow_accumulation_full_workflow(
   log = FALSE,
   clip = FALSE,
   esri_pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -32,6 +33,8 @@ wbt_flow_accumulation_full_workflow(
 \item{clip}{Optional flag to request clipping the display max by 1 percent.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

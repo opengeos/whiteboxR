@@ -9,6 +9,7 @@ wbt_diff_of_gaussian_filter(
   output,
   sigma1 = 2,
   sigma2 = 4,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_diff_of_gaussian_filter(
 \item{sigma1}{Standard deviation distance in pixels.}
 
 \item{sigma2}{Standard deviation distance in pixels.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

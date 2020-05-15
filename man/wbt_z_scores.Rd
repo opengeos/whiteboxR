@@ -4,12 +4,14 @@
 \alias{wbt_z_scores}
 \title{Z scores}
 \usage{
-wbt_z_scores(input, output, verbose_mode = FALSE)
+wbt_z_scores(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }
@@ -18,10 +20,4 @@ Returns the tool text outputs.
 }
 \description{
 Standardizes the values in an input raster by converting to z-scores.
-}
-\examples{
-\dontrun{
-dem <- system.file("extdata", "DEM.tif", package="whitebox")
-wbt_z_scores(input = dem, output = 'output.tif')
-}
 }

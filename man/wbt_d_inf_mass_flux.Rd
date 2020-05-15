@@ -10,6 +10,7 @@ wbt_d_inf_mass_flux(
   efficiency,
   absorption,
   output,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_d_inf_mass_flux(
 \item{absorption}{Input absorption raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_find_flightline_edge_points}
 \title{Find flightline edge points}
 \usage{
-wbt_find_flightline_edge_points(input, output, verbose_mode = FALSE)
+wbt_find_flightline_edge_points(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
 
 \item{output}{Output file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

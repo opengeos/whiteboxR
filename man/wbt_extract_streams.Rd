@@ -9,6 +9,7 @@ wbt_extract_streams(
   output,
   threshold,
   zero_background = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_extract_streams(
 \item{threshold}{Threshold in flow accumulation values for channelization.}
 
 \item{zero_background}{Flag indicating whether a background value of zero should be used.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_raise_walls(
   output,
   breach = NULL,
   height = 100,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_raise_walls(
 \item{breach}{Optional input vector breach lines.}
 
 \item{height}{Wall height.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

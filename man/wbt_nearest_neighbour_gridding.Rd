@@ -12,6 +12,7 @@ wbt_nearest_neighbour_gridding(
   cell_size = NULL,
   base = NULL,
   max_dist = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_nearest_neighbour_gridding(
 \item{base}{Optionally specified input base raster file. Not used when a cell size is specified.}
 
 \item{max_dist}{Maximum search distance (optional).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_create_plane(
   gradient = 15,
   aspect = 90,
   constant = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_create_plane(
 \item{aspect}{Aspect (direction) in degrees clockwise from north (0.0-360.0).}
 
 \item{constant}{Constant value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

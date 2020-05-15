@@ -12,6 +12,7 @@ wbt_panchromatic_sharpening(
   blue = NULL,
   composite = NULL,
   method = "brovey",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_panchromatic_sharpening(
 \item{composite}{Input colour-composite image file. Only used if individual bands are not specified.}
 
 \item{method}{Options include 'brovey' (default) and 'ihs'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_raster_to_vector_points}
 \title{Raster to vector points}
 \usage{
-wbt_raster_to_vector_points(input, output, verbose_mode = FALSE)
+wbt_raster_to_vector_points(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output vector points file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

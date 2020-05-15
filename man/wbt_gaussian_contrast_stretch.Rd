@@ -8,6 +8,7 @@ wbt_gaussian_contrast_stretch(
   input,
   output,
   num_tones = 256,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_gaussian_contrast_stretch(
 \item{output}{Output raster file.}
 
 \item{num_tones}{Number of tones in the output image.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

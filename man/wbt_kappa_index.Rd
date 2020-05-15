@@ -4,7 +4,7 @@
 \alias{wbt_kappa_index}
 \title{Kappa index}
 \usage{
-wbt_kappa_index(input1, input2, output, verbose_mode = FALSE)
+wbt_kappa_index(input1, input2, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input classification raster file.}
@@ -12,6 +12,8 @@ wbt_kappa_index(input1, input2, output, verbose_mode = FALSE)
 \item{input2}{Input reference raster file.}
 
 \item{output}{Output HTML file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

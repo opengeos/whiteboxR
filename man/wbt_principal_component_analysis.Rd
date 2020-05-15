@@ -9,6 +9,7 @@ wbt_principal_component_analysis(
   output,
   num_comp = NULL,
   standardized = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_principal_component_analysis(
 \item{num_comp}{Number of component images to output; <= to num. input images.}
 
 \item{standardized}{Perform standardized PCA?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

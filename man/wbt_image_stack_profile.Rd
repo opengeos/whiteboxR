@@ -4,7 +4,13 @@
 \alias{wbt_image_stack_profile}
 \title{Image stack profile}
 \usage{
-wbt_image_stack_profile(inputs, points, output, verbose_mode = FALSE)
+wbt_image_stack_profile(
+  inputs,
+  points,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input multispectral image files.}
@@ -12,6 +18,8 @@ wbt_image_stack_profile(inputs, points, output, verbose_mode = FALSE)
 \item{points}{Input vector points file.}
 
 \item{output}{Output HTML file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

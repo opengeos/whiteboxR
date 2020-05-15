@@ -4,12 +4,14 @@
 \alias{wbt_raster_histogram}
 \title{Raster histogram}
 \usage{
-wbt_raster_histogram(input, output, verbose_mode = FALSE)
+wbt_raster_histogram(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

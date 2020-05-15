@@ -4,7 +4,13 @@
 \alias{wbt_edge_proportion}
 \title{Edge proportion}
 \usage{
-wbt_edge_proportion(input, output, output_text = FALSE, verbose_mode = FALSE)
+wbt_edge_proportion(
+  input,
+  output,
+  output_text = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_edge_proportion(input, output, output_text = FALSE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{output_text}{flag indicating whether a text report should also be output.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

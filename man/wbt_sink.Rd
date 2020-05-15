@@ -4,7 +4,13 @@
 \alias{wbt_sink}
 \title{Sink}
 \usage{
-wbt_sink(input, output, zero_background = FALSE, verbose_mode = FALSE)
+wbt_sink(
+  input,
+  output,
+  zero_background = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster DEM file.}
@@ -12,6 +18,8 @@ wbt_sink(input, output, zero_background = FALSE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{zero_background}{Flag indicating whether a background value of zero should be used.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

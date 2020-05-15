@@ -4,7 +4,7 @@
 \alias{wbt_line_intersections}
 \title{Line intersections}
 \usage{
-wbt_line_intersections(input1, input2, output, verbose_mode = FALSE)
+wbt_line_intersections(input1, input2, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input vector polyline file.}
@@ -12,6 +12,8 @@ wbt_line_intersections(input1, input2, output, verbose_mode = FALSE)
 \item{input2}{Input vector polyline file.}
 
 \item{output}{Output vector point file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

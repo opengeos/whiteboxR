@@ -9,6 +9,7 @@ wbt_visibility_index(
   output,
   height = 2,
   res_factor = 2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_visibility_index(
 \item{height}{Viewing station height, in z units.}
 
 \item{res_factor}{The resolution factor determines the density of measured viewsheds.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -11,6 +11,7 @@ wbt_image_correlation_neighbourhood_analysis(
   output2,
   filter = 11,
   stat = "pearson",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_image_correlation_neighbourhood_analysis(
 \item{filter}{Size of the filter kernel.}
 
 \item{stat}{Correlation type; one of 'pearson' (default) and 'spearman'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

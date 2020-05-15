@@ -8,6 +8,7 @@ wbt_filter_lidar_classes(
   input,
   output,
   exclude_cls = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_filter_lidar_classes(
 \item{output}{Output LiDAR file.}
 
 \item{exclude_cls}{Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

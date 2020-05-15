@@ -4,12 +4,19 @@
 \alias{wbt_find_patch_or_class_edge_cells}
 \title{Find patch or class edge cells}
 \usage{
-wbt_find_patch_or_class_edge_cells(input, output, verbose_mode = FALSE)
+wbt_find_patch_or_class_edge_cells(
+  input,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

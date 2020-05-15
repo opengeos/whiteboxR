@@ -8,6 +8,7 @@
 [![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR)
 [![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://codecov.io/gh/giswqs/whiteboxR)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Twitter Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
 [![CRAN download count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
 

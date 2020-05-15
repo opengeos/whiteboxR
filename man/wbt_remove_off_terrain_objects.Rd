@@ -9,6 +9,7 @@ wbt_remove_off_terrain_objects(
   output,
   filter = 11,
   slope = 15,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_remove_off_terrain_objects(
 \item{filter}{Filter size (cells).}
 
 \item{slope}{Slope threshold value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

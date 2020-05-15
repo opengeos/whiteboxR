@@ -11,6 +11,7 @@ wbt_pennock_landform_class(
   prof = 0.1,
   plan = 0,
   zfactor = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_pennock_landform_class(
 \item{plan}{Plan curvature threshold value (default is 0.0).}
 
 \item{zfactor}{Optional multiplier for when the vertical and horizontal units are not the same.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

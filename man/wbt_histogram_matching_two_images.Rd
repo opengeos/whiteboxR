@@ -4,7 +4,13 @@
 \alias{wbt_histogram_matching_two_images}
 \title{Histogram matching two images}
 \usage{
-wbt_histogram_matching_two_images(input1, input2, output, verbose_mode = FALSE)
+wbt_histogram_matching_two_images(
+  input1,
+  input2,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input raster file to modify.}
@@ -12,6 +18,8 @@ wbt_histogram_matching_two_images(input1, input2, output, verbose_mode = FALSE)
 \item{input2}{Input reference raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

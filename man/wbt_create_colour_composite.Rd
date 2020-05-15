@@ -12,6 +12,7 @@ wbt_create_colour_composite(
   opacity = NULL,
   enhance = TRUE,
   zeros = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_create_colour_composite(
 \item{enhance}{Optional flag indicating whether a balance contrast enhancement is performed.}
 
 \item{zeros}{Optional flag to indicate if zeros are nodata values.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

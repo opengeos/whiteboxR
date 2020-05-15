@@ -8,6 +8,7 @@ wbt_balance_contrast_enhancement(
   input,
   output,
   band_mean = 100,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_balance_contrast_enhancement(
 \item{output}{Output raster file.}
 
 \item{band_mean}{Band mean value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

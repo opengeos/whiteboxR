@@ -10,6 +10,7 @@ wbt_k_nearest_mean_filter(
   filterx = 11,
   filtery = 11,
   k = 5,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_k_nearest_mean_filter(
 \item{filtery}{Size of the filter kernel in the y-direction.}
 
 \item{k}{k-value in pixels; this is the number of nearest-valued neighbours to use.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

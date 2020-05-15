@@ -9,6 +9,7 @@ wbt_split_colour_composite(
   red = NULL,
   green = NULL,
   blue = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_split_colour_composite(
 \item{green}{Output green band file.}
 
 \item{blue}{Output blue band file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

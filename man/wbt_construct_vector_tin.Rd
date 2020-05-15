@@ -10,6 +10,7 @@ wbt_construct_vector_tin(
   field = NULL,
   use_z = FALSE,
   max_triangle_edge_length = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_construct_vector_tin(
 \item{use_z}{Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.}
 
 \item{max_triangle_edge_length}{Optional maximum triangle edge length; triangles larger than this size will not be gridded.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

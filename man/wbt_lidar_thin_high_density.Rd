@@ -10,6 +10,7 @@ wbt_lidar_thin_high_density(
   density,
   resolution = 1,
   save_filtered = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_lidar_thin_high_density(
 \item{resolution}{Output raster's grid resolution.}
 
 \item{save_filtered}{Save filtered points to seperate file?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

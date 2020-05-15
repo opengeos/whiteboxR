@@ -4,7 +4,13 @@
 \alias{wbt_classify_buildings_in_lidar}
 \title{Classify buildings in lidar}
 \usage{
-wbt_classify_buildings_in_lidar(input, buildings, output, verbose_mode = FALSE)
+wbt_classify_buildings_in_lidar(
+  input,
+  buildings,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -12,6 +18,8 @@ wbt_classify_buildings_in_lidar(input, buildings, output, verbose_mode = FALSE)
 \item{buildings}{Input vector polygons file.}
 
 \item{output}{Output LiDAR file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

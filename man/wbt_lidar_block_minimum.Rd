@@ -8,6 +8,7 @@ wbt_lidar_block_minimum(
   input,
   output = NULL,
   resolution = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_lidar_block_minimum(
 \item{output}{Output file.}
 
 \item{resolution}{Output raster's grid resolution.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

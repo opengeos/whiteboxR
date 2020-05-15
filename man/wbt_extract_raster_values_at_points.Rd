@@ -8,6 +8,7 @@ wbt_extract_raster_values_at_points(
   inputs,
   points,
   out_text = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_extract_raster_values_at_points(
 \item{points}{Input vector points file.}
 
 \item{out_text}{Output point values as text? Otherwise, the only output is to to the points file's attribute table.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

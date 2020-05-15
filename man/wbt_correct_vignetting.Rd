@@ -11,6 +11,7 @@ wbt_correct_vignetting(
   focal_length = 304.8,
   image_width = 228.6,
   n = 4,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_correct_vignetting(
 \item{image_width}{Distance between photograph edges, in millimeters.}
 
 \item{n}{The 'n' parameter.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_max_downslope_elev_change}
 \title{Max downslope elev change}
 \usage{
-wbt_max_downslope_elev_change(dem, output, verbose_mode = FALSE)
+wbt_max_downslope_elev_change(dem, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

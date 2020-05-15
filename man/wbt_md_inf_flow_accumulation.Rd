@@ -12,6 +12,7 @@ wbt_md_inf_flow_accumulation(
   threshold = NULL,
   log = FALSE,
   clip = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_md_inf_flow_accumulation(
 \item{log}{Optional flag to request the output be log-transformed.}
 
 \item{clip}{Optional flag to request clipping the display max by 1 percent.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,13 @@
 \alias{wbt_erase_polygon_from_raster}
 \title{Erase polygon from raster}
 \usage{
-wbt_erase_polygon_from_raster(input, polygons, output, verbose_mode = FALSE)
+wbt_erase_polygon_from_raster(
+  input,
+  polygons,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_erase_polygon_from_raster(input, polygons, output, verbose_mode = FALSE)
 \item{polygons}{Input vector polygons file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

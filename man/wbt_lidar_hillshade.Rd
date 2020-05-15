@@ -10,6 +10,7 @@ wbt_lidar_hillshade(
   azimuth = 315,
   altitude = 30,
   radius = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_lidar_hillshade(
 \item{altitude}{Illumination source altitude in degrees.}
 
 \item{radius}{Search Radius.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -12,6 +12,7 @@ wbt_natural_neighbour_interpolation(
   cell_size = NULL,
   base = NULL,
   clip = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_natural_neighbour_interpolation(
 \item{base}{Optionally specified input base raster file. Not used when a cell size is specified.}
 
 \item{clip}{Clip the data to the convex hull of the points?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

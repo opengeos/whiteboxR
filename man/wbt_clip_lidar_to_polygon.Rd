@@ -4,7 +4,13 @@
 \alias{wbt_clip_lidar_to_polygon}
 \title{Clip lidar to polygon}
 \usage{
-wbt_clip_lidar_to_polygon(input, polygons, output, verbose_mode = FALSE)
+wbt_clip_lidar_to_polygon(
+  input,
+  polygons,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -12,6 +18,8 @@ wbt_clip_lidar_to_polygon(input, polygons, output, verbose_mode = FALSE)
 \item{polygons}{Input vector polygons file.}
 
 \item{output}{Output LiDAR file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

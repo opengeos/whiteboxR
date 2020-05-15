@@ -4,7 +4,15 @@
 \alias{wbt_join_tables}
 \title{Join tables}
 \usage{
-wbt_join_tables(input1, pkey, input2, fkey, import_field, verbose_mode = FALSE)
+wbt_join_tables(
+  input1,
+  pkey,
+  input2,
+  fkey,
+  import_field,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input1}{Input primary vector file (i.e. the table to be modified).}
@@ -16,6 +24,8 @@ wbt_join_tables(input1, pkey, input2, fkey, import_field, verbose_mode = FALSE)
 \item{fkey}{Foreign key field.}
 
 \item{import_field}{Imported field (all fields will be imported if not specified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

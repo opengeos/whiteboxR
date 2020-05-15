@@ -9,6 +9,7 @@ wbt_raster_streams_to_vector(
   d8_pntr,
   output,
   esri_pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_raster_streams_to_vector(
 \item{output}{Output vector file.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

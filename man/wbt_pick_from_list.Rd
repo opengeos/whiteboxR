@@ -4,7 +4,7 @@
 \alias{wbt_pick_from_list}
 \title{Pick from list}
 \usage{
-wbt_pick_from_list(inputs, pos_input, output, verbose_mode = FALSE)
+wbt_pick_from_list(inputs, pos_input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
@@ -12,6 +12,8 @@ wbt_pick_from_list(inputs, pos_input, output, verbose_mode = FALSE)
 \item{pos_input}{Input position raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

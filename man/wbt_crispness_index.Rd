@@ -4,12 +4,14 @@
 \alias{wbt_crispness_index}
 \title{Crispness index}
 \usage{
-wbt_crispness_index(input, output = NULL, verbose_mode = FALSE)
+wbt_crispness_index(input, output = NULL, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Optional output html file (default name will be based on input file if unspecified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

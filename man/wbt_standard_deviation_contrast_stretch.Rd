@@ -9,6 +9,7 @@ wbt_standard_deviation_contrast_stretch(
   output,
   stdev = 2,
   num_tones = 256,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_standard_deviation_contrast_stretch(
 \item{stdev}{Standard deviation clip value.}
 
 \item{num_tones}{Number of tones in the output image.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

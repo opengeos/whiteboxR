@@ -4,10 +4,12 @@
 \alias{wbt_polygon_area}
 \title{Polygon area}
 \usage{
-wbt_polygon_area(input, verbose_mode = FALSE)
+wbt_polygon_area(input, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

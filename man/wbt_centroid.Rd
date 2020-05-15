@@ -4,7 +4,13 @@
 \alias{wbt_centroid}
 \title{Centroid}
 \usage{
-wbt_centroid(input, output, text_output = FALSE, verbose_mode = FALSE)
+wbt_centroid(
+  input,
+  output,
+  text_output = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_centroid(input, output, text_output = FALSE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{text_output}{Optional text output.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -9,6 +9,7 @@ wbt_lidar_histogram(
   output,
   parameter = "elevation",
   clip = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_lidar_histogram(
 \item{parameter}{Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class'.}
 
 \item{clip}{Amount to clip distribution tails (in percent).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

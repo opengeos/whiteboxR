@@ -12,6 +12,7 @@ wbt_d8_flow_accumulation(
   clip = FALSE,
   pntr = FALSE,
   esri_pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_d8_flow_accumulation(
 \item{pntr}{Is the input raster a D8 flow pointer rather than a DEM?.}
 
 \item{esri_pntr}{Input  D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

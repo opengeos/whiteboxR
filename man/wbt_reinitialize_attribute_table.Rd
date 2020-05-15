@@ -4,10 +4,12 @@
 \alias{wbt_reinitialize_attribute_table}
 \title{Reinitialize attribute table}
 \usage{
-wbt_reinitialize_attribute_table(input, verbose_mode = FALSE)
+wbt_reinitialize_attribute_table(input, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

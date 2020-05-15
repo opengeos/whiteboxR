@@ -4,7 +4,13 @@
 \alias{wbt_roberts_cross_filter}
 \title{Roberts cross filter}
 \usage{
-wbt_roberts_cross_filter(input, output, clip = 0, verbose_mode = FALSE)
+wbt_roberts_cross_filter(
+  input,
+  output,
+  clip = 0,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_roberts_cross_filter(input, output, clip = 0, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{clip}{Optional amount to clip the distribution tails by, in percent.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

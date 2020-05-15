@@ -4,12 +4,14 @@
 \alias{wbt_polygons_to_lines}
 \title{Polygons to lines}
 \usage{
-wbt_polygons_to_lines(input, output, verbose_mode = FALSE)
+wbt_polygons_to_lines(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}
 
 \item{output}{Output vector lines file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

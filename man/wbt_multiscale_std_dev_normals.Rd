@@ -12,6 +12,7 @@ wbt_multiscale_std_dev_normals(
   step = 1,
   num_steps = 10,
   step_nonlinearity = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_multiscale_std_dev_normals(
 \item{num_steps}{Number of steps.}
 
 \item{step_nonlinearity}{Step nonlinearity factor (1.0-2.0 is typical).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

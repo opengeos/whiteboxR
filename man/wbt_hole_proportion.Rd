@@ -4,10 +4,12 @@
 \alias{wbt_hole_proportion}
 \title{Hole proportion}
 \usage{
-wbt_hole_proportion(input, verbose_mode = FALSE)
+wbt_hole_proportion(input, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector polygon file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

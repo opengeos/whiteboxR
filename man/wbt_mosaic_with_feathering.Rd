@@ -10,6 +10,7 @@ wbt_mosaic_with_feathering(
   output,
   method = "cc",
   weight = 4,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_mosaic_with_feathering(
 \item{method}{Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).}
 
 \item{weight}{.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

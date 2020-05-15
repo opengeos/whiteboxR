@@ -4,12 +4,14 @@
 \alias{wbt_euclidean_distance}
 \title{Euclidean distance}
 \usage{
-wbt_euclidean_distance(input, output, verbose_mode = FALSE)
+wbt_euclidean_distance(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

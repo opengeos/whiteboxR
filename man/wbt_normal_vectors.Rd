@@ -4,7 +4,7 @@
 \alias{wbt_normal_vectors}
 \title{Normal vectors}
 \usage{
-wbt_normal_vectors(input, output, radius = 1, verbose_mode = FALSE)
+wbt_normal_vectors(input, output, radius = 1, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -12,6 +12,8 @@ wbt_normal_vectors(input, output, radius = 1, verbose_mode = FALSE)
 \item{output}{Output LiDAR file.}
 
 \item{radius}{Search Radius.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

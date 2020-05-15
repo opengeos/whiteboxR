@@ -9,6 +9,7 @@ wbt_direct_decorrelation_stretch(
   output,
   k = 0.5,
   clip = 1,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_direct_decorrelation_stretch(
 \item{k}{Achromatic factor (k) ranges between 0 (no effect) and 1 (full saturation stretch), although typical values range from 0.3 to 0.7.}
 
 \item{clip}{Optional percent to clip the upper tail by during the stretch.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

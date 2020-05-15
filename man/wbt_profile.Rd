@@ -4,7 +4,7 @@
 \alias{wbt_profile}
 \title{Profile}
 \usage{
-wbt_profile(lines, surface, output, verbose_mode = FALSE)
+wbt_profile(lines, surface, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{lines}{Input vector line file.}
@@ -12,6 +12,8 @@ wbt_profile(lines, surface, output, verbose_mode = FALSE)
 \item{surface}{Input raster surface file.}
 
 \item{output}{Output HTML file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

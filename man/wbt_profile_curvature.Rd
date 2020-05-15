@@ -4,7 +4,13 @@
 \alias{wbt_profile_curvature}
 \title{Profile curvature}
 \usage{
-wbt_profile_curvature(dem, output, zfactor = 1, verbose_mode = FALSE)
+wbt_profile_curvature(
+  dem,
+  output,
+  zfactor = 1,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +18,8 @@ wbt_profile_curvature(dem, output, zfactor = 1, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{zfactor}{Optional multiplier for when the vertical and horizontal units are not the same.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

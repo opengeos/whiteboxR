@@ -9,6 +9,7 @@ wbt_symmetrical_difference(
   overlay,
   output,
   snap = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_symmetrical_difference(
 \item{output}{Output vector file.}
 
 \item{snap}{Snap tolerance.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

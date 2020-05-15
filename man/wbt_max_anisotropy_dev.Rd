@@ -11,6 +11,7 @@ wbt_max_anisotropy_dev(
   max_scale,
   min_scale = 3,
   step = 2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_max_anisotropy_dev(
 \item{min_scale}{Minimum search neighbourhood radius in grid cells.}
 
 \item{step}{Step size as any positive non-zero integer.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

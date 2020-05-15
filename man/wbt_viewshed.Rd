@@ -4,7 +4,14 @@
 \alias{wbt_viewshed}
 \title{Viewshed}
 \usage{
-wbt_viewshed(dem, stations, output, height = 2, verbose_mode = FALSE)
+wbt_viewshed(
+  dem,
+  stations,
+  output,
+  height = 2,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -14,6 +21,8 @@ wbt_viewshed(dem, stations, output, height = 2, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{height}{Viewing station height, in z units.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

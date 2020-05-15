@@ -4,7 +4,14 @@
 \alias{wbt_cost_distance}
 \title{Cost distance}
 \usage{
-wbt_cost_distance(source, cost, out_accum, out_backlink, verbose_mode = FALSE)
+wbt_cost_distance(
+  source,
+  cost,
+  out_accum,
+  out_backlink,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{source}{Input source raster file.}
@@ -14,6 +21,8 @@ wbt_cost_distance(source, cost, out_accum, out_backlink, verbose_mode = FALSE)
 \item{out_accum}{Output cost accumulation raster file.}
 
 \item{out_backlink}{Output backlink raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

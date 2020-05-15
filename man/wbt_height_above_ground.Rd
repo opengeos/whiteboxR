@@ -4,12 +4,14 @@
 \alias{wbt_height_above_ground}
 \title{Height above ground}
 \usage{
-wbt_height_above_ground(input, output = NULL, verbose_mode = FALSE)
+wbt_height_above_ground(input, output = NULL, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file (including extension).}
 
 \item{output}{Output raster file (including extension).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

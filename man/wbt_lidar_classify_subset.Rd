@@ -10,6 +10,7 @@ wbt_lidar_classify_subset(
   output,
   subset_class,
   nonsubset_class = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_lidar_classify_subset(
 \item{subset_class}{Subset point class value (must be 0-18; see LAS specifications).}
 
 \item{nonsubset_class}{Non-subset point class value (must be 0-18; see LAS specifications).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,13 @@
 \alias{wbt_find_parallel_flow}
 \title{Find parallel flow}
 \usage{
-wbt_find_parallel_flow(d8_pntr, streams, output, verbose_mode = FALSE)
+wbt_find_parallel_flow(
+  d8_pntr,
+  streams,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input D8 pointer raster file.}
@@ -12,6 +18,8 @@ wbt_find_parallel_flow(d8_pntr, streams, output, verbose_mode = FALSE)
 \item{streams}{Input raster streams file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_in_place_subtract}
 \title{In place subtract}
 \usage{
-wbt_in_place_subtract(input1, input2, verbose_mode = FALSE)
+wbt_in_place_subtract(input1, input2, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input1}{Input raster file.}
 
 \item{input2}{Input raster file or constant value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

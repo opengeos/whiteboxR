@@ -12,6 +12,7 @@ wbt_d_inf_flow_accumulation(
   log = FALSE,
   clip = FALSE,
   pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_d_inf_flow_accumulation(
 \item{clip}{Optional flag to request clipping the display max by 1 percent.}
 
 \item{pntr}{Is the input raster a D8 flow pointer rather than a DEM?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

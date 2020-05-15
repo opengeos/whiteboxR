@@ -4,7 +4,14 @@
 \alias{wbt_mean_filter}
 \title{Mean filter}
 \usage{
-wbt_mean_filter(input, output, filterx = 3, filtery = 3, verbose_mode = FALSE)
+wbt_mean_filter(
+  input,
+  output,
+  filterx = 3,
+  filtery = 3,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -14,6 +21,8 @@ wbt_mean_filter(input, output, filterx = 3, filtery = 3, verbose_mode = FALSE)
 \item{filterx}{Size of the filter kernel in the x-direction.}
 
 \item{filtery}{Size of the filter kernel in the y-direction.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

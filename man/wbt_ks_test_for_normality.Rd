@@ -8,6 +8,7 @@ wbt_ks_test_for_normality(
   input,
   output,
   num_samples = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_ks_test_for_normality(
 \item{output}{Output HTML file.}
 
 \item{num_samples}{Number of samples. Leave blank to use whole image.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

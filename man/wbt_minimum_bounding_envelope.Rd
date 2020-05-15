@@ -8,6 +8,7 @@ wbt_minimum_bounding_envelope(
   input,
   output,
   features = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_minimum_bounding_envelope(
 \item{output}{Output vector polygon file.}
 
 \item{features}{Find the minimum bounding envelop around each individual vector feature.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -9,6 +9,7 @@ wbt_downslope_index(
   output,
   drop = 2,
   out_type = "tangent",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_downslope_index(
 \item{drop}{Vertical drop value (default is 2.0).}
 
 \item{out_type}{Output type, options include 'tangent', 'degrees', 'radians', 'distance' (default is 'tangent').}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

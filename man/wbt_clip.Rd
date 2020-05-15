@@ -4,7 +4,7 @@
 \alias{wbt_clip}
 \title{Clip}
 \usage{
-wbt_clip(input, clip, output, verbose_mode = FALSE)
+wbt_clip(input, clip, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -12,6 +12,8 @@ wbt_clip(input, clip, output, verbose_mode = FALSE)
 \item{clip}{Input clip polygon vector file.}
 
 \item{output}{Output vector file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

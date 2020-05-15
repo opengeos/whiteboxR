@@ -9,6 +9,7 @@ wbt_sobel_filter(
   output,
   variant = "3x3",
   clip = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_sobel_filter(
 \item{variant}{Optional variant value. Options include 3x3 and 5x5 (default is 3x3).}
 
 \item{clip}{Optional amount to clip the distribution tails by, in percent (default is 0.0).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

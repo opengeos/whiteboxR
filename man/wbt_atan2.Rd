@@ -4,7 +4,7 @@
 \alias{wbt_atan2}
 \title{Atan2}
 \usage{
-wbt_atan2(input_y, input_x, output, verbose_mode = FALSE)
+wbt_atan2(input_y, input_x, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input_y}{Input y raster file or constant value (rise).}
@@ -12,6 +12,8 @@ wbt_atan2(input_y, input_x, output, verbose_mode = FALSE)
 \item{input_x}{Input x raster file or constant value (run).}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

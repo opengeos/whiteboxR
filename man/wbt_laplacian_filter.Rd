@@ -9,6 +9,7 @@ wbt_laplacian_filter(
   output,
   variant = "3x3(1)",
   clip = 0,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_laplacian_filter(
 \item{variant}{Optional variant value. Options include 3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), and 5x5(2) (default is 3x3(1)).}
 
 \item{clip}{Optional amount to clip the distribution tails by, in percent.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

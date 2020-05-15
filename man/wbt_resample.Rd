@@ -4,7 +4,13 @@
 \alias{wbt_resample}
 \title{Resample}
 \usage{
-wbt_resample(inputs, destination, method = "cc", verbose_mode = FALSE)
+wbt_resample(
+  inputs,
+  destination,
+  method = "cc",
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{inputs}{Input raster files.}
@@ -12,6 +18,8 @@ wbt_resample(inputs, destination, method = "cc", verbose_mode = FALSE)
 \item{destination}{Destination raster file.}
 
 \item{method}{Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

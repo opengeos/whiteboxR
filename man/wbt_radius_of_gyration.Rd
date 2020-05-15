@@ -8,6 +8,7 @@ wbt_radius_of_gyration(
   input,
   output,
   text_output = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_radius_of_gyration(
 \item{output}{Output raster file.}
 
 \item{text_output}{Optional text output.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,10 +4,12 @@
 \alias{wbt_raster_summary_stats}
 \title{Raster summary stats}
 \usage{
-wbt_raster_summary_stats(input, verbose_mode = FALSE)
+wbt_raster_summary_stats(input, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

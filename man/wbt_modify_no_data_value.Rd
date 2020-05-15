@@ -4,12 +4,19 @@
 \alias{wbt_modify_no_data_value}
 \title{Modify no data value}
 \usage{
-wbt_modify_no_data_value(input, new_value = "-32768.0", verbose_mode = FALSE)
+wbt_modify_no_data_value(
+  input,
+  new_value = "-32768.0",
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{new_value}{New NoData value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

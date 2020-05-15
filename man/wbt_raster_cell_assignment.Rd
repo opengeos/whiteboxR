@@ -8,6 +8,7 @@ wbt_raster_cell_assignment(
   input,
   output,
   assign = "column",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_raster_cell_assignment(
 \item{output}{Output raster file.}
 
 \item{assign}{Which variable would you like to assign to grid cells? Options include 'column', 'row', 'x', and 'y'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

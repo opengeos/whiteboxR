@@ -4,7 +4,13 @@
 \alias{wbt_gaussian_filter}
 \title{Gaussian filter}
 \usage{
-wbt_gaussian_filter(input, output, sigma = 0.75, verbose_mode = FALSE)
+wbt_gaussian_filter(
+  input,
+  output,
+  sigma = 0.75,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_gaussian_filter(input, output, sigma = 0.75, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{sigma}{Standard deviation distance in pixels.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

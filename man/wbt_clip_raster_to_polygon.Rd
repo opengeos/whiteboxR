@@ -9,6 +9,7 @@ wbt_clip_raster_to_polygon(
   polygons,
   output,
   maintain_dimensions = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_clip_raster_to_polygon(
 \item{output}{Output raster file.}
 
 \item{maintain_dimensions}{Maintain input raster dimensions?.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

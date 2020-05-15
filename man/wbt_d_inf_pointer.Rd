@@ -4,12 +4,14 @@
 \alias{wbt_d_inf_pointer}
 \title{D inf pointer}
 \usage{
-wbt_d_inf_pointer(dem, output, verbose_mode = FALSE)
+wbt_d_inf_pointer(dem, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

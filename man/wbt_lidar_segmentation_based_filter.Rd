@@ -11,6 +11,7 @@ wbt_lidar_segmentation_based_filter(
   norm_diff = 2,
   maxzdiff = 1,
   classify = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_lidar_segmentation_based_filter(
 \item{maxzdiff}{Maximum difference in elevation (z units) between neighbouring points of the same segment.}
 
 \item{classify}{Classify points as ground (2) or off-ground (1).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

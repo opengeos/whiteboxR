@@ -4,7 +4,7 @@
 \alias{wbt_weighted_sum}
 \title{Weighted sum}
 \usage{
-wbt_weighted_sum(inputs, weights, output, verbose_mode = FALSE)
+wbt_weighted_sum(inputs, weights, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
@@ -12,6 +12,8 @@ wbt_weighted_sum(inputs, weights, output, verbose_mode = FALSE)
 \item{weights}{Weight values, contained in quotes and separated by commas or semicolons.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

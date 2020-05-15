@@ -8,6 +8,7 @@ wbt_fast_almost_gaussian_filter(
   input,
   output,
   sigma = 1.8,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_fast_almost_gaussian_filter(
 \item{output}{Output raster file.}
 
 \item{sigma}{Standard deviation distance in pixels.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

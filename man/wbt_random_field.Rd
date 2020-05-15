@@ -4,12 +4,14 @@
 \alias{wbt_random_field}
 \title{Random field}
 \usage{
-wbt_random_field(base, output, verbose_mode = FALSE)
+wbt_random_field(base, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{base}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

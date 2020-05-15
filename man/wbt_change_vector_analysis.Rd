@@ -9,6 +9,7 @@ wbt_change_vector_analysis(
   date2,
   magnitude,
   direction,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_change_vector_analysis(
 \item{magnitude}{Output vector magnitude raster file.}
 
 \item{direction}{Output vector Direction raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

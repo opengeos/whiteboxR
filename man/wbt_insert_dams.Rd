@@ -4,7 +4,14 @@
 \alias{wbt_insert_dams}
 \title{Insert dams}
 \usage{
-wbt_insert_dams(dem, dam_pts, output, damlength, verbose_mode = FALSE)
+wbt_insert_dams(
+  dem,
+  dam_pts,
+  output,
+  damlength,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -14,6 +21,8 @@ wbt_insert_dams(dem, dam_pts, output, damlength, verbose_mode = FALSE)
 \item{output}{Output file.}
 
 \item{damlength}{Maximum length of the dam.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,13 @@
 \alias{wbt_eliminate_coincident_points}
 \title{Eliminate coincident points}
 \usage{
-wbt_eliminate_coincident_points(input, output, tolerance, verbose_mode = FALSE)
+wbt_eliminate_coincident_points(
+  input,
+  output,
+  tolerance,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -12,6 +18,8 @@ wbt_eliminate_coincident_points(input, output, tolerance, verbose_mode = FALSE)
 \item{output}{Output vector polygon file.}
 
 \item{tolerance}{The distance tolerance for points.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

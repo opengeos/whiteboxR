@@ -4,12 +4,14 @@
 \alias{wbt_lidar_join}
 \title{Lidar join}
 \usage{
-wbt_lidar_join(inputs, output, verbose_mode = FALSE)
+wbt_lidar_join(inputs, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input LiDAR files.}
 
 \item{output}{Output LiDAR file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

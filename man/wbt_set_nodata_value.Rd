@@ -4,7 +4,13 @@
 \alias{wbt_set_nodata_value}
 \title{Set nodata value}
 \usage{
-wbt_set_nodata_value(input, output, back_value = 0, verbose_mode = FALSE)
+wbt_set_nodata_value(
+  input,
+  output,
+  back_value = 0,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_set_nodata_value(input, output, back_value = 0, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{back_value}{Background value to set to nodata.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

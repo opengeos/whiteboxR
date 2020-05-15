@@ -8,6 +8,7 @@ wbt_multi_part_to_single_part(
   input,
   output,
   exclude_holes = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_multi_part_to_single_part(
 \item{output}{Output vector line or polygon file.}
 
 \item{exclude_holes}{Exclude hole parts from the feature splitting? (holes will continue to belong to their features in output.).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

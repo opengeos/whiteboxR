@@ -4,12 +4,14 @@
 \alias{wbt_convert_nodata_to_zero}
 \title{Convert nodata to zero}
 \usage{
-wbt_convert_nodata_to_zero(input, output, verbose_mode = FALSE)
+wbt_convert_nodata_to_zero(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_elev_relative_to_min_max}
 \title{Elev relative to min max}
 \usage{
-wbt_elev_relative_to_min_max(dem, output, verbose_mode = FALSE)
+wbt_elev_relative_to_min_max(dem, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

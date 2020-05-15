@@ -4,10 +4,12 @@
 \alias{wbt_las_to_shapefile}
 \title{Las to shapefile}
 \usage{
-wbt_las_to_shapefile(input, verbose_mode = FALSE)
+wbt_las_to_shapefile(input, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

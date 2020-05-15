@@ -9,6 +9,7 @@ wbt_extend_vector_lines(
   output,
   dist,
   extend = "both ends",
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_extend_vector_lines(
 \item{dist}{The distance to extend.}
 
 \item{extend}{Extend direction, 'both ends' (default), 'line start', 'line end'.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

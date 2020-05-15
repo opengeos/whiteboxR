@@ -4,7 +4,7 @@
 \alias{wbt_trend_surface}
 \title{Trend surface}
 \usage{
-wbt_trend_surface(input, output, order = 1, verbose_mode = FALSE)
+wbt_trend_surface(input, output, order = 1, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +12,8 @@ wbt_trend_surface(input, output, order = 1, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{order}{Polynomial order (1 to 10).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_sin}
 \title{Sin}
 \usage{
-wbt_sin(input, output, verbose_mode = FALSE)
+wbt_sin(input, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input raster file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }
@@ -18,10 +20,4 @@ Returns the tool text outputs.
 }
 \description{
 Returns the sine (sin) of each values in a raster.
-}
-\examples{
-\dontrun{
-dem <- system.file("extdata", "DEM.tif", package="whitebox")
-wbt_sin(input = dem, output = 'output.tif')
-}
 }

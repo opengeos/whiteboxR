@@ -14,6 +14,7 @@ wbt_lidar_tin_gridding(
   minz = NULL,
   maxz = NULL,
   max_triangle_edge_length = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -35,6 +36,8 @@ wbt_lidar_tin_gridding(
 \item{maxz}{Optional maximum elevation for inclusion in interpolation.}
 
 \item{max_triangle_edge_length}{Optional maximum triangle edge length; triangles larger than this size will not be gridded.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_zonal_statistics(
   output = NULL,
   stat = "mean",
   out_table = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_zonal_statistics(
 \item{stat}{Statistic to extract, including 'mean', 'median', 'minimum', 'maximum', 'range', 'standard deviation', and 'total'.}
 
 \item{out_table}{Output HTML Table file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

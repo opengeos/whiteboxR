@@ -10,6 +10,7 @@ wbt_downslope_flowpath_length(
   watersheds = NULL,
   weights = NULL,
   esri_pntr = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_downslope_flowpath_length(
 \item{weights}{Optional input weights raster file.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

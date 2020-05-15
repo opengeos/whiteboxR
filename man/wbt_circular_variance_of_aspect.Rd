@@ -4,7 +4,13 @@
 \alias{wbt_circular_variance_of_aspect}
 \title{Circular variance of aspect}
 \usage{
-wbt_circular_variance_of_aspect(dem, output, filter = 11, verbose_mode = FALSE)
+wbt_circular_variance_of_aspect(
+  dem,
+  output,
+  filter = 11,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +18,8 @@ wbt_circular_variance_of_aspect(dem, output, filter = 11, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{filter}{Size of the filter kernel.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,12 +4,14 @@
 \alias{wbt_image_correlation}
 \title{Image correlation}
 \usage{
-wbt_image_correlation(inputs, output = NULL, verbose_mode = FALSE)
+wbt_image_correlation(inputs, output = NULL, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -10,6 +10,7 @@ wbt_raster_area(
   out_text = FALSE,
   units = "grid cells",
   zero_back = FALSE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_raster_area(
 \item{units}{Area units; options include 'grid cells' and 'map units'.}
 
 \item{zero_back}{Flag indicating whether zero values should be treated as a background.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

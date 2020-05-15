@@ -9,6 +9,7 @@ wbt_fetch_analysis(
   output,
   azimuth = 0,
   hgt_inc = 0.05,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -20,6 +21,8 @@ wbt_fetch_analysis(
 \item{azimuth}{Wind azimuth in degrees in degrees.}
 
 \item{hgt_inc}{Height increment value.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

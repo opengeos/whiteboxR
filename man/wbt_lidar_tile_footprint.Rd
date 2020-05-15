@@ -4,7 +4,13 @@
 \alias{wbt_lidar_tile_footprint}
 \title{Lidar tile footprint}
 \usage{
-wbt_lidar_tile_footprint(input, output, hull = FALSE, verbose_mode = FALSE)
+wbt_lidar_tile_footprint(
+  input,
+  output,
+  hull = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input LiDAR file.}
@@ -12,6 +18,8 @@ wbt_lidar_tile_footprint(input, output, hull = FALSE, verbose_mode = FALSE)
 \item{output}{Output vector polygon file.}
 
 \item{hull}{Identify the convex hull around points.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

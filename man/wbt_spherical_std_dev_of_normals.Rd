@@ -8,6 +8,7 @@ wbt_spherical_std_dev_of_normals(
   dem,
   output,
   filter = 11,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -17,6 +18,8 @@ wbt_spherical_std_dev_of_normals(
 \item{output}{Output raster file.}
 
 \item{filter}{Size of the filter kernel.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

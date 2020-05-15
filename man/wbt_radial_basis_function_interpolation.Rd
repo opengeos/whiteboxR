@@ -16,6 +16,7 @@ wbt_radial_basis_function_interpolation(
   weight = 0.1,
   cell_size = NULL,
   base = NULL,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -41,6 +42,8 @@ wbt_radial_basis_function_interpolation(
 \item{cell_size}{Optionally specified cell size of output raster. Not used when base raster is specified.}
 
 \item{base}{Optionally specified input base raster file. Not used when a cell size is specified.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

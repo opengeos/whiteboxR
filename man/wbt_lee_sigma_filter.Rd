@@ -11,6 +11,7 @@ wbt_lee_sigma_filter(
   filtery = 11,
   sigma = 10,
   m = 5,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_lee_sigma_filter(
 \item{sigma}{Sigma value should be related to the standarad deviation of the distribution of image speckle noise.}
 
 \item{m}{M-threshold value the minimum allowable number of pixels within the intensity range.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

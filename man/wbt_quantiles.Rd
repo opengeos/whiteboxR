@@ -4,7 +4,13 @@
 \alias{wbt_quantiles}
 \title{Quantiles}
 \usage{
-wbt_quantiles(input, output, num_quantiles = 5, verbose_mode = FALSE)
+wbt_quantiles(
+  input,
+  output,
+  num_quantiles = 5,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{input}{Input raster file.}
@@ -12,6 +18,8 @@ wbt_quantiles(input, output, num_quantiles = 5, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{num_quantiles}{Number of quantiles.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

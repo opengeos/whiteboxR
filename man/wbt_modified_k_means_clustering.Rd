@@ -12,6 +12,7 @@ wbt_modified_k_means_clustering(
   merge_dist = NULL,
   max_iterations = 10,
   class_change = 2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -29,6 +30,8 @@ wbt_modified_k_means_clustering(
 \item{max_iterations}{Maximum number of iterations.}
 
 \item{class_change}{Minimum percent of cells changed between iterations before completion.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,7 @@
 \alias{wbt_smooth_vectors}
 \title{Smooth vectors}
 \usage{
-wbt_smooth_vectors(input, output, filter = 3, verbose_mode = FALSE)
+wbt_smooth_vectors(input, output, filter = 3, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{input}{Input vector POLYLINE or POLYGON file.}
@@ -12,6 +12,8 @@ wbt_smooth_vectors(input, output, filter = 3, verbose_mode = FALSE)
 \item{output}{Output vector file.}
 
 \item{filter}{The filter size, any odd integer greater than or equal to 3; default is 3.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

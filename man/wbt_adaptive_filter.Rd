@@ -10,6 +10,7 @@ wbt_adaptive_filter(
   filterx = 11,
   filtery = 11,
   threshold = 2,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -23,6 +24,8 @@ wbt_adaptive_filter(
 \item{filtery}{Size of the filter kernel in the y-direction.}
 
 \item{threshold}{Difference from mean threshold, in standard deviations.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

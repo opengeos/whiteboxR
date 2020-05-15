@@ -4,12 +4,14 @@
 \alias{wbt_num_downslope_neighbours}
 \title{Num downslope neighbours}
 \usage{
-wbt_num_downslope_neighbours(dem, output, verbose_mode = FALSE)
+wbt_num_downslope_neighbours(dem, output, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,10 +4,12 @@
 \alias{wbt_las_to_ascii}
 \title{Las to ascii}
 \usage{
-wbt_las_to_ascii(inputs, verbose_mode = FALSE)
+wbt_las_to_ascii(inputs, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input LiDAR files.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -17,6 +17,7 @@ wbt_lidar_rbf_interpolation(
   func_type = "ThinPlateSpline",
   poly_order = "none",
   weight = 5,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -44,6 +45,8 @@ wbt_lidar_rbf_interpolation(
 \item{poly_order}{Polynomial order; options are 'none' (default), 'constant', 'affine'.}
 
 \item{weight}{Weight parameter used in basis function.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

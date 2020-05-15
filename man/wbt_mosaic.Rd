@@ -4,7 +4,7 @@
 \alias{wbt_mosaic}
 \title{Mosaic}
 \usage{
-wbt_mosaic(inputs, output, method = "cc", verbose_mode = FALSE)
+wbt_mosaic(inputs, output, method = "cc", wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{inputs}{Input raster files.}
@@ -12,6 +12,8 @@ wbt_mosaic(inputs, output, method = "cc", verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{method}{Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

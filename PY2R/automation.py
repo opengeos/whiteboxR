@@ -26,7 +26,7 @@ def function_header(line):
         line = line.replace("self, i=None,", "input,")
         line = line.replace("self, output, i=None,", "input, output,")
         line = line.replace("self, ", "")
-        line = line.replace("callback=None", "verbose_mode=FALSE")
+        line = line.replace("callback=None", "wd=NULL, verbose_mode=FALSE")
         line = line.replace("False", "FALSE")
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")
@@ -283,6 +283,7 @@ with open(wbt_py) as f:
                         param = doc_line.replace("%", " percent")
                         ff.write("#' @param {}\n".format(param))
                     i = i + 1
+                ff.write("#' @param wd Changes the working directory.\n")
                 ff.write("#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.\n")
                 ff.write("#'\n")
                 ff.write("#' @return Returns the tool text outputs.\n")

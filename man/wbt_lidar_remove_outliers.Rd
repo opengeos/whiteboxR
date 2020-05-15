@@ -11,6 +11,7 @@ wbt_lidar_remove_outliers(
   elev_diff = 50,
   use_median = FALSE,
   classify = TRUE,
+  wd = NULL,
   verbose_mode = FALSE
 )
 }
@@ -26,6 +27,8 @@ wbt_lidar_remove_outliers(
 \item{use_median}{Optional flag indicating whether to use the difference from median elevation rather than mean.}
 
 \item{classify}{Classify points as ground (2) or off-ground (1).}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }

@@ -4,7 +4,7 @@
 \alias{wbt_basins}
 \title{Basins}
 \usage{
-wbt_basins(d8_pntr, output, esri_pntr = FALSE, verbose_mode = FALSE)
+wbt_basins(d8_pntr, output, esri_pntr = FALSE, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}
@@ -12,6 +12,8 @@ wbt_basins(d8_pntr, output, esri_pntr = FALSE, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
+
+\item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
 }
