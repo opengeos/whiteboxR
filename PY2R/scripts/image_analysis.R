@@ -344,11 +344,13 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_mosaic <- function(inputs, output, method="cc", wd=NULL, verbose_mode=FALSE) {
+wbt_mosaic <- function(output, inputs=NULL, method="nn", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(inputs)) {
+    args <- paste(args, paste0("--inputs=", inputs))
+  }
   if (!is.null(method)) {
     args <- paste(args, paste0("--method=", method))
   }

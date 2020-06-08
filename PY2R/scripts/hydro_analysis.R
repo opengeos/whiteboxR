@@ -120,7 +120,7 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param dist .
+#' @param dist Maximum search distance for breach paths in cells.
 #' @param max_cost Optional maximum breach cost (default is Inf).
 #' @param min_dist Optional flag indicating whether to minimize breach distances.
 #' @param flat_increment Optional elevation increment applied to flat areas.
@@ -324,7 +324,7 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 #' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
-#' @param pntr Is the input raster a D8 flow pointer rather than a DEM?.
+#' @param pntr Is the input raster a D-infinity flow pointer rather than a DEM?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
@@ -980,14 +980,14 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, v
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output file.
-#' @param out_type Output type; one of 'depth' (default), 'volume', and 'area'.
+#' @param out_type Output type; one of 'mean depth' (default), 'volume', 'area', 'max depth'.
 #' @param damlength Maximum length of the dam.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_impoundment_size_index <- function(dem, output, damlength, out_type="depth", wd=NULL, verbose_mode=FALSE) {
+wbt_impoundment_size_index <- function(dem, output, damlength, out_type="mean depth", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))

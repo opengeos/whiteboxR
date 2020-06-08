@@ -9,7 +9,7 @@ wbt_wetness_index(sca, slope, output, wd = NULL, verbose_mode = FALSE)
 \arguments{
 \item{sca}{Input raster specific contributing area (SCA) file.}
 
-\item{slope}{Input raster slope file.}
+\item{slope}{Input raster slope file (in degrees).}
 
 \item{output}{Output raster file.}
 

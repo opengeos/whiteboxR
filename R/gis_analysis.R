@@ -823,7 +823,7 @@ wbt_polygon_area <- function(input, wd=NULL, verbose_mode=FALSE) {
 #' This tool can be used to map the long axis of polygon features.
 #'
 #' @param input Input vector polygons file.
-#' @param output Output vector polygon file.
+#' @param output Output vector polyline file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
@@ -869,7 +869,7 @@ wbt_polygon_perimeter <- function(input, wd=NULL, verbose_mode=FALSE) {
 #' This tool can be used to map the short axis of polygon features.
 #'
 #' @param input Input vector polygons file.
-#' @param output Output vector polygon file.
+#' @param output Output vector polyline file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
@@ -2072,6 +2072,32 @@ wbt_union <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mode=FA
   if (!is.null(snap)) {
     args <- paste(args, paste0("--snap=", snap))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Update nodata cells
+#'
+#' Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
+#'
+#' @param input1 Input raster file 1.
+#' @param input2 Input raster file 2; update layer.
+#' @param output Output raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_update_nodata_cells <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }

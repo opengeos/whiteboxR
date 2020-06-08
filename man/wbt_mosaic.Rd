@@ -4,12 +4,18 @@
 \alias{wbt_mosaic}
 \title{Mosaic}
 \usage{
-wbt_mosaic(inputs, output, method = "cc", wd = NULL, verbose_mode = FALSE)
+wbt_mosaic(
+  output,
+  inputs = NULL,
+  method = "nn",
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
-\item{inputs}{Input raster files.}
-
 \item{output}{Output raster file.}
+
+\item{inputs}{Input raster files.}
 
 \item{method}{Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).}
 

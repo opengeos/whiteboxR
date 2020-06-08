@@ -82,6 +82,94 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
 }
 
 
+#' Contours from points
+#'
+#' Creates a contour coverage from a set of input points.
+#'
+#' @param input Input vector points file.
+#' @param field Input field name in attribute table.
+#' @param use_z Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.
+#' @param output Output vector lines file.
+#' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
+#' @param interval Contour interval.
+#' @param base Base contour height.
+#' @param smooth Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max_triangle_edge_length=NULL, interval=10.0, base=0.0, smooth=5, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(field)) {
+    args <- paste(args, paste0("--field=", field))
+  }
+  if (use_z) {
+    args <- paste(args, "--use_z")
+  }
+  if (!is.null(max_triangle_edge_length)) {
+    args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
+  }
+  if (!is.null(interval)) {
+    args <- paste(args, paste0("--interval=", interval))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  if (!is.null(smooth)) {
+    args <- paste(args, paste0("--smooth=", smooth))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Contours from raster
+#'
+#' Derives a vector contour coverage from a raster surface.
+#'
+#' @param input Input surface raster file.
+#' @param output Output vector contour file.
+#' @param interval Contour interval.
+#' @param base Base contour height.
+#' @param smooth Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.
+#' @param tolerance Tolerance factor, in degrees (0-45); determines generalization level.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smooth=9, tolerance=10.0, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(interval)) {
+    args <- paste(args, paste0("--interval=", interval))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
+  if (!is.null(smooth)) {
+    args <- paste(args, paste0("--smooth=", smooth))
+  }
+  if (!is.null(tolerance)) {
+    args <- paste(args, paste0("--tolerance=", tolerance))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Dev from mean elev
 #'
 #' Calculates deviation from mean elevation.
@@ -440,12 +528,13 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 #' @param output Output raster file.
 #' @param filter Filter size (cells).
 #' @param weight IDW weight value.
+#' @param no_edges Optional flag indicating whether to exclude NoData cells in edge regions.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, wd=NULL, verbose_mode=FALSE) {
+wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges=TRUE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -455,6 +544,9 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, wd=NULL,
   }
   if (!is.null(weight)) {
     args <- paste(args, paste0("--weight=", weight))
+  }
+  if (no_edges) {
+    args <- paste(args, "--no_edges")
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1439,18 +1531,22 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param units Units of output raster; options include 'degrees', 'radians', 'percent'.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_slope <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_slope <- function(dem, output, zfactor=1.0, units="degrees", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(units)) {
+    args <- paste(args, paste0("--units=", units))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1729,7 +1825,7 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
 #' Calculates the topographic wetness index, Ln(A / tan(slope)).
 #'
 #' @param sca Input raster specific contributing area (SCA) file.
-#' @param slope Input raster slope file.
+#' @param slope Input raster slope file (in degrees).
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
