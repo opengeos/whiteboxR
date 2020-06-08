@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
       </span>
     </div>
 
@@ -132,7 +132,14 @@
     <p>Calculates a slope raster from an input DEM.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_slope</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='kw'>zfactor</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>wd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>wbt_slope</span>(
+  <span class='no'>dem</span>,
+  <span class='no'>output</span>,
+  <span class='kw'>zfactor</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>units</span> <span class='kw'>=</span> <span class='st'>"degrees"</span>,
+  <span class='kw'>wd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,6 +155,10 @@
     <tr>
       <th>zfactor</th>
       <td><p>Optional multiplier for when the vertical and horizontal units are not the same.</p></td>
+    </tr>
+    <tr>
+      <th>units</th>
+      <td><p>Units of output raster; options include 'degrees', 'radians', 'percent'.</p></td>
     </tr>
     <tr>
       <th>wd</th>

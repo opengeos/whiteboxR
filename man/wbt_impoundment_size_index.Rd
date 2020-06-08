@@ -8,7 +8,7 @@ wbt_impoundment_size_index(
   dem,
   output,
   damlength,
-  out_type = "depth",
+  out_type = "mean depth",
   wd = NULL,
   verbose_mode = FALSE
 )
@@ -20,7 +20,7 @@ wbt_impoundment_size_index(
 
 \item{damlength}{Maximum length of the dam.}
 
-\item{out_type}{Output type; one of 'depth' (default), 'volume', and 'area'.}
+\item{out_type}{Output type; one of 'mean depth' (default), 'volume', 'area', 'max depth'.}
 
 \item{wd}{Changes the working directory.}
 

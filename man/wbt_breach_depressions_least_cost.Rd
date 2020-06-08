@@ -21,7 +21,7 @@ wbt_breach_depressions_least_cost(
 
 \item{output}{Output raster file.}
 
-\item{dist}{.}
+\item{dist}{Maximum search distance for breach paths in cells.}
 
 \item{max_cost}{Optional maximum breach cost (default is Inf).}
 

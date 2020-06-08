@@ -29,7 +29,7 @@ wbt_d_inf_flow_accumulation(
 
 \item{clip}{Optional flag to request clipping the display max by 1 percent.}
 
-\item{pntr}{Is the input raster a D8 flow pointer rather than a DEM?.}
+\item{pntr}{Is the input raster a D-infinity flow pointer rather than a DEM?.}
 
 \item{wd}{Changes the working directory.}
 

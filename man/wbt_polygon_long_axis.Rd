@@ -9,7 +9,7 @@ wbt_polygon_long_axis(input, output, wd = NULL, verbose_mode = FALSE)
 \arguments{
 \item{input}{Input vector polygons file.}
 
-\item{output}{Output vector polygon file.}
+\item{output}{Output vector polyline file.}
 
 \item{wd}{Changes the working directory.}
 

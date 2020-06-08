@@ -1,3 +1,31 @@
+#' Ascii to las
+#'
+#' Converts one or more ASCII files containing LiDAR points into LAS files.
+#'
+#' @param inputs Input LiDAR  ASCII files (.csv).
+#' @param pattern Input field pattern.
+#' @param proj Well-known-text string or EPSG code describing projection.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--pattern=", pattern))
+  if (!is.null(proj)) {
+    args <- paste(args, paste0("--proj=", proj))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Classify buildings in lidar
 #'
 #' Reclassifies a LiDAR points that lie within vector building footprints.
@@ -308,6 +336,34 @@ wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) {
 }
 
 
+#' Las to zlidar
+#'
+#' Converts one or more LAS files into the zlidar compressed LiDAR data format.
+#'
+#' @param inputs Input LAS files.
+#' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  if (!is.null(inputs)) {
+    args <- paste(args, paste0("--inputs=", inputs))
+  }
+  if (!is.null(outdir)) {
+    args <- paste(args, paste0("--outdir=", outdir))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Lidar block maximum
 #'
 #' Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
@@ -418,48 +474,6 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
   args <- paste(args, paste0("--in_lidar=", in_lidar))
   args <- paste(args, paste0("--in_image=", in_image))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
-#' Lidar construct vector tin
-#'
-#' Creates a vector triangular irregular network (TIN) fitted to LiDAR points.
-#'
-#' @param input Input LiDAR file (including extension).
-#' @param output Output raster file (including extension).
-#' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
-#' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
-#' @param minz Optional minimum elevation for inclusion in interpolation.
-#' @param maxz Optional maximum elevation for inclusion in interpolation.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_lidar_construct_vector_tin <- function(input, output=NULL, returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--input=", input))
-  if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
-  }
-  if (!is.null(returns)) {
-    args <- paste(args, paste0("--returns=", returns))
-  }
-  if (!is.null(exclude_cls)) {
-    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
-  }
-  if (!is.null(minz)) {
-    args <- paste(args, paste0("--minz=", minz))
-  }
-  if (!is.null(maxz)) {
-    args <- paste(args, paste0("--maxz=", maxz))
-  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1522,6 +1536,34 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
   args <- paste(args, paste0("--indir=", indir))
   args <- paste(args, paste0("--outdir=", outdir))
   args <- paste(args, paste0("--polygons=", polygons))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Zlidar to las
+#'
+#' Converts one or more zlidar files into the LAS data format.
+#'
+#' @param inputs Input ZLidar files.
+#' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_zlidar_to_las <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  if (!is.null(inputs)) {
+    args <- paste(args, paste0("--inputs=", inputs))
+  }
+  if (!is.null(outdir)) {
+    args <- paste(args, paste0("--outdir=", outdir))
+  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }

@@ -1,13 +1,13 @@
 ##################################################################
 # Steps for updating whiteboxR
-# Step 1 - Delete the existing deveop branch: git branch -D deveop  
-# Step 2 - Create a new deveop branch: git checkout -b deveop
+# Step 1 - Delete the existing develop branch: git branch -D develop  
+# Step 2 - Create a new develop branch: git checkout -b develop
 # Step 3 - Delete the old WhiteboxTools_linux_amd64.tar.xz in the root folder if needed
 # Step 4 - Run automation.py
-# Step 5 - Open whiteboxR.Rproj in RStudio and run build_check.R
-# Step 6 - Update version number in DESCRIPTION 
+# Step 5 - Update version number in DESCRIPTION 
+# Step 6 - Open whiteboxR.Rproj in RStudio and run build_check.R
 # Step 7 - Commit and push changes
-# Step 8 - Test intallation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
+# Step 8 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
 # Step 9 - Merge pull request on GitHub
 # Step 10 - Switch to master branch and pull updates: git checkout master | git pull
 # Step 11 - Create R package: RStudio - Build - Build Source Package
