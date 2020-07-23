@@ -1164,6 +1164,70 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 }
 
 
+#' Lidar rooftop analysis
+#'
+#' Identifies roof segments in a LiDAR point cloud.
+#'
+#' @param input Input LiDAR file.
+#' @param buildings Input vector build footprint polygons file.
+#' @param output Output vector polygon file.
+#' @param radius Search Radius.
+#' @param num_iter Number of iterations.
+#' @param num_samples Number of sample points on which to build the model.
+#' @param threshold Threshold used to determine inlier points.
+#' @param model_size Acceptable model size.
+#' @param max_slope Maximum planar slope.
+#' @param norm_diff Maximum difference in normal vectors, in degrees.
+#' @param azimuth Illumination source azimuth in degrees.
+#' @param altitude Illumination source altitude in degrees.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_lidar_rooftop_analysis <- function(buildings, output, i=NULL, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=65.0, norm_diff=10.0, azimuth=180.0, altitude=30.0, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--buildings=", buildings))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(i)) {
+    args <- paste(args, paste0("--i=", i))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(num_iter)) {
+    args <- paste(args, paste0("--num_iter=", num_iter))
+  }
+  if (!is.null(num_samples)) {
+    args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(model_size)) {
+    args <- paste(args, paste0("--model_size=", model_size))
+  }
+  if (!is.null(max_slope)) {
+    args <- paste(args, paste0("--max_slope=", max_slope))
+  }
+  if (!is.null(norm_diff)) {
+    args <- paste(args, paste0("--norm_diff=", norm_diff))
+  }
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(altitude)) {
+    args <- paste(args, paste0("--altitude=", altitude))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Lidar segmentation
 #'
 #' Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.

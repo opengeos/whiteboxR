@@ -680,6 +680,62 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 }
 
 
+#' Hypsometrically tinted hillshade
+#'
+#' Creates an colour shaded relief image from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param altitude Illumination source altitude in degrees.
+#' @param hs_weight Weight given to hillshade relative to relief (0.0-1.0).
+#' @param brightness Brightness factor (0.0-1.0).
+#' @param atmospheric Atmospheric effects weight (0.0-1.0).
+#' @param palette Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep.
+#' @param reverse Optional flag indicating whether to use reverse the palette.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param full_mode Optional flag indicating whether to use full 360-degrees of illumination sources.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_weight=0.5, brightness=0.5, atmospheric=0.0, palette="atlas", reverse=FALSE, zfactor=1.0, full_mode=FALSE, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(altitude)) {
+    args <- paste(args, paste0("--altitude=", altitude))
+  }
+  if (!is.null(hs_weight)) {
+    args <- paste(args, paste0("--hs_weight=", hs_weight))
+  }
+  if (!is.null(brightness)) {
+    args <- paste(args, paste0("--brightness=", brightness))
+  }
+  if (!is.null(atmospheric)) {
+    args <- paste(args, paste0("--atmospheric=", atmospheric))
+  }
+  if (!is.null(palette)) {
+    args <- paste(args, paste0("--palette=", palette))
+  }
+  if (reverse) {
+    args <- paste(args, "--reverse")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (full_mode) {
+    args <- paste(args, "--full_mode")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Max anisotropy dev
 #'
 #' Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales.
@@ -922,6 +978,42 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Multidirectional hillshade
+#'
+#' Calculates a multi-direction hillshade raster from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param altitude Illumination source altitude in degrees.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param full_mode Optional flag indicating whether to use full 360-degrees of illumination sources.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=1.0, full_mode=FALSE, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(altitude)) {
+    args <- paste(args, paste0("--altitude=", altitude))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (full_mode) {
+    args <- paste(args, "--full_mode")
+  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
