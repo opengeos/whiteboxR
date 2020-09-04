@@ -1235,13 +1235,13 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_rooftop_analysis <- function(buildings, output, i=NULL, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=65.0, norm_diff=10.0, azimuth=180.0, altitude=30.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=65.0, norm_diff=10.0, azimuth=180.0, altitude=30.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--buildings=", buildings))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(i)) {
-    args <- paste(args, paste0("--i=", i))
+  if (!is.null(input)) {
+    args <- paste(args, paste0("--input=", input))
   }
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))

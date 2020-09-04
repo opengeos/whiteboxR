@@ -7,7 +7,7 @@
 wbt_lidar_rooftop_analysis(
   buildings,
   output,
-  i = NULL,
+  input = NULL,
   radius = 2,
   num_iter = 50,
   num_samples = 10,
@@ -25,6 +25,8 @@ wbt_lidar_rooftop_analysis(
 \item{buildings}{Input vector build footprint polygons file.}
 
 \item{output}{Output vector polygon file.}
+
+\item{input}{Input LiDAR file.}
 
 \item{radius}{Search Radius.}
 
@@ -47,8 +49,6 @@ wbt_lidar_rooftop_analysis(
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
-
-\item{input}{Input LiDAR file.}
 }
 \value{
 Returns the tool text outputs.

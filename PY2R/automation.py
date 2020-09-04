@@ -25,6 +25,7 @@ def function_header(line):
         line = line.replace("self, i,", "input,")
         line = line.replace("self, i=None,", "input,")
         line = line.replace("self, output, i=None,", "input, output,")
+        line = line.replace(', i=None,', ', input=None,')
         line = line.replace("self, ", "")
         line = line.replace("callback=None", "wd=NULL, verbose_mode=FALSE")
         line = line.replace("False", "FALSE")
