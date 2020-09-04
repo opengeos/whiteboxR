@@ -14,6 +14,7 @@ wbt_lidar_ransac_planes(
   model_size = 8,
   max_slope = 80,
   classify = FALSE,
+  last_returns = FALSE,
   wd = NULL,
   verbose_mode = FALSE
 )
@@ -36,6 +37,8 @@ wbt_lidar_ransac_planes(
 \item{max_slope}{Maximum planar slope.}
 
 \item{classify}{Classify points as ground (2) or off-ground (1).}
+
+\item{last_returns}{Only include last- and only-return points.}
 
 \item{wd}{Changes the working directory.}
 

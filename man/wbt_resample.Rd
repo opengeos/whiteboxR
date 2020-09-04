@@ -6,7 +6,9 @@
 \usage{
 wbt_resample(
   inputs,
-  destination,
+  output,
+  cell_size = NULL,
+  base = NULL,
   method = "cc",
   wd = NULL,
   verbose_mode = FALSE
@@ -15,7 +17,11 @@ wbt_resample(
 \arguments{
 \item{inputs}{Input raster files.}
 
-\item{destination}{Destination raster file.}
+\item{output}{Output raster file.}
+
+\item{cell_size}{Optionally specified cell size of output raster. Not used when base raster is specified.}
+
+\item{base}{Optionally specified input base raster file. Not used when a cell size is specified.}
 
 \item{method}{Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).}
 

@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -130,6 +130,7 @@
   <span class='kw'>model_size</span> <span class='kw'>=</span> <span class='fl'>8</span>,
   <span class='kw'>max_slope</span> <span class='kw'>=</span> <span class='fl'>80</span>,
   <span class='kw'>classify</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>last_returns</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>wd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )</pre>
@@ -172,6 +173,10 @@
     <tr>
       <th>classify</th>
       <td><p>Classify points as ground (2) or off-ground (1).</p></td>
+    </tr>
+    <tr>
+      <th>last_returns</th>
+      <td><p>Only include last- and only-return points.</p></td>
     </tr>
     <tr>
       <th>wd</th>

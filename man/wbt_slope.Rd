@@ -7,7 +7,7 @@
 wbt_slope(
   dem,
   output,
-  zfactor = 1,
+  zfactor = NULL,
   units = "degrees",
   wd = NULL,
   verbose_mode = FALSE

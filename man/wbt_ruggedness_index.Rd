@@ -4,7 +4,13 @@
 \alias{wbt_ruggedness_index}
 \title{Ruggedness index}
 \usage{
-wbt_ruggedness_index(dem, output, zfactor = 1, wd = NULL, verbose_mode = FALSE)
+wbt_ruggedness_index(
+  dem,
+  output,
+  zfactor = NULL,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

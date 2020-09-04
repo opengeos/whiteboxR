@@ -4,7 +4,13 @@
 \alias{wbt_plan_curvature}
 \title{Plan curvature}
 \usage{
-wbt_plan_curvature(dem, output, zfactor = 1, wd = NULL, verbose_mode = FALSE)
+wbt_plan_curvature(
+  dem,
+  output,
+  zfactor = NULL,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

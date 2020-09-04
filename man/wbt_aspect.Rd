@@ -4,7 +4,7 @@
 \alias{wbt_aspect}
 \title{Aspect}
 \usage{
-wbt_aspect(dem, output, zfactor = 1, wd = NULL, verbose_mode = FALSE)
+wbt_aspect(dem, output, zfactor = NULL, wd = NULL, verbose_mode = FALSE)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}

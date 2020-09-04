@@ -11,7 +11,7 @@ wbt_feature_preserving_smoothing(
   norm_diff = 15,
   num_iter = 3,
   max_diff = 0.5,
-  zfactor = 1,
+  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE
 )

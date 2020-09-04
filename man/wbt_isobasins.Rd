@@ -4,7 +4,14 @@
 \alias{wbt_isobasins}
 \title{Isobasins}
 \usage{
-wbt_isobasins(dem, output, size, wd = NULL, verbose_mode = FALSE)
+wbt_isobasins(
+  dem,
+  output,
+  size,
+  connections = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -12,6 +19,8 @@ wbt_isobasins(dem, output, size, wd = NULL, verbose_mode = FALSE)
 \item{output}{Output raster file.}
 
 \item{size}{Target basin size, in grid cells.}
+
+\item{connections}{Output upstream-downstream flow connections among basins?.}
 
 \item{wd}{Changes the working directory.}
 

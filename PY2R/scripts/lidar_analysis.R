@@ -482,6 +482,52 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
 }
 
 
+#' Lidar digital surface model
+#'
+#' Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
+#'
+#' @param input Input LiDAR file (including extension).
+#' @param output Output raster file (including extension).
+#' @param resolution Output raster's grid resolution.
+#' @param radius Search Radius.
+#' @param minz Optional minimum elevation for inclusion in interpolation.
+#' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, radius=0.5, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(resolution)) {
+    args <- paste(args, paste0("--resolution=", resolution))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  if (!is.null(max_triangle_edge_length)) {
+    args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Lidar elevation slice
 #'
 #' Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
@@ -991,12 +1037,13 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
 #' @param model_size Acceptable model size.
 #' @param max_slope Maximum planar slope.
 #' @param classify Classify points as ground (2) or off-ground (1).
+#' @param last_returns Only include last- and only-return points.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, last_returns=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1021,6 +1068,9 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
   }
   if (classify) {
     args <- paste(args, "--classify")
+  }
+  if (last_returns) {
+    args <- paste(args, "--last_returns")
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1174,11 +1224,11 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 #' @param radius Search Radius.
 #' @param num_iter Number of iterations.
 #' @param num_samples Number of sample points on which to build the model.
-#' @param threshold Threshold used to determine inlier points.
-#' @param model_size Acceptable model size.
-#' @param max_slope Maximum planar slope.
+#' @param threshold Threshold used to determine inlier points (in elevation units).
+#' @param model_size Acceptable model size, in points.
+#' @param max_slope Maximum planar slope, in degrees.
 #' @param norm_diff Maximum difference in normal vectors, in degrees.
-#' @param azimuth Illumination source azimuth in degrees.
+#' @param azimuth Illumination source azimuth, in degrees.
 #' @param altitude Illumination source altitude in degrees.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1490,7 +1540,7 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls="7,18", minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1509,6 +1559,7 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
   if (!is.null(exclude_cls)) {
     args <- paste(args, paste0("--exclude_cls=", exclude_cls))
   }
+  args <- paste(args, paste0("--18"=", 18"))
   if (!is.null(minz)) {
     args <- paste(args, paste0("--minz=", minz))
   }

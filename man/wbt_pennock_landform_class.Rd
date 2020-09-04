@@ -10,7 +10,7 @@ wbt_pennock_landform_class(
   slope = 3,
   prof = 0.1,
   plan = 0,
-  zfactor = 1,
+  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE
 )

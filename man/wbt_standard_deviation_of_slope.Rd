@@ -7,7 +7,7 @@
 wbt_standard_deviation_of_slope(
   input,
   output,
-  zfactor = 1,
+  zfactor = NULL,
   filterx = 11,
   filtery = 11,
   wd = NULL,

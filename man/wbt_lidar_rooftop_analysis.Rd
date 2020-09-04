@@ -26,29 +26,29 @@ wbt_lidar_rooftop_analysis(
 
 \item{output}{Output vector polygon file.}
 
-\item{i}{Input LiDAR file.}
-
 \item{radius}{Search Radius.}
 
 \item{num_iter}{Number of iterations.}
 
 \item{num_samples}{Number of sample points on which to build the model.}
 
-\item{threshold}{Threshold used to determine inlier points.}
+\item{threshold}{Threshold used to determine inlier points (in elevation units).}
 
-\item{model_size}{Acceptable model size.}
+\item{model_size}{Acceptable model size, in points.}
 
-\item{max_slope}{Maximum planar slope.}
+\item{max_slope}{Maximum planar slope, in degrees.}
 
 \item{norm_diff}{Maximum difference in normal vectors, in degrees.}
 
-\item{azimuth}{Illumination source azimuth in degrees.}
+\item{azimuth}{Illumination source azimuth, in degrees.}
 
 \item{altitude}{Illumination source altitude in degrees.}
 
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{input}{Input LiDAR file.}
 }
 \value{
 Returns the tool text outputs.

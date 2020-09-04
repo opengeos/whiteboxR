@@ -495,18 +495,26 @@ wbt_remove_spurs <- function(input, output, iterations=10, wd=NULL, verbose_mode
 #' Resamples one or more input images into a destination image.
 #'
 #' @param inputs Input raster files.
-#' @param destination Destination raster file.
+#' @param output Output raster file.
+#' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
+#' @param base Optionally specified input base raster file. Not used when a cell size is specified.
 #' @param method Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_resample <- function(inputs, destination, method="cc", wd=NULL, verbose_mode=FALSE) {
+wbt_resample <- function(inputs, output, cell_size=NULL, base=NULL, method="cc", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--destination=", destination))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
+  }
   if (!is.null(method)) {
     args <- paste(args, paste0("--method=", method))
   }

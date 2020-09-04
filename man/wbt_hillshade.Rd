@@ -9,7 +9,7 @@ wbt_hillshade(
   output,
   azimuth = 315,
   altitude = 30,
-  zfactor = 1,
+  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE
 )

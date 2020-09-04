@@ -10,7 +10,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_aspect <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -312,7 +312,7 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -460,7 +460,7 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -598,7 +598,7 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -626,14 +626,14 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=1.0
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param azimuth Wind azimuth in degrees.
-#' @param max_dist Optional maximum search distance (unspecified if none; in xy units).
+#' @param azimuth Azimuth, in degrees.
+#' @param max_dist Optional maximum search distance (unspecified if none; in xy units). Minimum value is 5 x cell size.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -690,7 +690,7 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 #' @param hs_weight Weight given to hillshade relative to relief (0.0-1.0).
 #' @param brightness Brightness factor (0.0-1.0).
 #' @param atmospheric Atmospheric effects weight (0.0-1.0).
-#' @param palette Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep.
+#' @param palette Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.
 #' @param reverse Optional flag indicating whether to use reverse the palette.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param full_mode Optional flag indicating whether to use full 360-degrees of illumination sources.
@@ -699,7 +699,7 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_weight=0.5, brightness=0.5, atmospheric=0.0, palette="atlas", reverse=FALSE, zfactor=1.0, full_mode=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_weight=0.5, brightness=0.5, atmospheric=0.0, palette="atlas", reverse=FALSE, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -727,6 +727,38 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
   }
   if (full_mode) {
     args <- paste(args, "--full_mode")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Map off terrain objects
+#'
+#' Maps off-terrain objects in a digital elevation model (DEM).
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param max_slope Maximum inter-cell absolute slope.
+#' @param min_size Minimum feature size, in grid cells.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1, wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(max_slope)) {
+    args <- paste(args, paste0("--max_slope=", max_slope))
+  }
+  if (!is.null(min_size)) {
+    args <- paste(args, paste0("--min_size=", min_size))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1000,7 +1032,7 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=1.0, full_mode=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1319,7 +1351,7 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE)
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1388,7 +1420,7 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_plan_curvature <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_plan_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1442,7 +1474,7 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_profile_curvature <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_profile_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1471,7 +1503,7 @@ wbt_profile_curvature <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1566,7 +1598,7 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_ruggedness_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1629,7 +1661,7 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_slope <- function(dem, output, zfactor=1.0, units="degrees", wd=NULL, verbose_mode=FALSE) {
+wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
@@ -1718,7 +1750,7 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_standard_deviation_of_slope <- function(input, output, zfactor=1.0, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE) {
+wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1806,13 +1838,69 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE) {
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_tangential_curvature <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_tangential_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Time in daylight
+#'
+#' Calculates the proportion of time a location is within an area of shadow.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param az_fraction Azimuth fraction in degrees.
+#' @param max_dist Optional maximum search distance. Minimum value is 5 x cell size.
+#' @param lat Centre point latitude.
+#' @param long Centre point longitude.
+#' @param utc_offset UTC time offset, in hours (e.g. -04:00, +06:00).
+#' @param start_day Start day of the year (1-365).
+#' @param end_day End day of the year (1-365).
+#' @param start_time Starting hour to track shadows (e.g. 5, 5:00, 05:00:00). Assumes 24-hour time: HH:MM:SS. 'sunrise' is also a valid time.
+#' @param end_time Starting hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_dist=100.0, utc_offset="0000", start_day=1, end_day=365, start_time="000000", end_time="235959", wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--lat=", lat))
+  args <- paste(args, paste0("--long=", long))
+  if (!is.null(az_fraction)) {
+    args <- paste(args, paste0("--az_fraction=", az_fraction))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  if (!is.null(utc_offset)) {
+    args <- paste(args, paste0("--utc_offset=", utc_offset))
+  }
+  if (!is.null(start_day)) {
+    args <- paste(args, paste0("--start_day=", start_day))
+  }
+  if (!is.null(end_day)) {
+    args <- paste(args, paste0("--end_day=", end_day))
+  }
+  if (!is.null(start_time)) {
+    args <- paste(args, paste0("--start_time=", start_time))
+  }
+  if (!is.null(end_time)) {
+    args <- paste(args, paste0("--end_time=", end_time))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1834,7 +1922,7 @@ wbt_tangential_curvature <- function(dem, output, zfactor=1.0, wd=NULL, verbose_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_total_curvature <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_total_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))

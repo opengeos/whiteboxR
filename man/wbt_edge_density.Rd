@@ -9,7 +9,7 @@ wbt_edge_density(
   output,
   filter = 11,
   norm_diff = 5,
-  zfactor = 1,
+  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE
 )

@@ -8,7 +8,7 @@ wbt_horizon_angle(
   dem,
   output,
   azimuth = 0,
-  max_dist = NULL,
+  max_dist = 100,
   wd = NULL,
   verbose_mode = FALSE
 )
@@ -18,9 +18,9 @@ wbt_horizon_angle(
 
 \item{output}{Output raster file.}
 
-\item{azimuth}{Wind azimuth in degrees.}
+\item{azimuth}{Azimuth, in degrees.}
 
-\item{max_dist}{Optional maximum search distance (unspecified if none; in xy units).}
+\item{max_dist}{Optional maximum search distance (unspecified if none; in xy units). Minimum value is 5 x cell size.}
 
 \item{wd}{Changes the working directory.}
 

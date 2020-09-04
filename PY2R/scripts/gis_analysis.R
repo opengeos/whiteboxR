@@ -468,6 +468,36 @@ wbt_extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, 
 }
 
 
+#' Filter raster features by area
+#'
+#' Removes small-area features from a raster.
+#'
+#' @param input Input raster file.
+#' @param output Output raster file.
+#' @param threshold Remove features with fewer grid cells than this threshold value.
+#' @param background Background value.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_filter_raster_features_by_area <- function(input, output, threshold, background="zero", wd=NULL, verbose_mode=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--threshold=", threshold))
+  if (!is.null(background)) {
+    args <- paste(args, paste0("--background=", background))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Find lowest or highest points
 #'
 #' Locates the lowest and/or highest valued cells in a raster.

@@ -7,7 +7,7 @@
 wbt_tangential_curvature(
   dem,
   output,
-  zfactor = 1,
+  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE
 )

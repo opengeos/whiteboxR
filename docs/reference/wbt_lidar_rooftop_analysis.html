@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -149,10 +149,6 @@
       <td><p>Output vector polygon file.</p></td>
     </tr>
     <tr>
-      <th>i</th>
-      <td><p>Input LiDAR file.</p></td>
-    </tr>
-    <tr>
       <th>radius</th>
       <td><p>Search Radius.</p></td>
     </tr>
@@ -166,15 +162,15 @@
     </tr>
     <tr>
       <th>threshold</th>
-      <td><p>Threshold used to determine inlier points.</p></td>
+      <td><p>Threshold used to determine inlier points (in elevation units).</p></td>
     </tr>
     <tr>
       <th>model_size</th>
-      <td><p>Acceptable model size.</p></td>
+      <td><p>Acceptable model size, in points.</p></td>
     </tr>
     <tr>
       <th>max_slope</th>
-      <td><p>Maximum planar slope.</p></td>
+      <td><p>Maximum planar slope, in degrees.</p></td>
     </tr>
     <tr>
       <th>norm_diff</th>
@@ -182,7 +178,7 @@
     </tr>
     <tr>
       <th>azimuth</th>
-      <td><p>Illumination source azimuth in degrees.</p></td>
+      <td><p>Illumination source azimuth, in degrees.</p></td>
     </tr>
     <tr>
       <th>altitude</th>
@@ -195,6 +191,10 @@
     <tr>
       <th>verbose_mode</th>
       <td><p>Sets verbose mode. If verbose mode is False, tools will not print output messages.</p></td>
+    </tr>
+    <tr>
+      <th>input</th>
+      <td><p>Input LiDAR file.</p></td>
     </tr>
     </table>
 

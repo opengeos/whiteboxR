@@ -10,7 +10,7 @@ wbt_lidar_tin_gridding(
   parameter = "elevation",
   returns = "all",
   resolution = 1,
-  exclude_cls = NULL,
+  exclude_cls = "7,18",
   minz = NULL,
   maxz = NULL,
   max_triangle_edge_length = NULL,

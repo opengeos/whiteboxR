@@ -8,7 +8,7 @@ wbt_multidirectional_hillshade(
   dem,
   output,
   altitude = 45,
-  zfactor = 1,
+  zfactor = NULL,
   full_mode = FALSE,
   wd = NULL,
   verbose_mode = FALSE

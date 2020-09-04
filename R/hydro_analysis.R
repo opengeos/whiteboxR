@@ -1039,17 +1039,21 @@ wbt_insert_dams <- function(dem, dam_pts, output, damlength, wd=NULL, verbose_mo
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param size Target basin size, in grid cells.
+#' @param connections Output upstream-downstream flow connections among basins?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_isobasins <- function(dem, output, size, wd=NULL, verbose_mode=FALSE) {
+wbt_isobasins <- function(dem, output, size, connections=FALSE, wd=NULL, verbose_mode=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--size=", size))
+  if (connections) {
+    args <- paste(args, "--connections")
+  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }

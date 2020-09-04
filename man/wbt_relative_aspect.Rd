@@ -8,7 +8,7 @@ wbt_relative_aspect(
   dem,
   output,
   azimuth = 0,
-  zfactor = 1,
+  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE
 )
