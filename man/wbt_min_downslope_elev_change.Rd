@@ -4,7 +4,13 @@
 \alias{wbt_min_downslope_elev_change}
 \title{Min downslope elev change}
 \usage{
-wbt_min_downslope_elev_change(dem, output, wd = NULL, verbose_mode = FALSE)
+wbt_min_downslope_elev_change(
+  dem,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -14,6 +20,8 @@ wbt_min_downslope_elev_change(dem, output, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

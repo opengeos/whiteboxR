@@ -4,7 +4,14 @@
 \alias{wbt_kappa_index}
 \title{Kappa index}
 \usage{
-wbt_kappa_index(input1, input2, output, wd = NULL, verbose_mode = FALSE)
+wbt_kappa_index(
+  input1,
+  input2,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{input1}{Input classification raster file.}
@@ -16,6 +23,8 @@ wbt_kappa_index(input1, input2, output, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

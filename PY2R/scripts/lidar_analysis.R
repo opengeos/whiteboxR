@@ -7,10 +7,11 @@
 #' @param proj Well-known-text string or EPSG code describing projection.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
@@ -20,6 +21,9 @@ wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=F
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -35,10 +39,11 @@ wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=F
 #' @param output Output LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, verbose_mode=FALSE) {
+wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -46,6 +51,9 @@ wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, v
   args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -62,10 +70,11 @@ wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, v
 #' @param filter Filter out points from overlapping flightlines? If false, overlaps will simply be classified.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -78,6 +87,9 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FA
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -93,10 +105,11 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FA
 #' @param output Output LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE) {
+wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -104,6 +117,9 @@ wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_
   args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -119,10 +135,11 @@ wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_
 #' @param output Output LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE) {
+wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -130,6 +147,9 @@ wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbo
   args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -145,10 +165,11 @@ wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbo
 #' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -158,6 +179,9 @@ wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, v
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -173,10 +197,11 @@ wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, v
 #' @param threshold Scan angle threshold.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verbose_mode=FALSE) {
+wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -184,6 +209,9 @@ wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verb
   args <- paste(args, paste0("--threshold=", threshold))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -198,16 +226,20 @@ wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verb
 #' @param output Output file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode=FALSE) {
+wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -223,10 +255,11 @@ wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode
 #' @param resolution Output raster's grid resolution.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -238,6 +271,9 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, 
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -252,10 +288,11 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, 
 #' @param output Output raster file (including extension).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -264,6 +301,9 @@ wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FA
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -277,15 +317,19 @@ wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FA
 #' @param inputs Input LiDAR files.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE) {
+wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -299,15 +343,19 @@ wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE) {
 #' @param input Input LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) {
+wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -321,15 +369,19 @@ wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) 
 #' @param input Input LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) {
+wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -344,10 +396,11 @@ wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE) {
 #' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   if (!is.null(inputs)) {
@@ -358,6 +411,9 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FA
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -373,10 +429,11 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FA
 #' @param resolution Output raster's grid resolution.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -388,6 +445,9 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL,
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -403,10 +463,11 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 #' @param resolution Output raster's grid resolution.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -418,6 +479,9 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -435,10 +499,11 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 #' @param nonsubset_class Non-subset point class value (must be 0-18; see LAS specifications).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -450,6 +515,9 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -465,10 +533,11 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
 #' @param output Output LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--in_lidar=", in_lidar))
@@ -476,6 +545,9 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
   args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -495,10 +567,11 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
 #' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, radius=0.5, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, radius=0.5, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -523,6 +596,9 @@ wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -541,10 +617,11 @@ wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, 
 #' @param outclassval Optional parameter specifying the class value assigned to points within the slice.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -567,6 +644,9 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -587,10 +667,11 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 #' @param height_above_ground Transform output to height above average ground elevation?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, height_above_ground=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, height_above_ground=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -619,6 +700,9 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -634,10 +718,11 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
 #' @param orientation Grid Orientation, 'horizontal' or 'vertical'.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal", wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -648,6 +733,9 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -665,10 +753,11 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
 #' @param radius Search Radius.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -685,6 +774,9 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -700,10 +792,11 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
 #' @param clip Amount to clip distribution tails (in percent).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -716,6 +809,9 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -738,10 +834,11 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -775,6 +872,9 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -790,10 +890,11 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
 #' @param geokeys Flag indicating whether or not to print the geokeys.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -809,6 +910,9 @@ wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -822,16 +926,20 @@ wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, 
 #' @param output Output LiDAR file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", inputs))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -849,10 +957,11 @@ wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE) {
 #' @param resolution Output raster's grid resolution.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", input1))
@@ -864,6 +973,9 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -885,10 +997,11 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -919,6 +1032,9 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -938,10 +1054,11 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
 #' @param maxz Optional maximum elevation for inclusion in interpolation.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -969,6 +1086,9 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -988,10 +1108,11 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
 #' @param predom_class Flag indicating whether or not to output the predominant classification raster.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, avg_points_per_pulse=TRUE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, avg_points_per_pulse=TRUE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1019,6 +1140,9 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1040,10 +1164,11 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
 #' @param last_returns Only include last- and only-return points.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, last_returns=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, last_returns=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1075,6 +1200,9 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1098,10 +1226,11 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
 #' @param weight Weight parameter used in basis function.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, num_points=20, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=5, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, num_points=20, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1141,6 +1270,9 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1155,10 +1287,11 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
 #' @param include_z Include z-values in point comparison?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1168,6 +1301,9 @@ wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL,
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1186,10 +1322,11 @@ wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL,
 #' @param classify Classify points as ground (2) or off-ground (1).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, use_median=FALSE, classify=TRUE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, use_median=FALSE, classify=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1208,6 +1345,9 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1232,10 +1372,11 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 #' @param altitude Illumination source altitude in degrees.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=65.0, norm_diff=10.0, azimuth=180.0, altitude=30.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=65.0, norm_diff=10.0, azimuth=180.0, altitude=30.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--buildings=", buildings))
@@ -1273,6 +1414,9 @@ wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1296,10 +1440,11 @@ wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0
 #' @param ground Classify the largest segment as ground points?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=80.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, ground=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=80.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, ground=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1337,6 +1482,9 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1354,10 +1502,11 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
 #' @param classify Classify points as ground (2) or off-ground (1).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1377,6 +1526,9 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1393,10 +1545,11 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
 #' @param save_filtered Save filtered points to seperate file?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1412,6 +1565,9 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1429,10 +1585,11 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
 #' @param save_filtered Save filtered points to seperate file?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1446,6 +1603,9 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1464,10 +1624,11 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
 #' @param min_points Minimum number of points contained in a tile for it to be saved.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1489,6 +1650,9 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1503,10 +1667,11 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
 #' @param hull Identify the convex hull around points.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1516,6 +1681,9 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1537,10 +1705,11 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose
 #' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls="7,18", minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls="7,18", minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1572,6 +1741,9 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
 }
@@ -1586,10 +1758,11 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
 #' @param radius Search Radius.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1599,6 +1772,9 @@ wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbo
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1614,10 +1790,11 @@ wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbo
 #' @param radius Search Radius.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE) {
+wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -1627,6 +1804,9 @@ wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1642,10 +1822,11 @@ wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=
 #' @param polygons Input vector polygons file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbose_mode=FALSE) {
+wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--indir=", indir))
@@ -1653,6 +1834,9 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
   args <- paste(args, paste0("--polygons=", polygons))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1667,10 +1851,11 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
 #' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_zlidar_to_las <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FALSE) {
+wbt_zlidar_to_las <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   if (!is.null(inputs)) {
@@ -1681,6 +1866,9 @@ wbt_zlidar_to_las <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FA
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
   }
   tool_name <- as.character(match.call()[[1]])
   wbt_run_tool(tool_name, args, verbose_mode)

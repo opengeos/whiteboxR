@@ -4,7 +4,13 @@
 \alias{wbt_medoid}
 \title{Medoid}
 \usage{
-wbt_medoid(input, output, wd = NULL, verbose_mode = FALSE)
+wbt_medoid(
+  input,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector file.}
@@ -14,6 +20,8 @@ wbt_medoid(input, output, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

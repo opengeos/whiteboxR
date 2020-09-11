@@ -4,7 +4,14 @@
 \alias{wbt_split_with_lines}
 \title{Split with lines}
 \usage{
-wbt_split_with_lines(input, split, output, wd = NULL, verbose_mode = FALSE)
+wbt_split_with_lines(
+  input,
+  split,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{input}{Input vector line or polygon file.}
@@ -16,6 +23,8 @@ wbt_split_with_lines(input, split, output, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

@@ -11,7 +11,8 @@ wbt_sediment_transport_index(
   sca_exponent = 0.4,
   slope_exponent = 1.3,
   wd = NULL,
-  verbose_mode = FALSE
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ wbt_sediment_transport_index(
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

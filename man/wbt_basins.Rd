@@ -4,7 +4,14 @@
 \alias{wbt_basins}
 \title{Basins}
 \usage{
-wbt_basins(d8_pntr, output, esri_pntr = FALSE, wd = NULL, verbose_mode = FALSE)
+wbt_basins(
+  d8_pntr,
+  output,
+  esri_pntr = FALSE,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{d8_pntr}{Input raster D8 pointer file.}
@@ -16,6 +23,8 @@ wbt_basins(d8_pntr, output, esri_pntr = FALSE, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

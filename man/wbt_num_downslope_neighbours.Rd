@@ -4,7 +4,13 @@
 \alias{wbt_num_downslope_neighbours}
 \title{Num downslope neighbours}
 \usage{
-wbt_num_downslope_neighbours(dem, output, wd = NULL, verbose_mode = FALSE)
+wbt_num_downslope_neighbours(
+  dem,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{dem}{Input raster DEM file.}
@@ -14,6 +20,8 @@ wbt_num_downslope_neighbours(dem, output, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

@@ -27,7 +27,7 @@ def function_header(line):
         line = line.replace("self, output, i=None,", "input, output,")
         line = line.replace(', i=None,', ', input=None,')
         line = line.replace("self, ", "")
-        line = line.replace("callback=None", "wd=NULL, verbose_mode=FALSE")
+        line = line.replace("callback=None", "wd=NULL, verbose_mode=FALSE, compress_rasters=False")
         line = line.replace("False", "FALSE")
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")
@@ -286,6 +286,7 @@ with open(wbt_py) as f:
                     i = i + 1
                 ff.write("#' @param wd Changes the working directory.\n")
                 ff.write("#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.\n")
+                ff.write("#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.\n")
                 ff.write("#'\n")
                 ff.write("#' @return Returns the tool text outputs.\n")
                 ff.write("#' @export\n")

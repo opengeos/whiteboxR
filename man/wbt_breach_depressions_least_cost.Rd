@@ -13,7 +13,8 @@ wbt_breach_depressions_least_cost(
   flat_increment = NULL,
   fill = TRUE,
   wd = NULL,
-  verbose_mode = FALSE
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
 )
 }
 \arguments{
@@ -34,6 +35,8 @@ wbt_breach_depressions_least_cost(
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

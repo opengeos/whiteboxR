@@ -4,7 +4,14 @@
 \alias{wbt_atan2}
 \title{Atan2}
 \usage{
-wbt_atan2(input_y, input_x, output, wd = NULL, verbose_mode = FALSE)
+wbt_atan2(
+  input_y,
+  input_x,
+  output,
+  wd = NULL,
+  verbose_mode = FALSE,
+  compress_rasters = FALSE
+)
 }
 \arguments{
 \item{input_y}{Input y raster file or constant value (rise).}
@@ -16,6 +23,8 @@ wbt_atan2(input_y, input_x, output, wd = NULL, verbose_mode = FALSE)
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is False, tools will not print output messages.}
+
+\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
 }
 \value{
 Returns the tool text outputs.

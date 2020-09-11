@@ -120,7 +120,13 @@
     <p>Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_elev_relative_to_min_max</span>(<span class='no'>dem</span>, <span class='no'>output</span>, <span class='kw'>wd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>wbt_elev_relative_to_min_max</span>(
+  <span class='no'>dem</span>,
+  <span class='no'>output</span>,
+  <span class='kw'>wd</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>verbose_mode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>compress_rasters</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -140,6 +146,10 @@
     <tr>
       <th>verbose_mode</th>
       <td><p>Sets verbose mode. If verbose mode is False, tools will not print output messages.</p></td>
+    </tr>
+    <tr>
+      <th>compress_rasters</th>
+      <td><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></td>
     </tr>
     </table>
 
