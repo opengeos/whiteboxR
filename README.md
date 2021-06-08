@@ -18,7 +18,7 @@
 This repository is related to the **whitebox** R package for geospatial analysis, which is an R frontend of a stand-alone executable command-line program called **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**. 
 
 * Authors: Dr. John Lindsay (<https://jblindsay.github.io/ghrg/index.html>)
-* Contributors: Dr. Qiusheng Wu (<https://wetlands.io> | <https://LidarBlog.com>)
+* Contributors: Dr. Qiusheng Wu (<https://wetlands.io> | <https://blog.gishub.org>)
 * GitHub repo: <https://github.com/giswqs/whiteboxR>
 * CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
@@ -129,7 +129,7 @@ wbt_d_inf_flow_accumulation(dem, "./flow_accum.tif")
 
 ## Available Tools
 
-The **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)** library currently contains more than **443** tools, which are each grouped based on their main function into one of the following categories: Data Tools, GIS Analysis, Hydrological Analysis, Image Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream Network Analysis, and Terrain Analysis. For a listing of available tools, complete with documentation and usage details, please see the [WhiteboxTools User Manual](https://jblindsay.github.io/wbt_book/available_tools/index.html).
+The **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)** library currently contains more than **468** tools, which are each grouped based on their main function into one of the following categories: Data Tools, GIS Analysis, Hydrological Analysis, Image Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream Network Analysis, and Terrain Analysis. For a listing of available tools, complete with documentation and usage details, please see the [WhiteboxTools User Manual](https://jblindsay.github.io/wbt_book/available_tools/index.html).
 
 
 ## Contributing
