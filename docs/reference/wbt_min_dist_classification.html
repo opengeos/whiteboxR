@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Las to zlidar — wbt_las_to_zlidar • whitebox</title>
+<title>Min dist classification — wbt_min_dist_classification • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Las to zlidar — wbt_las_to_zlidar" />
-<meta property="og:description" content="Converts one or more LAS files into the zlidar compressed LiDAR data format." />
+<meta property="og:title" content="Min dist classification — wbt_min_dist_classification" />
+<meta property="og:description" content="Performs a supervised minimum-distance classification using training site polygons and multi-spectral images." />
 
 
 
@@ -111,20 +111,21 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Las to zlidar</h1>
-    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/lidar_analysis.R'><code>R/lidar_analysis.R</code></a></small>
-    <div class="hidden name"><code>wbt_las_to_zlidar.Rd</code></div>
+    <h1>Min dist classification</h1>
+    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/image_analysis.R'><code>R/image_analysis.R</code></a></small>
+    <div class="hidden name"><code>wbt_min_dist_classification.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Converts one or more LAS files into the zlidar compressed LiDAR data format.</p>
+    <p>Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_las_to_zlidar</span><span class='op'>(</span>
-  inputs <span class='op'>=</span> <span class='cn'>NULL</span>,
-  outdir <span class='op'>=</span> <span class='cn'>NULL</span>,
-  compress <span class='op'>=</span> <span class='st'>"brotli"</span>,
-  level <span class='op'>=</span> <span class='fl'>5</span>,
+    <pre class="usage"><span class='fu'>wbt_min_dist_classification</span><span class='op'>(</span>
+  <span class='va'>inputs</span>,
+  <span class='va'>polys</span>,
+  <span class='va'>field</span>,
+  <span class='va'>output</span>,
+  threshold <span class='op'>=</span> <span class='cn'>NULL</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
   compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>
@@ -135,19 +136,23 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>inputs</th>
-      <td><p>Input LAS files.</p></td>
+      <td><p>Names of the input band images.</p></td>
     </tr>
     <tr>
-      <th>outdir</th>
-      <td><p>Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.</p></td>
+      <th>polys</th>
+      <td><p>Name of the input training site polygons shapefile.</p></td>
     </tr>
     <tr>
-      <th>compress</th>
-      <td><p>Compression method, including 'brotli' and 'deflate'.</p></td>
+      <th>field</th>
+      <td><p>Name of the attribute containing class name data.</p></td>
     </tr>
     <tr>
-      <th>level</th>
-      <td><p>Compression level (1-9).</p></td>
+      <th>output</th>
+      <td><p>Name of the output raster file.</p></td>
+    </tr>
+    <tr>
+      <th>threshold</th>
+      <td><p>Distance threshold, in z-scores; blank for none.</p></td>
     </tr>
     <tr>
       <th>wd</th>

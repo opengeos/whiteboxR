@@ -4,7 +4,7 @@
 # Step 2 - Create a new develop branch: git checkout -b develop
 # Step 3 - Delete the old WhiteboxTools_linux_amd64.tar.xz in the root folder if needed
 # Step 4 - Run automation.py
-# Step 5 - Update version number in DESCRIPTION 
+# Step 5 - Update version number and RoxygenNote in DESCRIPTION 
 # Step 6 - Open whiteboxR.Rproj in RStudio and run build_check.R
 # Step 7 - Commit and push changes
 # Step 8 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")

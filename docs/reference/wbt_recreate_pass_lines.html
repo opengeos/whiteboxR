@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Las to zlidar — wbt_las_to_zlidar • whitebox</title>
+<title>Recreate pass lines — wbt_recreate_pass_lines • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Las to zlidar — wbt_las_to_zlidar" />
-<meta property="og:description" content="Converts one or more LAS files into the zlidar compressed LiDAR data format." />
+<meta property="og:title" content="Recreate pass lines — wbt_recreate_pass_lines" />
+<meta property="og:description" content="This tool can be used to approximate the harvester pass lines from yield points." />
 
 
 
@@ -111,20 +111,21 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Las to zlidar</h1>
-    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/lidar_analysis.R'><code>R/lidar_analysis.R</code></a></small>
-    <div class="hidden name"><code>wbt_las_to_zlidar.Rd</code></div>
+    <h1>Recreate pass lines</h1>
+    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/precision_agriculture.R'><code>R/precision_agriculture.R</code></a></small>
+    <div class="hidden name"><code>wbt_recreate_pass_lines.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Converts one or more LAS files into the zlidar compressed LiDAR data format.</p>
+    <p>This tool can be used to approximate the harvester pass lines from yield points.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_las_to_zlidar</span><span class='op'>(</span>
-  inputs <span class='op'>=</span> <span class='cn'>NULL</span>,
-  outdir <span class='op'>=</span> <span class='cn'>NULL</span>,
-  compress <span class='op'>=</span> <span class='st'>"brotli"</span>,
-  level <span class='op'>=</span> <span class='fl'>5</span>,
+    <pre class="usage"><span class='fu'>wbt_recreate_pass_lines</span><span class='op'>(</span>
+  <span class='va'>input</span>,
+  <span class='va'>yield_field_name</span>,
+  <span class='va'>output_lines</span>,
+  <span class='va'>output_points</span>,
+  max_change_in_heading <span class='op'>=</span> <span class='fl'>25</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
   compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>
@@ -134,20 +135,24 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>inputs</th>
-      <td><p>Input LAS files.</p></td>
+      <th>input</th>
+      <td><p>Name of the input points shapefile.</p></td>
     </tr>
     <tr>
-      <th>outdir</th>
-      <td><p>Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.</p></td>
+      <th>yield_field_name</th>
+      <td><p>Name of the attribute containing yield data.</p></td>
     </tr>
     <tr>
-      <th>compress</th>
-      <td><p>Compression method, including 'brotli' and 'deflate'.</p></td>
+      <th>output_lines</th>
+      <td><p>Name of the output pass lines shapefile.</p></td>
     </tr>
     <tr>
-      <th>level</th>
-      <td><p>Compression level (1-9).</p></td>
+      <th>output_points</th>
+      <td><p>Name of the output points shapefile.</p></td>
+    </tr>
+    <tr>
+      <th>max_change_in_heading</th>
+      <td><p>Max change in heading.</p></td>
     </tr>
     <tr>
       <th>wd</th>

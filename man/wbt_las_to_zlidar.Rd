@@ -7,6 +7,8 @@
 wbt_las_to_zlidar(
   inputs = NULL,
   outdir = NULL,
+  compress = "brotli",
+  level = 5,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE
@@ -16,6 +18,10 @@ wbt_las_to_zlidar(
 \item{inputs}{Input LAS files.}
 
 \item{outdir}{Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.}
+
+\item{compress}{Compression method, including 'brotli' and 'deflate'.}
+
+\item{level}{Compression level (1-9).}
 
 \item{wd}{Changes the working directory.}
 
