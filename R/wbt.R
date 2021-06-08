@@ -37,7 +37,7 @@ wbt_init <- function() {
     cat("    ", url, "\n")
     cat("(This could take a few minutes, please be patient...)\n")
     exe_zip <- file.path(pkg_dir, filename)
-    utils::download.file(url = url, destfile = exe_zip)
+    utils::download.file(url = url, destfile = exe_zip, method="libcurl")
     utils::unzip(exe_zip, exdir = pkg_dir)
     Sys.chmod(exe_path, '755')
     # if (os == "Windows") {
