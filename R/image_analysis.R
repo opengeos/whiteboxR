@@ -188,6 +188,64 @@ wbt_ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 }
 
 
+#' Image slider
+#'
+#' This tool creates an image slider from two input images.
+#'
+#' @param input1 Name of the left input image file.
+#' @param palette1 Left image palette; options are 'grey', 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'rgb'.
+#' @param reverse1 Reverse left image palette?.
+#' @param label1 Left image label (leave blank for none).
+#' @param input2 Name of the right input image file.
+#' @param palette2 Right image palette; options are 'grey', 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'rgb'.
+#' @param reverse2 Reverse right image palette?.
+#' @param label2 Right image label (leave blank for none).
+#' @param output Name of the output HTML file (*.html).
+#' @param height Image height, in pixels.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_image_slider <- function(input1, input2, output, palette1="grey", reverse1=FALSE, label1="", palette2="grey", reverse2=FALSE, label2="", height=600, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(palette1)) {
+    args <- paste(args, paste0("--palette1=", palette1))
+  }
+  if (reverse1) {
+    args <- paste(args, "--reverse1")
+  }
+  if (!is.null(label1)) {
+    args <- paste(args, paste0("--label1=", label1))
+  }
+  if (!is.null(palette2)) {
+    args <- paste(args, paste0("--palette2=", palette2))
+  }
+  if (reverse2) {
+    args <- paste(args, "--reverse2")
+  }
+  if (!is.null(label2)) {
+    args <- paste(args, paste0("--label2=", label2))
+  }
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Image stack profile
 #'
 #' Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
@@ -246,56 +304,6 @@ wbt_integral_image <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
 }
 
 
-#' K means clustering
-#'
-#' Performs a k-means clustering operation on a multi-spectral dataset.
-#'
-#' @param inputs Input raster files.
-#' @param output Output raster file.
-#' @param out_html Output HTML report file.
-#' @param classes Number of classes.
-#' @param max_iterations Maximum number of iterations.
-#' @param class_change Minimum percent of cells changed between iterations before completion.
-#' @param initialize How to initialize cluster centres?.
-#' @param min_class_size Minimum class size, in pixels.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--classes=", classes))
-  if (!is.null(out_html)) {
-    args <- paste(args, paste0("--out_html=", out_html))
-  }
-  if (!is.null(max_iterations)) {
-    args <- paste(args, paste0("--max_iterations=", max_iterations))
-  }
-  if (!is.null(class_change)) {
-    args <- paste(args, paste0("--class_change=", class_change))
-  }
-  if (!is.null(initialize)) {
-    args <- paste(args, paste0("--initialize=", initialize))
-  }
-  if (!is.null(min_class_size)) {
-    args <- paste(args, paste0("--min_class_size=", min_class_size))
-  }
-  if (!is.null(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
-  }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' Line thinning
 #'
 #' Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
@@ -313,54 +321,6 @@ wbt_line_thinning <- function(input, output, wd=NULL, verbose_mode=FALSE, compre
   args <- ""
   args <- paste(args, paste0("--input=", input))
   args <- paste(args, paste0("--output=", output))
-  if (!is.null(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
-  }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
-  }
-  tool_name <- as.character(match.call()[[1]])
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
-#' Modified k means clustering
-#'
-#' Performs a modified k-means clustering operation on a multi-spectral dataset.
-#'
-#' @param inputs Input raster files.
-#' @param output Output raster file.
-#' @param out_html Output HTML report file.
-#' @param start_clusters Initial number of clusters.
-#' @param merge_dist Cluster merger distance.
-#' @param max_iterations Maximum number of iterations.
-#' @param class_change Minimum percent of cells changed between iterations before completion.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merge_dist=NULL, max_iterations=10, class_change=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
-  if (!is.null(out_html)) {
-    args <- paste(args, paste0("--out_html=", out_html))
-  }
-  if (!is.null(start_clusters)) {
-    args <- paste(args, paste0("--start_clusters=", start_clusters))
-  }
-  if (!is.null(merge_dist)) {
-    args <- paste(args, paste0("--merge_dist=", merge_dist))
-  }
-  if (!is.null(max_iterations)) {
-    args <- paste(args, paste0("--max_iterations=", max_iterations))
-  }
-  if (!is.null(class_change)) {
-    args <- paste(args, paste0("--class_change=", class_change))
-  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -776,6 +736,244 @@ wbt_write_function_memory_insertion <- function(input1, input2, output, input3=N
 }
 
 
+#' Evaluate training sites
+#'
+#' This tool can be used to inspect the overlap in spectral signatures of training sites for various classes.
+#'
+#' @param inputs Name of the input band images.
+#' @param polys Name of the input training site polygons shapefile.
+#' @param field Name of the attribute containing class name data.
+#' @param output Name of the output report file (*.html).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--polys=", polys))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Image segmentation
+#'
+#' Performs a region-growing based segmentation on a set of multi-spectral images.
+#'
+#' @param inputs Names of the input band images.
+#' @param output Name of the output raster file.
+#' @param threshold Distance threshold, in z-scores.
+#' @param steps Number of steps.
+#' @param min_area Minimum object area, in grid cells (1-8).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_area=4, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(steps)) {
+    args <- paste(args, paste0("--steps=", steps))
+  }
+  if (!is.null(min_area)) {
+    args <- paste(args, paste0("--min_area=", min_area))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' K means clustering
+#'
+#' Performs a k-means clustering operation on a multi-spectral dataset.
+#'
+#' @param inputs Input raster files.
+#' @param output Output raster file.
+#' @param out_html Output HTML report file.
+#' @param classes Number of classes.
+#' @param max_iterations Maximum number of iterations.
+#' @param class_change Minimum percent of cells changed between iterations before completion.
+#' @param initialize How to initialize cluster centres?.
+#' @param min_class_size Minimum class size, in pixels.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--classes=", classes))
+  if (!is.null(out_html)) {
+    args <- paste(args, paste0("--out_html=", out_html))
+  }
+  if (!is.null(max_iterations)) {
+    args <- paste(args, paste0("--max_iterations=", max_iterations))
+  }
+  if (!is.null(class_change)) {
+    args <- paste(args, paste0("--class_change=", class_change))
+  }
+  if (!is.null(initialize)) {
+    args <- paste(args, paste0("--initialize=", initialize))
+  }
+  if (!is.null(min_class_size)) {
+    args <- paste(args, paste0("--min_class_size=", min_class_size))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Min dist classification
+#'
+#' Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.
+#'
+#' @param inputs Names of the input band images.
+#' @param polys Name of the input training site polygons shapefile.
+#' @param field Name of the attribute containing class name data.
+#' @param output Name of the output raster file.
+#' @param threshold Distance threshold, in z-scores; blank for none.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--polys=", polys))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Modified k means clustering
+#'
+#' Performs a modified k-means clustering operation on a multi-spectral dataset.
+#'
+#' @param inputs Input raster files.
+#' @param output Output raster file.
+#' @param out_html Output HTML report file.
+#' @param start_clusters Initial number of clusters.
+#' @param merge_dist Cluster merger distance.
+#' @param max_iterations Maximum number of iterations.
+#' @param class_change Minimum percent of cells changed between iterations before completion.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merge_dist=NULL, max_iterations=10, class_change=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_html)) {
+    args <- paste(args, paste0("--out_html=", out_html))
+  }
+  if (!is.null(start_clusters)) {
+    args <- paste(args, paste0("--start_clusters=", start_clusters))
+  }
+  if (!is.null(merge_dist)) {
+    args <- paste(args, paste0("--merge_dist=", merge_dist))
+  }
+  if (!is.null(max_iterations)) {
+    args <- paste(args, paste0("--max_iterations=", max_iterations))
+  }
+  if (!is.null(class_change)) {
+    args <- paste(args, paste0("--class_change=", class_change))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Parallelepiped classification
+#'
+#' Performs a supervised parallelepiped classification using training site polygons and multi-spectral images.
+#'
+#' @param inputs Name of the input band images.
+#' @param polys Name of the input training site polygons shapefile.
+#' @param field Name of the attribute containing class name data.
+#' @param output Name of the output raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_parallelepiped_classification <- function(inputs, polys, field, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--polys=", polys))
+  args <- paste(args, paste0("--field=", field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Adaptive filter
 #'
 #' Performs an adaptive filter on an image.
@@ -840,6 +1038,50 @@ wbt_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, 
   }
   if (!is.null(sigma_int)) {
     args <- paste(args, paste0("--sigma_int=", sigma_int))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Canny edge detection
+#'
+#' This tool performs a Canny edge-detection filter on an input image.
+#'
+#' @param input Name of the input raster image file.
+#' @param output Name of the output raster image file.
+#' @param sigma Sigma value used in Gaussian filtering, default = 0.5.
+#' @param low Low threshold, default = 0.05.
+#' @param high High threshold, default = 0.15.
+#' @param add_back Add the edge cells back to the input image.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_canny_edge_detection <- function(input, output, sigma=0.5, low=0.05, high=0.15, add_back=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  if (!is.null(low)) {
+    args <- paste(args, paste0("--low=", low))
+  }
+  if (!is.null(high)) {
+    args <- paste(args, paste0("--high=", high))
+  }
+  if (add_back) {
+    args <- paste(args, "--add_back")
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))

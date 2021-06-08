@@ -12,3 +12,4 @@ vignettes/*.tif
 vignettes/*.log
 *.tif
 .vscode/
+WhiteboxTools_linux_amd64.zip

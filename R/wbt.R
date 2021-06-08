@@ -24,11 +24,11 @@ wbt_init <- function() {
 
   if (!file.exists(exe_path)) {
     if (os == "Linux") {
-      url <- "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
+      url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
     } else if (os == "Windows") {
-      url <- "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_win_amd64.zip"
+      url <- "https://www.whiteboxgeo.com/WBT_Windows/WhiteboxTools_win_amd64.zip"
     } else if (os == "Darwin") {
-      url <- "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_darwin_amd64.zip"
+      url <- "https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_amd64.zip"
     } else {
       stop("Sorry, whitebox is unsupported for your operating system!")
     }
@@ -38,11 +38,12 @@ wbt_init <- function() {
     cat("(This could take a few minutes, please be patient...)\n")
     exe_zip <- file.path(pkg_dir, filename)
     utils::download.file(url = url, destfile = exe_zip)
-    if (os == "Windows") {
-      utils::unzip(exe_zip, exdir = pkg_dir)
-    } else {
-      utils::untar(exe_zip, exdir = pkg_dir)
-    }
+    utils::unzip(exe_zip, exdir = pkg_dir)
+    # if (os == "Windows") {
+    #   utils::unzip(exe_zip, exdir = pkg_dir)
+    # } else {
+    #   utils::untar(exe_zip, exdir = pkg_dir)
+    # }
     cat("WhiteboxTools binary is located at: ", exe_path, "\n")
     cat("You can now start using whitebox\n")
     cat("    > library(whitebox)\n")

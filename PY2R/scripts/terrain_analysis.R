@@ -30,6 +30,44 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
 }
 
 
+#' Assess route
+#'
+#' This tool assesses a route for slope, elevation, and visibility variation.
+#'
+#' @param routes Name of the input routes vector file.
+#' @param dem Name of the input DEM raster file.
+#' @param output Name of the output lines shapefile.
+#' @param length Maximum segment length (m).
+#' @param dist Search distance, in grid cells, used in visibility analysis.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--routes=", routes))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(length)) {
+    args <- paste(args, paste0("--length=", length))
+  }
+  if (!is.null(dist)) {
+    args <- paste(args, paste0("--dist=", dist))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Average normal vector angular deviation
 #'
 #' Calculates the circular variance of aspect at a scale for a DEM.
@@ -489,6 +527,68 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--watersheds=", watersheds))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Embankment mapping
+#'
+#' Maps and/or removes road embankments from an input fine-resolution DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param road_vec Input vector polygons file.
+#' @param output Output raster file.
+#' @param search_dist Search distance used to reposition transportation vectors onto road embankments (in map units).
+#' @param min_road_width Minimum road width; this is the width of the paved road surface (in map units).
+#' @param typical_width Typical embankment width; this is the maximum width of an embankment with roadside ditches (in map units).
+#' @param max_height Typical embankment maximum height; this is the height a typical embankment with roadside ditches (in map units).
+#' @param max_width Maximum embankment width, typically where embankments traverse steep-sided valleys (in map units).
+#' @param max_increment Maximum upwards increment between neighbouring cells on an embankment (in elevation units).
+#' @param spillout_slope Spillout slope (in degrees).
+#' @param remove_embankments Optional flag indicating whether to output a DEM with embankments removed (true) or an embankment raster map (false).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_road_width=6.0, typical_width=30.0, max_height=2.0, max_width=60.0, max_increment=0.05, spillout_slope=4.0, remove_embankments=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--road_vec=", road_vec))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(search_dist)) {
+    args <- paste(args, paste0("--search_dist=", search_dist))
+  }
+  if (!is.null(min_road_width)) {
+    args <- paste(args, paste0("--min_road_width=", min_road_width))
+  }
+  if (!is.null(typical_width)) {
+    args <- paste(args, paste0("--typical_width=", typical_width))
+  }
+  if (!is.null(max_height)) {
+    args <- paste(args, paste0("--max_height=", max_height))
+  }
+  if (!is.null(max_width)) {
+    args <- paste(args, paste0("--max_width=", max_width))
+  }
+  if (!is.null(max_increment)) {
+    args <- paste(args, paste0("--max_increment=", max_increment))
+  }
+  if (!is.null(spillout_slope)) {
+    args <- paste(args, paste0("--spillout_slope=", spillout_slope))
+  }
+  if (remove_embankments) {
+    args <- paste(args, "--remove_embankments")
+  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1496,6 +1596,40 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 }
 
 
+#' Openness
+#'
+#' This tool calculates the topographic openness index from an input DEM.
+#'
+#' @param input Name of the input raster image file.
+#' @param pos_output Name of the positive openenness output raster file.
+#' @param neg_output Name of the negative openenness output raster file.
+#' @param dist Search distance, in grid cells.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--pos_output=", pos_output))
+  args <- paste(args, paste0("--neg_output=", neg_output))
+  if (!is.null(dist)) {
+    args <- paste(args, paste0("--dist=", dist))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Pennock landform class
 #'
 #' Classifies hillslope zones based on slope, profile curvature, and plan curvature.
@@ -1848,6 +1982,66 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 }
 
 
+#' Shadow animation
+#'
+#' This tool creates an animated GIF of shadows based on an input DEM.
+#'
+#' @param input Name of the input digital surface model (DSM) raster file.
+#' @param palette DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.
+#' @param output Name of the output HTML file (*.html).
+#' @param max_dist Optional maximum search distance. Minimum value is 5 x cell size.
+#' @param date Date in format DD/MM/YYYY.
+#' @param interval Time interval, in minutes (1-60).
+#' @param location Location, defined as Lat/Long/UTC-offset (e.g. 43.5448/-80.2482/-4).
+#' @param height Image height, in pixels.
+#' @param delay GIF time delay in milliseconds.
+#' @param label Label text (leave blank for none).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", date="21/06/2021", interval=15, location="43.5448/-80.2482/-4", height=600, delay=250, label="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(palette)) {
+    args <- paste(args, paste0("--palette=", palette))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  if (!is.null(date)) {
+    args <- paste(args, paste0("--date=", date))
+  }
+  if (!is.null(interval)) {
+    args <- paste(args, paste0("--interval=", interval))
+  }
+  if (!is.null(location)) {
+    args <- paste(args, paste0("--location=", location))
+  }
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
+  }
+  if (!is.null(delay)) {
+    args <- paste(args, paste0("--delay=", delay))
+  }
+  if (!is.null(label)) {
+    args <- paste(args, paste0("--label=", label))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Slope
 #'
 #' Calculates a slope raster from an input DEM.
@@ -1904,6 +2098,46 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
   args <- paste(args, paste0("--output=", output))
   if (!is.null(watershed)) {
     args <- paste(args, paste0("--watershed=", watershed))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Smooth vegetation residual
+#'
+#' This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
+#'
+#' @param input Name of the input digital elevation model (DEM) raster file.
+#' @param output Name of the output raster file.
+#' @param max_scale Maximum search neighbourhood radius in grid cells.
+#' @param dev_threshold DEVmax Threshold.
+#' @param scale_threshold DEVmax scale threshold.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_threshold=1.0, scale_threshold=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(max_scale)) {
+    args <- paste(args, paste0("--max_scale=", max_scale))
+  }
+  if (!is.null(dev_threshold)) {
+    args <- paste(args, paste0("--dev_threshold=", dev_threshold))
+  }
+  if (!is.null(scale_threshold)) {
+    args <- paste(args, paste0("--scale_threshold=", scale_threshold))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -2084,7 +2318,7 @@ wbt_tangential_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose
 
 #' Time in daylight
 #'
-#' Calculates the proportion of time a location is within an area of shadow.
+#' Calculates the proportion of time a location is not within an area of shadow.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -2130,6 +2364,66 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
   }
   if (!is.null(end_time)) {
     args <- paste(args, paste0("--end_time=", end_time))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Topographic position animation
+#'
+#' This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).
+#'
+#' @param input Name of the input digital elevation model (DEM) raster file.
+#' @param palette Image palette; options are 'bl_yl_rd', 'bl_w_rd', 'purple', 'gn_yl', 'pi_y_g', and 'viridi'.
+#' @param output Name of the output HTML file (*.html).
+#' @param min_scale Minimum search neighbourhood radius in grid cells.
+#' @param num_steps Number of steps.
+#' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
+#' @param height Image height, in pixels.
+#' @param delay GIF time delay in milliseconds.
+#' @param label Label text (leave blank for none).
+#' @param dev_max Do you want to use DEVmax instead of DEV for measuring local topographic position?.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd", min_scale=1, num_steps=100, step_nonlinearity=1.5, height=600, delay=250, label="", dev_max=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(palette)) {
+    args <- paste(args, paste0("--palette=", palette))
+  }
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(step_nonlinearity)) {
+    args <- paste(args, paste0("--step_nonlinearity=", step_nonlinearity))
+  }
+  if (!is.null(height)) {
+    args <- paste(args, paste0("--height=", height))
+  }
+  if (!is.null(delay)) {
+    args <- paste(args, paste0("--delay=", delay))
+  }
+  if (!is.null(label)) {
+    args <- paste(args, paste0("--label=", label))
+  }
+  if (dev_max) {
+    args <- paste(args, "--dev_max")
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))

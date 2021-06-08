@@ -1208,6 +1208,34 @@ wbt_integer_division <- function(input1, input2, output, wd=NULL, verbose_mode=F
 }
 
 
+#' Inverse principal component analysis
+#'
+#' This tool performs an inverse principal component analysis on a series of input component images.
+#'
+#' @param inputs Name of the input PCA component images.
+#' @param report Name of the PCA report file (*.html).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--report=", report))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Is no data
 #'
 #' Identifies NoData valued pixels in an image.
@@ -1647,6 +1675,36 @@ wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, w
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Phi coefficient
+#'
+#' This tool performs a binary classification accuracy assessment.
+#'
+#' @param input1 Name of the first input raster image file.
+#' @param input2 Name of the second input raster image file.
+#' @param output Name of the output HTML file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_phi_coefficient <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input1=", input1))
+  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--output=", output))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
