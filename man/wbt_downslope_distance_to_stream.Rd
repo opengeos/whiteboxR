@@ -8,6 +8,7 @@ wbt_downslope_distance_to_stream(
   dem,
   streams,
   output,
+  dinf = FALSE,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE
@@ -19,6 +20,8 @@ wbt_downslope_distance_to_stream(
 \item{streams}{Input raster streams file.}
 
 \item{output}{Output raster file.}
+
+\item{dinf}{Use the D-infinity flow algoirthm instead of D8?.}
 
 \item{wd}{Changes the working directory.}
 

@@ -4,7 +4,7 @@
 # Step 2 - Create a new develop branch: git checkout -b develop
 # Step 3 - Delete the old WhiteboxTools_linux_amd64.tar.xz in the root folder if needed
 # Step 4 - Run automation.py
-# Step 5 - Update version number in DESCRIPTION 
+# Step 5 - Update version number and RoxygenNote in DESCRIPTION 
 # Step 6 - Open whiteboxR.Rproj in RStudio and run build_check.R
 # Step 7 - Commit and push changes
 # Step 8 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
@@ -16,7 +16,7 @@
 
 import os 
 import shutil
-import tarfile
+import zipfile
 import urllib.request
 
 # Extract function header
@@ -211,6 +211,7 @@ toolboxes = {
     "# Image Processing Tools #": "image_analysis.R",
     "# LiDAR Tools #": "lidar_analysis.R",
     "# Math and Stats Tools #": "math_stat_analysis.R",
+    "# Precision Agriculture #": "precision_agriculture.R",
     "# Stream Network Analysis #": "stream_network_analysis.R"
 }
 
@@ -219,11 +220,11 @@ wbt_py = os.path.join(dir_path, "whitebox_tools.py")
 root_dir = os.path.dirname(dir_path)
 WBT_dir = os.path.join(root_dir, 'WBT')
 
-linux_tar = "WhiteboxTools_linux_amd64.tar.xz"
+linux_tar = "WhiteboxTools_linux_amd64.zip"
 tar_path = os.path.join(root_dir, linux_tar)
 if not os.path.exists(tar_path):
     print("Downloading WhiteboxTools binary ...")
-    url = "https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz"
+    url = "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
     urllib.request.urlretrieve(url, tar_path)   # Download WhiteboxTools
 else:
     print("WhiteboxTools binary already exists.")
@@ -232,7 +233,7 @@ if os.path.exists(WBT_dir):
     shutil.rmtree(WBT_dir)
 
 print("Decompressing {} ...".format(linux_tar))
-with tarfile.open(tar_path, "r") as tar_ref:
+with zipfile.ZipFile(tar_path, "r") as tar_ref:
     tar_ref.extractall(root_dir)
 
 shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)

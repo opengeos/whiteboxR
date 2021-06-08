@@ -1352,6 +1352,38 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=FA
 }
 
 
+#' Split vector lines
+#'
+#' This tool can be used to approximate the harvester pass lines from yield points.
+#'
+#' @param input Name of the input lines shapefile.
+#' @param output Name of the output lines shapefile.
+#' @param length Maximum segment length (m).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_split_vector_lines <- function(input, output, length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(length)) {
+    args <- paste(args, paste0("--length=", length))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Tin gridding
 #'
 #' Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.

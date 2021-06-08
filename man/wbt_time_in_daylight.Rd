@@ -54,5 +54,5 @@ wbt_time_in_daylight(
 Returns the tool text outputs.
 }
 \description{
-Calculates the proportion of time a location is within an area of shadow.
+Calculates the proportion of time a location is not within an area of shadow.
 }
