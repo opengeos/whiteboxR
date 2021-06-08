@@ -39,6 +39,7 @@ wbt_init <- function() {
     exe_zip <- file.path(pkg_dir, filename)
     utils::download.file(url = url, destfile = exe_zip)
     utils::unzip(exe_zip, exdir = pkg_dir)
+    Sys.chmod(exe_path, '755')
     # if (os == "Windows") {
     #   utils::unzip(exe_zip, exdir = pkg_dir)
     # } else {
