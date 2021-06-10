@@ -24,11 +24,11 @@ wbt_init <- function() {
 
   if (!file.exists(exe_path)) {
     if (os == "Linux") {
-      url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
+      url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_linux_amd64.zip"
     } else if (os == "Windows") {
-      url <- "https://www.whiteboxgeo.com/WBT_Windows/WhiteboxTools_win_amd64.zip"
+      url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_win_amd64.zip"
     } else if (os == "Darwin") {
-      url <- "https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_amd64.zip"
+      url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_darwin_amd64.zip"
     } else {
       stop("Sorry, whitebox is unsupported for your operating system!")
     }
