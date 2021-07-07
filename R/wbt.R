@@ -73,7 +73,7 @@ wbt_exe_path <- function() {
     exe_name <- "whitebox_tools"
   }
   pkg_dir <- find.package("whitebox")
-  exe_path <- file.path(pkg_dir, "WBT", exe_name)
+  exe_path <- shQuote(file.path(pkg_dir, "WBT", exe_name))
   return(exe_path)
 }
 
