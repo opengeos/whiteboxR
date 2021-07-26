@@ -95,10 +95,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     cat("You can now start using whitebox\n")
     cat("    > library(whitebox)\n")
     cat("    > wbt_version()\n")
-    return(TRUE)
-  } else {
-    return(FALSE)
   }
+  invisible(check_whitebox_binary())
 }
 
 # alias; many packages provide an "install_*" method

@@ -23,8 +23,10 @@ check_whitebox_binary <- function(path = "~",
   if (!res) {
     wbfind <- find_whitebox_binary(path = path, pattern = pattern, best = TRUE)
     res <- file.exists(wbfind)
-    if (res) {
+    if (length(res) > 0 && res) {
       wbt_init_from_path(wbfind)
+    } else {
+      res <- FALSE
     }
   }
 
