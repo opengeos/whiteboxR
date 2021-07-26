@@ -299,16 +299,16 @@ with open(wbt_py) as f:
 
                 if add_example:
                     fun_name = function_name(fun_head) 
+                    wbt_fun_name = "wbt_" + fun_name
                     fun_params = fun_head[fun_head.index('('):]
 
                     if (fun_params == "(input, output, verbose_mode=FALSE)") and (fun_name != "raster_histogram"):
                         # print(fun_name)
                         output_name = fun_name + ".tif"
-                        fun_name = "wbt_" + fun_name
                         # print(fun_params)
                         # line0 = "#' " + "wbt_init()\n"
                         line1 = "#' " + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")' + "\n" 
-                        line2 = "#' " + fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
+                        line2 = "#' " + wbt_fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
                         ff.write("#'\n")
                         ff.write("#' @examples\n")
                         ff.write("#' \dontrun{\n")
@@ -318,20 +318,20 @@ with open(wbt_py) as f:
                         # print(line1)
                         # print(line2)
 
-                        # write test scripts
-                        test_file_name = "test-" + fun_name + ".R"
-                        test_file_path = os.path.join(dir_path, "tests", test_file_name)
-                        f = open(test_file_path, "w")
-                        f.write('context("{}")\n\n'.format(fun_name))
-                        f.write('test_that("' + desc + '", {\n\n')
-                        f.write("  skip_on_cran()\n")
-                        f.write("  skip_if_not(check_whitebox_binary())\n")
-                        f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
-                        f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(fun_name))
-                        f.write('  expect_match(ret, "Elapsed Time")\n\n')
-                        f.write('})\n')
-                        print(test_file_path)
-                        f.close()
+                    # write test scripts
+                    test_file_name = "test-" + wbt_fun_name + ".R"
+                    test_file_path = os.path.join(dir_path, "tests", test_file_name)
+                    f = open(test_file_path, "w")
+                    f.write('context("{}")\n\n'.format(wbt_fun_name))
+                    f.write('test_that("' + desc + '", {\n\n')
+                    f.write("  skip_on_cran()\n")
+                    f.write("  skip_if_not(check_whitebox_binary())\n")
+                    f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
+                    f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
+                    f.write('  expect_match(ret, "Elapsed Time")\n\n')
+                    f.write('})\n')
+                    print(test_file_path)
+                    f.close()
 
 
                 # fun_name = function_name(fun_head)                
