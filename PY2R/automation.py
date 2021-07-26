@@ -325,6 +325,7 @@ with open(wbt_py) as f:
                         f.write('context("{}")\n\n'.format(fun_name))
                         f.write('test_that("' + desc + '", {\n\n')
                         f.write("  skip_on_cran()\n")
+                        f.write("  skip_if_not(check_whitebox_binary())\n")
                         f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
                         f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(fun_name))
                         f.write('  expect_match(ret, "Elapsed Time")\n\n')
