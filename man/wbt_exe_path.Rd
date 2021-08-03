@@ -2,15 +2,21 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_exe_path}
 \alias{wbt_exe_path}
+\alias{wbt_default_path}
 \title{File path of the WhiteboxTools executable.}
 \usage{
-wbt_exe_path()
+wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
+}
+\arguments{
+\item{exe_path}{Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`}
+
+\item{shell_quote}{Return `shQuote()` result?}
 }
 \value{
 Returns the file path of WhiteboxTools executable.
 }
 \description{
-Get the file path of the WhiteboxTools executable.
+Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards compatible path is returned by `wbt_default_path()`
 }
 \examples{
 \dontrun{

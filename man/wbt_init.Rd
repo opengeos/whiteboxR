@@ -2,18 +2,31 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_init}
 \alias{wbt_init}
-\title{Initialize whitebox}
+\alias{get_whitebox_tools}
+\title{Initialize WhiteboxTools}
 \usage{
-wbt_init()
+wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
+}
+\arguments{
+\item{exe_path}{Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.}
 }
 \value{
-Prints out the location of the WhiteboxTools binary
+logical; `TRUE` if binary file is found at `exe_path`
 }
 \description{
-This function downloads the WhiteboxTools binary if needed.
+This function is called to check if a suitable whitebox installation is present.
 }
 \examples{
 \dontrun{
-wbt_init()
+
+# set path to binary as R global option
+options(whitebox.exe_path = "C:\\\\path\\\\to\\\\whitebox_tools.exe")
+
+# set path to binary as an environment variable
+Sys.setenv(R_WHITEBOX_EXE_PATH = "/path/to/whitebox_tools")
+
+# or set path to binary as an argument
+wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
+
 }
 }
