@@ -11,5 +11,6 @@ output.tif
 vignettes/*.tif
 vignettes/*.log
 *.tif
+whiteboxR.Rproj
 .vscode/
 WhiteboxTools_linux_amd64.zip

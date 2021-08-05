@@ -1,11 +1,11 @@
 # whiteboxR
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://gishub.org/whiteboxR-cloud)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR)
-[![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR/)
+[![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR/)
 [![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://codecov.io/gh/giswqs/whiteboxR)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
@@ -22,7 +22,7 @@ This repository is related to the **whitebox** R package for geospatial analysis
 * GitHub repo: <https://github.com/giswqs/whiteboxR>
 * CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
-* User Manual: <https://jblindsay.github.io/wbt_book>
+* User Manual: <https://jblindsay.github.io/wbt_book/>
 * Free software: [MIT license](https://opensource.org/licenses/MIT)
 
 
@@ -38,15 +38,13 @@ This repository is related to the **whitebox** R package for geospatial analysis
 
 ## Description
 
-The **whitebox** R package is built on **WhiteboxTools**, an advanced geospatial data analysis platform developed by Prof. John Lindsay ([webpage](https://jblindsay.github.io/ghrg/index.html); [jblindsay](https://github.com/jblindsay)) at the University of Guelph's [Geomorphometry and Hydrogeomatics Research Group](https://jblindsay.github.io/ghrg/index.html). *WhiteboxTools* can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. *WhiteboxTools* also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. LiDAR point clouds can be interrogated (LidarInfo, LidarHistogram), segmented, tiled and joined, analyized for outliers, interpolated to rasters (DEMs, intensity images), and ground-points can be classified or filtered. *WhiteboxTools* is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS. Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. _Computers & Geosciences_, 95, 75-84. doi:[10.1016/j.cageo.2016.07.003](http://dx.doi.org/10.1016/j.cageo.2016.07.003).
+The **whitebox** R package is built on **WhiteboxTools**, an advanced geospatial data analysis platform developed by Prof. John Lindsay ([webpage](https://jblindsay.github.io/ghrg/index.html); [jblindsay](https://github.com/jblindsay)) at the University of Guelph's [Geomorphometry and Hydrogeomatics Research Group](https://jblindsay.github.io/ghrg/index.html). *WhiteboxTools* can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. *WhiteboxTools* also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. LiDAR point clouds can be interrogated (LidarInfo, LidarHistogram), segmented, tiled and joined, analyzed for outliers, interpolated to rasters (DEMs, intensity images), and ground-points can be classified or filtered. *WhiteboxTools* is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS. Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. _Computers & Geosciences_, 95, 75-84. doi:[10.1016/j.cageo.2016.07.003](http://dx.doi.org/10.1016/j.cageo.2016.07.003).
 
 ## Installation
 
 There are three ways to install the **whitebox** R package.
 
 ### 1. CRAN
-
-**Note:** **whitebox** has been temporarily taken down from [CRAN](https://cran.r-project.org/package=whitebox) due to [policy violation](https://cran.r-project.org/web/packages/policies.html) (*Downloads of WhiteboxTools binary as part of package installation*). An updated version will be released once I figure out how to solve this issue. For the time being, you can install **whitebox** from [R-Forge](https://r-forge.r-project.org/R/?group_id=2337) or [GitHub](https://github.com/giswqs/whiteboxR).
 
 ~~**whitebox** is now available on [CRAN](https://cran.r-project.org/package=whitebox), so you can install it with:~~
 
@@ -71,7 +69,7 @@ if (!require(devtools)) install.packages('devtools')
 devtools::install_github("giswqs/whiteboxR")
 ```
 
-You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](http://www.rstudio.com/ide/docs/packages/prerequisites) for the tools needed for your operating system.
+You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites) for the tools needed for your operating system.
 
 ## Usage
 

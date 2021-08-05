@@ -89,7 +89,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   invisible(check_whitebox_binary())
 }
 
-# many packages provide an "install_*" method; alias wbt_install mirrors the wbt_ prefix for most operations. Documenation refers to install_whitebox()
+# many packages provide an "install_*" method; alias wbt_install mirrors the wbt_ prefix for most operations. Documentation refers to install_whitebox()
 
 #' Download and Install WhiteboxTools
 #'
