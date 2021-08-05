@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Initialize whitebox — wbt_init • whitebox</title>
+<title>Initialize WhiteboxTools — wbt_init • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Initialize whitebox — wbt_init" />
-<meta property="og:description" content="This function downloads the WhiteboxTools binary if needed." />
+<meta property="og:title" content="Initialize WhiteboxTools — wbt_init" />
+<meta property="og:description" content="This function is called to check if a suitable whitebox installation is present." />
 
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.1</span>
       </span>
     </div>
 
@@ -111,26 +111,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Initialize whitebox</h1>
+    <h1>Initialize WhiteboxTools</h1>
     <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/wbt.R'><code>R/wbt.R</code></a></small>
     <div class="hidden name"><code>wbt_init.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function downloads the WhiteboxTools binary if needed.</p>
+    <p>This function is called to check if a suitable whitebox installation is present.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_init</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>wbt_init</span>(exe_path = <span class='fu'><a href='wbt_exe_path.html'>wbt_exe_path</a></span>(shell_quote = <span class='fl'>FALSE</span>))</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>exe_path</th>
+      <td><p>Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Prints out the location of the WhiteboxTools binary</p>
+    <p>logical; `TRUE` if binary file is found at `exe_path`</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>wbt_init</span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
+
+<span class='co'># set path to binary as R global option</span>
+<span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(whitebox.exe_path = <span class='st'>"C:\\path\\to\\whitebox_tools.exe"</span>)
+
+<span class='co'># set path to binary as an environment variable</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Sys.setenv.html'>Sys.setenv</a></span>(R_WHITEBOX_EXE_PATH = <span class='st'>"/path/to/whitebox_tools"</span>)
+
+<span class='co'># or set path to binary as an argument</span>
+<span class='fu'>wbt_init</span>(exe_path = <span class='st'>"not/a/valid/path/whitebox_tools.exe"</span>)
+
+}
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -143,7 +160,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Qiusheng Wu.</p>
+  <p>Developed by Qiusheng Wu, Andrew Brown.</p>
 </div>
 
 <div class="pkgdown">

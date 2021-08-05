@@ -451,7 +451,7 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
-#' @param min_length Minimum tributary length (in map units) used for network prunning.
+#' @param min_length Minimum tributary length (in map units) used for network pruning.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.

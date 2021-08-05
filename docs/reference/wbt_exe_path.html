@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="File path of the WhiteboxTools executable. — wbt_exe_path" />
-<meta property="og:description" content="Get the file path of the WhiteboxTools executable." />
+<meta property="og:description" content="Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = &quot;C:/path/to/whitebox_tools.exe&quot;)` or `options(whitebox.exe_path = &quot;C:/path/to/whitebox_tools.exe&quot;)`. The default, backwards compatible path is returned by `wbt_default_path()`" />
 
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.1</span>
       </span>
     </div>
 
@@ -117,20 +117,32 @@
     </div>
 
     <div class="ref-description">
-    <p>Get the file path of the WhiteboxTools executable.</p>
+    <p>Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards compatible path is returned by `wbt_default_path()`</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_exe_path</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>wbt_exe_path</span>(exe_path = <span class='kw'>NULL</span>, shell_quote = <span class='fl'>TRUE</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>exe_path</th>
+      <td><p>Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`</p></td>
+    </tr>
+    <tr>
+      <th>shell_quote</th>
+      <td><p>Return `shQuote()` result?</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns the file path of WhiteboxTools executable.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='va'>wbt_exe</span> <span class='op'>&lt;-</span> <span class='fu'>wbt_exe_path</span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>wbt_exe</span> <span class='op'>&lt;-</span> <span class='fu'>wbt_exe_path</span>()
+}
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -143,7 +155,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Qiusheng Wu.</p>
+  <p>Developed by Qiusheng Wu, Andrew Brown.</p>
 </div>
 
 <div class="pkgdown">

@@ -24,7 +24,7 @@ wbt_lidar_thin(
 
 \item{method}{Point selection method; options are 'first', 'last', 'lowest' (default), 'highest', 'nearest'.}
 
-\item{save_filtered}{Save filtered points to seperate file?.}
+\item{save_filtered}{Save filtered points to separate file?.}
 
 \item{wd}{Changes the working directory.}
 

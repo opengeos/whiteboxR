@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Lidar tophat transform — wbt_lidar_tophat_transform" />
-<meta property="og:description" content="Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy." />
+<meta property="og:description" content="Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modeling the vegetation canopy." />
 
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.1</span>
       </span>
     </div>
 
@@ -117,17 +117,17 @@
     </div>
 
     <div class="ref-description">
-    <p>Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.</p>
+    <p>Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modeling the vegetation canopy.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_lidar_tophat_transform</span><span class='op'>(</span>
-  <span class='va'>input</span>,
-  <span class='va'>output</span>,
-  radius <span class='op'>=</span> <span class='fl'>1</span>,
-  wd <span class='op'>=</span> <span class='cn'>NULL</span>,
-  verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>wbt_lidar_tophat_transform</span>(
+  <span class='kw'>input</span>,
+  <span class='kw'>output</span>,
+  radius = <span class='fl'>1</span>,
+  wd = <span class='kw'>NULL</span>,
+  verbose_mode = <span class='fl'>FALSE</span>,
+  compress_rasters = <span class='fl'>FALSE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -173,7 +173,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Qiusheng Wu.</p>
+  <p>Developed by Qiusheng Wu, Andrew Brown.</p>
 </div>
 
 <div class="pkgdown">

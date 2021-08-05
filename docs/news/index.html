@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.1</span>
       </span>
     </div>
 
@@ -114,6 +114,26 @@
       <small>Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="whitebox-151" class="section level1">
+<h1 class="page-header" data-toc-text="1.5.1">
+<a href="#whitebox-151" class="anchor"></a>whitebox 1.5.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>
+<p>Add options for custom EXE path</p>
+<ul>
+<li>
+<p>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</p>
+<ul>
+<li>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</li>
+</ul>
+</li>
+<li><p>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>), a package option (<code>whitebox.exe_path</code>) or an argument to set custom paths</p></li>
+</ul>
+</li>
+<li><p>Changes to automatically-generated testing code; adds <code>skip_if_not(check_whitebox_binary())</code></p></li>
+</ul>
+</div>
     <div id="whitebox-030" class="section level1">
 <h1 class="page-header" data-toc-text="0.3.0">
 <a href="#whitebox-030" class="anchor"></a>whitebox 0.3.0<small> Unreleased </small>
@@ -160,7 +180,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Qiusheng Wu.</p>
+  <p>Developed by Qiusheng Wu, Andrew Brown.</p>
 </div>
 
 <div class="pkgdown">

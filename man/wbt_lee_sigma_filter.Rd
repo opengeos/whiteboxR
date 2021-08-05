@@ -25,7 +25,7 @@ wbt_lee_sigma_filter(
 
 \item{filtery}{Size of the filter kernel in the y-direction.}
 
-\item{sigma}{Sigma value should be related to the standarad deviation of the distribution of image speckle noise.}
+\item{sigma}{Sigma value should be related to the standard deviation of the distribution of image speckle noise.}
 
 \item{m}{M-threshold value the minimum allowable number of pixels within the intensity range.}
 

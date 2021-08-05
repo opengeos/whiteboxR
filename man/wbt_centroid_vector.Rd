@@ -27,5 +27,5 @@ wbt_centroid_vector(
 Returns the tool text outputs.
 }
 \description{
-Identifes the centroid point of a vector polyline or polygon feature or a group of vector points.
+Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 }

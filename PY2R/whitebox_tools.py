@@ -917,7 +917,7 @@ class WhiteboxTools(object):
         return self.run_tool('centroid', args, callback) # returns 1 if error
 
     def centroid_vector(self, i, output, callback=None):
-        """Identifes the centroid point of a vector polyline or polygon feature or a group of vector points.
+        """Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 
         Keyword arguments:
 
@@ -1965,7 +1965,7 @@ class WhiteboxTools(object):
         return self.run_tool('percent_equal_to', args, callback) # returns 1 if error
 
     def percent_greater_than(self, inputs, comparison, output, callback=None):
-        """Calculates the percentage of a raster stack that have cell values greather than an input on a cell-by-cell basis.
+        """Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
 
         Keyword arguments:
 
@@ -3168,8 +3168,8 @@ class WhiteboxTools(object):
         Keyword arguments:
 
         i -- Name of the input raster image file. 
-        pos_output -- Name of the positive openenness output raster file. 
-        neg_output -- Name of the negative openenness output raster file. 
+        pos_output -- Name of the positive openness output raster file. 
+        neg_output -- Name of the negative openness output raster file. 
         dist -- Search distance, in grid cells. 
         callback -- Custom function for handling tool text outputs.
         """
@@ -3852,7 +3852,7 @@ class WhiteboxTools(object):
         i -- Input raster DEM or D-infinity pointer file. 
         output -- Output raster file. 
         out_type -- Output type; one of 'cells', 'sca' (default), and 'ca'. 
-        threshold -- Optional convergence threshold parameter, in grid cells; default is inifinity. 
+        threshold -- Optional convergence threshold parameter, in grid cells; default is infinity. 
         log -- Optional flag to request the output be log-transformed. 
         clip -- Optional flag to request clipping the display max by 1%. 
         pntr -- Is the input raster a D-infinity flow pointer rather than a DEM?. 
@@ -3997,7 +3997,7 @@ class WhiteboxTools(object):
         output -- Output raster file. 
         out_type -- Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'. 
         exponent -- Optional exponent parameter; default is 1.1. 
-        threshold -- Optional convergence threshold parameter, in grid cells; default is inifinity. 
+        threshold -- Optional convergence threshold parameter, in grid cells; default is infinity. 
         log -- Optional flag to request the output be log-transformed. 
         clip -- Optional flag to request clipping the display max by 1%. 
         callback -- Custom function for handling tool text outputs.
@@ -4359,7 +4359,7 @@ class WhiteboxTools(object):
         output -- Output raster file. 
         out_type -- Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'. 
         exponent -- Optional exponent parameter; default is 1.1. 
-        threshold -- Optional convergence threshold parameter, in grid cells; default is inifinity. 
+        threshold -- Optional convergence threshold parameter, in grid cells; default is infinity. 
         log -- Optional flag to request the output be log-transformed. 
         clip -- Optional flag to request clipping the display max by 1%. 
         callback -- Custom function for handling tool text outputs.
@@ -4897,7 +4897,7 @@ class WhiteboxTools(object):
         return self.run_tool('rgb_to_ihs', args, callback) # returns 1 if error
 
     def split_colour_composite(self, i, red=None, green=None, blue=None, callback=None):
-        """This tool splits an RGB colour composite image into seperate multispectral images.
+        """This tool splits an RGB colour composite image into separate multispectral images.
 
         Keyword arguments:
 
@@ -5211,7 +5211,7 @@ class WhiteboxTools(object):
         return self.run_tool('diff_of_gaussian_filter', args, callback) # returns 1 if error
 
     def diversity_filter(self, i, output, filterx=11, filtery=11, callback=None):
-        """Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
+        """Assigns each cell in the output grid the number of different values in a moving window centered on each grid cell in the input raster.
 
         Keyword arguments:
 
@@ -5397,7 +5397,7 @@ class WhiteboxTools(object):
         output -- Output raster file. 
         filterx -- Size of the filter kernel in the x-direction. 
         filtery -- Size of the filter kernel in the y-direction. 
-        sigma -- Sigma value should be related to the standarad deviation of the distribution of image speckle noise. 
+        sigma -- Sigma value should be related to the standard deviation of the distribution of image speckle noise. 
         m -- M-threshold value the minimum allowable number of pixels within the intensity range. 
         callback -- Custom function for handling tool text outputs.
         """
@@ -5431,7 +5431,7 @@ class WhiteboxTools(object):
         return self.run_tool('line_detection_filter', args, callback) # returns 1 if error
 
     def majority_filter(self, i, output, filterx=11, filtery=11, callback=None):
-        """Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
+        """Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centered on each grid cell in the input raster.
 
         Keyword arguments:
 
@@ -5449,7 +5449,7 @@ class WhiteboxTools(object):
         return self.run_tool('majority_filter', args, callback) # returns 1 if error
 
     def maximum_filter(self, i, output, filterx=11, filtery=11, callback=None):
-        """Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
+        """Assigns each cell in the output grid the maximum value in a moving window centered on each grid cell in the input raster.
 
         Keyword arguments:
 
@@ -5505,7 +5505,7 @@ class WhiteboxTools(object):
         return self.run_tool('median_filter', args, callback) # returns 1 if error
 
     def minimum_filter(self, i, output, filterx=11, filtery=11, callback=None):
-        """Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
+        """Assigns each cell in the output grid the minimum value in a moving window centered on each grid cell in the input raster.
 
         Keyword arguments:
 
@@ -5577,7 +5577,7 @@ class WhiteboxTools(object):
         return self.run_tool('prewitt_filter', args, callback) # returns 1 if error
 
     def range_filter(self, i, output, filterx=11, filtery=11, callback=None):
-        """Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
+        """Assigns each cell in the output grid the range of values in a moving window centered on each grid cell in the input raster.
 
         Keyword arguments:
 
@@ -5645,7 +5645,7 @@ class WhiteboxTools(object):
         return self.run_tool('sobel_filter', args, callback) # returns 1 if error
 
     def standard_deviation_filter(self, i, output, filterx=11, filtery=11, callback=None):
-        """Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
+        """Assigns each cell in the output grid the standard deviation of values in a moving window centered on each grid cell in the input raster.
 
         Keyword arguments:
 
@@ -5813,7 +5813,7 @@ class WhiteboxTools(object):
         return self.run_tool('gaussian_contrast_stretch', args, callback) # returns 1 if error
 
     def histogram_equalization(self, i, output, num_tones=256, callback=None):
-        """Performs a histogram equalization contrast enhancment on an image.
+        """Performs a histogram equalization contrast enhancement on an image.
 
         Keyword arguments:
 
@@ -6211,7 +6211,7 @@ class WhiteboxTools(object):
         return self.run_tool('lidar_block_minimum', args, callback) # returns 1 if error
 
     def lidar_classify_subset(self, base, subset, output, subset_class, nonsubset_class=None, callback=None):
-        """Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.
+        """Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
 
         Keyword arguments:
 
@@ -6302,7 +6302,7 @@ class WhiteboxTools(object):
         i -- Input LiDAR file. 
         output -- Output LiDAR file. 
         radius -- Search Radius. 
-        min_neighbours -- The minimum number of neighbouring points within search areas. If fewer points than this threshold are idenfied during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours. 
+        min_neighbours -- The minimum number of neighbouring points within search areas. If fewer points than this threshold are identified during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours. 
         slope_threshold -- Maximum inter-point slope to be considered an off-terrain point. 
         height_threshold -- Inter-point height difference to be considered an off-terrain point. 
         classify -- Classify points as ground (2) or off-ground (1). 
@@ -6737,7 +6737,7 @@ class WhiteboxTools(object):
 
         Keyword arguments:
 
-        i -- Name of the input LiDAR points (leave blank to use all files in WorkingDirectory. 
+        i -- Name of the input LiDAR points (leave blank to use all files in working directory. 
         output -- Output raster file (including extension). 
         parameter -- Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'user_data'. 
         returns -- Point return types to include; options are 'all' (default), 'last', 'first'. 
@@ -6781,7 +6781,7 @@ class WhiteboxTools(object):
         output -- Output LiDAR file. 
         resolution -- The size of the square area used to evaluate nearby points in the LiDAR data. 
         method -- Point selection method; options are 'first', 'last', 'lowest' (default), 'highest', 'nearest'. 
-        save_filtered -- Save filtered points to seperate file?. 
+        save_filtered -- Save filtered points to separate file?. 
         callback -- Custom function for handling tool text outputs.
         """
         args = []
@@ -6801,7 +6801,7 @@ class WhiteboxTools(object):
         output -- Output LiDAR file. 
         resolution -- Output raster's grid resolution. 
         density -- Max. point density (points / m^3). 
-        save_filtered -- Save filtered points to seperate file?. 
+        save_filtered -- Save filtered points to separate file?. 
         callback -- Custom function for handling tool text outputs.
         """
         args = []
@@ -6879,7 +6879,7 @@ class WhiteboxTools(object):
         return self.run_tool('lidar_tin_gridding', args, callback) # returns 1 if error
 
     def lidar_tophat_transform(self, i, output, radius=1.0, callback=None):
-        """Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
+        """Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modeling the vegetation canopy.
 
         Keyword arguments:
 
@@ -6931,7 +6931,7 @@ class WhiteboxTools(object):
 
         Keyword arguments:
 
-        inputs -- Input ZLidar files. 
+        inputs -- Input zlidar files. 
         outdir -- Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs. 
         callback -- Custom function for handling tool text outputs.
         """
@@ -7462,7 +7462,7 @@ class WhiteboxTools(object):
         input1 -- Input raster file (independent variable, X). 
         input2 -- Input raster file (dependent variable, Y). 
         output -- Output HTML file for regression summary report. 
-        out_residuals -- Output raster regression resdidual file. 
+        out_residuals -- Output raster regression residual file. 
         standardize -- Optional flag indicating whether to standardize the residuals map. 
         scattergram -- Optional flag indicating whether to output a scattergram. 
         num_samples -- Number of samples used to create scattergram. 
@@ -7643,7 +7643,7 @@ class WhiteboxTools(object):
         return self.run_tool('less_than', args, callback) # returns 1 if error
 
     def list_unique_values(self, i, field, output, callback=None):
-        """Lists the unique values contained in a field witin a vector's attribute table.
+        """Lists the unique values contained in a field within a vector's attribute table.
 
         Keyword arguments:
 
@@ -8600,7 +8600,7 @@ class WhiteboxTools(object):
         d8_pntr -- Input raster D8 pointer file. 
         streams -- Input raster streams file. 
         output -- Output raster file. 
-        min_length -- Minimum tributary length (in map units) used for network prunning. 
+        min_length -- Minimum tributary length (in map units) used for network pruning. 
         esri_pntr -- D8 pointer uses the ESRI style scheme. 
         callback -- Custom function for handling tool text outputs.
         """

@@ -30,5 +30,5 @@ wbt_list_unique_values(
 Returns the tool text outputs.
 }
 \description{
-Lists the unique values contained in a field witin a vector's attribute table.
+Lists the unique values contained in a field within a vector's attribute table.
 }

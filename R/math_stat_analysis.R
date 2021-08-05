@@ -999,7 +999,7 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
 #' @param input1 Input raster file (independent variable, X).
 #' @param input2 Input raster file (dependent variable, Y).
 #' @param output Output HTML file for regression summary report.
-#' @param out_residuals Output raster regression resdidual file.
+#' @param out_residuals Output raster regression residual file.
 #' @param standardize Optional flag indicating whether to standardize the residuals map.
 #' @param scattergram Optional flag indicating whether to output a scattergram.
 #' @param num_samples Number of samples used to create scattergram.
@@ -1362,7 +1362,7 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
 
 #' List unique values
 #'
-#' Lists the unique values contained in a field witin a vector's attribute table.
+#' Lists the unique values contained in a field within a vector's attribute table.
 #'
 #' @param input Input raster file.
 #' @param field Input field name in attribute table.

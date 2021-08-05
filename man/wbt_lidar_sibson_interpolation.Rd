@@ -19,7 +19,7 @@ wbt_lidar_sibson_interpolation(
 )
 }
 \arguments{
-\item{input}{Name of the input LiDAR points (leave blank to use all files in WorkingDirectory.}
+\item{input}{Name of the input LiDAR points (leave blank to use all files in working directory.}
 
 \item{output}{Output raster file (including extension).}
 

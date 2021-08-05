@@ -39,17 +39,7 @@ wbt_init_from_path <-  function(exe_path = NULL) {
   }
 }
 
-#' Download and Install WhiteboxTools
-#'
-#' This function downloads the WhiteboxTools binary if needed.
-#'
-#' @param pkg_dir default install path is to whitebox package "WBT" folder
-#' @return Prints out the location of the WhiteboxTools binary
-#' @aliases install_whitebox
-#' @examples
-#' \dontrun{
-#' wbt_install()
-#' }
+
 #' @export
 wbt_install <- function(pkg_dir = find.package("whitebox")) {
 
@@ -99,7 +89,19 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   invisible(check_whitebox_binary())
 }
 
-# alias; many packages provide an "install_*" method
+# many packages provide an "install_*" method; alias wbt_install mirrors the wbt_ prefix for most operations. Documenation refers to install_whitebox()
+
+#' Download and Install WhiteboxTools
+#'
+#' This function downloads the WhiteboxTools binary if needed. This only works for 64-bit Linux, Windows and Mac OSX platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+#'
+#' @param pkg_dir default install path is to whitebox package "WBT" folder
+#' @return Prints out the location of the WhiteboxTools binary
+#' @aliases wbt_install
+#' @examples
+#' \dontrun{
+#' install_whitebox()
+#' }
 #' @export
 install_whitebox <- function(pkg_dir = find.package("whitebox")) wbt_install(pkg_dir = pkg_dir)
 

@@ -1601,8 +1601,8 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 #' This tool calculates the topographic openness index from an input DEM.
 #'
 #' @param input Name of the input raster image file.
-#' @param pos_output Name of the positive openenness output raster file.
-#' @param neg_output Name of the negative openenness output raster file.
+#' @param pos_output Name of the positive openness output raster file.
+#' @param neg_output Name of the negative openness output raster file.
 #' @param dist Search distance, in grid cells.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -2324,8 +2324,8 @@ wbt_tangential_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose
 #' @param output Output raster file.
 #' @param az_fraction Azimuth fraction in degrees.
 #' @param max_dist Optional maximum search distance. Minimum value is 5 x cell size.
-#' @param lat Centre point latitude.
-#' @param long Centre point longitude.
+#' @param lat Center point latitude.
+#' @param long Center point longitude.
 #' @param utc_offset UTC time offset, in hours (e.g. -04:00, +06:00).
 #' @param start_day Start day of the year (1-365).
 #' @param end_day End day of the year (1-365).

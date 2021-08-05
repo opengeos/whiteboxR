@@ -498,7 +498,7 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 
 #' Lidar classify subset
 #'
-#' Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.
+#' Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
 #'
 #' @param base Input base LiDAR file.
 #' @param subset Input subset LiDAR file.
@@ -667,7 +667,7 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
-#' @param min_neighbours The minimum number of neighbouring points within search areas. If fewer points than this threshold are idenfied during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.
+#' @param min_neighbours The minimum number of neighbouring points within search areas. If fewer points than this threshold are identified during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.
 #' @param slope_threshold Maximum inter-point slope to be considered an off-terrain point.
 #' @param height_threshold Inter-point height difference to be considered an off-terrain point.
 #' @param classify Classify points as ground (2) or off-ground (1).
@@ -1546,7 +1546,7 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
 #'
 #' This interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
 #'
-#' @param input Name of the input LiDAR points (leave blank to use all files in WorkingDirectory.
+#' @param input Name of the input LiDAR points (leave blank to use all files in working directory.
 #' @param output Output raster file (including extension).
 #' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'user_data'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
@@ -1632,7 +1632,7 @@ wbt_lidar_sort_by_time <- function(input, output, wd=NULL, verbose_mode=FALSE, c
 #' @param output Output LiDAR file.
 #' @param resolution The size of the square area used to evaluate nearby points in the LiDAR data.
 #' @param method Point selection method; options are 'first', 'last', 'lowest' (default), 'highest', 'nearest'.
-#' @param save_filtered Save filtered points to seperate file?.
+#' @param save_filtered Save filtered points to separate file?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
@@ -1672,7 +1672,7 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
 #' @param output Output LiDAR file.
 #' @param resolution Output raster's grid resolution.
 #' @param density Max. point density (points / m^3).
-#' @param save_filtered Save filtered points to seperate file?.
+#' @param save_filtered Save filtered points to separate file?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
@@ -1841,7 +1841,7 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
 
 #' Lidar tophat transform
 #'
-#' Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
+#' Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modeling the vegetation canopy.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1933,11 +1933,11 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
 }
 
 
-#' Zlidar to las
+#' zlidar to las
 #'
 #' Converts one or more zlidar files into the LAS data format.
 #'
-#' @param inputs Input ZLidar files.
+#' @param inputs Input zlidar files.
 #' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.

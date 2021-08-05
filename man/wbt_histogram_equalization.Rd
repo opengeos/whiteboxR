@@ -30,5 +30,5 @@ wbt_histogram_equalization(
 Returns the tool text outputs.
 }
 \description{
-Performs a histogram equalization contrast enhancment on an image.
+Performs a histogram equalization contrast enhancement on an image.
 }

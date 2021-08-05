@@ -30,5 +30,5 @@ wbt_percent_greater_than(
 Returns the tool text outputs.
 }
 \description{
-Calculates the percentage of a raster stack that have cell values greather than an input on a cell-by-cell basis.
+Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
 }

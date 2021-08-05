@@ -24,7 +24,7 @@ wbt_lidar_thin_high_density(
 
 \item{resolution}{Output raster's grid resolution.}
 
-\item{save_filtered}{Save filtered points to seperate file?.}
+\item{save_filtered}{Save filtered points to separate file?.}
 
 \item{wd}{Changes the working directory.}
 

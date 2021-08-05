@@ -21,7 +21,7 @@ wbt_downslope_distance_to_stream(
 
 \item{output}{Output raster file.}
 
-\item{dinf}{Use the D-infinity flow algoirthm instead of D8?.}
+\item{dinf}{Use the D-infinity flow algorithm instead of D8?.}
 
 \item{wd}{Changes the working directory.}
 

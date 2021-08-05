@@ -598,7 +598,7 @@ wbt_rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 
 #' Split colour composite
 #'
-#' This tool splits an RGB colour composite image into seperate multispectral images.
+#' This tool splits an RGB colour composite image into separate multispectral images.
 #'
 #' @param input Input colour composite image file.
 #' @param red Output red band file.
@@ -818,7 +818,7 @@ wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_
 #' @param classes Number of classes.
 #' @param max_iterations Maximum number of iterations.
 #' @param class_change Minimum percent of cells changed between iterations before completion.
-#' @param initialize How to initialize cluster centres?.
+#' @param initialize How to initialize cluster centers?.
 #' @param min_class_size Minimum class size, in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1196,7 +1196,7 @@ wbt_diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, w
 
 #' Diversity filter
 #'
-#' Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
+#' Assigns each cell in the output grid the number of different values in a moving window centered on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1556,7 +1556,7 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL,
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
-#' @param sigma Sigma value should be related to the standarad deviation of the distribution of image speckle noise.
+#' @param sigma Sigma value should be related to the standard deviation of the distribution of image speckle noise.
 #' @param m M-threshold value the minimum allowable number of pixels within the intensity range.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1634,7 +1634,7 @@ wbt_line_detection_filter <- function(input, output, variant="vertical", absvals
 
 #' Majority filter
 #'
-#' Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
+#' Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centered on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1670,7 +1670,7 @@ wbt_majority_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, 
 
 #' Maximum filter
 #'
-#' Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
+#' Assigns each cell in the output grid the maximum value in a moving window centered on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1782,7 +1782,7 @@ wbt_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 
 #' Minimum filter
 #'
-#' Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
+#' Assigns each cell in the output grid the minimum value in a moving window centered on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1926,7 +1926,7 @@ wbt_prewitt_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FA
 
 #' Range filter
 #'
-#' Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
+#' Assigns each cell in the output grid the range of values in a moving window centered on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -2062,7 +2062,7 @@ wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, wd=NULL, ve
 
 #' Standard deviation filter
 #'
-#' Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
+#' Assigns each cell in the output grid the standard deviation of values in a moving window centered on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -2386,7 +2386,7 @@ wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL,
 
 #' Histogram equalization
 #'
-#' Performs a histogram equalization contrast enhancment on an image.
+#' Performs a histogram equalization contrast enhancement on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.

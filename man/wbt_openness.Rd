@@ -17,9 +17,9 @@ wbt_openness(
 \arguments{
 \item{input}{Name of the input raster image file.}
 
-\item{pos_output}{Name of the positive openenness output raster file.}
+\item{pos_output}{Name of the positive openness output raster file.}
 
-\item{neg_output}{Name of the negative openenness output raster file.}
+\item{neg_output}{Name of the negative openness output raster file.}
 
 \item{dist}{Search distance, in grid cells.}
 
