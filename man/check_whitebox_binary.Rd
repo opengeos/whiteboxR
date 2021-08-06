@@ -2,20 +2,11 @@
 % Please edit documentation in R/zzz.R
 \name{check_whitebox_binary}
 \alias{check_whitebox_binary}
-\alias{find_whitebox_binary}
 \title{Check for WhiteboxTools Binary}
 \usage{
-check_whitebox_binary(
-  path = "~",
-  pattern = "whitebox_tools$|whitebox_tools.exe$",
-  silent = TRUE
-)
+check_whitebox_binary(silent = TRUE)
 }
 \arguments{
-\item{path}{Path to search for binary (if not found at standard locations)}
-
-\item{pattern}{Pattern to match for binary name}
-
 \item{silent}{logical. Print help on installation/setting binary path. Default `TRUE`.}
 }
 \value{
