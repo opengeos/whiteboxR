@@ -15,12 +15,12 @@ jobs:
         config:
           - {os: windows-latest, r: 'release'}
           - {os: macOS-latest, r: 'release'}
-          - {os: ubuntu-20.04, r: 'devel', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
-          - {os: ubuntu-18.04, r: '3.6',  rspm: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       CRAN: ${{ matrix.config.cran }}
+      RSPM: ${{ matrix.config.rspm }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v1
@@ -54,28 +54,20 @@ jobs:
         with:
           toolchain: stable
           
-      - name: Download WBT source
+      - name: Download and build WBT source
         if: runner.os != 'Windows'
         run: |
           cd inst
           git clone https://github.com/jblindsay/whitebox-tools.git
           cd whitebox-tools
-          
-      - name: Build WBT source
-        if: runner.os != 'Windows'
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release
-          
-      - if: runner.os != 'Windows'
-        run: cd ../..
+          cargo build --release
+          cd ../..
           
       - name: Install dependencies
         run: Rscript -e "install.packages('remotes')" -e "remotes::install_deps(dependencies = TRUE)" -e "remotes::install_cran('rcmdcheck')"
 
       - name: Check
-        run: Rscript -e "rcmdcheck::rcmdcheck(args = '${{ matrix.config.args }}', error_on = 'warning', check_dir = 'check')"
+        run: Rscript -e "rcmdcheck::rcmdcheck(args = c('--no-manual', '--as-cran'), error_on = 'warning', check_dir = 'check')"
 
       - name: Upload check results
         if: failure()
