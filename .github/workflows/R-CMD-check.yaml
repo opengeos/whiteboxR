@@ -49,23 +49,13 @@ jobs:
           Rscript -e "install.packages('remotes')" -e "remotes::install_github('r-hub/sysreqs')"
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
-          
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          
-      - name: Download and build WBT source
-        if: runner.os != 'Windows'
-        run: |
-          cd inst
-          git clone https://github.com/jblindsay/whitebox-tools.git
-          cd whitebox-tools
-          cargo build --release
-          cd ../..
-          
+                 
       - name: Install dependencies
-        run: Rscript -e "install.packages('remotes')" -e "remotes::install_deps(dependencies = TRUE)" -e "remotes::install_cran('rcmdcheck')"
-
+        run: Rscript -e "install.packages('remotes')" -e "remotes::install_deps(dependencies = TRUE)" -e "remotes::install_cran('rcmdcheck')" -e "remotes::install_local()"
+        
+      - name: Install WhiteboxTools
+        run: Rscript -e "whitebox::install_whitebox()" 
+        
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = c('--no-manual', '--as-cran'), error_on = 'warning', check_dir = 'check')"
 
