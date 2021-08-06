@@ -46,7 +46,7 @@ There are three ways to install the **whitebox** R package.
 
 ### 1. CRAN
 
-~~**whitebox** is now available on [CRAN](https://cran.r-project.org/package=whitebox), so you can install it with:~~
+**whitebox** is now available on [CRAN](https://cran.r-project.org/package=whitebox), so you can install it with:
 
 ```R
 install.packages("whitebox")
