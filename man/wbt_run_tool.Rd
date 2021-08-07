@@ -17,7 +17,7 @@ wbt_run_tool(tool_name, args, verbose_mode = FALSE)
 Returns the output descriptions of the tool.
 }
 \description{
-Runs a tool and specifies tool arguments.
+Runs a tool and specifies tool arguments. If the prefix "wbt_" is in `tool_name` it is removed to match the definitions in `wbt_list_tools()`
 }
 \examples{
 \dontrun{
@@ -28,5 +28,8 @@ arg1 <- paste0("--dem=", dem)
 arg2 <- paste0("--output=", output)
 args <- paste(arg1, arg2)
 wbt_run_tool(tool_name, args)
+} 
 }
+\seealso{
+\link{wbt_list_tools}
 }

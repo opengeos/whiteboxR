@@ -4,10 +4,12 @@
 \alias{wbt_view_code}
 \title{Source code for a specific tool.}
 \usage{
-wbt_view_code(tool_name)
+wbt_view_code(tool_name, viewer = TRUE)
 }
 \arguments{
 \item{tool_name}{Name of the tool.}
+
+\item{viewer}{Show source code in browser? default: `TRUE`}
 }
 \value{
 Returns a GitHub URL to view the source code of the tool.

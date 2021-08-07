@@ -2,7 +2,6 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_init}
 \alias{wbt_init}
-\alias{get_whitebox_tools}
 \title{Initialize WhiteboxTools}
 \usage{
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
