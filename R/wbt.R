@@ -411,6 +411,8 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
 #' 
 #' Return `TRUE` if "R_WHITEBOX_VERBOSE" system environment variable or "whitebox.verbose" option is set to `TRUE`. Returns `TRUE` when R is being used interactively and `FALSE` otherwise.
 #' 
+#' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
+#' 
 #' @return logical; defaults to result of `interactive()`
 #' @export
 #'
@@ -424,12 +426,17 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
 #'  options(whitebox.verbose = FALSE)
 #'  wbt_verbose()
 #' }
-wbt_verbose <- function() {
+wbt_verbose <- function(verbose = NULL) {
   
   # system environment var takes precedence, but defaults FALSE
   sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = FALSE)
   if (sysverbose) {
     return(sysverbose)
+  }
+  
+  # if non-NULL input, set the package option "verbose"
+  if (!is.null(verbose) && is.logical(verbose)) {
+    options("whitebox.verbose" = verbose)
   }
   
   # package option subsequently, default true for interactive use
