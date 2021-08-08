@@ -1,6 +1,7 @@
-test_that("default executable paths", {
+test_that("default executable paths and settings", {
   expect_true(is.character(wbt_default_path()))
   expect_true(is.character(wbt_exe_path()))
+  expect_true(is.logical(wbt_verbose()))
 })
 
 test_that("wbt utility functions [requires WhiteboxTools installed]", {

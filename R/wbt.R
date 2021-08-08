@@ -174,11 +174,10 @@ wbt_help <- function() {
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--help")
   ret <- system(args, intern = TRUE)
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -196,11 +195,10 @@ wbt_license <- function() {
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--license")
   ret <- system(args, intern = TRUE)
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -218,11 +216,10 @@ wbt_version <- function() {
   wbt_exe <- wbt_exe_path()
   args <- paste(wbt_exe, "--version")
   ret <- system(args, intern = TRUE)
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -246,11 +243,10 @@ wbt_list_tools <- function(keywords = NULL) {
   }
   ret <- system(args, intern = TRUE)
   ret <- ret[ret != ""]
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -275,11 +271,10 @@ wbt_toolbox <- function(tool_name = NULL) {
     args <- paste(args, tool_name)
   }
   ret <- system(args, intern = TRUE)
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -304,11 +299,10 @@ wbt_tool_help <- function(tool_name = NULL) {
     args <- paste0(args, tool_name)
   }
   ret <- system(args, intern = TRUE)
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -331,11 +325,10 @@ wbt_tool_parameters <- function(tool_name) {
   args <- paste0("--toolparameters=", tool_name)
   args <- paste(wbt_exe, args)
   ret <- system(args, intern = TRUE)  
-  if (interactive()) {
+  if (wbt_verbose()) {
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -358,14 +351,13 @@ wbt_view_code <- function(tool_name, viewer = TRUE) {
   args <- paste0("--viewcode=", tool_name)
   args <- paste(wbt_exe, args)
   ret <- system(args, intern = TRUE)
-  if (interactive()) {
+  if (wbt_verbose()) {
     if (viewer) {
       utils::browseURL(ret)
     }
     cat(ret, sep = "\n")
-    return(invisible(ret))
   }
-  ret
+  invisible(ret)
 }
 
 
@@ -398,11 +390,41 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
   arg1 <- paste0("--run=", tool_name)
   args2 <- paste(wbt_exe, arg1, args, "-v")
   ret <- system(args2, intern = TRUE)
-  if (interactive() && verbose_mode) {
-    cat(ret, sep = "\n")
-    return(invisible(ret))
-  } else {
+  if (!verbose_mode) {
     ret <- paste(tool_name, "-", utils::tail(ret, n = 1))
   }
-  ret
+  if (wbt_verbose()) {
+    cat(ret, sep = "\n")
+  }
+  invisible(ret)
+}
+
+
+#' Check verbose options for WhiteboxTools.
+#' 
+#' Return `TRUE` if "R_WHITEBOX_VERBOSE" system environment variable or "whitebox.verbose" option is set to `TRUE`. Returns `TRUE` when R is being used interactively and `FALSE` otherwise.
+#' 
+#' @return logical; defaults to result of `interactive()`
+#' @export
+#'
+#' @examples
+#'  wbt_verbose()
+#'  
+#' \dontrun{
+#'  Sys.setenv("R_WHITEBOX_VERBOSE" = FALSE)
+#'  wbt_verbose()
+#'  
+#'  options(whitebox.verbose = FALSE)
+#'  wbt_verbose()
+#' }
+wbt_verbose <- function() {
+  
+  # system environment var takes precedence, but defaults FALSE
+  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = FALSE)
+  if (sysverbose) {
+    return(sysverbose)
+  }
+  
+  # package option subsequently, default true for interactive use
+  getOption("whitebox.verbose", default = interactive())
 }
