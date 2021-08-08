@@ -7,7 +7,7 @@
 check_whitebox_binary(silent = TRUE)
 }
 \arguments{
-\item{silent}{logical. Print help on installation/setting binary path. Default `TRUE`.}
+\item{silent}{logical. Print help on installation/setting binary path. Default \code{TRUE}.}
 }
 \value{
 logical if WhiteboxTools Binary exists.
@@ -16,5 +16,5 @@ logical if WhiteboxTools Binary exists.
 Check for WhiteboxTools Binary
 }
 \seealso{
-[wbt_exe_path()]
+\code{\link[=wbt_exe_path]{wbt_exe_path()}}
 }

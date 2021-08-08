@@ -4,13 +4,16 @@
 \alias{wbt_verbose}
 \title{Check verbose options for WhiteboxTools.}
 \usage{
-wbt_verbose()
+wbt_verbose(verbose = NULL)
+}
+\arguments{
+\item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
 }
 \value{
-logical; defaults to result of `interactive()`
+logical; defaults to result of \code{interactive()}
 }
 \description{
-Return `TRUE` if "R_WHITEBOX_VERBOSE" system environment variable or "whitebox.verbose" option is set to `TRUE`. Returns `TRUE` when R is being used interactively and `FALSE` otherwise.
+Return \code{TRUE} if "R_WHITEBOX_VERBOSE" system environment variable or "whitebox.verbose" option is set to \code{TRUE}. Returns \code{TRUE} when R is being used interactively and \code{FALSE} otherwise.
 }
 \examples{
  wbt_verbose()

@@ -17,7 +17,7 @@ wbt_run_tool(tool_name, args, verbose_mode = FALSE)
 Returns the output descriptions of the tool.
 }
 \description{
-Runs a tool and specifies tool arguments. If the prefix "wbt_" is in `tool_name` it is removed to match the definitions in `wbt_list_tools()`
+Runs a tool and specifies tool arguments. If the prefix "wbt_" is in \code{tool_name} it is removed to match the definitions in \code{wbt_list_tools()}
 }
 \examples{
 \dontrun{

@@ -9,7 +9,7 @@ wbt_view_code(tool_name, viewer = TRUE)
 \arguments{
 \item{tool_name}{Name of the tool.}
 
-\item{viewer}{Show source code in browser? default: `TRUE`}
+\item{viewer}{Show source code in browser? default: \code{TRUE}}
 }
 \value{
 Returns a GitHub URL to view the source code of the tool.

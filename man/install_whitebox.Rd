@@ -11,7 +11,7 @@ install_whitebox(pkg_dir = find.package("whitebox"))
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
 }
 \value{
-Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
+Prints out the location of the WhiteboxTools binary, if found. \code{NULL} otherwise.
 }
 \description{
 This function downloads the WhiteboxTools binary if needed. This only works for 64-bit Linux, Windows and Mac OSX platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}

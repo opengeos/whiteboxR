@@ -7,13 +7,13 @@
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
 }
 \arguments{
-\item{exe_path}{Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.}
+\item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.}
 }
 \value{
-logical; `TRUE` if binary file is found at `exe_path`
+logical; \code{TRUE} if binary file is found at \code{exe_path}
 }
 \description{
-This function is called to check if a suitable whitebox installation is present. If the file exists the package option `whitebox.exe_path` is set.
+This function is called to check if a suitable whitebox installation is present. If the file exists the package option \code{whitebox.exe_path} is set.
 }
 \examples{
 \dontrun{
