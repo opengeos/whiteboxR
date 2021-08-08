@@ -1,6 +1,7 @@
 #' Initialize WhiteboxTools
 #'
-#' This function is called to check if a suitable whitebox installation is present.
+#' This function is called to check if a suitable whitebox installation is present. If the file exists the package option `whitebox.exe_path` is set.
+#' 
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.
 #'
 #' @return logical; `TRUE` if binary file is found at `exe_path`
@@ -21,10 +22,9 @@
 #' }
 wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE)) {
 
-  # if exe_path is not NULL, update options
-  if (!is.null(exe_path)) {
+  # if exe_path is not NULL and exists, update options
+  if (!is.null(exe_path) && file.exists(exe_path)) {
     options(whitebox.exe_path = exe_path)
-    Sys.setenv(R_WHITEBOX_EXE_PATH = exe_path)
   }
 
   # check whether path is valid
@@ -48,7 +48,13 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     } else if (os == "Darwin") {
       url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_darwin_amd64.zip"
     } else {
-      stop("Sorry, whitebox is unsupported for your operating system!")
+      message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")
+      message("Follow the instructions at https://github.com/jblindsay/whitebox-tools that use cargo to build the Rust library from source.\n")
+      message(paste0("If you have WhiteboxTools installed already, set the path with:\n",
+                     "    > Sys.setenv(R_WHITEBOX_EXE_PATH = 'C:/path/to/whitebox_tools.exe')\n",
+                      "\n",
+                     "Or run `wbt_init()` to set package option 'whitebox.exe_path': \n",
+                     "    > wbt_init('/home/user/path/to/whitebox_tools')\n"))
     }
 
     filename <- basename(url)
@@ -81,7 +87,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   
   # return installed path
   if (check_whitebox_binary()) {
-    return(wbt_exe_path(shell_quote = FALSE))
+    return(invisible(wbt_exe_path(shell_quote = FALSE)))
   }
   invisible(NULL)
 }
@@ -124,7 +130,8 @@ install_whitebox <- function(pkg_dir = find.package("whitebox")) {
 wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   pkgwbt <- getOption("whitebox.exe_path")
-
+  defwbt <- wbt_default_path()
+  
   if (!is.null(exe_path) && file.exists(exe_path)) {
     # user specified as argument
     res <- exe_path
@@ -135,7 +142,7 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
     # user specified as package option
     res <- pkgwbt
   } else {
-    res <- wbt_default_path()
+    res <- defwbt
   }
 
   if (shell_quote) {
@@ -152,7 +159,7 @@ wbt_default_path <- function() {
   # system specific executable filename
   os <- Sys.info()["sysname"]
   if (os == "Windows") {
-    exe - "whitebox_tools.exe"
+    exe <- "whitebox_tools.exe"
   }
   
   # backwards compatible path  

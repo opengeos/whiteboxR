@@ -13,7 +13,7 @@ wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
 logical; `TRUE` if binary file is found at `exe_path`
 }
 \description{
-This function is called to check if a suitable whitebox installation is present.
+This function is called to check if a suitable whitebox installation is present. If the file exists the package option `whitebox.exe_path` is set.
 }
 \examples{
 \dontrun{
