@@ -1,6 +1,8 @@
 .onLoad <- function(libname, pkgname) {
-  # check_whitebox_binary() is called "loudly" only on package load
-  check_whitebox_binary(silent = FALSE)
+  # check_whitebox_binary() is called "loudly" only on package load either:
+  #   1. interactively, or 
+  #   2. environment var R_WHITEBOX_VERBOSE=TRUE or package option whitebox.verbose=TRUE
+  check_whitebox_binary(silent = !wbt_verbose())
 }
 
 #' Check for WhiteboxTools Binary
