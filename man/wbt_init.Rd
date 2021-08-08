@@ -7,7 +7,7 @@
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
 }
 \arguments{
-\item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.}
+\item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.}
 }
 \value{
 logical; \code{TRUE} if binary file is found at \code{exe_path}

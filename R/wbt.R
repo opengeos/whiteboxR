@@ -2,7 +2,7 @@
 #'
 #' This function is called to check if a suitable whitebox installation is present. If the file exists the package option `whitebox.exe_path` is set.
 #' 
-#' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.
+#' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
 #'
 #' @return logical; `TRUE` if binary file is found at `exe_path`
 #' @export
