@@ -273,6 +273,7 @@ wbt_list_tools <- function(keywords = NULL) {
 wbt_toolbox <- function(tool_name = NULL) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
+  tool_name <- wbt_internal_tool_name(tool_name)
   args <- paste(wbt_exe, "--toolbox=")
   if (!is.null(tool_name)) {
     args <- paste(args, tool_name)
@@ -301,6 +302,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 wbt_tool_help <- function(tool_name = NULL) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
+  tool_name <- wbt_internal_tool_name(tool_name)
   args <- paste(wbt_exe, "--toolhelp=")
   if (!is.null(tool_name)) {
     args <- paste0(args, tool_name)
@@ -329,6 +331,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 wbt_tool_parameters <- function(tool_name) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
+  tool_name <- wbt_internal_tool_name(tool_name)
   args <- paste0("--toolparameters=", tool_name)
   args <- paste(wbt_exe, args)
   ret <- system(args, intern = TRUE)  
@@ -355,6 +358,7 @@ wbt_tool_parameters <- function(tool_name) {
 wbt_view_code <- function(tool_name, viewer = TRUE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
+  tool_name <- wbt_internal_tool_name(tool_name)
   args <- paste0("--viewcode=", tool_name)
   args <- paste(wbt_exe, args)
   ret <- system(args, intern = TRUE)
@@ -392,8 +396,7 @@ wbt_view_code <- function(tool_name, viewer = TRUE) {
 wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
-  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]
-  tool_name <- gsub("^wbt_", "", tool_name) 
+  tool_name <- wbt_internal_tool_name(tool_name)
   arg1 <- paste0("--run=", tool_name)
   args2 <- paste(wbt_exe, arg1, args, "-v")
   ret <- system(args2, intern = TRUE)
@@ -406,6 +409,9 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
   invisible(ret)
 }
 
+wbt_internal_tool_name <- function(tool_name) {
+  gsub("^(whitebox::)?(wbt_)?", "", tool_name)
+}
 
 #' Check verbose options for WhiteboxTools.
 #' 
