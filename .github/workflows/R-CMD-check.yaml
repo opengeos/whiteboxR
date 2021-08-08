@@ -1,4 +1,13 @@
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+  workflow_dispatch:
 
 name: R-CMD-check
 
@@ -53,7 +62,7 @@ jobs:
         run: Rscript -e "remotes::install_deps(dependencies = TRUE)" -e "remotes::install_cran('rcmdcheck')"
         
       - name: Install WhiteboxTools
-        run: Rscript -e "remotes::install_local()" -e "whitebox::install_whitebox()" 
+        run: Rscript -e "remotes::install_local(force = TRUE)" -e "whitebox::install_whitebox()" 
         
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = c('--no-manual', '--as-cran'), error_on = 'warning', check_dir = 'check')"
