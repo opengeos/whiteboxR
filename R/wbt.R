@@ -1,35 +1,94 @@
 #' Initialize WhiteboxTools
 #'
-#' This function is called to check if a suitable whitebox installation is present. If the file exists the package option `whitebox.exe_path` is set.
+#' `wbt_init()`: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with `exe_path`. 
 #' 
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
 #'
-#' @return logical; `TRUE` if binary file is found at `exe_path`
+#' @return `wbt_init()`: logical; `TRUE` if binary file is found at `exe_path`
 #' @export
-#'
+#' @seealso [install_whitebox()] [whitebox]
 #' @examples
 #' \dontrun{
-#'
-#' # set path to binary as R global option
-#' options(whitebox.exe_path = "C:\\path\\to\\whitebox_tools.exe")
-#'
-#' # set path to binary as an environment variable
-#' Sys.setenv(R_WHITEBOX_EXE_PATH = "/path/to/whitebox_tools")
-#'
+#' ## wbt_init():
+#' 
 #' # or set path to binary as an argument
-#' wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
-#'
+#' # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 #' }
 wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE)) {
-
+  
   # if exe_path is not NULL and exists, update options
   if (!is.null(exe_path) && file.exists(exe_path)) {
-    options(whitebox.exe_path = exe_path)
+    wbt_options(exe_path = exe_path)
   }
 
   # check whether path is valid
   check_whitebox_binary()
 
+}
+
+#' @description `wbt_options()`: Get/set package options
+#' 
+#' - **`whitebox.exe_path`** - character. Path to executable file. The default value is the package installation directory, subdirectory `"WBT"`, followed by `whitebox_tools.exe` or `whitebox_tools`. Set the `whitebox.exe_path` option using `wbt_init()` `exe_path` argument
+#' 
+#' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? Default is result of `interactive()`. Individual tools may have `verbose_mode` setting that produce only single-line output when `FALSE`. These argument values are left as the defaults defined in the package documentation for that function. When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument.
+#' 
+#' @return `wbt_options()`:  an invisible list containing current `whitebox.exe_path`, `whitebox.verbose` options
+#' @rdname wbt_init
+#' @export 
+#' @examples 
+#' \dontrun{
+#' 
+#' ## wbt_options():
+#'
+#' wbt_options(exe_path = "not/a/valid/path/whitebox_tools.exe", verbose = TRUE)
+#'
+#' }
+wbt_options <- function(exe_path = NULL, verbose = NULL) {
+  
+  syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
+  sysvrb <- Sys.getenv("R_WHITEBOX_VERBOSE")
+  
+  if (!is.null(exe_path)) {
+    options(whitebox.exe_path = exe_path)
+  }
+  
+  if (!is.null(verbose)) {
+    options(whitebox.verbose = verbose)
+  }
+  
+  invisible(list(whitebox.exe_path = switch(is.null(syswbt), getOption("whitebox.exe_path"), syswbt),
+                 whitebox.verbose  = switch(is.null(sysvrb), getOption("whitebox.verbose"), sysvrb)))
+}
+
+#' @description `wbt_verbose()`: Check verbose options for WhiteboxTools.
+#' 
+#' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
+#' 
+#' @return `wbt_verbose()`: logical; defaults to result of `interactive()`
+#' @rdname wbt_init
+#' @export
+#' @examples 
+#' \dontrun{
+#' 
+#' ## wbt_verbose():
+#'
+#' wbt_verbose(verbose = TRUE)
+#' }
+wbt_verbose <- function(verbose = NULL) {
+  
+  # system environment var takes precedence, but defaults FALSE
+  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = FALSE)
+  if (sysverbose) {
+    return(sysverbose)
+  }
+  
+  # if non-NULL input, set the package option "verbose"
+  if (!is.null(verbose) && is.logical(verbose)) {
+    wbt_options(verbose = verbose)
+  }
+  
+  # package option subsequently, default true for interactive use
+  getOption("whitebox.verbose", default = interactive())
 }
 
 #' @export
@@ -50,11 +109,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     } else {
       message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")
       message("Follow the instructions at https://github.com/jblindsay/whitebox-tools that use cargo to build the Rust library from source.\n")
-      message(paste0("If you have WhiteboxTools installed already, set the path with:\n",
-                     "    > Sys.setenv(R_WHITEBOX_EXE_PATH = 'C:/path/to/whitebox_tools.exe')\n",
-                      "\n",
-                     "Or run `wbt_init()` to set package option 'whitebox.exe_path': \n",
-                     "    > wbt_init('/home/user/path/to/whitebox_tools')\n"))
+      message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
+                     "    > wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
     }
 
     filename <- basename(url)
@@ -124,9 +180,7 @@ install_whitebox <- function(pkg_dir = find.package("whitebox")) {
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' wbt_exe <- wbt_exe_path()
-#' }
+#' wbt_exe_path()
 wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   pkgwbt <- getOption("whitebox.exe_path")
@@ -413,38 +467,4 @@ wbt_internal_tool_name <- function(tool_name) {
   gsub("^(whitebox::)?(wbt_)?", "", tool_name)
 }
 
-#' Check verbose options for WhiteboxTools.
-#' 
-#' Return `TRUE` if "R_WHITEBOX_VERBOSE" system environment variable or "whitebox.verbose" option is set to `TRUE`. Returns `TRUE` when R is being used interactively and `FALSE` otherwise.
-#' 
-#' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
-#' 
-#' @return logical; defaults to result of `interactive()`
-#' @export
-#'
-#' @examples
-#'  wbt_verbose()
-#'  
-#' \dontrun{
-#'  Sys.setenv("R_WHITEBOX_VERBOSE" = FALSE)
-#'  wbt_verbose()
-#'  
-#'  options(whitebox.verbose = FALSE)
-#'  wbt_verbose()
-#' }
-wbt_verbose <- function(verbose = NULL) {
-  
-  # system environment var takes precedence, but defaults FALSE
-  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = FALSE)
-  if (sysverbose) {
-    return(sysverbose)
-  }
-  
-  # if non-NULL input, set the package option "verbose"
-  if (!is.null(verbose) && is.logical(verbose)) {
-    options("whitebox.verbose" = verbose)
-  }
-  
-  # package option subsequently, default true for interactive use
-  getOption("whitebox.verbose", default = interactive())
-}
+

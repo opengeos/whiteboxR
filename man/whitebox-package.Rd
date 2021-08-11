@@ -19,7 +19,7 @@ The package options can be overridden with system environment variables: \code{R
 }
 
 \seealso{
-\code{\link[=wbt_init]{wbt_init()}}, \code{\link[=wbt_verbose]{wbt_verbose()}}, \code{\link[=install_whitebox]{install_whitebox()}}
+\code{\link[=wbt_init]{wbt_init()}}, \code{\link[=wbt_options]{wbt_options()}}, \code{\link[=install_whitebox]{install_whitebox()}}
 }
 \author{
 \strong{Maintainer}: Andrew Brown \email{andrew.g.brown@usda.gov} [contributor]
