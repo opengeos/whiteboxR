@@ -3,7 +3,7 @@
 \name{wbt_exe_path}
 \alias{wbt_exe_path}
 \alias{wbt_default_path}
-\title{File path of the WhiteboxTools executable.}
+\title{File path of the WhiteboxTools executable}
 \usage{
 wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
 }

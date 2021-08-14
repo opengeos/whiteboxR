@@ -5,11 +5,11 @@
   check_whitebox_binary(silent = !wbt_verbose())
 }
 
-#' Check for WhiteboxTools Binary
+#' Check for WhiteboxTools executable path
 #'
-#' @param silent logical. Print help on installation/setting binary path. Default `TRUE`.
+#' @param silent logical. Print help on installation/setting path. Default `TRUE`.
 #' @seealso [wbt_exe_path()]
-#' @return logical if WhiteboxTools Binary exists.
+#' @return logical if WhiteboxTools executable file exists.
 #' @export
 check_whitebox_binary <- function(silent = TRUE) {
 
@@ -21,7 +21,7 @@ check_whitebox_binary <- function(silent = TRUE) {
     msg <- paste0(
       "\n",
       "------------------------------------------------------------------------\n",
-      "Could not find WhiteboxTools Binary!\n",
+      "Could not find WhiteboxTools!\n",
       "------------------------------------------------------------------------\n",
       "\n",
       "Your next step is to download and install the WhiteboxTools binary:\n",

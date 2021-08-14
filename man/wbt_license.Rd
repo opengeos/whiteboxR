@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_license}
 \alias{wbt_license}
-\title{License information for WhiteboxTools.}
+\title{License information for WhiteboxTools}
 \usage{
 wbt_license()
 }
@@ -10,7 +10,7 @@ wbt_license()
 Returns the license information for WhiteboxTools as an R character vector.
 }
 \description{
-License information for WhiteboxTools.
+License information for WhiteboxTools
 }
 \examples{
 \dontrun{

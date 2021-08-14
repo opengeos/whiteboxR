@@ -33,7 +33,7 @@ wbt_verbose(verbose = NULL)
 \item \strong{\code{whitebox.verbose}} - logical. Should standard output from calls to executable be \code{cat()} out for readability? Default is result of \code{interactive()}. Individual tools may have \code{verbose_mode} setting that produce only single-line output when \code{FALSE}. These argument values are left as the defaults defined in the package documentation for that function. When \code{whitebox.verbose=FALSE} no output is produced. Set the value of \code{whitebox.verbose} with \code{wbt_verbose()} \code{verbose} argument.
 }
 
-\code{wbt_verbose()}: Check verbose options for WhiteboxTools.
+\code{wbt_verbose()}: Check verbose options for WhiteboxTools
 }
 \examples{
 \dontrun{

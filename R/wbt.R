@@ -60,7 +60,7 @@ wbt_options <- function(exe_path = NULL, verbose = NULL) {
                  whitebox.verbose  = switch(is.null(sysvrb), getOption("whitebox.verbose"), sysvrb)))
 }
 
-#' @description `wbt_verbose()`: Check verbose options for WhiteboxTools.
+#' @description `wbt_verbose()`: Check verbose options for WhiteboxTools
 #' 
 #' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
 #' 
@@ -167,7 +167,7 @@ install_whitebox <- function(pkg_dir = find.package("whitebox")) {
 }
 
 
-#' File path of the WhiteboxTools executable.
+#' File path of the WhiteboxTools executable
 #'
 #' Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards compatible path is returned by `wbt_default_path()`
 #'
@@ -221,7 +221,7 @@ wbt_default_path <- function() {
 }
 
 
-#' Help description for WhiteboxTools.
+#' Help description for WhiteboxTools
 #'
 #' @return Returns the help description for WhiteboxTools as an R character vector.
 #' @export
@@ -242,7 +242,7 @@ wbt_help <- function() {
 }
 
 
-#' License information for WhiteboxTools.
+#' License information for WhiteboxTools
 #'
 #' @return Returns the license information for WhiteboxTools as an R character vector.
 #' @export
@@ -263,7 +263,7 @@ wbt_license <- function() {
 }
 
 
-#' Version information for WhiteboxTools.
+#' Version information for WhiteboxTools
 #'
 #' @return Returns the version information for WhiteboxTools as an R character vector.
 #' @export
@@ -284,7 +284,7 @@ wbt_version <- function() {
 }
 
 
-#' All available tools in WhiteboxTools.
+#' All available tools in WhiteboxTools
 #'
 #' @param keywords Keywords may be used to search available tools.
 #'
@@ -311,7 +311,7 @@ wbt_list_tools <- function(keywords = NULL) {
 }
 
 
-#' The toolbox for a specific tool.
+#' The toolbox for a specific tool in WhiteboxTools
 #'
 #' Retrieve the toolbox for a specific tool.
 #'
@@ -340,7 +340,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 }
 
 
-#' Help description for a specific tool.
+#' Help description for a specific tool in WhiteboxTools
 #'
 #' Retrieves the help description for a specific tool.
 #'
@@ -369,7 +369,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 }
 
 
-#' Tool parameter descriptions for a specific tool.
+#' Tool parameter descriptions for a specific tool in WhiteboxTools
 #'
 #' Retrieves the tool parameter descriptions for a specific tool.
 #'
@@ -396,7 +396,7 @@ wbt_tool_parameters <- function(tool_name) {
 }
 
 
-#' Source code for a specific tool.
+#' Source code for a specific tool in WhiteboxTools
 #'
 #' Opens a web browser to view the source code for a specific tool on the projects source code repository.
 #' @param tool_name Name of the tool.
@@ -426,9 +426,9 @@ wbt_view_code <- function(tool_name, viewer = TRUE) {
 }
 
 
-#' Run a tool.
+#' Run a tool in WhiteboxTools by name
 #'
-#' Runs a tool and specifies tool arguments. If the prefix "wbt_" is in `tool_name` it is removed to match the definitions in `wbt_list_tools()`
+#' Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in `tool_name` it is removed to match the definitions in `wbt_list_tools()`
 #'
 #' @param tool_name The name of the tool to run.
 #' @param args Tool arguments.
