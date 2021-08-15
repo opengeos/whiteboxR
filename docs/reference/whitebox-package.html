@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Run a tool in WhiteboxTools by name — wbt_run_tool • whitebox</title>
+<title>whitebox: 'WhiteboxTools' R Frontend — whitebox-package • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Run a tool in WhiteboxTools by name — wbt_run_tool" />
-<meta property="og:description" content="Runs a tool and specifies tool arguments. If the prefix &quot;whitebox::&quot; or &quot;wbt_&quot; is in tool_name it is removed to match the definitions in wbt_list_tools()" />
+<meta property="og:title" content="whitebox: 'WhiteboxTools' R Frontend — whitebox-package" />
+<meta property="og:description" content="An R frontend for the 'WhiteboxTools' library, which is an advanced geospatial data analysis platform developed by Prof. John Lindsay at the University of Guelph's Geomorphometry and Hydrogeomatics Research Group. 'WhiteboxTools' can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. 'WhiteboxTools' also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. Suggested citation: Lindsay (2016) &amp;lt;doi:10.1016/j.cageo.2016.07.003&amp;gt;." />
 
 
 
@@ -111,52 +111,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Run a tool in WhiteboxTools by name</h1>
-    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/wbt.R'><code>R/wbt.R</code></a></small>
-    <div class="hidden name"><code>wbt_run_tool.Rd</code></div>
+    <h1>whitebox: 'WhiteboxTools' R Frontend</h1>
+    <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/whitebox-package.R'><code>R/whitebox-package.R</code></a></small>
+    <div class="hidden name"><code>whitebox-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in <code>tool_name</code> it is removed to match the definitions in <code><a href='wbt_list_tools.html'>wbt_list_tools()</a></code></p>
+    <p>An R frontend for the 'WhiteboxTools' library, which is an advanced geospatial data analysis platform developed by Prof. John Lindsay at the University of Guelph's Geomorphometry and Hydrogeomatics Research Group. 'WhiteboxTools' can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. 'WhiteboxTools' also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. Suggested citation: Lindsay (2016) &lt;doi:10.1016/j.cageo.2016.07.003&gt;.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_run_tool</span><span class='op'>(</span><span class='va'>tool_name</span>, <span class='va'>args</span>, verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>tool_name</th>
-      <td><p>The name of the tool to run.</p></td>
-    </tr>
-    <tr>
-      <th>args</th>
-      <td><p>Tool arguments.</p></td>
-    </tr>
-    <tr>
-      <th>verbose_mode</th>
-      <td><p>Verbose mode. Without this flag, tool outputs will not be printed.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="package-options"><a class="anchor" href="#package-options"></a>Package options</h2>
 
-    <p>Returns the output descriptions of the tool.</p>
+    
+
+<ul>
+<li><p><strong><code>whitebox.exe_path</code></strong> - character. Path to executable file. The default value is the package installation directory, subdirectory <code>"WBT"</code>, followed by <code>whitebox_tools.exe</code> or <code>whitebox_tools</code>. Set the <code>whitebox.exe_path</code> option using <code><a href='wbt_init.html'>wbt_init()</a></code> <code>exe_path</code> argument</p></li>
+<li><p><strong><code>whitebox.verbose</code></strong> - logical. Should standard output from calls to executable be <code><a href='https://rdrr.io/r/base/cat.html'>cat()</a></code> out for readability? Default is result of <code><a href='https://rdrr.io/r/base/interactive.html'>interactive()</a></code>. Individual tools may have <code>verbose_mode</code> setting that produce only single-line output when <code>FALSE</code>. These argument values are left as the defaults defined in the package documentation for that function. When <code>whitebox.verbose=FALSE</code> no output is produced. Set the value of <code>whitebox.verbose</code> with <code><a href='wbt_init.html'>wbt_verbose()</a></code> <code>verbose</code> argument.</p></li>
+</ul>
+
+<p>The package options can be overridden with system environment variables: <code>R_WHITEBOX_EXE_PATH</code> (character) and <code>R_WHITEBOX_VERBOSE</code>, respectively.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='wbt_list_tools.html'>wbt_list_tools</a></p></div>
+    <div class='dont-index'><p><code><a href='wbt_init.html'>wbt_init()</a></code>, <code><a href='wbt_init.html'>wbt_options()</a></code>, <code><a href='install_whitebox.html'>install_whitebox()</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='va'>tool_name</span> <span class='op'>&lt;-</span> <span class='st'>"breach_depressions"</span>
-<span class='va'>dem</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"DEM.tif"</span>, package<span class='op'>=</span><span class='st'>"whitebox"</span><span class='op'>)</span>
-<span class='va'>output</span> <span class='op'>&lt;-</span> <span class='st'>"./output.tif"</span>
-<span class='va'>arg1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"--dem="</span>, <span class='va'>dem</span><span class='op'>)</span>
-<span class='va'>arg2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"--output="</span>, <span class='va'>output</span><span class='op'>)</span>
-<span class='va'>args</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>arg1</span>, <span class='va'>arg2</span><span class='op'>)</span>
-<span class='fu'>wbt_run_tool</span><span class='op'>(</span><span class='va'>tool_name</span>, <span class='va'>args</span><span class='op'>)</span>
-<span class='op'>}</span> 
-</div></pre>
+    <p><strong>Maintainer</strong>: Andrew Brown <a href='mailto:andrew.g.brown@usda.gov'>andrew.g.brown@usda.gov</a> [contributor]</p>
+<p>Authors:</p><ul>
+<li><p>Qiusheng Wu <a href='mailto:giswqs@gmail.com'>giswqs@gmail.com</a></p></li>
+</ul>
+
+
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

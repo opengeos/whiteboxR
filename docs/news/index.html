@@ -120,18 +120,27 @@
 </h1>
 <ul>
 <li>
-<p>Add options for custom EXE path</p>
+<p>Add package options for custom EXE path and verbosity</p>
 <ul>
+<li><p>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</p></li>
+<li><p>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</p></li>
 <li>
-<p>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</p>
+<p>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>) or package option (<code>whitebox.exe_path</code>)</p>
 <ul>
-<li>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</li>
+<li>Get / set with <code><a href="../reference/wbt_init.html">wbt_options(exe_path = "C:/path/to/whitebox_tools.exe")</a></code> or <code><a href="../reference/wbt_init.html">wbt_init()</a></code>
+</li>
 </ul>
 </li>
-<li><p>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>), a package option (<code>whitebox.exe_path</code>) or an argument to set custom paths</p></li>
+<li>
+<p>Verbosity controlled with (<code>R_WHITEBOX_VERBOSE</code>) or package option (<code>whitebox.verbose</code>)</p>
+<ul>
+<li>Get / set with <code><a href="../reference/wbt_init.html">wbt_options(verbose = TRUE)</a></code> or <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>
+</li>
 </ul>
 </li>
-<li><p>Changes to automatically-generated testing code; adds <code>skip_if_not(check_whitebox_binary())</code></p></li>
+</ul>
+</li>
+<li><p>All tests that require WhiteboxTools are prefaced with <code>skip_if_not(check_whitebox_binary())</code></p></li>
 </ul>
 </div>
     <div id="whitebox-030" class="section level1">

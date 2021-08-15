@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>File path of the WhiteboxTools executable. — wbt_exe_path • whitebox</title>
+<title>File path of the WhiteboxTools executable — wbt_exe_path • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="File path of the WhiteboxTools executable. — wbt_exe_path" />
-<meta property="og:description" content="Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = &quot;C:/path/to/whitebox_tools.exe&quot;)` or `options(whitebox.exe_path = &quot;C:/path/to/whitebox_tools.exe&quot;)`. The default, backwards compatible path is returned by `wbt_default_path()`" />
+<meta property="og:title" content="File path of the WhiteboxTools executable — wbt_exe_path" />
+<meta property="og:description" content="Get the file path of the WhiteboxTools executable. Checks system environment variable R_WHITEBOX_EXE_PATH and package option whitebox.exe_path. Set your desired path with either Sys.setenv(R_WHITEBOX_EXE_PATH = &quot;C:/path/to/whitebox_tools.exe&quot;) or options(whitebox.exe_path = &quot;C:/path/to/whitebox_tools.exe&quot;). The default, backwards compatible path is returned by wbt_default_path()" />
 
 
 
@@ -111,27 +111,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>File path of the WhiteboxTools executable.</h1>
+    <h1>File path of the WhiteboxTools executable</h1>
     <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/wbt.R'><code>R/wbt.R</code></a></small>
     <div class="hidden name"><code>wbt_exe_path.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards compatible path is returned by `wbt_default_path()`</p>
+    <p>Get the file path of the WhiteboxTools executable. Checks system environment variable <code>R_WHITEBOX_EXE_PATH</code> and package option <code>whitebox.exe_path</code>. Set your desired path with either <code><a href='https://rdrr.io/r/base/Sys.setenv.html'>Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")</a></code> or <code><a href='https://rdrr.io/r/base/options.html'>options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")</a></code>. The default, backwards compatible path is returned by <code>wbt_default_path()</code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_exe_path</span>(exe_path = <span class='kw'>NULL</span>, shell_quote = <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>wbt_exe_path</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='cn'>NULL</span>, shell_quote <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>exe_path</th>
-      <td><p>Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`</p></td>
+      <td><p>Optional: User-supplied path to WhiteboxTools executable. Default: <code>NULL</code></p></td>
     </tr>
     <tr>
       <th>shell_quote</th>
-      <td><p>Return `shQuote()` result?</p></td>
+      <td><p>Return <code><a href='https://rdrr.io/r/base/shQuote.html'>shQuote()</a></code> result?</p></td>
     </tr>
     </table>
 
@@ -140,9 +140,9 @@
     <p>Returns the file path of WhiteboxTools executable.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>wbt_exe</span> <span class='op'>&lt;-</span> <span class='fu'>wbt_exe_path</span>()
-}
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>wbt_exe_path</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
