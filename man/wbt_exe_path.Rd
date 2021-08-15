@@ -19,5 +19,7 @@ Returns the file path of WhiteboxTools executable.
 Get the file path of the WhiteboxTools executable. Checks system environment variable \code{R_WHITEBOX_EXE_PATH} and package option \code{whitebox.exe_path}. Set your desired path with either \code{Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")} or \code{options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")}. The default, backwards compatible path is returned by \code{wbt_default_path()}
 }
 \examples{
+\dontrun{
 wbt_exe_path()
+}
 }

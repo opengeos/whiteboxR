@@ -88,7 +88,7 @@ wbt_verbose <- function(verbose = NULL) {
   }
   
   # package option subsequently, default true for interactive use
-  getOption("whitebox.verbose", default = interactive())
+  invisible(getOption("whitebox.verbose", default = interactive()))
 }
 
 #' @export
@@ -180,7 +180,9 @@ install_whitebox <- function(pkg_dir = find.package("whitebox")) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' wbt_exe_path()
+#' }
 wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   pkgwbt <- getOption("whitebox.exe_path")
