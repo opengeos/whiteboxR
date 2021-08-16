@@ -137,8 +137,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
 
     cat("WhiteboxTools binary is located at: ", exe_path, "\n")
     cat("You can now start using whitebox\n")
-    cat("    > library(whitebox)\n")
-    cat("    > wbt_version()\n")
+    cat("    library(whitebox)\n")
+    cat("    wbt_version()\n")
   }
   
   # return installed path
@@ -376,7 +376,10 @@ wbt_tool_help <- function(tool_name = NULL) {
 #' Retrieves the tool parameter descriptions for a specific tool.
 #'
 #' @param tool_name The name of the tool.
-#'
+#' @param quiet Prevent tool output being printed. Default: `FALSE`
+#' 
+#' @details `quiet` argument can be set to `TRUE` to allow for "quiet" internal use within other functions.
+#' 
 #' @return Returns the tool parameter descriptions for a specific tool.
 #' @export
 #'
@@ -384,14 +387,14 @@ wbt_tool_help <- function(tool_name = NULL) {
 #' \dontrun{
 #' wbt_tool_parameters("lidar_info")
 #' }
-wbt_tool_parameters <- function(tool_name) {
+wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
   tool_name <- wbt_internal_tool_name(tool_name)
   args <- paste0("--toolparameters=", tool_name)
   args <- paste(wbt_exe, args)
   ret <- system(args, intern = TRUE)  
-  if (wbt_verbose()) {
+  if (wbt_verbose() && !quiet) {
     cat(ret, sep = "\n")
   }
   invisible(ret)
@@ -411,17 +414,17 @@ wbt_tool_parameters <- function(tool_name) {
 #' wbt_view_code("breach_depressions")
 #' }
 #' @importFrom utils browseURL
-wbt_view_code <- function(tool_name, viewer = TRUE) {
+wbt_view_code <- function(tool_name, viewer = FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
   tool_name <- wbt_internal_tool_name(tool_name)
   args <- paste0("--viewcode=", tool_name)
   args <- paste(wbt_exe, args)
   ret <- system(args, intern = TRUE)
+  if (viewer) {
+    utils::browseURL(ret)
+  }
   if (wbt_verbose()) {
-    if (viewer) {
-      utils::browseURL(ret)
-    }
     cat(ret, sep = "\n")
   }
   invisible(ret)

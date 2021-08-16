@@ -4,16 +4,21 @@
 \alias{wbt_tool_parameters}
 \title{Tool parameter descriptions for a specific tool in WhiteboxTools}
 \usage{
-wbt_tool_parameters(tool_name)
+wbt_tool_parameters(tool_name, quiet = FALSE)
 }
 \arguments{
 \item{tool_name}{The name of the tool.}
+
+\item{quiet}{Prevent tool output being printed. Default: \code{FALSE}}
 }
 \value{
 Returns the tool parameter descriptions for a specific tool.
 }
 \description{
 Retrieves the tool parameter descriptions for a specific tool.
+}
+\details{
+\code{quiet} argument can be set to \code{TRUE} to allow for "quiet" internal use within other functions.
 }
 \examples{
 \dontrun{

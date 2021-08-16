@@ -4,7 +4,7 @@
 \alias{wbt_view_code}
 \title{Source code for a specific tool in WhiteboxTools}
 \usage{
-wbt_view_code(tool_name, viewer = TRUE)
+wbt_view_code(tool_name, viewer = FALSE)
 }
 \arguments{
 \item{tool_name}{Name of the tool.}
