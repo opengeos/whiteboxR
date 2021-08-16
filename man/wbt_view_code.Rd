@@ -2,12 +2,14 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_view_code}
 \alias{wbt_view_code}
-\title{Source code for a specific tool.}
+\title{Source code for a specific tool in WhiteboxTools}
 \usage{
-wbt_view_code(tool_name)
+wbt_view_code(tool_name, viewer = TRUE)
 }
 \arguments{
 \item{tool_name}{Name of the tool.}
+
+\item{viewer}{Show source code in browser? default: \code{TRUE}}
 }
 \value{
 Returns a GitHub URL to view the source code of the tool.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_tool_help}
 \alias{wbt_tool_help}
-\title{Help description for a specific tool.}
+\title{Help description for a specific tool in WhiteboxTools}
 \usage{
 wbt_tool_help(tool_name = NULL)
 }

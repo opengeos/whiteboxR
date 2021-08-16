@@ -2,19 +2,19 @@
 % Please edit documentation in R/zzz.R
 \name{check_whitebox_binary}
 \alias{check_whitebox_binary}
-\title{Check for WhiteboxTools Binary}
+\title{Check for WhiteboxTools executable path}
 \usage{
 check_whitebox_binary(silent = TRUE)
 }
 \arguments{
-\item{silent}{logical. Print help on installation/setting binary path. Default `TRUE`.}
+\item{silent}{logical. Print help on installation/setting path. Default \code{TRUE}.}
 }
 \value{
-logical if WhiteboxTools Binary exists.
+logical if WhiteboxTools executable file exists.
 }
 \description{
-Check for WhiteboxTools Binary
+Check for WhiteboxTools executable path
 }
 \seealso{
-[wbt_exe_path()]
+\code{\link[=wbt_exe_path]{wbt_exe_path()}}
 }

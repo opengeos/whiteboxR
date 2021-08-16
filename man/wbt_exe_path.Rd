@@ -3,23 +3,23 @@
 \name{wbt_exe_path}
 \alias{wbt_exe_path}
 \alias{wbt_default_path}
-\title{File path of the WhiteboxTools executable.}
+\title{File path of the WhiteboxTools executable}
 \usage{
 wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
 }
 \arguments{
-\item{exe_path}{Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`}
+\item{exe_path}{Optional: User-supplied path to WhiteboxTools executable. Default: \code{NULL}}
 
-\item{shell_quote}{Return `shQuote()` result?}
+\item{shell_quote}{Return \code{shQuote()} result?}
 }
 \value{
 Returns the file path of WhiteboxTools executable.
 }
 \description{
-Get the file path of the WhiteboxTools executable. Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards compatible path is returned by `wbt_default_path()`
+Get the file path of the WhiteboxTools executable. Checks system environment variable \code{R_WHITEBOX_EXE_PATH} and package option \code{whitebox.exe_path}. Set your desired path with either \code{Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")} or \code{options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")}. The default, backwards compatible path is returned by \code{wbt_default_path()}
 }
 \examples{
 \dontrun{
-wbt_exe <- wbt_exe_path()
+wbt_exe_path()
 }
 }

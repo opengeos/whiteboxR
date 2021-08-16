@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_run_tool}
 \alias{wbt_run_tool}
-\title{Run a tool.}
+\title{Run a tool in WhiteboxTools by name}
 \usage{
 wbt_run_tool(tool_name, args, verbose_mode = FALSE)
 }
@@ -17,7 +17,7 @@ wbt_run_tool(tool_name, args, verbose_mode = FALSE)
 Returns the output descriptions of the tool.
 }
 \description{
-Runs a tool and specifies tool arguments.
+Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in \code{tool_name} it is removed to match the definitions in \code{wbt_list_tools()}
 }
 \examples{
 \dontrun{
@@ -28,5 +28,8 @@ arg1 <- paste0("--dem=", dem)
 arg2 <- paste0("--output=", output)
 args <- paste(arg1, arg2)
 wbt_run_tool(tool_name, args)
+} 
 }
+\seealso{
+\link{wbt_list_tools}
 }

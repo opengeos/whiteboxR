@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check for WhiteboxTools Binary — check_whitebox_binary • whitebox</title>
+<title>Check for WhiteboxTools executable path — check_whitebox_binary • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Check for WhiteboxTools Binary — check_whitebox_binary" />
-<meta property="og:description" content="Check for WhiteboxTools Binary" />
+<meta property="og:title" content="Check for WhiteboxTools executable path — check_whitebox_binary" />
+<meta property="og:description" content="Check for WhiteboxTools executable path" />
 
 
 
@@ -111,44 +111,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check for WhiteboxTools Binary</h1>
+    <h1>Check for WhiteboxTools executable path</h1>
     <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/zzz.R'><code>R/zzz.R</code></a></small>
     <div class="hidden name"><code>check_whitebox_binary.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Check for WhiteboxTools Binary</p>
+    <p>Check for WhiteboxTools executable path</p>
     </div>
 
-    <pre class="usage"><span class='fu'>check_whitebox_binary</span>(
-  path = <span class='st'>"~"</span>,
-  pattern = <span class='st'>"whitebox_tools$|whitebox_tools.exe$"</span>,
-  silent = <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>check_whitebox_binary</span><span class='op'>(</span>silent <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>path</th>
-      <td><p>Path to search for binary (if not found at standard locations)</p></td>
-    </tr>
-    <tr>
-      <th>pattern</th>
-      <td><p>Pattern to match for binary name</p></td>
-    </tr>
-    <tr>
       <th>silent</th>
-      <td><p>logical. Print help on installation/setting binary path. Default `TRUE`.</p></td>
+      <td><p>logical. Print help on installation/setting path. Default <code>TRUE</code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>logical if WhiteboxTools Binary exists.</p>
+    <p>logical if WhiteboxTools executable file exists.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>[wbt_exe_path()]</p></div>
+    <div class='dont-index'><p><code><a href='wbt_exe_path.html'>wbt_exe_path()</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

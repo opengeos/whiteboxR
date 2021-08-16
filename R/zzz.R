@@ -1,13 +1,15 @@
 .onLoad <- function(libname, pkgname) {
-  # check_whitebox_binary() is called "loudly" only on package load
-  check_whitebox_binary(silent = FALSE)
+  # check_whitebox_binary() is called "loudly" only on package load either:
+  #   1. interactively, or 
+  #   2. environment var R_WHITEBOX_VERBOSE=TRUE or package option whitebox.verbose=TRUE
+  check_whitebox_binary(silent = !wbt_verbose())
 }
 
-#' Check for WhiteboxTools Binary
+#' Check for WhiteboxTools executable path
 #'
-#' @param silent logical. Print help on installation/setting binary path. Default `TRUE`.
+#' @param silent logical. Print help on installation/setting path. Default `TRUE`.
 #' @seealso [wbt_exe_path()]
-#' @return logical if WhiteboxTools Binary exists.
+#' @return logical if WhiteboxTools executable file exists.
 #' @export
 check_whitebox_binary <- function(silent = TRUE) {
 
@@ -19,14 +21,14 @@ check_whitebox_binary <- function(silent = TRUE) {
     msg <- paste0(
       "\n",
       "------------------------------------------------------------------------\n",
-      "Could not find WhiteboxTools Binary!\n",
+      "Could not find WhiteboxTools!\n",
       "------------------------------------------------------------------------\n",
       "\n",
       "Your next step is to download and install the WhiteboxTools binary:\n",
       "    > whitebox::install_whitebox()\n",
       "\n",
-      "Or, if you have WhiteboxTools installed already, set the path with:\n",
-      "    > Sys.setenv(R_WHITEBOX_EXE_PATH = 'C:/path/to/whitebox_tools.exe')\n",
+      "If you have WhiteboxTools installed already run `wbt_init(exe_path=...)`': \n",
+      "    > wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n",
       "\n",
       "For whitebox package documentation, ask for help:\n",
       "    > ??whitebox\n",

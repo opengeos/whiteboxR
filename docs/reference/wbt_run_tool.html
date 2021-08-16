@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Run a tool. — wbt_run_tool • whitebox</title>
+<title>Run a tool in WhiteboxTools by name — wbt_run_tool • whitebox</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Run a tool. — wbt_run_tool" />
-<meta property="og:description" content="Runs a tool and specifies tool arguments." />
+<meta property="og:title" content="Run a tool in WhiteboxTools by name — wbt_run_tool" />
+<meta property="og:description" content="Runs a tool and specifies tool arguments. If the prefix &quot;whitebox::&quot; or &quot;wbt_&quot; is in tool_name it is removed to match the definitions in wbt_list_tools()" />
 
 
 
@@ -111,16 +111,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Run a tool.</h1>
+    <h1>Run a tool in WhiteboxTools by name</h1>
     <small class="dont-index">Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/R/wbt.R'><code>R/wbt.R</code></a></small>
     <div class="hidden name"><code>wbt_run_tool.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Runs a tool and specifies tool arguments.</p>
+    <p>Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in <code>tool_name</code> it is removed to match the definitions in <code><a href='wbt_list_tools.html'>wbt_list_tools()</a></code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_run_tool</span>(<span class='kw'>tool_name</span>, <span class='kw'>args</span>, verbose_mode = <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>wbt_run_tool</span><span class='op'>(</span><span class='va'>tool_name</span>, <span class='va'>args</span>, verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,17 +142,20 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns the output descriptions of the tool.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><a href='wbt_list_tools.html'>wbt_list_tools</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>tool_name</span> <span class='op'>&lt;-</span> <span class='st'>"breach_depressions"</span>
-<span class='kw'>dem</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata"</span>, <span class='st'>"DEM.tif"</span>, package=<span class='st'>"whitebox"</span>)
-<span class='kw'>output</span> <span class='op'>&lt;-</span> <span class='st'>"./output.tif"</span>
-<span class='kw'>arg1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"--dem="</span>, <span class='kw'>dem</span>)
-<span class='kw'>arg2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"--output="</span>, <span class='kw'>output</span>)
-<span class='kw'>args</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='kw'>arg1</span>, <span class='kw'>arg2</span>)
-<span class='fu'>wbt_run_tool</span>(<span class='kw'>tool_name</span>, <span class='kw'>args</span>)
-}
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>tool_name</span> <span class='op'>&lt;-</span> <span class='st'>"breach_depressions"</span>
+<span class='va'>dem</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"DEM.tif"</span>, package<span class='op'>=</span><span class='st'>"whitebox"</span><span class='op'>)</span>
+<span class='va'>output</span> <span class='op'>&lt;-</span> <span class='st'>"./output.tif"</span>
+<span class='va'>arg1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"--dem="</span>, <span class='va'>dem</span><span class='op'>)</span>
+<span class='va'>arg2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"--output="</span>, <span class='va'>output</span><span class='op'>)</span>
+<span class='va'>args</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>arg1</span>, <span class='va'>arg2</span><span class='op'>)</span>
+<span class='fu'>wbt_run_tool</span><span class='op'>(</span><span class='va'>tool_name</span>, <span class='va'>args</span><span class='op'>)</span>
+<span class='op'>}</span> 
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

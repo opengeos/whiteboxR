@@ -1,9 +1,10 @@
 # whiteboxR
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
+[![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml) 
+[![whitebox Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
-[![Build Status](https://travis-ci.org/giswqs/whiteboxR.svg?branch=master)](https://travis-ci.org/giswqs/whiteboxR)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR/)
 [![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR/)
 [![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://codecov.io/gh/giswqs/whiteboxR)
@@ -18,7 +19,9 @@
 This repository is related to the **whitebox** R package for geospatial analysis, which is an R frontend of a stand-alone executable command-line program called **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**. 
 
 * Authors: Dr. John Lindsay (<https://jblindsay.github.io/ghrg/index.html>)
-* Contributors: Dr. Qiusheng Wu (<https://wetlands.io> | <https://blog.gishub.org>)
+* Contributors: 
+    * Dr. Qiusheng Wu (<https://wetlands.io> | <https://blog.gishub.org>)
+    * Andrew G. Brown (<http://humus.rocks>)
 * GitHub repo: <https://github.com/giswqs/whiteboxR>
 * CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
@@ -65,51 +68,180 @@ install.packages("whitebox", repos="http://R-Forge.R-project.org")
 You can alternatively install the development version of **whitebox** from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
 
 ```R
-if (!require(devtools)) install.packages('devtools')
-devtools::install_github("giswqs/whiteboxR")
+if (!require("remotes")) install.packages('remotes')
+remotes::install_github("giswqs/whiteboxR", build = FALSE)
 ```
-
-You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites) for the tools needed for your operating system.
 
 ## Usage
 
-A complete list of functions available in the **whitebox** R package can be found [HERE](https://giswqs.github.io/whiteboxR/reference/index.html). Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for examples.
+If you have WhiteboxTools installed already run `wbt_init(exe_path=...)`: 
+
+```r
+wbt_init(exe_path='C:/home/user/path/to/whitebox_tools.exe')
+```
+
+The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the WhiteboxTools binary. A method `install_whitebox()` is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.
+
+```r
+whitebox::install_whitebox()
+```
+
+By default this will install to your whitebox R package installation directory (e.g. in your R package library), subdirectory "WBT".
+
+For whitebox package documentation in R, ask for help:
+
+```r
+??whitebox
+```
+
+## Documentation
+
+A complete list of functions available in the **whitebox** R package can be found [HERE](https://giswqs.github.io/whiteboxR/reference/index.html). 
+
+Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for examples.
 
 **About WhiteboxTools?**
 
 ```R
 library(whitebox)
 
+# cat() output in non-interactive mode
+wbt_verbose(TRUE)
+
 # Prints the whitebox-tools help...a listing of available commands
-print(wbt_help())
+wbt_help()
+#> WhiteboxTools Help
+#> 
+#> The following commands are recognized:
+#> --cd, --wd       Changes the working directory; used in conjunction with --run flag.
+#> -h, --help       Prints help information.
+#> -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"
+#> --listtools      Lists all available tools. Keywords may also be used, --listtools slope.
+#> -r, --run        Runs a tool; used in conjuction with --wd flag; -r="LidarInfo".
+#> --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.
+#> --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".
+#> --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".
+#> -v               Verbose mode. Without this flag, tool outputs will not be printed.
+#> --viewcode       Opens the source code of a tool in a web browser; --viewcode="LidarInfo".
+#> --version        Prints the version information.
+#> 
+#> Example Usage:
+#> >> ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys
 
 # Prints the whitebox-tools license
-print(wbt_license())
+wbt_license()
+#> WhiteboxTools License
+#> Copyright 2017-2020 John Lindsay
+#> 
+#> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+#> associated documentation files (the "Software"), to deal in the Software without restriction,
+#> including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+#> and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+#> subject to the following conditions:
+#> 
+#> The above copyright notice and this permission notice shall be included in all copies or substantial
+#> portions of the Software.
+#> 
+#> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+#> NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+#> NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+#> OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+#> CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Prints the whitebox-tools version
-print(wbt_version())
+wbt_version()
+#> WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2020
+#> 
+#> WhiteboxTools is an advanced geospatial data analysis platform developed at
+#> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
+#> Group (GHRG). See https://jblindsay.github.io/ghrg/WhiteboxTools/index.html
+#> for more details.
 
 # Prints the toolbox for a specific tool.
-print(wbt_toolbox())
-
-# List all available tools in whitebox-tools
-print(wbt_list_tools())
+wbt_toolbox("AsciiToLas")
+#> LiDAR Tools
 
 # Lists tools with 'lidar' in tool name or description.
-print(wbt_list_tools("lidar"))
+wbt_list_tools("lidar")
+#> All 47 Tools containing keywords:
+#> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
+#> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
+#> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
+#> ClipLidarToPolygon: Clips a LiDAR point cloud to a vector polygon or polygons.
+#> ErasePolygonFromLidar: Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.
+#> FilterLidarClasses: Removes points in a LAS file with certain specified class values.
+#> FilterLidarScanAngles: Removes points in a LAS file with scan angles greater than a threshold.
+#> FindFlightlineEdgePoints: Identifies points along a flightline's edge in a LAS file.
+#> FlightlineOverlap: Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight lines in each grid cell.
+#> HeightAboveGround: Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
+#> LasToAscii: Converts one or more LAS files into ASCII text files.
+#> LasToMultipointShapefile: Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
+#> LasToShapefile: Converts one or more LAS files into a vector Shapefile of POINT ShapeType.
+#> LasToZlidar: Converts one or more LAS files into the zlidar compressed LiDAR data format.
+#> LidarBlockMaximum: Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#> LidarBlockMinimum: Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#> LidarClassifySubset: Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.
+#> LidarColourize: Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
+#> LidarDigitalSurfaceModel: Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
+#> LidarElevationSlice: Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
+#> LidarGroundPointFilter: Identifies ground points within LiDAR dataset using a slope-based method.
+#> LidarHexBinning: Hex-bins a set of LiDAR points.
+#> LidarHillshade: Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.
+#> LidarHistogram: Creates a histogram of LiDAR data.
+#> LidarIdwInterpolation: Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
+#> LidarInfo: Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
+#> LidarJoin: Joins multiple LiDAR (LAS) files into a single LAS file.
+#> LidarKappaIndex: Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.
+#> LidarNearestNeighbourGridding: Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#> LidarPointDensity: Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#> LidarPointStats: Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.
+#> LidarRansacPlanes: Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
+#> LidarRbfInterpolation: Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
+#> LidarRemoveDuplicates: Removes duplicate points from a LiDAR data set.
+#> LidarRemoveOutliers: Removes outliers (high and low points) in a LiDAR point cloud.
+#> LidarRooftopAnalysis: Identifies roof segments in a LiDAR point cloud.
+#> LidarSegmentation: Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
+#> LidarSegmentationBasedFilter: Identifies ground points within LiDAR point clouds using a segmentation based approach.
+#> LidarTINGridding: Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.
+#> LidarThin: Thins a LiDAR point cloud, reducing point density.
+#> LidarThinHighDensity: Thins points from high density areas within a LiDAR point cloud.
+#> LidarTile: Tiles a LiDAR LAS file into multiple LAS files.
+#> LidarTileFootprint: Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.
+#> LidarTophatTransform: Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
+#> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
+#> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
+#> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
 
 # Prints the help for a specific tool.
-print(wbt_tool_help("lidar_info"))
+wbt_tool_help("lidar_info")
+#> LidarInfo
+#> Description:
+#> Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
+#> Toolbox: LiDAR Tools
+#> Parameters:
+#> 
+#> Flag               Description
+#> -----------------  -----------
+#> -i, --input        Input LiDAR file.
+#> -o, --output       Output HTML file for summary report.
+#> --vlr              Flag indicating whether or not to print the variable length records (VLRs).
+#> --geokeys          Flag indicating whether or not to print the geokeys.
+#> 
+#> 
+#> Example usage:
+#> >>./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"
+#> ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las
 
 # Retrieves the tool parameter descriptions for a specific tool.
-print(wbt_tool_parameters("slope"))
+wbt_tool_parameters("slope")
+#> {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}
 
 # View the source code for a specific tool on the source code repository.
-print(wbt_view_code("breach_depressions"))
+wbt_view_code("breach_depressions")
+#> https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs
 ```
 
 **How to run tools?**
-
 
 Tool names in the whitebox R package can be called using the snake_case (e.g. lidar_info). See below for an example. If you are interested in using the WhiteboxTools command-line program, check [WhiteboxTools Usage](https://github.com/jblindsay/whitebox-tools#3-usage).
 

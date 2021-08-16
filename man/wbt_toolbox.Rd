@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_toolbox}
 \alias{wbt_toolbox}
-\title{The toolbox for a specific tool.}
+\title{The toolbox for a specific tool in WhiteboxTools}
 \usage{
 wbt_toolbox(tool_name = NULL)
 }

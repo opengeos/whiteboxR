@@ -77,7 +77,12 @@
 <p>This repository is related to the <strong>whitebox</strong> R package for geospatial analysis, which is an R frontend of a stand-alone executable command-line program called <strong><a href="https://github.com/jblindsay/whitebox-tools">WhiteboxTools</a></strong>.</p>
 <ul>
 <li>Authors: Dr. John Lindsay (<a href="https://jblindsay.github.io/ghrg/index.html" class="uri">https://jblindsay.github.io/ghrg/index.html</a>)</li>
-<li>Contributors: Dr. Qiusheng Wu (<a href="https://wetlands.io" class="uri">https://wetlands.io</a> | <a href="https://blog.gishub.org" class="uri">https://blog.gishub.org</a>)</li>
+<li>Contributors:
+<ul>
+<li>Dr. Qiusheng Wu (<a href="https://wetlands.io" class="uri">https://wetlands.io</a> | <a href="https://blog.gishub.org" class="uri">https://blog.gishub.org</a>)</li>
+<li>Andrew G. Brown (<a href="http://humus.rocks" class="uri">http://humus.rocks</a>)</li>
+</ul>
+</li>
 <li>GitHub repo: <a href="https://github.com/giswqs/whiteboxR" class="uri">https://github.com/giswqs/whiteboxR</a>
 </li>
 <li>CRAN link: <a href="https://cran.r-project.org/package=whitebox" class="uri">https://cran.r-project.org/package=whitebox</a>
@@ -111,78 +116,195 @@
 <div id="1-cran" class="section level3">
 <h3 class="hasAnchor">
 <a href="#1-cran" class="anchor"></a>1. CRAN</h3>
-<p><del><strong>whitebox</strong> is now available on <a href="https://cran.r-project.org/package=whitebox">CRAN</a>, so you can install it with:</del></p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"whitebox"</span>)
-</pre></div>
+<p><strong>whitebox</strong> is now available on <a href="https://cran.r-project.org/package=whitebox">CRAN</a>, so you can install it with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"whitebox"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="2-r-forge" class="section level3">
 <h3 class="hasAnchor">
 <a href="#2-r-forge" class="anchor"></a>2. R-Forge</h3>
 <p><strong>whitebox</strong> is also available on <a href="https://r-forge.r-project.org/R/?group_id=2337">R-Forge</a>, so you can install it with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"whitebox"</span>, repos=<span class="st">"http://R-Forge.R-project.org"</span>)
-</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"whitebox"</span>, repos<span class="op">=</span><span class="st">"http://R-Forge.R-project.org"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="3-github" class="section level3">
 <h3 class="hasAnchor">
 <a href="#3-github" class="anchor"></a>3. GitHub</h3>
 <p>You can alternatively install the development version of <strong>whitebox</strong> from <a href="https://github.com/giswqs/whiteboxR">GitHub</a> as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co">if</span> (<span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="kw"><a href="https://devtools.r-lib.org">devtools</a></span>)) <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'devtools'</span>)
-<span class="kw">devtools</span>::<span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"giswqs/whiteboxR"</span>)
-</pre></div>
-<p>You’ll also need to make sure your machine is able to build packages from source. See <a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites">Package Development Prerequisites</a> for the tools needed for your operating system.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://remotes.r-lib.org">"remotes"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'remotes'</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"giswqs/whiteboxR"</span>, build <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://giswqs.github.io/whiteboxR/reference/index.html">HERE</a>. Check out this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html">demo</a> for examples.</p>
+<p>If you have WhiteboxTools installed already run <code><a href="reference/wbt_init.html">wbt_init(exe_path=...)</a></code>:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path<span class="op">=</span><span class="st">'C:/home/user/path/to/whitebox_tools.exe'</span><span class="op">)</span></code></pre></div>
+<p>The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the WhiteboxTools binary. A method <code><a href="reference/install_whitebox.html">install_whitebox()</a></code> is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">whitebox</span><span class="fu">::</span><span class="fu"><a href="reference/install_whitebox.html">install_whitebox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>By default this will install to your whitebox R package installation directory (e.g. in your R package library), subdirectory “WBT”.</p>
+<p>For whitebox package documentation in R, ask for help:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">?</span><span class="op">?</span><span class="va">whitebox</span></code></pre></div>
+</div>
+<div id="documentation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#documentation" class="anchor"></a>Documentation</h2>
+<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://giswqs.github.io/whiteboxR/reference/index.html">HERE</a>.</p>
+<p>Check out this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html">demo</a> for examples.</p>
 <p><strong>About WhiteboxTools?</strong></p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span>)
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
+
+<span class="co"># cat() output in non-interactive mode</span>
+<span class="fu"><a href="reference/wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co"># Prints the whitebox-tools help...a listing of available commands</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_help.html">wbt_help</a></span>())
+<span class="fu"><a href="reference/wbt_help.html">wbt_help</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; WhiteboxTools Help</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; The following commands are recognized:</span>
+<span class="co">#&gt; --cd, --wd       Changes the working directory; used in conjunction with --run flag.</span>
+<span class="co">#&gt; -h, --help       Prints help information.</span>
+<span class="co">#&gt; -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"</span>
+<span class="co">#&gt; --listtools      Lists all available tools. Keywords may also be used, --listtools slope.</span>
+<span class="co">#&gt; -r, --run        Runs a tool; used in conjuction with --wd flag; -r="LidarInfo".</span>
+<span class="co">#&gt; --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.</span>
+<span class="co">#&gt; --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".</span>
+<span class="co">#&gt; --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".</span>
+<span class="co">#&gt; -v               Verbose mode. Without this flag, tool outputs will not be printed.</span>
+<span class="co">#&gt; --viewcode       Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span>
+<span class="co">#&gt; --version        Prints the version information.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Example Usage:</span>
+<span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span>
 
 <span class="co"># Prints the whitebox-tools license</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_license.html">wbt_license</a></span>())
+<span class="fu"><a href="reference/wbt_license.html">wbt_license</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; WhiteboxTools License</span>
+<span class="co">#&gt; Copyright 2017-2020 John Lindsay</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span>
+<span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span>
+<span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
+<span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span>
+<span class="co">#&gt; subject to the following conditions:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span>
+<span class="co">#&gt; portions of the Software.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span>
+<span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span>
+<span class="co">#&gt; OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="co">#&gt; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
 
 <span class="co"># Prints the whitebox-tools version</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_version.html">wbt_version</a></span>())
+<span class="fu"><a href="reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2020</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span>
+<span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span>
+<span class="co">#&gt; Group (GHRG). See https://jblindsay.github.io/ghrg/WhiteboxTools/index.html</span>
+<span class="co">#&gt; for more details.</span>
 
 <span class="co"># Prints the toolbox for a specific tool.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_toolbox.html">wbt_toolbox</a></span>())
-
-<span class="co"># List all available tools in whitebox-tools</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span>())
+<span class="fu"><a href="reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="st">"AsciiToLas"</span><span class="op">)</span>
+<span class="co">#&gt; LiDAR Tools</span>
 
 <span class="co"># Lists tools with 'lidar' in tool name or description.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span>(<span class="st">"lidar"</span>))
+<span class="fu"><a href="reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="st">"lidar"</span><span class="op">)</span>
+<span class="co">#&gt; All 47 Tools containing keywords:</span>
+<span class="co">#&gt; AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.</span>
+<span class="co">#&gt; ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.</span>
+<span class="co">#&gt; ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.</span>
+<span class="co">#&gt; ClipLidarToPolygon: Clips a LiDAR point cloud to a vector polygon or polygons.</span>
+<span class="co">#&gt; ErasePolygonFromLidar: Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.</span>
+<span class="co">#&gt; FilterLidarClasses: Removes points in a LAS file with certain specified class values.</span>
+<span class="co">#&gt; FilterLidarScanAngles: Removes points in a LAS file with scan angles greater than a threshold.</span>
+<span class="co">#&gt; FindFlightlineEdgePoints: Identifies points along a flightline's edge in a LAS file.</span>
+<span class="co">#&gt; FlightlineOverlap: Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight lines in each grid cell.</span>
+<span class="co">#&gt; HeightAboveGround: Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.</span>
+<span class="co">#&gt; LasToAscii: Converts one or more LAS files into ASCII text files.</span>
+<span class="co">#&gt; LasToMultipointShapefile: Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LasToShapefile: Converts one or more LAS files into a vector Shapefile of POINT ShapeType.</span>
+<span class="co">#&gt; LasToZlidar: Converts one or more LAS files into the zlidar compressed LiDAR data format.</span>
+<span class="co">#&gt; LidarBlockMaximum: Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarBlockMinimum: Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarClassifySubset: Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.</span>
+<span class="co">#&gt; LidarColourize: Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.</span>
+<span class="co">#&gt; LidarDigitalSurfaceModel: Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.</span>
+<span class="co">#&gt; LidarElevationSlice: Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.</span>
+<span class="co">#&gt; LidarGroundPointFilter: Identifies ground points within LiDAR dataset using a slope-based method.</span>
+<span class="co">#&gt; LidarHexBinning: Hex-bins a set of LiDAR points.</span>
+<span class="co">#&gt; LidarHillshade: Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.</span>
+<span class="co">#&gt; LidarHistogram: Creates a histogram of LiDAR data.</span>
+<span class="co">#&gt; LidarIdwInterpolation: Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarInfo: Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</span>
+<span class="co">#&gt; LidarJoin: Joins multiple LiDAR (LAS) files into a single LAS file.</span>
+<span class="co">#&gt; LidarKappaIndex: Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.</span>
+<span class="co">#&gt; LidarNearestNeighbourGridding: Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarPointDensity: Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarPointStats: Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarRansacPlanes: Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.</span>
+<span class="co">#&gt; LidarRbfInterpolation: Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarRemoveDuplicates: Removes duplicate points from a LiDAR data set.</span>
+<span class="co">#&gt; LidarRemoveOutliers: Removes outliers (high and low points) in a LiDAR point cloud.</span>
+<span class="co">#&gt; LidarRooftopAnalysis: Identifies roof segments in a LiDAR point cloud.</span>
+<span class="co">#&gt; LidarSegmentation: Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.</span>
+<span class="co">#&gt; LidarSegmentationBasedFilter: Identifies ground points within LiDAR point clouds using a segmentation based approach.</span>
+<span class="co">#&gt; LidarTINGridding: Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.</span>
+<span class="co">#&gt; LidarThin: Thins a LiDAR point cloud, reducing point density.</span>
+<span class="co">#&gt; LidarThinHighDensity: Thins points from high density areas within a LiDAR point cloud.</span>
+<span class="co">#&gt; LidarTile: Tiles a LiDAR LAS file into multiple LAS files.</span>
+<span class="co">#&gt; LidarTileFootprint: Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.</span>
+<span class="co">#&gt; LidarTophatTransform: Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.</span>
+<span class="co">#&gt; NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.</span>
+<span class="co">#&gt; SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.</span>
+<span class="co">#&gt; ZlidarToLas: Converts one or more zlidar files into the LAS data format.</span>
 
 <span class="co"># Prints the help for a specific tool.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_tool_help.html">wbt_tool_help</a></span>(<span class="st">"lidar_info"</span>))
+<span class="fu"><a href="reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"lidar_info"</span><span class="op">)</span>
+<span class="co">#&gt; LidarInfo</span>
+<span class="co">#&gt; Description:</span>
+<span class="co">#&gt; Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</span>
+<span class="co">#&gt; Toolbox: LiDAR Tools</span>
+<span class="co">#&gt; Parameters:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Flag               Description</span>
+<span class="co">#&gt; -----------------  -----------</span>
+<span class="co">#&gt; -i, --input        Input LiDAR file.</span>
+<span class="co">#&gt; -o, --output       Output HTML file for summary report.</span>
+<span class="co">#&gt; --vlr              Flag indicating whether or not to print the variable length records (VLRs).</span>
+<span class="co">#&gt; --geokeys          Flag indicating whether or not to print the geokeys.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Example usage:</span>
+<span class="co">#&gt; &gt;&gt;./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span>
+<span class="co">#&gt; ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span>
 
 <span class="co"># Retrieves the tool parameter descriptions for a specific tool.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span>(<span class="st">"slope"</span>))
+<span class="fu"><a href="reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
+<span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span>
 
 <span class="co"># View the source code for a specific tool on the source code repository.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="reference/wbt_view_code.html">wbt_view_code</a></span>(<span class="st">"breach_depressions"</span>))
-</pre></div>
+<span class="fu"><a href="reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
+<span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
 <p><strong>How to run tools?</strong></p>
 <p>Tool names in the whitebox R package can be called using the snake_case (e.g. lidar_info). See below for an example. If you are interested in using the WhiteboxTools command-line program, check <a href="https://github.com/jblindsay/whitebox-tools#3-usage">WhiteboxTools Usage</a>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span>)
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
 
 <span class="co"># Set input raster DEM file</span>
-<span class="kw">dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package=<span class="st">"whitebox"</span>)
+<span class="va">dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
 
 <span class="co"># Run tools</span>
-<span class="fu"><a href="reference/wbt_feature_preserving_smoothing.html">wbt_feature_preserving_smoothing</a></span>(<span class="kw">dem</span>, <span class="st">"./smoothed.tif"</span>, filter=<span class="fl">9</span>, verbose_mode = <span class="fl">TRUE</span>)
-<span class="fu"><a href="reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)
-<span class="fu"><a href="reference/wbt_d_inf_flow_accumulation.html">wbt_d_inf_flow_accumulation</a></span>(<span class="kw">dem</span>, <span class="st">"./flow_accum.tif"</span>)
-</pre></div>
+<span class="fu"><a href="reference/wbt_feature_preserving_smoothing.html">wbt_feature_preserving_smoothing</a></span><span class="op">(</span><span class="va">dem</span>, <span class="st">"./smoothed.tif"</span>, filter<span class="op">=</span><span class="fl">9</span>, verbose_mode <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span><span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span><span class="op">)</span>
+<span class="fu"><a href="reference/wbt_d_inf_flow_accumulation.html">wbt_d_inf_flow_accumulation</a></span><span class="op">(</span><span class="va">dem</span>, <span class="st">"./flow_accum.tif"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="available-tools" class="section level2">
 <h2 class="hasAnchor">
@@ -247,9 +369,10 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=whitebox"><img src="https://www.r-pkg.org/badges/version/whitebox" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://giswqs.github.io/whiteboxR/reference/index.html"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="whitebox Manual"></a></li>
 <li><a href="https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a></li>
 <li><a href="https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio"><img src="https://binder.pangeo.io/badge.svg" alt="Binder"></a></li>
-<li><a href="https://travis-ci.org/giswqs/whiteboxR"><img src="https://travis-ci.org/giswqs/whiteboxR.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/giswqs/whiteboxR/"><img src="https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://giswqs.github.io/whiteboxR/"><img src="https://img.shields.io/badge/docs-passing-brightgreen.svg" alt="docs"></a></li>
 <li><a href="https://codecov.io/gh/giswqs/whiteboxR"><img src="https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg" alt="codecov"></a></li>

@@ -9,6 +9,7 @@ License: MIT + file LICENSE
 SystemRequirements: WhiteboxTools (https://github.com/jblindsay/whitebox-tools/releases/latest)
 Encoding: UTF-8
 RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
 URL: https://github.com/giswqs/whiteboxR
 BugReports: https://github.com/giswqs/whiteboxR/issues
 Suggests: 

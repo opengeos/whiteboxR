@@ -2,31 +2,60 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_init}
 \alias{wbt_init}
-\alias{get_whitebox_tools}
+\alias{wbt_options}
+\alias{wbt_verbose}
 \title{Initialize WhiteboxTools}
 \usage{
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
+
+wbt_options(exe_path = NULL, verbose = NULL)
+
+wbt_verbose(verbose = NULL)
 }
 \arguments{
-\item{exe_path}{Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be over-ridden if a custom path is needed.}
+\item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.}
+
+\item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
 }
 \value{
-logical; `TRUE` if binary file is found at `exe_path`
+\code{wbt_init()}: logical; \code{TRUE} if binary file is found at \code{exe_path}
+
+\code{wbt_options()}:  an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose} options
+
+\code{wbt_verbose()}: logical; defaults to result of \code{interactive()}
 }
 \description{
-This function is called to check if a suitable whitebox installation is present.
+\code{wbt_init()}: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with \code{exe_path}.
+
+\code{wbt_options()}: Get/set package options
+\itemize{
+\item \strong{\code{whitebox.exe_path}} - character. Path to executable file. The default value is the package installation directory, subdirectory \code{"WBT"}, followed by \code{whitebox_tools.exe} or \code{whitebox_tools}. Set the \code{whitebox.exe_path} option using \code{wbt_init()} \code{exe_path} argument
+\item \strong{\code{whitebox.verbose}} - logical. Should standard output from calls to executable be \code{cat()} out for readability? Default is result of \code{interactive()}. Individual tools may have \code{verbose_mode} setting that produce only single-line output when \code{FALSE}. These argument values are left as the defaults defined in the package documentation for that function. When \code{whitebox.verbose=FALSE} no output is produced. Set the value of \code{whitebox.verbose} with \code{wbt_verbose()} \code{verbose} argument.
+}
+
+\code{wbt_verbose()}: Check verbose options for WhiteboxTools
 }
 \examples{
 \dontrun{
-
-# set path to binary as R global option
-options(whitebox.exe_path = "C:\\\\path\\\\to\\\\whitebox_tools.exe")
-
-# set path to binary as an environment variable
-Sys.setenv(R_WHITEBOX_EXE_PATH = "/path/to/whitebox_tools")
+## wbt_init():
 
 # or set path to binary as an argument
-wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
+# wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
+}
+\dontrun{
+
+## wbt_options():
+
+wbt_options(exe_path = "not/a/valid/path/whitebox_tools.exe", verbose = TRUE)
 
 }
+\dontrun{
+
+## wbt_verbose():
+
+wbt_verbose(verbose = TRUE)
+}
+}
+\seealso{
+\code{\link[=install_whitebox]{install_whitebox()}} \link{whitebox}
 }
