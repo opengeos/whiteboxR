@@ -438,8 +438,10 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' @param tool_name The name of the tool to run.
 #' @param args Tool arguments.
 #' @param verbose_mode Verbose mode. Without this flag, tool outputs will not be printed.
+#' @param command_only Return command that would be run with `system()`? Default: `FALSE`
 #'
-#' @return Returns the output descriptions of the tool.
+#' @return Returns the (character) output of the tool. 
+#'
 #' @export
 #' @seealso \link{wbt_list_tools}
 #' @examples
@@ -452,12 +454,15 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
 #' } 
-wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
+wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
   tool_name <- wbt_internal_tool_name(tool_name)
   arg1 <- paste0("--run=", tool_name)
   args2 <- paste(wbt_exe, arg1, args, "-v")
+  if (command_only) {
+    return(args2)
+  }
   ret <- system(args2, intern = TRUE)
   if (!verbose_mode) {
     ret <- paste(tool_name, "-", utils::tail(ret, n = 1))
