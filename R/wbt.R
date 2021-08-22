@@ -22,8 +22,10 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   }
 
   # check whether path is valid
-  check_whitebox_binary()
-
+  res <- check_whitebox_binary()
+  
+  # if binary was found and the internal path matches what the user (may have) set, return TRUE
+  return(res && wbt_exe_path(shell_quote = FALSE) == exe_path)
 }
 
 #' @description `wbt_options()`: Get/set package options
@@ -88,7 +90,12 @@ wbt_verbose <- function(verbose = NULL) {
   }
   
   # package option subsequently, default true for interactive use
-  invisible(getOption("whitebox.verbose", default = interactive()))
+  res <- getOption("whitebox.verbose", default = interactive())
+  if (!is.logical(res)) {
+    message('invalid value for whitebox.verbose, defaulting to interactive()')
+    res <- interactive()
+  }
+  invisible(res)
 }
 
 #' @export
