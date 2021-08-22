@@ -132,7 +132,7 @@ wbt_verbose(): Check verbose options for WhiteboxTools" />
 <p><code>wbt_verbose()</code>: Check verbose options for WhiteboxTools</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_init</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='fu'><a href='wbt_exe_path.html'>wbt_exe_path</a></span><span class='op'>(</span>shell_quote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>wbt_init</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='fu'><a href='wbt_exe_path.html'>wbt_exe_path</a></span><span class='op'>(</span>shell_quote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='fu'>wbt_options</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='cn'>NULL</span>, verbose <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
@@ -144,6 +144,10 @@ wbt_verbose(): Check verbose options for WhiteboxTools" />
     <tr>
       <th>exe_path</th>
       <td><p>Default <code>exe_path</code> is result of <code><a href='wbt_exe_path.html'>wbt_exe_path()</a></code> which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional arguments to <code>wbt_options()</code></p></td>
     </tr>
     <tr>
       <th>verbose</th>

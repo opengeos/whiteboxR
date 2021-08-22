@@ -74,11 +74,26 @@ remotes::install_github("giswqs/whiteboxR", build = FALSE)
 
 ## Usage
 
-If you have WhiteboxTools installed already run `wbt_init(exe_path=...)`: 
+If you have WhiteboxTools installed already run `wbt_init(exe_path=...)`. 
 
 ```r
-wbt_init(exe_path='C:/home/user/path/to/whitebox_tools.exe')
+wbt_init(exe_path = 'C:/home/user/path/to/whitebox_tools.exe')
 ```
+
+Additional arguments to `wbt_init()` can set other package options, such as whether tools print their standard console output with `cat()`.
+If you want to turn this off, set `verbose = FALSE`
+
+```r
+wbt_init(exe_path = 'C:/home/user/path/to/whitebox_tools.exe', verbose = FALSE)
+```
+
+For whitebox package documentation in R, ask for help:
+
+```r
+??whitebox
+```
+
+## Installing whitebox binary.
 
 The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the WhiteboxTools binary. A method `install_whitebox()` is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.
 
@@ -88,11 +103,6 @@ whitebox::install_whitebox()
 
 By default this will install to your whitebox R package installation directory (e.g. in your R package library), subdirectory "WBT".
 
-For whitebox package documentation in R, ask for help:
-
-```r
-??whitebox
-```
 
 ## Documentation
 
@@ -249,12 +259,12 @@ Tool names in the whitebox R package can be called using the snake_case (e.g. li
 library(whitebox)
 
 # Set input raster DEM file
-dem <- system.file("extdata", "DEM.tif", package="whitebox")
+dem <- system.file("extdata", "DEM.tif", package = "whitebox")
 
-# Run tools
-wbt_feature_preserving_smoothing(dem, "./smoothed.tif", filter=9, verbose_mode = TRUE)
-wbt_breach_depressions("./smoothed.tif", "./breached.tif")
-wbt_d_inf_flow_accumulation(dem, "./flow_accum.tif")
+# Run tools passing file paths for input and output grids
+wbt_feature_preserving_smoothing(dem = dem, output = "./smoothed.tif", filter = 9, verbose_mode = TRUE)
+wbt_breach_depressions(dem = "./smoothed.tif", output = "./breached.tif")
+wbt_d_inf_flow_accumulation(input = dem, output = "./flow_accum.tif")
 ```
 
 ## Available Tools
@@ -276,9 +286,10 @@ Unless explicitly stated otherwise, any contribution intentionally submitted for
 
 ## License
 
-The **WhiteboxR** package is distributed under the [MIT license](https://opensource.org/licenses/MIT), a permissive open-source (free software) license.
+The whitebox **R** package is distributed under the [MIT license](https://opensource.org/licenses/MIT), a permissive open-source (free software) license.
+
 
 
 ## Reporting Bugs
 
-whiteboxR is distributed as is and without warranty of suitability for application. If you encounter flaws with the software (i.e. bugs) please report the issue. Providing a detailed description of the conditions under which the bug occurred will help to identify the bug. *Use the [Issues tracker](https://github.com/giswqs/whiteboxR/issues) on GitHub to report issues with the software and to request feature enchancements.* Please do not email Dr. Lindsay directly with bugs.
+whitebox is distributed as is and without warranty of suitability for application. If you encounter flaws with the software (i.e. bugs) please report the issue. Providing a detailed description of the conditions under which the bug occurred will help to identify the bug. *Use the [Issues tracker](https://github.com/giswqs/whiteboxR/issues) on GitHub to report issues with the software and to request feature enchancements.* Please do not email Dr. Lindsay directly with bugs.
