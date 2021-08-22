@@ -85,7 +85,7 @@
       <h1 data-toc-skip>whitebox Demo</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/misc/vignettes/demo.Rmd"><code>misc/vignettes/demo.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/vignettes/demo.Rmd"><code>vignettes/demo.Rmd</code></a></small>
       <div class="hidden name"><code>demo.Rmd</code></div>
 
     </div>
@@ -107,25 +107,89 @@
 <p>Load the whitebox library.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span></code></pre></div>
-<p>The current implementation of whitebox generates system() calls to a local WhiteboxTools installation; <code>whitebox_tools</code> or <code>whitebox_tools.exe</code></p>
+<div id="how-whitebox-works" class="section level3">
+<h3 class="hasAnchor">
+<a href="#how-whitebox-works" class="anchor"></a>How <code>whitebox</code> works</h3>
+<p>The current implementation of whitebox generates <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> calls to a local WhiteboxTools binary: usually <code>whitebox_tools</code> or <code>whitebox_tools.exe</code></p>
+<p>You can find the binary path that the package is currently going to use with <code><a href="../reference/wbt_exe_path.html">wbt_exe_path()</a></code></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span></code></pre></div>
-<p>If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation. Most often you will be able to use <code><a href="../reference/install_whitebox.html">whitebox::install_whitebox()</a></code> to download the latest binaries that correspond to the available version of the R package. However, you have the ability and option to compile yourself and install anywhere. See <a href="https://github.com/jblindsay/whitebox-tools" class="uri">https://github.com/jblindsay/whitebox-tools</a> for details.</p>
 </div>
-<div id="interfacing-with-other-packages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#interfacing-with-other-packages" class="anchor"></a>Interfacing with other packages</h2>
-<p>Many R users will be interacting with raster data with one of the many available R packages for spatial data. In this vignette we will use the <code>raster</code> package for visualization.</p>
+<div id="interfacing-with-r-spatial-packages" class="section level3">
+<h3 class="hasAnchor">
+<a href="#interfacing-with-r-spatial-packages" class="anchor"></a>Interfacing with R spatial packages</h3>
+<p>The results of runs of WhiteboxTools via the whitebox package wrapper methods are specified as file paths for output files (often rasters in GeoTIFF format, sometimes other formats; other cases shapefiles, HTML output, LiDAR-related files etc.)</p>
+<p>Many R users will be interacting with raster data with one of the many available R packages for spatial data. In this vignette we will use the <code>raster</code> package for visualization. Just as easily we could have used <code>terra</code>, <code>stars</code> or other options available in the R ecosystem.</p>
+<p>Saving your “output” file paths as a variable so that you can use them later to load the file into an R object is the main way to view your output.</p>
+<div id="raster" class="section level4">
+<h4 class="hasAnchor">
+<a href="#raster" class="anchor"></a>raster</h4>
+<p>A demonstration workflow involving the popular raster package follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: sp</span></code></pre></div>
+<span class="co">#&gt; Loading required package: sp</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
+
+<span class="co"># DEMO: calculate slope with WhiteboxTools and raster</span>
+
+<span class="co"># Typically the input/output paths are stored as variables</span>
+
+<span class="co"># sample DEM input GeoTIFF</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
+
+<span class="co"># output file (to be created)</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span></code></pre></div>
+<p>Run a tool such as <code><a href="../reference/wbt_slope.html">wbt_slope()</a></code> or <code>"Slope"</code>.</p>
+<p>WhiteboxTools reads from <code>input</code> and writes to <code>output</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_slope.html">wbt_slope</a></span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, units <span class="op">=</span> <span class="st">'radians'</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="co"># create a RasterLayer from file output path</span>
+  <span class="va">outputras</span> <span class="op">&lt;-</span> <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p>In this case, we can achieve a similar slope map result using <code><a href="https://rdrr.io/pkg/raster/man/terrain.html">raster::terrain()</a></code>, so we will create and plot a RasterLayer from <code>output</code> and compare the two.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="co"># par(mfrow = c(2, 1), mar = c(1, 1, 1, 1))</span>
+  
+  <span class="co"># inspect the output graphically</span>
+  <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span>
+    <span class="va">outputras</span>,
+    main <span class="op">=</span> <span class="st">"whitebox::wbt_slope() [radians]"</span>,
+    axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>
+  <span class="op">)</span>
+  
+  <span class="co"># calculate equivalent using raster::terrain() on input</span>
+  <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span>
+    <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/terrain.html">terrain</a></span><span class="op">(</span><span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">input</span>, crs <span class="op">=</span> <span class="st">"EPSG:26918"</span><span class="op">)</span><span class="op">)</span>,
+    main <span class="op">=</span> <span class="st">"raster::terrain() [radians]"</span>,
+    axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>
+  <span class="op">)</span>
+
+<span class="co"># the RasterLayer retains a reference to the input file name</span>
+<span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/filename.html">filename</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-7-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-7-2.png" width="576"></p>
+<pre><code>#&gt; [1] "/tmp/Rtmprs2p5k/slope.tif"</code></pre>
+<p>The <code>RasterLayer</code>, <code>SpatRaster</code> and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.</p>
+<p>Use <code><a href="https://rdrr.io/pkg/raster/man/filename.html">raster::filename()</a></code> to get the “source” file name. If you are using a terra <code>SpatRaster</code> objects the equivalent method is <code>terra:sources()</code>.</p>
+</div>
+</div>
+<div id="setting-whiteboxtools-paths" class="section level3">
+<h3 class="hasAnchor">
+<a href="#setting-whiteboxtools-paths" class="anchor"></a>Setting WhiteboxTools paths</h3>
+<p>If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation.</p>
+<p>Most often you will be able to use <code><a href="../reference/install_whitebox.html">whitebox::install_whitebox()</a></code> to download the latest binaries that correspond to the available version of the R package. However, this is not required. You have the ability to compile WhiteboxTools yourself and install it anywhere for the whitebox package. See <a href="https://github.com/jblindsay/whitebox-tools" class="uri">https://github.com/jblindsay/whitebox-tools</a> for details on building from source.</p>
+<p>Specify the path to <code>whitebox_tools</code> executable with <code>whitebox.exe_path</code> option, <code><a href="../reference/wbt_init.html">wbt_init()</a></code> provides the standard means to set <code>whitebox.exe_path</code> for a session.</p>
+</div>
 <div id="wbt_init" class="section level3">
 <h3 class="hasAnchor">
 <a href="#wbt_init" class="anchor"></a><code>wbt_init()</code>
 </h3>
-<p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> is used to set and check the executable path of the binary executable that commands are passed to. These are stored internally as package options. A default value <code><a href="../reference/wbt_exe_path.html">wbt_exe_path(shell_quote = FALSE)</a></code> is passed when the <code>exe_path</code> argument is left unspecified.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> is used to set and check the executable path of the binary executable that commands are passed to. The executable path and other options are stored as package options, and can be over-ridden by system environment variables. A default value <code><a href="../reference/wbt_exe_path.html">wbt_exe_path(shell_quote = FALSE)</a></code> is passed when the <code>exe_path</code> argument is left unspecified.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># inspect where wbt_init() will be checking</span>
 <span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span>
@@ -134,86 +198,463 @@
 <span class="co"># FALSE when whitebox_tools does not exist at path</span>
 <span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># set path manually to whitebox_tools executable, for instance:</span>
-<span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools'</span><span class="op">)</span>
-<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools'</span><span class="op">)</span></code></pre></div>
 <p>Any other package options other than <code>exe_path</code> as detailed in <code><a href="../reference/whitebox-package.html">?whitebox::whitebox</a></code>, can be set with <code><a href="../reference/wbt_init.html">wbt_init(...)</a></code> or <code><a href="../reference/wbt_init.html">wbt_options()</a></code>.</p>
+</div>
+<div id="long-term-package-option-settings" class="section level3">
+<h3 class="hasAnchor">
+<a href="#long-term-package-option-settings" class="anchor"></a>Long-term Package Option Settings</h3>
+<p>For long-term package option settings you can put <code>whitebox_tools</code> on your <code>$PATH</code> and set <code>R_WHITEBOX_EXE_PATH</code>, perhaps in your user <code>.Rprofile</code> or <code>~/.profile</code>.</p>
+<p>This command will check your PATH environment variable for <code>whitebox_tools</code> and set the path to value found:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>R_WHITEBOX_EXE_PATH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.which.html">Sys.which</a></span><span class="op">(</span><span class="st">"whitebox_tools"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>If you would rather not set the path to <code>whitebox_tools</code> binary from <code>$PATH</code>, you can set <code>R_WHITEBOX_EXE_PATH</code> manually.</p>
+<p>Replace the <code><a href="https://rdrr.io/r/base/Sys.which.html">Sys.which()</a></code> call with a custom path string as needed.</p>
+<div id="other-tips" class="section level4">
+<h4 class="hasAnchor">
+<a href="#other-tips" class="anchor"></a>Other Tips</h4>
+<p>On Windows you can add the path to <code>whitebox_tools.exe</code> as a new entry <code>R_WHITEBOX_EXE_PATH</code> in User or System Environment variable.</p>
+<p>On Linux/Mac you can set <code>R_WHITEBOX_EXE_PATH</code> directly with <code>export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"</code>.</p>
+</div>
 </div>
 <div id="wbt_verbose" class="section level3">
 <h3 class="hasAnchor">
 <a href="#wbt_verbose" class="anchor"></a><code>wbt_verbose()</code>
 </h3>
 <p>A helper method for setting the <code>whitebox.verbose</code> option is <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>. It allows the user to get and set the package default verbosity level for running tools and other utility methods.</p>
-<p>By default, the result of wbt_verbose() is the result of <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> so tools will print extra console output when you are there to see it, but hide it in your automated tests, markdown documents, vignettes etc.</p>
+<p>By default, the result of <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> is the result of <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> so tools will print extra console output when you are there to see it. This is used in a variety of <code>wbt_*</code> methods to allow the package option to control output for many functions in a consistent manner. hide it in your automated tests, markdown documents, vignettes etc.</p>
 <p>In this vignette we use <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> package option <code>whitebox.verbose</code> is set to <code>TRUE</code> to print out the tool name and elapsed time whenever we run a tool.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># force output when run non-interactively</span>
 <span class="fu"><a href="../reference/wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>When whitebox.verbose is <code>FALSE</code> no output will be printed at all.</p>
 <p>This package-level verbose option does not control the <code>verbose_mode</code> argument values passed to individual <code>wbt_*</code> functions that have them at this time. Controlling their output (one line v.s. many) would require a third option to be implemented for this argument such as <code>"all"</code>. For now users have control over those arguments to print extra output, and <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> has a binary logical result.</p>
 </div>
 </div>
-<div id="running-a-tool" class="section level2">
+<div id="running-tools" class="section level2">
 <h2 class="hasAnchor">
-<a href="#running-a-tool" class="anchor"></a>Running a tool</h2>
+<a href="#running-tools" class="anchor"></a>Running tools</h2>
 <p>Specify input and output paths, and any other options, as specified in package reference:</p>
 <ul>
 <li><a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="uri">https://giswqs.github.io/whiteboxR/reference/index.html</a></li>
 </ul>
 <p>For instance, here we use the tool “BreachDepressions” to pre-process a Digital Elevation Model (DEM) so we can identify flow pathways.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
 <span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
 
 <span class="co"># output file name</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="st">"./output.tif"</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
-<p>More info:<code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; * Welcome to BreachDepressions *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools     *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com          *</span>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Progress: 96%</span>
+<span class="co">#&gt; Progress: 97%</span>
+<span class="co">#&gt; Progress: 98%</span>
+<span class="co">#&gt; Progress: 99%</span>
+<span class="co">#&gt; Progress: 100%</span>
+<span class="co">#&gt; Progress: 101%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.16s</span></code></pre></div>
+<p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> call given a function-specific argument string.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
 <span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
 
 <span class="co"># output file name</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="st">"./output.tif"</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; * Welcome to BreachDepressions *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools     *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com          *</span>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Progress: 96%</span>
+<span class="co">#&gt; Progress: 97%</span>
+<span class="co">#&gt; Progress: 98%</span>
+<span class="co">#&gt; Progress: 99%</span>
+<span class="co">#&gt; Progress: 100%</span>
+<span class="co">#&gt; Progress: 101%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
 <p>The above method of creating <code><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions(dem = ..., output = ...)</a></code> to handle <code><a href="../reference/wbt_run_tool.html">wbt_run_tool("BreachDepressions", args = ...)</a></code> makes it easy to generate static methods that have parity with the latest WhiteboxTools interface.</p>
 <div id="example-compare-input-v-s--output-with-raster" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-compare-input-v-s--output-with-raster" class="anchor"></a>Example: Compare input v.s. output with <code>raster</code>
 </h3>
 <p>We use the raster R package to read the GeoTIFF outputs from WhiteboxTools.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># create raster object from output file</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span>
+<div id="setup-1" class="section level4">
+<h4 class="hasAnchor">
+<a href="#setup-1" class="anchor"></a>Setup</h4>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
 
-<span class="co"># create raster object from input file</span>
+<span class="co"># sample DEM file path in package extdata folder</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+
+<span class="co"># output file name</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="run-wbt_breach_depressions-breachdepressions-tool" class="section level4">
+<h4 class="hasAnchor">
+<a href="#run-wbt_breach_depressions-breachdepressions-tool" class="anchor"></a>Run <code>wbt_breach_depressions()</code> (BreachDepressions tool)</h4>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># run breach_depressions tool</span>
+<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; * Welcome to BreachDepressions *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools     *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com          *</span>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Progress: 96%</span>
+<span class="co">#&gt; Progress: 97%</span>
+<span class="co">#&gt; Progress: 98%</span>
+<span class="co">#&gt; Progress: 99%</span>
+<span class="co">#&gt; Progress: 100%</span>
+<span class="co">#&gt; Progress: 101%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+</div>
+<div id="visualize-results-with-raster" class="section level4">
+<h4 class="hasAnchor">
+<a href="#visualize-results-with-raster" class="anchor"></a>Visualize results with <code>raster</code>
+</h4>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create raster object from input file</span>
 <span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span>
 
-<span class="co"># inspect input</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span></code></pre></div>
-<p><img src="demo_files/figure-html/unnamed-chunk-10-1.png" width="768"></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="co"># inspect difference in input v.s. output</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span><span class="op">)</span></code></pre></div>
-<p><img src="demo_files/figure-html/unnamed-chunk-10-2.png" width="768"></p>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="co"># create raster object from output file</span>
+  <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span>
+  
+  <span class="co"># par(mar = c(2, 1, 2, 1))</span>
+  <span class="co"># inspect input v.s. output</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span>, main <span class="op">=</span> <span class="st">"DEM"</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">output</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span>, 
+       main <span class="op">=</span> <span class="st">"DEM (Breached Depressions)"</span><span class="op">)</span>
+  
+  <span class="co"># inspect numeric difference (output - input) </span>
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span>, 
+       main <span class="op">=</span> <span class="st">"Difference ([Breached Depressions] - [DEM])"</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-15-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-15-2.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-15-3.png" width="576"></p>
+</div>
 </div>
 <div id="example-identifying-tributaries" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-identifying-tributaries" class="anchor"></a>Example: Identifying Tributaries</h3>
 <p>Here we will take our processing of DEMs a bit further by performing several WhiteboxTools operations in sequence.</p>
-<p>We are interested in identifying and ranking tributaries to streams and rivers.</p>
+<p>We are interested in identifying and ranking tributaries of watercourses (streams and rivers).</p>
 <p>A package that makes use of the whitebox R package is <a href="https://github.com/bkielstr/hydroweight">hydroweight</a>.</p>
 <p>Here is a brief snippet based on the beginning of the hydroweight README showing how the breached DEM we made above can be used in a spatial hydrological analysis of stream networks.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div id="setup-2" class="section level4">
+<h4 class="hasAnchor">
+<a href="#setup-2" class="anchor"></a>Setup</h4>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
 
@@ -230,23 +671,680 @@
 <span class="fu"><a href="https://rdrr.io/pkg/raster/man/writeRaster.html">writeRaster</a></span><span class="op">(</span>
   x <span class="op">=</span> <span class="va">toy_dem</span>, filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   overwrite <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-<span class="co">## Breach depressions to ensure continuous flow</span>
+<span class="op">)</span></code></pre></div>
+</div>
+<div id="wbt_breach_depressions-breach-dem-depressions" class="section level4">
+<h4 class="hasAnchor">
+<a href="#wbt_breach_depressions-breach-dem-depressions" class="anchor"></a><code>wbt_breach_depressions()</code> – Breach DEM Depressions</h4>
+<p>First we pre-process by breaching depressions in the DEM</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Breach depressions to ensure continuous flow</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
-<p>Once we have breached the depressions in the DEM, we generate the flow directions.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; * Welcome to BreachDepressions *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools     *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com          *</span>
+<span class="co">#&gt; ********************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Progress: 96%</span>
+<span class="co">#&gt; Progress: 97%</span>
+<span class="co">#&gt; Progress: 98%</span>
+<span class="co">#&gt; Progress: 99%</span>
+<span class="co">#&gt; Progress: 100%</span>
+<span class="co">#&gt; Progress: 101%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+</div>
+<div id="wbt_d8_pointer-calculate-flow-direction" class="section level4">
+<h4 class="hasAnchor">
+<a href="#wbt_d8_pointer-calculate-flow-direction" class="anchor"></a><code>wbt_d8_pointer()</code> – Calculate Flow Direction</h4>
+<p>Then we generate the direction of flow on the DEM surface using the “D8” flow pointer method</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate d8 flow pointer (note: other flow directions are available)</span>
 <span class="fu"><a href="../reference/wbt_d8_pointer.html">wbt_d8_pointer</a></span><span class="op">(</span>
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
-<p>There are several options in WhiteboxTools for the algorithms used for flow pointer (flow direction) and accumulation routines such as FD8, D-infinity, D-infinity</p>
+<span class="co">#&gt; ****************************</span>
+<span class="co">#&gt; * Welcome to D8Pointer     *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com      *</span>
+<span class="co">#&gt; ****************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Progress: 96%</span>
+<span class="co">#&gt; Progress: 97%</span>
+<span class="co">#&gt; Progress: 98%</span>
+<span class="co">#&gt; Progress: 99%</span>
+<span class="co">#&gt; Progress: 100%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+</div>
+<div id="wbt_d8_flow_accumulation-flow-accumulation" class="section level4">
+<h4 class="hasAnchor">
+<a href="#wbt_d8_flow_accumulation-flow-accumulation" class="anchor"></a><code>wbt_d8_flow_accumulation()</code> – Flow Accumulation</h4>
+<p>Once we calculate the direction of flow by some method, we calculate cumulative flow</p>
+<p>For example with <code><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation()</a></code>:</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Generate d8 flow accumulation in units of cells (note: other flow directions are available)</span>
+<span class="fu"><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation</a></span><span class="op">(</span>
+  input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
+  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
+  out_type <span class="op">=</span> <span class="st">"cells"</span>
+<span class="op">)</span>
+<span class="co">#&gt; *********************************</span>
+<span class="co">#&gt; * Welcome to D8FlowAccumulation *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools      *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com           *</span>
+<span class="co">#&gt; *********************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Flow directions: 0%</span>
+<span class="co">#&gt; Flow directions: 1%</span>
+<span class="co">#&gt; Flow directions: 2%</span>
+<span class="co">#&gt; Flow directions: 3%</span>
+<span class="co">#&gt; Flow directions: 4%</span>
+<span class="co">#&gt; Flow directions: 5%</span>
+<span class="co">#&gt; Flow directions: 6%</span>
+<span class="co">#&gt; Flow directions: 7%</span>
+<span class="co">#&gt; Flow directions: 8%</span>
+<span class="co">#&gt; Flow directions: 9%</span>
+<span class="co">#&gt; Flow directions: 10%</span>
+<span class="co">#&gt; Flow directions: 11%</span>
+<span class="co">#&gt; Flow directions: 12%</span>
+<span class="co">#&gt; Flow directions: 13%</span>
+<span class="co">#&gt; Flow directions: 14%</span>
+<span class="co">#&gt; Flow directions: 15%</span>
+<span class="co">#&gt; Flow directions: 16%</span>
+<span class="co">#&gt; Flow directions: 17%</span>
+<span class="co">#&gt; Flow directions: 18%</span>
+<span class="co">#&gt; Flow directions: 19%</span>
+<span class="co">#&gt; Flow directions: 20%</span>
+<span class="co">#&gt; Flow directions: 21%</span>
+<span class="co">#&gt; Flow directions: 22%</span>
+<span class="co">#&gt; Flow directions: 23%</span>
+<span class="co">#&gt; Flow directions: 24%</span>
+<span class="co">#&gt; Flow directions: 25%</span>
+<span class="co">#&gt; Flow directions: 26%</span>
+<span class="co">#&gt; Flow directions: 27%</span>
+<span class="co">#&gt; Flow directions: 28%</span>
+<span class="co">#&gt; Flow directions: 29%</span>
+<span class="co">#&gt; Flow directions: 30%</span>
+<span class="co">#&gt; Flow directions: 31%</span>
+<span class="co">#&gt; Flow directions: 32%</span>
+<span class="co">#&gt; Flow directions: 33%</span>
+<span class="co">#&gt; Flow directions: 34%</span>
+<span class="co">#&gt; Flow directions: 35%</span>
+<span class="co">#&gt; Flow directions: 36%</span>
+<span class="co">#&gt; Flow directions: 37%</span>
+<span class="co">#&gt; Flow directions: 38%</span>
+<span class="co">#&gt; Flow directions: 39%</span>
+<span class="co">#&gt; Flow directions: 40%</span>
+<span class="co">#&gt; Flow directions: 41%</span>
+<span class="co">#&gt; Flow directions: 42%</span>
+<span class="co">#&gt; Flow directions: 43%</span>
+<span class="co">#&gt; Flow directions: 44%</span>
+<span class="co">#&gt; Flow directions: 45%</span>
+<span class="co">#&gt; Flow directions: 46%</span>
+<span class="co">#&gt; Flow directions: 47%</span>
+<span class="co">#&gt; Flow directions: 48%</span>
+<span class="co">#&gt; Flow directions: 49%</span>
+<span class="co">#&gt; Flow directions: 50%</span>
+<span class="co">#&gt; Flow directions: 51%</span>
+<span class="co">#&gt; Flow directions: 52%</span>
+<span class="co">#&gt; Flow directions: 53%</span>
+<span class="co">#&gt; Flow directions: 54%</span>
+<span class="co">#&gt; Flow directions: 55%</span>
+<span class="co">#&gt; Flow directions: 56%</span>
+<span class="co">#&gt; Flow directions: 57%</span>
+<span class="co">#&gt; Flow directions: 58%</span>
+<span class="co">#&gt; Flow directions: 59%</span>
+<span class="co">#&gt; Flow directions: 60%</span>
+<span class="co">#&gt; Flow directions: 61%</span>
+<span class="co">#&gt; Flow directions: 62%</span>
+<span class="co">#&gt; Flow directions: 63%</span>
+<span class="co">#&gt; Flow directions: 64%</span>
+<span class="co">#&gt; Flow directions: 65%</span>
+<span class="co">#&gt; Flow directions: 66%</span>
+<span class="co">#&gt; Flow directions: 67%</span>
+<span class="co">#&gt; Flow directions: 68%</span>
+<span class="co">#&gt; Flow directions: 69%</span>
+<span class="co">#&gt; Flow directions: 70%</span>
+<span class="co">#&gt; Flow directions: 71%</span>
+<span class="co">#&gt; Flow directions: 72%</span>
+<span class="co">#&gt; Flow directions: 73%</span>
+<span class="co">#&gt; Flow directions: 74%</span>
+<span class="co">#&gt; Flow directions: 75%</span>
+<span class="co">#&gt; Flow directions: 76%</span>
+<span class="co">#&gt; Flow directions: 77%</span>
+<span class="co">#&gt; Flow directions: 78%</span>
+<span class="co">#&gt; Flow directions: 79%</span>
+<span class="co">#&gt; Flow directions: 80%</span>
+<span class="co">#&gt; Flow directions: 81%</span>
+<span class="co">#&gt; Flow directions: 82%</span>
+<span class="co">#&gt; Flow directions: 83%</span>
+<span class="co">#&gt; Flow directions: 84%</span>
+<span class="co">#&gt; Flow directions: 85%</span>
+<span class="co">#&gt; Flow directions: 86%</span>
+<span class="co">#&gt; Flow directions: 87%</span>
+<span class="co">#&gt; Flow directions: 88%</span>
+<span class="co">#&gt; Flow directions: 89%</span>
+<span class="co">#&gt; Flow directions: 90%</span>
+<span class="co">#&gt; Flow directions: 91%</span>
+<span class="co">#&gt; Flow directions: 92%</span>
+<span class="co">#&gt; Flow directions: 93%</span>
+<span class="co">#&gt; Flow directions: 94%</span>
+<span class="co">#&gt; Flow directions: 95%</span>
+<span class="co">#&gt; Flow directions: 96%</span>
+<span class="co">#&gt; Flow directions: 97%</span>
+<span class="co">#&gt; Flow directions: 98%</span>
+<span class="co">#&gt; Flow directions: 99%</span>
+<span class="co">#&gt; Flow directions: 100%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 0%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 1%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 2%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 3%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 4%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 5%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 6%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 7%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 8%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 9%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 10%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 11%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 12%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 13%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 14%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 15%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 16%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 17%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 18%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 19%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 20%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 21%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 22%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 23%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 24%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 25%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 26%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 27%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 28%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 29%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 30%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 31%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 32%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 33%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 34%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 35%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 36%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 37%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 38%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 39%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 40%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 41%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 42%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 43%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 44%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 45%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 46%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 47%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 48%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 49%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 50%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 51%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 52%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 53%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 54%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 55%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 56%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 57%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 58%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 59%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 60%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 61%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 62%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 63%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 64%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 65%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 66%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 67%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 68%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 69%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 70%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 71%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 72%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 73%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 74%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 75%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 76%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 77%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 78%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 79%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 80%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 81%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 82%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 83%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 84%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 85%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 86%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 87%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 88%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 89%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 90%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 91%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 92%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 93%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 94%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 95%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 96%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 97%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 98%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 99%</span>
+<span class="co">#&gt; Num. inflowing neighbours: 100%</span>
+<span class="co">#&gt; Flow accumulation: 0%</span>
+<span class="co">#&gt; Flow accumulation: 1%</span>
+<span class="co">#&gt; Flow accumulation: 2%</span>
+<span class="co">#&gt; Flow accumulation: 3%</span>
+<span class="co">#&gt; Flow accumulation: 4%</span>
+<span class="co">#&gt; Flow accumulation: 5%</span>
+<span class="co">#&gt; Flow accumulation: 6%</span>
+<span class="co">#&gt; Flow accumulation: 7%</span>
+<span class="co">#&gt; Flow accumulation: 8%</span>
+<span class="co">#&gt; Flow accumulation: 9%</span>
+<span class="co">#&gt; Flow accumulation: 10%</span>
+<span class="co">#&gt; Flow accumulation: 11%</span>
+<span class="co">#&gt; Flow accumulation: 12%</span>
+<span class="co">#&gt; Flow accumulation: 13%</span>
+<span class="co">#&gt; Flow accumulation: 14%</span>
+<span class="co">#&gt; Flow accumulation: 15%</span>
+<span class="co">#&gt; Flow accumulation: 16%</span>
+<span class="co">#&gt; Flow accumulation: 17%</span>
+<span class="co">#&gt; Flow accumulation: 18%</span>
+<span class="co">#&gt; Flow accumulation: 19%</span>
+<span class="co">#&gt; Flow accumulation: 20%</span>
+<span class="co">#&gt; Flow accumulation: 21%</span>
+<span class="co">#&gt; Flow accumulation: 22%</span>
+<span class="co">#&gt; Flow accumulation: 23%</span>
+<span class="co">#&gt; Flow accumulation: 24%</span>
+<span class="co">#&gt; Flow accumulation: 25%</span>
+<span class="co">#&gt; Flow accumulation: 26%</span>
+<span class="co">#&gt; Flow accumulation: 27%</span>
+<span class="co">#&gt; Flow accumulation: 28%</span>
+<span class="co">#&gt; Flow accumulation: 29%</span>
+<span class="co">#&gt; Flow accumulation: 30%</span>
+<span class="co">#&gt; Flow accumulation: 31%</span>
+<span class="co">#&gt; Flow accumulation: 32%</span>
+<span class="co">#&gt; Flow accumulation: 33%</span>
+<span class="co">#&gt; Flow accumulation: 34%</span>
+<span class="co">#&gt; Flow accumulation: 35%</span>
+<span class="co">#&gt; Flow accumulation: 36%</span>
+<span class="co">#&gt; Flow accumulation: 37%</span>
+<span class="co">#&gt; Flow accumulation: 38%</span>
+<span class="co">#&gt; Flow accumulation: 39%</span>
+<span class="co">#&gt; Flow accumulation: 40%</span>
+<span class="co">#&gt; Flow accumulation: 41%</span>
+<span class="co">#&gt; Flow accumulation: 42%</span>
+<span class="co">#&gt; Flow accumulation: 43%</span>
+<span class="co">#&gt; Flow accumulation: 44%</span>
+<span class="co">#&gt; Flow accumulation: 45%</span>
+<span class="co">#&gt; Flow accumulation: 46%</span>
+<span class="co">#&gt; Flow accumulation: 47%</span>
+<span class="co">#&gt; Flow accumulation: 48%</span>
+<span class="co">#&gt; Flow accumulation: 49%</span>
+<span class="co">#&gt; Flow accumulation: 50%</span>
+<span class="co">#&gt; Flow accumulation: 51%</span>
+<span class="co">#&gt; Flow accumulation: 52%</span>
+<span class="co">#&gt; Flow accumulation: 53%</span>
+<span class="co">#&gt; Flow accumulation: 54%</span>
+<span class="co">#&gt; Flow accumulation: 55%</span>
+<span class="co">#&gt; Flow accumulation: 56%</span>
+<span class="co">#&gt; Flow accumulation: 57%</span>
+<span class="co">#&gt; Flow accumulation: 58%</span>
+<span class="co">#&gt; Flow accumulation: 59%</span>
+<span class="co">#&gt; Flow accumulation: 60%</span>
+<span class="co">#&gt; Flow accumulation: 61%</span>
+<span class="co">#&gt; Flow accumulation: 62%</span>
+<span class="co">#&gt; Flow accumulation: 63%</span>
+<span class="co">#&gt; Flow accumulation: 64%</span>
+<span class="co">#&gt; Flow accumulation: 65%</span>
+<span class="co">#&gt; Flow accumulation: 66%</span>
+<span class="co">#&gt; Flow accumulation: 67%</span>
+<span class="co">#&gt; Flow accumulation: 68%</span>
+<span class="co">#&gt; Flow accumulation: 69%</span>
+<span class="co">#&gt; Flow accumulation: 70%</span>
+<span class="co">#&gt; Flow accumulation: 71%</span>
+<span class="co">#&gt; Flow accumulation: 72%</span>
+<span class="co">#&gt; Flow accumulation: 73%</span>
+<span class="co">#&gt; Flow accumulation: 74%</span>
+<span class="co">#&gt; Flow accumulation: 75%</span>
+<span class="co">#&gt; Flow accumulation: 76%</span>
+<span class="co">#&gt; Flow accumulation: 77%</span>
+<span class="co">#&gt; Flow accumulation: 78%</span>
+<span class="co">#&gt; Flow accumulation: 79%</span>
+<span class="co">#&gt; Flow accumulation: 80%</span>
+<span class="co">#&gt; Flow accumulation: 81%</span>
+<span class="co">#&gt; Flow accumulation: 82%</span>
+<span class="co">#&gt; Flow accumulation: 83%</span>
+<span class="co">#&gt; Flow accumulation: 84%</span>
+<span class="co">#&gt; Flow accumulation: 85%</span>
+<span class="co">#&gt; Flow accumulation: 86%</span>
+<span class="co">#&gt; Flow accumulation: 87%</span>
+<span class="co">#&gt; Flow accumulation: 88%</span>
+<span class="co">#&gt; Flow accumulation: 89%</span>
+<span class="co">#&gt; Flow accumulation: 90%</span>
+<span class="co">#&gt; Flow accumulation: 91%</span>
+<span class="co">#&gt; Flow accumulation: 92%</span>
+<span class="co">#&gt; Flow accumulation: 93%</span>
+<span class="co">#&gt; Flow accumulation: 94%</span>
+<span class="co">#&gt; Flow accumulation: 95%</span>
+<span class="co">#&gt; Flow accumulation: 96%</span>
+<span class="co">#&gt; Flow accumulation: 97%</span>
+<span class="co">#&gt; Flow accumulation: 98%</span>
+<span class="co">#&gt; Flow accumulation: 99%</span>
+<span class="co">#&gt; Flow accumulation: 100%</span>
+<span class="co">#&gt; Correcting values: 0%</span>
+<span class="co">#&gt; Correcting values: 1%</span>
+<span class="co">#&gt; Correcting values: 2%</span>
+<span class="co">#&gt; Correcting values: 3%</span>
+<span class="co">#&gt; Correcting values: 4%</span>
+<span class="co">#&gt; Correcting values: 5%</span>
+<span class="co">#&gt; Correcting values: 6%</span>
+<span class="co">#&gt; Correcting values: 7%</span>
+<span class="co">#&gt; Correcting values: 8%</span>
+<span class="co">#&gt; Correcting values: 9%</span>
+<span class="co">#&gt; Correcting values: 10%</span>
+<span class="co">#&gt; Correcting values: 11%</span>
+<span class="co">#&gt; Correcting values: 12%</span>
+<span class="co">#&gt; Correcting values: 13%</span>
+<span class="co">#&gt; Correcting values: 14%</span>
+<span class="co">#&gt; Correcting values: 15%</span>
+<span class="co">#&gt; Correcting values: 16%</span>
+<span class="co">#&gt; Correcting values: 17%</span>
+<span class="co">#&gt; Correcting values: 18%</span>
+<span class="co">#&gt; Correcting values: 19%</span>
+<span class="co">#&gt; Correcting values: 20%</span>
+<span class="co">#&gt; Correcting values: 21%</span>
+<span class="co">#&gt; Correcting values: 22%</span>
+<span class="co">#&gt; Correcting values: 23%</span>
+<span class="co">#&gt; Correcting values: 24%</span>
+<span class="co">#&gt; Correcting values: 25%</span>
+<span class="co">#&gt; Correcting values: 26%</span>
+<span class="co">#&gt; Correcting values: 27%</span>
+<span class="co">#&gt; Correcting values: 28%</span>
+<span class="co">#&gt; Correcting values: 29%</span>
+<span class="co">#&gt; Correcting values: 30%</span>
+<span class="co">#&gt; Correcting values: 31%</span>
+<span class="co">#&gt; Correcting values: 32%</span>
+<span class="co">#&gt; Correcting values: 33%</span>
+<span class="co">#&gt; Correcting values: 34%</span>
+<span class="co">#&gt; Correcting values: 35%</span>
+<span class="co">#&gt; Correcting values: 36%</span>
+<span class="co">#&gt; Correcting values: 37%</span>
+<span class="co">#&gt; Correcting values: 38%</span>
+<span class="co">#&gt; Correcting values: 39%</span>
+<span class="co">#&gt; Correcting values: 40%</span>
+<span class="co">#&gt; Correcting values: 41%</span>
+<span class="co">#&gt; Correcting values: 42%</span>
+<span class="co">#&gt; Correcting values: 43%</span>
+<span class="co">#&gt; Correcting values: 44%</span>
+<span class="co">#&gt; Correcting values: 45%</span>
+<span class="co">#&gt; Correcting values: 46%</span>
+<span class="co">#&gt; Correcting values: 47%</span>
+<span class="co">#&gt; Correcting values: 48%</span>
+<span class="co">#&gt; Correcting values: 49%</span>
+<span class="co">#&gt; Correcting values: 50%</span>
+<span class="co">#&gt; Correcting values: 51%</span>
+<span class="co">#&gt; Correcting values: 52%</span>
+<span class="co">#&gt; Correcting values: 53%</span>
+<span class="co">#&gt; Correcting values: 54%</span>
+<span class="co">#&gt; Correcting values: 55%</span>
+<span class="co">#&gt; Correcting values: 56%</span>
+<span class="co">#&gt; Correcting values: 57%</span>
+<span class="co">#&gt; Correcting values: 58%</span>
+<span class="co">#&gt; Correcting values: 59%</span>
+<span class="co">#&gt; Correcting values: 60%</span>
+<span class="co">#&gt; Correcting values: 61%</span>
+<span class="co">#&gt; Correcting values: 62%</span>
+<span class="co">#&gt; Correcting values: 63%</span>
+<span class="co">#&gt; Correcting values: 64%</span>
+<span class="co">#&gt; Correcting values: 65%</span>
+<span class="co">#&gt; Correcting values: 66%</span>
+<span class="co">#&gt; Correcting values: 67%</span>
+<span class="co">#&gt; Correcting values: 68%</span>
+<span class="co">#&gt; Correcting values: 69%</span>
+<span class="co">#&gt; Correcting values: 70%</span>
+<span class="co">#&gt; Correcting values: 71%</span>
+<span class="co">#&gt; Correcting values: 72%</span>
+<span class="co">#&gt; Correcting values: 73%</span>
+<span class="co">#&gt; Correcting values: 74%</span>
+<span class="co">#&gt; Correcting values: 75%</span>
+<span class="co">#&gt; Correcting values: 76%</span>
+<span class="co">#&gt; Correcting values: 77%</span>
+<span class="co">#&gt; Correcting values: 78%</span>
+<span class="co">#&gt; Correcting values: 79%</span>
+<span class="co">#&gt; Correcting values: 80%</span>
+<span class="co">#&gt; Correcting values: 81%</span>
+<span class="co">#&gt; Correcting values: 82%</span>
+<span class="co">#&gt; Correcting values: 83%</span>
+<span class="co">#&gt; Correcting values: 84%</span>
+<span class="co">#&gt; Correcting values: 85%</span>
+<span class="co">#&gt; Correcting values: 86%</span>
+<span class="co">#&gt; Correcting values: 87%</span>
+<span class="co">#&gt; Correcting values: 88%</span>
+<span class="co">#&gt; Correcting values: 89%</span>
+<span class="co">#&gt; Correcting values: 90%</span>
+<span class="co">#&gt; Correcting values: 91%</span>
+<span class="co">#&gt; Correcting values: 92%</span>
+<span class="co">#&gt; Correcting values: 93%</span>
+<span class="co">#&gt; Correcting values: 94%</span>
+<span class="co">#&gt; Correcting values: 95%</span>
+<span class="co">#&gt; Correcting values: 96%</span>
+<span class="co">#&gt; Correcting values: 97%</span>
+<span class="co">#&gt; Correcting values: 98%</span>
+<span class="co">#&gt; Correcting values: 99%</span>
+<span class="co">#&gt; Correcting values: 100%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.3s</span></code></pre></div>
+<div id="additional-flow-direction-and-accumulation-tools" class="section level5">
+<h5 class="hasAnchor">
+<a href="#additional-flow-direction-and-accumulation-tools" class="anchor"></a>Additional Flow Direction and Accumulation Tools</h5>
+<p>In addition to D8 flow pointers (flow direction), there are several other options for both direction and accumulation such as FD8, D-infinity, and D-infinity.</p>
 <ul>
 <li><p>Keyword “Pointer” tools: <code>"D8Pointer"</code>, <code>"DInfPointer"</code>, <code>"FD8Pointer"</code>, <code>"Rho8Pointer"</code></p></li>
 <li><p>Keyword “FlowAccumulation” tools: <code>"D8FlowAccumulation"</code>, <code>"DInfFlowAccumulation"</code>, <code>"FD8FlowAccumulation"</code>, <code>"MDInfFlowAccumulation"</code></p></li>
@@ -275,46 +1373,279 @@
 #&gt; Rho8Pointer: Calculates a stochastic Rho8 flow pointer raster from an input DEM.
 #&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
 #&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</code></pre>
-<p>This is just one example of the wealth of tools made available through the WhiteboxTools platform.</p>
-<p>Once we calculate the direction of flow by some method, we calculate cumulative flow at all locations</p>
-<p>For example with <code><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation()</a></code>:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Generate d8 flow accumulation in units of cells (note: other flow directions are available)</span>
-<span class="fu"><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation</a></span><span class="op">(</span>
-  input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
-  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
-  out_type <span class="op">=</span> <span class="st">"cells"</span>
-<span class="op">)</span>
-<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></code></pre></div>
-<p>And then we can extract a stream network with <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> based on a threshold (e.g. <code>4000</code>) of accumulated flow. This threshold will depend on the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<p>This is just an example of the wealth of tool options made available by the WhiteboxTools platform.</p>
+</div>
+</div>
+<div id="wbt_extract_streams-extract-stream-network" class="section level4">
+<h4 class="hasAnchor">
+<a href="#wbt_extract_streams-extract-stream-network" class="anchor"></a><code>wbt_extract_streams()</code> – Extract Stream Network</h4>
+<p>With our flow accumulation raster in hand, we can extract a stream network with <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> based on a threshold (e.g. <code>100</code>) of accumulated flow. This threshold value you choose will depend on analysis goals, the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate streams with a stream initiation threshold of 1000 cells</span>
 <span class="fu"><a href="../reference/wbt_extract_streams.html">wbt_extract_streams</a></span><span class="op">(</span>
   flow_accum <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   threshold <span class="op">=</span> <span class="fl">100</span>
 <span class="op">)</span>
-<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
-<p>Now, lets identify tributaries. That is the tool we printed help for up above. This function <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code> is a little more complicated because it takes takes two inputs:</p>
+<span class="co">#&gt; *****************************</span>
+<span class="co">#&gt; * Welcome to ExtractStreams *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools  *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com       *</span>
+<span class="co">#&gt; *****************************</span>
+<span class="co">#&gt; Reading data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Progress: 96%</span>
+<span class="co">#&gt; Progress: 97%</span>
+<span class="co">#&gt; Progress: 98%</span>
+<span class="co">#&gt; Progress: 99%</span>
+<span class="co">#&gt; Progress: 100%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+</div>
+<div id="wbt_tributary_identifier-identify-tributaries" class="section level4">
+<h4 class="hasAnchor">
+<a href="#wbt_tributary_identifier-identify-tributaries" class="anchor"></a><code>wbt_tributary_identifier()</code> – Identify Tributaries</h4>
+<p>Next, let’s identify tributaries. This function <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code> is a little more complicated because it takes takes two inputs:</p>
 <ul>
 <li><p>Our raster D8 pointer file.</p></li>
 <li><p>And our raster streams file.</p></li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier</a></span><span class="op">(</span>
   d8_pntr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>,
   streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<span class="co">#&gt; **********************************</span>
+<span class="co">#&gt; * Welcome to TributaryIdentifier *</span>
+<span class="co">#&gt; * Powered by WhiteboxTools       *</span>
+<span class="co">#&gt; * www.whiteboxgeo.com            *</span>
+<span class="co">#&gt; **********************************</span>
+<span class="co">#&gt; Reading pointer data...</span>
+<span class="co">#&gt; Reading streams data...</span>
+<span class="co">#&gt; Progress: 0%</span>
+<span class="co">#&gt; Progress: 1%</span>
+<span class="co">#&gt; Progress: 2%</span>
+<span class="co">#&gt; Progress: 3%</span>
+<span class="co">#&gt; Progress: 4%</span>
+<span class="co">#&gt; Progress: 5%</span>
+<span class="co">#&gt; Progress: 6%</span>
+<span class="co">#&gt; Progress: 7%</span>
+<span class="co">#&gt; Progress: 8%</span>
+<span class="co">#&gt; Progress: 9%</span>
+<span class="co">#&gt; Progress: 10%</span>
+<span class="co">#&gt; Progress: 11%</span>
+<span class="co">#&gt; Progress: 12%</span>
+<span class="co">#&gt; Progress: 13%</span>
+<span class="co">#&gt; Progress: 14%</span>
+<span class="co">#&gt; Progress: 15%</span>
+<span class="co">#&gt; Progress: 16%</span>
+<span class="co">#&gt; Progress: 17%</span>
+<span class="co">#&gt; Progress: 18%</span>
+<span class="co">#&gt; Progress: 19%</span>
+<span class="co">#&gt; Progress: 20%</span>
+<span class="co">#&gt; Progress: 21%</span>
+<span class="co">#&gt; Progress: 22%</span>
+<span class="co">#&gt; Progress: 23%</span>
+<span class="co">#&gt; Progress: 24%</span>
+<span class="co">#&gt; Progress: 25%</span>
+<span class="co">#&gt; Progress: 26%</span>
+<span class="co">#&gt; Progress: 27%</span>
+<span class="co">#&gt; Progress: 28%</span>
+<span class="co">#&gt; Progress: 29%</span>
+<span class="co">#&gt; Progress: 30%</span>
+<span class="co">#&gt; Progress: 31%</span>
+<span class="co">#&gt; Progress: 32%</span>
+<span class="co">#&gt; Progress: 33%</span>
+<span class="co">#&gt; Progress: 34%</span>
+<span class="co">#&gt; Progress: 35%</span>
+<span class="co">#&gt; Progress: 36%</span>
+<span class="co">#&gt; Progress: 37%</span>
+<span class="co">#&gt; Progress: 38%</span>
+<span class="co">#&gt; Progress: 39%</span>
+<span class="co">#&gt; Progress: 40%</span>
+<span class="co">#&gt; Progress: 41%</span>
+<span class="co">#&gt; Progress: 42%</span>
+<span class="co">#&gt; Progress: 43%</span>
+<span class="co">#&gt; Progress: 44%</span>
+<span class="co">#&gt; Progress: 45%</span>
+<span class="co">#&gt; Progress: 46%</span>
+<span class="co">#&gt; Progress: 47%</span>
+<span class="co">#&gt; Progress: 48%</span>
+<span class="co">#&gt; Progress: 49%</span>
+<span class="co">#&gt; Progress: 50%</span>
+<span class="co">#&gt; Progress: 51%</span>
+<span class="co">#&gt; Progress: 52%</span>
+<span class="co">#&gt; Progress: 53%</span>
+<span class="co">#&gt; Progress: 54%</span>
+<span class="co">#&gt; Progress: 55%</span>
+<span class="co">#&gt; Progress: 56%</span>
+<span class="co">#&gt; Progress: 57%</span>
+<span class="co">#&gt; Progress: 58%</span>
+<span class="co">#&gt; Progress: 59%</span>
+<span class="co">#&gt; Progress: 60%</span>
+<span class="co">#&gt; Progress: 61%</span>
+<span class="co">#&gt; Progress: 62%</span>
+<span class="co">#&gt; Progress: 63%</span>
+<span class="co">#&gt; Progress: 64%</span>
+<span class="co">#&gt; Progress: 65%</span>
+<span class="co">#&gt; Progress: 66%</span>
+<span class="co">#&gt; Progress: 67%</span>
+<span class="co">#&gt; Progress: 68%</span>
+<span class="co">#&gt; Progress: 69%</span>
+<span class="co">#&gt; Progress: 70%</span>
+<span class="co">#&gt; Progress: 71%</span>
+<span class="co">#&gt; Progress: 72%</span>
+<span class="co">#&gt; Progress: 73%</span>
+<span class="co">#&gt; Progress: 74%</span>
+<span class="co">#&gt; Progress: 75%</span>
+<span class="co">#&gt; Progress: 76%</span>
+<span class="co">#&gt; Progress: 77%</span>
+<span class="co">#&gt; Progress: 78%</span>
+<span class="co">#&gt; Progress: 79%</span>
+<span class="co">#&gt; Progress: 80%</span>
+<span class="co">#&gt; Progress: 81%</span>
+<span class="co">#&gt; Progress: 82%</span>
+<span class="co">#&gt; Progress: 83%</span>
+<span class="co">#&gt; Progress: 84%</span>
+<span class="co">#&gt; Progress: 85%</span>
+<span class="co">#&gt; Progress: 86%</span>
+<span class="co">#&gt; Progress: 87%</span>
+<span class="co">#&gt; Progress: 88%</span>
+<span class="co">#&gt; Progress: 89%</span>
+<span class="co">#&gt; Progress: 90%</span>
+<span class="co">#&gt; Progress: 91%</span>
+<span class="co">#&gt; Progress: 92%</span>
+<span class="co">#&gt; Progress: 93%</span>
+<span class="co">#&gt; Progress: 94%</span>
+<span class="co">#&gt; Progress: 95%</span>
+<span class="co">#&gt; Saving data...</span>
+<span class="co">#&gt; Output file written</span>
+<span class="co">#&gt; Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+</div>
+<div id="compare-results" class="section level4">
+<h4 class="hasAnchor">
+<a href="#compare-results" class="anchor"></a>Compare results</h4>
 <p>Finally, we compare results of <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> with <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code></p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span>, mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span>,
-     col <span class="op">=</span> <span class="st">"black"</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span><span class="op">)</span>,
-     axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-<p><img src="demo_files/figure-html/unnamed-chunk-17-1.png" width="768"></p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="co"># par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))</span>
+  
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span>,
+    main <span class="op">=</span> <span class="st">"Streams"</span>,
+    col <span class="op">=</span> <span class="st">"black"</span>,
+    axes <span class="op">=</span> <span class="cn">FALSE</span>,
+    horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
+    box <span class="op">=</span> <span class="cn">FALSE</span>
+  <span class="op">)</span>
+  
+  <span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span><span class="op">)</span>,
+    main <span class="op">=</span> <span class="st">"TributaryIdentifier"</span>,
+    axes <span class="op">=</span> <span class="cn">FALSE</span>,
+    horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
+    box <span class="op">=</span> <span class="cn">FALSE</span>
+  <span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-23-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-23-2.png" width="576"></p>
+</div>
 </div>
 </div>
 <div id="appendix-wbt_-utility-functions" class="section level2">
@@ -326,7 +1657,7 @@
 <a href="#wbt_help" class="anchor"></a><code>wbt_help()</code>
 </h3>
 <p><code><a href="../reference/wbt_help.html">wbt_help()</a></code> prints the WhiteboxTools help: a listing of available commands for executable</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_help.html">wbt_help</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; WhiteboxTools Help</span>
 <span class="co">#&gt; </span>
@@ -351,7 +1682,7 @@
 <a href="#wbt_license" class="anchor"></a><code>wbt_license()</code>
 </h3>
 <p><code><a href="../reference/wbt_license.html">wbt_license()</a></code> prints the WhiteboxTools license</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_license.html">wbt_license</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; WhiteboxTools License</span>
 <span class="co">#&gt; Copyright 2017-2020 John Lindsay</span>
@@ -376,7 +1707,7 @@
 <a href="#wbt_version" class="anchor"></a><code>wbt_version()</code>
 </h3>
 <p>Prints the WhiteboxTools version</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2021</span>
 <span class="co">#&gt; </span>
@@ -389,11 +1720,11 @@
 <a href="#wbt_list_tools" class="anchor"></a><code>wbt_list_tools()</code>
 </h3>
 <p>Use <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code> to list all available tools in WhiteboxTools. In v1.5.0 this is 448 tools!</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>The full list can be an overwhelming amount of output, so you pass the <code>keyword</code> argument to search and filter.</p>
 <p>For example we list tools with keyword ‘flowaccumulation’ in tool name or description.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">"flowaccumulation"</span><span class="op">)</span>
 <span class="co">#&gt; All 5 Tools containing keywords:</span>
 <span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span>
@@ -408,8 +1739,8 @@
 </h3>
 <p>Once we find a tool that we are interested in using, we can investigate what sort of parameters it takes. The R methods generally take the same named parameters.</p>
 <p>R functions have the naming scheme <code>wbt_tool_name</code> where <code>_</code> is used for spaces, whereas the tools themselves have no spaces.</p>
-<p>Prints the help for a specific tool using the command line.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<p><code><a href="../reference/wbt_tool_help.html">wbt_tool_help("tributaryidentifier")</a></code> shows the command line help for a tool by name.</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"tributaryidentifier"</span><span class="op">)</span>
 <span class="co">#&gt; TributaryIdentifier</span>
 <span class="co">#&gt; Description:</span>
@@ -429,8 +1760,8 @@
 <span class="co">#&gt; Example usage:</span>
 <span class="co">#&gt; &gt;&gt;./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif</span>
 <span class="co">#&gt; &gt;&gt;./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif --esri_pntr --zero_background</span></code></pre></div>
-<p>Prints the R function help, which is derived from the help page and other metadata.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<p><code><a href="../reference/wbt_tributary_identifier.html">?wbt_tributary_identifier</a></code> shows the corresponding R function help, which is derived from the command line help page and other metadata.</p>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">?</span><span class="va">wbt_tributary_identifier</span></code></pre></div>
 </div>
 <div id="wbt_toolbox" class="section level3">
@@ -439,11 +1770,11 @@
 </h3>
 <p>Another way that tools are organized in WhiteboxTools is by “toolbox.”</p>
 <p><code><a href="../reference/wbt_toolbox.html">wbt_toolbox()</a></code> prints the toolbox for a specific tool (or all tools if none specified)</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span>
 <span class="co">#&gt; Geomorphometric Analysis</span></code></pre></div>
 <p>Print the full list by not specifying <code>tool_name</code></p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="wbt_tool_parameters" class="section level3">
@@ -451,7 +1782,7 @@
 <a href="#wbt_tool_parameters" class="anchor"></a><code>wbt_tool_parameters()</code>
 </h3>
 <p><code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> retrieves the tool parameter descriptions for a specific tool as JSON formatted string.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
 <span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></code></pre></div>
 </div>
@@ -460,7 +1791,7 @@
 <a href="#wbt_view_code" class="anchor"></a><code>wbt_view_code()</code>
 </h3>
 <p>WhiteboxTools is written in Rust and is open source. You can view the source code for a specific tool on the source code repository.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
 <span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
 <p>Use the argument <code>viewer=TRUE</code> to use <code><a href="https://rdrr.io/r/utils/browseURL.html">browseURL()</a></code> to open a browser window to the corresponding GitHub page.</p>
