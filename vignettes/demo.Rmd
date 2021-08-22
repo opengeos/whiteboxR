@@ -10,6 +10,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  error = TRUE,
+  purl = FALSE,
   comment = "#>",
   fig.width = 8,
   fig.height = 8 
@@ -20,7 +22,9 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(echo = TRUE)
 
 if (!whitebox::check_whitebox_binary()) {
-  whitebox::install_whitebox()
+  wd <- tempdir()
+  whitebox::install_whitebox(wd)
+  wbt_init(wd = file.path(wd, "WBT", basename(whitebox::wbt_default_path())))
 }
 
 # system and package dependencies must be met to build the vignette
