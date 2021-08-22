@@ -20,11 +20,12 @@ knitr::opts_chunk$set(
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(whitebox)
 
 if (!whitebox::check_whitebox_binary()) {
   wd <- tempdir()
   whitebox::install_whitebox(wd)
-  wbt_init(wd = file.path(wd, "WBT", basename(whitebox::wbt_default_path())))
+  whitebox::wbt_init(wd = file.path(wd, "WBT", basename(whitebox::wbt_default_path())))
 }
 
 # system and package dependencies must be met to build the vignette
