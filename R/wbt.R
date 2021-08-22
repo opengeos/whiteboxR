@@ -107,7 +107,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   
   .unsupported <- function(){
     message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")     
-    message("Pre-built binaries available only for 64-bit Window, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
+    message("Pre-built binaries are available only for 64-bit Window, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
     message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n","
                   https://github.com/giswqs/whitebox-bin/")
     message("You can follow the instructions at https://github.com/jblindsay/whitebox-tools to use cargo to build the Rust library from source.\n")
@@ -252,10 +252,7 @@ wbt_default_path <- function() {
 #' wbt_help()
 #' }
 wbt_help <- function() {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--help")
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call("--help")
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -273,10 +270,7 @@ wbt_help <- function() {
 #' wbt_license()
 #' }
 wbt_license <- function() {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--license")
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call("--license")
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -294,10 +288,7 @@ wbt_license <- function() {
 #' wbt_version()
 #' }
 wbt_version <- function() {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--version")
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call("--version")
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -317,13 +308,7 @@ wbt_version <- function() {
 #' wbt_list_tools("lidar")
 #' }
 wbt_list_tools <- function(keywords = NULL) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--listtools")
-  if (!is.null(keywords)) {
-    args <- paste(args, keywords)
-  }
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste("--listtools", keywords))
   ret <- ret[ret != ""]
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
@@ -346,14 +331,7 @@ wbt_list_tools <- function(keywords = NULL) {
 #' wbt_toolbox("breach_depressions")
 #' }
 wbt_toolbox <- function(tool_name = NULL) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste(wbt_exe, "--toolbox=")
-  if (!is.null(tool_name)) {
-    args <- paste(args, tool_name)
-  }
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste0("--toolbox=", tool_name))
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -375,14 +353,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 #' wbt_tool_help("lidar_info")
 #' }
 wbt_tool_help <- function(tool_name = NULL) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste(wbt_exe, "--toolhelp=")
-  if (!is.null(tool_name)) {
-    args <- paste0(args, tool_name)
-  }
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste0("--toolhelp=", tool_name))
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -407,12 +378,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 #' wbt_tool_parameters("lidar_info")
 #' }
 wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste0("--toolparameters=", tool_name)
-  args <- paste(wbt_exe, args)
-  ret <- system(args, intern = TRUE)  
+  ret <- wbt_system_call(paste0("--toolparameters=", tool_name))
   if (wbt_verbose() && !quiet) {
     cat(ret, sep = "\n")
   }
@@ -434,12 +400,7 @@ wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
 #' }
 #' @importFrom utils browseURL
 wbt_view_code <- function(tool_name, viewer = FALSE) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste0("--viewcode=", tool_name)
-  args <- paste(wbt_exe, args)
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste0("--viewcode=", tool_name))
   if (viewer) {
     utils::browseURL(ret)
   }
@@ -448,7 +409,6 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
   }
   invisible(ret)
 }
-
 
 #' Run a tool in WhiteboxTools by name
 #'
@@ -474,26 +434,86 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' wbt_run_tool(tool_name, args)
 #' } 
 wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = FALSE) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  arg1 <- paste0("--run=", tool_name)
-  args2 <- paste(wbt_exe, arg1, args, "-v")
+  
+  # build the call with wbt_system_call()
+  ret <-  wbt_system_call(paste(args, "-v"),
+                          tool_name = tool_name,
+                          command_only = command_only)
+        
   if (command_only) {
-    return(args2)
+    return(ret)
   }
-  ret <- system(args2, intern = TRUE)
-  if (!verbose_mode) {
-    ret <- paste(tool_name, "-", utils::tail(ret, n = 1))
-  }
+  
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
+  
+  # produce a custom error message for tools to indicate it did not run
+  if (length(ret) == 0 || all(nchar(ret) == 0) || !is.null(attr(ret, 'status'))) {
+    ret <- paste(tool_name, "-", "Elapsed Time: NA [did not run]")
+  } else if (!verbose_mode) {
+    ret <- paste(tool_name, "-", ret[length(ret)])
+  }
+  
   invisible(ret)
 }
 
+# sanitize tool names from user input and R methods (function names, case variants etc)
 wbt_internal_tool_name <- function(tool_name) {
   gsub("^(whitebox::)?(wbt_)?", "", tool_name)
 }
 
 
+# wrapper method for system()
+wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
+  wbt_init()
+  wbt_exe <- wbt_exe_path()
+  args2 <- argstring
+  tool_name <- list(...)[["tool_name"]]
+  
+  # allow tool_name to be specified for --run= argument only via ...
+  if (!is.null(tool_name) && tool_name != "") {
+    tool_name <- wbt_internal_tool_name(tool_name)
+    args2 <- paste0("--run=", tool_name, " ", argstring)
+    
+    # TODO: QC on arguments based on supplied tool name and related metadata
+    
+  } else {
+    tool_name <- ""
+  }
+  
+  exeargs <- paste(wbt_exe, args2)
+  
+  # support command_only argument
+  if (command_only) {
+    return(exeargs)
+  }
+  
+  stopmsg <- paste0("\nError running WhiteboxTools", 
+                    ifelse(tool_name != "",  paste0(" (", tool_name, ")"), ""), "\n",
+                    "\twhitebox.exe_path: ", wbt_exe, "\n\tArguments: ", args2)
+  
+  ret <- suppressWarnings(tryCatch(
+    system(exeargs, intern = TRUE, ignore.stderr = FALSE, ignore.stdout = FALSE),
+    error = function(err)
+      stop(stopmsg, "\n\n", err)
+  ))
+  
+  if (inherits(ret, 'try-error')) {
+    message(ret[[1]])
+    ret <- ret[[1]]
+  } else if (!is.null(attr(ret, "status"))) {
+    message(stopmsg, "\n")
+    message("\nCommand had status ", attr(ret,"status"))
+  }
+  
+  invisible(ret)
+}
+
+
+# convenience method for setting RUST_BACKTRACE options for debugging
+wbt_rust_backtrace <- function(RUST_BACKTRACE = c("0", "1", "full")) {
+  Sys.setenv(RUST_BACKTRACE = match.arg(as.character(RUST_BACKTRACE)[1], 
+                                        choices = c("0", "1", "full")))
+  invisible(Sys.getenv("RUST_BACKTRACE", unset = "0"))
+}
