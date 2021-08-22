@@ -46,6 +46,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/demo.html">whitebox Demo</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
@@ -69,9 +81,10 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="whiteboxr" class="section level1">
+<div id="whitebox" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#whiteboxr" class="anchor"></a>whiteboxR</h1></div>
+<a href="#whitebox" class="anchor"></a>whitebox</h1></div>
+<!-- badges: start -->
 
 <p><strong>WhiteboxTools</strong> R Frontend.</p>
 <p>This repository is related to the <strong>whitebox</strong> R package for geospatial analysis, which is an R frontend of a stand-alone executable command-line program called <strong><a href="https://github.com/jblindsay/whitebox-tools">WhiteboxTools</a></strong>.</p>
@@ -107,7 +120,7 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>The <strong>whitebox</strong> R package is built on <strong>WhiteboxTools</strong>, an advanced geospatial data analysis platform developed by Prof. John Lindsay (<a href="https://jblindsay.github.io/ghrg/index.html">webpage</a>; <a href="https://github.com/jblindsay">jblindsay</a>) at the University of Guelph’s <a href="https://jblindsay.github.io/ghrg/index.html">Geomorphometry and Hydrogeomatics Research Group</a>. <em>WhiteboxTools</em> can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. <em>WhiteboxTools</em> also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. LiDAR point clouds can be interrogated (LidarInfo, LidarHistogram), segmented, tiled and joined, analyzed for outliers, interpolated to rasters (DEMs, intensity images), and ground-points can be classified or filtered. <em>WhiteboxTools</em> is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS. Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. <em>Computers &amp; Geosciences</em>, 95, 75-84. <a href="doi:%5B10.1016/j.cageo.2016.07.003" class="uri">doi:[10.1016/j.cageo.2016.07.003</a>](<a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="uri">http://dx.doi.org/10.1016/j.cageo.2016.07.003</a>).</p>
+<p>The <strong>whitebox</strong> R package is built on <strong>WhiteboxTools</strong>, an advanced geospatial data analysis platform developed by Prof. John Lindsay (<a href="https://jblindsay.github.io/ghrg/index.html">webpage</a>; <a href="https://github.com/jblindsay">jblindsay</a>) at the University of Guelph’s <a href="https://jblindsay.github.io/ghrg/index.html">Geomorphometry and Hydrogeomatics Research Group</a>. <em>WhiteboxTools</em> can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. <em>WhiteboxTools</em> also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. LiDAR point clouds can be interrogated (LidarInfo, LidarHistogram), segmented, tiled and joined, analyzed for outliers, interpolated to rasters (DEMs, intensity images), and ground-points can be classified or filtered. <em>WhiteboxTools</em> is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS. Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. <em>Computers &amp; Geosciences</em>, 95, 75-84. <a href="doi:%5B10.1016/j.cageo.2016.07.003" class="uri">doi:%5B10.1016/j.cageo.2016.07.003</a>](<a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="uri">http://dx.doi.org/10.1016/j.cageo.2016.07.003</a>).</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -139,31 +152,84 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>If you have WhiteboxTools installed already run <code><a href="reference/wbt_init.html">wbt_init(exe_path=...)</a></code>.</p>
+<p>The function <code><a href="reference/wbt_init.html">wbt_init()</a></code> checks the path to the WhiteboxTools binary.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'C:/home/user/path/to/whitebox_tools.exe'</span><span class="op">)</span></code></pre></div>
-<p>Additional arguments to <code><a href="reference/wbt_init.html">wbt_init()</a></code> can set other package options, such as whether tools print their standard console output with <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code>. If you want to turn this off, set <code>verbose = FALSE</code></p>
+<code class="sourceCode R"><span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>It (invisibly) returns a logical (TRUE/FALSE) value reflecting whether a file is found at one of the default paths, including those specified by package options. See <code><a href="reference/whitebox-package.html">?whitebox::whitebox</a></code>.</p>
+<p>If you have WhiteboxTools installed already but in a non-standard location run <code><a href="reference/wbt_init.html">wbt_init(exe_path=...)</a></code> to set up your options for your current R session.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'C:/home/user/path/to/whitebox_tools.exe'</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-<p>For whitebox package documentation in R, ask for help:</p>
+<code class="sourceCode R"><span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'C:/home/user/path/to/whitebox_tools.exe'</span><span class="op">)</span></code></pre></div>
+<p>Additional arguments to <code><a href="reference/wbt_init.html">wbt_init()</a></code> can set other package options, such as whether tools print their standard console output with <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code>.</p>
+<p>If you want to turn this off, set <code>verbose = FALSE</code>, for instance:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="op">?</span><span class="va">whitebox</span></code></pre></div>
-</div>
-<div id="installing-whitebox-binary" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installing-whitebox-binary" class="anchor"></a>Installing whitebox binary.</h2>
-<p>The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the WhiteboxTools binary. A method <code><a href="reference/install_whitebox.html">install_whitebox()</a></code> is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">whitebox</span><span class="fu">::</span><span class="fu"><a href="reference/install_whitebox.html">install_whitebox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>By default this will install to your whitebox R package installation directory (e.g. in your R package library), subdirectory “WBT”.</p>
+<code class="sourceCode R"><span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'C:/home/user/path/to/whitebox_tools.exe'</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation" class="anchor"></a>Documentation</h2>
+<p>For whitebox package documentation in R, ask for help:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">?</span><span class="op">?</span><span class="va">whitebox</span></code></pre></div>
+<p>For list of functions, try the <code>wbt_</code> prefix in your search:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">?</span><span class="op">?</span><span class="va">wbt_</span></code></pre></div>
 <p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://giswqs.github.io/whiteboxR/reference/index.html">HERE</a>.</p>
 <p>Check out this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html">demo</a> for examples.</p>
-<p><strong>About WhiteboxTools?</strong></p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+</div>
+<div id="installing-whiteboxtools" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installing-whiteboxtools" class="anchor"></a>Installing WhiteboxTools</h2>
+<p>The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the WhiteboxTools binary. A method <code><a href="reference/install_whitebox.html">install_whitebox()</a></code> is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">whitebox</span><span class="fu">::</span><span class="fu"><a href="reference/install_whitebox.html">install_whitebox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>By default this will install to your whitebox R package installation directory (e.g. in your R package library), subdirectory “WBT”.</p>
+</div>
+<div id="whitebox-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#whitebox-1" class="anchor"></a>whitebox</h2>
+<p><strong>How do I run tools?</strong></p>
+<p>Tool names in the whitebox R package can be called by corresponding function using <code>wbt_snake_case()</code> naming convention (e.g. <code><a href="reference/wbt_lidar_info.html">wbt_lidar_info()</a></code> R function for <code>"LidarInfo"</code> WhiteboxTools tool name).</p>
+<p>First we load the library and perform any necessary setup.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
+
+<span class="co"># set up as needed</span>
+<span class="fu"><a href="reference/wbt_init.html">wbt_init</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<p>Many WhiteboxTools will take GeoTIFF files as input. There is a sample Digital Elevation Model (DEM) included in the whitebox package. You can get path as follows for this demo:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Set input raster DEM file</span>
+<span class="va">dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span></code></pre></div>
+<p>We will use this DEM in and perform a sequence of processing routines.</p>
+<ol>
+<li><p>Applies feature-preserving smoothing (FeaturePreservingSmoothing)</p></li>
+<li><p>Breaches depressions in a DEM (BreachDepressions)</p></li>
+<li><p>Calculates D-Infinity flow accumulation (DInfFlowAccumulation)</p></li>
+</ol>
+<p>Run tools passing file paths for input and output grids.</p>
+<p>In this case we will deal with GeoTIFF input, but WhiteboxTools supports several grid input formats.</p>
+<p>The <code>filter</code> argument sets the size of the filter kernel.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## 1. FeaturePreservingSmoothing</span>
+<span class="fu"><a href="reference/wbt_feature_preserving_smoothing.html">wbt_feature_preserving_smoothing</a></span><span class="op">(</span>
+  dem <span class="op">=</span> <span class="va">dem</span>,
+  output <span class="op">=</span> <span class="st">"./smoothed.tif"</span>,
+  filter <span class="op">=</span> <span class="fl">9</span>
+<span class="op">)</span>
+
+<span class="co">## 2. BreachDepressions</span>
+<span class="fu"><a href="reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="st">"./smoothed.tif"</span>, output <span class="op">=</span> <span class="st">"./breached.tif"</span><span class="op">)</span>
+
+<span class="co">## 3. DInfFlowAccumulation</span>
+<span class="fu"><a href="reference/wbt_d_inf_flow_accumulation.html">wbt_d_inf_flow_accumulation</a></span><span class="op">(</span>input <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="st">"./flow_accum.tif"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">'raster'</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="st">"./flow_accum.tif"</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; Loading required namespace: raster</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-8-1.png" width="100%"></p>
+<p><strong>About WhiteboxTools</strong></p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
 
 <span class="co"># cat() output in non-interactive mode</span>
@@ -178,7 +244,7 @@
 <span class="co">#&gt; -h, --help       Prints help information.</span>
 <span class="co">#&gt; -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"</span>
 <span class="co">#&gt; --listtools      Lists all available tools. Keywords may also be used, --listtools slope.</span>
-<span class="co">#&gt; -r, --run        Runs a tool; used in conjuction with --wd flag; -r="LidarInfo".</span>
+<span class="co">#&gt; -r, --run        Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".</span>
 <span class="co">#&gt; --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.</span>
 <span class="co">#&gt; --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".</span>
 <span class="co">#&gt; --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".</span>
@@ -211,12 +277,11 @@
 
 <span class="co"># Prints the whitebox-tools version</span>
 <span class="fu"><a href="reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2020</span>
+<span class="co">#&gt; WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2021</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span>
 <span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span>
-<span class="co">#&gt; Group (GHRG). See https://jblindsay.github.io/ghrg/WhiteboxTools/index.html</span>
-<span class="co">#&gt; for more details.</span>
+<span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span>
 
 <span class="co"># Prints the toolbox for a specific tool.</span>
 <span class="fu"><a href="reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="st">"AsciiToLas"</span><span class="op">)</span>
@@ -290,8 +355,8 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Example usage:</span>
-<span class="co">#&gt; &gt;&gt;./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span>
-<span class="co">#&gt; ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span>
+<span class="co">#&gt; &gt;&gt;./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span>
+<span class="co">#&gt; ./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span>
 
 <span class="co"># Retrieves the tool parameter descriptions for a specific tool.</span>
 <span class="fu"><a href="reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
@@ -300,23 +365,12 @@
 <span class="co"># View the source code for a specific tool on the source code repository.</span>
 <span class="fu"><a href="reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
 <span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
-<p><strong>How to run tools?</strong></p>
-<p>Tool names in the whitebox R package can be called using the snake_case (e.g. lidar_info). See below for an example. If you are interested in using the WhiteboxTools command-line program, check <a href="https://github.com/jblindsay/whitebox-tools#3-usage">WhiteboxTools Usage</a>.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
-
-<span class="co"># Set input raster DEM file</span>
-<span class="va">dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
-
-<span class="co"># Run tools passing file paths for input and output grids</span>
-<span class="fu"><a href="reference/wbt_feature_preserving_smoothing.html">wbt_feature_preserving_smoothing</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="st">"./smoothed.tif"</span>, filter <span class="op">=</span> <span class="fl">9</span>, verbose_mode <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="st">"./smoothed.tif"</span>, output <span class="op">=</span> <span class="st">"./breached.tif"</span><span class="op">)</span>
-<span class="fu"><a href="reference/wbt_d_inf_flow_accumulation.html">wbt_d_inf_flow_accumulation</a></span><span class="op">(</span>input <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="st">"./flow_accum.tif"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="available-tools" class="section level2">
 <h2 class="hasAnchor">
 <a href="#available-tools" class="anchor"></a>Available Tools</h2>
-<p>The <strong><a href="https://github.com/jblindsay/whitebox-tools">WhiteboxTools</a></strong> library currently contains more than <strong>468</strong> tools, which are each grouped based on their main function into one of the following categories: Data Tools, GIS Analysis, Hydrological Analysis, Image Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream Network Analysis, and Terrain Analysis. For a listing of available tools, complete with documentation and usage details, please see the <a href="https://jblindsay.github.io/wbt_book/available_tools/index.html">WhiteboxTools User Manual</a>.</p>
+<p>The <strong><a href="https://github.com/jblindsay/whitebox-tools">WhiteboxTools</a></strong> library currently contains more than <strong>448</strong> tools, which are each grouped based on their main function into one of the following categories: Data Tools, GIS Analysis, Hydrological Analysis, Image Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream Network Analysis, and Terrain Analysis. For a listing of available tools, complete with documentation and usage details, please see the <a href="https://jblindsay.github.io/wbt_book/available_tools/index.html">WhiteboxTools User Manual</a>.</p>
+<p>If you are interested in using the WhiteboxTools command-line program, check <a href="https://github.com/jblindsay/whitebox-tools#3-usage">WhiteboxTools Usage</a></p>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">

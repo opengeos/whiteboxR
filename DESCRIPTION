@@ -15,4 +15,7 @@ BugReports: https://github.com/giswqs/whiteboxR/issues
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    raster,
+    rgdal
+VignetteBuilder: knitr

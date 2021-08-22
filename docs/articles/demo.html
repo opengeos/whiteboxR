@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>whitebox examples • whitebox</title>
+<title>whitebox Demo • whitebox</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="whitebox examples">
+<script src="../pkgdown.js"></script><meta property="og:title" content="whitebox Demo">
 <meta property="og:description" content="whitebox">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.1</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -54,7 +54,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/demo.html">whitebox examples</a>
+      <a href="../articles/demo.html">whitebox Demo</a>
     </li>
   </ul>
 </li>
@@ -65,7 +65,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/giswqs/whiteboxR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -79,120 +79,392 @@
 
       
 
-      </header><script src="demo_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><script src="demo_files/header-attrs-2.8.5/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>whitebox examples</h1>
-                        <h4 class="author">Qiusheng Wu</h4>
+      <h1 data-toc-skip>whitebox Demo</h1>
             
-            <h4 class="date">2020-06-07</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/vignettes/demo.Rmd"><code>vignettes/demo.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/misc/vignettes/demo.Rmd"><code>misc/vignettes/demo.Rmd</code></a></small>
       <div class="hidden name"><code>demo.Rmd</code></div>
 
     </div>
 
     
     
-<div id="about-whiteboxtools" class="section level2">
+<div id="introduction" class="section level2">
 <h2 class="hasAnchor">
-<a href="#about-whiteboxtools" class="anchor"></a>About WhiteboxTools</h2>
-<p>Load the whitebox R package.</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">whitebox</span>)</pre></body></html></div>
-<p>Prints the whitebox-tools help…a listing of available commands.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_help.html">wbt_help</a></span>())</pre></body></html></div>
-<pre><code>## Performing one-time download of WhiteboxTools binary from
-##      https://jblindsay.github.io/ghrg/WhiteboxTools/WhiteboxTools_linux_amd64.tar.xz 
-## (This could take a few minutes, please be patient...)
-## WhiteboxTools binary is located at:  /tmp/RtmpjHRHtb/temp_libpath2c7181bb73293/whitebox/WBT/whitebox_tools 
-## You can now start using whitebox
-##     &gt; library(whitebox)
-##     &gt; wbt_version()
-##  [1] "WhiteboxTools Help"                                                                                        
-##  [2] ""                                                                                                          
-##  [3] "The following commands are recognized:"                                                                    
-##  [4] "--cd, --wd       Changes the working directory; used in conjunction with --run flag."                      
-##  [5] "-h, --help       Prints help information."                                                                 
-##  [6] "-l, --license    Prints the whitebox-tools license."                                                       
-##  [7] "--listtools      Lists all available tools. Keywords may also be used, --listtools slope."                 
-##  [8] "-r, --run        Runs a tool; used in conjuction with --wd flag; -r=\"LidarInfo\"."                        
-##  [9] "--toolbox        Prints the toolbox associated with a tool; --toolbox=Slope."                              
-## [10] "--toolhelp       Prints the help associated with a tool; --toolhelp=\"LidarInfo\"."                        
-## [11] "--toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters=\"LidarInfo\"."
-## [12] "-v               Verbose mode. Without this flag, tool outputs will not be printed."                       
-## [13] "--viewcode       Opens the source code of a tool in a web browser; --viewcode=\"LidarInfo\"."              
-## [14] "--version        Prints the version information."                                                          
-## [15] ""                                                                                                          
-## [16] "Example Usage:"                                                                                            
-## [17] "&gt;&gt; ./whitebox-tools -r=lidar_info --cd=\"/path/to/data/\" -i=input.las --vlr --geokeys"                    
-## [18] ""</code></pre>
-<p>Prints the whitebox-tools license.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_license.html">wbt_license</a></span>())</pre></body></html></div>
-<pre><code>##  [1] "WhiteboxTools License"                                                                                
-##  [2] "Copyright 2017-2019 John Lindsay"                                                                     
-##  [3] ""                                                                                                     
-##  [4] "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and"    
-##  [5] "associated documentation files (the \"Software\"), to deal in the Software without restriction,"      
-##  [6] "including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,"
-##  [7] "and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,"
-##  [8] "subject to the following conditions:"                                                                 
-##  [9] ""                                                                                                     
-## [10] "The above copyright notice and this permission notice shall be included in all copies or substantial" 
-## [11] "portions of the Software."                                                                            
-## [12] ""                                                                                                     
-## [13] "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT"  
-## [14] "NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND"               
-## [15] "NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES" 
-## [16] "OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN"  
-## [17] "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."</code></pre>
-<p>Prints the whitebox-tools version.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span>())</pre></body></html></div>
-<pre><code>## [1] "WhiteboxTools v1.3.0 by Dr. John B. Lindsay (c) 2017-2019"                  
-## [2] ""                                                                           
-## [3] "WhiteboxTools is an advanced geospatial data analysis platform developed at"
-## [4] "the University of Guelph's Geomorphometry and Hydrogeomatics Research "     
-## [5] "Group (GHRG). See https://jblindsay.github.io/ghrg/WhiteboxTools/index.html"
-## [6] "for more details."</code></pre>
-<p>Prints the toolbox for a specific tool.</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span>())</pre></body></html></div>
-<p>List all available tools in whitebox-tools.</p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span>())</pre></body></html></div>
-<p>Lists tools with ‘lidar’ in tool name or description.</p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span>(<span class="st">"lidar"</span>))</pre></body></html></div>
-<p>Prints the help for a specific tool.</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span>(<span class="st">"lidar_info"</span>))</pre></body></html></div>
-<pre><code>##  [1] "LidarInfo"                                                                                                                                                                              
-##  [2] "Description:"                                                                                                                                                                           
-##  [3] "Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys."
-##  [4] "Toolbox: LiDAR Tools"                                                                                                                                                                   
-##  [5] "Parameters:"                                                                                                                                                                            
-##  [6] "Flag               Description"                                                                                                                                                         
-##  [7] "-----------------  -----------"                                                                                                                                                         
-##  [8] "-i, --input        Input LiDAR file."                                                                                                                                                   
-##  [9] "-o, --output       Output HTML file for summary report."                                                                                                                                
-## [10] "--vlr              Flag indicating whether or not to print the variable length records (VLRs)."                                                                                         
-## [11] "--geokeys          Flag indicating whether or not to print the geokeys."                                                                                                                
-## [12] "Example usage:"                                                                                                                                                                         
-## [13] "&gt;&gt;./tmpRtmpjHRHtbtemp_libpath2c7181bb73293whiteboxWBTwhitebox_tools -r=LidarInfo -v --wd=\"/path/to/data/\" -i=file.las --vlr --geokeys\""                                              
-## [14] "./tmpRtmpjHRHtbtemp_libpath2c7181bb73293whiteboxWBTwhitebox_tools -r=LidarInfo --wd=\"/path/to/data/\" -i=file.las"</code></pre>
-<p>Retrieves the tool parameter descriptions for a specific tool.</p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span>(<span class="st">"slope"</span>))</pre></body></html></div>
-<pre><code>## [1] "{\"parameters\": [{\"name\":\"Input DEM File\",\"flags\":[\"-i\",\"--dem\"],\"description\":\"Input raster DEM file.\",\"parameter_type\":{\"ExistingFile\":\"Raster\"},\"default_value\":null,\"optional\":false},{\"name\":\"Output File\",\"flags\":[\"-o\",\"--output\"],\"description\":\"Output raster file.\",\"parameter_type\":{\"NewFile\":\"Raster\"},\"default_value\":null,\"optional\":false},{\"name\":\"Z Conversion Factor\",\"flags\":[\"--zfactor\"],\"description\":\"Optional multiplier for when the vertical and horizontal units are not the same.\",\"parameter_type\":\"Float\",\"default_value\":\"1.0\",\"optional\":true},{\"name\":\"Units\",\"flags\":[\"--units\"],\"description\":\"Units of output raster; options include 'degrees', 'radians', 'percent'\",\"parameter_type\":{\"OptionList\":[\"degrees\",\"radians\",\"percent\"]},\"default_value\":\"degrees\",\"optional\":true}]}"</code></pre>
-<p>View the source code for a specific tool on the source code repository.</p>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span>(<span class="st">"breach_depressions"</span>))</pre></body></html></div>
-<pre><code>## [1] "https://github.com/jblindsay/whitebox-tools//tree/master/src/tools/hydro_analysis/breach_depressions.rs"</code></pre>
+<a href="#introduction" class="anchor"></a>Introduction</h2>
+<p>whitebox is an R frontend for the ‘WhiteboxTools’ library, which is an advanced geospatial data analysis platform developed by Prof. John Lindsay at the University of Guelph’s Geomorphometry and Hydrogeomatics Research Group.</p>
+<p>‘WhiteboxTools’ can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. ‘WhiteboxTools’ also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing.</p>
+<p>WhiteboxTools is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS.</p>
+<p>This demonstration shows how to use the whitebox package to integrate WhiteboxTools with R.</p>
+<p>Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers &amp; Geosciences, 95, 75-84. <a href="doi:%5B10.1016/j.cageo.2016.07.003" class="uri">doi:[10.1016/j.cageo.2016.07.003</a>](<a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="uri">http://dx.doi.org/10.1016/j.cageo.2016.07.003</a>).</p>
 </div>
-<div id="how-to-run-tools" class="section level2">
+<div id="setup" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-to-run-tools" class="anchor"></a>How to run tools?</h2>
-<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">whitebox</span>)
-<span class="co"># Set input raster DEM file</span>
-<span class="no">dem</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"whitebox"</span>)
+<a href="#setup" class="anchor"></a>Setup</h2>
+<p>Load the whitebox library.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span></code></pre></div>
+<p>The current implementation of whitebox generates system() calls to a local WhiteboxTools installation; <code>whitebox_tools</code> or <code>whitebox_tools.exe</code></p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span></code></pre></div>
+<p>If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation. Most often you will be able to use <code><a href="../reference/install_whitebox.html">whitebox::install_whitebox()</a></code> to download the latest binaries that correspond to the available version of the R package. However, you have the ability and option to compile yourself and install anywhere. See <a href="https://github.com/jblindsay/whitebox-tools" class="uri">https://github.com/jblindsay/whitebox-tools</a> for details.</p>
+</div>
+<div id="interfacing-with-other-packages" class="section level2">
+<h2 class="hasAnchor">
+<a href="#interfacing-with-other-packages" class="anchor"></a>Interfacing with other packages</h2>
+<p>Many R users will be interacting with raster data with one of the many available R packages for spatial data. In this vignette we will use the <code>raster</code> package for visualization.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: sp</span></code></pre></div>
+<div id="wbt_init" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_init" class="anchor"></a><code>wbt_init()</code>
+</h3>
+<p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> is used to set and check the executable path of the binary executable that commands are passed to. These are stored internally as package options. A default value <code><a href="../reference/wbt_exe_path.html">wbt_exe_path(shell_quote = FALSE)</a></code> is passed when the <code>exe_path</code> argument is left unspecified.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># inspect where wbt_init() will be checking</span>
+<span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span>
 
-<span class="co"># Run tools</span>
-<span class="fu"><a href="../reference/wbt_feature_preserving_smoothing.html">wbt_feature_preserving_smoothing</a></span>(<span class="no">dem</span>, <span class="st">"./smoothed.tif"</span>, <span class="kw">filter</span><span class="kw">=</span><span class="fl">9</span>, <span class="kw">verbose_mode</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
-<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span>(<span class="st">"./smoothed.tif"</span>, <span class="st">"./breached.tif"</span>)
-<span class="fu"><a href="../reference/wbt_d_inf_flow_accumulation.html">wbt_d_inf_flow_accumulation</a></span>(<span class="no">dem</span>, <span class="st">"./flow_accum.tif"</span>)</pre></body></html></div>
+<span class="co"># TRUE when file is found at one of the user specified paths or package default</span>
+<span class="co"># FALSE when whitebox_tools does not exist at path</span>
+<span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># set path manually to whitebox_tools executable, for instance:</span>
+<span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools'</span><span class="op">)</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<p>Any other package options other than <code>exe_path</code> as detailed in <code><a href="../reference/whitebox-package.html">?whitebox::whitebox</a></code>, can be set with <code><a href="../reference/wbt_init.html">wbt_init(...)</a></code> or <code><a href="../reference/wbt_init.html">wbt_options()</a></code>.</p>
+</div>
+<div id="wbt_verbose" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_verbose" class="anchor"></a><code>wbt_verbose()</code>
+</h3>
+<p>A helper method for setting the <code>whitebox.verbose</code> option is <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>. It allows the user to get and set the package default verbosity level for running tools and other utility methods.</p>
+<p>By default, the result of wbt_verbose() is the result of <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> so tools will print extra console output when you are there to see it, but hide it in your automated tests, markdown documents, vignettes etc.</p>
+<p>In this vignette we use <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> package option <code>whitebox.verbose</code> is set to <code>TRUE</code> to print out the tool name and elapsed time whenever we run a tool.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># force output when run non-interactively</span>
+<span class="fu"><a href="../reference/wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<p>When whitebox.verbose is <code>FALSE</code> no output will be printed at all.</p>
+<p>This package-level verbose option does not control the <code>verbose_mode</code> argument values passed to individual <code>wbt_*</code> functions that have them at this time. Controlling their output (one line v.s. many) would require a third option to be implemented for this argument such as <code>"all"</code>. For now users have control over those arguments to print extra output, and <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> has a binary logical result.</p>
+</div>
+</div>
+<div id="running-a-tool" class="section level2">
+<h2 class="hasAnchor">
+<a href="#running-a-tool" class="anchor"></a>Running a tool</h2>
+<p>Specify input and output paths, and any other options, as specified in package reference:</p>
+<ul>
+<li><a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="uri">https://giswqs.github.io/whiteboxR/reference/index.html</a></li>
+</ul>
+<p>For instance, here we use the tool “BreachDepressions” to pre-process a Digital Elevation Model (DEM) so we can identify flow pathways.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+
+<span class="co"># output file name</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="st">"./output.tif"</span>
+
+<span class="co"># run breach_depressions tool</span>
+<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<p>More info:<code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
+<p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> call given a function-specific argument string.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+
+<span class="co"># output file name</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="st">"./output.tif"</span>
+
+<span class="co"># run breach_depressions tool</span>
+<span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
+<p>The above method of creating <code><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions(dem = ..., output = ...)</a></code> to handle <code><a href="../reference/wbt_run_tool.html">wbt_run_tool("BreachDepressions", args = ...)</a></code> makes it easy to generate static methods that have parity with the latest WhiteboxTools interface.</p>
+<div id="example-compare-input-v-s--output-with-raster" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-compare-input-v-s--output-with-raster" class="anchor"></a>Example: Compare input v.s. output with <code>raster</code>
+</h3>
+<p>We use the raster R package to read the GeoTIFF outputs from WhiteboxTools.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create raster object from output file</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span>
+
+<span class="co"># create raster object from input file</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span>
+
+<span class="co"># inspect input</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-10-1.png" width="768"></p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="co"># inspect difference in input v.s. output</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span><span class="op">)</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-10-2.png" width="768"></p>
+</div>
+<div id="example-identifying-tributaries" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-identifying-tributaries" class="anchor"></a>Example: Identifying Tributaries</h3>
+<p>Here we will take our processing of DEMs a bit further by performing several WhiteboxTools operations in sequence.</p>
+<p>We are interested in identifying and ranking tributaries to streams and rivers.</p>
+<p>A package that makes use of the whitebox R package is <a href="https://github.com/bkielstr/hydroweight">hydroweight</a>.</p>
+<p>Here is a brief snippet based on the beginning of the hydroweight README showing how the breached DEM we made above can be used in a spatial hydrological analysis of stream networks.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
+
+<span class="co">## Import toy_dem from whitebox package</span>
+<span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
+<span class="va">toy_dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">toy_file</span>, values <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/projection.html">crs</a></span><span class="op">(</span><span class="va">toy_dem</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"EPSG:26918"</span>
+
+<span class="co">## Generate wd as a temporary directory. </span>
+<span class="co">## Replace with your own path, or "." for current directory</span>
+<span class="va">wd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co">## Write toy_dem to working directory</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/writeRaster.html">writeRaster</a></span><span class="op">(</span>
+  x <span class="op">=</span> <span class="va">toy_dem</span>, filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
+  overwrite <span class="op">=</span> <span class="cn">TRUE</span>
+<span class="op">)</span>
+
+<span class="co">## Breach depressions to ensure continuous flow</span>
+<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>
+  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
+  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.31s</span></code></pre></div>
+<p>Once we have breached the depressions in the DEM, we generate the flow directions.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Generate d8 flow pointer (note: other flow directions are available)</span>
+<span class="fu"><a href="../reference/wbt_d8_pointer.html">wbt_d8_pointer</a></span><span class="op">(</span>
+  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
+  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+<p>There are several options in WhiteboxTools for the algorithms used for flow pointer (flow direction) and accumulation routines such as FD8, D-infinity, D-infinity</p>
+<ul>
+<li><p>Keyword “Pointer” tools: <code>"D8Pointer"</code>, <code>"DInfPointer"</code>, <code>"FD8Pointer"</code>, <code>"Rho8Pointer"</code></p></li>
+<li><p>Keyword “FlowAccumulation” tools: <code>"D8FlowAccumulation"</code>, <code>"DInfFlowAccumulation"</code>, <code>"FD8FlowAccumulation"</code>, <code>"MDInfFlowAccumulation"</code></p></li>
+</ul>
+<p>Search for more tools involving <code>"flow pointer"</code> by key word: <code><a href="../reference/wbt_list_tools.html">wbt_list_tools(keyword = "flow pointer")</a></code></p>
+<pre><code>#&gt; All 22 Tools containing keywords:
+#&gt; AverageFlowpathSlope: Measures the average slope gradient from each grid cell to all upslope divide cells.
+#&gt; AverageUpslopeFlowpathLength: Measures the average length of all upslope flowpaths draining each grid cell.
+#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
+#&gt; D8Pointer: Calculates a D8 flow pointer raster from an input DEM.
+#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.
+#&gt; DInfPointer: Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
+#&gt; DownslopeFlowpathLength: Calculates the downslope flowpath length from each cell to basin outlet.
+#&gt; ExtractStreams: Extracts stream grid cells from a flow accumulation raster.
+#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.
+#&gt; FD8Pointer: Calculates an FD8 flow pointer raster from an input DEM.
+#&gt; FindNoFlowCells: Finds grid cells with no downslope neighbours.
+#&gt; FindParallelFlow: Finds areas of parallel flow in D8 flow direction rasters.
+#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
+#&gt; FlowLengthDiff: Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.
+#&gt; LongProfileFromPoints: Plots the longitudinal profiles from flow-paths initiating from a set of vector points.
+#&gt; LongestFlowpath: Delineates the longest flowpaths for a group of subbasins or watersheds. 
+#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.
+#&gt; MaxUpslopeFlowpathLength: Measures the maximum length of all upslope flowpaths draining each grid cell.
+#&gt; NumInflowingNeighbours: Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
+#&gt; Rho8Pointer: Calculates a stochastic Rho8 flow pointer raster from an input DEM.
+#&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
+#&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</code></pre>
+<p>This is just one example of the wealth of tools made available through the WhiteboxTools platform.</p>
+<p>Once we calculate the direction of flow by some method, we calculate cumulative flow at all locations</p>
+<p>For example with <code><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation()</a></code>:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Generate d8 flow accumulation in units of cells (note: other flow directions are available)</span>
+<span class="fu"><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation</a></span><span class="op">(</span>
+  input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
+  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
+  out_type <span class="op">=</span> <span class="st">"cells"</span>
+<span class="op">)</span>
+<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.3s</span></code></pre></div>
+<p>And then we can extract a stream network with <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> based on a threshold (e.g. <code>4000</code>) of accumulated flow. This threshold will depend on the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Generate streams with a stream initiation threshold of 1000 cells</span>
+<span class="fu"><a href="../reference/wbt_extract_streams.html">wbt_extract_streams</a></span><span class="op">(</span>
+  flow_accum <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
+  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
+  threshold <span class="op">=</span> <span class="fl">100</span>
+<span class="op">)</span>
+<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.2s</span></code></pre></div>
+<p>Now, lets identify tributaries. That is the tool we printed help for up above. This function <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code> is a little more complicated because it takes takes two inputs:</p>
+<ul>
+<li><p>Our raster D8 pointer file.</p></li>
+<li><p>And our raster streams file.</p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier</a></span><span class="op">(</span>
+  d8_pntr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>,
+  streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
+  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<p>Finally, we compare results of <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> with <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code></p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span>, mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span>,
+     col <span class="op">=</span> <span class="st">"black"</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span><span class="op">)</span>,
+     axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-17-1.png" width="768"></p>
+</div>
+</div>
+<div id="appendix-wbt_-utility-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#appendix-wbt_-utility-functions" class="anchor"></a>Appendix: <code>wbt_*</code> utility functions</h2>
+<p>These methods provide access to WhiteboxTools executable parameters and metadata.</p>
+<div id="wbt_help" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_help" class="anchor"></a><code>wbt_help()</code>
+</h3>
+<p><code><a href="../reference/wbt_help.html">wbt_help()</a></code> prints the WhiteboxTools help: a listing of available commands for executable</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_help.html">wbt_help</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; WhiteboxTools Help</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; The following commands are recognized:</span>
+<span class="co">#&gt; --cd, --wd       Changes the working directory; used in conjunction with --run flag.</span>
+<span class="co">#&gt; -h, --help       Prints help information.</span>
+<span class="co">#&gt; -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"</span>
+<span class="co">#&gt; --listtools      Lists all available tools. Keywords may also be used, --listtools slope.</span>
+<span class="co">#&gt; -r, --run        Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".</span>
+<span class="co">#&gt; --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.</span>
+<span class="co">#&gt; --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".</span>
+<span class="co">#&gt; --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".</span>
+<span class="co">#&gt; -v               Verbose mode. Without this flag, tool outputs will not be printed.</span>
+<span class="co">#&gt; --viewcode       Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span>
+<span class="co">#&gt; --version        Prints the version information.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Example Usage:</span>
+<span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span></code></pre></div>
+</div>
+<div id="wbt_license" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_license" class="anchor"></a><code>wbt_license()</code>
+</h3>
+<p><code><a href="../reference/wbt_license.html">wbt_license()</a></code> prints the WhiteboxTools license</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_license.html">wbt_license</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; WhiteboxTools License</span>
+<span class="co">#&gt; Copyright 2017-2020 John Lindsay</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span>
+<span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span>
+<span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
+<span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span>
+<span class="co">#&gt; subject to the following conditions:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span>
+<span class="co">#&gt; portions of the Software.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span>
+<span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span>
+<span class="co">#&gt; OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="co">#&gt; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></code></pre></div>
+</div>
+<div id="wbt_version" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_version" class="anchor"></a><code>wbt_version()</code>
+</h3>
+<p>Prints the WhiteboxTools version</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2021</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span>
+<span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span>
+<span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span></code></pre></div>
+</div>
+<div id="wbt_list_tools" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_list_tools" class="anchor"></a><code>wbt_list_tools()</code>
+</h3>
+<p>Use <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code> to list all available tools in WhiteboxTools. In v1.5.0 this is 448 tools!</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>The full list can be an overwhelming amount of output, so you pass the <code>keyword</code> argument to search and filter.</p>
+<p>For example we list tools with keyword ‘flowaccumulation’ in tool name or description.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">"flowaccumulation"</span><span class="op">)</span>
+<span class="co">#&gt; All 5 Tools containing keywords:</span>
+<span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span>
+<span class="co">#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.</span>
+<span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
+<span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span>
+<span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></code></pre></div>
+</div>
+<div id="wbt_tool_help" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_tool_help" class="anchor"></a><code>wbt_tool_help()</code>
+</h3>
+<p>Once we find a tool that we are interested in using, we can investigate what sort of parameters it takes. The R methods generally take the same named parameters.</p>
+<p>R functions have the naming scheme <code>wbt_tool_name</code> where <code>_</code> is used for spaces, whereas the tools themselves have no spaces.</p>
+<p>Prints the help for a specific tool using the command line.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"tributaryidentifier"</span><span class="op">)</span>
+<span class="co">#&gt; TributaryIdentifier</span>
+<span class="co">#&gt; Description:</span>
+<span class="co">#&gt; Assigns a unique identifier to each tributary in a stream network.</span>
+<span class="co">#&gt; Toolbox: Stream Network Analysis</span>
+<span class="co">#&gt; Parameters:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Flag               Description</span>
+<span class="co">#&gt; -----------------  -----------</span>
+<span class="co">#&gt; --d8_pntr          Input raster D8 pointer file.</span>
+<span class="co">#&gt; --streams          Input raster streams file.</span>
+<span class="co">#&gt; -o, --output       Output raster file.</span>
+<span class="co">#&gt; --esri_pntr        D8 pointer uses the ESRI style scheme.</span>
+<span class="co">#&gt; --zero_background  Flag indicating whether a background value of zero should be used.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Example usage:</span>
+<span class="co">#&gt; &gt;&gt;./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif</span>
+<span class="co">#&gt; &gt;&gt;./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif --esri_pntr --zero_background</span></code></pre></div>
+<p>Prints the R function help, which is derived from the help page and other metadata.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">?</span><span class="va">wbt_tributary_identifier</span></code></pre></div>
+</div>
+<div id="wbt_toolbox" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_toolbox" class="anchor"></a><code>wbt_toolbox()</code>
+</h3>
+<p>Another way that tools are organized in WhiteboxTools is by “toolbox.”</p>
+<p><code><a href="../reference/wbt_toolbox.html">wbt_toolbox()</a></code> prints the toolbox for a specific tool (or all tools if none specified)</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span>
+<span class="co">#&gt; Geomorphometric Analysis</span></code></pre></div>
+<p>Print the full list by not specifying <code>tool_name</code></p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="wbt_tool_parameters" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_tool_parameters" class="anchor"></a><code>wbt_tool_parameters()</code>
+</h3>
+<p><code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> retrieves the tool parameter descriptions for a specific tool as JSON formatted string.</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
+<span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></code></pre></div>
+</div>
+<div id="wbt_view_code" class="section level3">
+<h3 class="hasAnchor">
+<a href="#wbt_view_code" class="anchor"></a><code>wbt_view_code()</code>
+</h3>
+<p>WhiteboxTools is written in Rust and is open source. You can view the source code for a specific tool on the source code repository.</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
+<span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
+<p>Use the argument <code>viewer=TRUE</code> to use <code><a href="https://rdrr.io/r/utils/browseURL.html">browseURL()</a></code> to open a browser window to the corresponding GitHub page.</p>
+</div>
 </div>
   </div>
 
@@ -207,11 +479,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Qiusheng Wu.</p>
+  <p>Developed by Qiusheng Wu, Andrew Brown.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
