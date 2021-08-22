@@ -3,7 +3,7 @@
 #' `wbt_init()`: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with `exe_path`. 
 #' 
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
-#'
+#' @param ... additional arguments to `wbt_options()`
 #' @return `wbt_init()`: logical; `TRUE` if binary file is found at `exe_path`
 #' @export
 #' @seealso [install_whitebox()] [whitebox]
@@ -14,11 +14,11 @@
 #' # or set path to binary as an argument
 #' # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 #' }
-wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE)) {
+wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   
   # if exe_path is not NULL and exists, update options
   if (!is.null(exe_path) && file.exists(exe_path)) {
-    wbt_options(exe_path = exe_path)
+    wbt_options(exe_path = exe_path, ...)
   }
 
   # check whether path is valid
@@ -97,9 +97,9 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   # Check for binary file in 'WBT' directory.
   exe_path <- wbt_exe_path(shell_quote = FALSE)
   os <- Sys.info()["sysname"]
-
+  
   if (!file.exists(exe_path)) {
-
+    
     if (os == "Linux") {
       url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_linux_amd64.zip"
     } else if (os == "Windows") {
