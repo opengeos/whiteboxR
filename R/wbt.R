@@ -98,7 +98,22 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   exe_path <- wbt_exe_path(shell_quote = FALSE)
   os <- Sys.info()["sysname"]
   
+  .unsupported <- function(){
+    message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")     
+    message("Pre-built binaries available only for 64-bit Window, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
+    message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n","
+                  https://github.com/giswqs/whitebox-bin/")
+    message("You can follow the instructions at https://github.com/jblindsay/whitebox-tools to use cargo to build the Rust library from source.\n")
+    message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
+                 "    wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
+  }
+  
   if (!file.exists(exe_path)) {
+    
+    # install_whitebox/wbt_install is 64-bit only
+    if (.Machine$sizeof.pointer != 8) {
+      return(invisible(.unsupported()))
+    }
     
     if (os == "Linux") {
       url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_linux_amd64.zip"
@@ -107,10 +122,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     } else if (os == "Darwin") {
       url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_darwin_amd64.zip"
     } else {
-      message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")
-      message("Follow the instructions at https://github.com/jblindsay/whitebox-tools that use cargo to build the Rust library from source.\n")
-      message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
-                     "    > wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
+      return(invisible(.unsupported()))
     }
 
     filename <- basename(url)
@@ -152,7 +164,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
 
 #' Download and Install WhiteboxTools
 #'
-#' This function downloads the WhiteboxTools binary if needed. This only works for 64-bit Linux, Windows and Mac OSX platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+#' This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
