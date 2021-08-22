@@ -19,15 +19,12 @@ knitr::opts_chunk$set(
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-# if (!("whitebox" %in% installed.packages())) {
-#   remotes::install_github("giswqs/whiteboxR", dependencies = FALSE)
-#   whitebox::install_whitebox()
-# }
+if (!whitebox::check_whitebox_binary()) {
+  whitebox::install_whitebox()
+}
 
 # system and package dependencies must be met to build the vignette
-stopifnot(whitebox::check_whitebox_binary())
 stopifnot(requireNamespace("raster"))
-# stopifnot(requireNamespace("rgdal"))
 ```
 
 ## Introduction 
@@ -79,7 +76,7 @@ wbt_exe_path(shell_quote = FALSE)
 wbt_init()
 ```
 
-```{r}
+```{r, eval=FALSE}
 # set path manually to whitebox_tools executable, for instance:
 wbt_init(exe_path = '/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools')
 ```

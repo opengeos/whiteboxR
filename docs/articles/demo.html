@@ -171,7 +171,7 @@
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
 <p>More info:<code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> call given a function-specific argument string.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
@@ -183,7 +183,7 @@
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
+<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
 <p>The above method of creating <code><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions(dem = ..., output = ...)</a></code> to handle <code><a href="../reference/wbt_run_tool.html">wbt_run_tool("BreachDepressions", args = ...)</a></code> makes it easy to generate static methods that have parity with the latest WhiteboxTools interface.</p>
 <div id="example-compare-input-v-s--output-with-raster" class="section level3">
 <h3 class="hasAnchor">
@@ -237,7 +237,7 @@
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.31s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
 <p>Once we have breached the depressions in the DEM, we generate the flow directions.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate d8 flow pointer (note: other flow directions are available)</span>
@@ -285,7 +285,7 @@
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
   out_type <span class="op">=</span> <span class="st">"cells"</span>
 <span class="op">)</span>
-<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.3s</span></code></pre></div>
+<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></code></pre></div>
 <p>And then we can extract a stream network with <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> based on a threshold (e.g. <code>4000</code>) of accumulated flow. This threshold will depend on the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate streams with a stream initiation threshold of 1000 cells</span>
@@ -294,7 +294,7 @@
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   threshold <span class="op">=</span> <span class="fl">100</span>
 <span class="op">)</span>
-<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.2s</span></code></pre></div>
+<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
 <p>Now, lets identify tributaries. That is the tool we printed help for up above. This function <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code> is a little more complicated because it takes takes two inputs:</p>
 <ul>
 <li><p>Our raster D8 pointer file.</p></li>
