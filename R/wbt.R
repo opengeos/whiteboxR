@@ -491,13 +491,14 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
   
   stopmsg <- paste0("\nError running WhiteboxTools", 
                     ifelse(tool_name != "",  paste0(" (", tool_name, ")"), ""), "\n",
-                    "\twhitebox.exe_path: ", wbt_exe, "\n\tArguments: ", args2)
+                    "\twhitebox.exe_path: ", wbt_exe, "; File exists? ", 
+                                                         file.exists(wbt_exe_path(shell_quote = FALSE)),
+                    "\n\tArguments: ", args2)
   
-  ret <- suppressWarnings(tryCatch(
+  ret <- try(suppressWarnings(tryCatch(
     system(exeargs, intern = TRUE, ignore.stderr = FALSE, ignore.stdout = FALSE),
-    error = function(err)
-      stop(stopmsg, "\n\n", err)
-  ))
+    error = function(err) stop(stopmsg, "\n\n", err, call. = FALSE)
+  )), silent = TRUE)
   
   if (inherits(ret, 'try-error')) {
     message(ret[[1]])
