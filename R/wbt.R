@@ -444,15 +444,15 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
     return(ret)
   }
   
-  if (wbt_verbose()) {
-    cat(ret, sep = "\n")
-  }
-  
   # produce a custom error message for tools to indicate it did not run
   if (length(ret) == 0 || all(nchar(ret) == 0) || !is.null(attr(ret, 'status'))) {
     ret <- paste(tool_name, "-", "Elapsed Time: NA [did not run]")
   } else if (!verbose_mode) {
     ret <- paste(tool_name, "-", ret[length(ret)])
+  }
+  
+  if (wbt_verbose()) {
+    cat(ret, sep = "\n")
   }
   
   invisible(ret)
