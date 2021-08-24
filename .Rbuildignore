@@ -16,4 +16,6 @@ docs/
 misc/
 cran-comments.md
 .vscode/
-
+^doc$
+^Meta$
+^data-raw$

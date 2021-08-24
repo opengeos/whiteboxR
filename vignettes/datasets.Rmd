@@ -1,0 +1,158 @@
+---
+title: "whitebox Tool Metadata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{whitebox Tool Metadata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 6 
+)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# R package dataset symbol names
+wbttools <- NULL
+wbttoolparameters <- NULL
+
+data("wbttools", package = "whitebox")
+```
+
+# `whitebox` Tool Metadata
+
+This vignette provides an introduction to the data sets included in the `whitebox` package. These data sets contain names, arguments and other metadata for tools available in WhiteboxTools.
+
+### What version of WhiteboxTools are these data sets generated from?
+
+These data sets are built to correspond to tool names available in the most recent version of WhiteboxTools and correspond to tools available in the R package.
+
+ - Current version: **`r attr(wbttools, "version")`**
+
+If you have a relatively recent version of WhiteboxTools the version should not be an issue, but the data sets are not dynamically generated from your whitebox installation.
+
+## WhiteboxTools Tool Names and R Function Names
+
+The first data set provides the relationship between tool names in WhiteboxTools and the corresponding exported function in the R package.
+
+It also gives the WhiteboxTools Toolbox name and a brief description.
+
+```{r}
+data("wbttools", package = "whitebox")
+
+str(wbttools)
+```
+
+The `wbttools` data set is a data.frame with `r nrow(wbttools)` tools and 4 variables
+
+ - `"tool_name"` - WhiteboxTools tool name
+
+ - `"toolbox_name"` - WhiteboxTools toolbox name
+
+ - `"description"` - Brief description
+
+ - `"function_name"` - R function name
+ 
+```{r}
+head(wbttools)
+```
+
+The R function naming style differs from the tool names in WhiteboxTools, but the core words are the same.
+
+There are two steps to converting WhiteboxTools to R (if not using `wbttools`!)
+ 
+ 1. `CamelCase` tool names change to `snake_case` R function names
+ 
+ 2. All R function names have the prefix `wbt_` and add `()`
+ 
+So, `StreamSlopeContinuous` becomes `wbt_stream_slope_continuous()` in R, for instance.
+ 
+## WhiteboxTools Tool and Parameter Names
+
+The second data set provides details about the options by tool name. 
+
+```{r}
+data("wbttoolparameters", package = "whitebox")
+```
+
+The `wbttoolparameters` data set is a _data.frame_ with `r nrow(wbttoolparameters)` parameters and 13 variables:
+
+ - `"tool_name"` - WhiteboxTools tool name
+ 
+ - `"name"` - WhiteboxTools tool parameter name
+ 
+ - `"flags"` - flags used to specify parameter on command line; comma separated
+ 
+ - `"description"` - parameter description
+ 
+ - `"parameter_type"` - parameter data type; character: data type(s), space, then possible values, comma-separated (if defined)
+
+ - `"default_value"` - parameter default value, if any
+ 
+ - `"optional"` - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
+ 
+ - `"pkgflags"` - selected flags 1:1 with package function argument names (notably: `-i` and `-o` omitted)
+
+ - `"argument_name"` - labels for `"pkgflags"`; **used as R function argument names**
+
+ - `"is_input"` - logical. Classification of 'input' parameters
+ 
+ - `"is_output"` - logical. Classification of 'output' parameters
+ 
+ - `"function_name"` - R function name
+
+```{r}
+head(wbttoolparameters)
+```
+
+Several fields in this table such as `flags` and `parameter_type` are "flattened" relative to the nested `wbt_tool_parameters()` output.
+
+This parameter _data.frame_ is useful to construct your own functions with `wbt_run_tool()` or for inspecting the types of tools that can be run on particular data types.
+
+```{r}
+str(wbttoolparameters, max.level = 1)
+```
+
+You will find that both `tool_name` and `function_name` are present, so you can look up by whatever is convenient. 
+
+The variable `argument_name` is processed to be the subset of `flags` that corresponds to arguments to R functions, which are denoted with `function_name`.
+
+### Example: Finding Tools by Parameter Type
+
+To find the tools that have an "OptionList" argument with parameter label "variant" (flag: `--variant=`) we can use `subset()`
+
+```{r}
+subset(wbttoolparameters, grepl("OptionList", parameter_type) & grepl("variant", argument_name))
+```
+
+Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/wbtDATA/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.
+
+## Appendix: Tables of Function Names by Toolbox
+
+The remainder of this vignette are tables of R function names and tool descriptions from `wbttoolparameters`, organized by WhiteboxTools toolbox name.
+
+```{r, echo=FALSE, results='asis'}
+# hide this, we add the parentheses for the docs
+wbttoolsshow <- wbttools
+wbttoolsshow$function_name <- paste0("`", wbttoolsshow$function_name, "()`")
+wbttoolssplt <- split(wbttoolsshow[,colnames(wbttoolsshow) %in% c("function_name", "description")],
+                      list(wbttoolsshow$toolbox_name))
+
+if (requireNamespace("knitr")) {
+  x <- sapply(names(wbttoolssplt), function(nm) {
+    cat("###", nm, "\n\n")
+    print(knitr::kable(
+      wbttoolssplt[[nm]],
+      caption = paste("Toolbox:", nm),
+      row.names = FALSE
+    ))
+  })
+}
+```
