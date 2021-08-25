@@ -70,7 +70,7 @@ Many R users will be interacting with raster data with one of the many available
 
 Saving your "output" file paths as a variable so that you can use them later to load the file into an R object is the main way to view your output.
 
-#### raster
+#### `raster`
 
 A demonstration workflow involving the popular raster package follows:
 
@@ -131,7 +131,7 @@ raster::filename(outputras)
 
 The `RasterLayer`, `SpatRaster` and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.
 
-Use `raster::filename()` to get the "source" file name. If you are using a terra `SpatRaster` objects the equivalent method is `terra:sources()`.
+Use `raster::filename()` to get the "source" file name. If you are using a terra `SpatRaster` objects the equivalent method is `terra::sources()`.
 
 ### Setting WhiteboxTools paths 
 

@@ -134,20 +134,17 @@
 <a href="#whitebox-151" class="anchor"></a>whitebox 1.5.1<small> Unreleased </small>
 </h1>
 <ul>
-<li>
-<p>Add package options for custom EXE path and verbosity</p>
+<li>Add package options for custom EXE path and verbosity
 <ul>
-<li><p>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</p></li>
-<li><p>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</p></li>
-<li>
-<p>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>) or package option (<code>whitebox.exe_path</code>)</p>
+<li>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</li>
+<li>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</li>
+<li>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>) or package option (<code>whitebox.exe_path</code>)
 <ul>
 <li>Get / set with <code><a href="../reference/wbt_init.html">wbt_options(exe_path = "C:/path/to/whitebox_tools.exe")</a></code> or <code><a href="../reference/wbt_init.html">wbt_init()</a></code>
 </li>
 </ul>
 </li>
-<li>
-<p>Verbosity controlled with (<code>R_WHITEBOX_VERBOSE</code>) or package option (<code>whitebox.verbose</code>)</p>
+<li>Verbosity controlled with (<code>R_WHITEBOX_VERBOSE</code>) or package option (<code>whitebox.verbose</code>)
 <ul>
 <li>Get / set with <code><a href="../reference/wbt_init.html">wbt_options(verbose = TRUE)</a></code> or <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>
 </li>
@@ -155,7 +152,81 @@
 </li>
 </ul>
 </li>
-<li><p>All tests that require WhiteboxTools are prefaced with <code>skip_if_not(check_whitebox_binary())</code></p></li>
+<li>New “whitebox Demo” vignette</li>
+<li>New data <code>wbttools</code> and <code>wbttoolparameters</code> data.frame built from WhiteboxTools v1.5.0 and <code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> output for full tool library
+<ul>
+<li>See the “whitebox Tool Metadata” vignette</li>
+</ul>
+</li>
+</ul>
+</div>
+    <div id="whitebox-150" class="section level1">
+<h1 class="page-header" data-toc-text="1.5.0">
+<a href="#whitebox-150" class="anchor"></a>whitebox 1.5.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v1.5.0</li>
+<li>More information about this version can be found at <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0</a> for more info.</li>
+</ul>
+</div>
+    <div id="whitebox-140" class="section level1">
+<h1 class="page-header" data-toc-text="1.4.0">
+<a href="#whitebox-140" class="anchor"></a>whitebox 1.4.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v1.4.0</li>
+<li>More information about this version can be found at <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/v1.4.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/v1.4.0</a>
+</li>
+</ul>
+</div>
+    <div id="whitebox-131" class="section level1">
+<h1 class="page-header" data-toc-text="1.3.1">
+<a href="#whitebox-131" class="anchor"></a>whitebox 1.3.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v1.3.1</li>
+<li>More information about this version can be found at <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/v1.3.1" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/v1.3.1</a>
+</li>
+</ul>
+</div>
+    <div id="whitebox-130" class="section level1">
+<h1 class="page-header" data-toc-text="1.3.0">
+<a href="#whitebox-130" class="anchor"></a>whitebox 1.3.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v1.3.0</li>
+</ul>
+</div>
+    <div id="whitebox-110" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.0">
+<a href="#whitebox-110" class="anchor"></a>whitebox 1.1.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v1.1.0</li>
+</ul>
+</div>
+    <div id="whitebox-102" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.2">
+<a href="#whitebox-102" class="anchor"></a>whitebox 1.0.2<small> Unreleased </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v1.0.2</li>
+</ul>
+</div>
+    <div id="whitebox-101" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.1">
+<a href="#whitebox-101" class="anchor"></a>whitebox 1.0.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>Prep for v1.0.1</li>
+</ul>
+</div>
+    <div id="whitebox-050" class="section level1">
+<h1 class="page-header" data-toc-text="0.5.0">
+<a href="#whitebox-050" class="anchor"></a>whitebox 0.5.0<small> Unreleased </small>
+</h1>
+<ul>
+<li>Fix bugs for logical parameters</li>
 </ul>
 </div>
     <div id="whitebox-030" class="section level1">
