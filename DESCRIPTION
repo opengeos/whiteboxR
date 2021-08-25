@@ -16,3 +16,6 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)

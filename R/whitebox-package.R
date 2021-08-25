@@ -10,6 +10,44 @@
 #' @seealso [wbt_init()], [wbt_options()], [install_whitebox()]
 "_PACKAGE"
 
+#' WhiteboxTools Tool List
+#' 
+#' This data set is a `data.frame` containing tools by name and associated R function name, as available in WhiteboxTools 1.5.0
+#' @name wbttools
+#' @docType data
+#' @format A data.frame with 448 observations of 4 variables
+#' - `"tool_name"` - WhiteboxTools tool name
+#' - `"toolbox_name"` - WhiteboxTools toolbox name
+#' - `"description"` - Brief description
+#' - `"function_name"` - R function name
+#' @source [WhiteboxTools 1.5.0](https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0)
+#' @keywords datasets
+NULL
+
+#' WhiteboxTools Tool Parameters
+#' 
+#' This data set is a `data.frame` containing tools by name, their parameters, and associated metadata, as available in WhiteboxTools 1.5.0
+#' 
+#' @seealso [wbttools] [wbt_tool_parameters()]
+#' 
+#' @name wbttoolparameters
+#' @docType data 
+#' @format A `data.frame` with 1706 observations of 13 variables
+#' - `"function_name"` - R function name
+#' - `"tool_name"` - WhiteboxTools tool name
+#' - `"name"` - parameter name
+#' - `"flags"` - flags used to specify parameter on command line; comma separated
+#' - `"description"` - parameter description
+#' - `"parameter_class"` - parameter type
+#' - `"parameter_detail"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
+#' - `"default_value"` - parameter default value, if any
+#' - `"optional"` - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
+#' - `"label"` - labels for selected subset of `"flags"` **used as R function argument names** for `wbt_` functions
+#' - `"is_input"` - logical. Classification of 'input' parameters
+#' - `"is_output"` - logical. Classification of 'output' parameters
+#' @source [WhiteboxTools 1.5.0](https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0)
+#' @keywords datasets
+NULL
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
