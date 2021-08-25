@@ -96,7 +96,7 @@ The `wbttoolparameters` data set is a _data.frame_ with `r nrow(wbttoolparameter
  
  - `"parameter_class"` - parameter type
  
- - `"parameter_details"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
+ - `"parameter_detail"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 
  - `"default_value"` - parameter default value, if any
  

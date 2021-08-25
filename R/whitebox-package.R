@@ -39,7 +39,7 @@ NULL
 #' - `"flags"` - flags used to specify parameter on command line; comma separated
 #' - `"description"` - parameter description
 #' - `"parameter_class"` - parameter type
-#' - `"parameter_details"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
+#' - `"parameter_detail"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 #' - `"default_value"` - parameter default value, if any
 #' - `"optional"` - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
 #' - `"label"` - labels for selected subset of `"flags"` **used as R function argument names** for `wbt_` functions

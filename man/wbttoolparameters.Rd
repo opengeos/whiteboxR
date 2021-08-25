@@ -13,7 +13,7 @@ A \code{data.frame} with 1706 observations of 13 variables
 \item \code{"flags"} - flags used to specify parameter on command line; comma separated
 \item \code{"description"} - parameter description
 \item \code{"parameter_class"} - parameter type
-\item \code{"parameter_details"} - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
+\item \code{"parameter_detail"} - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 \item \code{"default_value"} - parameter default value, if any
 \item \code{"optional"} - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
 \item \code{"label"} - labels for selected subset of \code{"flags"} \strong{used as R function argument names} for \code{wbt_} functions

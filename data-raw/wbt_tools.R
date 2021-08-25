@@ -63,7 +63,7 @@ wbttools <- data.frame(tool_name = x[nchar(x) > 0], toolbox_name = y, descriptio
   params$parameter_type <- NULL
   
   # return two new fields generalized "parameter_class" ~parameter type/kinds, primary datatypes
-  #                       and details "parameter_details" For files any details; 
+  #                       and details "parameter_detail" For files any details; 
   #                       For OptionList any default options, comma separated
   params$parameter_class <- names(paramdetails)
   params$parameter_detail <- as.character(paramdetails)
