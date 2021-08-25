@@ -3,7 +3,7 @@
 #' `wbt_init()`: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with `exe_path`. 
 #' 
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
-#'
+#' @param ... additional arguments to `wbt_options()`
 #' @return `wbt_init()`: logical; `TRUE` if binary file is found at `exe_path`
 #' @export
 #' @seealso [install_whitebox()] [whitebox]
@@ -14,16 +14,18 @@
 #' # or set path to binary as an argument
 #' # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 #' }
-wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE)) {
+wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   
   # if exe_path is not NULL and exists, update options
   if (!is.null(exe_path) && file.exists(exe_path)) {
-    wbt_options(exe_path = exe_path)
+    wbt_options(exe_path = exe_path, ...)
   }
 
   # check whether path is valid
-  check_whitebox_binary()
-
+  res <- check_whitebox_binary()
+  
+  # if binary was found and the internal path matches what the user (may have) set, return TRUE
+  return(res && wbt_exe_path(shell_quote = FALSE) == exe_path)
 }
 
 #' @description `wbt_options()`: Get/set package options
@@ -88,7 +90,12 @@ wbt_verbose <- function(verbose = NULL) {
   }
   
   # package option subsequently, default true for interactive use
-  invisible(getOption("whitebox.verbose", default = interactive()))
+  res <- getOption("whitebox.verbose", default = interactive())
+  if (!is.logical(res)) {
+    message('invalid value for whitebox.verbose, defaulting to interactive()')
+    res <- interactive()
+  }
+  invisible(res)
 }
 
 #' @export
@@ -97,9 +104,24 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   # Check for binary file in 'WBT' directory.
   exe_path <- wbt_exe_path(shell_quote = FALSE)
   os <- Sys.info()["sysname"]
-
+  
+  .unsupported <- function(){
+    message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")     
+    message("Pre-built binaries are available only for 64-bit Window, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
+    message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n","
+                  https://github.com/giswqs/whitebox-bin/")
+    message("You can follow the instructions at https://github.com/jblindsay/whitebox-tools to use cargo to build the Rust library from source.\n")
+    message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
+                 "    wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
+  }
+  
   if (!file.exists(exe_path)) {
-
+    
+    # install_whitebox/wbt_install is 64-bit only
+    if (.Machine$sizeof.pointer != 8) {
+      return(invisible(.unsupported()))
+    }
+    
     if (os == "Linux") {
       url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_linux_amd64.zip"
     } else if (os == "Windows") {
@@ -107,10 +129,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     } else if (os == "Darwin") {
       url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_darwin_amd64.zip"
     } else {
-      message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")
-      message("Follow the instructions at https://github.com/jblindsay/whitebox-tools that use cargo to build the Rust library from source.\n")
-      message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
-                     "    > wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
+      return(invisible(.unsupported()))
     }
 
     filename <- basename(url)
@@ -152,7 +171,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
 
 #' Download and Install WhiteboxTools
 #'
-#' This function downloads the WhiteboxTools binary if needed. This only works for 64-bit Linux, Windows and Mac OSX platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+#' This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
@@ -233,10 +252,7 @@ wbt_default_path <- function() {
 #' wbt_help()
 #' }
 wbt_help <- function() {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--help")
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call("--help")
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -254,10 +270,7 @@ wbt_help <- function() {
 #' wbt_license()
 #' }
 wbt_license <- function() {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--license")
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call("--license")
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -275,10 +288,7 @@ wbt_license <- function() {
 #' wbt_version()
 #' }
 wbt_version <- function() {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--version")
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call("--version")
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -298,13 +308,7 @@ wbt_version <- function() {
 #' wbt_list_tools("lidar")
 #' }
 wbt_list_tools <- function(keywords = NULL) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  args <- paste(wbt_exe, "--listtools")
-  if (!is.null(keywords)) {
-    args <- paste(args, keywords)
-  }
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste("--listtools", keywords))
   ret <- ret[ret != ""]
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
@@ -327,14 +331,7 @@ wbt_list_tools <- function(keywords = NULL) {
 #' wbt_toolbox("breach_depressions")
 #' }
 wbt_toolbox <- function(tool_name = NULL) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste(wbt_exe, "--toolbox=")
-  if (!is.null(tool_name)) {
-    args <- paste(args, tool_name)
-  }
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste0("--toolbox=", tool_name))
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -356,14 +353,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 #' wbt_tool_help("lidar_info")
 #' }
 wbt_tool_help <- function(tool_name = NULL) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste(wbt_exe, "--toolhelp=")
-  if (!is.null(tool_name)) {
-    args <- paste0(args, tool_name)
-  }
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste0("--toolhelp=", tool_name))
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -388,12 +378,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 #' wbt_tool_parameters("lidar_info")
 #' }
 wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste0("--toolparameters=", tool_name)
-  args <- paste(wbt_exe, args)
-  ret <- system(args, intern = TRUE)  
+  ret <- wbt_system_call(paste0("--toolparameters=", tool_name))
   if (wbt_verbose() && !quiet) {
     cat(ret, sep = "\n")
   }
@@ -415,12 +400,7 @@ wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
 #' }
 #' @importFrom utils browseURL
 wbt_view_code <- function(tool_name, viewer = FALSE) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  args <- paste0("--viewcode=", tool_name)
-  args <- paste(wbt_exe, args)
-  ret <- system(args, intern = TRUE)
+  ret <- wbt_system_call(paste0("--viewcode=", tool_name))
   if (viewer) {
     utils::browseURL(ret)
   }
@@ -430,7 +410,6 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
   invisible(ret)
 }
 
-
 #' Run a tool in WhiteboxTools by name
 #'
 #' Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in `tool_name` it is removed to match the definitions in `wbt_list_tools()`
@@ -438,8 +417,10 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' @param tool_name The name of the tool to run.
 #' @param args Tool arguments.
 #' @param verbose_mode Verbose mode. Without this flag, tool outputs will not be printed.
+#' @param command_only Return command that would be run with `system()`? Default: `FALSE`
 #'
-#' @return Returns the output descriptions of the tool.
+#' @return Returns the (character) output of the tool. 
+#'
 #' @export
 #' @seealso \link{wbt_list_tools}
 #' @examples
@@ -452,24 +433,88 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
 #' } 
-wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE) {
-  wbt_init()
-  wbt_exe <- wbt_exe_path()
-  tool_name <- wbt_internal_tool_name(tool_name)
-  arg1 <- paste0("--run=", tool_name)
-  args2 <- paste(wbt_exe, arg1, args, "-v")
-  ret <- system(args2, intern = TRUE)
-  if (!verbose_mode) {
-    ret <- paste(tool_name, "-", utils::tail(ret, n = 1))
+wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = FALSE) {
+  
+  # build the call with wbt_system_call()
+  ret <-  wbt_system_call(paste(args, "-v"),
+                          tool_name = tool_name,
+                          command_only = command_only)
+        
+  if (command_only) {
+    return(ret)
   }
+  
+  # produce a custom error message for tools to indicate it did not run
+  if (length(ret) == 0 || all(nchar(ret) == 0) || !is.null(attr(ret, 'status'))) {
+    ret <- paste(tool_name, "-", "Elapsed Time: NA [did not run]")
+  } else if (!verbose_mode) {
+    ret <- paste(tool_name, "-", ret[length(ret)])
+  }
+  
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
+  
   invisible(ret)
 }
 
+# sanitize tool names from user input and R methods (function names, case variants etc)
 wbt_internal_tool_name <- function(tool_name) {
   gsub("^(whitebox::)?(wbt_)?", "", tool_name)
 }
 
 
+# wrapper method for system()
+wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
+  wbt_init()
+  wbt_exe <- wbt_exe_path()
+  args2 <- argstring
+  tool_name <- list(...)[["tool_name"]]
+  
+  # allow tool_name to be specified for --run= argument only via ...
+  if (!is.null(tool_name) && tool_name != "") {
+    tool_name <- wbt_internal_tool_name(tool_name)
+    args2 <- paste0("--run=", tool_name, " ", argstring)
+    
+    # TODO: QC on arguments based on supplied tool name and related metadata
+    
+  } else {
+    tool_name <- ""
+  }
+  
+  exeargs <- paste(wbt_exe, args2)
+  
+  # support command_only argument
+  if (command_only) {
+    return(exeargs)
+  }
+  
+  stopmsg <- paste0("\nError running WhiteboxTools", 
+                    ifelse(tool_name != "",  paste0(" (", tool_name, ")"), ""), "\n",
+                    "\twhitebox.exe_path: ", wbt_exe, "; File exists? ", 
+                                                         file.exists(wbt_exe_path(shell_quote = FALSE)),
+                    "\n\tArguments: ", args2)
+  
+  ret <- try(suppressWarnings(tryCatch(
+    system(exeargs, intern = TRUE, ignore.stderr = FALSE, ignore.stdout = FALSE),
+    error = function(err) stop(stopmsg, "\n\n", err, call. = FALSE)
+  )), silent = TRUE)
+  
+  if (inherits(ret, 'try-error')) {
+    message(ret[[1]])
+    ret <- ret[[1]]
+  } else if (!is.null(attr(ret, "status"))) {
+    message(stopmsg, "\n")
+    message("\nCommand had status ", attr(ret,"status"))
+  }
+  
+  invisible(ret)
+}
+
+
+# convenience method for setting RUST_BACKTRACE options for debugging
+wbt_rust_backtrace <- function(RUST_BACKTRACE = c("0", "1", "full")) {
+  Sys.setenv(RUST_BACKTRACE = match.arg(as.character(RUST_BACKTRACE)[1], 
+                                        choices = c("0", "1", "full")))
+  invisible(Sys.getenv("RUST_BACKTRACE", unset = "0"))
+}

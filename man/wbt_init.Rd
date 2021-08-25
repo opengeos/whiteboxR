@@ -6,7 +6,7 @@
 \alias{wbt_verbose}
 \title{Initialize WhiteboxTools}
 \usage{
-wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE))
+wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE), ...)
 
 wbt_options(exe_path = NULL, verbose = NULL)
 
@@ -14,6 +14,8 @@ wbt_verbose(verbose = NULL)
 }
 \arguments{
 \item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.}
+
+\item{...}{additional arguments to \code{wbt_options()}}
 
 \item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
 }

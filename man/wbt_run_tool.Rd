@@ -4,7 +4,7 @@
 \alias{wbt_run_tool}
 \title{Run a tool in WhiteboxTools by name}
 \usage{
-wbt_run_tool(tool_name, args, verbose_mode = FALSE)
+wbt_run_tool(tool_name, args, verbose_mode = FALSE, command_only = FALSE)
 }
 \arguments{
 \item{tool_name}{The name of the tool to run.}
@@ -12,9 +12,11 @@ wbt_run_tool(tool_name, args, verbose_mode = FALSE)
 \item{args}{Tool arguments.}
 
 \item{verbose_mode}{Verbose mode. Without this flag, tool outputs will not be printed.}
+
+\item{command_only}{Return command that would be run with \code{system()}? Default: \code{FALSE}}
 }
 \value{
-Returns the output descriptions of the tool.
+Returns the (character) output of the tool.
 }
 \description{
 Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in \code{tool_name} it is removed to match the definitions in \code{wbt_list_tools()}

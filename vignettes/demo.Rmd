@@ -1,0 +1,535 @@
+---
+title: "whitebox Demo"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{whitebox Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 6 
+)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(whitebox)
+
+# sample code to check and install whitebox to a custom path
+
+# if (!whitebox::check_whitebox_binary()) {
+#   wd <- tempdir()
+#   whitebox::install_whitebox(wd)
+#   whitebox::wbt_init(wd = file.path(wd, "WBT", basename(whitebox::wbt_default_path())))
+# }
+
+# system and package dependencies must be met to build the vignette
+stopifnot(requireNamespace("raster"))
+```
+
+## Introduction 
+
+whitebox is an R frontend for the 'WhiteboxTools' library, which is an advanced geospatial data analysis platform developed by Prof. John Lindsay at the University of Guelph's Geomorphometry and Hydrogeomatics Research Group. 
+
+'WhiteboxTools' can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. 'WhiteboxTools' also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing. 
+
+WhiteboxTools is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS.
+
+This demonstration shows how to use the whitebox package to integrate WhiteboxTools with R. 
+ 
+Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers & Geosciences, 95, 75-84. doi:[10.1016/j.cageo.2016.07.003](http://dx.doi.org/10.1016/j.cageo.2016.07.003).
+
+## Setup
+
+Load the whitebox library.
+
+```{r}
+library(whitebox)
+```
+
+### How `whitebox` works
+
+The current implementation of whitebox generates `system()` calls to a local WhiteboxTools binary: usually `whitebox_tools` or `whitebox_tools.exe`
+
+You can find the binary path that the package is currently going to use with `wbt_exe_path()`
+
+```{r}
+wbt_exe_path(shell_quote = FALSE)
+```
+
+### Interfacing with R spatial packages
+
+The results of runs of WhiteboxTools via the whitebox package wrapper methods are specified as file paths for output files (often rasters in GeoTIFF format, sometimes other formats; other cases shapefiles, HTML output, LiDAR-related files etc.)
+
+Many R users will be interacting with raster data with one of the many available R packages for spatial data. In this vignette we will use the `raster` package for visualization. Just as easily we could have used `terra`, `stars` or other options available in the R ecosystem.
+
+Saving your "output" file paths as a variable so that you can use them later to load the file into an R object is the main way to view your output.
+
+#### `raster`
+
+A demonstration workflow involving the popular raster package follows:
+
+```{r}
+library(raster)
+library(whitebox)
+
+# DEMO: calculate slope with WhiteboxTools and raster
+
+# Typically the input/output paths are stored as variables
+
+# sample DEM input GeoTIFF
+input <- system.file("extdata", "DEM.tif", package = "whitebox")
+
+# output file (to be created)
+output <- file.path(tempdir(), "slope.tif")
+```
+
+Run a tool such as `wbt_slope()` or `"Slope"`.
+
+WhiteboxTools reads from `input` and writes to `output`.
+
+```{r}
+wbt_slope(input, output, units = 'radians')
+```
+
+```{r}
+if (file.exists(output)) {
+  # create a RasterLayer from file output path
+  outputras <- raster::raster(output)
+}
+```
+
+In this case, we can achieve a similar slope map result using `raster::terrain()`, so we will create and plot a RasterLayer from `output` and compare the two.
+
+```{r}
+if (file.exists(output)) {
+  # par(mfrow = c(2, 1), mar = c(1, 1, 1, 1))
+  
+  # inspect the output graphically
+  raster::plot(
+    outputras,
+    main = "whitebox::wbt_slope() [radians]",
+    axes = FALSE, horizontal = TRUE
+  )
+  
+  # calculate equivalent using raster::terrain() on input
+  raster::plot(
+    raster::terrain(raster::raster(input, crs = "EPSG:26918")),
+    main = "raster::terrain() [radians]",
+    axes = FALSE, horizontal = TRUE
+  )
+
+# the RasterLayer retains a reference to the input file name
+raster::filename(outputras)
+}
+```
+
+The `RasterLayer`, `SpatRaster` and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.
+
+Use `raster::filename()` to get the "source" file name. If you are using a terra `SpatRaster` objects the equivalent method is `terra::sources()`.
+
+### Setting WhiteboxTools paths 
+
+If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation.
+
+Most often you will be able to use `whitebox::install_whitebox()` to download the latest binaries that correspond to the available version of the R package. However, this is not required. 
+You  have the ability to compile WhiteboxTools yourself and install it anywhere for the whitebox package. See https://github.com/jblindsay/whitebox-tools for details on building from source.
+
+Specify the path to `whitebox_tools` executable with `whitebox.exe_path` option, `wbt_init()` provides the standard means to set `whitebox.exe_path` for a session.
+
+### `wbt_init()`
+
+`wbt_init()` is used to set and check the executable path of the binary executable that commands are passed to. 
+The executable path and other options are stored as package options, and can be over-ridden by system environment variables. A default value `wbt_exe_path(shell_quote = FALSE)` is passed when the `exe_path` argument is left unspecified.
+
+```{r}
+# inspect where wbt_init() will be checking
+wbt_exe_path(shell_quote = FALSE)
+
+# TRUE when file is found at one of the user specified paths or package default
+# FALSE when whitebox_tools does not exist at path
+wbt_init()
+```
+
+```{r, eval=FALSE}
+# set path manually to whitebox_tools executable, for instance:
+wbt_init(exe_path = '/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools')
+```
+
+Any other package options other than `exe_path` as detailed in `?whitebox::whitebox`, can be set with `wbt_init(...)` or `wbt_options()`.
+
+### Long-term Package Option Settings
+
+For long-term package option settings you can put `whitebox_tools` on your `$PATH` and set `R_WHITEBOX_EXE_PATH`, perhaps in your user `.Rprofile` or `~/.profile`.
+
+This command will check your PATH environment variable for `whitebox_tools` and set the path to value found: 
+
+```r
+Sys.setenv(R_WHITEBOX_EXE_PATH = Sys.which("whitebox_tools"))
+```
+
+If you would rather not set the path to `whitebox_tools` binary from `$PATH`, you can set `R_WHITEBOX_EXE_PATH` manually.
+
+Replace the `Sys.which()` call with a custom path string as needed.
+
+#### Other Tips
+
+On Windows you can add the path to `whitebox_tools.exe` as a new entry `R_WHITEBOX_EXE_PATH` in User or System Environment variable.
+
+On Linux/Mac you can set `R_WHITEBOX_EXE_PATH` directly with `export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"`.
+
+
+### `wbt_verbose()`
+
+A helper method for setting the `whitebox.verbose` option is `wbt_verbose()`. It allows the user to get and set the package default verbosity level for running tools and other utility methods.
+
+By default, the result of `wbt_verbose()` is the result of `interactive()` so tools will print extra console output when you are there to see it. This is used in a variety of `wbt_*` methods to allow the package option to control output for many functions in a consistent manner. hide it in your automated tests, markdown documents, vignettes etc.
+
+In this vignette we use `wbt_verbose()` package option `whitebox.verbose` is set to `TRUE` to print out the tool name and elapsed time whenever we run a tool. 
+
+```{r}
+# force output when run non-interactively
+wbt_verbose(TRUE)
+```
+
+When whitebox.verbose is `FALSE` no output will be printed at all. 
+
+This package-level verbose option does not control the `verbose_mode` argument values passed to individual `wbt_*` functions that have them at this time. Controlling their output (one line v.s. many) would require a third option to be implemented for this argument such as `"all"`. For now users have control over those arguments to print extra output, and `wbt_verbose()` has a binary logical result.
+
+## Running tools
+
+Specify input and output paths, and any other options, as specified in package reference:
+
+ - https://giswqs.github.io/whiteboxR/reference/index.html
+
+For instance, here we use the tool "BreachDepressions" to pre-process a Digital Elevation Model (DEM) so we can identify flow pathways.
+
+```{r}
+# sample DEM file path in package extdata folder
+input <- system.file("extdata", "DEM.tif", package="whitebox")
+
+# output file name
+output <- file.path(tempdir(), "output.tif")
+
+# run breach_depressions tool
+wbt_breach_depressions(dem = input, output = output)
+```
+
+For more info see: `?wbt_breach_depressions`
+
+These `wbt_*_tool_name_*()` functions are wrappers around the `wbt_run_tool()` function that does the `system()` call given a function-specific argument string.
+
+```{r}
+# sample DEM file path in package extdata folder
+input <- system.file("extdata", "DEM.tif", package="whitebox")
+
+# output file name
+output <- file.path(tempdir(), "output.tif")
+
+# run breach_depressions tool
+wbt_run_tool(tool_name = "BreachDepressions", args = paste0("--dem=", input, " --output=", output))
+```
+
+The above method of creating `wbt_breach_depressions(dem = ..., output = ...)` to handle `wbt_run_tool("BreachDepressions", args = ...)` makes it easy to generate static methods that have parity with the latest WhiteboxTools interface.
+
+### Example: Compare input v.s. output with `raster`
+
+We use the raster R package to read the GeoTIFF outputs from WhiteboxTools.
+
+#### Setup
+
+```{r}
+library(raster)
+
+# sample DEM file path in package extdata folder
+input <- system.file("extdata", "DEM.tif", package="whitebox")
+
+# output file name
+output <- file.path(tempdir(), "output.tif")
+```
+
+#### Run `wbt_breach_depressions()` (BreachDepressions tool)
+
+```{r}
+# run breach_depressions tool
+wbt_breach_depressions(dem = input, output = output)
+```
+
+#### Visualize results with `raster`
+
+```{r}
+# create raster object from input file
+input <- raster(input)
+
+if (file.exists(output)) {
+  # create raster object from output file
+  output <- raster(output)
+  
+  # par(mar = c(2, 1, 2, 1))
+  # inspect input v.s. output
+  plot(input, axes = FALSE, horizontal = TRUE, box = FALSE, main = "DEM")
+  plot(output, axes = FALSE, horizontal = TRUE, box = FALSE, 
+       main = "DEM (Breached Depressions)")
+  
+  # inspect numeric difference (output - input) 
+  plot(output - input, axes = FALSE, horizontal = TRUE, box = FALSE, 
+       main = "Difference ([Breached Depressions] - [DEM])")
+}
+```
+
+### Example: Identifying Tributaries
+
+Here we will take our processing of DEMs a bit further by performing several WhiteboxTools operations in sequence.
+
+We are interested in identifying and ranking tributaries of watercourses (streams and rivers).
+
+A package that makes use of the whitebox R package is [hydroweight](https://github.com/bkielstr/hydroweight).
+
+Here is a brief snippet based on the beginning of the hydroweight README showing how the breached DEM we made above can be used in a spatial hydrological analysis of stream networks.
+
+#### Setup
+
+```{r}
+library(whitebox)
+library(raster)
+
+## Import toy_dem from whitebox package
+toy_file <- system.file("extdata", "DEM.tif", package = "whitebox")
+toy_dem <- raster(x = toy_file, values = TRUE)
+crs(toy_dem) <- "EPSG:26918"
+
+## Generate wd as a temporary directory. 
+## Replace with your own path, or "." for current directory
+wd <- tempdir()
+
+## Write toy_dem to working directory
+writeRaster(
+  x = toy_dem, filename = file.path(wd, "toy_dem.tif"),
+  overwrite = TRUE
+)
+```
+
+#### `wbt_breach_depressions()` -- Breach DEM Depressions
+
+First we pre-process by breaching depressions in the DEM
+
+```{r}
+## Breach depressions to ensure continuous flow
+wbt_breach_depressions(
+  dem = file.path(wd, "toy_dem.tif"),
+  output = file.path(wd, "toy_dem_breached.tif")
+)
+```
+
+#### `wbt_d8_pointer()` -- Calculate Flow Direction
+
+Then we generate the direction of flow on the DEM surface using the "D8" flow pointer method 
+
+```{r}
+## Generate d8 flow pointer (note: other flow directions are available)
+wbt_d8_pointer(
+  dem = file.path(wd, "toy_dem_breached.tif"),
+  output = file.path(wd, "toy_dem_breached_d8.tif")
+)
+```
+
+#### `wbt_d8_flow_accumulation()` -- Flow Accumulation
+
+Once we calculate the direction of flow by some method, we calculate cumulative flow
+
+For example with `wbt_d8_flow_accumulation()`:
+
+```{r}
+## Generate d8 flow accumulation in units of cells (note: other flow directions are available)
+wbt_d8_flow_accumulation(
+  input = file.path(wd, "toy_dem_breached.tif"),
+  output = file.path(wd, "toy_dem_breached_accum.tif"),
+  out_type = "cells"
+)
+```
+
+##### Additional Flow Direction and Accumulation Tools
+
+In addition to D8 flow pointers (flow direction), there are several other options for both direction and accumulation such as FD8, D-infinity, and D-infinity.
+
+ - Keyword "Pointer" tools: `"D8Pointer"`, `"DInfPointer"`, `"FD8Pointer"`, `"Rho8Pointer"`
+
+ - Keyword "FlowAccumulation" tools: `"D8FlowAccumulation"`, `"DInfFlowAccumulation"`, `"FD8FlowAccumulation"`, `"MDInfFlowAccumulation"` 
+
+Search for more tools involving `"flow pointer"` by key word: `wbt_list_tools(keyword = "flow pointer")`
+
+```{r, echo = FALSE}
+wbt_list_tools(keyword = "flow pointer")
+```
+
+This is just an example of the wealth of tool options made available by the WhiteboxTools platform.
+
+#### `wbt_extract_streams()` -- Extract Stream Network
+
+With our flow accumulation raster in hand, we can extract a stream network with `wbt_extract_streams()` based on a threshold (e.g. `100`) of accumulated flow. This threshold value you choose will depend on analysis goals, the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM. 
+
+```{r}
+## Generate streams with a stream initiation threshold of 1000 cells
+wbt_extract_streams(
+  flow_accum = file.path(wd, "toy_dem_breached_accum.tif"),
+  output = file.path(wd, "toy_dem_streams.tif"),
+  threshold = 100
+)
+
+```
+
+#### `wbt_tributary_identifier()` -- Identify Tributaries
+
+Next, let's identify tributaries. This function `wbt_tributary_identifier()` is a little more complicated because it takes takes two inputs:
+
+ - Our raster D8 pointer file.
+ 
+ - And our raster streams file.
+ 
+```{r}
+wbt_tributary_identifier(
+  d8_pntr = file.path(wd, "toy_dem_breached_d8.tif"),
+  streams = file.path(wd, "toy_dem_streams.tif"),
+  output = file.path(wd, "toy_dem_tributaries.tif")
+)
+```
+
+
+
+#### Compare results
+
+Finally, we compare results of `wbt_extract_streams()` with `wbt_tributary_identifier()`
+
+```{r}
+if (file.exists(file.path(wd, "toy_dem_streams.tif"))) {
+  # par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))
+  
+  plot(
+    raster(file.path(wd, "toy_dem_streams.tif")),
+    main = "Streams",
+    col = "black",
+    axes = FALSE,
+    horizontal = TRUE,
+    box = FALSE
+  )
+  
+  plot(
+    raster(file.path(wd, "toy_dem_tributaries.tif")),
+    main = "TributaryIdentifier",
+    axes = FALSE,
+    horizontal = TRUE,
+    box = FALSE
+  )
+}
+```
+
+
+## Appendix: `wbt_*` utility functions
+
+These methods provide access to WhiteboxTools executable parameters and metadata.
+
+### `wbt_help()`
+
+`wbt_help()` prints the WhiteboxTools help: a listing of available commands for executable
+
+```{r}
+wbt_help()
+```
+
+### `wbt_license()`
+
+`wbt_license()` prints the WhiteboxTools license
+
+```{r}
+wbt_license()
+```
+
+### `wbt_version()`
+
+Prints the WhiteboxTools version
+
+```{r}
+wbt_version()
+```
+
+### `wbt_list_tools()`
+
+Use `wbt_list_tools()` to list all available tools in WhiteboxTools. In v1.5.0 this is 448 tools!
+
+```{r, eval=FALSE}
+wbt_list_tools()
+```
+
+The full list can be an overwhelming amount of output, so you pass the `keyword` argument to search and filter.
+
+For example we list tools with keyword 'flowaccumulation' in tool name or description.
+
+```{r}
+wbt_list_tools(keywords = "flowaccumulation")
+```
+
+### `wbt_tool_help()`
+
+Once we find a tool that we are interested in using, we can investigate what sort of parameters it takes. The R methods generally take the same named parameters. 
+
+R functions have the naming scheme `wbt_tool_name` where `_` is used for spaces, whereas the tools themselves have no spaces. 
+
+`wbt_tool_help("tributaryidentifier")` shows the command line help for a tool by name.
+
+```{r}
+wbt_tool_help("tributaryidentifier")
+```
+
+`?wbt_tributary_identifier` shows the corresponding R function help, which is derived from the command line help page and other metadata.
+
+```{r}
+?wbt_tributary_identifier
+```
+
+### `wbt_toolbox()` 
+
+Another way that tools are organized in WhiteboxTools is by "toolbox."
+
+`wbt_toolbox()` prints the toolbox for a specific tool (or all tools if none specified)
+
+```{r}
+wbt_toolbox(tool_name = "aspect")
+```
+
+Print the full list by not specifying `tool_name`
+
+```{r, eval=FALSE}
+wbt_toolbox()
+```
+
+### `wbt_tool_parameters()`
+
+`wbt_tool_parameters()` retrieves the tool parameter descriptions for a specific tool as JSON formatted string.
+
+```{r}
+wbt_tool_parameters("slope")
+```
+
+### `wbt_view_code()`
+
+WhiteboxTools is written in Rust and is open source. You can view the source code for a specific tool on the source code repository.
+
+```{r}
+wbt_view_code("breach_depressions")
+```
+
+Use the argument `viewer=TRUE` to use `browseURL()` to open a browser window to the corresponding GitHub page.
+
+
+```{r, echo=FALSE}
+# cleanup temp files
+wd <- tempdir()
+unlink(file.path(wd, "slope.tif"))
+unlink(file.path(wd, "output.tif"))
+unlink(list.files(wd, "^toy_dem.*tif*$", full.names = TRUE))
+```

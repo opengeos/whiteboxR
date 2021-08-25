@@ -135,7 +135,7 @@ To find the tools that have an "OptionList" argument with parameter label "varia
 subset(wbttoolparameters, grepl("OptionList", parameter_class) & grepl("variant", argument_name))
 ```
 
-Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/wbtDATA/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.
+Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.
 
 ## Appendix: Tables of Function Names by Toolbox
 
