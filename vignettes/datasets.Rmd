@@ -82,37 +82,40 @@ The second data set provides details about the options by tool name.
 data("wbttoolparameters", package = "whitebox")
 ```
 
-The `wbttoolparameters` data set is a _data.frame_ with `r nrow(wbttoolparameters)` parameters and 13 variables:
+The `wbttoolparameters` data set is a _data.frame_ with `r nrow(wbttoolparameters)` parameters and `r ncol(wbttoolparameters)` variables:
 
+ - `"function_name"` - R function name
+ 
  - `"tool_name"` - WhiteboxTools tool name
  
  - `"name"` - WhiteboxTools tool parameter name
  
- - `"flags"` - flags used to specify parameter on command line; comma separated
+ - `"flags"` - flags used to specify parameter on command line; comma-separated
  
  - `"description"` - parameter description
  
- - `"parameter_type"` - parameter data type; character: data type(s), space, then possible values, comma-separated (if defined)
+ - `"parameter_class"` - parameter type
+ 
+ - `"parameter_details"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 
  - `"default_value"` - parameter default value, if any
  
  - `"optional"` - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
  
- - `"pkgflags"` - selected flags 1:1 with package function argument names (notably: `-i` and `-o` omitted)
-
- - `"argument_name"` - labels for `"pkgflags"`; **used as R function argument names**
+ - `"argument_name"` - labels for selected subset of `"flags"` **used as R function argument names** for `wbt_` functions
 
  - `"is_input"` - logical. Classification of 'input' parameters
  
  - `"is_output"` - logical. Classification of 'output' parameters
  
- - `"function_name"` - R function name
 
 ```{r}
 head(wbttoolparameters)
 ```
 
 Several fields in this table such as `flags` and `parameter_type` are "flattened" relative to the nested `wbt_tool_parameters()` output.
+
+The nested `parameter_type` from the JSON result is replaced with two variables in the data set: `parameter_class` and `parameter_details`
 
 This parameter _data.frame_ is useful to construct your own functions with `wbt_run_tool()` or for inspecting the types of tools that can be run on particular data types.
 
@@ -129,7 +132,7 @@ The variable `argument_name` is processed to be the subset of `flags` that corre
 To find the tools that have an "OptionList" argument with parameter label "variant" (flag: `--variant=`) we can use `subset()`
 
 ```{r}
-subset(wbttoolparameters, grepl("OptionList", parameter_type) & grepl("variant", argument_name))
+subset(wbttoolparameters, grepl("OptionList", parameter_class) & grepl("variant", argument_name))
 ```
 
 Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/wbtDATA/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.

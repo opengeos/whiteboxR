@@ -7,18 +7,18 @@
 \format{
 A \code{data.frame} with 1706 observations of 13 variables
 \itemize{
+\item \code{"function_name"} - R function name
 \item \code{"tool_name"} - WhiteboxTools tool name
 \item \code{"name"} - parameter name
 \item \code{"flags"} - flags used to specify parameter on command line; comma separated
 \item \code{"description"} - parameter description
-\item \code{"parameter_type"} - parameter data type; character: data type(s), space, then possible values, comma-separated (if defined)
+\item \code{"parameter_class"} - parameter type
+\item \code{"parameter_details"} - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 \item \code{"default_value"} - parameter default value, if any
 \item \code{"optional"} - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
-\item \code{"pkgflags"} - selected flags 1:1 with package function argument names (notably: \code{-i} and \code{-o} omitted)
-\item \code{"label"} - labels for \code{"pkgflags"} used as argument names
+\item \code{"label"} - labels for selected subset of \code{"flags"} \strong{used as R function argument names} for \code{wbt_} functions
 \item \code{"is_input"} - logical. Classification of 'input' parameters
 \item \code{"is_output"} - logical. Classification of 'output' parameters
-\item \code{"function"} - R function name
 }
 }
 \source{

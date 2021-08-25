@@ -33,22 +33,21 @@ NULL
 #' @name wbttoolparameters
 #' @docType data 
 #' @format A `data.frame` with 1706 observations of 13 variables
+#' - `"function_name"` - R function name
 #' - `"tool_name"` - WhiteboxTools tool name
 #' - `"name"` - parameter name
 #' - `"flags"` - flags used to specify parameter on command line; comma separated
 #' - `"description"` - parameter description
-#' - `"parameter_type"` - parameter data type; character: data type(s), space, then possible values, comma-separated (if defined)
+#' - `"parameter_class"` - parameter type
+#' - `"parameter_details"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 #' - `"default_value"` - parameter default value, if any
 #' - `"optional"` - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
-#' - `"pkgflags"` - selected flags 1:1 with package function argument names (notably: `-i` and `-o` omitted)
-#' - `"label"` - labels for `"pkgflags"` used as argument names
+#' - `"label"` - labels for selected subset of `"flags"` **used as R function argument names** for `wbt_` functions
 #' - `"is_input"` - logical. Classification of 'input' parameters
 #' - `"is_output"` - logical. Classification of 'output' parameters
-#' - `"function"` - R function name
 #' @source [WhiteboxTools 1.5.0](https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0)
 #' @keywords datasets
 NULL
-
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
