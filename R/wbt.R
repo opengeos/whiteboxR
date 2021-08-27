@@ -460,7 +460,7 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
 
 # sanitize tool names from user input and R methods (function names, case variants etc)
 wbt_internal_tool_name <- function(tool_name) {
-  gsub("^(whitebox::)?(wbt_)?", "", tool_name)
+  gsub("^(whitebox::)?(wbt_)?", "", tool_name[length(tool_name)])
 }
 
 
