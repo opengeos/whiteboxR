@@ -460,7 +460,7 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
 
 # sanitize tool names from user input and R methods (function names, case variants etc)
 wbt_internal_tool_name <- function(tool_name) {
-  gsub("^(whitebox::)?(wbt_)?", "", tool_name[length(tool_name)])
+  gsub("^(whitebox::)?(wbt_)?", "", tool_name)
 }
 
 
@@ -470,6 +470,12 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
   wbt_exe <- wbt_exe_path()
   args2 <- argstring
   tool_name <- list(...)[["tool_name"]]
+  
+  if (length(tool_name) > 1) {
+    # take last tool_name in case of vector length >1
+    # e.g. whitebox::wbt_tool_name match.call() output
+    tool_name <- tool_name[length(tool_name)]
+  }
   
   # allow tool_name to be specified for --run= argument only via ...
   if (!is.null(tool_name) && tool_name != "") {
