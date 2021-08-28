@@ -17,7 +17,7 @@
 wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   
   # if exe_path is not NULL and exists, update options
-  if (!is.null(exe_path) && file.exists(exe_path)) {
+  if (!is.null(exe_path) && file.exists(exe_path) && exe_path != wbt_exe_path(shell_quote = FALSE)) {
     wbt_options(exe_path = exe_path, ...)
   }
 
@@ -435,6 +435,12 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' } 
 wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = FALSE) {
   
+  if (length(tool_name) > 1) {
+    # take last tool_name in case of vector length >1
+    # e.g. whitebox::wbt_tool_name match.call() output
+    tool_name <- tool_name[length(tool_name)]
+  }
+  
   # build the call with wbt_system_call()
   ret <-  wbt_system_call(paste(args, "-v"),
                           tool_name = tool_name,
@@ -471,10 +477,14 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
   args2 <- argstring
   tool_name <- list(...)[["tool_name"]]
   
+  # messages about misspecified arguments (e.g. tool_name to wbt_tool_help())
+  if (length(args2) > 1) {
+    message("NOTE: Argument string has length greater than 1; using first value")
+  }
+  
+  # messages about tool_name >1
   if (length(tool_name) > 1) {
-    # take last tool_name in case of vector length >1
-    # e.g. whitebox::wbt_tool_name match.call() output
-    tool_name <- tool_name[length(tool_name)]
+    message("NOTE: tool_name argument has length greater than 1; using first name")
   }
   
   # allow tool_name to be specified for --run= argument only via ...
@@ -500,7 +510,6 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
                     "\twhitebox.exe_path: ", wbt_exe, "; File exists? ", 
                                                          file.exists(wbt_exe_path(shell_quote = FALSE)),
                     "\n\tArguments: ", args2)
-  
   ret <- try(suppressWarnings(tryCatch(
     system(exeargs, intern = TRUE, ignore.stderr = FALSE, ignore.stdout = FALSE),
     error = function(err) stop(stopmsg, "\n\n", err, call. = FALSE)
