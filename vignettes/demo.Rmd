@@ -64,7 +64,7 @@ wbt_exe_path(shell_quote = FALSE)
 
 ### Interfacing with R spatial packages
 
-The results of runs of WhiteboxTools via the whitebox package wrapper methods are specified as file paths for output files (often rasters in GeoTIFF format, sometimes other formats; other cases shapefiles, HTML output, LiDAR-related files etc.)
+The results of runs of WhiteboxTools via the `whitebox` package are specified as file paths for output files (often rasters in GeoTIFF format, sometimes other formats; other cases shapefiles, HTML output, LiDAR-related files etc.)
 
 Many R users will be interacting with raster data with one of the many available R packages for spatial data. In this vignette we will use the `raster` package for visualization. Just as easily we could have used `terra`, `stars` or other options available in the R ecosystem.
 
@@ -133,19 +133,29 @@ The `RasterLayer`, `SpatRaster` and related classes in the raster and terra pack
 
 Use `raster::filename()` to get the "source" file name. If you are using a terra `SpatRaster` objects the equivalent method is `terra::sources()`.
 
-### Setting WhiteboxTools paths 
+### WhiteboxTools R setup
+
+### Installing WhiteboxTools
 
 If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation.
 
 Most often you will be able to use `whitebox::install_whitebox()` to download the latest binaries that correspond to the available version of the R package. However, this is not required. 
-You have the ability to compile WhiteboxTools yourself and install it anywhere for the `whitebox`package. See https://github.com/jblindsay/whitebox-tools for details on building from source.
 
-Specify the path to `whitebox_tools` executable with `whitebox.exe_path` option, `wbt_init()` provides the standard means to set `whitebox.exe_path` for a session.
+For general information consult the WhiteboxTools User Manual: https://jblindsay.github.io/wbt_book/install.html
 
-### `wbt_init()`
+You may download/compile WhiteboxTools yourself and install anywhere for use with the `whitebox` R package. 
 
-`wbt_init()` is used to set and check the executable path of the binary executable that commands are passed to. 
-The executable path and other options are stored as package options, and can be overridden by system environment variables. A default value `wbt_exe_path(shell_quote = FALSE)` is passed when the `exe_path` argument is left unspecified.
+For details on building from source see: https://github.com/jblindsay/whitebox-tools
+
+Specify the path to `whitebox_tools` executable with `whitebox.exe_path` option. 
+
+In `whitebox` `wbt_init()` is the standard way to set the "exe_path" for a session.
+
+### Package Settings with `wbt_init()`
+
+`wbt_init()` is used to set and check the path of the binary executable that commands are passed to. 
+
+The executable path and other options are stored as package options, and can be overridden by system environment variables. A default value `wbt_exe_path(shell_quote = FALSE)` is passed when the `exe_path` argument is unspecified.
 
 ```{r}
 # inspect where wbt_init() will be checking
@@ -156,12 +166,72 @@ wbt_exe_path(shell_quote = FALSE)
 wbt_init()
 ```
 
+This section will cover optional arguments to `wbt_init()` (`exe_path`, `wd` and `verbose`) and their corresponding options and helper functions.
+
+#### `exe_path` argument
+
+The `exe_path` argument to `wbt_init()` sets the `whitebox.exe_path` package option. `exe_path` is the path to a WhiteboxTools executable file. 
+The default value is the package installation directory, subdirectory `"WBT"`, followed by `whitebox_tools.exe` or `whitebox_tools` depending on your operating system.
+
 ```{r, eval=FALSE}
 # set path manually to whitebox_tools executable, for instance:
 wbt_init(exe_path = '/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools')
 ```
 
-Any package options other than `exe_path` as detailed in `?whitebox::whitebox` can be set with `wbt_init(...)` or `wbt_options()`.
+A way to find your `whitebox_tools` executable is if it is in a directory that exists in your PATH.
+This requires that you have the Unix tool `which` or one of its analogues.
+
+```r
+Sys.setenv(R_WHITEBOX_EXE_PATH = Sys.which("whitebox_tools"))
+```
+
+You can also set `R_WHITEBOX_EXE_PATH` manually.
+
+ - Replace the `Sys.which()` call with a custom path string as needed such as `"C:/path/to/whitebox_tools.exe"`.
+
+Package options other than `exe_path` (as detailed in `?whitebox::whitebox` and `?wbt_init`) can be set with `wbt_init(exe_path, ...)`, where `...` is additional named arguments corresponding to the `*` suffix in `whitebox.*` package options names. Use `wbt_options()` or specific methods like `wbt_verbose()`, `wbt_wd()` to get all values or set specific values.
+
+#### `wd` argument
+
+The `wd` argument can be used to set the WhiteboxTools working directory.
+
+A working directory specifies a base folder path where WhiteboxTools can find inputs and create outputs. Setting the `whitebox.wd` package option (via the `wd` argument to `wbt_init()` or `wbt_wd()`) aids the process of setting file paths.
+If a value is set for the option the `--wd` directory flag is added for tools that support it. 
+
+Before you set the working directory in a session the default output will be in your current R working directory unless directory is specified in your input/output arguments. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool.
+
+NOTE: once you have set a working directory in a session, the directory needs to be set somewhere new to "replace" the old value; just dropping the flag will **not** automatically change the working directory *back to your R working directory*\* and your output will show up in whatever folder you set initially.
+
+A helper method for setting the `whitebox.wd` option is `wbt_wd()`. 
+
+*To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. The next tool call will change the WhiteboxTools working directorysetting to the new path. After this point the flag need not be specified [until you wish to change again]. 
+
+```r
+wbt_wd("") # "" equivalent to getwd()
+```
+
+#### `verbose` argument
+
+The `verbose` argument is used to set the package option related to tool "verbosity": `whitebox.verbose`. When `whitebox.verbose` is `FALSE` no output will be `cat()` to the console by running tools. 
+
+A helper method for getting and setting the `whitebox.verbose` option is `wbt_verbose()`. `wbt_verbose()` is used throughout the package to check what level of verbosity should be used.
+By default, the result of `wbt_verbose()` is the result of `interactive()` so tools will print extra console output when you are there to see it. This is used in a variety of `wbt_*` methods to allow the package option to control output for many functions in a consistent manner, hide output in your automated tests, markdown documents, vignettes etc.
+
+In this vignette we use `wbt_verbose(TRUE)` so the package option `whitebox.verbose` is set to `TRUE` 
+
+
+```{r}
+# force output when run non-interactively (knitr)
+wbt_verbose(TRUE)
+```
+
+This is mainly to print out the tool name and elapsed time whenever we run a tool:
+
+```
+#> wbt_breach_depressions - Elapsed Time (excluding I/O): 0.12s
+```
+
+This package-level verbose option can also control the `verbose_mode`  values passed to `wbt_*` tool functions. Turning on "full" output requires a third option to be set for this argument: `"all"`. Use `wbt_verbose("all")`. `wbt_verbose()` will still return `TRUE` when the `whitebox.verbose` option is `"all"`.
 
 ### Long-term Package Option Settings
 
@@ -169,36 +239,9 @@ For long-term package option settings you can put `whitebox_tools` on your `$PAT
 
 This command will check your PATH environment variable for `whitebox_tools` and set the path to value found: 
 
-```r
-Sys.setenv(R_WHITEBOX_EXE_PATH = Sys.which("whitebox_tools"))
-```
-
-If you would rather not set the path to `whitebox_tools` binary from `$PATH`, you can set `R_WHITEBOX_EXE_PATH` manually.
-
-Replace the `Sys.which()` call with a custom path string as needed.
-
-#### Other Tips
-
 On Windows you can add the path to `whitebox_tools.exe` as a new entry `R_WHITEBOX_EXE_PATH` in User or System Environment variable.
 
 On Linux/Mac you can set `R_WHITEBOX_EXE_PATH` directly with `export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"`.
-
-### `wbt_verbose()`
-
-A helper method for setting the `whitebox.verbose` option is `wbt_verbose()`. It allows the user to get and set the package default verbosity level for running tools and other utility methods.
-
-By default, the result of `wbt_verbose()` is the result of `interactive()` so tools will print extra console output when you are there to see it. This is used in a variety of `wbt_*` methods to allow the package option to control output for many functions in a consistent manner, hide it in your automated tests, markdown documents, vignettes etc.
-
-In this vignette we use `wbt_verbose()` package option `whitebox.verbose` is set to `TRUE` to print out the tool name and elapsed time whenever we run a tool. 
-
-```{r}
-# force output when run non-interactively
-wbt_verbose(TRUE)
-```
-
-When `whitebox.verbose` is `FALSE` no output will be printed at all. 
-
-This package-level verbose option does not control the `verbose_mode` argument values passed to individual `wbt_*` functions that have them at this time. Controlling their output (one line v.s. many) would require a third option to be implemented for this argument such as `"all"`. For now users have control over those arguments to print extra output, and `wbt_verbose()` has a binary logical result.
 
 ## Running tools
 
