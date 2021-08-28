@@ -138,14 +138,14 @@ Use `raster::filename()` to get the "source" file name. If you are using a terra
 If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation.
 
 Most often you will be able to use `whitebox::install_whitebox()` to download the latest binaries that correspond to the available version of the R package. However, this is not required. 
-You  have the ability to compile WhiteboxTools yourself and install it anywhere for the whitebox package. See https://github.com/jblindsay/whitebox-tools for details on building from source.
+You have the ability to compile WhiteboxTools yourself and install it anywhere for the `whitebox`package. See https://github.com/jblindsay/whitebox-tools for details on building from source.
 
 Specify the path to `whitebox_tools` executable with `whitebox.exe_path` option, `wbt_init()` provides the standard means to set `whitebox.exe_path` for a session.
 
 ### `wbt_init()`
 
 `wbt_init()` is used to set and check the executable path of the binary executable that commands are passed to. 
-The executable path and other options are stored as package options, and can be over-ridden by system environment variables. A default value `wbt_exe_path(shell_quote = FALSE)` is passed when the `exe_path` argument is left unspecified.
+The executable path and other options are stored as package options, and can be overridden by system environment variables. A default value `wbt_exe_path(shell_quote = FALSE)` is passed when the `exe_path` argument is left unspecified.
 
 ```{r}
 # inspect where wbt_init() will be checking
@@ -161,7 +161,7 @@ wbt_init()
 wbt_init(exe_path = '/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools')
 ```
 
-Any other package options other than `exe_path` as detailed in `?whitebox::whitebox`, can be set with `wbt_init(...)` or `wbt_options()`.
+Any package options other than `exe_path` as detailed in `?whitebox::whitebox` can be set with `wbt_init(...)` or `wbt_options()`.
 
 ### Long-term Package Option Settings
 
@@ -183,12 +183,11 @@ On Windows you can add the path to `whitebox_tools.exe` as a new entry `R_WHITEB
 
 On Linux/Mac you can set `R_WHITEBOX_EXE_PATH` directly with `export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"`.
 
-
 ### `wbt_verbose()`
 
 A helper method for setting the `whitebox.verbose` option is `wbt_verbose()`. It allows the user to get and set the package default verbosity level for running tools and other utility methods.
 
-By default, the result of `wbt_verbose()` is the result of `interactive()` so tools will print extra console output when you are there to see it. This is used in a variety of `wbt_*` methods to allow the package option to control output for many functions in a consistent manner. hide it in your automated tests, markdown documents, vignettes etc.
+By default, the result of `wbt_verbose()` is the result of `interactive()` so tools will print extra console output when you are there to see it. This is used in a variety of `wbt_*` methods to allow the package option to control output for many functions in a consistent manner, hide it in your automated tests, markdown documents, vignettes etc.
 
 In this vignette we use `wbt_verbose()` package option `whitebox.verbose` is set to `TRUE` to print out the tool name and elapsed time whenever we run a tool. 
 
@@ -197,7 +196,7 @@ In this vignette we use `wbt_verbose()` package option `whitebox.verbose` is set
 wbt_verbose(TRUE)
 ```
 
-When whitebox.verbose is `FALSE` no output will be printed at all. 
+When `whitebox.verbose` is `FALSE` no output will be printed at all. 
 
 This package-level verbose option does not control the `verbose_mode` argument values passed to individual `wbt_*` functions that have them at this time. Controlling their output (one line v.s. many) would require a third option to be implemented for this argument such as `"all"`. For now users have control over those arguments to print extra output, and `wbt_verbose()` has a binary logical result.
 
@@ -374,7 +373,7 @@ This is just an example of the wealth of tool options made available by the Whit
 With our flow accumulation raster in hand, we can extract a stream network with `wbt_extract_streams()` based on a threshold (e.g. `100`) of accumulated flow. This threshold value you choose will depend on analysis goals, the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM. 
 
 ```{r}
-## Generate streams with a stream initiation threshold of 1000 cells
+## Generate streams with a stream initiation threshold of 100 cells
 wbt_extract_streams(
   flow_accum = file.path(wd, "toy_dem_breached_accum.tif"),
   output = file.path(wd, "toy_dem_streams.tif"),
@@ -524,7 +523,6 @@ wbt_view_code("breach_depressions")
 ```
 
 Use the argument `viewer=TRUE` to use `browseURL()` to open a browser window to the corresponding GitHub page.
-
 
 ```{r, echo=FALSE}
 # cleanup temp files
