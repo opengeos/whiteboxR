@@ -177,10 +177,22 @@ wbt_verbose <- function(verbose = NULL) {
   if (length(verbose) != 1 || is.na(verbose)) {
     verbose <- NULL
   }
-  
+    
   # system environment var takes precedence
-  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE")
-  
+  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = "")
+  if (sysverbose == "all") {
+    
+    # wbt_verbose always return logical, "all" is a flavor of true
+    return(TRUE)
+    
+  } else if (sysverbose != "") {
+    
+    # take up to first 5 characters, uppercase eval/parse/convert to logical
+    # this should also allow for 0/1 to be specified and converted as needed to logical
+    sysverbose <- as.logical(eval(parse(text = toupper(substr(sysverbose, 0, 5)))))
+    
+  }
+    
   # if logical system env var, use that
   if (is.logical(sysverbose) && !is.na(sysverbose)) {
     return(sysverbose)
