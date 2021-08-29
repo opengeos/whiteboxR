@@ -36,8 +36,11 @@ test_that("wbt initialization [WhiteboxTools missing]", {
   #   - cant execute the text file; ignore.stderr = hide system err output during testing
   expect_message(res <- wbt_system_call("--run=slope --dem=foo.tif --output=bar.tif", ignore.stderr = TRUE))
   
-  # an error will return a character containing the error message and a "status" code attribute from system()
-  expect_true(is.character(res) && !is.null(attr(res, 'status')))
+  # an error will return a character containing the error message
+  expect_true(is.character(res))
+  
+  ## and a "status" code attribute from system() [platform dependent; tf not executable]
+  # !is.null(attr(res, 'status'))
   
   # cleanup and re-set package options
   unlink(tf)
