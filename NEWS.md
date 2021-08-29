@@ -2,15 +2,23 @@
 * Add package options for custom EXE path and verbosity
   * Changes behavior of `wbt_init()`; now only checks EXE path
   * Adds `install_whitebox()` to handle downloading and installing WhiteboxTools
-  * Use a system environment variable (`R_WHITEBOX_EXE_PATH`) or package option (`whitebox.exe_path`) 
-      * Get / set with `wbt_options(exe_path = "C:/path/to/whitebox_tools.exe")` or `wbt_init()`
   
-  * Verbosity controlled with (`R_WHITEBOX_VERBOSE`) or package option (`whitebox.verbose`) 
-      * Get / set with `wbt_options(verbose = TRUE)` or `wbt_verbose()`
+## New package options 
+    * `wbt_init()` can set any of the other options in the same call as the custom EXE path. 
+        * `wbt_options()` returns current option values
+    * Use a system environment variable (`R_WHITEBOX_EXE_PATH`) or package option (`whitebox.exe_path`) 
+        * Get / set with `wbt_init()`. 
+    * Verbosity controlled with (`R_WHITEBOX_VERBOSE`) or package option (`whitebox.verbose`) 
+        * Get / set with `wbt_verbose()`
+    * Working directory controlled with (`R_WHITEBOX_WD`) or package option (`whitebox.wd`) 
+        * Get / set with `wbt_wd()`
+        
 * New "whitebox Demo" vignette
+
 * New data `wbttools` and `wbttoolparameters` data.frame built from WhiteboxTools v1.5.0 and `wbt_tool_parameters()` output for full tool library
+
   * See the "whitebox Tool Metadata" vignette
- 
+
 # whitebox 1.5.0
 
 * Update to WhiteboxTools v1.5.0

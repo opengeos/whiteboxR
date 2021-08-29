@@ -3,12 +3,15 @@
 \name{wbt_init}
 \alias{wbt_init}
 \alias{wbt_options}
+\alias{wbt_wd}
 \alias{wbt_verbose}
 \title{Initialize WhiteboxTools}
 \usage{
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE), ...)
 
-wbt_options(exe_path = NULL, verbose = NULL)
+wbt_options(exe_path = NULL, wd = NULL, verbose = NULL)
+
+wbt_wd(wd = NULL)
 
 wbt_verbose(verbose = NULL)
 }
@@ -17,12 +20,16 @@ wbt_verbose(verbose = NULL)
 
 \item{...}{additional arguments to \code{wbt_options()}}
 
+\item{wd}{character; Default: \code{NULL}; if set the package option \code{whitebox.wd} is set specified path (if directory exists)}
+
 \item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
 }
 \value{
 \code{wbt_init()}: logical; \code{TRUE} if binary file is found at \code{exe_path}
 
 \code{wbt_options()}:  an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose} options
+
+\code{wbt_wd()}: character; when working directory is unset, will not add \verb{--wd=} arguments to calls and should be the same as using \code{getwd()}. See Details.
 
 \code{wbt_verbose()}: logical; defaults to result of \code{interactive()}
 }
@@ -32,10 +39,16 @@ wbt_verbose(verbose = NULL)
 \code{wbt_options()}: Get/set package options
 \itemize{
 \item \strong{\code{whitebox.exe_path}} - character. Path to executable file. The default value is the package installation directory, subdirectory \code{"WBT"}, followed by \code{whitebox_tools.exe} or \code{whitebox_tools}. Set the \code{whitebox.exe_path} option using \code{wbt_init()} \code{exe_path} argument
+\item \strong{\code{whitebox.wd}} - character. Path to WhiteboxTools working directory. Used as \code{--wd} argument for tools that support it when \code{wd} is not specified elsewhere.
 \item \strong{\code{whitebox.verbose}} - logical. Should standard output from calls to executable be \code{cat()} out for readability? Default is result of \code{interactive()}. Individual tools may have \code{verbose_mode} setting that produce only single-line output when \code{FALSE}. These argument values are left as the defaults defined in the package documentation for that function. When \code{whitebox.verbose=FALSE} no output is produced. Set the value of \code{whitebox.verbose} with \code{wbt_verbose()} \code{verbose} argument.
 }
 
+\code{wbt_wd()}: Get or Set the WhiteboxTools working directory
+
 \code{wbt_verbose()}: Check verbose options for WhiteboxTools
+}
+\details{
+\code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which is equivalent to \code{wbt_wd(getwd())}.
 }
 \examples{
 \dontrun{
@@ -48,8 +61,16 @@ wbt_verbose(verbose = NULL)
 
 ## wbt_options():
 
+# set multiple options (e.g. exe_path and verbose) with wbt_options()
 wbt_options(exe_path = "not/a/valid/path/whitebox_tools.exe", verbose = TRUE)
 
+}
+\dontrun{
+
+## wbt_wd():
+
+# set WBT working directory to R working directory
+wbt_wd(wd = getwd())
 }
 \dontrun{
 

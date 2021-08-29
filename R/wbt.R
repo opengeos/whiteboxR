@@ -16,21 +16,45 @@
 #' }
 wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   
-  # if exe_path is not NULL and exists, update options
-  if (!is.null(exe_path) && file.exists(exe_path) && exe_path != wbt_exe_path(shell_quote = FALSE)) {
+  # optional parameters specified by ...
+  initargs <- list(...)
+  wd <- initargs[["wd"]]
+  verbose <- initargs[["verbose"]]
+  
+  if (!is.character(exe_path) || length(exe_path) != 1) {
+    stop("exe_path must be a character vector with length 1", call. = FALSE)
+  }
+  
+  # if exe_path is not NULL and file exists, and value differs from the wbt_exe_path() result
+  if ((!is.null(exe_path) && 
+      file.exists(exe_path) &&
+      exe_path != wbt_exe_path(shell_quote = FALSE)) || !is.null(wd) || !is.null(verbose)) {
+    # set the path with wbt_options
     wbt_options(exe_path = exe_path, ...)
   }
 
-  # check whether path is valid
-  res <- check_whitebox_binary()
+  # check whether path exists (using new options)
+  res1 <- check_whitebox_binary()
   
-  # if binary was found and the internal path matches what the user (may have) set, return TRUE
-  return(res && wbt_exe_path(shell_quote = FALSE) == exe_path)
+  # success? binary found matches path the user (may have) set, return TRUE
+  new_exe_path <- wbt_exe_path(shell_quote = FALSE)
+  res2 <- new_exe_path == exe_path
+  
+  # if the wbt_exe_path() output doesnt match user input
+  if (!res2) {
+    if (wbt_verbose()) {
+      message("WhiteboxTools Executable Path (whitebox.exe_path) reverted to:\n\t", 
+              new_exe_path, "\n", call. = FALSE)
+    }
+  }
+  return(invisible(res1 && res2))
 }
 
 #' @description `wbt_options()`: Get/set package options
 #' 
 #' - **`whitebox.exe_path`** - character. Path to executable file. The default value is the package installation directory, subdirectory `"WBT"`, followed by `whitebox_tools.exe` or `whitebox_tools`. Set the `whitebox.exe_path` option using `wbt_init()` `exe_path` argument
+#' 
+#' - **`whitebox.wd`** - character. Path to WhiteboxTools working directory. Used as `--wd` argument for tools that support it when `wd` is not specified elsewhere.
 #' 
 #' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? Default is result of `interactive()`. Individual tools may have `verbose_mode` setting that produce only single-line output when `FALSE`. These argument values are left as the defaults defined in the package documentation for that function. When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument.
 #' 
@@ -42,24 +66,96 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 #' 
 #' ## wbt_options():
 #'
+#' # set multiple options (e.g. exe_path and verbose) with wbt_options()
 #' wbt_options(exe_path = "not/a/valid/path/whitebox_tools.exe", verbose = TRUE)
 #'
 #' }
-wbt_options <- function(exe_path = NULL, verbose = NULL) {
+wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
   
+  # get the system value
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
+  syswd <- Sys.getenv("R_WHITEBOX_WD")
   sysvrb <- Sys.getenv("R_WHITEBOX_VERBOSE")
   
+  # check user input, set package options
   if (!is.null(exe_path)) {
     options(whitebox.exe_path = exe_path)
+  }
+  
+  if (!is.null(wd)) {
+    options(whitebox.wd = wd) 
   }
   
   if (!is.null(verbose)) {
     options(whitebox.verbose = verbose)
   }
   
-  invisible(list(whitebox.exe_path = switch(is.null(syswbt), getOption("whitebox.exe_path"), syswbt),
-                 whitebox.verbose  = switch(is.null(sysvrb), getOption("whitebox.verbose"), sysvrb)))
+  invisible(list(
+    whitebox.exe_path = ifelse(nchar(syswbt) == 0,
+                               getOption("whitebox.exe_path", default = wbt_exe_path(shell_quote = FALSE)),
+                               syswbt),
+    whitebox.wd       = ifelse(nchar(syswd)  == 0,
+                               getOption("whitebox.wd", default = ""),       syswd),
+    whitebox.verbose  = ifelse(
+      nchar(sysvrb) == 0,
+      getOption("whitebox.verbose", default = ""),
+      sysvrb
+    )
+  ))
+}
+
+#' @description `wbt_wd()`: Get or Set the WhiteboxTools working directory
+#' 
+#' @param wd character; Default: `NULL`; if set the package option `whitebox.wd` is set specified path (if directory exists)
+#' 
+#' @return `wbt_wd()`: character; when working directory is unset, will not add `--wd=` arguments to calls and should be the same as using `getwd()`. See Details.
+#' 
+#' @details `wbt_wd()`: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. 
+#' @rdname wbt_init
+#' @export
+#' @examples 
+#' \dontrun{
+#' 
+#' ## wbt_wd():
+#'
+#' # set WBT working directory to R working directory
+#' wbt_wd(wd = getwd())
+#' }
+wbt_wd <- function(wd = NULL) {
+  
+  # system environment var takes precedence
+  syswd <- Sys.getenv("R_WHITEBOX_WD")
+  if (nchar(syswd) > 0 && dir.exists(syswd)) {
+    return(syswd)
+  }
+
+  if (length(wd) > 0 && (is.na(wd) || wd == "")) {
+    curwd <- getwd()
+    if(wbt_verbose()) {
+      cat("Reset WhiteboxTools working directory to current R working directory:", curwd, 
+          "\nAfter next tool run package option will be unset so that --wd flag is dropped.")
+    }
+    wd <- structure(curwd, unset = TRUE)
+  } 
+  
+  if (is.character(wd)) {
+    # if character input, set the package option "wd"
+    wbt_options(wd = wd)
+  } 
+  
+  # package option checked next; if missing default is getwd() (unspecified should be same as getwd())
+  res <- getOption("whitebox.wd")
+  
+  # an empty string silently stays an empty string
+  if (is.null(res) || nchar(res) == 0) {
+    res <- ""
+  # otherwise, if the option is invalid directory message
+  } else if (!is.null(res) && !dir.exists(res)) {
+    message("Invalid path for whitebox.wd: directory does not exist. Defaulting to current R working directory.\nSee ?getwd")
+    res <- getwd()
+  }
+  
+  invisible(res)
 }
 
 #' @description `wbt_verbose()`: Check verbose options for WhiteboxTools
@@ -77,24 +173,46 @@ wbt_options <- function(exe_path = NULL, verbose = NULL) {
 #' wbt_verbose(verbose = TRUE)
 #' }
 wbt_verbose <- function(verbose = NULL) {
-  
-  # system environment var takes precedence, but defaults FALSE
-  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = FALSE)
-  if (sysverbose) {
+  # NA is treated NULL (no effect)
+  if (length(verbose) != 1 || is.na(verbose)) {
+    verbose <- NULL
+  }
+    
+  # system environment var takes precedence
+  sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = "")
+  if (sysverbose == "all") {
+    
+    # wbt_verbose always return logical, "all" is a flavor of true
+    return(TRUE)
+    
+  } else if (sysverbose != "") {
+    
+    # take up to first 5 characters, uppercase eval/parse/convert to logical
+    # this should also allow for 0/1 to be specified and converted as needed to logical
+    sysverbose <- as.logical(eval(parse(text = toupper(substr(sysverbose, 0, 5)))))
+    
+  }
+    
+  # if logical system env var, use that
+  if (is.logical(sysverbose) && !is.na(sysverbose)) {
     return(sysverbose)
   }
   
-  # if non-NULL input, set the package option "verbose"
-  if (!is.null(verbose) && is.logical(verbose)) {
+  # if logical input, set the package option "verbose"
+  if (is.logical(verbose) || (!is.null(verbose) && verbose == "all")) {
     wbt_options(verbose = verbose)
   }
   
   # package option subsequently, default true for interactive use
-  res <- getOption("whitebox.verbose", default = interactive())
-  if (!is.logical(res)) {
-    message('invalid value for whitebox.verbose, defaulting to interactive()')
+  res <- as.logical(getOption("whitebox.verbose", default = interactive()))
+  
+  if (is.na(res) || (!is.null(verbose) && verbose == "all")) {
+    res <- TRUE
+  } else if (is.na(res) || !is.logical(res)) {
+    message('Invalid value for whitebox.verbose, defaulting to interactive()')
     res <- interactive()
   }
+
   invisible(res)
 }
 
@@ -453,12 +571,26 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
   # produce a custom error message for tools to indicate it did not run
   if (length(ret) == 0 || all(nchar(ret) == 0) || !is.null(attr(ret, 'status'))) {
     ret <- paste(tool_name, "-", "Elapsed Time: NA [did not run]")
+  } else if (wbt_options()$whitebox.verbose == "all") {
+    cat(ret, sep = "\n")
+    ret <- paste(tool_name, "-", ret[length(ret)])
   } else if (!verbose_mode) {
     ret <- paste(tool_name, "-", ret[length(ret)])
-  }
+  } 
   
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
+  }
+  
+  # check for the "unset" attribute and unset option to empty string
+  # if an error status code is returned, this step is skipped (the run doesn't count)
+  # this ensures the tool has been run at least once with new --wd= before dropping the --wd= flag
+  unsetwd <- attr(getOption("whitebox.wd"), 'unset')
+  if (is.null(attr(ret, 'status')) && !is.null(unsetwd)) {
+    if (wbt_verbose()) {
+      cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
+    }
+    wbt_options(wd = "")
   }
   
   invisible(ret)
@@ -471,7 +603,7 @@ wbt_internal_tool_name <- function(tool_name) {
 
 
 # wrapper method for system()
-wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
+wbt_system_call <- function(argstring, ...,  command_only = FALSE, ignore.stderr = FALSE) {
   wbt_init()
   wbt_exe <- wbt_exe_path()
   args2 <- argstring
@@ -480,11 +612,22 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
   # messages about misspecified arguments (e.g. tool_name to wbt_tool_help())
   if (length(args2) > 1) {
     message("NOTE: Argument string has length greater than 1; using first value")
+    args2 <- args2[1]
   }
   
   # messages about tool_name >1
   if (length(tool_name) > 1) {
     message("NOTE: tool_name argument has length greater than 1; using first name")
+    tool_name <- tool_name[1]
+  }
+  
+  # if working directory is not specified in the argstring, then pull the package option 
+  if (!grepl("--wd=", args2)) {
+    userwd <- wbt_wd()
+    if (nchar(userwd) > 0) {
+      argstring <- paste0(argstring, " --wd=", shQuote(userwd))
+    }  
+    # don't add the --wd= argument if the system/package option is unset (value == "")
   }
   
   # allow tool_name to be specified for --run= argument only via ...
@@ -507,11 +650,11 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
   
   stopmsg <- paste0("\nError running WhiteboxTools", 
                     ifelse(tool_name != "",  paste0(" (", tool_name, ")"), ""), "\n",
-                    "\twhitebox.exe_path: ", wbt_exe, "; File exists? ", 
+                    "  whitebox.exe_path: ", wbt_exe, "; File exists? ", 
                                                          file.exists(wbt_exe_path(shell_quote = FALSE)),
-                    "\n\tArguments: ", args2)
+                    "\n  Arguments: ", args2)
   ret <- try(suppressWarnings(tryCatch(
-    system(exeargs, intern = TRUE, ignore.stderr = FALSE, ignore.stdout = FALSE),
+    system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, ignore.stdout = FALSE),
     error = function(err) stop(stopmsg, "\n\n", err, call. = FALSE)
   )), silent = TRUE)
   
@@ -520,12 +663,19 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE) {
     ret <- ret[[1]]
   } else if (!is.null(attr(ret, "status"))) {
     message(stopmsg, "\n")
-    message("\nCommand had status ", attr(ret,"status"))
+    message("System command had status ", attr(ret,"status"))
+    if (length(ret) == 0 || nchar(ret) == 0) {
+      ret[1] <- stopmsg
+    }
   }
   
   invisible(ret)
 }
 
+# convenience method for sample DEM
+sample_dem_data <- function() {
+  system.file("extdata/DEM.tif", package = "whitebox")[1]
+}
 
 # convenience method for setting RUST_BACKTRACE options for debugging
 wbt_rust_backtrace <- function(RUST_BACKTRACE = c("0", "1", "full")) {
