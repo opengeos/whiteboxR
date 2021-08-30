@@ -710,9 +710,21 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
 
 # sanitize tool names from user input and R methods (function names, case variants etc)
 wbt_internal_tool_name <- function(tool_name) {
-  gsub("^(whitebox::)?(wbt_)?", "", tool_name)
+  gsub("^(whitebox::)?(wbt_)?", "", gsub(" ", "_", tool_name))
 }
 
+wbt_match_tool_name <- function(tool_name, result = c('tool_name', 'function_name')) {
+  
+  wbttools <- NULL
+  load(system.file("data/wbttools.rda", package = "whitebox"))
+  
+  result <- match.arg(result, choices = c('tool_name', 'function_name'), several.ok = TRUE)
+  
+  idx <- match(tolower(wbttools$tool_name), tolower(gsub("[ _]", "", tool_name)))
+  
+  wbttools[idx[which(!is.na(idx))], result, drop = FALSE]
+  
+}
 
 # wrapper method for system()
 wbt_system_call <- function(argstring,
