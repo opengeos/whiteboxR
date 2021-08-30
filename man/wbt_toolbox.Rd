@@ -15,6 +15,9 @@ Returns the toolbox for a specific tool.
 \description{
 Retrieve the toolbox for a specific tool.
 }
+\details{
+Leaving \code{tool_name} as default \code{NULL} returns results for all tools, but does not work on Windows.
+}
 \examples{
 \dontrun{
 wbt_toolbox("breach_depressions")

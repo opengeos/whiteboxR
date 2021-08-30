@@ -440,7 +440,7 @@ wbt_list_tools <- function(keywords = NULL) {
 #' Retrieve the toolbox for a specific tool.
 #'
 #' @param tool_name The name of the tool.
-#'
+#' @details Leaving `tool_name` as default `NULL` returns results for all tools, but does not work on Windows.
 #' @return Returns the toolbox for a specific tool.
 #' @export
 #'
@@ -448,8 +448,16 @@ wbt_list_tools <- function(keywords = NULL) {
 #' \dontrun{
 #' wbt_toolbox("breach_depressions")
 #' }
-wbt_toolbox <- function(tool_name = NULL) {
-  ret <- wbt_system_call(paste0("--toolbox=", tool_name))
+wbt_toolbox <- function(tool_name = "") {
+  ret <- wbt_system_call(paste0("--toolbox", ifelse(!is.null(tool_name),
+                                                    paste0("=", tool_name), ""))
+                        )
+                        # , command_only = TRUE)
+                          
+  # TODO: shell problems; fix null tool_name not working on windows
+  # system(paste(wbt_exe_path(shell_quote = TRUE), '--toolbox'), intern = TRUE)
+  # thread 'main' panicked at 'Unrecognized tool name C:\PROGRA~1\UNIVER~1.0_W\WBT\WHITEB~1.EXE.', src\main.rs:72:21 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -464,6 +472,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 #' @param tool_name The name of the tool.
 #'
 #' @return Returns the help description for a specific tool.
+#' @details Leaving `tool_name` as default `NULL` returns results for all tools, but does not work on Windows.
 #' @export
 #'
 #' @examples
@@ -471,7 +480,9 @@ wbt_toolbox <- function(tool_name = NULL) {
 #' wbt_tool_help("lidar_info")
 #' }
 wbt_tool_help <- function(tool_name = NULL) {
-  ret <- wbt_system_call(paste0("--toolhelp=", tool_name))
+  ret <- wbt_system_call(paste0("--toolhelp", 
+                                ifelse(!is.null(tool_name), 
+                                       paste0("=", tool_name), "")))
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
@@ -603,11 +614,15 @@ wbt_internal_tool_name <- function(tool_name) {
 
 
 # wrapper method for system()
-wbt_system_call <- function(argstring, ...,  command_only = FALSE, ignore.stderr = FALSE) {
+wbt_system_call <- function(argstring,
+                            tool_name = NULL,
+                            command_only = FALSE,
+                            ignore.stderr = FALSE,
+                            shell_quote = TRUE) {
+    
   wbt_init()
-  wbt_exe <- wbt_exe_path()
+  wbt_exe <- wbt_exe_path(shell_quote = shell_quote)
   args2 <- argstring
-  tool_name <- list(...)[["tool_name"]]
   
   # messages about misspecified arguments (e.g. tool_name to wbt_tool_help())
   if (length(args2) > 1) {
@@ -630,7 +645,7 @@ wbt_system_call <- function(argstring, ...,  command_only = FALSE, ignore.stderr
     # don't add the --wd= argument if the system/package option is unset (value == "")
   }
   
-  # allow tool_name to be specified for --run= argument only via ...
+  # allow tool_name to be specified for --run= argument only via tool_name
   if (!is.null(tool_name) && tool_name != "") {
     tool_name <- wbt_internal_tool_name(tool_name)
     args2 <- paste0("--run=", tool_name, " ", argstring)

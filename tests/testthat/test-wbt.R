@@ -132,10 +132,40 @@ test_that("wbt utility functions [requires WhiteboxTools installed]", {
   expect_true(is.character(wbt_license()))
   expect_true(is.character(wbt_version()))
   expect_true(is.character(wbt_list_tools()))
-  expect_true(is.character(wbt_tool_help()))
+
+  # These non-`--run` flags require tool_name for valid output
+  # 
+  #   --flag=tool_name
+  #   
+  expect_true(is.character(wbt_tool_help("Xor")))
   expect_true(is.character(wbt_tool_parameters("Xor")))
   expect_true(is.character(wbt_view_code("Xor", viewer = FALSE)))
+  expect_true(is.character(wbt_toolbox("Xor")))
+  
+  # missing args make "missing" error in R function if required 
+  #  (_not_ error after calling WBT)
+  #  argument "tool_name" is missing, with no default 
+  #  v.s.
+  #  thread 'main' panicked at 'Unrecognized tool name .', src\main.rs:72:21
+  expect_error(wbt_tool_parameters())
+  expect_error(wbt_view_code(viewer = FALSE))
+  
+  # The following "open-ended" tool_name commands work via command line when above fail
+  # 
+  # # List all tools and toolboxes
+  #   whitebox_tools --toolbox
+  #   
+  # # List all tool help
+  #   whitebox_tools --toolhelp
+  #   
+  # TODO: following calls vary in whether they return valid values depending on shell quoting
+  #       with the default value for tool_name `NULL` we can still expect character result,
+  #       but on Windows the result is Rust error string resulting in test noise:
+  #         thread 'main' panicked at 'Unrecognized tool name ...'
+  #       Skip on Windows for now
+  skip_if(Sys.info()[["sysname"]] == "Windows")
   expect_true(is.character(wbt_toolbox()))
+  expect_true(is.character(wbt_tool_help()))
 })
 
 test_that("wbt tool name cleaning", {
