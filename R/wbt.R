@@ -448,7 +448,7 @@ wbt_list_tools <- function(keywords = NULL) {
 #' \dontrun{
 #' wbt_toolbox("breach_depressions")
 #' }
-wbt_toolbox <- function(tool_name = "") {
+wbt_toolbox <- function(tool_name = NULL) {
   ret <- wbt_system_call(paste0("--toolbox", ifelse(!is.null(tool_name),
                                                     paste0("=", tool_name), ""))
                         )
