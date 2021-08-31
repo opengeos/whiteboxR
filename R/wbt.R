@@ -224,10 +224,9 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
   os <- Sys.info()["sysname"]
   
   .unsupported <- function(){
-    message("Sorry, whitebox download from https://github.com/giswqs/whitebox-bin/ is unsupported for your operating system!\n")     
+    message("Sorry, whitebox download from https://www.whiteboxgeo.com/download-whiteboxtools/ is unsupported for your operating system!\n")     
     message("Pre-built binaries are available only for 64-bit Window, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
-    message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n","
-                  https://github.com/giswqs/whitebox-bin/")
+    message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n")
     message("You can follow the instructions at https://github.com/jblindsay/whitebox-tools to use cargo to build the Rust library from source.\n")
     message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
                  "    wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
@@ -241,11 +240,11 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     }
     
     if (os == "Linux") {
-      url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_linux_amd64.zip"
+      url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
     } else if (os == "Windows") {
-      url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_win_amd64.zip"
+      url <- "https://www.whiteboxgeo.com/WBT_Windows/WhiteboxTools_win_amd64.zip"
     } else if (os == "Darwin") {
-      url <- "https://github.com/giswqs/whitebox-bin/raw/master/WhiteboxTools_darwin_amd64.zip"
+      url <- "https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_amd64.zip"
     } else {
       return(invisible(.unsupported()))
     }
