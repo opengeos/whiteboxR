@@ -282,19 +282,20 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     #   utils::download.file(url = url, destfile = exe_zip)
     # }
     
-    # based on xfun::download_file used for tinytex::install_tinytex()
+    # logic from xfun::download_file used for tinytex::install_tinytex()
     if (getOption("timeout") == 60L) {
       opts = options(timeout = 3600)
       on.exit(options(opts), add = TRUE)
     }
+    res <- -1
     .download <- function(method = "auto") download.file(url, exe_zip, method = method)
     for (method in c(if (os == "Windows") "wininet", "libcurl", "auto")) {
-      if (!inherits(try(res <- .download(method = method), silent = TRUE), "try-error") && res == 0) 
-        return(res)
+      if (!inherits(try(res <- .download(method = method), silent = TRUE), "try-error") && res == 0)
+        break
     }
     
     if (res != 0) {
-      message("Unable to download by any method! Try downloading manually from https://www.whiteboxgeo.com/download-whiteboxtools/, unpacking to a directory and setting path with wbt_init(exe_path = '/path/to/whitebox_tools')")
+      message("Unable to download by any method! Try downloading manually from (https://www.whiteboxgeo.com/download-whiteboxtools/) unpacking to a directory and setting path with wbt_init(exe_path = '/path/to/whitebox_tools')")
       return(invisible(NULL))
     }
     
