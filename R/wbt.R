@@ -260,6 +260,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
       dir.create(pkg_dir, recursive = TRUE)
     }
 
+    options(timeout = max(300, getOption("timeout")))
     utils::download.file(url = url, destfile = exe_zip, method = "libcurl")
     utils::unzip(exe_zip, exdir = pkg_dir)
 
