@@ -261,7 +261,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     }
 
     options(timeout = max(300, getOption("timeout")))
-    utils::download.file(url = url, destfile = exe_zip, method = "libcurl")
+    options(download.file.method="libcurl", url.method="libcurl")
+    utils::download.file(url = url, destfile = exe_zip)
     utils::unzip(exe_zip, exdir = pkg_dir)
 
     Sys.chmod(exe_path, '755')
