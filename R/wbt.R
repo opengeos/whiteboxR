@@ -222,7 +222,6 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
   stopifnot(is.logical(force))
   stopifnot(length(pkg_dir) == 1)
   stopifnot(is.character(pkg_dir))
-  stopifnot(dir.exists(pkg_dir))
   
   # Check for binary file in 'WBT' directory
   exe_path <- wbt_default_path()
@@ -267,7 +266,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     }
 
     if (requireNamespace("curl")) {
-      curl::curl_download(url = url, destfile = exe_zip)
+      curl::curl_download(url = url, destfile = exe_zip, handle = curl::new_handle(timeout_ms = 300000,
+                                                                                   timeout = 300))
     } else {
       # stop('Please install the `curl` package.\n\tinstall.packages("curl")', call. = FALSE)
       options(timeout = max(300, getOption("timeout")))
