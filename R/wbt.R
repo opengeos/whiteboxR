@@ -266,8 +266,10 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     }
 
     if (requireNamespace("curl")) {
-      curl::curl_download(url = url, destfile = exe_zip, handle = curl::new_handle(timeout_ms = 300000,
-                                                                                   timeout = 300))
+      h <- curl::new_handle()
+      curl::handle_setopt(h, timeout_ms = 300000)
+      curl::handle_setopt(h, timeout = 300)
+      curl::curl_download(url = url, destfile = exe_zip, handle = )
     } else {
       # stop('Please install the `curl` package.\n\tinstall.packages("curl")', call. = FALSE)
       options(timeout = max(300, getOption("timeout")))
@@ -284,12 +286,12 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     #   utils::untar(exe_zip, exdir = pkg_dir)
     # }
 
-    cat("WhiteboxTools binary is located at: ", exe_path, "\n")
+    cat("WhiteboxTools binary is located here: ", exe_path, "\n")
     cat("You can now start using whitebox\n")
     cat("    library(whitebox)\n")
     cat("    wbt_version()\n")
   } else if (!force) {
-    cat("WhiteboxTools found at path: ", exe_path, "\n")
+    cat("WhiteboxTools binary is located here: ", exe_path, "\n")
   }
   
   # return installed path
