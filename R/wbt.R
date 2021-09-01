@@ -265,37 +265,22 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
       dir.create(pkg_dir, recursive = TRUE)
     }
 
-    # # if (requireNamespace("curl")) {
-    # #   h <- curl::new_handle()
-    # #   curl::handle_setopt(h, timeout = 300)
-    # #   curl::curl_download(url = url, destfile = exe_zip, handle = h)
-    # options(timeout = max(300, getOption("timeout")))
-    # if (requireNamespace("httr")) {
-    #   httr::GET(
-    #     url = url,
-    #     httr::write_disk(exe_zip, overwrite = TRUE),
-    #     config = httr::config(timeout_ms = 99999)
-    #   )
-    # } else {
-    #   # stop('Please install the `curl` package.\n\tinstall.packages("curl")', call. = FALSE)
-    #   options(download.file.method="libcurl", url.method="libcurl")
-    #   utils::download.file(url = url, destfile = exe_zip)
-    # }
-    
+    # this fails on some platforms and with certain URLs
+    #  tried curl::curl_download, httr::GET, and other download.file method options for libcurl
     # logic from xfun::download_file used for tinytex::install_tinytex()
     if (getOption("timeout") == 60L) {
       opts = options(timeout = 3600)
       on.exit(options(opts), add = TRUE)
     }
     res <- -1
-    .download <- function(method = "auto") download.file(url, exe_zip, method = method)
     for (method in c(if (os == "Windows") "wininet", "libcurl", "auto")) {
-      if (!inherits(try(res <- .download(method = method), silent = TRUE), "try-error") && res == 0)
+      if (!inherits(try(res <- utils::download.file(url, exe_zip, method = method), silent = TRUE), 
+                    "try-error") && res == 0)
         break
     }
     
     if (res != 0) {
-      message("Unable to download by any method! Try downloading manually from (https://www.whiteboxgeo.com/download-whiteboxtools/) unpacking to a directory and setting path with wbt_init(exe_path = '/path/to/whitebox_tools')")
+      message("Unable to download by any method! Try downloading ZIP manually from https://www.whiteboxgeo.com/download-whiteboxtools/. Installation involves just extracting to your desired directory. Set path to binary with wbt_init(exe_path = '/path/to/whitebox_tools')")
       return(invisible(NULL))
     }
     
