@@ -268,7 +268,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     if (requireNamespace("curl")) {
       h <- curl::new_handle()
       curl::handle_setopt(h, timeout_ms = 300000L)
-      curl::curl_download(url = url, destfile = exe_zip, handle = )
+      curl::curl_download(url = url, destfile = exe_zip, handle = h)
     } else {
       # stop('Please install the `curl` package.\n\tinstall.packages("curl")', call. = FALSE)
       options(timeout = max(300, getOption("timeout")))
