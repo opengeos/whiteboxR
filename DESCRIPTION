@@ -18,7 +18,8 @@ Suggests:
     rmarkdown,
     testthat,
     raster,
-    rgdal
+    rgdal,
+    curl
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)

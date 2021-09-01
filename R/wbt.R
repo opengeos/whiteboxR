@@ -217,22 +217,28 @@ wbt_verbose <- function(verbose = NULL) {
 }
 
 #' @export
-wbt_install <- function(pkg_dir = find.package("whitebox")) {
+wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
 
-  # Check for binary file in 'WBT' directory.
-  exe_path <- wbt_exe_path(shell_quote = FALSE)
+  stopifnot(is.logical(force))
+  stopifnot(length(pkg_dir) == 1)
+  stopifnot(is.character(pkg_dir))
+  stopifnot(dir.exists(pkg_dir))
+  
+  # Check for binary file in 'WBT' directory
+  exe_path <- wbt_default_path()
   os <- Sys.info()["sysname"]
   
   .unsupported <- function(){
     message("Sorry, whitebox download from https://www.whiteboxgeo.com/download-whiteboxtools/ is unsupported for your operating system!\n")     
-    message("Pre-built binaries are available only for 64-bit Window, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
+    message("Pre-built binaries are available only for 64-bit Windows, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
     message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n")
     message("You can follow the instructions at https://github.com/jblindsay/whitebox-tools to use cargo to build the Rust library from source.\n")
     message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
-                 "    wbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
+                 "\twbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
   }
   
-  if (!file.exists(exe_path)) {
+  # if not in package directory, and user has not specified a path
+  if (!file.exists(exe_path) || pkg_dir != find.package('whitebox') || force) {
     
     # install_whitebox/wbt_install is 64-bit only
     if (.Machine$sizeof.pointer != 8) {
@@ -251,7 +257,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
 
     filename <- basename(url)
     cat("Performing one-time download of WhiteboxTools binary from\n")
-    cat("    ", url, "\n")
+    cat("\t", url, "\n")
     cat("(This could take a few minutes, please be patient...)\n")
 
     exe_zip <- file.path(pkg_dir, filename)
@@ -260,9 +266,14 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
       dir.create(pkg_dir, recursive = TRUE)
     }
 
-    options(timeout = max(300, getOption("timeout")))
-    options(download.file.method="libcurl", url.method="libcurl")
-    utils::download.file(url = url, destfile = exe_zip)
+    if (requireNamespace("curl")) {
+      curl::curl_download(url = url, destfile = exe_zip)
+    } else {
+      # stop('Please install the `curl` package.\n\tinstall.packages("curl")', call. = FALSE)
+      options(timeout = max(300, getOption("timeout")))
+      options(download.file.method="libcurl", url.method="libcurl")
+      utils::download.file(url = url, destfile = exe_zip)
+    }
     utils::unzip(exe_zip, exdir = pkg_dir)
 
     Sys.chmod(exe_path, '755')
@@ -277,6 +288,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
     cat("You can now start using whitebox\n")
     cat("    library(whitebox)\n")
     cat("    wbt_version()\n")
+  } else if (!force) {
+    cat("WhiteboxTools found at path: ", exe_path, "\n")
   }
   
   # return installed path
@@ -293,6 +306,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
 #' This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
+#' @param force logical. Default `FALSE`. Force install?
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
 #' @aliases wbt_install
 #' @examples
@@ -300,8 +314,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox")) {
 #' install_whitebox()
 #' }
 #' @export
-install_whitebox <- function(pkg_dir = find.package("whitebox")) {
-  wbt_install(pkg_dir = pkg_dir)
+install_whitebox <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
+  wbt_install(pkg_dir = pkg_dir, force = force)
 }
 
 

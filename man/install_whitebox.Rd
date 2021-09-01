@@ -5,10 +5,12 @@
 \alias{wbt_install}
 \title{Download and Install WhiteboxTools}
 \usage{
-install_whitebox(pkg_dir = find.package("whitebox"))
+install_whitebox(pkg_dir = find.package("whitebox"), force = FALSE)
 }
 \arguments{
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
+
+\item{force}{logical. Default \code{FALSE}. Force install?}
 }
 \value{
 Prints out the location of the WhiteboxTools binary, if found. \code{NULL} otherwise.
