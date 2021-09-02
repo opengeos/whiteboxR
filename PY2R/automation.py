@@ -91,7 +91,7 @@ def function_block(line, ff):
             ff.write('  }' + "\n")
             
     # ff.write('  tool_name <- match.call()[[1]]' + "\n")
-    ff.write('  tool_name <- as.character(match.call()[[1]])' + "\n")
+    ff.write('  tool_name <- "'+ function_name +'"' + "\n")
     # ff.write('  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]' + "\n")
     ff.write('  wbt_run_tool(tool_name, args, verbose_mode)' + '\n')
     ff.write('}' + "\n")
