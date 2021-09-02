@@ -540,6 +540,46 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 }
 
 
+#' Conditional evaluation
+#'
+#' This tool performs a conditional evaluaton (if-then-else) operation on a raster.
+#'
+#' @param input Name of the input DEM raster file; must be depressionless.
+#' @param statement Conditional statement e.g. value > 35.0. This statement must be a valid Rust statement.
+#' @param true Value  where TRUE (input raster or constant value).
+#' @param false Value  where FALSE (input raster or constant value).
+#' @param output Name of the output raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, false=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(statement)) {
+    args <- paste(args, paste0("--statement=", statement))
+  }
+  if (!is.null(true)) {
+    args <- paste(args, paste0("--true=", true))
+  }
+  if (!is.null(false)) {
+    args <- paste(args, paste0("--false=", false))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Cos
 #'
 #' Returns the cosine (cos) of each values in a raster.
@@ -999,7 +1039,7 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
 #' @param input1 Input raster file (independent variable, X).
 #' @param input2 Input raster file (dependent variable, Y).
 #' @param output Output HTML file for regression summary report.
-#' @param out_residuals Output raster regression residual file.
+#' @param out_residuals Output raster regression resdidual file.
 #' @param standardize Optional flag indicating whether to standardize the residuals map.
 #' @param scattergram Optional flag indicating whether to output a scattergram.
 #' @param num_samples Number of samples used to create scattergram.
@@ -1862,6 +1902,36 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
   args <- paste(args, paste0("--output=", output))
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Raster calculator
+#'
+#' This tool performs a conditional evaluaton (if-then-else) operation on a raster.
+#'
+#' @param statement Statement e.g. cos("raster1") * 35.0 + "raster2". This statement must be a valid Rust statement.
+#' @param output Name of the output raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(statement)) {
+    args <- paste(args, paste0("--statement=", statement))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))

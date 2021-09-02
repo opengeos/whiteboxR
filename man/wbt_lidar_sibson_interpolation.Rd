@@ -19,7 +19,7 @@ wbt_lidar_sibson_interpolation(
 )
 }
 \arguments{
-\item{input}{Name of the input LiDAR points (leave blank to use all files in working directory.}
+\item{input}{Name of the input LiDAR points (leave blank to use all files in WorkingDirectory.}
 
 \item{output}{Output raster file (including extension).}
 
@@ -45,5 +45,5 @@ wbt_lidar_sibson_interpolation(
 Returns the tool text outputs.
 }
 \description{
-This interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
+This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
 }

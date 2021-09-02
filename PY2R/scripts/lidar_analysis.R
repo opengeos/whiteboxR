@@ -336,6 +336,36 @@ wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE, compress_raste
 }
 
 
+#' Las to laz
+#'
+#' This tool converts one or more LAS files into the LAZ format.
+#'
+#' @param input Name of the input LAS files (leave blank to use all LAS files in WorkingDirectory.
+#' @param output Output LAZ file (including extension).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_las_to_laz <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Las to multipoint shapefile
 #'
 #' Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
@@ -428,6 +458,36 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, compress="brotli", level
 }
 
 
+#' Laz to las
+#'
+#' This tool converts one or more LAZ files into the LAS format.
+#'
+#' @param input Name of the input LAZ files (leave blank to use all LAZ files in WorkingDirectory.
+#' @param output Output LAS file (including extension).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_laz_to_las <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Lidar block maximum
 #'
 #' Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
@@ -498,7 +558,7 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 
 #' Lidar classify subset
 #'
-#' Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
+#' Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.
 #'
 #' @param base Input base LiDAR file.
 #' @param subset Input subset LiDAR file.
@@ -551,6 +611,68 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
   args <- paste(args, paste0("--in_lidar=", in_lidar))
   args <- paste(args, paste0("--in_image=", in_image))
   args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Lidar contour
+#'
+#' This tool creates a vector contour coverage from an input LiDAR point file.
+#'
+#' @param input Name of the input LiDAR points.
+#' @param output Name of the output vector lines file.
+#' @param interval Contour interval.
+#' @param smooth Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'user_data'.
+#' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
+#' @param exclude_cls Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.
+#' @param minz Optional minimum elevation for inclusion in interpolation.
+#' @param maxz Optional maximum elevation for inclusion in interpolation.
+#' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, parameter="elevation", returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
+  }
+  if (!is.null(interval)) {
+    args <- paste(args, paste0("--interval=", interval))
+  }
+  if (!is.null(smooth)) {
+    args <- paste(args, paste0("--smooth=", smooth))
+  }
+  if (!is.null(parameter)) {
+    args <- paste(args, paste0("--parameter=", parameter))
+  }
+  if (!is.null(returns)) {
+    args <- paste(args, paste0("--returns=", returns))
+  }
+  if (!is.null(exclude_cls)) {
+    args <- paste(args, paste0("--exclude_cls=", exclude_cls))
+  }
+  if (!is.null(minz)) {
+    args <- paste(args, paste0("--minz=", minz))
+  }
+  if (!is.null(maxz)) {
+    args <- paste(args, paste0("--maxz=", maxz))
+  }
+  if (!is.null(max_triangle_edge_length)) {
+    args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))
+  }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -667,7 +789,7 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
-#' @param min_neighbours The minimum number of neighbouring points within search areas. If fewer points than this threshold are identified during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.
+#' @param min_neighbours The minimum number of neighbouring points within search areas. If fewer points than this threshold are idenfied during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.
 #' @param slope_threshold Maximum inter-point slope to be considered an off-terrain point.
 #' @param height_threshold Inter-point height difference to be considered an off-terrain point.
 #' @param classify Classify points as ground (2) or off-ground (1).
@@ -796,7 +918,7 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
 #'
 #' @param input Input LiDAR file.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
-#' @param parameter Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class'.
+#' @param parameter Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class', 'time'.
 #' @param clip Amount to clip distribution tails (in percent).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1090,6 +1212,36 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
   }
   if (!is.null(maxz)) {
     args <- paste(args, paste0("--maxz=", maxz))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Lidar point return analysis
+#'
+#' This tool performs a quality control check on the return values of points in a LiDAR file.
+#'
+#' @param input Name of the input LiDAR points.
+#' @param output Name of the output LiDAR points.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_lidar_point_return_analysis <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", output))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1544,9 +1696,9 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
 
 #' Lidar sibson interpolation
 #'
-#' This interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
+#' This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
 #'
-#' @param input Name of the input LiDAR points (leave blank to use all files in working directory.
+#' @param input Name of the input LiDAR points (leave blank to use all files in WorkingDirectory.
 #' @param output Output raster file (including extension).
 #' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'user_data'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
@@ -1841,7 +1993,7 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
 
 #' Lidar tophat transform
 #'
-#' Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modeling the vegetation canopy.
+#' Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1933,11 +2085,11 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
 }
 
 
-#' zlidar to las
+#' Zlidar to las
 #'
 #' Converts one or more zlidar files into the LAS data format.
 #'
-#' @param inputs Input zlidar files.
+#' @param inputs Input ZLidar files.
 #' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.

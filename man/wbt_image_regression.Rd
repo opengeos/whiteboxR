@@ -24,7 +24,7 @@ wbt_image_regression(
 
 \item{output}{Output HTML file for regression summary report.}
 
-\item{out_residuals}{Output raster regression residual file.}
+\item{out_residuals}{Output raster regression resdidual file.}
 
 \item{standardize}{Optional flag indicating whether to standardize the residuals map.}
 

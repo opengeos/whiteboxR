@@ -25,7 +25,7 @@ wbt_topographic_position_animation(
 
 \item{output}{Name of the output HTML file (*.html).}
 
-\item{palette}{Image palette; options are 'bl_yl_rd', 'bl_w_rd', 'purple', 'gn_yl', 'pi_y_g', and 'viridi'.}
+\item{palette}{Image palette; options are 'bl_yl_rd', 'bl_w_rd', 'purple', 'gn_yl', 'pi_y_g', and 'viridis'.}
 
 \item{min_scale}{Minimum search neighbourhood radius in grid cells.}
 

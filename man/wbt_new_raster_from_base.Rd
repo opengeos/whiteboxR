@@ -9,6 +9,7 @@ wbt_new_raster_from_base(
   output,
   value = "nodata",
   data_type = "float",
+  cell_size = NULL,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE
@@ -22,6 +23,8 @@ wbt_new_raster_from_base(
 \item{value}{Constant value to fill raster with; either 'nodata' or numeric value.}
 
 \item{data_type}{Output raster data type; options include 'double' (64-bit), 'float' (32-bit), and 'integer' (signed 16-bit) (default is 'float').}
+
+\item{cell_size}{Optionally specified cell size of output raster. Not used when base raster is specified.}
 
 \item{wd}{Changes the working directory.}
 

@@ -19,6 +19,7 @@
 ### Changelog ### 
 # 
 # - built 2021/08/24 with WhiteboxTools 1.5.0 agb
+# - update 2021/09/01 with WhiteboxTools 2.0.0 agb
 #
 ####
 

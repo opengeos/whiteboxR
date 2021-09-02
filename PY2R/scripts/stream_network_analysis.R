@@ -451,7 +451,7 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param streams Input raster streams file.
 #' @param output Output raster file.
-#' @param min_length Minimum tributary length (in map units) used for network pruning.
+#' @param min_length Minimum tributary length (in map units) used for network prunning.
 #' @param esri_pntr D8 pointer uses the ESRI style scheme.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -468,6 +468,38 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
   args <- paste(args, paste0("--min_length=", min_length))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Repair stream vector topology
+#'
+#' This tool resolve topological errors and inconsistencies associated with digitized vector streams.
+#'
+#' @param input Name of the input lines vector file.
+#' @param output Name of the output lines vector file.
+#' @param dist Snap distance, in xy units (metres).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_repair_stream_vector_topology <- function(input, output, dist="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(dist)) {
+    args <- paste(args, paste0("--dist=", dist))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -814,6 +846,44 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
   }
   if (zero_background) {
     args <- paste(args, "--zero_background")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Vector stream network analysis
+#'
+#' This tool performs common stream network analysis operations on an input vector stream file.
+#'
+#' @param streams Name of the input routes vector file.
+#' @param dem Name of the input DEM raster file.
+#' @param output Name of the output lines shapefile.
+#' @param cutting_height Maximum ridge-cutting height (z units).
+#' @param snap Snap distance, in xy units (metres).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_vector_stream_network_analysis <- function(streams, dem, output, cutting_height=10.0, snap=0.1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--streams=", streams))
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(cutting_height)) {
+    args <- paste(args, paste0("--cutting_height=", cutting_height))
+  }
+  if (!is.null(snap)) {
+    args <- paste(args, paste0("--snap=", snap))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))

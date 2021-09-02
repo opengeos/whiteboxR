@@ -16,7 +16,7 @@ wbt_export_table_to_csv(
 \arguments{
 \item{input}{Input vector file.}
 
-\item{output}{Output raster file.}
+\item{output}{Output csv file.}
 
 \item{headers}{Export field names as file header?.}
 

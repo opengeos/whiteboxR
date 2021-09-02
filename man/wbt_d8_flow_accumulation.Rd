@@ -30,7 +30,7 @@ wbt_d8_flow_accumulation(
 
 \item{pntr}{Is the input raster a D8 flow pointer rather than a DEM?.}
 
-\item{esri_pntr}{Input  D8 pointer uses the ESRI style scheme.}
+\item{esri_pntr}{Input D8 pointer uses the ESRI style scheme.}
 
 \item{wd}{Changes the working directory.}
 

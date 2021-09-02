@@ -19,7 +19,7 @@ wbt_lidar_histogram(
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 
-\item{parameter}{Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class'.}
+\item{parameter}{Parameter; options are 'elevation' (default), 'intensity', 'scan angle', 'class', 'time'.}
 
 \item{clip}{Amount to clip distribution tails (in percent).}
 
