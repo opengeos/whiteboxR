@@ -1,3 +1,6 @@
+# whitebox 2.0.0
+ - https://github.com/jblindsay/whitebox-tools/releases/tag/2.0.0 for more info.
+
 # whitebox 1.5.1
 * Add package options for custom EXE path and verbosity
   * Changes behavior of `wbt_init()`; now only checks EXE path
