@@ -39,6 +39,8 @@ jobs:
           install.packages(c("remotes"))
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("covr")
+          remotes::install_local()
+          whitebox::install_whitebox()
         shell: Rscript {0}
 
       - name: Test coverage
