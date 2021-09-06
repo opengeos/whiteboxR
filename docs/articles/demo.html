@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
 
       
 
-      </header><script src="demo_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
+      </header><script src="demo_files/header-attrs-2.8.5/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>whitebox Demo</h1>
@@ -117,7 +117,7 @@
 <p>You can find the binary path that the package is currently going to use with <code><a href="../reference/wbt_exe_path.html">wbt_exe_path()</a></code></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools"</span></code></pre></div>
+<span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span></code></pre></div>
 </div>
 <div id="interfacing-with-r-spatial-packages" class="section level3">
 <h3 class="hasAnchor">
@@ -147,13 +147,7 @@
 <p>Run a tool such as <code><a href="../reference/wbt_slope.html">wbt_slope()</a></code> or <code>"Slope"</code>.</p>
 <p>WhiteboxTools reads from <code>input</code> and writes to <code>output</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_slope.html">wbt_slope</a></span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, units <span class="op">=</span> <span class="st">'radians'</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (slope)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=slope  --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/slope.tif --units=radians -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_slope.html">wbt_slope</a></span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, units <span class="op">=</span> <span class="st">'radians'</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="co"># create a RasterLayer from file output path</span>
@@ -181,8 +175,10 @@
 <span class="co"># the RasterLayer retains a reference to the input file name</span>
 <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/filename.html">filename</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-7-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-7-2.png" width="576"></p>
+<pre><code>#&gt; [1] "/tmp/RtmpI6B7k9/slope.tif"</code></pre>
 <p>The <code>RasterLayer</code>, <code>SpatRaster</code> and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.</p>
-<p>Use <code><a href="https://rdrr.io/pkg/raster/man/filename.html">raster::filename()</a></code> to get the “source” file name. If you are using a terra <code>SpatRaster</code> objects the equivalent method is <code>terra::sources()</code>.</p>
+<p>Use <code><a href="https://rdrr.io/pkg/raster/man/filename.html">raster::filename()</a></code> to get the “source” file name. If you are using a terra <code>SpatRaster</code> objects the equivalent method is <code><a href="https://rdrr.io/pkg/terra/man/sources.html">terra::sources()</a></code>.</p>
 </div>
 </div>
 <div id="whiteboxtools-r-setup" class="section level3">
@@ -206,10 +202,10 @@
 </h3>
 <p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> is used to set and check the path of the binary executable that commands are passed to.</p>
 <p>The executable path and other options are stored as package options, and can be overridden by system environment variables. A default value <code><a href="../reference/wbt_exe_path.html">wbt_exe_path(shell_quote = FALSE)</a></code> is passed when the <code>exe_path</code> argument is unspecified.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># inspect where wbt_init() will be checking</span>
 <span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools"</span>
+<span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span>
 
 <span class="co"># TRUE when file is found at one of the user specified paths or package default</span>
 <span class="co"># FALSE when whitebox_tools does not exist at path</span>
@@ -219,11 +215,11 @@
 <h4 class="hasAnchor">
 <a href="#exe_path-argument" class="anchor"></a><code>exe_path</code> argument</h4>
 <p>The <code>exe_path</code> argument to <code><a href="../reference/wbt_init.html">wbt_init()</a></code> sets the <code>whitebox.exe_path</code> package option. <code>exe_path</code> is the path to a WhiteboxTools executable file. The default value is the package installation directory, subdirectory <code>"WBT"</code>, followed by <code>whitebox_tools.exe</code> or <code>whitebox_tools</code> depending on your operating system.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># set path manually to whitebox_tools executable, for instance:</span>
 <span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools'</span><span class="op">)</span></code></pre></div>
 <p>A way to find your <code>whitebox_tools</code> executable is if it is in a directory that exists in your PATH. This requires that you have the Unix tool <code>which</code> or one of its analogues.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>R_WHITEBOX_EXE_PATH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.which.html">Sys.which</a></span><span class="op">(</span><span class="st">"whitebox_tools"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>You can also set <code>R_WHITEBOX_EXE_PATH</code> manually.</p>
 <ul>
@@ -239,8 +235,8 @@
 <p>Before you set the working directory in a session the default output will be in your current R working directory unless directory is specified in your input/output arguments. You can change working directory at any time by setting the <code>wd</code> argument to <code><a href="../reference/wbt_init.html">wbt_wd()</a></code> and running a tool.</p>
 <p>NOTE: once you have set a working directory in a session, the directory needs to be set somewhere new to “replace” the old value; just dropping the flag will <strong>not</strong> automatically change the working directory <em>back to your R working directory</em>* and your output will show up in whatever folder you set initially.</p>
 <p>A helper method for setting the <code>whitebox.wd</code> option is <code><a href="../reference/wbt_init.html">wbt_wd()</a></code>.</p>
-<p>*To “unset” the option in the R package you can use <code><a href="../reference/wbt_init.html">wbt_wd("")</a></code> which is equivalent to <code><a href="../reference/wbt_init.html">wbt_wd(getwd())</a></code>. The next tool call will change the WhiteboxTools working directorysetting to the new path. After this point the flag need not be specified [until you wish to change again].</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<p>*To “unset” the option in the R package you can use <code><a href="../reference/wbt_init.html">wbt_wd("")</a></code> which is equivalent to <code><a href="../reference/wbt_init.html">wbt_wd(getwd())</a></code>. The next tool call will change the WhiteboxTools working directory setting to the new path. After this point the flag need not be specified [until you wish to change again].</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_init.html">wbt_wd</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="co"># "" equivalent to getwd()</span></code></pre></div>
 </div>
 <div id="verbose-argument" class="section level4">
@@ -249,7 +245,7 @@
 <p>The <code>verbose</code> argument is used to set the package option related to tool “verbosity”: <code>whitebox.verbose</code>. When <code>whitebox.verbose</code> is <code>FALSE</code> no output will be <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> to the console by running tools.</p>
 <p>A helper method for getting and setting the <code>whitebox.verbose</code> option is <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>. <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> is used throughout the package to check what level of verbosity should be used. By default, the result of <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code> is the result of <code><a href="https://rdrr.io/r/base/interactive.html">interactive()</a></code> so tools will print extra console output when you are there to see it. This is used in a variety of <code>wbt_*</code> methods to allow the package option to control output for many functions in a consistent manner, hide output in your automated tests, markdown documents, vignettes etc.</p>
 <p>In this vignette we use <code><a href="../reference/wbt_init.html">wbt_verbose(TRUE)</a></code> so the package option <code>whitebox.verbose</code> is set to <code>TRUE</code></p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># force output when run non-interactively (knitr)</span>
 <span class="fu"><a href="../reference/wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>This is mainly to print out the tool name and elapsed time whenever we run a tool:</p>
@@ -274,29 +270,6 @@
 <li><a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="uri">https://giswqs.github.io/whiteboxR/reference/index.html</a></li>
 </ul>
 <p>For instance, here we use the tool “BreachDepressions” to pre-process a Digital Elevation Model (DEM) so we can identify flow pathways.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
-
-<span class="co"># output file name</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
-
-<span class="co"># run breach_depressions tool</span>
-<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (breach_depressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=breach_depressions  --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/output.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_breach_depressions - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (breach_depressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=breach_depressions  --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/output.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
-<p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
-<p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> call given a function-specific argument string.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
 <span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
@@ -305,19 +278,20 @@
 <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
 
 <span class="co"># run breach_depressions tool</span>
+<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
+<span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
+<p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> call given a function-specific argument string.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+
+<span class="co"># output file name</span>
+<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
+
+<span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (BreachDepressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=BreachDepressions --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/output.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; BreachDepressions - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (BreachDepressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=BreachDepressions --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/output.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
 <p>The above method of creating <code><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions(dem = ..., output = ...)</a></code> to handle <code><a href="../reference/wbt_run_tool.html">wbt_run_tool("BreachDepressions", args = ...)</a></code> makes it easy to generate static methods that have parity with the latest WhiteboxTools interface.</p>
 <div id="example-compare-input-v-s--output-with-raster" class="section level3">
 <h3 class="hasAnchor">
@@ -327,7 +301,7 @@
 <div id="setup-1" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-1" class="anchor"></a>Setup</h4>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
 
 <span class="co"># sample DEM file path in package extdata folder</span>
@@ -339,27 +313,16 @@
 <div id="run-wbt_breach_depressions-breachdepressions-tool" class="section level4">
 <h4 class="hasAnchor">
 <a href="#run-wbt_breach_depressions-breachdepressions-tool" class="anchor"></a>Run <code>wbt_breach_depressions()</code> (BreachDepressions tool)</h4>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (breach_depressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=breach_depressions  --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/output.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_breach_depressions - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (breach_depressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=breach_depressions  --dem=/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/extdata/DEM.tif --output=/tmp/RtmprXJ3VF/output.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
 </div>
 <div id="visualize-results-with-raster" class="section level4">
 <h4 class="hasAnchor">
 <a href="#visualize-results-with-raster" class="anchor"></a>Visualize results with <code>raster</code>
 </h4>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># create raster object from input file</span>
 <span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span>
 
@@ -377,6 +340,7 @@
   <span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, horizontal <span class="op">=</span> <span class="cn">TRUE</span>, box <span class="op">=</span> <span class="cn">FALSE</span>, 
        main <span class="op">=</span> <span class="st">"Difference ([Breached Depressions] - [DEM])"</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-15-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-15-2.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-15-3.png" width="576"></p>
 </div>
 </div>
 <div id="example-identifying-tributaries" class="section level3">
@@ -389,7 +353,7 @@
 <div id="setup-2" class="section level4">
 <h4 class="hasAnchor">
 <a href="#setup-2" class="anchor"></a>Setup</h4>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
 
@@ -412,72 +376,39 @@
 <h4 class="hasAnchor">
 <a href="#wbt_breach_depressions-breach-dem-depressions" class="anchor"></a><code>wbt_breach_depressions()</code> – Breach DEM Depressions</h4>
 <p>First we pre-process by breaching depressions in the DEM</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Breach depressions to ensure continuous flow</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (breach_depressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=breach_depressions  --dem=/tmp/RtmprXJ3VF/toy_dem.tif --output=/tmp/RtmprXJ3VF/toy_dem_breached.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_breach_depressions - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (breach_depressions)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=breach_depressions  --dem=/tmp/RtmprXJ3VF/toy_dem.tif --output=/tmp/RtmprXJ3VF/toy_dem_breached.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
 </div>
 <div id="wbt_d8_pointer-calculate-flow-direction" class="section level4">
 <h4 class="hasAnchor">
 <a href="#wbt_d8_pointer-calculate-flow-direction" class="anchor"></a><code>wbt_d8_pointer()</code> – Calculate Flow Direction</h4>
 <p>Then we generate the direction of flow on the DEM surface using the “D8” flow pointer method</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate d8 flow pointer (note: other flow directions are available)</span>
 <span class="fu"><a href="../reference/wbt_d8_pointer.html">wbt_d8_pointer</a></span><span class="op">(</span>
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (d8_pointer)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=d8_pointer  --dem=/tmp/RtmprXJ3VF/toy_dem_breached.tif --output=/tmp/RtmprXJ3VF/toy_dem_breached_d8.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_d8_pointer - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (d8_pointer)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=d8_pointer  --dem=/tmp/RtmprXJ3VF/toy_dem_breached.tif --output=/tmp/RtmprXJ3VF/toy_dem_breached_d8.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; wbt_d8_pointer - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
 </div>
 <div id="wbt_d8_flow_accumulation-flow-accumulation" class="section level4">
 <h4 class="hasAnchor">
 <a href="#wbt_d8_flow_accumulation-flow-accumulation" class="anchor"></a><code>wbt_d8_flow_accumulation()</code> – Flow Accumulation</h4>
 <p>Once we calculate the direction of flow by some method, we calculate cumulative flow</p>
 <p>For example with <code><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation()</a></code>:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate d8 flow accumulation in units of cells (note: other flow directions are available)</span>
 <span class="fu"><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation</a></span><span class="op">(</span>
   input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
   out_type <span class="op">=</span> <span class="st">"cells"</span>
 <span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (d8_flow_accumulation)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=d8_flow_accumulation  --input=/tmp/RtmprXJ3VF/toy_dem_breached.tif --output=/tmp/RtmprXJ3VF/toy_dem_breached_accum.tif --out_type=cells -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_d8_flow_accumulation - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (d8_flow_accumulation)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=d8_flow_accumulation  --input=/tmp/RtmprXJ3VF/toy_dem_breached.tif --output=/tmp/RtmprXJ3VF/toy_dem_breached_accum.tif --out_type=cells -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; wbt_d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></code></pre></div>
 <div id="additional-flow-direction-and-accumulation-tools" class="section level5">
 <h5 class="hasAnchor">
 <a href="#additional-flow-direction-and-accumulation-tools" class="anchor"></a>Additional Flow Direction and Accumulation Tools</h5>
@@ -487,18 +418,29 @@
 <li><p>Keyword “FlowAccumulation” tools: <code>"D8FlowAccumulation"</code>, <code>"DInfFlowAccumulation"</code>, <code>"FD8FlowAccumulation"</code>, <code>"MDInfFlowAccumulation"</code></p></li>
 </ul>
 <p>Search for more tools involving <code>"flow pointer"</code> by key word: <code><a href="../reference/wbt_list_tools.html">wbt_list_tools(keyword = "flow pointer")</a></code></p>
-<pre><code>#&gt; Error : 
-#&gt; Error running WhiteboxTools
-#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE
-#&gt;   Arguments: --listtools flow pointer
-#&gt; 
-#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command
-#&gt; Error : 
-#&gt; Error running WhiteboxTools
-#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE
-#&gt;   Arguments: --listtools flow pointer
-#&gt; 
-#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</code></pre>
+<pre><code>#&gt; All 22 Tools containing keywords:
+#&gt; AverageFlowpathSlope: Measures the average slope gradient from each grid cell to all upslope divide cells.
+#&gt; AverageUpslopeFlowpathLength: Measures the average length of all upslope flowpaths draining each grid cell.
+#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
+#&gt; D8Pointer: Calculates a D8 flow pointer raster from an input DEM.
+#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.
+#&gt; DInfPointer: Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
+#&gt; DownslopeFlowpathLength: Calculates the downslope flowpath length from each cell to basin outlet.
+#&gt; ExtractStreams: Extracts stream grid cells from a flow accumulation raster.
+#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.
+#&gt; FD8Pointer: Calculates an FD8 flow pointer raster from an input DEM.
+#&gt; FindNoFlowCells: Finds grid cells with no downslope neighbours.
+#&gt; FindParallelFlow: Finds areas of parallel flow in D8 flow direction rasters.
+#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
+#&gt; FlowLengthDiff: Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.
+#&gt; LongProfileFromPoints: Plots the longitudinal profiles from flow-paths initiating from a set of vector points.
+#&gt; LongestFlowpath: Delineates the longest flowpaths for a group of subbasins or watersheds. 
+#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.
+#&gt; MaxUpslopeFlowpathLength: Measures the maximum length of all upslope flowpaths draining each grid cell.
+#&gt; NumInflowingNeighbours: Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
+#&gt; Rho8Pointer: Calculates a stochastic Rho8 flow pointer raster from an input DEM.
+#&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
+#&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</code></pre>
 <p>This is just an example of the wealth of tool options made available by the WhiteboxTools platform.</p>
 </div>
 </div>
@@ -506,25 +448,14 @@
 <h4 class="hasAnchor">
 <a href="#wbt_extract_streams-extract-stream-network" class="anchor"></a><code>wbt_extract_streams()</code> – Extract Stream Network</h4>
 <p>With our flow accumulation raster in hand, we can extract a stream network with <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> based on a threshold (e.g. <code>100</code>) of accumulated flow. This threshold value you choose will depend on analysis goals, the choice of flow accumulation algorithm used, local topography, as well as resolution and extent of DEM.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Generate streams with a stream initiation threshold of 100 cells</span>
 <span class="fu"><a href="../reference/wbt_extract_streams.html">wbt_extract_streams</a></span><span class="op">(</span>
   flow_accum <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   threshold <span class="op">=</span> <span class="fl">100</span>
 <span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (extract_streams)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=extract_streams  --flow_accum=/tmp/RtmprXJ3VF/toy_dem_breached_accum.tif --output=/tmp/RtmprXJ3VF/toy_dem_streams.tif --threshold=100 -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_extract_streams - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (extract_streams)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=extract_streams  --flow_accum=/tmp/RtmprXJ3VF/toy_dem_breached_accum.tif --output=/tmp/RtmprXJ3VF/toy_dem_streams.tif --threshold=100 -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; wbt_extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
 </div>
 <div id="wbt_tributary_identifier-identify-tributaries" class="section level4">
 <h4 class="hasAnchor">
@@ -534,30 +465,19 @@
 <li><p>Our raster D8 pointer file.</p></li>
 <li><p>And our raster streams file.</p></li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier</a></span><span class="op">(</span>
   d8_pntr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>,
   streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (tributary_identifier)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=tributary_identifier  --d8_pntr=/tmp/RtmprXJ3VF/toy_dem_breached_d8.tif --streams=/tmp/RtmprXJ3VF/toy_dem_streams.tif --output=/tmp/RtmprXJ3VF/toy_dem_tributaries.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; wbt_tributary_identifier - Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools (tributary_identifier)</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --run=tributary_identifier  --d8_pntr=/tmp/RtmprXJ3VF/toy_dem_breached_d8.tif --streams=/tmp/RtmprXJ3VF/toy_dem_streams.tif --output=/tmp/RtmprXJ3VF/toy_dem_tributaries.tif -v</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; wbt_tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
 </div>
 <div id="compare-results" class="section level4">
 <h4 class="hasAnchor">
 <a href="#compare-results" class="anchor"></a>Compare results</h4>
 <p>Finally, we compare results of <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code> with <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code></p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
   <span class="co"># par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))</span>
   
@@ -578,6 +498,7 @@
     box <span class="op">=</span> <span class="cn">FALSE</span>
   <span class="op">)</span>
 <span class="op">}</span></code></pre></div>
+<p><img src="demo_files/figure-html/unnamed-chunk-23-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-23-2.png" width="576"></p>
 </div>
 </div>
 </div>
@@ -590,84 +511,81 @@
 <a href="#wbt_help" class="anchor"></a><code>wbt_help()</code>
 </h3>
 <p><code><a href="../reference/wbt_help.html">wbt_help()</a></code> prints the WhiteboxTools help: a listing of available commands for executable</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_help.html">wbt_help</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --help</span>
+<span class="co">#&gt; WhiteboxTools Help</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --help</span>
+<span class="co">#&gt; The following commands are recognized:</span>
+<span class="co">#&gt; --cd, --wd       Changes the working directory; used in conjunction with --run flag.</span>
+<span class="co">#&gt; -h, --help       Prints help information.</span>
+<span class="co">#&gt; -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"</span>
+<span class="co">#&gt; --listtools      Lists all available tools. Keywords may also be used, --listtools slope.</span>
+<span class="co">#&gt; -r, --run        Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".</span>
+<span class="co">#&gt; --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.</span>
+<span class="co">#&gt; --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".</span>
+<span class="co">#&gt; --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".</span>
+<span class="co">#&gt; -v               Verbose mode. Without this flag, tool outputs will not be printed.</span>
+<span class="co">#&gt; --viewcode       Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span>
+<span class="co">#&gt; --version        Prints the version information.</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; Example Usage:</span>
+<span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span></code></pre></div>
 </div>
 <div id="wbt_license" class="section level3">
 <h3 class="hasAnchor">
 <a href="#wbt_license" class="anchor"></a><code>wbt_license()</code>
 </h3>
 <p><code><a href="../reference/wbt_license.html">wbt_license()</a></code> prints the WhiteboxTools license</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_license.html">wbt_license</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --license</span>
+<span class="co">#&gt; WhiteboxTools License</span>
+<span class="co">#&gt; Copyright 2017-2020 John Lindsay</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --license</span>
+<span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span>
+<span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span>
+<span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
+<span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span>
+<span class="co">#&gt; subject to the following conditions:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span>
+<span class="co">#&gt; portions of the Software.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span>
+<span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span>
+<span class="co">#&gt; OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="co">#&gt; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></code></pre></div>
 </div>
 <div id="wbt_version" class="section level3">
 <h3 class="hasAnchor">
 <a href="#wbt_version" class="anchor"></a><code>wbt_version()</code>
 </h3>
 <p>Prints the WhiteboxTools version</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --version</span>
+<span class="co">#&gt; WhiteboxTools v2.0.0 by Dr. John B. Lindsay (c) 2017-2021</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --version</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span>
+<span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span>
+<span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span></code></pre></div>
 </div>
 <div id="wbt_list_tools" class="section level3">
 <h3 class="hasAnchor">
 <a href="#wbt_list_tools" class="anchor"></a><code>wbt_list_tools()</code>
 </h3>
 <p>Use <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code> to list all available tools in WhiteboxTools. In v1.5.0 this is 448 tools!</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>The full list can be an overwhelming amount of output, so you pass the <code>keyword</code> argument to search and filter.</p>
 <p>For example we list tools with keyword ‘flowaccumulation’ in tool name or description.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">"flowaccumulation"</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --listtools flowaccumulation</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --listtools flowaccumulation</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; All 5 Tools containing keywords:</span>
+<span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span>
+<span class="co">#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.</span>
+<span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
+<span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span>
+<span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></code></pre></div>
 </div>
 <div id="wbt_tool_help" class="section level3">
 <h3 class="hasAnchor">
@@ -676,22 +594,28 @@
 <p>Once we find a tool that we are interested in using, we can investigate what sort of parameters it takes. The R methods generally take the same named parameters.</p>
 <p>R functions have the naming scheme <code>wbt_tool_name</code> where <code>_</code> is used for spaces, whereas the tools themselves have no spaces.</p>
 <p><code><a href="../reference/wbt_tool_help.html">wbt_tool_help("tributaryidentifier")</a></code> shows the command line help for a tool by name.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"tributaryidentifier"</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --toolhelp=tributaryidentifier</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --toolhelp=tributaryidentifier</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
-<p><code><a href="../reference/wbt_tributary_identifier.html">?wbt_tributary_identifier</a></code> shows the corresponding R function help, which is derived from the command line help page and other metadata.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"tributaryidentifier"</span><span class="op">)</span>
+<span class="co">#&gt; TributaryIdentifier</span>
+<span class="co">#&gt; Description:</span>
+<span class="co">#&gt; Assigns a unique identifier to each tributary in a stream network.</span>
+<span class="co">#&gt; Toolbox: Stream Network Analysis</span>
+<span class="co">#&gt; Parameters:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Flag               Description</span>
+<span class="co">#&gt; -----------------  -----------</span>
+<span class="co">#&gt; --d8_pntr          Input raster D8 pointer file.</span>
+<span class="co">#&gt; --streams          Input raster streams file.</span>
+<span class="co">#&gt; -o, --output       Output raster file.</span>
+<span class="co">#&gt; --esri_pntr        D8 pointer uses the ESRI style scheme.</span>
+<span class="co">#&gt; --zero_background  Flag indicating whether a background value of zero should be used.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Example usage:</span>
+<span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif</span>
+<span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif --esri_pntr --zero_background</span></code></pre></div>
+<p><code><a href="../reference/wbt_tributary_identifier.html">?wbt_tributary_identifier</a></code> shows the corresponding R function help, which is derived from the command line help page and other metadata.</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="op">?</span><span class="va">wbt_tributary_identifier</span></code></pre></div>
 </div>
 <div id="wbt_toolbox" class="section level3">
@@ -700,22 +624,11 @@
 </h3>
 <p>Another way that tools are organized in WhiteboxTools is by “toolbox.”</p>
 <p><code><a href="../reference/wbt_toolbox.html">wbt_toolbox()</a></code> prints the toolbox for a specific tool (or all tools if none specified)</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --toolbox=aspect</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --toolbox=aspect</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
-<p>Print the full list by not specifying <code>tool_name</code></p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span>
+<span class="co">#&gt; Geomorphometric Analysis</span></code></pre></div>
+<p>Print the full list by not specifying <code>tool_name</code></p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="wbt_tool_parameters" class="section level3">
@@ -723,40 +636,18 @@
 <a href="#wbt_tool_parameters" class="anchor"></a><code>wbt_tool_parameters()</code>
 </h3>
 <p><code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> retrieves the tool parameter descriptions for a specific tool as JSON formatted string.</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --toolparameters=slope</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --toolparameters=slope</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></code></pre></div>
 </div>
 <div id="wbt_view_code" class="section level3">
 <h3 class="hasAnchor">
 <a href="#wbt_view_code" class="anchor"></a><code>wbt_view_code()</code>
 </h3>
 <p>WhiteboxTools is written in Rust and is open source. You can view the source code for a specific tool on the source code repository.</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --viewcode=breach_depressions</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span>
-<span class="co">#&gt; Error : </span>
-<span class="co">#&gt; Error running WhiteboxTools</span>
-<span class="co">#&gt;   whitebox.exe_path: '/tmp/Rtmp6fKOlO/temp_libpathc73071b17c01/whitebox/WBT/whitebox_tools'; File exists? FALSE</span>
-<span class="co">#&gt;   Arguments: --viewcode=breach_depressions</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Error in system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, : error in running command</span></code></pre></div>
+<span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
 <p>Use the argument <code>viewer=TRUE</code> to use <code><a href="https://rdrr.io/r/utils/browseURL.html">browseURL()</a></code> to open a browser window to the corresponding GitHub page.</p>
 </div>
 </div>

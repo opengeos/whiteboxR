@@ -152,7 +152,7 @@ wbt_centroid <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode
 
 #' Centroid vector
 #'
-#' Identifes the centroid point of a vector polyline or polygon feature or a group of vector points.
+#' Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.

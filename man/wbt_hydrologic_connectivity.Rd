@@ -24,7 +24,7 @@ wbt_hydrologic_connectivity(
 
 \item{exponent}{Optional exponent parameter; default is 1.0.}
 
-\item{threshold}{Optional convergence threshold parameter, in grid cells; default is inifinity.}
+\item{threshold}{Optional convergence threshold parameter, in grid cells; default is infinity.}
 
 \item{wd}{Changes the working directory.}
 
