@@ -43,8 +43,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   # if the wbt_exe_path() output doesnt match user input
   if (!res2) {
     if (wbt_verbose()) {
-      message("WhiteboxTools Executable Path (whitebox.exe_path) reverted to:\n\t", 
-              new_exe_path, "\n", call. = FALSE)
+      message("WhiteboxTools Executable Path (whitebox.exe_path) reverted to:\n\t", new_exe_path)
     }
   }
   return(invisible(res1 && res2))
@@ -298,6 +297,10 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     cat("You can now start using whitebox\n")
     cat("    library(whitebox)\n")
     cat("    wbt_version()\n")
+    
+    # call wbt_init
+    wbt_init(exe_path = exe_path)
+    
   } else if (!force) {
     cat("WhiteboxTools binary is located here: ", exe_path, "\n")
   }
