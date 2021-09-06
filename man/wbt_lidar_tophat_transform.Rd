@@ -30,5 +30,5 @@ wbt_lidar_tophat_transform(
 Returns the tool text outputs.
 }
 \description{
-Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modeling the vegetation canopy.
+Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
 }

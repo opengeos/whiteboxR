@@ -6,9 +6,12 @@
 \usage{
 wbt_impoundment_size_index(
   dem,
-  output,
   damlength,
-  out_type = "mean depth",
+  out_mean = NULL,
+  out_max = NULL,
+  out_volume = NULL,
+  out_area = NULL,
+  out_dam_height = NULL,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE
@@ -17,11 +20,17 @@ wbt_impoundment_size_index(
 \arguments{
 \item{dem}{Input raster DEM file.}
 
-\item{output}{Output file.}
-
 \item{damlength}{Maximum length of the dam.}
 
-\item{out_type}{Output type; one of 'mean depth' (default), 'volume', 'area', 'max depth'.}
+\item{out_mean}{Output mean flooded depth file.}
+
+\item{out_max}{Output maximum flooded depth file.}
+
+\item{out_volume}{Output flooded volume file.}
+
+\item{out_area}{Output flooded area file.}
+
+\item{out_dam_height}{Output dam height file.}
 
 \item{wd}{Changes the working directory.}
 

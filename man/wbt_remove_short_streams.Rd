@@ -22,7 +22,7 @@ wbt_remove_short_streams(
 
 \item{output}{Output raster file.}
 
-\item{min_length}{Minimum tributary length (in map units) used for network pruning.}
+\item{min_length}{Minimum tributary length (in map units) used for network prunning.}
 
 \item{esri_pntr}{D8 pointer uses the ESRI style scheme.}
 

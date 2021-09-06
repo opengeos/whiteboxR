@@ -26,7 +26,7 @@ wbt_fd8_flow_accumulation(
 
 \item{exponent}{Optional exponent parameter; default is 1.1.}
 
-\item{threshold}{Optional convergence threshold parameter, in grid cells; default is infinity.}
+\item{threshold}{Optional convergence threshold parameter, in grid cells; default is inifinity.}
 
 \item{log}{Optional flag to request the output be log-transformed.}
 

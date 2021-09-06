@@ -135,7 +135,7 @@
     <p>This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: <a href='https://github.com/jblindsay/whitebox-tools'>https://github.com/jblindsay/whitebox-tools</a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>install_whitebox</span><span class='op'>(</span>pkg_dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/find.package.html'>find.package</a></span><span class='op'>(</span><span class='st'>"whitebox"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>install_whitebox</span><span class='op'>(</span>pkg_dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/find.package.html'>find.package</a></span><span class='op'>(</span><span class='st'>"whitebox"</span><span class='op'>)</span>, force <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,6 +143,10 @@
     <tr>
       <th>pkg_dir</th>
       <td><p>default install path is to whitebox package "WBT" folder</p></td>
+    </tr>
+    <tr>
+      <th>force</th>
+      <td><p>logical. Default <code>FALSE</code>. Force install?</p></td>
     </tr>
     </table>
 

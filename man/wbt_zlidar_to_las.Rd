@@ -2,7 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_zlidar_to_las}
 \alias{wbt_zlidar_to_las}
-\title{zlidar to las}
+\title{Zlidar to las}
 \usage{
 wbt_zlidar_to_las(
   inputs = NULL,
@@ -13,7 +13,7 @@ wbt_zlidar_to_las(
 )
 }
 \arguments{
-\item{inputs}{Input zlidar files.}
+\item{inputs}{Input ZLidar files.}
 
 \item{outdir}{Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.}
 

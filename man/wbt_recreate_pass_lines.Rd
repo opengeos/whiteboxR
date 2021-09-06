@@ -10,6 +10,7 @@ wbt_recreate_pass_lines(
   output_lines,
   output_points,
   max_change_in_heading = 25,
+  ignore_zeros = FALSE,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE
@@ -25,6 +26,8 @@ wbt_recreate_pass_lines(
 \item{output_points}{Name of the output points shapefile.}
 
 \item{max_change_in_heading}{Max change in heading.}
+
+\item{ignore_zeros}{Ignore zero-valued yield points?.}
 
 \item{wd}{Changes the working directory.}
 

@@ -25,9 +25,9 @@ wbt_shadow_animation(
 
 \item{output}{Name of the output HTML file (*.html).}
 
-\item{palette}{DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.}
+\item{palette}{DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridis', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.}
 
-\item{max_dist}{Optional maximum search distance. Minimum value is 5 x cell size.}
+\item{max_dist}{Optional maximum search distance, in xy units. Minimum value is 5 x cell size.}
 
 \item{date}{Date in format DD/MM/YYYY.}
 
