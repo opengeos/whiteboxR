@@ -247,7 +247,7 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, w
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
 #' @param exponent Optional exponent parameter; default is 1.0.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param log Log-transform the output values?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -401,7 +401,7 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 #' @param input Input raster DEM or D-infinity pointer file.
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'sca' (default), and 'ca'.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param pntr Is the input raster a D-infinity flow pointer rather than a DEM?.
@@ -714,7 +714,7 @@ wbt_elevation_above_stream_euclidean <- function(dem, streams, output, wd=NULL, 
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional exponent parameter; default is 1.1.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param wd Changes the working directory.
@@ -1190,7 +1190,7 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, v
 #' @param output1 Name of the output downslope unsaturated length (DUL) file.
 #' @param output2 Name of the output upslope disconnected saturated area (UDSA) file.
 #' @param exponent Optional exponent parameter; default is 1.0.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
@@ -1462,7 +1462,7 @@ wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=F
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional exponent parameter; default is 1.1.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param wd Changes the working directory.
@@ -1539,7 +1539,7 @@ wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional upper-bound exponent parameter; default is 10.0.
 #' @param max_slope Optional upper-bound slope parameter, in degrees (0-90); default is 45.0.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param log Log-transform the output values?.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param wd Changes the working directory.
@@ -1590,7 +1590,7 @@ wbt_qin_flow_accumulation <- function(dem, output, out_type="specific contributi
 #' @param output Name of the output raster file.
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional exponent parameter; default is 1.0.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
 #' @param log Log-transform the output values?.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param wd Changes the working directory.

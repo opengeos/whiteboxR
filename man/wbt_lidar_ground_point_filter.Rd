@@ -26,7 +26,7 @@ wbt_lidar_ground_point_filter(
 
 \item{radius}{Search Radius.}
 
-\item{min_neighbours}{The minimum number of neighbouring points within search areas. If fewer points than this threshold are idenfied during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.}
+\item{min_neighbours}{The minimum number of neighbouring points within search areas. If fewer points than this threshold are identified during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.}
 
 \item{slope_threshold}{Maximum inter-point slope to be considered an off-terrain point.}
 

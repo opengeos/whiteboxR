@@ -27,5 +27,5 @@ wbt_raster_calculator(
 Returns the tool text outputs.
 }
 \description{
-This tool performs a conditional evaluaton (if-then-else) operation on a raster.
+This tool performs a conditional evaluation (if-then-else) operation on a raster.
 }

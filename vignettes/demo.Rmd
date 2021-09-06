@@ -204,7 +204,7 @@ NOTE: once you have set a working directory in a session, the directory needs to
 
 A helper method for setting the `whitebox.wd` option is `wbt_wd()`. 
 
-*To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. The next tool call will change the WhiteboxTools working directorysetting to the new path. After this point the flag need not be specified [until you wish to change again]. 
+*To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. The next tool call will change the WhiteboxTools working directory setting to the new path. After this point the flag need not be specified [until you wish to change again]. 
 
 ```r
 wbt_wd("") # "" equivalent to getwd()

@@ -176,7 +176,6 @@ First we load the library and perform any necessary setup.
 
     # set up as needed
     wbt_init()
-    #> [1] TRUE
 
 Many WhiteboxTools will take GeoTIFF files as input. There is a sample
 Digital Elevation Model (DEM) included in the whitebox package. You can
@@ -269,7 +268,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v1.5.0 by Dr. John B. Lindsay (c) 2017-2021
+    #> WhiteboxTools v2.0.0 by Dr. John B. Lindsay (c) 2017-2021
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
@@ -347,8 +346,8 @@ The `filter` argument sets the size of the filter kernel.
     #> 
     #> 
     #> Example usage:
-    #> >>./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"
-    #> ./homeandrewworkspacewhitebox-toolstargetreleasewhitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las
+    #> >>./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"
+    #> ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las
 
     # Retrieves the tool parameter descriptions for a specific tool.
     wbt_tool_parameters("slope")

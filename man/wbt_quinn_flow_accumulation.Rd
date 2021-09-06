@@ -26,7 +26,7 @@ wbt_quinn_flow_accumulation(
 
 \item{exponent}{Optional exponent parameter; default is 1.0.}
 
-\item{threshold}{Optional convergence threshold parameter, in grid cells; default is inifinity.}
+\item{threshold}{Optional convergence threshold parameter, in grid cells; default is infinity.}
 
 \item{log}{Log-transform the output values?.}
 

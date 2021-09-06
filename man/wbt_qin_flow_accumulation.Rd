@@ -29,7 +29,7 @@ wbt_qin_flow_accumulation(
 
 \item{max_slope}{Optional upper-bound slope parameter, in degrees (0-90); default is 45.0.}
 
-\item{threshold}{Optional convergence threshold parameter, in grid cells; default is inifinity.}
+\item{threshold}{Optional convergence threshold parameter, in grid cells; default is infinity.}
 
 \item{log}{Log-transform the output values?.}
 

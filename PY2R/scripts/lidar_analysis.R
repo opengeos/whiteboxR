@@ -558,7 +558,7 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 
 #' Lidar classify subset
 #'
-#' Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.
+#' Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
 #'
 #' @param base Input base LiDAR file.
 #' @param subset Input subset LiDAR file.
@@ -789,7 +789,7 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
 #' @param radius Search Radius.
-#' @param min_neighbours The minimum number of neighbouring points within search areas. If fewer points than this threshold are idenfied during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.
+#' @param min_neighbours The minimum number of neighbouring points within search areas. If fewer points than this threshold are identified during the fixed-radius search, a subsequent kNN search is performed to identify the k number of neighbours.
 #' @param slope_threshold Maximum inter-point slope to be considered an off-terrain point.
 #' @param height_threshold Inter-point height difference to be considered an off-terrain point.
 #' @param classify Classify points as ground (2) or off-ground (1).

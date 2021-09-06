@@ -542,7 +542,7 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 #' Conditional evaluation
 #'
-#' This tool performs a conditional evaluaton (if-then-else) operation on a raster.
+#' This tool performs a conditional evaluation (if-then-else) operation on a raster.
 #'
 #' @param input Name of the input DEM raster file; must be depressionless.
 #' @param statement Conditional statement e.g. value > 35.0. This statement must be a valid Rust statement.
@@ -1039,7 +1039,7 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
 #' @param input1 Input raster file (independent variable, X).
 #' @param input2 Input raster file (dependent variable, Y).
 #' @param output Output HTML file for regression summary report.
-#' @param out_residuals Output raster regression resdidual file.
+#' @param out_residuals Output raster regression residual file.
 #' @param standardize Optional flag indicating whether to standardize the residuals map.
 #' @param scattergram Optional flag indicating whether to output a scattergram.
 #' @param num_samples Number of samples used to create scattergram.
@@ -1916,7 +1916,7 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
 
 #' Raster calculator
 #'
-#' This tool performs a conditional evaluaton (if-then-else) operation on a raster.
+#' This tool performs a conditional evaluation (if-then-else) operation on a raster.
 #'
 #' @param statement Statement e.g. cos("raster1") * 35.0 + "raster2". This statement must be a valid Rust statement.
 #' @param output Name of the output raster file.
