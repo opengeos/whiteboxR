@@ -240,6 +240,46 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, w
 }
 
 
+#' Change in contributing area
+#'
+#' This tool calculates the downslope rate of change in specific contributing area (SCA).
+#'
+#' @param dem Name of the input DEM raster file; must be depressionless.
+#' @param output Name of the output raster file.
+#' @param exponent Optional exponent parameter; default is 1.0.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param log Log-transform the output values?.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_change_in_contributing_area <- function(dem, output, exponent=1.0, threshold=NULL, log=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' D8 flow accumulation
 #'
 #' Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
@@ -250,7 +290,7 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, w
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param pntr Is the input raster a D8 flow pointer rather than a DEM?.
-#' @param esri_pntr Input  D8 pointer uses the ESRI style scheme.
+#' @param esri_pntr Input D8 pointer uses the ESRI style scheme.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
@@ -361,7 +401,7 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 #' @param input Input raster DEM or D-infinity pointer file.
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'sca' (default), and 'ca'.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param pntr Is the input raster a D-infinity flow pointer rather than a DEM?.
@@ -570,6 +610,42 @@ wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weig
 }
 
 
+#' Edge contamination
+#'
+#' This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
+#'
+#' @param dem Name of the input DEM raster file; must be depressionless.
+#' @param output Name of the output raster file.
+#' @param flow_type Flow algorithm type, one of 'd8', 'mfd', or 'dinf'.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_edge_contamination <- function(dem, output, flow_type="mfd", zfactor="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(flow_type)) {
+    args <- paste(args, paste0("--flow_type=", flow_type))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Elevation above stream
 #'
 #' Calculates the elevation of cells above the nearest downslope stream cell.
@@ -638,7 +714,7 @@ wbt_elevation_above_stream_euclidean <- function(dem, streams, output, wd=NULL, 
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional exponent parameter; default is 1.1.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param wd Changes the working directory.
@@ -1106,13 +1182,54 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, v
 }
 
 
+#' Hydrologic connectivity
+#'
+#' This tool evaluates hydrologic connectivity within a DEM.
+#'
+#' @param dem Name of the input DEM raster file; must be depressionless.
+#' @param output1 Name of the output downslope unsaturated length (DUL) file.
+#' @param output2 Name of the output upslope disconnected saturated area (UDSA) file.
+#' @param exponent Optional exponent parameter; default is 1.0.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_hydrologic_connectivity <- function(dem, output1, output2, exponent=1.0, threshold=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output1=", output1))
+  args <- paste(args, paste0("--output2=", output2))
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Impoundment size index
 #'
 #' Calculates the impoundment size resulting from damming a DEM.
 #'
 #' @param dem Input raster DEM file.
-#' @param output Output file.
-#' @param out_type Output type; one of 'mean depth' (default), 'volume', 'area', 'max depth'.
+#' @param out_mean Output mean flooded depth file.
+#' @param out_max Output maximum flooded depth file.
+#' @param out_volume Output flooded volume file.
+#' @param out_area Output flooded area file.
+#' @param out_dam_height Output dam height file.
 #' @param damlength Maximum length of the dam.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1120,14 +1237,25 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_impoundment_size_index <- function(dem, output, damlength, out_type="mean depth", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_impoundment_size_index <- function(dem, damlength, out_mean=NULL, out_max=NULL, out_volume=NULL, out_area=NULL, out_dam_height=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
   args <- paste(args, paste0("--damlength=", damlength))
-  if (!is.null(out_type)) {
-    args <- paste(args, paste0("--out_type=", out_type))
+  if (!is.null(out_mean)) {
+    args <- paste(args, paste0("--out_mean=", out_mean))
+  }
+  if (!is.null(out_max)) {
+    args <- paste(args, paste0("--out_max=", out_max))
+  }
+  if (!is.null(out_volume)) {
+    args <- paste(args, paste0("--out_volume=", out_volume))
+  }
+  if (!is.null(out_area)) {
+    args <- paste(args, paste0("--out_area=", out_area))
+  }
+  if (!is.null(out_dam_height)) {
+    args <- paste(args, paste0("--out_dam_height=", out_dam_height))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1334,7 +1462,7 @@ wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=F
 #' @param output Output raster file.
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional exponent parameter; default is 1.1.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
 #' @param log Optional flag to request the output be log-transformed.
 #' @param clip Optional flag to request clipping the display max by 1 percent.
 #' @param wd Changes the working directory.
@@ -1402,6 +1530,106 @@ wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 }
 
 
+#' Qin flow accumulation
+#'
+#' This tool calculates Qin et al. (2007) flow accumulation.
+#'
+#' @param dem Name of the input DEM raster file; must be depressionless.
+#' @param output Name of the output upslope saturated area file.
+#' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
+#' @param exponent Optional upper-bound exponent parameter; default is 10.0.
+#' @param max_slope Optional upper-bound slope parameter, in degrees (0-90); default is 45.0.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param log Log-transform the output values?.
+#' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_qin_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=10.0, max_slope=45.0, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  if (!is.null(max_slope)) {
+    args <- paste(args, paste0("--max_slope=", max_slope))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (clip) {
+    args <- paste(args, "--clip")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Quinn flow accumulation
+#'
+#' This tool calculates Quinn et al. (1995) flow accumulation.
+#'
+#' @param dem Name of the input DEM raster file; must be depressionless.
+#' @param output Name of the output raster file.
+#' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
+#' @param exponent Optional exponent parameter; default is 1.0.
+#' @param threshold Optional convergence threshold parameter, in grid cells; default is inifinity.
+#' @param log Log-transform the output values?.
+#' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_quinn_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.0, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (!is.null(exponent)) {
+    args <- paste(args, paste0("--exponent=", exponent))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (clip) {
+    args <- paste(args, "--clip")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Raise walls
 #'
 #' Raises walls in a DEM along a line or around a polygon, e.g. a watershed.
@@ -1428,6 +1656,54 @@ wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, wd=NU
   }
   if (!is.null(height)) {
     args <- paste(args, paste0("--height=", height))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Rho8 flow accumulation
+#'
+#' This tool calculates Fairfield and Leymarie (1991) flow accumulation.
+#'
+#' @param input Input DEM or Rho8 pointer file; if a DEM is used, it must be depressionless.
+#' @param output Name of the output raster file.
+#' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
+#' @param log Log-transform the output values?.
+#' @param clip Optional flag to request clipping the display max by 1 percent.
+#' @param pntr Is the input raster a Rho8 flow pointer rather than a DEM?.
+#' @param esri_pntr Does the input Rho8 pointer use the ESRI style scheme?.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_rho8_flow_accumulation <- function(input, output, out_type="specific contributing area", log=FALSE, clip=FALSE, pntr=FALSE, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(out_type)) {
+    args <- paste(args, paste0("--out_type=", out_type))
+  }
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (clip) {
+    args <- paste(args, "--clip")
+  }
+  if (pntr) {
+    args <- paste(args, "--pntr")
+  }
+  if (esri_pntr) {
+    args <- paste(args, "--esri_pntr")
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1538,7 +1814,7 @@ wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, wd=NUL
 
 #' Stochastic depression analysis
 #'
-#' Preforms a stochastic analysis of depressions within a DEM.
+#' Performs a stochastic analysis of depressions within a DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output file.
