@@ -231,23 +231,23 @@ wbt_py = os.path.join(dir_path, "whitebox_tools.py")
 root_dir = os.path.dirname(dir_path)
 WBT_dir = os.path.join(root_dir, "WBT")
 
-linux_tar = "WhiteboxTools_linux_amd64.zip"
-tar_path = os.path.join(root_dir, linux_tar)
-if not os.path.exists(tar_path):
-    print("Downloading WhiteboxTools binary ...")
-    url = "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
-    urllib.request.urlretrieve(url, tar_path)  # Download WhiteboxTools
-else:
-    print("WhiteboxTools binary already exists.")
-
-if os.path.exists(WBT_dir):
-    shutil.rmtree(WBT_dir)
-
-print("Decompressing {} ...".format(linux_tar))
-with zipfile.ZipFile(tar_path, "r") as tar_ref:
-    tar_ref.extractall(root_dir)
-
-shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)
+# linux_tar = "WhiteboxTools_linux_amd64.zip"
+# tar_path = os.path.join(root_dir, linux_tar)
+# if not os.path.exists(tar_path):
+#     print("Downloading WhiteboxTools binary ...")
+#     url = "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
+#     urllib.request.urlretrieve(url, tar_path)  # Download WhiteboxTools
+# else:
+#     print("WhiteboxTools binary already exists.")
+# 
+# if os.path.exists(WBT_dir):
+#     shutil.rmtree(WBT_dir)
+# 
+# print("Decompressing {} ...".format(linux_tar))
+# with zipfile.ZipFile(tar_path, "r") as tar_ref:
+#     tar_ref.extractall(root_dir)
+# 
+# shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)
 
 # Generate R functions with documentation
 ff = None
@@ -347,27 +347,25 @@ with open(wbt_py) as f:
                         ff.write("#' }\n")
                         # print(line1)
                         # print(line2)
-
-                    # write test scripts
-                    test_file_name = "test-" + wbt_fun_name + ".R"
-                    test_file_path = os.path.join(dir_path, "tests", test_file_name)
-                    f = open(test_file_path, "w")
-                    f.write('context("{}")\n\n'.format(wbt_fun_name))
-                    f.write('test_that("' + desc + '", {\n\n')
-                    f.write("  skip_on_cran()\n")
-                    f.write("  skip_if_not(check_whitebox_binary())\n")
-                    f.write(
-                        '  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n'
-                    )
-                    f.write(
-                        '  ret <- {}(input = dem, output = "output.tif")\n'.format(
-                            wbt_fun_name
-                        )
-                    )
-                    f.write('  expect_match(ret, "Elapsed Time")\n\n')
-                    f.write("})\n")
-                    print(test_file_path)
-                    f.close()
+                      
+                    skip_fun_tests = ["raster_histogram", "attribute_correlation",
+                                      "conditional_evaluation", "crispness_index",
+                                      "ks_test_for_normality", "rescale_value_range", "trend_surface"]
+                    if (fun_params.startswith("(input, output") and not any(fun_name in s for s in skip_fun_tests)):
+                      # write test scripts
+                      test_file_name = "test-" + wbt_fun_name + ".R"
+                      test_file_path = os.path.join(dir_path, "tests", test_file_name)
+                      f = open(test_file_path, "w")
+                      f.write('context("{}")\n\n'.format(wbt_fun_name))
+                      f.write('test_that("' + desc + '", {\n\n')
+                      f.write("  skip_on_cran()\n")
+                      f.write("  skip_if_not(check_whitebox_binary())\n")
+                      f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
+                      f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
+                      f.write('  expect_match(ret, "Elapsed Time")\n\n')
+                      f.write("})\n")
+                      print(test_file_path)
+                      f.close()
 
                 # fun_name = function_name(fun_head)
                 # example = function_example(fun_name)
