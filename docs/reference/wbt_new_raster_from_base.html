@@ -140,6 +140,7 @@
   <span class='va'>output</span>,
   value <span class='op'>=</span> <span class='st'>"nodata"</span>,
   data_type <span class='op'>=</span> <span class='st'>"float"</span>,
+  cell_size <span class='op'>=</span> <span class='cn'>NULL</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
   compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>
@@ -163,6 +164,10 @@
     <tr>
       <th>data_type</th>
       <td><p>Output raster data type; options include 'double' (64-bit), 'float' (32-bit), and 'integer' (signed 16-bit) (default is 'float').</p></td>
+    </tr>
+    <tr>
+      <th>cell_size</th>
+      <td><p>Optionally specified cell size of output raster. Not used when base raster is specified.</p></td>
     </tr>
     <tr>
       <th>wd</th>

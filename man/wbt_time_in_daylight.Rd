@@ -26,9 +26,9 @@ wbt_time_in_daylight(
 
 \item{output}{Output raster file.}
 
-\item{lat}{Center point latitude.}
+\item{lat}{Centre point latitude.}
 
-\item{long}{Center point longitude.}
+\item{long}{Centre point longitude.}
 
 \item{az_fraction}{Azimuth fraction in degrees.}
 

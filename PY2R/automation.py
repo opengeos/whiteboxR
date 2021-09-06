@@ -1,10 +1,10 @@
 ##################################################################
 # Steps for updating whiteboxR
-# Step 1 - Delete the existing develop branch: git branch -D develop  
+# Step 1 - Delete the existing develop branch: git branch -D develop
 # Step 2 - Create a new develop branch: git checkout -b develop
-# Step 3 - Delete the old WhiteboxTools_linux_amd64.tar.xz in the root folder if needed
+# Step 3 - Delete the old WhiteboxTools_linux_amd64.zip in the root folder if needed
 # Step 4 - Run automation.py
-# Step 5 - Update version number and RoxygenNote in DESCRIPTION 
+# Step 5 - Update version number and RoxygenNote in DESCRIPTION
 # Step 6 - Open whiteboxR.Rproj in RStudio and run build_check.R
 # Step 7 - Commit and push changes
 # Step 8 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
@@ -14,7 +14,7 @@
 # Step 12 - Upload to R-Forge
 ##################################################################
 
-import os 
+import os
 import shutil
 import zipfile
 import urllib.request
@@ -25,9 +25,11 @@ def function_header(line):
         line = line.replace("self, i,", "input,")
         line = line.replace("self, i=None,", "input,")
         line = line.replace("self, output, i=None,", "input, output,")
-        line = line.replace(', i=None,', ', input=None,')
+        line = line.replace(", i=None,", ", input=None,")
         line = line.replace("self, ", "")
-        line = line.replace("callback=None", "wd=NULL, verbose_mode=FALSE, compress_rasters=False")
+        line = line.replace(
+            "callback=None", "wd=NULL, verbose_mode=FALSE, compress_rasters=False"
+        )
         line = line.replace("False", "FALSE")
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")
@@ -43,7 +45,7 @@ def function_header(line):
 # Extract function name
 def function_name(line):
     line = line.strip()
-    name = line[0:line.find("(")]
+    name = line[0 : line.find("(")]
     return name
 
 
@@ -59,9 +61,9 @@ def is_float(string):
 # Generate R function block
 def function_block(line, ff):
     line = line.strip()
-    function_name = line[0:line.find("(")]
+    function_name = line[0 : line.find("(")]
     start = line.find("(") + 1
-    end = len(line) -1
+    end = len(line) - 1
     argument = line[start:end]
     function_head = "wbt_" + function_name + " <- function(" + argument + ") {"
     ff.write(function_head + "\n")
@@ -71,31 +73,40 @@ def function_block(line, ff):
     for item in arguments:
         item = item.strip()
         if "=" not in item:
-            ff.write('  args <- paste(args, paste0("--' + item + '=", ' + item + '))' + "\n")
+            ff.write(
+                '  args <- paste(args, paste0("--' + item + '=", ' + item + "))" + "\n"
+            )
         elif "verbose" in item:
             continue
         elif "=FALSE" in item:
             para = item.split("=")[0]
-            ff.write('  if (' + para + ') {' + "\n")
+            ff.write("  if (" + para + ") {" + "\n")
             ff.write('    args <- paste(args, "--' + para + '")' + "\n")
-            ff.write('  }' + "\n")
+            ff.write("  }" + "\n")
         elif "=TRUE" in item:
             para = item.split("=")[0]
-            ff.write('  if (' + para + ') {' + "\n")
+            ff.write("  if (" + para + ") {" + "\n")
             ff.write('    args <- paste(args, "--' + para + '")' + "\n")
-            ff.write('  }' + "\n")
+            ff.write("  }" + "\n")
         elif "verbose" not in item:
             para = item.split("=")[0]
-            ff.write('  if (!is.null(' + para + ')) {' + "\n")
-            ff.write('    args <- paste(args, paste0("--' + para + '=", ' + para + "))" + "\n")
-            ff.write('  }' + "\n")
-            
+            ff.write("  if (!is.null(" + para + ")) {" + "\n")
+            ff.write(
+                '    args <- paste(args, paste0("--'
+                + para
+                + '=", '
+                + para
+                + "))"
+                + "\n"
+            )
+            ff.write("  }" + "\n")
+
     # ff.write('  tool_name <- match.call()[[1]]' + "\n")
-    ff.write('  tool_name <- as.character(match.call()[[1]])' + "\n")
+    ff.write("  tool_name <- as.character(match.call()[[1]])" + "\n")
     # ff.write('  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]' + "\n")
-    ff.write('  wbt_run_tool(tool_name, args, verbose_mode)' + '\n')
-    ff.write('}' + "\n")
-    ff.write('\n\n')
+    ff.write("  wbt_run_tool(tool_name, args, verbose_mode)" + "\n")
+    ff.write("}" + "\n")
+    ff.write("\n\n")
 
 
 # Extract function example usage
@@ -184,23 +195,23 @@ def function_example(fun_name):
     if fun_name == "lee_filter":
         example = '--input="image.tif" --output="output.tif"'
 
-    params = example.split('--')
+    params = example.split("--")
     ret = fun_name + "("
     for item in params:
         item = item.strip()
         if ("-r=" not in item) and ("wd=" not in item):
-            values = item.split("=")            
+            values = item.split("=")
             if len(values) > 1:
                 key = values[0]
                 val = values[1]
                 val = val.replace("'", '"')
-                if (is_float(val) == False) :
-                    val = val.replace('"', '')
+                if is_float(val) == False:
+                    val = val.replace('"', "")
                     val = '"' + val + '"'
 
                 ret = ret + key + "=" + val + ", "
     ret = ret + "verbose_mode=TRUE)"
-    return(ret)
+    return ret
 
 
 toolboxes = {
@@ -212,20 +223,20 @@ toolboxes = {
     "# LiDAR Tools #": "lidar_analysis.R",
     "# Math and Stats Tools #": "math_stat_analysis.R",
     "# Precision Agriculture #": "precision_agriculture.R",
-    "# Stream Network Analysis #": "stream_network_analysis.R"
+    "# Stream Network Analysis #": "stream_network_analysis.R",
 }
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 wbt_py = os.path.join(dir_path, "whitebox_tools.py")
 root_dir = os.path.dirname(dir_path)
-WBT_dir = os.path.join(root_dir, 'WBT')
+WBT_dir = os.path.join(root_dir, "WBT")
 
 linux_tar = "WhiteboxTools_linux_amd64.zip"
 tar_path = os.path.join(root_dir, linux_tar)
 if not os.path.exists(tar_path):
     print("Downloading WhiteboxTools binary ...")
     url = "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
-    urllib.request.urlretrieve(url, tar_path)   # Download WhiteboxTools
+    urllib.request.urlretrieve(url, tar_path)  # Download WhiteboxTools
 else:
     print("WhiteboxTools binary already exists.")
 
@@ -247,7 +258,7 @@ with open(wbt_py) as f:
     lines = f.readlines()
 
     for index, line in enumerate(lines):
-        if index > 360:            
+        if index > 450:
             line = line.strip()
 
             # Create an R script for each toolbox
@@ -270,45 +281,64 @@ with open(wbt_py) as f:
                 ff.write("#'\n")
                 i = 1
                 while True:
-                    doc_line = lines[index+i].strip()
+                    doc_line = lines[index + i].strip()
                     if doc_line == '"""':
                         break
                     elif doc_line.startswith('"""'):
-                        description = doc_line[3:] + '\n'
-                        desc = description.strip().replace(".", "")                        
+                        description = doc_line[3:] + "\n"
+                        desc = description.strip().replace(".", "")
                         ff.write("#' {}".format(description))
                         ff.write("#'\n")
-                    elif ("--" in doc_line) and (doc_line.startswith("callback") == False):
-                        if doc_line.startswith('i --'):
-                            doc_line = doc_line.replace('i --', 'input --')
-                        doc_line = doc_line.replace('-- ', "")
+                    elif ("--" in doc_line) and (
+                        doc_line.startswith("callback") == False
+                    ):
+                        if doc_line.startswith("i --"):
+                            doc_line = doc_line.replace("i --", "input --")
+                        doc_line = doc_line.replace("-- ", "")
                         param = doc_line.replace("%", " percent")
                         ff.write("#' @param {}\n".format(param))
                     i = i + 1
                 ff.write("#' @param wd Changes the working directory.\n")
-                ff.write("#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.\n")
-                ff.write("#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.\n")
+                ff.write(
+                    "#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.\n"
+                )
+                ff.write(
+                    "#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.\n"
+                )
                 ff.write("#'\n")
                 ff.write("#' @return Returns the tool text outputs.\n")
                 ff.write("#' @export\n")
                 # ff.write("#'\n")
                 # ff.write("#' @examples\n")
-                
+
                 fun_head = function_header(line)
                 # print(fun_head)
 
                 if add_example:
-                    fun_name = function_name(fun_head) 
+                    fun_name = function_name(fun_head)
                     wbt_fun_name = "wbt_" + fun_name
-                    fun_params = fun_head[fun_head.index('('):]
+                    fun_params = fun_head[fun_head.index("(") :]
 
-                    if (fun_params == "(input, output, verbose_mode=FALSE)") and (fun_name != "raster_histogram"):
+                    if (fun_params == "(input, output, verbose_mode=FALSE)") and (
+                        fun_name != "raster_histogram"
+                    ):
                         # print(fun_name)
                         output_name = fun_name + ".tif"
                         # print(fun_params)
                         # line0 = "#' " + "wbt_init()\n"
-                        line1 = "#' " + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")' + "\n" 
-                        line2 = "#' " + wbt_fun_name + "(input = dem, output = " + "\'output.tif\'" + ")" + "\n" 
+                        line1 = (
+                            "#' "
+                            + 'dem <- system.file("extdata", "DEM.tif", package="whitebox")'
+                            + "\n"
+                        )
+                        line2 = (
+                            "#' "
+                            + wbt_fun_name
+                            + "(input = dem, output = "
+                            + "'output.tif'"
+                            + ")"
+                            + "\n"
+                        )
                         ff.write("#'\n")
                         ff.write("#' @examples\n")
                         ff.write("#' \dontrun{\n")
@@ -326,18 +356,23 @@ with open(wbt_py) as f:
                     f.write('test_that("' + desc + '", {\n\n')
                     f.write("  skip_on_cran()\n")
                     f.write("  skip_if_not(check_whitebox_binary())\n")
-                    f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
-                    f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
+                    f.write(
+                        '  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n'
+                    )
+                    f.write(
+                        '  ret <- {}(input = dem, output = "output.tif")\n'.format(
+                            wbt_fun_name
+                        )
+                    )
                     f.write('  expect_match(ret, "Elapsed Time")\n\n')
-                    f.write('})\n')
+                    f.write("})\n")
                     print(test_file_path)
                     f.close()
 
-
-                # fun_name = function_name(fun_head)                
+                # fun_name = function_name(fun_head)
                 # example = function_example(fun_name)
                 # ff.write("#' {}\n".format(example))
-                
+
                 function_block(fun_head, ff)
 
 ff.close()

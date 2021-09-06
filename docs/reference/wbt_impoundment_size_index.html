@@ -137,9 +137,12 @@
 
     <pre class="usage"><span class='fu'>wbt_impoundment_size_index</span><span class='op'>(</span>
   <span class='va'>dem</span>,
-  <span class='va'>output</span>,
   <span class='va'>damlength</span>,
-  out_type <span class='op'>=</span> <span class='st'>"mean depth"</span>,
+  out_mean <span class='op'>=</span> <span class='cn'>NULL</span>,
+  out_max <span class='op'>=</span> <span class='cn'>NULL</span>,
+  out_volume <span class='op'>=</span> <span class='cn'>NULL</span>,
+  out_area <span class='op'>=</span> <span class='cn'>NULL</span>,
+  out_dam_height <span class='op'>=</span> <span class='cn'>NULL</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
   compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>
@@ -153,16 +156,28 @@
       <td><p>Input raster DEM file.</p></td>
     </tr>
     <tr>
-      <th>output</th>
-      <td><p>Output file.</p></td>
-    </tr>
-    <tr>
       <th>damlength</th>
       <td><p>Maximum length of the dam.</p></td>
     </tr>
     <tr>
-      <th>out_type</th>
-      <td><p>Output type; one of 'mean depth' (default), 'volume', 'area', 'max depth'.</p></td>
+      <th>out_mean</th>
+      <td><p>Output mean flooded depth file.</p></td>
+    </tr>
+    <tr>
+      <th>out_max</th>
+      <td><p>Output maximum flooded depth file.</p></td>
+    </tr>
+    <tr>
+      <th>out_volume</th>
+      <td><p>Output flooded volume file.</p></td>
+    </tr>
+    <tr>
+      <th>out_area</th>
+      <td><p>Output flooded area file.</p></td>
+    </tr>
+    <tr>
+      <th>out_dam_height</th>
+      <td><p>Output dam height file.</p></td>
     </tr>
     <tr>
       <th>wd</th>

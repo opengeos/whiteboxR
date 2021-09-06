@@ -600,6 +600,46 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 }
 
 
+#' Exposure towards wind flux
+#'
+#' This tool evaluates hydrologic connectivity within a DEM.
+#'
+#' @param dem Name of the input DEM raster file.
+#' @param output Name of the output raster file.
+#' @param azimuth Wind azimuth, in degrees.
+#' @param max_dist Optional maximum search distance. Minimum value is 5 x cell size.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="", zfactor="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(azimuth)) {
+    args <- paste(args, paste0("--azimuth=", azimuth))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Feature preserving smoothing
 #'
 #' Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.
@@ -1601,8 +1641,8 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 #' This tool calculates the topographic openness index from an input DEM.
 #'
 #' @param input Name of the input raster image file.
-#' @param pos_output Name of the positive openness output raster file.
-#' @param neg_output Name of the negative openness output raster file.
+#' @param pos_output Name of the positive openenness output raster file.
+#' @param neg_output Name of the negative openenness output raster file.
 #' @param dist Search distance, in grid cells.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1987,9 +2027,9 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 #' This tool creates an animated GIF of shadows based on an input DEM.
 #'
 #' @param input Name of the input digital surface model (DSM) raster file.
-#' @param palette DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.
+#' @param palette DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridis', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.
 #' @param output Name of the output HTML file (*.html).
-#' @param max_dist Optional maximum search distance. Minimum value is 5 x cell size.
+#' @param max_dist Optional maximum search distance, in xy units. Minimum value is 5 x cell size.
 #' @param date Date in format DD/MM/YYYY.
 #' @param interval Time interval, in minutes (1-60).
 #' @param location Location, defined as Lat/Long/UTC-offset (e.g. 43.5448/-80.2482/-4).
@@ -2030,6 +2070,54 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
   }
   if (!is.null(label)) {
     args <- paste(args, paste0("--label=", label))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Shadow image
+#'
+#' This tool creates a raster of shadow areas based on an input DEM.
+#'
+#' @param input Name of the input digital surface model (DSM) raster file.
+#' @param palette DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.
+#' @param output Name of the output raster file.
+#' @param max_dist Optional maximum search distance, in xy unites. Minimum value is 5 x cell size.
+#' @param date Date in format DD/MM/YYYY.
+#' @param time Time in format HH::MM, e.g. 03:15AM or 14:30.
+#' @param location Location, defined as Lat/Long/UTC-offset (e.g. 43.5448/-80.2482/-4).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="21/06/2021", time="1300", location="43.5448/-80.2482/-4", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(palette)) {
+    args <- paste(args, paste0("--palette=", palette))
+  }
+  if (!is.null(max_dist)) {
+    args <- paste(args, paste0("--max_dist=", max_dist))
+  }
+  if (!is.null(date)) {
+    args <- paste(args, paste0("--date=", date))
+  }
+  if (!is.null(time)) {
+    args <- paste(args, paste0("--time=", time))
+  }
+  if (!is.null(location)) {
+    args <- paste(args, paste0("--location=", location))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -2381,7 +2469,7 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
 #' This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).
 #'
 #' @param input Name of the input digital elevation model (DEM) raster file.
-#' @param palette Image palette; options are 'bl_yl_rd', 'bl_w_rd', 'purple', 'gn_yl', 'pi_y_g', and 'viridi'.
+#' @param palette Image palette; options are 'bl_yl_rd', 'bl_w_rd', 'purple', 'gn_yl', 'pi_y_g', and 'viridis'.
 #' @param output Name of the output HTML file (*.html).
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param num_steps Number of steps.

@@ -6,8 +6,8 @@
 \usage{
 wbt_yield_filter(
   input,
-  yield_field_name,
-  pass_field_name,
+  yield_field,
+  pass_field,
   output,
   width = 6.096,
   z_score_threshold = 2.5,
@@ -21,9 +21,9 @@ wbt_yield_filter(
 \arguments{
 \item{input}{Name of the input points shapefile.}
 
-\item{yield_field_name}{Name of the attribute containing yield data.}
+\item{yield_field}{Name of the attribute containing yield data.}
 
-\item{pass_field_name}{Name of the attribute containing pass line ID.}
+\item{pass_field}{Name of the attribute containing pass line ID.}
 
 \item{output}{Name of the output points shapefile.}
 
@@ -45,5 +45,5 @@ wbt_yield_filter(
 Returns the tool text outputs.
 }
 \description{
-This tool can be used to approximate the harvester pass lines from yield points.
+Filters crop yield values of point data derived from combine harvester yield monitors.
 }

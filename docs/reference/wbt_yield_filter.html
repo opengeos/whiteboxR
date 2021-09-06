@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Yield filter — wbt_yield_filter" />
-<meta property="og:description" content="This tool can be used to approximate the harvester pass lines from yield points." />
+<meta property="og:description" content="Filters crop yield values of point data derived from combine harvester yield monitors." />
 
 
 
@@ -132,13 +132,13 @@
     </div>
 
     <div class="ref-description">
-    <p>This tool can be used to approximate the harvester pass lines from yield points.</p>
+    <p>Filters crop yield values of point data derived from combine harvester yield monitors.</p>
     </div>
 
     <pre class="usage"><span class='fu'>wbt_yield_filter</span><span class='op'>(</span>
   <span class='va'>input</span>,
-  <span class='va'>yield_field_name</span>,
-  <span class='va'>pass_field_name</span>,
+  <span class='va'>yield_field</span>,
+  <span class='va'>pass_field</span>,
   <span class='va'>output</span>,
   width <span class='op'>=</span> <span class='fl'>6.096</span>,
   z_score_threshold <span class='op'>=</span> <span class='fl'>2.5</span>,
@@ -157,11 +157,11 @@
       <td><p>Name of the input points shapefile.</p></td>
     </tr>
     <tr>
-      <th>yield_field_name</th>
+      <th>yield_field</th>
       <td><p>Name of the attribute containing yield data.</p></td>
     </tr>
     <tr>
-      <th>pass_field_name</th>
+      <th>pass_field</th>
       <td><p>Name of the attribute containing pass line ID.</p></td>
     </tr>
     <tr>

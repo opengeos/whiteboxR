@@ -36,5 +36,5 @@ wbt_stochastic_depression_analysis(
 Returns the tool text outputs.
 }
 \description{
-Preforms a stochastic analysis of depressions within a DEM.
+Performs a stochastic analysis of depressions within a DEM.
 }

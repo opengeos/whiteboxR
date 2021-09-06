@@ -153,7 +153,7 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
 #' Exports an attribute table to a CSV text file.
 #'
 #' @param input Input vector file.
-#' @param output Output raster file.
+#' @param output Output csv file.
 #' @param headers Export field names as file header?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -168,6 +168,38 @@ wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbos
   args <- paste(args, paste0("--output=", output))
   if (headers) {
     args <- paste(args, "--headers")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Fix dangling arcs
+#'
+#' This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.
+#'
+#' @param input Name of the input lines vector file.
+#' @param output Name of the output lines vector file.
+#' @param dist Snap distance, in xy units (metres).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(dist)) {
+    args <- paste(args, paste0("--dist=", dist))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -376,13 +408,14 @@ wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=
 #' @param output Output raster file.
 #' @param value Constant value to fill raster with; either 'nodata' or numeric value.
 #' @param data_type Output raster data type; options include 'double' (64-bit), 'float' (32-bit), and 'integer' (signed 16-bit) (default is 'float').
+#' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="float", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="float", cell_size=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", base))
@@ -392,6 +425,9 @@ wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="fl
   }
   if (!is.null(data_type)) {
     args <- paste(args, paste0("--data_type=", data_type))
+  }
+  if (!is.null(cell_size)) {
+    args <- paste(args, paste0("--cell_size=", cell_size))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))

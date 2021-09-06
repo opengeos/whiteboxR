@@ -138,27 +138,31 @@
 <ul>
 <li>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</li>
 <li>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</li>
-<li>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>) or package option (<code>whitebox.exe_path</code>)
+</ul>
+</li>
+</ul>
+<div id="new-package-options" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-package-options" class="anchor"></a>New package options</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> <span class="st">`</span><span class="at">wbt_init()</span><span class="st">`</span> can set any of the other options <span class="cf">in</span> the same call as the custom EXE path. </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="sc">*</span> <span class="st">`</span><span class="at">wbt_options()</span><span class="st">`</span> returns current option values</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Use a system environment <span class="fu">variable</span> (<span class="st">`</span><span class="at">R_WHITEBOX_EXE_PATH</span><span class="st">`</span>) or package <span class="fu">option</span> (<span class="st">`</span><span class="at">whitebox.exe_path</span><span class="st">`</span>) </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">*</span> Get <span class="sc">/</span> set with <span class="st">`</span><span class="at">wbt_init()</span><span class="st">`</span>. </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Verbosity controlled <span class="fu">with</span> (<span class="st">`</span><span class="at">R_WHITEBOX_VERBOSE</span><span class="st">`</span>) or package <span class="fu">option</span> (<span class="st">`</span><span class="at">whitebox.verbose</span><span class="st">`</span>) </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="sc">*</span> Get <span class="sc">/</span> set with <span class="st">`</span><span class="at">wbt_verbose()</span><span class="st">`</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Working directory controlled <span class="fu">with</span> (<span class="st">`</span><span class="at">R_WHITEBOX_WD</span><span class="st">`</span>) or package <span class="fu">option</span> (<span class="st">`</span><span class="at">whitebox.wd</span><span class="st">`</span>) </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="sc">*</span> Get <span class="sc">/</span> set with <span class="st">`</span><span class="at">wbt_wd()</span><span class="st">`</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span></code></pre></div>
 <ul>
-<li>Get / set with <code><a href="../reference/wbt_init.html">wbt_options(exe_path = "C:/path/to/whitebox_tools.exe")</a></code> or <code><a href="../reference/wbt_init.html">wbt_init()</a></code>
-</li>
-</ul>
-</li>
-<li>Verbosity controlled with (<code>R_WHITEBOX_VERBOSE</code>) or package option (<code>whitebox.verbose</code>)
-<ul>
-<li>Get / set with <code><a href="../reference/wbt_init.html">wbt_options(verbose = TRUE)</a></code> or <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>New “whitebox Demo” vignette</li>
-<li>New data <code>wbttools</code> and <code>wbttoolparameters</code> data.frame built from WhiteboxTools v1.5.0 and <code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> output for full tool library
+<li><p>New “whitebox Demo” vignette</p></li>
+<li>
+<p>New data <code>wbttools</code> and <code>wbttoolparameters</code> data.frame built from WhiteboxTools v1.5.0 and <code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> output for full tool library</p>
 <ul>
 <li>See the “whitebox Tool Metadata” vignette</li>
 </ul>
 </li>
 </ul>
+</div>
 </div>
     <div id="whitebox-150" class="section level1">
 <h1 class="page-header" data-toc-text="1.5.0">

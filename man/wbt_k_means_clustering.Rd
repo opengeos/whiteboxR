@@ -31,7 +31,7 @@ wbt_k_means_clustering(
 
 \item{class_change}{Minimum percent of cells changed between iterations before completion.}
 
-\item{initialize}{How to initialize cluster centers?.}
+\item{initialize}{How to initialize cluster centres?.}
 
 \item{min_class_size}{Minimum class size, in pixels.}
 

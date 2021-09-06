@@ -1,3 +1,51 @@
+#' Reconcile multiple headers
+#'
+#' This tool can be used to normalize the yield points for a field.
+#'
+#' @param input Name of the input points shapefile.
+#' @param region_field Name of the attribute containing region data.
+#' @param yield_field Name of the attribute containing yield data.
+#' @param output Name of the output points shapefile.
+#' @param radius Optional search radius, in metres. Only specify this value if you want to calculate locally normalized yield.
+#' @param min_yield Minimum yield value in output.
+#' @param max_yield Maximum yield value in output.
+#' @param mean_tonnage Use this optional parameter to force the output to have a certain overall average tonnage.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, output, radius=NULL, min_yield=NULL, max_yield=NULL, mean_tonnage=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--region_field=", region_field))
+  args <- paste(args, paste0("--yield_field=", yield_field))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(min_yield)) {
+    args <- paste(args, paste0("--min_yield=", min_yield))
+  }
+  if (!is.null(max_yield)) {
+    args <- paste(args, paste0("--max_yield=", max_yield))
+  }
+  if (!is.null(mean_tonnage)) {
+    args <- paste(args, paste0("--mean_tonnage=", mean_tonnage))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Recreate pass lines
 #'
 #' This tool can be used to approximate the harvester pass lines from yield points.
@@ -7,13 +55,14 @@
 #' @param output_lines Name of the output pass lines shapefile.
 #' @param output_points Name of the output points shapefile.
 #' @param max_change_in_heading Max change in heading.
+#' @param ignore_zeros Ignore zero-valued yield points?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, output_points, max_change_in_heading=25.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, output_points, max_change_in_heading=25.0, ignore_zeros=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
@@ -22,6 +71,49 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
   args <- paste(args, paste0("--output_points=", output_points))
   if (!is.null(max_change_in_heading)) {
     args <- paste(args, paste0("--max_change_in_heading=", max_change_in_heading))
+  }
+  if (ignore_zeros) {
+    args <- paste(args, "--ignore_zeros")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Remove field edge points
+#'
+#' This tool can be used to remove most of the points along the edges from a crop yield data set.
+#'
+#' @param input Name of the input points shapefile.
+#' @param output Name of the output points shapefile.
+#' @param dist Average distance between passes, in meters.
+#' @param max_change_in_heading Max change in heading.
+#' @param flag_edges Don't remove edge points, just flag them in the attribute table?.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in_heading=25.0, flag_edges=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(dist)) {
+    args <- paste(args, paste0("--dist=", dist))
+  }
+  if (!is.null(max_change_in_heading)) {
+    args <- paste(args, paste0("--max_change_in_heading=", max_change_in_heading))
+  }
+  if (flag_edges) {
+    args <- paste(args, "--flag_edges")
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -36,11 +128,11 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 
 #' Yield filter
 #'
-#' This tool can be used to approximate the harvester pass lines from yield points.
+#' Filters crop yield values of point data derived from combine harvester yield monitors.
 #'
 #' @param input Name of the input points shapefile.
-#' @param yield_field_name Name of the attribute containing yield data.
-#' @param pass_field_name Name of the attribute containing pass line ID.
+#' @param yield_field Name of the attribute containing yield data.
+#' @param pass_field Name of the attribute containing pass line ID.
 #' @param output Name of the output points shapefile.
 #' @param width Pass swath width (m).
 #' @param z_score_threshold Z-score threshold value (default=2.5).
@@ -52,12 +144,12 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_yield_filter <- function(input, yield_field_name, pass_field_name, output, width=6.096, z_score_threshold=2.5, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096, z_score_threshold=2.5, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--yield_field_name=", yield_field_name))
-  args <- paste(args, paste0("--pass_field_name=", pass_field_name))
+  args <- paste(args, paste0("--yield_field=", yield_field))
+  args <- paste(args, paste0("--pass_field=", pass_field))
   args <- paste(args, paste0("--output=", output))
   if (!is.null(width)) {
     args <- paste(args, paste0("--width=", width))
@@ -108,6 +200,52 @@ wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_chang
   }
   if (!is.null(max_change_in_heading)) {
     args <- paste(args, paste0("--max_change_in_heading=", max_change_in_heading))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- as.character(match.call()[[1]])
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Yield normalization
+#'
+#' This tool can be used to normalize the yield points for a field.
+#'
+#' @param input Name of the input points shapefile.
+#' @param yield_field Name of the attribute containing yield data.
+#' @param output Name of the output points shapefile.
+#' @param standardize Should the yield values be standardized (converted to z-scores) rather than normalized?.
+#' @param radius Optional search radius, in metres. Only specify this value if you want to calculate locally normalized yield.
+#' @param min_yield Minimum yield value in output.
+#' @param max_yield Maximum yield value in output.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_yield_normalization <- function(input, yield_field, output, standardize=FALSE, radius=NULL, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--yield_field=", yield_field))
+  args <- paste(args, paste0("--output=", output))
+  if (standardize) {
+    args <- paste(args, "--standardize")
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!is.null(min_yield)) {
+    args <- paste(args, paste0("--min_yield=", min_yield))
+  }
+  if (!is.null(max_yield)) {
+    args <- paste(args, paste0("--max_yield=", max_yield))
   }
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))

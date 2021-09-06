@@ -24,7 +24,7 @@ wbt_d_inf_flow_accumulation(
 
 \item{out_type}{Output type; one of 'cells', 'sca' (default), and 'ca'.}
 
-\item{threshold}{Optional convergence threshold parameter, in grid cells; default is infinity.}
+\item{threshold}{Optional convergence threshold parameter, in grid cells; default is inifinity.}
 
 \item{log}{Optional flag to request the output be log-transformed.}
 
