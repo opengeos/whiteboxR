@@ -22,12 +22,13 @@ jobs:
       matrix:
         config:
           - {os: windows-latest, r: 'release'}
-          - {os: macOS-latest, r: 'release'}
-          - {os: ubuntu-20.04, r: 'devel', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
+          - {os: macOS-latest, r: 'release', exepath: "/Users/runner/work/_temp/Library/whitebox/WBT/whitebox_tools"}
+          - {os: ubuntu-20.04, r: 'devel', exepath: "/home/runner/work/_temp/Library/whitebox/WBT/whitebox_tools", rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
 #         - {os: ubuntu-18.04, r: '3.6',  rspm: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"}
 
     env:
       RSPM: ${{ matrix.config.rspm }}
+      R_WHITEBOX_EXE_PATH: ${{ matrix.config.exepath }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
