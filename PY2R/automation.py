@@ -101,8 +101,7 @@ def function_block(line, ff):
             )
             ff.write("  }" + "\n")
 
-    # ff.write('  tool_name <- match.call()[[1]]' + "\n")
-    ff.write("  tool_name <- as.character(match.call()[[1]])" + "\n")
+    ff.write("  tool_name <- \""+function_name+"\"\n")
     # ff.write('  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]' + "\n")
     ff.write("  wbt_run_tool(tool_name, args, verbose_mode)" + "\n")
     ff.write("}" + "\n")
@@ -231,23 +230,23 @@ wbt_py = os.path.join(dir_path, "whitebox_tools.py")
 root_dir = os.path.dirname(dir_path)
 WBT_dir = os.path.join(root_dir, "WBT")
 
-linux_tar = "WhiteboxTools_linux_amd64.zip"
-tar_path = os.path.join(root_dir, linux_tar)
-if not os.path.exists(tar_path):
-    print("Downloading WhiteboxTools binary ...")
-    url = "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
-    urllib.request.urlretrieve(url, tar_path)  # Download WhiteboxTools
-else:
-    print("WhiteboxTools binary already exists.")
-
-if os.path.exists(WBT_dir):
-    shutil.rmtree(WBT_dir)
-
-print("Decompressing {} ...".format(linux_tar))
-with zipfile.ZipFile(tar_path, "r") as tar_ref:
-    tar_ref.extractall(root_dir)
-
-shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)
+# linux_tar = "WhiteboxTools_linux_amd64.zip"
+# tar_path = os.path.join(root_dir, linux_tar)
+# if not os.path.exists(tar_path):
+#     print("Downloading WhiteboxTools binary ...")
+#     url = "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
+#     urllib.request.urlretrieve(url, tar_path)  # Download WhiteboxTools
+# else:
+#     print("WhiteboxTools binary already exists.")
+# 
+# if os.path.exists(WBT_dir):
+#     shutil.rmtree(WBT_dir)
+# 
+# print("Decompressing {} ...".format(linux_tar))
+# with zipfile.ZipFile(tar_path, "r") as tar_ref:
+#     tar_ref.extractall(root_dir)
+# 
+# shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)
 
 # Generate R functions with documentation
 ff = None
