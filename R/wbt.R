@@ -25,6 +25,8 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
     stop("exe_path must be a character vector with length 1", call. = FALSE)
   }
   
+  exe_path <- path.expand(exe_path)
+  
   # if exe_path is not NULL and file exists, and value differs from the wbt_exe_path() result
   if ((!is.null(exe_path) && 
       file.exists(exe_path) &&
@@ -78,11 +80,11 @@ wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
   
   # check user input, set package options
   if (!is.null(exe_path)) {
-    options(whitebox.exe_path = exe_path)
+    options(whitebox.exe_path = path.expand(exe_path))
   }
   
   if (!is.null(wd)) {
-    options(whitebox.wd = wd) 
+    options(whitebox.wd = path.expand(wd)) 
   }
   
   if (!is.null(verbose)) {
@@ -217,10 +219,12 @@ wbt_verbose <- function(verbose = NULL) {
 
 #' @export
 wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
-
+  
   stopifnot(is.logical(force))
   stopifnot(length(pkg_dir) == 1)
   stopifnot(is.character(pkg_dir))
+  
+  pkg_dir <- path.expand(pkg_dir)
   
   # Check for binary file in 'WBT' directory
   exe_path <- wbt_default_path()
@@ -285,7 +289,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     
     utils::unzip(exe_zip, exdir = pkg_dir)
 
-    Sys.chmod(exe_path, '755')
+    exe_path_out <- file.path(pkg_dir, basename(exe_path))
+    Sys.chmod(exe_path_out, '755')
 
     # if (os == "Windows") {
     #   utils::unzip(exe_zip, exdir = pkg_dir)
@@ -293,14 +298,13 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     #   utils::untar(exe_zip, exdir = pkg_dir)
     # }
 
-    cat("WhiteboxTools binary is located here: ", exe_path, "\n")
+    cat("WhiteboxTools binary is located here: ", exe_path_out, "\n")
     cat("You can now start using whitebox\n")
     cat("    library(whitebox)\n")
     cat("    wbt_version()\n")
     
     # call wbt_init
-    wbt_init(exe_path = exe_path)
-    
+    wbt_init(exe_path = exe_path_out)
   } else if (!force) {
     cat("WhiteboxTools binary is located here: ", exe_path, "\n")
   }
