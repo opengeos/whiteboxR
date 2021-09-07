@@ -176,7 +176,7 @@
 <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/filename.html">filename</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p><img src="demo_files/figure-html/unnamed-chunk-7-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-7-2.png" width="576"></p>
-<pre><code>#&gt; [1] "/tmp/RtmpI6B7k9/slope.tif"</code></pre>
+<pre><code>#&gt; [1] "/tmp/RtmpbxuRN4/slope.tif"</code></pre>
 <p>The <code>RasterLayer</code>, <code>SpatRaster</code> and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.</p>
 <p>Use <code><a href="https://rdrr.io/pkg/raster/man/filename.html">raster::filename()</a></code> to get the “source” file name. If you are using a terra <code>SpatRaster</code> objects the equivalent method is <code><a href="https://rdrr.io/pkg/terra/man/sources.html">terra::sources()</a></code>.</p>
 </div>
@@ -279,7 +279,7 @@
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
 <p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> call given a function-specific argument string.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
@@ -316,7 +316,7 @@
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.9s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
 </div>
 <div id="visualize-results-with-raster" class="section level4">
 <h4 class="hasAnchor">
@@ -382,7 +382,7 @@
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
 </div>
 <div id="wbt_d8_pointer-calculate-flow-direction" class="section level4">
 <h4 class="hasAnchor">
@@ -394,7 +394,7 @@
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; wbt_d8_pointer - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+<span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
 </div>
 <div id="wbt_d8_flow_accumulation-flow-accumulation" class="section level4">
 <h4 class="hasAnchor">
@@ -408,14 +408,14 @@
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
   out_type <span class="op">=</span> <span class="st">"cells"</span>
 <span class="op">)</span>
-<span class="co">#&gt; wbt_d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></code></pre></div>
+<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.3s</span></code></pre></div>
 <div id="additional-flow-direction-and-accumulation-tools" class="section level5">
 <h5 class="hasAnchor">
 <a href="#additional-flow-direction-and-accumulation-tools" class="anchor"></a>Additional Flow Direction and Accumulation Tools</h5>
 <p>In addition to D8 flow pointers (flow direction), there are several other options for both direction and accumulation such as FD8, D-infinity, and D-infinity.</p>
 <ul>
 <li><p>Keyword “Pointer” tools: <code>"D8Pointer"</code>, <code>"DInfPointer"</code>, <code>"FD8Pointer"</code>, <code>"Rho8Pointer"</code></p></li>
-<li><p>Keyword “FlowAccumulation” tools: <code>"D8FlowAccumulation"</code>, <code>"DInfFlowAccumulation"</code>, <code>"FD8FlowAccumulation"</code>, <code>"MDInfFlowAccumulation"</code></p></li>
+<li><p>Keyword “FlowAccumulation” tools: <code>"D8FlowAccumulation"</code>, <code>"DInfFlowAccumulation"</code>, <code>"FD8FlowAccumulation"</code>, <code>"Rho8FlowAccumulation"</code>, <code>"MDInfFlowAccumulation"</code></p></li>
 </ul>
 <p>Search for more tools involving <code>"flow pointer"</code> by key word: <code><a href="../reference/wbt_list_tools.html">wbt_list_tools(keyword = "flow pointer")</a></code></p>
 <pre><code>#&gt; All 22 Tools containing keywords:
@@ -455,7 +455,7 @@
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   threshold <span class="op">=</span> <span class="fl">100</span>
 <span class="op">)</span>
-<span class="co">#&gt; wbt_extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
 </div>
 <div id="wbt_tributary_identifier-identify-tributaries" class="section level4">
 <h4 class="hasAnchor">
@@ -471,7 +471,7 @@
   streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; wbt_tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
 </div>
 <div id="compare-results" class="section level4">
 <h4 class="hasAnchor">
@@ -615,8 +615,6 @@
 <span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif</span>
 <span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif --esri_pntr --zero_background</span></code></pre></div>
 <p><code><a href="../reference/wbt_tributary_identifier.html">?wbt_tributary_identifier</a></code> shows the corresponding R function help, which is derived from the command line help page and other metadata.</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="va">wbt_tributary_identifier</span></code></pre></div>
 </div>
 <div id="wbt_toolbox" class="section level3">
 <h3 class="hasAnchor">
@@ -624,11 +622,11 @@
 </h3>
 <p>Another way that tools are organized in WhiteboxTools is by “toolbox.”</p>
 <p><code><a href="../reference/wbt_toolbox.html">wbt_toolbox()</a></code> prints the toolbox for a specific tool (or all tools if none specified)</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span>
 <span class="co">#&gt; Geomorphometric Analysis</span></code></pre></div>
 <p>Print the full list by not specifying <code>tool_name</code></p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="wbt_tool_parameters" class="section level3">
@@ -636,7 +634,7 @@
 <a href="#wbt_tool_parameters" class="anchor"></a><code>wbt_tool_parameters()</code>
 </h3>
 <p><code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> retrieves the tool parameter descriptions for a specific tool as JSON formatted string.</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
 <span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></code></pre></div>
 </div>
@@ -645,7 +643,7 @@
 <a href="#wbt_view_code" class="anchor"></a><code>wbt_view_code()</code>
 </h3>
 <p>WhiteboxTools is written in Rust and is open source. You can view the source code for a specific tool on the source code repository.</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
 <span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
 <p>Use the argument <code>viewer=TRUE</code> to use <code><a href="https://rdrr.io/r/utils/browseURL.html">browseURL()</a></code> to open a browser window to the corresponding GitHub page.</p>
