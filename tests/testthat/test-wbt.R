@@ -89,7 +89,7 @@ test_that("wbt working directories", {
   expect_length(list.files(path = mywd, pattern = basename(tf)), 1)
   
   # NA or "" are converted to getwd() with an attribute set to remove the flag after next
-  expect_equal(wbt_wd(NA), structure(getwd(), unset = TRUE))
+  expect_equal(wbt_wd(NA), "")
   
   # cleanup
   unlink(tf)
@@ -105,16 +105,12 @@ test_that("wbt working directories", {
   # "unset" working directory (to R getwd()) -- special attriubute added to option
   wbt_wd(wd = "")
   
-  # get command before: there is a --wd flag for just one call
-  expect_true(grepl("--wd", wbt_run_tool("slope", paste0("--dem=", system.file("extdata/DEM.tif", package = "whitebox"), " --output=2.tif"), command_only = TRUE)))
+  # get command before: there is no wd flag on first call if background system call worked
+  expect_false(grepl("--wd", wbt_run_tool("slope", paste0("--dem=", system.file("extdata/DEM.tif", package = "whitebox"), " --output=2.tif"), command_only = TRUE)))
   
   # print(getOption("whitebox.wd"))
   
-  # run a tool with the new --wd=getwd() flag
-  wbt_run_tool("slope", paste0("--dem=", system.file("extdata/DEM.tif", package = "whitebox"), " --output=3.tif"))
-  # the working directory is unset by wbt_run_tool()
-  
-  # get command after: there is no --wd flag
+  # get command after: there is no --wd flag, and output is in getwd()/4.tif
   expect_false(grepl("--wd", wbt_run_tool("slope", paste0("--dem=", system.file("extdata/DEM.tif", package = "whitebox"), " --output=4.tif"), command_only = TRUE)))
   
   # cleanup
