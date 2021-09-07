@@ -287,9 +287,11 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
       return(invisible(NULL))
     }
     
+    # unzip to either whitebox package or user specified folder
     utils::unzip(exe_zip, exdir = pkg_dir)
 
-    exe_path_out <- file.path(pkg_dir, basename(exe_path))
+    # subfolder WBT/whitebox_tools
+    exe_path_out <- file.path(pkg_dir, "WBT", basename(exe_path))
     Sys.chmod(exe_path_out, '755')
 
     # if (os == "Windows") {
@@ -298,13 +300,17 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     #   utils::untar(exe_zip, exdir = pkg_dir)
     # }
 
-    cat("WhiteboxTools binary is located here: ", exe_path_out, "\n")
-    cat("You can now start using whitebox\n")
-    cat("    library(whitebox)\n")
-    cat("    wbt_version()\n")
+    # if we can find the file where we extracted it, let the user know
+    if (file.exists(exe_path_out)) {
+      cat("WhiteboxTools binary is located here: ", exe_path_out, "\n")
+      cat("You can now start using whitebox\n")
+      cat("    library(whitebox)\n")
+      cat("    wbt_version()\n")
+      
+      # call wbt_init (sets package option)
+      wbt_init(exe_path = exe_path_out)
+    } 
     
-    # call wbt_init
-    wbt_init(exe_path = exe_path_out)
   } else if (!force) {
     cat("WhiteboxTools binary is located here: ", exe_path, "\n")
   }
