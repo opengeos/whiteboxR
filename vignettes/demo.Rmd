@@ -42,7 +42,7 @@ WhiteboxTools is not a cartographic or spatial data visualization package; inste
 
 This demonstration shows how to use the whitebox package to integrate WhiteboxTools with R. 
  
-Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers & Geosciences, 95, 75-84. doi:[10.1016/j.cageo.2016.07.003](http://dx.doi.org/10.1016/j.cageo.2016.07.003).
+Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers & Geosciences, 95, 75-84. doi: http://dx.doi.org/10.1016/j.cageo.2016.07.003
 
 ## Setup
 

@@ -76,8 +76,8 @@ be classified or filtered. *WhiteboxTools* is not a cartographic or
 spatial data visualization package; instead it is meant to serve as an
 analytical backend for other data visualization software, mainly GIS.
 Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in
-geomorphometric analysis. *Computers & Geosciences*, 95, 75-84.
-<doi:%5B10.1016/j.cageo.2016.07.003>\](<http://dx.doi.org/10.1016/j.cageo.2016.07.003>).
+geomorphometric analysis. *Computers & Geosciences*, 95, 75-84. doi:
+<http://dx.doi.org/10.1016/j.cageo.2016.07.003>
 
 ## Installation
 
