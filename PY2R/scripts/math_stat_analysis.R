@@ -23,7 +23,7 @@ wbt_and <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "and"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -53,7 +53,7 @@ wbt_not <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "not"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -83,7 +83,7 @@ wbt_or <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "or"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -111,7 +111,7 @@ wbt_absolute_value <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "absolute_value"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -141,7 +141,7 @@ wbt_add <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "add"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -171,7 +171,7 @@ wbt_anova <- function(input, features, output, wd=NULL, verbose_mode=FALSE, comp
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "anova"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -199,7 +199,7 @@ wbt_arc_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "arc_cos"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -227,7 +227,7 @@ wbt_arc_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "arc_sin"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -255,7 +255,7 @@ wbt_arc_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "arc_tan"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -283,7 +283,7 @@ wbt_arcosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "arcosh"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -311,7 +311,7 @@ wbt_arsinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "arsinh"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -339,7 +339,7 @@ wbt_artanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "artanh"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -369,7 +369,7 @@ wbt_atan2 <- function(input_y, input_x, output, wd=NULL, verbose_mode=FALSE, com
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "atan2"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -399,7 +399,7 @@ wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "attribute_correlation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -441,7 +441,7 @@ wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, fiel
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "attribute_correlation_neighbourhood_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -471,7 +471,7 @@ wbt_attribute_histogram <- function(input, field, output, wd=NULL, verbose_mode=
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "attribute_histogram"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -507,7 +507,7 @@ wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=F
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "attribute_scattergram"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -535,7 +535,7 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "ceil"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -575,7 +575,7 @@ wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, f
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "conditional_evaluation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -603,7 +603,7 @@ wbt_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "cos"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -631,7 +631,7 @@ wbt_cosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "cosh"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -661,7 +661,7 @@ wbt_crispness_index <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "crispness_index"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -691,7 +691,7 @@ wbt_cross_tabulation <- function(input1, input2, output, wd=NULL, verbose_mode=F
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "cross_tabulation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -719,7 +719,7 @@ wbt_cumulative_distribution <- function(input, output, wd=NULL, verbose_mode=FAL
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "cumulative_distribution"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -747,7 +747,7 @@ wbt_decrement <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "decrement"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -777,7 +777,7 @@ wbt_divide <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "divide"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -807,7 +807,7 @@ wbt_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "equal_to"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -835,7 +835,7 @@ wbt_exp <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "exp"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -863,7 +863,7 @@ wbt_exp2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "exp2"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -891,7 +891,7 @@ wbt_floor <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "floor"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -925,7 +925,7 @@ wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "greater_than"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -957,7 +957,7 @@ wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", wd=NULL
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "image_autocorrelation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -987,7 +987,7 @@ wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=FAL
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "image_correlation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1027,7 +1027,7 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "image_correlation_neighbourhood_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1073,7 +1073,7 @@ wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, sta
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "image_regression"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1101,7 +1101,7 @@ wbt_in_place_add <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compre
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "in_place_add"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1129,7 +1129,7 @@ wbt_in_place_divide <- function(input1, input2, wd=NULL, verbose_mode=FALSE, com
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "in_place_divide"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1157,7 +1157,7 @@ wbt_in_place_multiply <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "in_place_multiply"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1185,7 +1185,7 @@ wbt_in_place_subtract <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "in_place_subtract"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1213,7 +1213,7 @@ wbt_increment <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "increment"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1243,7 +1243,7 @@ wbt_integer_division <- function(input1, input2, output, wd=NULL, verbose_mode=F
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "integer_division"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1271,7 +1271,7 @@ wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, ve
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "inverse_principal_component_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1299,7 +1299,7 @@ wbt_is_no_data <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "is_no_data"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1329,7 +1329,7 @@ wbt_kappa_index <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "kappa_index"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1361,7 +1361,7 @@ wbt_ks_test_for_normality <- function(input, output, num_samples=NULL, wd=NULL, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "ks_test_for_normality"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1395,7 +1395,7 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "less_than"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1425,7 +1425,7 @@ wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=F
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "list_unique_values"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1453,7 +1453,7 @@ wbt_ln <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "ln"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1481,7 +1481,7 @@ wbt_log10 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "log10"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1509,7 +1509,7 @@ wbt_log2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "log2"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1539,7 +1539,7 @@ wbt_max <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "max"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1569,7 +1569,7 @@ wbt_min <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "min"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1599,7 +1599,7 @@ wbt_modulo <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "modulo"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1629,7 +1629,7 @@ wbt_multiply <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "multiply"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1657,7 +1657,7 @@ wbt_negate <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "negate"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1687,7 +1687,7 @@ wbt_not_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "not_equal_to"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1721,7 +1721,7 @@ wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, w
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "paired_sample_t_test"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1751,7 +1751,7 @@ wbt_phi_coefficient <- function(input1, input2, output, wd=NULL, verbose_mode=FA
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "phi_coefficient"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1781,7 +1781,7 @@ wbt_power <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compr
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "power"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1817,7 +1817,7 @@ wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, stan
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "principal_component_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1849,7 +1849,7 @@ wbt_quantiles <- function(input, output, num_quantiles=5, wd=NULL, verbose_mode=
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "quantiles"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1877,7 +1877,7 @@ wbt_random_field <- function(base, output, wd=NULL, verbose_mode=FALSE, compress
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "random_field"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1909,7 +1909,7 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "random_sample"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1939,7 +1939,7 @@ wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=FA
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "raster_calculator"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1967,7 +1967,7 @@ wbt_raster_histogram <- function(input, output, wd=NULL, verbose_mode=FALSE, com
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "raster_histogram"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1993,7 +1993,7 @@ wbt_raster_summary_stats <- function(input, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "raster_summary_stats"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2021,7 +2021,7 @@ wbt_reciprocal <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "reciprocal"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2061,7 +2061,7 @@ wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, cli
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "rescale_value_range"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2089,7 +2089,7 @@ wbt_root_mean_square_error <- function(input, base, wd=NULL, verbose_mode=FALSE,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "root_mean_square_error"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2117,7 +2117,7 @@ wbt_round <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "round"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2145,7 +2145,7 @@ wbt_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "sin"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2173,7 +2173,7 @@ wbt_sinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "sinh"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2201,7 +2201,7 @@ wbt_square <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "square"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2229,7 +2229,7 @@ wbt_square_root <- function(input, output, wd=NULL, verbose_mode=FALSE, compress
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "square_root"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2259,7 +2259,7 @@ wbt_subtract <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "subtract"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2287,7 +2287,7 @@ wbt_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "tan"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2315,7 +2315,7 @@ wbt_tanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "tanh"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2343,7 +2343,7 @@ wbt_to_degrees <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "to_degrees"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2371,7 +2371,7 @@ wbt_to_radians <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "to_radians"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2403,7 +2403,7 @@ wbt_trend_surface <- function(input, output, order=1, wd=NULL, verbose_mode=FALS
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "trend_surface"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2439,7 +2439,7 @@ wbt_trend_surface_vector_points <- function(input, field, output, cell_size, ord
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "trend_surface_vector_points"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2471,7 +2471,7 @@ wbt_truncate <- function(input, output, num_decimals=NULL, wd=NULL, verbose_mode
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "truncate"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2505,7 +2505,7 @@ wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, w
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "turning_bands_simulation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2539,7 +2539,7 @@ wbt_two_sample_ks_test <- function(input1, input2, output, num_samples=NULL, wd=
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "two_sample_ks_test"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2573,7 +2573,7 @@ wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NU
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "wilcoxon_signed_rank_test"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2603,7 +2603,7 @@ wbt_xor <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "xor"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2631,7 +2631,7 @@ wbt_z_scores <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ra
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "z_scores"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2671,7 +2671,7 @@ wbt_zonal_statistics <- function(input, features, output=NULL, stat="mean", out_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "zonal_statistics"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 

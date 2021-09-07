@@ -25,7 +25,7 @@ wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=F
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "ascii_to_las"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -55,7 +55,7 @@ wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, v
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "classify_buildings_in_lidar"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -91,7 +91,7 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FA
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "classify_overlap_points"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -121,7 +121,7 @@ wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "clip_lidar_to_polygon"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -151,7 +151,7 @@ wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbo
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "erase_polygon_from_lidar"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -183,7 +183,7 @@ wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, v
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "filter_lidar_classes"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -213,7 +213,7 @@ wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verb
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "filter_lidar_scan_angles"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -241,7 +241,7 @@ wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "find_flightline_edge_points"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -275,7 +275,7 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "flightline_overlap"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -305,7 +305,7 @@ wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FA
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "height_above_ground"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -331,7 +331,7 @@ wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE, compress_raste
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "las_to_ascii"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -361,7 +361,7 @@ wbt_las_to_laz <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, comp
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "las_to_laz"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -387,7 +387,7 @@ wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "las_to_multipoint_shapefile"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -413,7 +413,7 @@ wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "las_to_shapefile"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -453,7 +453,7 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, compress="brotli", level
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "las_to_zlidar"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -483,7 +483,7 @@ wbt_laz_to_las <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, comp
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "laz_to_las"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -517,7 +517,7 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_block_maximum"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -551,7 +551,7 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_block_minimum"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -587,7 +587,7 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_classify_subset"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -617,7 +617,7 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_colourize"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -679,7 +679,7 @@ wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, param
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_contour"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -729,7 +729,7 @@ wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_digital_surface_model"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -777,7 +777,7 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_elevation_slice"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -833,7 +833,7 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_ground_point_filter"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -867,7 +867,7 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_hex_binning"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -907,7 +907,7 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_hillshade"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -943,7 +943,7 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_histogram"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1005,7 +1005,7 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_idw_interpolation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1043,7 +1043,7 @@ wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_info"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1071,7 +1071,7 @@ wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_join"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1107,7 +1107,7 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_kappa_index"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1165,7 +1165,7 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_nearest_neighbour_gridding"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1219,7 +1219,7 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_point_density"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1249,7 +1249,7 @@ wbt_lidar_point_return_analysis <- function(input, output=NULL, wd=NULL, verbose
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_point_return_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1303,7 +1303,7 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_point_stats"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1363,7 +1363,7 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_ransac_planes"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1433,7 +1433,7 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_rbf_interpolation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1465,7 +1465,7 @@ wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_remove_duplicates"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1509,7 +1509,7 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_remove_outliers"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1577,7 +1577,7 @@ wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_rooftop_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1645,7 +1645,7 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_segmentation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1689,7 +1689,7 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_segmentation_based_filter"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1743,7 +1743,7 @@ wbt_lidar_sibson_interpolation <- function(input, output=NULL, parameter="elevat
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_sibson_interpolation"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1771,7 +1771,7 @@ wbt_lidar_sort_by_time <- function(input, output, wd=NULL, verbose_mode=FALSE, c
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_sort_by_time"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1811,7 +1811,7 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_thin"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1849,7 +1849,7 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_thin_high_density"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1895,7 +1895,7 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_tile"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1927,7 +1927,7 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_tile_footprint"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1986,7 +1986,7 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_tin_gridding"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2018,7 +2018,7 @@ wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbo
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "lidar_tophat_transform"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2050,7 +2050,7 @@ wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "normal_vectors"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2080,7 +2080,7 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "select_tiles_by_polygon"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2112,7 +2112,7 @@ wbt_zlidar_to_las <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FA
   if (compress_rasters) {
     args <- paste(args, "--compress_rasters")
   }
-  tool_name <- as.character(match.call()[[1]])
+  tool_name <- "zlidar_to_las"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
