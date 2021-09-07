@@ -80,7 +80,7 @@ wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
   
   # check user input, set package options
   if (!is.null(exe_path)) {
-    if (dir.exists(exe_path)) exe_path <- path.expand(exe_path)
+    if (file.exists(exe_path)) exe_path <- path.expand(exe_path)
     options(whitebox.exe_path = exe_path)
   }
   

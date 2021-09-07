@@ -1,3 +1,13 @@
+# whitebox 2.0.0
+* Update to WhiteboxTools v2.0.0  
+  -  See https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0 for details
+
+Enhancements:
+- `whitebox::install_whitebox()` will call `wbt_init()` on the `exe_path` after unpacking to target directory  
+- `wbt_init()` `exe_path`, `wbt_wd()` `wd`, and `install_whitebox()` `pkg_dir` paths can be specified with shorthand `~` for home directory, which is expanded with `path.expand()`
+- Unsetting working directories requires only a single call to `wbt_wd("")`
+- Functions no longer use `match.call()` so unconventional/automated methods for calling tools that do not have a parseable tool name in the call result now work (#45)
+
 # whitebox 1.5.1
 * Add package options for custom EXE path and verbosity
   * Changes behavior of `wbt_init()`; now only checks EXE path
