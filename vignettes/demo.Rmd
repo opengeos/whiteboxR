@@ -401,7 +401,7 @@ In addition to D8 flow pointers (flow direction), there are several other option
 
  - Keyword "Pointer" tools: `"D8Pointer"`, `"DInfPointer"`, `"FD8Pointer"`, `"Rho8Pointer"`
 
- - Keyword "FlowAccumulation" tools: `"D8FlowAccumulation"`, `"DInfFlowAccumulation"`, `"FD8FlowAccumulation"`, `"MDInfFlowAccumulation"` 
+ - Keyword "FlowAccumulation" tools: `"D8FlowAccumulation"`, `"DInfFlowAccumulation"`, `"FD8FlowAccumulation"`, `"Rho8FlowAccumulation"`, `"MDInfFlowAccumulation"` 
 
 Search for more tools involving `"flow pointer"` by key word: `wbt_list_tools(keyword = "flow pointer")`
 
@@ -528,10 +528,6 @@ wbt_tool_help("tributaryidentifier")
 ```
 
 `?wbt_tributary_identifier` shows the corresponding R function help, which is derived from the command line help page and other metadata.
-
-```{r}
-?wbt_tributary_identifier
-```
 
 ### `wbt_toolbox()` 
 

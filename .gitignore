@@ -3,16 +3,10 @@ inst/doc
 .Rhistory
 .RData
 .Ruserdata
-inst/extdata/output.tif
-WhiteboxTools_linux_amd64.tar.xz
 WBT/
-CRAN/
-output.tif
 vignettes/*.tif
 vignettes/*.log
-*.tif
 whiteboxR.Rproj
 .vscode/
-WhiteboxTools_linux_amd64.zip
 /doc/
 /Meta/
