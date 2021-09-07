@@ -80,11 +80,14 @@ wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
   
   # check user input, set package options
   if (!is.null(exe_path)) {
-    options(whitebox.exe_path = path.expand(exe_path))
+    if (dir.exists(exe_path)) exe_path <- path.expand(exe_path)
+    options(whitebox.exe_path = exe_path)
   }
   
   if (!is.null(wd)) {
-    options(whitebox.wd = path.expand(wd)) 
+    # preserve attributes if any on wd
+    if (dir.exists(wd)) wd[1] <- path.expand(wd)
+    options(whitebox.wd = wd) 
   }
   
   if (!is.null(verbose)) {
@@ -136,7 +139,11 @@ wbt_wd <- function(wd = NULL) {
       cat("Reset WhiteboxTools working directory to current R working directory:", curwd, 
           "\nAfter next tool run package option will be unset so that --wd flag is dropped.")
     }
-    wd <- structure(curwd, unset = TRUE)
+    try(wbt_system_call(paste0("--wd=", curwd)), silent = TRUE)
+    if (wbt_verbose()) {
+      cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
+    }
+    wd <- "" #structure(curwd, unset = TRUE)
   } 
   
   if (is.character(wd)) {
@@ -634,13 +641,14 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
   # check for the "unset" attribute and unset option to empty string
   # if an error status code is returned, this step is skipped (the run doesn't count)
   # this ensures the tool has been run at least once with new --wd= before dropping the --wd= flag
-  unsetwd <- attr(getOption("whitebox.wd"), 'unset')
-  if (is.null(attr(ret, 'status')) && !is.null(unsetwd)) {
-    if (wbt_verbose()) {
-      cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
-    }
-    wbt_options(wd = "")
-  }
+  # unsetwd <- attr(getOption("whitebox.wd"), 'unset')
+  # noerror <- attr(ret, 'status')
+  # if (is.null(noerror) || noerror == 0 && !is.null(unsetwd)) {
+  #   if (wbt_verbose()) {
+  #     cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
+  #   }
+  #   wbt_options(wd = "")
+  # }
   
   invisible(ret)
 }
