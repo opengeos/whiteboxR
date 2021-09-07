@@ -102,7 +102,7 @@
 <p>‘WhiteboxTools’ can be used to perform common geographical information systems (GIS) analysis operations, such as cost-distance analysis, distance buffering, and raster reclassification. Remote sensing and image processing tasks include image enhancement (e.g. panchromatic sharpening, contrast adjustments), image mosaicing, numerous filtering operations, simple classification (k-means), and common image transformations. ‘WhiteboxTools’ also contains advanced tooling for spatial hydrological analysis (e.g. flow-accumulation, watershed delineation, stream network analysis, sink removal), terrain analysis (e.g. common terrain indices such as slope, curvatures, wetness index, hillshading; hypsometric analysis; multi-scale topographic position analysis), and LiDAR data processing.</p>
 <p>WhiteboxTools is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS.</p>
 <p>This demonstration shows how to use the whitebox package to integrate WhiteboxTools with R.</p>
-<p>Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers &amp; Geosciences, 95, 75-84. <a href="doi:%5B10.1016/j.cageo.2016.07.003" class="uri">doi:[10.1016/j.cageo.2016.07.003</a>](<a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="uri">http://dx.doi.org/10.1016/j.cageo.2016.07.003</a>).</p>
+<p>Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers &amp; Geosciences, 95, 75-84. doi: <a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="uri">http://dx.doi.org/10.1016/j.cageo.2016.07.003</a></p>
 </div>
 <div id="setup" class="section level2">
 <h2 class="hasAnchor">
@@ -176,7 +176,7 @@
 <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/filename.html">filename</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p><img src="demo_files/figure-html/unnamed-chunk-7-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-7-2.png" width="576"></p>
-<pre><code>#&gt; [1] "/tmp/RtmpbxuRN4/slope.tif"</code></pre>
+<pre><code>#&gt; [1] "/tmp/Rtmpq4CBEb/slope.tif"</code></pre>
 <p>The <code>RasterLayer</code>, <code>SpatRaster</code> and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.</p>
 <p>Use <code><a href="https://rdrr.io/pkg/raster/man/filename.html">raster::filename()</a></code> to get the “source” file name. If you are using a terra <code>SpatRaster</code> objects the equivalent method is <code><a href="https://rdrr.io/pkg/terra/man/sources.html">terra::sources()</a></code>.</p>
 </div>
@@ -316,7 +316,7 @@
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.33s</span></code></pre></div>
 </div>
 <div id="visualize-results-with-raster" class="section level4">
 <h4 class="hasAnchor">
@@ -382,7 +382,7 @@
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.29s</span></code></pre></div>
 </div>
 <div id="wbt_d8_pointer-calculate-flow-direction" class="section level4">
 <h4 class="hasAnchor">
@@ -408,7 +408,7 @@
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
   out_type <span class="op">=</span> <span class="st">"cells"</span>
 <span class="op">)</span>
-<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.3s</span></code></pre></div>
+<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></code></pre></div>
 <div id="additional-flow-direction-and-accumulation-tools" class="section level5">
 <h5 class="hasAnchor">
 <a href="#additional-flow-direction-and-accumulation-tools" class="anchor"></a>Additional Flow Direction and Accumulation Tools</h5>
@@ -455,7 +455,7 @@
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   threshold <span class="op">=</span> <span class="fl">100</span>
 <span class="op">)</span>
-<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
 </div>
 <div id="wbt_tributary_identifier-identify-tributaries" class="section level4">
 <h4 class="hasAnchor">
