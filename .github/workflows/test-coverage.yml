@@ -13,6 +13,9 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      # NOTE: hard-coded R_WHITEBOX_EXE_PATH for macOS virtual CI env
+      R_WHITEBOX_EXE_PATH: '/Users/runner/work/_temp/Library/whitebox/WBT/whitebox_tools'
+      
     steps:
       - uses: actions/checkout@v2
 
