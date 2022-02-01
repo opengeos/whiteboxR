@@ -30,5 +30,5 @@ wbt_repair_stream_vector_topology(
 Returns the tool text outputs.
 }
 \description{
-This tool resolve topological errors and inconsistencies associated with digitized vector streams.
+This tool resolves topological errors and inconsistencies associated with digitized vector streams.
 }

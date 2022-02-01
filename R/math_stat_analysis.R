@@ -544,10 +544,10 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #'
 #' This tool performs a conditional evaluation (if-then-else) operation on a raster.
 #'
-#' @param input Name of the input DEM raster file; must be depressionless.
+#' @param input Name of the input raster file.
 #' @param statement Conditional statement e.g. value > 35.0. This statement must be a valid Rust statement.
-#' @param true Value  where TRUE (input raster or constant value).
-#' @param false Value  where FALSE (input raster or constant value).
+#' @param true Value where condition evaluates TRUE (input raster or constant value).
+#' @param false Value where condition evaluates FALSE (input raster or constant value).
 #' @param output Name of the output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1916,7 +1916,7 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
 
 #' Raster calculator
 #'
-#' This tool performs a conditional evaluation (if-then-else) operation on a raster.
+#' This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
 #'
 #' @param statement Statement e.g. cos("raster1") * 35.0 + "raster2". This statement must be a valid Rust statement.
 #' @param output Name of the output raster file.

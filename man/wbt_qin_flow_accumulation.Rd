@@ -21,7 +21,7 @@ wbt_qin_flow_accumulation(
 \arguments{
 \item{dem}{Name of the input DEM raster file; must be depressionless.}
 
-\item{output}{Name of the output upslope saturated area file.}
+\item{output}{Name of the output raster file.}
 
 \item{out_type}{Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.}
 

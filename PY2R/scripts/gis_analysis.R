@@ -1354,7 +1354,7 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=FA
 
 #' Split vector lines
 #'
-#' This tool can be used to approximate the harvester pass lines from yield points.
+#' This tool can be used to split a vector line coverage into even-lengthed segments.
 #'
 #' @param input Name of the input lines shapefile.
 #' @param output Name of the output lines shapefile.

@@ -30,5 +30,5 @@ wbt_split_vector_lines(
 Returns the tool text outputs.
 }
 \description{
-This tool can be used to approximate the harvester pass lines from yield points.
+This tool can be used to split a vector line coverage into even-lengthed segments.
 }

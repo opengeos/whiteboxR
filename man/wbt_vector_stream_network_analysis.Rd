@@ -16,7 +16,7 @@ wbt_vector_stream_network_analysis(
 )
 }
 \arguments{
-\item{streams}{Name of the input routes vector file.}
+\item{streams}{Name of the input streams vector file.}
 
 \item{dem}{Name of the input DEM raster file.}
 

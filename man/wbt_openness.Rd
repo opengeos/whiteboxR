@@ -15,7 +15,7 @@ wbt_openness(
 )
 }
 \arguments{
-\item{input}{Name of the input raster image file.}
+\item{input}{Name of the input raster DEM file.}
 
 \item{pos_output}{Name of the positive openness output raster file.}
 

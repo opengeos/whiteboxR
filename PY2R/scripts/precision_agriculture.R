@@ -1,6 +1,6 @@
 #' Reconcile multiple headers
 #'
-#' This tool can be used to normalize the yield points for a field.
+#' This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
 #'
 #' @param input Name of the input points shapefile.
 #' @param region_field Name of the attribute containing region data.
@@ -88,7 +88,7 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 
 #' Remove field edge points
 #'
-#' This tool can be used to remove most of the points along the edges from a crop yield data set.
+#' This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.
 #'
 #' @param input Name of the input points shapefile.
 #' @param output Name of the output points shapefile.

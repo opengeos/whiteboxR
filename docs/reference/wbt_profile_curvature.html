@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
       </span>
     </div>
 
@@ -138,6 +138,7 @@
     <pre class="usage"><span class='fu'>wbt_profile_curvature</span><span class='op'>(</span>
   <span class='va'>dem</span>,
   <span class='va'>output</span>,
+  log <span class='op'>=</span> <span class='cn'>FALSE</span>,
   zfactor <span class='op'>=</span> <span class='cn'>NULL</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
@@ -154,6 +155,10 @@
     <tr>
       <th>output</th>
       <td><p>Output raster file.</p></td>
+    </tr>
+    <tr>
+      <th>log</th>
+      <td><p>Display output values using a log-scale.</p></td>
     </tr>
     <tr>
       <th>zfactor</th>

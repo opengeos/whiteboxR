@@ -1,3 +1,39 @@
+#' Accumulation curvature
+#'
+#' This tool calculates accumulation curvature from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "accumulation_curvature"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Aspect
 #'
 #' Calculates an aspect raster from an input DEM.
@@ -228,6 +264,42 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
 }
 
 
+#' Curvedness
+#'
+#' This tool calculates curvedness from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "curvedness"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Dev from mean elev
 #'
 #' Calculates deviation from mean elevation.
@@ -296,6 +368,42 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "diff_from_mean_elev"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Difference curvature
+#'
+#' This tool calculates difference curvature from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "difference_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -796,6 +904,178 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
 }
 
 
+#' Gaussian curvature
+#'
+#' Calculates a mean curvature raster from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "gaussian_curvature"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Gaussian scale space
+#'
+#' This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
+#'
+#' @param dem Name of the input DEM raster file.
+#' @param points Name of the input vector points shapefile.
+#' @param output Name of the output land-surface parameter raster file.
+#' @param output_zscore Name of the output z-score raster file.
+#' @param output_scale Name of the output scale raster file.
+#' @param sigma Initial sigma value (cells).
+#' @param step Step size as any positive non-zero integer.
+#' @param num_steps Number of steps.
+#' @param lsp Output land-surface parameter; one of 'AnisotropyLTP', 'Aspect', 'DiffMeanElev', 'Eastness', 'Elevation', 'Hillshade', 'MeanCurvature', 'Northness', 'PlanCurvature', 'ProfileCurvature', 'Ruggedness', 'Slope', 'TanCurvature', 'TotalCurvature'.
+#' @param z_factor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, points=NULL, sigma=0.5, step=0.5, num_steps=10, lsp="Slope", z_factor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--output_zscore=", output_zscore))
+  args <- paste(args, paste0("--output_scale=", output_scale))
+  if (!is.null(points)) {
+    args <- paste(args, paste0("--points=", points))
+  }
+  if (!is.null(sigma)) {
+    args <- paste(args, paste0("--sigma=", sigma))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(lsp)) {
+    args <- paste(args, paste0("--lsp=", lsp))
+  }
+  if (!is.null(z_factor)) {
+    args <- paste(args, paste0("--z_factor=", z_factor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "gaussian_scale_space"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Generating function
+#'
+#' This tool calculates generating function from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "generating_function"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Geomorphons
+#'
+#' Computes geomorphon patterns.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param search Look up distance.
+#' @param threshold Flatness threshold for the classification function (in degrees).
+#' @param tdist Distance (in cells) to begin reducing the flatness threshold to avoid problems with pseudo-flat lines-of-sight.
+#' @param forms Classify geomorphons into 10 common land morphologies, else, output ternary code.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, forms=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(search)) {
+    args <- paste(args, paste0("--search=", search))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(tdist)) {
+    args <- paste(args, paste0("--tdist=", tdist))
+  }
+  if (forms) {
+    args <- paste(args, "--forms")
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "geomorphons"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Hillshade
 #'
 #' Calculates a hillshade raster from an input DEM.
@@ -868,6 +1148,42 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "horizon_angle"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Horizontal excess curvature
+#'
+#' This tool calculates horizontal excess curvature from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "horizontal_excess_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -960,6 +1276,84 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "hypsometrically_tinted_hillshade"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Local hypsometric analysis
+#'
+#' This tool calculates a local, neighbourhood-based hypsometric integral raster.
+#'
+#' @param input Name of the input raster DEM file.
+#' @param out_mag Name of the openness output raster file.
+#' @param out_scale Name of the openness output raster file.
+#' @param min_scale Minimum search neighbourhood radius in grid cells.
+#' @param step Step size as any positive non-zero integer.
+#' @param num_steps Number of steps.
+#' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--out_mag=", out_mag))
+  args <- paste(args, paste0("--out_scale=", out_scale))
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(step_nonlinearity)) {
+    args <- paste(args, paste0("--step_nonlinearity=", step_nonlinearity))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "local_hypsometric_analysis"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Local quadratic regression
+#'
+#' This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
+#'
+#' @param dem Name of the input DEM raster file.
+#' @param output Name of the output raster file.
+#' @param filter Edge length of the filter kernel.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(filter)) {
+    args <- paste(args, paste0("--filter=", filter))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "local_quadratic_regression"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1254,6 +1648,106 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
 }
 
 
+#' Max upslope elev change
+#'
+#' Calculates the maximum upslope change in elevation between a grid cell and its eight downslope neighbors.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "max_upslope_elev_change"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Maximal curvature
+#'
+#' Calculates a mean curvature raster from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "maximal_curvature"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Mean curvature
+#'
+#' Calculates a mean curvature raster from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "mean_curvature"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Min downslope elev change
 #'
 #' Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors.
@@ -1278,6 +1772,42 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "min_downslope_elev_change"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Minimal curvature
+#'
+#' Calculates a mean curvature raster from an input DEM.
+#'
+#' @param dem Input raster DEM file.
+#' @param output Output raster file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "minimal_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -1640,7 +2170,7 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 #'
 #' This tool calculates the topographic openness index from an input DEM.
 #'
-#' @param input Name of the input raster image file.
+#' @param input Name of the input raster DEM file.
 #' @param pos_output Name of the positive openness output raster file.
 #' @param neg_output Name of the negative openness output raster file.
 #' @param dist Search distance, in grid cells.
@@ -1756,6 +2286,7 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1763,11 +2294,14 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_plan_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -1818,6 +2352,7 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -1825,11 +2360,14 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_profile_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -1948,6 +2486,78 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "remove_off_terrain_objects"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Ring curvature
+#'
+#' This tool calculates ring curvature from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "ring_curvature"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Rotor
+#'
+#' This tool calculates rotor from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "rotor"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2130,6 +2740,38 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
 }
 
 
+#' Shape index
+#'
+#' This tool calculates the shape index from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "shape_index"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Slope
 #'
 #' Calculates a slope raster from an input DEM.
@@ -2162,6 +2804,46 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "slope"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Slope vs aspect plot
+#'
+#' This tool creates a slope-aspect relation plot from an input DEM.
+#'
+#' @param input Name of the input raster image file.
+#' @param output Name of the output report file (*.html).
+#' @param bin_size Aspect bin size, in degrees.
+#' @param min_slope Minimum slope, in degrees.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(bin_size)) {
+    args <- paste(args, paste0("--bin_size=", bin_size))
+  }
+  if (!is.null(min_slope)) {
+    args <- paste(args, paste0("--min_slope=", min_slope))
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "slope_vs_aspect_plot"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
@@ -2378,6 +3060,7 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -2385,11 +3068,14 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_tangential_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -2530,6 +3216,7 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
+#' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
@@ -2537,11 +3224,14 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_total_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", dem))
   args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -2552,6 +3242,78 @@ wbt_total_curvature <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "total_curvature"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Unsphericity
+#'
+#' This tool calculates the unsphericity curvature from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "unsphericity"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Vertical excess curvature
+#'
+#' This tool calculates vertical excess curvature from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param output Name of the output raster image file.
+#' @param log Display output values using a log-scale.
+#' @param zfactor Z conversion factor.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", dem))
+  args <- paste(args, paste0("--output=", output))
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (!is.null(zfactor)) {
+    args <- paste(args, paste0("--zfactor=", zfactor))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "vertical_excess_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 
