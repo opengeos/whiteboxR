@@ -1,8 +1,8 @@
-pandoc: 2.11.4
+pandoc: 2.16.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   datasets: datasets.html
   demo: demo.html
-last_built: 2021-09-07T01:57Z
+last_built: 2022-02-01T19:05Z
 

@@ -768,6 +768,76 @@ wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, v
 }
 
 
+#' Generalize classified raster
+#'
+#' Generalizes a raster containing class or object features by removing small features.
+#'
+#' @param input Name of the input raster image file.
+#' @param output Name of the output raster file.
+#' @param min_size Minimum feature size, in grid cells.
+#' @param method Grouping method; one of 'longest' (default), 'largest', and 'nearest'.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_generalize_classified_raster <- function(input, output, min_size=4, method="longest", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(min_size)) {
+    args <- paste(args, paste0("--min_size=", min_size))
+  }
+  if (!is.null(method)) {
+    args <- paste(args, paste0("--method=", method))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "generalize_classified_raster"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
+#' Generalize with similarity
+#'
+#' Generalizes a raster containing class or object features by removing small features using similarity criteria of neighbouring features.
+#'
+#' @param input Name of the input raster image file.
+#' @param similarity Names of the input similarity images.
+#' @param output Name of the output raster file.
+#' @param min_size Minimum feature size, in grid cells.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--similarity=", similarity))
+  args <- paste(args, paste0("--output=", output))
+  if (!is.null(min_size)) {
+    args <- paste(args, paste0("--min_size=", min_size))
+  }
+  if (!is.null(wd)) {
+    args <- paste(args, paste0("--wd=", wd))
+  }
+  if (compress_rasters) {
+    args <- paste(args, "--compress_rasters")
+  }
+  tool_name <- "generalize_with_similarity"
+  wbt_run_tool(tool_name, args, verbose_mode)
+}
+
+
 #' Image segmentation
 #'
 #' Performs a region-growing based segmentation on a set of multi-spectral images.
@@ -808,56 +878,6 @@ wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_
 }
 
 
-#' K means clustering
-#'
-#' Performs a k-means clustering operation on a multi-spectral dataset.
-#'
-#' @param inputs Input raster files.
-#' @param output Output raster file.
-#' @param out_html Output HTML report file.
-#' @param classes Number of classes.
-#' @param max_iterations Maximum number of iterations.
-#' @param class_change Minimum percent of cells changed between iterations before completion.
-#' @param initialize How to initialize cluster centres?.
-#' @param min_class_size Minimum class size, in pixels.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_iterations=10, class_change=2.0, initialize="diagonal", min_class_size=10, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--classes=", classes))
-  if (!is.null(out_html)) {
-    args <- paste(args, paste0("--out_html=", out_html))
-  }
-  if (!is.null(max_iterations)) {
-    args <- paste(args, paste0("--max_iterations=", max_iterations))
-  }
-  if (!is.null(class_change)) {
-    args <- paste(args, paste0("--class_change=", class_change))
-  }
-  if (!is.null(initialize)) {
-    args <- paste(args, paste0("--initialize=", initialize))
-  }
-  if (!is.null(min_class_size)) {
-    args <- paste(args, paste0("--min_class_size=", min_class_size))
-  }
-  if (!is.null(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
-  }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
-  }
-  tool_name <- "k_means_clustering"
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' Min dist classification
 #'
 #' Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.
@@ -890,54 +910,6 @@ wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=
     args <- paste(args, "--compress_rasters")
   }
   tool_name <- "min_dist_classification"
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
-#' Modified k means clustering
-#'
-#' Performs a modified k-means clustering operation on a multi-spectral dataset.
-#'
-#' @param inputs Input raster files.
-#' @param output Output raster file.
-#' @param out_html Output HTML report file.
-#' @param start_clusters Initial number of clusters.
-#' @param merge_dist Cluster merger distance.
-#' @param max_iterations Maximum number of iterations.
-#' @param class_change Minimum percent of cells changed between iterations before completion.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start_clusters=1000, merge_dist=NULL, max_iterations=10, class_change=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
-  if (!is.null(out_html)) {
-    args <- paste(args, paste0("--out_html=", out_html))
-  }
-  if (!is.null(start_clusters)) {
-    args <- paste(args, paste0("--start_clusters=", start_clusters))
-  }
-  if (!is.null(merge_dist)) {
-    args <- paste(args, paste0("--merge_dist=", merge_dist))
-  }
-  if (!is.null(max_iterations)) {
-    args <- paste(args, paste0("--max_iterations=", max_iterations))
-  }
-  if (!is.null(class_change)) {
-    args <- paste(args, paste0("--class_change=", class_change))
-  }
-  if (!is.null(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
-  }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
-  }
-  tool_name <- "modified_k_means_clustering"
   wbt_run_tool(tool_name, args, verbose_mode)
 }
 

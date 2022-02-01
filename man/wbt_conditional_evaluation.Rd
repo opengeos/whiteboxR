@@ -16,15 +16,15 @@ wbt_conditional_evaluation(
 )
 }
 \arguments{
-\item{input}{Name of the input DEM raster file; must be depressionless.}
+\item{input}{Name of the input raster file.}
 
 \item{output}{Name of the output raster file.}
 
 \item{statement}{Conditional statement e.g. value > 35.0. This statement must be a valid Rust statement.}
 
-\item{true}{Value  where TRUE (input raster or constant value).}
+\item{true}{Value where condition evaluates TRUE (input raster or constant value).}
 
-\item{false}{Value  where FALSE (input raster or constant value).}
+\item{false}{Value where condition evaluates FALSE (input raster or constant value).}
 
 \item{wd}{Changes the working directory.}
 

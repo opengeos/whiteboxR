@@ -45,5 +45,5 @@ wbt_reconcile_multiple_headers(
 Returns the tool text outputs.
 }
 \description{
-This tool can be used to normalize the yield points for a field.
+This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
 }

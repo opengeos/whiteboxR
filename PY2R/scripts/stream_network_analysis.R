@@ -482,7 +482,7 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
 
 #' Repair stream vector topology
 #'
-#' This tool resolve topological errors and inconsistencies associated with digitized vector streams.
+#' This tool resolves topological errors and inconsistencies associated with digitized vector streams.
 #'
 #' @param input Name of the input lines vector file.
 #' @param output Name of the output lines vector file.
@@ -862,7 +862,7 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
 #'
 #' This tool performs common stream network analysis operations on an input vector stream file.
 #'
-#' @param streams Name of the input routes vector file.
+#' @param streams Name of the input streams vector file.
 #' @param dem Name of the input DEM raster file.
 #' @param output Name of the output lines shapefile.
 #' @param cutting_height Maximum ridge-cutting height (z units).

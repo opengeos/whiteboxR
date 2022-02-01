@@ -240,46 +240,6 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, w
 }
 
 
-#' Change in contributing area
-#'
-#' This tool calculates the downslope rate of change in specific contributing area (SCA).
-#'
-#' @param dem Name of the input DEM raster file; must be depressionless.
-#' @param output Name of the output raster file.
-#' @param exponent Optional exponent parameter; default is 1.0.
-#' @param threshold Optional convergence threshold parameter, in grid cells; default is infinity.
-#' @param log Log-transform the output values?.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
-#'
-#' @return Returns the tool text outputs.
-#' @export
-wbt_change_in_contributing_area <- function(dem, output, exponent=1.0, threshold=NULL, log=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
-  wbt_init()
-  args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  if (!is.null(exponent)) {
-    args <- paste(args, paste0("--exponent=", exponent))
-  }
-  if (!is.null(threshold)) {
-    args <- paste(args, paste0("--threshold=", threshold))
-  }
-  if (log) {
-    args <- paste(args, "--log")
-  }
-  if (!is.null(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
-  }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
-  }
-  tool_name <- "change_in_contributing_area"
-  wbt_run_tool(tool_name, args, verbose_mode)
-}
-
-
 #' D8 flow accumulation
 #'
 #' Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
@@ -1535,7 +1495,7 @@ wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 #' This tool calculates Qin et al. (2007) flow accumulation.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
-#' @param output Name of the output upslope saturated area file.
+#' @param output Name of the output raster file.
 #' @param out_type Output type; one of 'cells', 'specific contributing area' (default), and 'catchment area'.
 #' @param exponent Optional upper-bound exponent parameter; default is 10.0.
 #' @param max_slope Optional upper-bound slope parameter, in degrees (0-90); default is 45.0.

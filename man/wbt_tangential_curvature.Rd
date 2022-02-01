@@ -7,6 +7,7 @@
 wbt_tangential_curvature(
   dem,
   output,
+  log = FALSE,
   zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE,
@@ -17,6 +18,8 @@ wbt_tangential_curvature(
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
+
+\item{log}{Display output values using a log-scale.}
 
 \item{zfactor}{Optional multiplier for when the vertical and horizontal units are not the same.}
 

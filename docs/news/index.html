@@ -129,6 +129,30 @@
       <small>Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="whitebox-200" class="section level1">
+<h1 class="page-header" data-toc-text="2.0.0">
+<a href="#whitebox-200" class="anchor"></a>whitebox 2.0.0<small> 2021-09-10 </small>
+</h1>
+<ul>
+<li>Update to WhiteboxTools v2.0.0
+<ul>
+<li>See <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0</a> for details</li>
+</ul>
+</li>
+</ul>
+<p>Enhancements:</p>
+<ul>
+<li>
+<code><a href="../reference/install_whitebox.html">whitebox::install_whitebox()</a></code> will call <code><a href="../reference/wbt_init.html">wbt_init()</a></code> on the <code>exe_path</code> after unpacking to target directory<br>
+</li>
+<li>
+<code><a href="../reference/wbt_init.html">wbt_init()</a></code> <code>exe_path</code>, <code><a href="../reference/wbt_init.html">wbt_wd()</a></code> <code>wd</code>, and <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> <code>pkg_dir</code> paths can be specified with shorthand <code><a href="https://rdrr.io/r/base/tilde.html">~</a></code> for home directory, which is expanded with <code><a href="https://rdrr.io/r/base/path.expand.html">path.expand()</a></code>
+</li>
+<li>Unsetting working directories requires only a single call to <code><a href="../reference/wbt_init.html">wbt_wd("")</a></code>
+</li>
+<li>Functions no longer use <code><a href="https://rdrr.io/r/base/match.call.html">match.call()</a></code> so unconventional/automated methods for calling tools that do not have a parseable tool name in the call result now work (<a href='https://github.com/giswqs/whiteboxR/issues/45'>#45</a>)</li>
+</ul>
+</div>
     <div id="whitebox-151" class="section level1">
 <h1 class="page-header" data-toc-text="1.5.1">
 <a href="#whitebox-151" class="anchor"></a>whitebox 1.5.1<small> Unreleased </small>
