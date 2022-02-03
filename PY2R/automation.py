@@ -20,6 +20,8 @@ import zipfile
 import urllib.request
 
 # Extract function header
+
+
 def function_header(line):
     if line.startswith("def"):
         line = line.replace("self, i,", "input,")
@@ -45,7 +47,7 @@ def function_header(line):
 # Extract function name
 def function_name(line):
     line = line.strip()
-    name = line[0 : line.find("(")]
+    name = line[0: line.find("(")]
     return name
 
 
@@ -61,7 +63,7 @@ def is_float(string):
 # Generate R function block
 def function_block(line, ff):
     line = line.strip()
-    function_name = line[0 : line.find("(")]
+    function_name = line[0: line.find("(")]
     start = line.find("(") + 1
     end = len(line) - 1
     argument = line[start:end]
@@ -74,7 +76,8 @@ def function_block(line, ff):
         item = item.strip()
         if "=" not in item:
             ff.write(
-                '  args <- paste(args, paste0("--' + item + '=", ' + item + "))" + "\n"
+                '  args <- paste(args, paste0("--' + item +
+                '=", ' + item + "))" + "\n"
             )
         elif "verbose" in item:
             continue
@@ -184,7 +187,8 @@ def function_example(fun_name):
     duplicate_problems.append("lidar_block_maximum")
     duplicate_problems.append("flightline_overlap")
     if fun_name in duplicate_problems:
-        example = example.replace("--input=file.las --output=outfile.tif", "", 1)
+        example = example.replace(
+            "--input=file.las --output=outfile.tif", "", 1)
         example = example.replace("--palette=light_quant.plt", "")
 
     if fun_name == "k_nearest_mean_filter":
@@ -220,6 +224,7 @@ toolboxes = {
     "# Hydrological Analysis #": "hydro_analysis.R",
     "# Image Processing Tools #": "image_analysis.R",
     "# LiDAR Tools #": "lidar_analysis.R",
+    "# Machine Learning #": "machine_learning.R",
     "# Math and Stats Tools #": "math_stat_analysis.R",
     "# Precision Agriculture #": "precision_agriculture.R",
     "# Stream Network Analysis #": "stream_network_analysis.R",
@@ -262,7 +267,8 @@ with open(wbt_py) as f:
 
             # Create an R script for each toolbox
             if line in toolboxes:
-                script_path = os.path.join(dir_path, "scripts", toolboxes[line])
+                script_path = os.path.join(
+                    dir_path, "scripts", toolboxes[line])
                 ff = open(script_path, "w")
                 print(script_path)
 
@@ -316,7 +322,7 @@ with open(wbt_py) as f:
                 if add_example:
                     fun_name = function_name(fun_head)
                     wbt_fun_name = "wbt_" + fun_name
-                    fun_params = fun_head[fun_head.index("(") :]
+                    fun_params = fun_head[fun_head.index("("):]
 
                     if (fun_params == "(input, output, verbose_mode=FALSE)") and (
                         fun_name != "raster_histogram"
@@ -346,25 +352,28 @@ with open(wbt_py) as f:
                         ff.write("#' }\n")
                         # print(line1)
                         # print(line2)
-                      
+
                     skip_fun_tests = ["raster_histogram", "attribute_correlation",
                                       "conditional_evaluation", "crispness_index",
                                       "ks_test_for_normality", "rescale_value_range", "trend_surface"]
                     if (fun_params.startswith("(input, output") and not any(fun_name in s for s in skip_fun_tests)):
-                      # write test scripts
-                      test_file_name = "test-" + wbt_fun_name + ".R"
-                      test_file_path = os.path.join(dir_path, "tests", test_file_name)
-                      f = open(test_file_path, "w")
-                      f.write('context("{}")\n\n'.format(wbt_fun_name))
-                      f.write('test_that("' + desc + '", {\n\n')
-                      f.write("  skip_on_cran()\n")
-                      f.write("  skip_if_not(check_whitebox_binary())\n")
-                      f.write('  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
-                      f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
-                      f.write('  expect_match(ret, "Elapsed Time")\n\n')
-                      f.write("})\n")
-                      print(test_file_path)
-                      f.close()
+                        # write test scripts
+                        test_file_name = "test-" + wbt_fun_name + ".R"
+                        test_file_path = os.path.join(
+                            dir_path, "tests", test_file_name)
+                        f = open(test_file_path, "w")
+                        f.write('context("{}")\n\n'.format(wbt_fun_name))
+                        f.write('test_that("' + desc + '", {\n\n')
+                        f.write("  skip_on_cran()\n")
+                        f.write("  skip_if_not(check_whitebox_binary())\n")
+                        f.write(
+                            '  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
+                        f.write(
+                            '  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
+                        f.write('  expect_match(ret, "Elapsed Time")\n\n')
+                        f.write("})\n")
+                        print(test_file_path)
+                        f.close()
 
                 # fun_name = function_name(fun_head)
                 # example = function_example(fun_name)
