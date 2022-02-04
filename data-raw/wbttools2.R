@@ -65,5 +65,9 @@ attr(wbttools, 'version') <- wbtvs
 attr(wbttoolparameters, 'version') <- wbtvs
 
 # overwrite datasets with new data
+
+wbttools$function_name <- paste0("wbt_", wbttools$function_name)
+wbttoolparameters$function_name <- paste0("wbt_", wbttools$function_name)
+
 usethis::use_data(wbttools, overwrite = TRUE)
 usethis::use_data(wbttoolparameters, overwrite = TRUE)
