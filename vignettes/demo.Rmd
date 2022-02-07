@@ -501,7 +501,11 @@ wbt_version()
 
 ### `wbt_list_tools()`
 
-Use `wbt_list_tools()` to list all available tools in WhiteboxTools. In v1.5.0 this is 448 tools!
+```{r include=FALSE}
+data("wbttoolparameters", package="whitebox")
+```
+
+Use `wbt_list_tools()` to list all available tools in WhiteboxTools. In version `r attr(wbttoolparameters, 'version')` there are over `r (length(whitebox::wbt_list_tools()) - 1)` tools! See all the available [toolboxes](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html) and [extensions](https://www.whiteboxgeo.com/whitebox-geospatial-extensions/).
 
 ```{r, eval=FALSE}
 wbt_list_tools()
