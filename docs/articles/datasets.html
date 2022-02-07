@@ -104,7 +104,7 @@
 <a href="#what-version-of-whiteboxtools-are-these-data-sets-generated-from" class="anchor"></a>What version of WhiteboxTools are these data sets generated from?</h3>
 <p>These data sets are built to correspond to tool names available in the most recent version of WhiteboxTools and correspond to tools available in the R package.</p>
 <ul>
-<li>Current version: <strong>2.0.0</strong>
+<li>Current version: <strong>2.1.0</strong>
 </li>
 </ul>
 <p>If you have a relatively recent version of WhiteboxTools the version should not be an issue, but the data sets are not dynamically generated from your whitebox installation.</p>
@@ -118,42 +118,62 @@
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"wbttools"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">wbttools</span><span class="op">)</span>
-<span class="co">#&gt; 'data.frame':    448 obs. of  4 variables:</span>
-<span class="co">#&gt;  $ function_name: chr  "wbt_absolute_value" "wbt_adaptive_filter" "wbt_add" "wbt_add_point_coordinates_to_table" ...</span>
-<span class="co">#&gt;  $ tool_name    : chr  "AbsoluteValue" "AdaptiveFilter" "Add" "AddPointCoordinatesToTable" ...</span>
-<span class="co">#&gt;  $ toolbox_name : chr  "Math and Stats Tools" "Image Processing Tools/Filters" "Math and Stats Tools" "Data Tools" ...</span>
-<span class="co">#&gt;  $ description  : chr  "Calculates the absolute value of every cell in a raster." "Performs an adaptive filter on an image." "Performs an addition operation on two rasters or a raster and a constant value." "Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates." ...</span>
-<span class="co">#&gt;  - attr(*, "version")= chr "2.0.0"</span></code></pre></div>
-<p>The <code>wbttools</code> data set is a data.frame with 448 tools and 4 variables</p>
+<span class="co">#&gt; 'data.frame':    518 obs. of  7 variables:</span>
+<span class="co">#&gt;  $ tool_name    : chr  "AbsoluteValue" "AccumulationCurvature" "AdaptiveFilter" "Add" ...</span>
+<span class="co">#&gt;  $ function_name: chr  "wbt_absolute_value" "wbt_accumulation_curvature" "wbt_adaptive_filter" "wbt_add" ...</span>
+<span class="co">#&gt;  $ toolbox_name : chr  "Math and Stats Tools" "Geomorphometric Analysis" "Image Processing Tools" "Math and Stats Tools" ...</span>
+<span class="co">#&gt;  $ label        : chr  "Absolute Value" "Accumulation Curvature" "Adaptive Filter" "Add" ...</span>
+<span class="co">#&gt;  $ description  : chr  "Calculates the absolute value of every cell in a raster." "This tool calculates accumulation curvature from an input DEM." "Performs an adaptive filter on an image." "Performs an addition operation on two rasters or a raster and a constant value." ...</span>
+<span class="co">#&gt;  $ github       : chr  "https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/math_stat_analysis/abs.rs" "https://github.com/jblindsay/whitebox-tools/tree/master/whitebox-tools-app/src/tools" "https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/image_analysis/adaptive_filter.rs" "https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/math_stat_analysis/add.rs" ...</span>
+<span class="co">#&gt;  $ book         : chr  "https://www.whiteboxgeo.com/manual/wbt_book/available_tools/mathand_stats_tools.html#AbsoluteValue" "https://www.whiteboxgeo.com/manual/wbt_book/available_tools/geomorphometric_analysis.html#AccumulationCurvature" "https://www.whiteboxgeo.com/manual/wbt_book/available_tools/image_processing_tools.html#AdaptiveFilter" "https://www.whiteboxgeo.com/manual/wbt_book/available_tools/mathand_stats_tools.html#Add" ...</span>
+<span class="co">#&gt;  - attr(*, "version")= chr "2.1.0"</span></code></pre></div>
+<p>The <code>wbttools</code> data set is a data.frame with 518 tools and 7 variables</p>
 <ul>
 <li><p><code>"tool_name"</code> - WhiteboxTools tool name</p></li>
+<li><p><code>"function_name"</code> - R function tool name</p></li>
 <li><p><code>"toolbox_name"</code> - WhiteboxTools toolbox name</p></li>
+<li><p><code>"label"</code> - WhiteboxTools tool label</p></li>
 <li><p><code>"description"</code> - Brief description</p></li>
-<li><p><code>"function_name"</code> - R function name</p></li>
+<li><p><code>"github"</code> - GitHub link</p></li>
+<li><p><code>"book"</code> - Reference manual link</p></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wbttools</span><span class="op">)</span>
-<span class="co">#&gt;                        function_name                  tool_name</span>
-<span class="co">#&gt; 1                 wbt_absolute_value              AbsoluteValue</span>
-<span class="co">#&gt; 2                wbt_adaptive_filter             AdaptiveFilter</span>
-<span class="co">#&gt; 3                            wbt_add                        Add</span>
-<span class="co">#&gt; 4 wbt_add_point_coordinates_to_table AddPointCoordinatesToTable</span>
-<span class="co">#&gt; 5               wbt_aggregate_raster            AggregateRaster</span>
-<span class="co">#&gt; 6                            wbt_and                        And</span>
-<span class="co">#&gt;                     toolbox_name</span>
-<span class="co">#&gt; 1           Math and Stats Tools</span>
-<span class="co">#&gt; 2 Image Processing Tools/Filters</span>
-<span class="co">#&gt; 3           Math and Stats Tools</span>
-<span class="co">#&gt; 4                     Data Tools</span>
-<span class="co">#&gt; 5                   GIS Analysis</span>
-<span class="co">#&gt; 6           Math and Stats Tools</span>
+<span class="co">#&gt;                    tool_name                      function_name</span>
+<span class="co">#&gt; 1              AbsoluteValue                 wbt_absolute_value</span>
+<span class="co">#&gt; 2      AccumulationCurvature         wbt_accumulation_curvature</span>
+<span class="co">#&gt; 3             AdaptiveFilter                wbt_adaptive_filter</span>
+<span class="co">#&gt; 4                        Add                            wbt_add</span>
+<span class="co">#&gt; 5 AddPointCoordinatesToTable wbt_add_point_coordinates_to_table</span>
+<span class="co">#&gt; 6            AggregateRaster               wbt_aggregate_raster</span>
+<span class="co">#&gt;               toolbox_name                          label</span>
+<span class="co">#&gt; 1     Math and Stats Tools                 Absolute Value</span>
+<span class="co">#&gt; 2 Geomorphometric Analysis         Accumulation Curvature</span>
+<span class="co">#&gt; 3   Image Processing Tools                Adaptive Filter</span>
+<span class="co">#&gt; 4     Math and Stats Tools                            Add</span>
+<span class="co">#&gt; 5               Data Tools Add Point Coordinates To Table</span>
+<span class="co">#&gt; 6             GIS Analysis               Aggregate Raster</span>
 <span class="co">#&gt;                                                                                                    description</span>
 <span class="co">#&gt; 1                                                     Calculates the absolute value of every cell in a raster.</span>
-<span class="co">#&gt; 2                                                                     Performs an adaptive filter on an image.</span>
-<span class="co">#&gt; 3                              Performs an addition operation on two rasters or a raster and a constant value.</span>
-<span class="co">#&gt; 4 Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.</span>
-<span class="co">#&gt; 5                                                                   Aggregates a raster to a lower resolution.</span>
-<span class="co">#&gt; 6                                                Performs a logical AND operator on two Boolean raster images.</span></code></pre></div>
+<span class="co">#&gt; 2                                               This tool calculates accumulation curvature from an input DEM.</span>
+<span class="co">#&gt; 3                                                                     Performs an adaptive filter on an image.</span>
+<span class="co">#&gt; 4                              Performs an addition operation on two rasters or a raster and a constant value.</span>
+<span class="co">#&gt; 5 Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.</span>
+<span class="co">#&gt; 6                                                                   Aggregates a raster to a lower resolution.</span>
+<span class="co">#&gt;                                                                                                                              github</span>
+<span class="co">#&gt; 1                    https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/math_stat_analysis/abs.rs</span>
+<span class="co">#&gt; 2                                              https://github.com/jblindsay/whitebox-tools/tree/master/whitebox-tools-app/src/tools</span>
+<span class="co">#&gt; 3            https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/image_analysis/adaptive_filter.rs</span>
+<span class="co">#&gt; 4                    https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/math_stat_analysis/add.rs</span>
+<span class="co">#&gt; 5 https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/data_tools/add_point_coordinates_to_table.rs</span>
+<span class="co">#&gt; 6             https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/gis_analysis/aggregate_raster.rs</span>
+<span class="co">#&gt;                                                                                                              book</span>
+<span class="co">#&gt; 1              https://www.whiteboxgeo.com/manual/wbt_book/available_tools/mathand_stats_tools.html#AbsoluteValue</span>
+<span class="co">#&gt; 2 https://www.whiteboxgeo.com/manual/wbt_book/available_tools/geomorphometric_analysis.html#AccumulationCurvature</span>
+<span class="co">#&gt; 3          https://www.whiteboxgeo.com/manual/wbt_book/available_tools/image_processing_tools.html#AdaptiveFilter</span>
+<span class="co">#&gt; 4                        https://www.whiteboxgeo.com/manual/wbt_book/available_tools/mathand_stats_tools.html#Add</span>
+<span class="co">#&gt; 5          https://www.whiteboxgeo.com/manual/wbt_book/available_tools/data_tools.html#AddPointCoordinatesToTable</span>
+<span class="co">#&gt; 6                   https://www.whiteboxgeo.com/manual/wbt_book/available_tools/gis_analysis.html#AggregateRaster</span></code></pre></div>
 <p>The R function naming style differs from the tool names in WhiteboxTools, but the core words are the same.</p>
 <p>There are two steps to converting WhiteboxTools to R (if not using <code>wbttools</code>!)</p>
 <ol style="list-style-type: decimal">
@@ -168,71 +188,72 @@
 <p>The second data set provides details about the options by tool name.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"wbttoolparameters"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span></code></pre></div>
-<p>The <code>wbttoolparameters</code> data set is a <em>data.frame</em> with 1710 parameters and 13 variables:</p>
+<p>The <code>wbttoolparameters</code> data set is a <em>data.frame</em> with 2082 parameters and 13 variables:</p>
 <ul>
-<li><p><code>"function_name"</code> - R function name</p></li>
 <li><p><code>"tool_name"</code> - WhiteboxTools tool name</p></li>
+<li><p><code>"function_name"</code> - R function name</p></li>
+<li><p><code>"toolbox_name"</code> - WhiteboxTools toolbox name</p></li>
 <li><p><code>"name"</code> - WhiteboxTools tool parameter name</p></li>
 <li><p><code>"flags"</code> - flags used to specify parameter on command line; comma-separated</p></li>
 <li><p><code>"description"</code> - parameter description</p></li>
-<li><p><code>"parameter_class"</code> - parameter type</p></li>
-<li><p><code>"parameter_detail"</code> - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)</p></li>
 <li><p><code>"default_value"</code> - parameter default value, if any</p></li>
 <li><p><code>"optional"</code> - parameter “optional” flag; note that some combination of optional parameters may be required for certain conditions</p></li>
-<li><p><code>"argument_name"</code> - labels for selected subset of <code>"flags"</code> <strong>used as R function argument names</strong> for <code>wbt_</code> functions</p></li>
+<li><p><code>"parameter_class"</code> - parameter type</p></li>
+<li><p><code>"parameter_detail"</code> - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)</p></li>
 <li><p><code>"is_input"</code> - logical. Classification of ‘input’ parameters</p></li>
 <li><p><code>"is_output"</code> - logical. Classification of ‘output’ parameters</p></li>
+<li><p><code>"argument_name"</code> - labels for selected subset of <code>"flags"</code> <strong>used as R function argument names</strong> for <code>wbt_</code> functions</p></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wbttoolparameters</span><span class="op">)</span>
-<span class="co">#&gt;         function_name      tool_name                   toolbox_name</span>
-<span class="co">#&gt; 1  wbt_absolute_value  AbsoluteValue           Math and Stats Tools</span>
-<span class="co">#&gt; 2  wbt_absolute_value  AbsoluteValue           Math and Stats Tools</span>
-<span class="co">#&gt; 3 wbt_adaptive_filter AdaptiveFilter Image Processing Tools/Filters</span>
-<span class="co">#&gt; 4 wbt_adaptive_filter AdaptiveFilter Image Processing Tools/Filters</span>
-<span class="co">#&gt; 5 wbt_adaptive_filter AdaptiveFilter Image Processing Tools/Filters</span>
-<span class="co">#&gt; 6 wbt_adaptive_filter AdaptiveFilter Image Processing Tools/Filters</span>
-<span class="co">#&gt;                 name        flags                                   description</span>
-<span class="co">#&gt; 1         Input File  -i, --input                            Input raster file.</span>
-<span class="co">#&gt; 2        Output File -o, --output                           Output raster file.</span>
-<span class="co">#&gt; 3         Input File  -i, --input                            Input raster file.</span>
-<span class="co">#&gt; 4        Output File -o, --output                           Output raster file.</span>
-<span class="co">#&gt; 5 Filter X-Dimension    --filterx Size of the filter kernel in the x-direction.</span>
-<span class="co">#&gt; 6 Filter Y-Dimension    --filtery Size of the filter kernel in the y-direction.</span>
-<span class="co">#&gt;   default_value optional parameter_class parameter_detail argument_name</span>
-<span class="co">#&gt; 1          &lt;NA&gt;    FALSE    ExistingFile           Raster         input</span>
-<span class="co">#&gt; 2          &lt;NA&gt;    FALSE         NewFile           Raster        output</span>
-<span class="co">#&gt; 3          &lt;NA&gt;    FALSE    ExistingFile           Raster         input</span>
-<span class="co">#&gt; 4          &lt;NA&gt;    FALSE         NewFile           Raster        output</span>
-<span class="co">#&gt; 5            11     TRUE                          Integer       filterx</span>
-<span class="co">#&gt; 6            11     TRUE                          Integer       filtery</span>
-<span class="co">#&gt;   is_input is_output</span>
-<span class="co">#&gt; 1     TRUE     FALSE</span>
-<span class="co">#&gt; 2    FALSE      TRUE</span>
-<span class="co">#&gt; 3     TRUE     FALSE</span>
-<span class="co">#&gt; 4    FALSE      TRUE</span>
-<span class="co">#&gt; 5    FALSE     FALSE</span>
-<span class="co">#&gt; 6    FALSE     FALSE</span></code></pre></div>
+<span class="co">#&gt;               tool_name          function_name             toolbox_name</span>
+<span class="co">#&gt; 1         AbsoluteValue         absolute_value     Math and Stats Tools</span>
+<span class="co">#&gt; 2         AbsoluteValue         absolute_value     Math and Stats Tools</span>
+<span class="co">#&gt; 3 AccumulationCurvature accumulation_curvature Geomorphometric Analysis</span>
+<span class="co">#&gt; 4 AccumulationCurvature accumulation_curvature Geomorphometric Analysis</span>
+<span class="co">#&gt; 5 AccumulationCurvature accumulation_curvature Geomorphometric Analysis</span>
+<span class="co">#&gt; 6 AccumulationCurvature accumulation_curvature Geomorphometric Analysis</span>
+<span class="co">#&gt;                        name       flags</span>
+<span class="co">#&gt; 1                Input File  -i,--input</span>
+<span class="co">#&gt; 2               Output File -o,--output</span>
+<span class="co">#&gt; 3          Input Raster DEM    -i,--dem</span>
+<span class="co">#&gt; 4       Output Raster Image -o,--output</span>
+<span class="co">#&gt; 5 Log-transform the output?       --log</span>
+<span class="co">#&gt; 6                  Z-factor   --zfactor</span>
+<span class="co">#&gt;                                description default_value optional</span>
+<span class="co">#&gt; 1                       Input raster file.          &lt;NA&gt;    FALSE</span>
+<span class="co">#&gt; 2                      Output raster file.          &lt;NA&gt;    FALSE</span>
+<span class="co">#&gt; 3       Name of the input raster DEM file.          &lt;NA&gt;    FALSE</span>
+<span class="co">#&gt; 4    Name of the output raster image file.          &lt;NA&gt;    FALSE</span>
+<span class="co">#&gt; 5 Display output values using a log-scale.         false     TRUE</span>
+<span class="co">#&gt; 6                     Z conversion factor.           1.0     TRUE</span>
+<span class="co">#&gt;   parameter_class parameter_detail is_input is_output argument_name</span>
+<span class="co">#&gt; 1    ExistingFile           Raster     TRUE     FALSE         input</span>
+<span class="co">#&gt; 2         NewFile           Raster    FALSE      TRUE        output</span>
+<span class="co">#&gt; 3    ExistingFile           Raster    FALSE     FALSE           dem</span>
+<span class="co">#&gt; 4         NewFile           Raster    FALSE      TRUE        output</span>
+<span class="co">#&gt; 5         Boolean          Boolean    FALSE     FALSE           log</span>
+<span class="co">#&gt; 6           Float            Float    FALSE     FALSE       zfactor</span></code></pre></div>
 <p>Several fields in this table such as <code>flags</code> and <code>parameter_type</code> are “flattened” relative to the nested <code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> output.</p>
 <p>The nested <code>parameter_type</code> from the JSON result is replaced with two variables in the data set: <code>parameter_class</code> and <code>parameter_details</code></p>
 <p>This parameter <em>data.frame</em> is useful to construct your own functions with <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> or for inspecting the types of tools that can be run on particular data types.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; 'data.frame':    1710 obs. of  13 variables:</span>
-<span class="co">#&gt;  $ function_name   : chr  "wbt_absolute_value" "wbt_absolute_value" "wbt_adaptive_filter" "wbt_adaptive_filter" ...</span>
-<span class="co">#&gt;  $ tool_name       : chr  "AbsoluteValue" "AbsoluteValue" "AdaptiveFilter" "AdaptiveFilter" ...</span>
-<span class="co">#&gt;  $ toolbox_name    : chr  "Math and Stats Tools" "Math and Stats Tools" "Image Processing Tools/Filters" "Image Processing Tools/Filters" ...</span>
-<span class="co">#&gt;  $ name            : chr  "Input File" "Output File" "Input File" "Output File" ...</span>
-<span class="co">#&gt;  $ flags           : chr  "-i, --input" "-o, --output" "-i, --input" "-o, --output" ...</span>
-<span class="co">#&gt;  $ description     : chr  "Input raster file." "Output raster file." "Input raster file." "Output raster file." ...</span>
+<span class="co">#&gt; 'data.frame':    2082 obs. of  13 variables:</span>
+<span class="co">#&gt;  $ tool_name       : chr  "AbsoluteValue" "AbsoluteValue" "AccumulationCurvature" "AccumulationCurvature" ...</span>
+<span class="co">#&gt;  $ function_name   : chr  "absolute_value" "absolute_value" "accumulation_curvature" "accumulation_curvature" ...</span>
+<span class="co">#&gt;  $ toolbox_name    : chr  "Math and Stats Tools" "Math and Stats Tools" "Geomorphometric Analysis" "Geomorphometric Analysis" ...</span>
+<span class="co">#&gt;  $ name            : chr  "Input File" "Output File" "Input Raster DEM" "Output Raster Image" ...</span>
+<span class="co">#&gt;  $ flags           : chr  "-i,--input" "-o,--output" "-i,--dem" "-o,--output" ...</span>
+<span class="co">#&gt;  $ description     : chr  "Input raster file." "Output raster file." "Name of the input raster DEM file." "Name of the output raster image file." ...</span>
 <span class="co">#&gt;  $ default_value   : chr  NA NA NA NA ...</span>
 <span class="co">#&gt;  $ optional        : logi  FALSE FALSE FALSE FALSE TRUE TRUE ...</span>
 <span class="co">#&gt;  $ parameter_class : chr  "ExistingFile" "NewFile" "ExistingFile" "NewFile" ...</span>
 <span class="co">#&gt;  $ parameter_detail: chr  "Raster" "Raster" "Raster" "Raster" ...</span>
-<span class="co">#&gt;  $ argument_name   : chr  "input" "output" "input" "output" ...</span>
-<span class="co">#&gt;  $ is_input        : logi  TRUE FALSE TRUE FALSE FALSE FALSE ...</span>
+<span class="co">#&gt;  $ is_input        : logi  TRUE FALSE FALSE FALSE FALSE FALSE ...</span>
 <span class="co">#&gt;  $ is_output       : logi  FALSE TRUE FALSE TRUE FALSE FALSE ...</span>
-<span class="co">#&gt;  - attr(*, "version")= chr "2.0.0"</span></code></pre></div>
+<span class="co">#&gt;  $ argument_name   : chr  "input" "output" "dem" "output" ...</span>
+<span class="co">#&gt;  - attr(*, "version")= chr "2.1.0"</span></code></pre></div>
 <p>You will find that both <code>tool_name</code> and <code>function_name</code> are present, so you can look up by whatever is convenient.</p>
 <p>The variable <code>argument_name</code> is processed to be the subset of <code>flags</code> that corresponds to arguments to R functions, which are denoted with <code>function_name</code>.</p>
 <div id="example-finding-tools-by-parameter-type" class="section level3">
@@ -241,42 +262,42 @@
 <p>To find the tools that have an “OptionList” argument with parameter label “variant” (flag: <code>--variant=</code>) we can use <code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"OptionList"</span>, <span class="va">parameter_class</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"variant"</span>, <span class="va">argument_name</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;                  function_name           tool_name</span>
-<span class="co">#&gt; 418        wbt_extract_valleys      ExtractValleys</span>
-<span class="co">#&gt; 701       wbt_laplacian_filter     LaplacianFilter</span>
-<span class="co">#&gt; 920  wbt_line_detection_filter LineDetectionFilter</span>
-<span class="co">#&gt; 1453          wbt_sobel_filter         SobelFilter</span>
-<span class="co">#&gt; 1577      wbt_tophat_transform     TophatTransform</span>
-<span class="co">#&gt;                        toolbox_name    name     flags</span>
-<span class="co">#&gt; 418         Stream Network Analysis Variant --variant</span>
-<span class="co">#&gt; 701  Image Processing Tools/Filters Variant --variant</span>
-<span class="co">#&gt; 920  Image Processing Tools/Filters Variant --variant</span>
-<span class="co">#&gt; 1453 Image Processing Tools/Filters Variant --variant</span>
-<span class="co">#&gt; 1577         Image Processing Tools Variant --variant</span>
+<span class="co">#&gt;                tool_name         function_name            toolbox_name    name</span>
+<span class="co">#&gt; 464       ExtractValleys       extract_valleys Stream Network Analysis Variant</span>
+<span class="co">#&gt; 824      LaplacianFilter      laplacian_filter  Image Processing Tools Variant</span>
+<span class="co">#&gt; 1074 LineDetectionFilter line_detection_filter  Image Processing Tools Variant</span>
+<span class="co">#&gt; 1759         SobelFilter          sobel_filter  Image Processing Tools Variant</span>
+<span class="co">#&gt; 1905     TophatTransform      tophat_transform  Image Processing Tools Variant</span>
+<span class="co">#&gt;          flags</span>
+<span class="co">#&gt; 464  --variant</span>
+<span class="co">#&gt; 824  --variant</span>
+<span class="co">#&gt; 1074 --variant</span>
+<span class="co">#&gt; 1759 --variant</span>
+<span class="co">#&gt; 1905 --variant</span>
 <span class="co">#&gt;                                                                                                                       description</span>
-<span class="co">#&gt; 418  Options include 'LQ' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'LQ'.</span>
-<span class="co">#&gt; 701               Optional variant value. Options include 3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), and 5x5(2) (default is 3x3(1)).</span>
-<span class="co">#&gt; 920                   Optional variant value. Options include 'v' (vertical), 'h' (horizontal), '45', and '135' (default is 'v').</span>
-<span class="co">#&gt; 1453                                                        Optional variant value. Options include 3x3 and 5x5 (default is 3x3).</span>
-<span class="co">#&gt; 1577                                                                 Optional variant value. Options include 'white' and 'black'.</span>
+<span class="co">#&gt; 464  Options include 'LQ' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'LQ'.</span>
+<span class="co">#&gt; 824               Optional variant value. Options include 3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), and 5x5(2) (default is 3x3(1)).</span>
+<span class="co">#&gt; 1074                  Optional variant value. Options include 'v' (vertical), 'h' (horizontal), '45', and '135' (default is 'v').</span>
+<span class="co">#&gt; 1759                                                        Optional variant value. Options include 3x3 and 5x5 (default is 3x3).</span>
+<span class="co">#&gt; 1905                                                                 Optional variant value. Options include 'white' and 'black'.</span>
 <span class="co">#&gt;      default_value optional parameter_class</span>
-<span class="co">#&gt; 418             LQ    FALSE      OptionList</span>
-<span class="co">#&gt; 701         3x3(1)     TRUE      OptionList</span>
-<span class="co">#&gt; 920       vertical     TRUE      OptionList</span>
-<span class="co">#&gt; 1453           3x3     TRUE      OptionList</span>
-<span class="co">#&gt; 1577         white     TRUE      OptionList</span>
-<span class="co">#&gt;                                    parameter_detail argument_name is_input</span>
-<span class="co">#&gt; 418                                LQ, JandR, PandD       variant    FALSE</span>
-<span class="co">#&gt; 701  3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), 5x5(2)       variant    FALSE</span>
-<span class="co">#&gt; 920                   vertical, horizontal, 45, 135       variant    FALSE</span>
-<span class="co">#&gt; 1453                                       3x3, 5x5       variant    FALSE</span>
-<span class="co">#&gt; 1577                                   white, black       variant    FALSE</span>
-<span class="co">#&gt;      is_output</span>
-<span class="co">#&gt; 418      FALSE</span>
-<span class="co">#&gt; 701      FALSE</span>
-<span class="co">#&gt; 920      FALSE</span>
-<span class="co">#&gt; 1453     FALSE</span>
-<span class="co">#&gt; 1577     FALSE</span></code></pre></div>
+<span class="co">#&gt; 464             LQ    FALSE      OptionList</span>
+<span class="co">#&gt; 824         3x3(1)     TRUE      OptionList</span>
+<span class="co">#&gt; 1074      vertical     TRUE      OptionList</span>
+<span class="co">#&gt; 1759           3x3     TRUE      OptionList</span>
+<span class="co">#&gt; 1905         white     TRUE      OptionList</span>
+<span class="co">#&gt;                                    parameter_detail is_input is_output</span>
+<span class="co">#&gt; 464                                LQ, JandR, PandD    FALSE     FALSE</span>
+<span class="co">#&gt; 824  3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), 5x5(2)    FALSE     FALSE</span>
+<span class="co">#&gt; 1074                  vertical, horizontal, 45, 135    FALSE     FALSE</span>
+<span class="co">#&gt; 1759                                       3x3, 5x5    FALSE     FALSE</span>
+<span class="co">#&gt; 1905                                   white, black    FALSE     FALSE</span>
+<span class="co">#&gt;      argument_name</span>
+<span class="co">#&gt; 464        variant</span>
+<span class="co">#&gt; 824        variant</span>
+<span class="co">#&gt; 1074       variant</span>
+<span class="co">#&gt; 1759       variant</span>
+<span class="co">#&gt; 1905       variant</span></code></pre></div>
 <p>Check out the code that builds the data in <code>/data-raw/</code> on <a href="https://github.com/giswqs/whiteboxR/tree/master/data-raw">GitHub</a> to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.</p>
 </div>
 </div>
@@ -323,78 +344,82 @@
 <td align="left">Exports an attribute table to a CSV text file.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_fix_dangling_arcs.html">wbt_fix_dangling_arcs()</a></code></td>
+<td align="left">This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_join_tables.html">wbt_join_tables()</a></code></td>
 <td align="left">Merge a vector’s attribute table with another table based on a common field.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lines_to_polygons.html">wbt_lines_to_polygons()</a></code></td>
 <td align="left">Converts vector polylines to polygons.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_merge_table_with_csv.html">wbt_merge_table_with_csv()</a></code></td>
 <td align="left">Merge a vector’s attribute table with a table contained within a CSV text file.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_merge_vectors.html">wbt_merge_vectors()</a></code></td>
 <td align="left">Combines two or more input vectors of the same ShapeType creating a single, new output vector.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_modify_no_data_value.html">wbt_modify_no_data_value()</a></code></td>
 <td align="left">Converts nodata values in a raster to zero.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_multi_part_to_single_part.html">wbt_multi_part_to_single_part()</a></code></td>
 <td align="left">Converts a vector file containing multi-part features into a vector containing only single-part features.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_new_raster_from_base.html">wbt_new_raster_from_base()</a></code></td>
 <td align="left">Creates a new raster using a base image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_polygons_to_lines.html">wbt_polygons_to_lines()</a></code></td>
 <td align="left">Converts vector polygons to polylines.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_print_geo_tiff_tags.html">wbt_print_geo_tiff_tags()</a></code></td>
 <td align="left">Prints the tags within a GeoTIFF.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_raster_to_vector_lines.html">wbt_raster_to_vector_lines()</a></code></td>
 <td align="left">Converts a raster lines features into a vector of the POLYLINE shapetype</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_raster_to_vector_points.html">wbt_raster_to_vector_points()</a></code></td>
 <td align="left">Converts a raster dataset to a vector of the POINT shapetype.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_raster_to_vector_polygons.html">wbt_raster_to_vector_polygons()</a></code></td>
 <td align="left">Converts a raster dataset to a vector of the POLYGON shapetype.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_reinitialize_attribute_table.html">wbt_reinitialize_attribute_table()</a></code></td>
 <td align="left">Reinitializes a vector’s attribute table deleting all fields but the feature ID (FID).</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_remove_polygon_holes.html">wbt_remove_polygon_holes()</a></code></td>
 <td align="left">Removes holes within the features of a vector polygon file.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_set_nodata_value.html">wbt_set_nodata_value()</a></code></td>
 <td align="left">Assign a specified value in an input image to the NoData value.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_single_part_to_multi_part.html">wbt_single_part_to_multi_part()</a></code></td>
 <td align="left">Converts a vector file containing multi-part features into a vector containing only single-part features.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_vector_lines_to_raster.html">wbt_vector_lines_to_raster()</a></code></td>
 <td align="left">Converts a vector containing polylines into a raster.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_vector_points_to_raster.html">wbt_vector_points_to_raster()</a></code></td>
 <td align="left">Converts a vector containing points into a raster.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_vector_polygons_to_raster.html">wbt_vector_polygons_to_raster()</a></code></td>
 <td align="left">Converts a vector containing polygons into a raster.</td>
 </tr>
@@ -407,8 +432,8 @@
 <table class="table">
 <caption>Toolbox: Geomorphometric Analysis</caption>
 <colgroup>
-<col width="30%">
-<col width="69%">
+<col width="26%">
+<col width="73%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">function_name</th>
@@ -416,8 +441,16 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_accumulation_curvature.html">wbt_accumulation_curvature()</a></code></td>
+<td align="left">This tool calculates accumulation curvature from an input DEM.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_aspect.html">wbt_aspect()</a></code></td>
 <td align="left">Calculates an aspect raster from an input DEM.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_assess_route.html">wbt_assess_route()</a></code></td>
+<td align="left">This tool assesses a route for slope, elevation, and visibility variation.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_average_normal_vector_angular_deviation.html">wbt_average_normal_vector_angular_deviation()</a></code></td>
@@ -436,12 +469,20 @@
 <td align="left">Derives a vector contour coverage from a raster surface.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_curvedness.html">wbt_curvedness()</a></code></td>
+<td align="left">This tool calculates curvedness from an input DEM.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_dev_from_mean_elev.html">wbt_dev_from_mean_elev()</a></code></td>
 <td align="left">Calculates deviation from mean elevation.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_diff_from_mean_elev.html">wbt_diff_from_mean_elev()</a></code></td>
 <td align="left">Calculates difference from mean elevation (equivalent to a high-pass filter).</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_difference_curvature.html">wbt_difference_curvature()</a></code></td>
+<td align="left">This tool calculates difference curvature from an input DEM.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_directional_relief.html">wbt_directional_relief()</a></code></td>
@@ -476,28 +517,52 @@
 <td align="left">Maps and/or removes road embankments from an input fine-resolution DEM.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_exposure_towards_wind_flux.html">wbt_exposure_towards_wind_flux()</a></code></td>
+<td align="left">This tool evaluates hydrologic connectivity within a DEM</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_feature_preserving_smoothing.html">wbt_feature_preserving_smoothing()</a></code></td>
 <td align="left">Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_fetch_analysis.html">wbt_fetch_analysis()</a></code></td>
 <td align="left">Performs an analysis of fetch or upwind distance to an obstacle.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_fill_missing_data.html">wbt_fill_missing_data()</a></code></td>
 <td align="left">Fills NoData holes in a DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_find_ridges.html">wbt_find_ridges()</a></code></td>
 <td align="left">Identifies potential ridge and peak grid cells.</td>
 </tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_gaussian_curvature.html">wbt_gaussian_curvature()</a></code></td>
+<td align="left">Calculates a mean curvature raster from an input DEM.</td>
+</tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_gaussian_scale_space.html">wbt_gaussian_scale_space()</a></code></td>
+<td align="left">This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_generating_function.html">wbt_generating_function()</a></code></td>
+<td align="left">This tool calculates generating function from an input DEM.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_geomorphons.html">wbt_geomorphons()</a></code></td>
+<td align="left">Computes geomorphon patterns.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_hillshade.html">wbt_hillshade()</a></code></td>
 <td align="left">Calculates a hillshade raster from an input DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_horizon_angle.html">wbt_horizon_angle()</a></code></td>
 <td align="left">Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_horizontal_excess_curvature.html">wbt_horizontal_excess_curvature()</a></code></td>
+<td align="left">This tool calculates horizontal excess curvature from an input DEM.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_hypsometric_analysis.html">wbt_hypsometric_analysis()</a></code></td>
@@ -506,6 +571,14 @@
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_hypsometrically_tinted_hillshade.html">wbt_hypsometrically_tinted_hillshade()</a></code></td>
 <td align="left">Creates an colour shaded relief image from an input DEM.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_local_hypsometric_analysis.html">wbt_local_hypsometric_analysis()</a></code></td>
+<td align="left">This tool calculates a local, neighbourhood-based hypsometric integral raster.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_local_quadratic_regression.html">wbt_local_quadratic_regression()</a></code></td>
+<td align="left">This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_map_off_terrain_objects.html">wbt_map_off_terrain_objects()</a></code></td>
@@ -540,8 +613,24 @@
 <td align="left">Calculates the maximum elevation deviation over a range of spatial scales.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_max_upslope_elev_change.html">wbt_max_upslope_elev_change()</a></code></td>
+<td align="left">Calculates the maximum upslope change in elevation between a grid cell and its eight downslope neighbors.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_maximal_curvature.html">wbt_maximal_curvature()</a></code></td>
+<td align="left">Calculates a mean curvature raster from an input DEM.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_mean_curvature.html">wbt_mean_curvature()</a></code></td>
+<td align="left">Calculates a mean curvature raster from an input DEM.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_min_downslope_elev_change.html">wbt_min_downslope_elev_change()</a></code></td>
 <td align="left">Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_minimal_curvature.html">wbt_minimal_curvature()</a></code></td>
+<td align="left">Calculates a mean curvature raster from an input DEM.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_multidirectional_hillshade.html">wbt_multidirectional_hillshade()</a></code></td>
@@ -580,52 +669,84 @@
 <td align="left">Calculates the number of upslope neighbours to each grid cell in a DEM.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_openness.html">wbt_openness()</a></code></td>
+<td align="left">This tool calculates the topographic openness index from an input DEM.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_pennock_landform_class.html">wbt_pennock_landform_class()</a></code></td>
 <td align="left">Classifies hillslope zones based on slope, profile curvature, and plan curvature.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_percent_elev_range.html">wbt_percent_elev_range()</a></code></td>
 <td align="left">Calculates percent of elevation range from a DEM.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_plan_curvature.html">wbt_plan_curvature()</a></code></td>
 <td align="left">Calculates a plan (contour) curvature raster from an input DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_profile.html">wbt_profile()</a></code></td>
 <td align="left">Plots profiles from digital surface models.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_profile_curvature.html">wbt_profile_curvature()</a></code></td>
 <td align="left">Calculates a profile curvature raster from an input DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_relative_aspect.html">wbt_relative_aspect()</a></code></td>
 <td align="left">Calculates relative aspect (relative to a user-specified direction) from an input DEM.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_relative_topographic_position.html">wbt_relative_topographic_position()</a></code></td>
 <td align="left">Calculates the relative topographic position index from a DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_remove_off_terrain_objects.html">wbt_remove_off_terrain_objects()</a></code></td>
 <td align="left">Removes off-terrain objects from a raster digital elevation model (DEM).</td>
 </tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_ring_curvature.html">wbt_ring_curvature()</a></code></td>
+<td align="left">This tool calculates ring curvature from an input DEM.</td>
+</tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_rotor.html">wbt_rotor()</a></code></td>
+<td align="left">This tool calculates rotor from an input DEM.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_ruggedness_index.html">wbt_ruggedness_index()</a></code></td>
 <td align="left">Calculates the Riley et al.’s (1999) terrain ruggedness index from an input DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_sediment_transport_index.html">wbt_sediment_transport_index()</a></code></td>
 <td align="left">Calculates the sediment transport index.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_shadow_animation.html">wbt_shadow_animation()</a></code></td>
+<td align="left">This tool creates an animated GIF of shadows based on an input DEM.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_shadow_image.html">wbt_shadow_image()</a></code></td>
+<td align="left">This tool creates a raster of shadow areas based on an input DEM.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_shape_index.html">wbt_shape_index()</a></code></td>
+<td align="left">This tool calculates the shape index from an input DEM.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_slope.html">wbt_slope()</a></code></td>
 <td align="left">Calculates a slope raster from an input DEM.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_slope_vs_aspect_plot.html">wbt_slope_vs_aspect_plot()</a></code></td>
+<td align="left">This tool creates a slope-aspect relation plot from an input DEM.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_slope_vs_elevation_plot.html">wbt_slope_vs_elevation_plot()</a></code></td>
 <td align="left">Creates a slope vs. elevation plot for one or more DEMs.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_smooth_vegetation_residual.html">wbt_smooth_vegetation_residual()</a></code></td>
+<td align="left">This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_spherical_std_dev_of_normals.html">wbt_spherical_std_dev_of_normals()</a></code></td>
@@ -652,18 +773,30 @@
 <td align="left">Calculates the proportion of time a location is not within an area of shadow.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_topographic_position_animation.html">wbt_topographic_position_animation()</a></code></td>
+<td align="left">This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_total_curvature.html">wbt_total_curvature()</a></code></td>
 <td align="left">Calculates a total curvature raster from an input DEM.</td>
 </tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_unsphericity.html">wbt_unsphericity()</a></code></td>
+<td align="left">This tool calculates the unsphericity curvature from an input DEM.</td>
+</tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_vertical_excess_curvature.html">wbt_vertical_excess_curvature()</a></code></td>
+<td align="left">This tool calculates vertical excess curvature from an input DEM.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_viewshed.html">wbt_viewshed()</a></code></td>
 <td align="left">Identifies the viewshed for a point or set of points.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_visibility_index.html">wbt_visibility_index()</a></code></td>
 <td align="left">Estimates the relative visibility of sites in a DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_wetness_index.html">wbt_wetness_index()</a></code></td>
 <td align="left">Calculates the topographic wetness index, Ln(A / tan(slope)).</td>
 </tr>
@@ -676,8 +809,8 @@
 <table class="table">
 <caption>Toolbox: GIS Analysis</caption>
 <colgroup>
-<col width="28%">
-<col width="71%">
+<col width="21%">
+<col width="78%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">function_name</th>
@@ -689,28 +822,68 @@
 <td align="left">Aggregates a raster to a lower resolution.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_average_overlay.html">wbt_average_overlay()</a></code></td>
+<td align="left">Calculates the average for each grid cell from a group of raster images.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_block_maximum_gridding.html">wbt_block_maximum_gridding()</a></code></td>
 <td align="left">Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_block_minimum_gridding.html">wbt_block_minimum_gridding()</a></code></td>
 <td align="left">Creates a raster grid based on a set of vector points and assigns grid values using a block minimum scheme.</td>
 </tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_boundary_shape_complexity.html">wbt_boundary_shape_complexity()</a></code></td>
+<td align="left">Calculates the complexity of the boundaries of raster polygons.</td>
+</tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_buffer_raster.html">wbt_buffer_raster()</a></code></td>
+<td align="left">Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_centroid.html">wbt_centroid()</a></code></td>
 <td align="left">Calculates the centroid, or average location, of raster polygon objects.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_centroid_vector.html">wbt_centroid_vector()</a></code></td>
-<td align="left">Identifes the centroid point of a vector polyline or polygon feature or a group of vector points.</td>
+<td align="left">Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_clip.html">wbt_clip()</a></code></td>
+<td align="left">Extract all the features, or parts of features, that overlap with the features of the clip vector.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_clip_raster_to_polygon.html">wbt_clip_raster_to_polygon()</a></code></td>
+<td align="left">Clips a raster to a vector polygon.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_clump.html">wbt_clump()</a></code></td>
 <td align="left">Groups cells that form discrete areas, assigning them unique identifiers.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_compactness_ratio.html">wbt_compactness_ratio()</a></code></td>
+<td align="left">Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_construct_vector_tin.html">wbt_construct_vector_tin()</a></code></td>
 <td align="left">Creates a vector triangular irregular network (TIN) for a set of vector points.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_cost_allocation.html">wbt_cost_allocation()</a></code></td>
+<td align="left">Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_cost_distance.html">wbt_cost_distance()</a></code></td>
+<td align="left">Performs cost-distance accumulation on a cost surface and a group of source cells.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_cost_pathway.html">wbt_cost_pathway()</a></code></td>
+<td align="left">Performs cost-distance pathway analysis using a series of destination grid cells.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_count_if.html">wbt_count_if()</a></code></td>
+<td align="left">Counts the number of occurrences of a specified value in a cell-stack of rasters.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_create_hexagonal_vector_grid.html">wbt_create_hexagonal_vector_grid()</a></code></td>
@@ -725,60 +898,140 @@
 <td align="left">Creates a rectangular vector grid.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_difference.html">wbt_difference()</a></code></td>
+<td align="left">Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_dissolve.html">wbt_dissolve()</a></code></td>
 <td align="left">Removes the interior, or shared, boundaries within a vector polygon coverage.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_edge_proportion.html">wbt_edge_proportion()</a></code></td>
+<td align="left">Calculate the proportion of cells in a raster polygon that are edge cells.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_eliminate_coincident_points.html">wbt_eliminate_coincident_points()</a></code></td>
 <td align="left">Removes any coincident, or nearly coincident, points from a vector points file.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_elongation_ratio.html">wbt_elongation_ratio()</a></code></td>
+<td align="left">Calculates the elongation ratio for vector polygons.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_erase.html">wbt_erase()</a></code></td>
+<td align="left">Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_erase_polygon_from_raster.html">wbt_erase_polygon_from_raster()</a></code></td>
+<td align="left">Erases (cuts out) a vector polygon from a raster.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_euclidean_allocation.html">wbt_euclidean_allocation()</a></code></td>
+<td align="left">Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_euclidean_distance.html">wbt_euclidean_distance()</a></code></td>
+<td align="left">Calculates the Shih and Wu (2004) Euclidean distance transform.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_extend_vector_lines.html">wbt_extend_vector_lines()</a></code></td>
 <td align="left">Extends vector lines by a specified distance.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_extract_nodes.html">wbt_extract_nodes()</a></code></td>
 <td align="left">Converts vector lines or polygons into vertex points.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_extract_raster_values_at_points.html">wbt_extract_raster_values_at_points()</a></code></td>
 <td align="left">Extracts the values of raster(s) at vector point locations.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_filter_raster_features_by_area.html">wbt_filter_raster_features_by_area()</a></code></td>
 <td align="left">Removes small-area features from a raster.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_find_lowest_or_highest_points.html">wbt_find_lowest_or_highest_points()</a></code></td>
 <td align="left">Locates the lowest and/or highest valued cells in a raster.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_find_patch_or_class_edge_cells.html">wbt_find_patch_or_class_edge_cells()</a></code></td>
+<td align="left">Finds all cells located on the edge of patch or class features.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_highest_position.html">wbt_highest_position()</a></code></td>
+<td align="left">Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_hole_proportion.html">wbt_hole_proportion()</a></code></td>
+<td align="left">Calculates the proportion of the total area of a polygon’s holes relative to the area of the polygon’s hull.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_idw_interpolation.html">wbt_idw_interpolation()</a></code></td>
 <td align="left">Interpolates vector points into a raster surface using an inverse-distance weighted scheme.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_intersect.html">wbt_intersect()</a></code></td>
+<td align="left">Identifies the parts of features in common between two input vector layers.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_layer_footprint.html">wbt_layer_footprint()</a></code></td>
 <td align="left">Creates a vector polygon footprint of the area covered by a raster grid or vector layer.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_line_intersections.html">wbt_line_intersections()</a></code></td>
+<td align="left">Identifies points where the features of two vector line layers intersect.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_linearity_index.html">wbt_linearity_index()</a></code></td>
+<td align="left">Calculates the linearity index for vector polygons.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_lowest_position.html">wbt_lowest_position()</a></code></td>
+<td align="left">Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_max_absolute_overlay.html">wbt_max_absolute_overlay()</a></code></td>
+<td align="left">Evaluates the maximum absolute value for each grid cell from a stack of input rasters.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_max_overlay.html">wbt_max_overlay()</a></code></td>
+<td align="left">Evaluates the maximum value for each grid cell from a stack of input rasters.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_medoid.html">wbt_medoid()</a></code></td>
 <td align="left">Calculates the medoid for a series of vector features contained in a shapefile.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_merge_line_segments.html">wbt_merge_line_segments()</a></code></td>
+<td align="left">Merges vector line segments into larger features.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_min_absolute_overlay.html">wbt_min_absolute_overlay()</a></code></td>
+<td align="left">Evaluates the minimum absolute value for each grid cell from a stack of input rasters.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_min_overlay.html">wbt_min_overlay()</a></code></td>
+<td align="left">Evaluates the minimum value for each grid cell from a stack of input rasters.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_minimum_bounding_box.html">wbt_minimum_bounding_box()</a></code></td>
 <td align="left">Creates a vector minimum bounding rectangle around vector features.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_minimum_bounding_circle.html">wbt_minimum_bounding_circle()</a></code></td>
 <td align="left">Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_minimum_bounding_envelope.html">wbt_minimum_bounding_envelope()</a></code></td>
 <td align="left">Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_minimum_convex_hull.html">wbt_minimum_convex_hull()</a></code></td>
 <td align="left">Creates a vector convex polygon around vector features.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_narrowness_index.html">wbt_narrowness_index()</a></code></td>
+<td align="left">Calculates the narrowness of raster polygons.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_natural_neighbour_interpolation.html">wbt_natural_neighbour_interpolation()</a></code></td>
@@ -787,6 +1040,30 @@
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_nearest_neighbour_gridding.html">wbt_nearest_neighbour_gridding()</a></code></td>
 <td align="left">Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_patch_orientation.html">wbt_patch_orientation()</a></code></td>
+<td align="left">Calculates the orientation of vector polygons.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_percent_equal_to.html">wbt_percent_equal_to()</a></code></td>
+<td align="left">Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_percent_greater_than.html">wbt_percent_greater_than()</a></code></td>
+<td align="left">Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_percent_less_than.html">wbt_percent_less_than()</a></code></td>
+<td align="left">Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_perimeter_area_ratio.html">wbt_perimeter_area_ratio()</a></code></td>
+<td align="left">Calculates the perimeter-area ratio of vector polygons.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_pick_from_list.html">wbt_pick_from_list()</a></code></td>
+<td align="left">Outputs the value from a raster stack specified by a position raster.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_polygon_area.html">wbt_polygon_area()</a></code></td>
@@ -805,8 +1082,16 @@
 <td align="left">This tool can be used to map the short axis of polygon features.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_polygonize.html">wbt_polygonize()</a></code></td>
+<td align="left">Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_radial_basis_function_interpolation.html">wbt_radial_basis_function_interpolation()</a></code></td>
 <td align="left">Interpolates vector points into a raster surface using a radial basis function scheme.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_radius_of_gyration.html">wbt_radius_of_gyration()</a></code></td>
+<td align="left">Calculates the distance of cells from their polygon’s centroid.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_raster_area.html">wbt_raster_area()</a></code></td>
@@ -833,253 +1118,6 @@
 <td align="left">Reclassifies the values in a raster image using reclass ranges in a text file.</td>
 </tr>
 <tr class="even">
-<td align="left"><code><a href="../reference/wbt_smooth_vectors.html">wbt_smooth_vectors()</a></code></td>
-<td align="left">Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_tin_gridding.html">wbt_tin_gridding()</a></code></td>
-<td align="left">Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_vector_hex_binning.html">wbt_vector_hex_binning()</a></code></td>
-<td align="left">Hex-bins a set of vector points.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_voronoi_diagram.html">wbt_voronoi_diagram()</a></code></td>
-<td align="left">Creates a vector Voronoi diagram for a set of vector points.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="gis-analysisdistance-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#gis-analysisdistance-tools" class="anchor"></a>GIS Analysis/Distance Tools</h3>
-<table class="table">
-<caption>Toolbox: GIS Analysis/Distance Tools</caption>
-<colgroup>
-<col width="15%">
-<col width="84%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_buffer_raster.html">wbt_buffer_raster()</a></code></td>
-<td align="left">Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_cost_allocation.html">wbt_cost_allocation()</a></code></td>
-<td align="left">Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_cost_distance.html">wbt_cost_distance()</a></code></td>
-<td align="left">Performs cost-distance accumulation on a cost surface and a group of source cells.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_cost_pathway.html">wbt_cost_pathway()</a></code></td>
-<td align="left">Performs cost-distance pathway analysis using a series of destination grid cells.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_euclidean_allocation.html">wbt_euclidean_allocation()</a></code></td>
-<td align="left">Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_euclidean_distance.html">wbt_euclidean_distance()</a></code></td>
-<td align="left">Calculates the Shih and Wu (2004) Euclidean distance transform.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="gis-analysisoverlay-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#gis-analysisoverlay-tools" class="anchor"></a>GIS Analysis/Overlay Tools</h3>
-<table class="table">
-<caption>Toolbox: GIS Analysis/Overlay Tools</caption>
-<colgroup>
-<col width="18%">
-<col width="81%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_average_overlay.html">wbt_average_overlay()</a></code></td>
-<td align="left">Calculates the average for each grid cell from a group of raster images.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_clip.html">wbt_clip()</a></code></td>
-<td align="left">Extract all the features, or parts of features, that overlap with the features of the clip vector.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_clip_raster_to_polygon.html">wbt_clip_raster_to_polygon()</a></code></td>
-<td align="left">Clips a raster to a vector polygon.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_count_if.html">wbt_count_if()</a></code></td>
-<td align="left">Counts the number of occurrences of a specified value in a cell-stack of rasters.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_difference.html">wbt_difference()</a></code></td>
-<td align="left">Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_erase.html">wbt_erase()</a></code></td>
-<td align="left">Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_erase_polygon_from_raster.html">wbt_erase_polygon_from_raster()</a></code></td>
-<td align="left">Erases (cuts out) a vector polygon from a raster.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_highest_position.html">wbt_highest_position()</a></code></td>
-<td align="left">Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_intersect.html">wbt_intersect()</a></code></td>
-<td align="left">Identifies the parts of features in common between two input vector layers.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_line_intersections.html">wbt_line_intersections()</a></code></td>
-<td align="left">Identifies points where the features of two vector line layers intersect.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_lowest_position.html">wbt_lowest_position()</a></code></td>
-<td align="left">Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_max_absolute_overlay.html">wbt_max_absolute_overlay()</a></code></td>
-<td align="left">Evaluates the maximum absolute value for each grid cell from a stack of input rasters.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_max_overlay.html">wbt_max_overlay()</a></code></td>
-<td align="left">Evaluates the maximum value for each grid cell from a stack of input rasters.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_merge_line_segments.html">wbt_merge_line_segments()</a></code></td>
-<td align="left">Merges vector line segments into larger features.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_min_absolute_overlay.html">wbt_min_absolute_overlay()</a></code></td>
-<td align="left">Evaluates the minimum absolute value for each grid cell from a stack of input rasters.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_min_overlay.html">wbt_min_overlay()</a></code></td>
-<td align="left">Evaluates the minimum value for each grid cell from a stack of input rasters.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_percent_equal_to.html">wbt_percent_equal_to()</a></code></td>
-<td align="left">Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_percent_greater_than.html">wbt_percent_greater_than()</a></code></td>
-<td align="left">Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_percent_less_than.html">wbt_percent_less_than()</a></code></td>
-<td align="left">Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_pick_from_list.html">wbt_pick_from_list()</a></code></td>
-<td align="left">Outputs the value from a raster stack specified by a position raster.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_polygonize.html">wbt_polygonize()</a></code></td>
-<td align="left">Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_split_with_lines.html">wbt_split_with_lines()</a></code></td>
-<td align="left">Splits the lines or polygons in one layer using the lines in another layer.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_sum_overlay.html">wbt_sum_overlay()</a></code></td>
-<td align="left">Calculates the sum for each grid cell from a group of raster images.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_symmetrical_difference.html">wbt_symmetrical_difference()</a></code></td>
-<td align="left">Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_union.html">wbt_union()</a></code></td>
-<td align="left">Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_update_nodata_cells.html">wbt_update_nodata_cells()</a></code></td>
-<td align="left">Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_weighted_overlay.html">wbt_weighted_overlay()</a></code></td>
-<td align="left">Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_weighted_sum.html">wbt_weighted_sum()</a></code></td>
-<td align="left">Performs a weighted-sum overlay on multiple input raster images.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="gis-analysispatch-shape-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#gis-analysispatch-shape-tools" class="anchor"></a>GIS Analysis/Patch Shape Tools</h3>
-<table class="table">
-<caption>Toolbox: GIS Analysis/Patch Shape Tools</caption>
-<colgroup>
-<col width="26%">
-<col width="73%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_boundary_shape_complexity.html">wbt_boundary_shape_complexity()</a></code></td>
-<td align="left">Calculates the complexity of the boundaries of raster polygons.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_compactness_ratio.html">wbt_compactness_ratio()</a></code></td>
-<td align="left">Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_edge_proportion.html">wbt_edge_proportion()</a></code></td>
-<td align="left">Calculate the proportion of cells in a raster polygon that are edge cells.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_elongation_ratio.html">wbt_elongation_ratio()</a></code></td>
-<td align="left">Calculates the elongation ratio for vector polygons.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_find_patch_or_class_edge_cells.html">wbt_find_patch_or_class_edge_cells()</a></code></td>
-<td align="left">Finds all cells located on the edge of patch or class features.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_hole_proportion.html">wbt_hole_proportion()</a></code></td>
-<td align="left">Calculates the proportion of the total area of a polygon’s holes relative to the area of the polygon’s hull.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_linearity_index.html">wbt_linearity_index()</a></code></td>
-<td align="left">Calculates the linearity index for vector polygons.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_narrowness_index.html">wbt_narrowness_index()</a></code></td>
-<td align="left">Calculates the narrowness of raster polygons.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_patch_orientation.html">wbt_patch_orientation()</a></code></td>
-<td align="left">Calculates the orientation of vector polygons.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_perimeter_area_ratio.html">wbt_perimeter_area_ratio()</a></code></td>
-<td align="left">Calculates the perimeter-area ratio of vector polygons.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_radius_of_gyration.html">wbt_radius_of_gyration()</a></code></td>
-<td align="left">Calculates the distance of cells from their polygon’s centroid.</td>
-</tr>
-<tr class="even">
 <td align="left"><code><a href="../reference/wbt_related_circumscribing_circle.html">wbt_related_circumscribing_circle()</a></code></td>
 <td align="left">Calculates the related circumscribing circle of vector polygons.</td>
 </tr>
@@ -1090,6 +1128,54 @@
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_shape_complexity_index_raster.html">wbt_shape_complexity_index_raster()</a></code></td>
 <td align="left">Calculates the complexity of raster polygons or classes.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_smooth_vectors.html">wbt_smooth_vectors()</a></code></td>
+<td align="left">Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_split_vector_lines.html">wbt_split_vector_lines()</a></code></td>
+<td align="left">This tool can be used to split a vector line coverage into even-lengthed segments.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_split_with_lines.html">wbt_split_with_lines()</a></code></td>
+<td align="left">Splits the lines or polygons in one layer using the lines in another layer.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_sum_overlay.html">wbt_sum_overlay()</a></code></td>
+<td align="left">Calculates the sum for each grid cell from a group of raster images.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_symmetrical_difference.html">wbt_symmetrical_difference()</a></code></td>
+<td align="left">Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_tin_gridding.html">wbt_tin_gridding()</a></code></td>
+<td align="left">Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_union.html">wbt_union()</a></code></td>
+<td align="left">Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_update_nodata_cells.html">wbt_update_nodata_cells()</a></code></td>
+<td align="left">Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_vector_hex_binning.html">wbt_vector_hex_binning()</a></code></td>
+<td align="left">Hex-bins a set of vector points.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_voronoi_diagram.html">wbt_voronoi_diagram()</a></code></td>
+<td align="left">Creates a vector Voronoi diagram for a set of vector points.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_weighted_overlay.html">wbt_weighted_overlay()</a></code></td>
+<td align="left">Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_weighted_sum.html">wbt_weighted_sum()</a></code></td>
+<td align="left">Performs a weighted-sum overlay on multiple input raster images.</td>
 </tr>
 </tbody>
 </table>
@@ -1173,68 +1259,76 @@
 <td align="left">Calculates the downslope flowpath length from each cell to basin outlet.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_edge_contamination.html">wbt_edge_contamination()</a></code></td>
+<td align="left">This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_elevation_above_stream.html">wbt_elevation_above_stream()</a></code></td>
 <td align="left">Calculates the elevation of cells above the nearest downslope stream cell.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_elevation_above_stream_euclidean.html">wbt_elevation_above_stream_euclidean()</a></code></td>
 <td align="left">Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_fd8_flow_accumulation.html">wbt_fd8_flow_accumulation()</a></code></td>
 <td align="left">Calculates an FD8 flow accumulation raster from an input DEM.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_fd8_pointer.html">wbt_fd8_pointer()</a></code></td>
 <td align="left">Calculates an FD8 flow pointer raster from an input DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_fill_burn.html">wbt_fill_burn()</a></code></td>
 <td align="left">Burns streams into a DEM using the FillBurn (Saunders, 1999) method.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_fill_depressions.html">wbt_fill_depressions()</a></code></td>
 <td align="left">Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_fill_depressions_planchon_and_darboux.html">wbt_fill_depressions_planchon_and_darboux()</a></code></td>
 <td align="left">Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_fill_depressions_wang_and_liu.html">wbt_fill_depressions_wang_and_liu()</a></code></td>
 <td align="left">Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_fill_single_cell_pits.html">wbt_fill_single_cell_pits()</a></code></td>
 <td align="left">Raises pit cells to the elevation of their lowest neighbour.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_find_no_flow_cells.html">wbt_find_no_flow_cells()</a></code></td>
 <td align="left">Finds grid cells with no downslope neighbours.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_find_parallel_flow.html">wbt_find_parallel_flow()</a></code></td>
 <td align="left">Finds areas of parallel flow in D8 flow direction rasters.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_flatten_lakes.html">wbt_flatten_lakes()</a></code></td>
 <td align="left">Flattens lake polygons in a raster DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_flood_order.html">wbt_flood_order()</a></code></td>
 <td align="left">Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_flow_accumulation_full_workflow.html">wbt_flow_accumulation_full_workflow()</a></code></td>
 <td align="left">Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_flow_length_diff.html">wbt_flow_length_diff()</a></code></td>
 <td align="left">Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_hillslopes.html">wbt_hillslopes()</a></code></td>
 <td align="left">Identifies the individual hillslopes draining to each link in a stream network.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_hydrologic_connectivity.html">wbt_hydrologic_connectivity()</a></code></td>
+<td align="left">This tool evaluates hydrologic connectivity within a DEM</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_impoundment_size_index.html">wbt_impoundment_size_index()</a></code></td>
@@ -1257,20 +1351,36 @@
 <td align="left">Delineates the longest flowpaths for a group of subbasins or watersheds.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_low_points_on_headwater_divides.html">wbt_low_points_on_headwater_divides()</a></code></td>
+<td align="left">This tool locates saddle points along ridges within a digital elevation model (DEM)</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_md_inf_flow_accumulation.html">wbt_md_inf_flow_accumulation()</a></code></td>
 <td align="left">Calculates an FD8 flow accumulation raster from an input DEM.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_max_upslope_flowpath_length.html">wbt_max_upslope_flowpath_length()</a></code></td>
 <td align="left">Measures the maximum length of all upslope flowpaths draining each grid cell.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_num_inflowing_neighbours.html">wbt_num_inflowing_neighbours()</a></code></td>
 <td align="left">Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.</td>
 </tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_qin_flow_accumulation.html">wbt_qin_flow_accumulation()</a></code></td>
+<td align="left">This tool calculates Qin et al. (2007) flow accumulation.</td>
+</tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_quinn_flow_accumulation.html">wbt_quinn_flow_accumulation()</a></code></td>
+<td align="left">This tool calculates Quinn et al. (1995) flow accumulation.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_raise_walls.html">wbt_raise_walls()</a></code></td>
 <td align="left">Raises walls in a DEM along a line or around a polygon, e.g. a watershed.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_rho8_flow_accumulation.html">wbt_rho8_flow_accumulation()</a></code></td>
+<td align="left">This tool calculates Fairfield and Leymarie (1991) flow accumulation.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_rho8_pointer.html">wbt_rho8_pointer()</a></code></td>
@@ -1321,126 +1431,8 @@
 <table class="table">
 <caption>Toolbox: Image Processing Tools</caption>
 <colgroup>
-<col width="24%">
-<col width="75%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_change_vector_analysis.html">wbt_change_vector_analysis()</a></code></td>
-<td align="left">Performs a change vector analysis on a two-date multi-spectral dataset.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_closing.html">wbt_closing()</a></code></td>
-<td align="left">A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_create_colour_composite.html">wbt_create_colour_composite()</a></code></td>
-<td align="left">Creates a colour-composite image from three bands of multispectral imagery.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_flip_image.html">wbt_flip_image()</a></code></td>
-<td align="left">Reflects an image in the vertical or horizontal axis.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_ihs_to_rgb.html">wbt_ihs_to_rgb()</a></code></td>
-<td align="left">Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_image_stack_profile.html">wbt_image_stack_profile()</a></code></td>
-<td align="left">Plots an image stack profile (i.e. signature) for a set of points and multispectral images.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_integral_image.html">wbt_integral_image()</a></code></td>
-<td align="left">Transforms an input image (summed area table) into its integral image equivalent.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_line_thinning.html">wbt_line_thinning()</a></code></td>
-<td align="left">Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_mosaic.html">wbt_mosaic()</a></code></td>
-<td align="left">Mosaics two or more images together.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_mosaic_with_feathering.html">wbt_mosaic_with_feathering()</a></code></td>
-<td align="left">Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_normalized_difference_index.html">wbt_normalized_difference_index()</a></code></td>
-<td align="left">Calculate a normalized-difference index (NDI) from two bands of multispectral image data.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_opening.html">wbt_opening()</a></code></td>
-<td align="left">An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_remove_spurs.html">wbt_remove_spurs()</a></code></td>
-<td align="left">Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_resample.html">wbt_resample()</a></code></td>
-<td align="left">Resamples one or more input images into a destination image.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_rgb_to_ihs.html">wbt_rgb_to_ihs()</a></code></td>
-<td align="left">Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_split_colour_composite.html">wbt_split_colour_composite()</a></code></td>
-<td align="left">This tool splits an RGB colour composite image into separate multispectral images.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_thicken_raster_line.html">wbt_thicken_raster_line()</a></code></td>
-<td align="left">Thickens single-cell wide lines within a raster image.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_tophat_transform.html">wbt_tophat_transform()</a></code></td>
-<td align="left">Performs either a white or black top-hat transform on an input image.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_write_function_memory_insertion.html">wbt_write_function_memory_insertion()</a></code></td>
-<td align="left">Performs a write function memory insertion for single-band multi-date change detection.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="image-processing-toolsclassification" class="section level3">
-<h3 class="hasAnchor">
-<a href="#image-processing-toolsclassification" class="anchor"></a>Image Processing Tools/Classification</h3>
-<table class="table">
-<caption>Toolbox: Image Processing Tools/Classification</caption>
-<colgroup>
-<col width="31%">
-<col width="68%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_k_means_clustering.html">wbt_k_means_clustering()</a></code></td>
-<td align="left">Performs a k-means clustering operation on a multi-spectral dataset.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_modified_k_means_clustering.html">wbt_modified_k_means_clustering()</a></code></td>
-<td align="left">Performs a modified k-means clustering operation on a multi-spectral dataset.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="image-processing-toolsfilters" class="section level3">
-<h3 class="hasAnchor">
-<a href="#image-processing-toolsfilters" class="anchor"></a>Image Processing Tools/Filters</h3>
-<table class="table">
-<caption>Toolbox: Image Processing Tools/Filters</caption>
-<colgroup>
-<col width="20%">
-<col width="79%">
+<col width="23%">
+<col width="76%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">function_name</th>
@@ -1452,8 +1444,24 @@
 <td align="left">Performs an adaptive filter on an image.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_balance_contrast_enhancement.html">wbt_balance_contrast_enhancement()</a></code></td>
+<td align="left">Performs a balance contrast enhancement on a colour-composite image of multispectral data.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_bilateral_filter.html">wbt_bilateral_filter()</a></code></td>
 <td align="left">A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_canny_edge_detection.html">wbt_canny_edge_detection()</a></code></td>
+<td align="left">This tool performs a Canny edge-detection filter on an input image.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_change_vector_analysis.html">wbt_change_vector_analysis()</a></code></td>
+<td align="left">Performs a change vector analysis on a two-date multi-spectral dataset.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_closing.html">wbt_closing()</a></code></td>
+<td align="left">A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_conservative_smoothing_filter.html">wbt_conservative_smoothing_filter()</a></code></td>
@@ -1464,56 +1472,128 @@
 <td align="left">Identifies corner patterns in boolean images using hit-and-miss pattern matching.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_correct_vignetting.html">wbt_correct_vignetting()</a></code></td>
+<td align="left">Corrects the darkening of images towards corners.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_create_colour_composite.html">wbt_create_colour_composite()</a></code></td>
+<td align="left">Creates a colour-composite image from three bands of multispectral imagery.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_diff_of_gaussian_filter.html">wbt_diff_of_gaussian_filter()</a></code></td>
 <td align="left">Performs a Difference of Gaussian (DoG) filter on an image.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_direct_decorrelation_stretch.html">wbt_direct_decorrelation_stretch()</a></code></td>
+<td align="left">Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_diversity_filter.html">wbt_diversity_filter()</a></code></td>
 <td align="left">Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_edge_preserving_mean_filter.html">wbt_edge_preserving_mean_filter()</a></code></td>
 <td align="left">Performs a simple edge-preserving mean filter on an input image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_emboss_filter.html">wbt_emboss_filter()</a></code></td>
 <td align="left">Performs an emboss filter on an image, similar to a hillshade operation.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_evaluate_training_sites.html">wbt_evaluate_training_sites()</a></code></td>
+<td align="left">This tool can be used to inspect the overlap in spectral signatures of training sites for various classes.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_fast_almost_gaussian_filter.html">wbt_fast_almost_gaussian_filter()</a></code></td>
 <td align="left">Performs a fast approximate Gaussian filter on an image.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_flip_image.html">wbt_flip_image()</a></code></td>
+<td align="left">Reflects an image in the vertical or horizontal axis.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_gamma_correction.html">wbt_gamma_correction()</a></code></td>
+<td align="left">Performs a gamma correction on an input images.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_gaussian_contrast_stretch.html">wbt_gaussian_contrast_stretch()</a></code></td>
+<td align="left">Performs a Gaussian contrast stretch on input images.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_gaussian_filter.html">wbt_gaussian_filter()</a></code></td>
 <td align="left">Performs a Gaussian filter on an image.</td>
 </tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_generalize_classified_raster.html">wbt_generalize_classified_raster()</a></code></td>
+<td align="left">Generalizes a raster containing class or object features by removing small features.</td>
+</tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_generalize_with_similarity.html">wbt_generalize_with_similarity()</a></code></td>
+<td align="left">Generalizes a raster containing class or object features by removing small features using similarity criteria of neighbouring features.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_high_pass_filter.html">wbt_high_pass_filter()</a></code></td>
 <td align="left">Performs a high-pass filter on an input image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_high_pass_median_filter.html">wbt_high_pass_median_filter()</a></code></td>
 <td align="left">Performs a high pass median filter on an input image.</td>
 </tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_histogram_equalization.html">wbt_histogram_equalization()</a></code></td>
+<td align="left">Performs a histogram equalization contrast enhancement on an image.</td>
+</tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_histogram_matching.html">wbt_histogram_matching()</a></code></td>
+<td align="left">Alters the statistical distribution of a raster image matching it to a specified PDF.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_histogram_matching_two_images.html">wbt_histogram_matching_two_images()</a></code></td>
+<td align="left">This tool alters the cumulative distribution function of a raster image to that of another image.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_ihs_to_rgb.html">wbt_ihs_to_rgb()</a></code></td>
+<td align="left">Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_image_segmentation.html">wbt_image_segmentation()</a></code></td>
+<td align="left">Performs a region-growing based segmentation on a set of multi-spectral images.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_image_slider.html">wbt_image_slider()</a></code></td>
+<td align="left">This tool creates an image slider from two input images.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_image_stack_profile.html">wbt_image_stack_profile()</a></code></td>
+<td align="left">Plots an image stack profile (i.e. signature) for a set of points and multispectral images.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_integral_image.html">wbt_integral_image()</a></code></td>
+<td align="left">Transforms an input image (summed area table) into its integral image equivalent.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_k_nearest_mean_filter.html">wbt_k_nearest_mean_filter()</a></code></td>
 <td align="left">A k-nearest mean filter is a type of edge-preserving smoothing filter.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_laplacian_filter.html">wbt_laplacian_filter()</a></code></td>
 <td align="left">Performs a Laplacian filter on an image.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_laplacian_of_gaussian_filter.html">wbt_laplacian_of_gaussian_filter()</a></code></td>
 <td align="left">Performs a Laplacian-of-Gaussian (LoG) filter on an image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lee_sigma_filter.html">wbt_lee_sigma_filter()</a></code></td>
 <td align="left">Performs a Lee (Sigma) smoothing filter on an image.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_line_detection_filter.html">wbt_line_detection_filter()</a></code></td>
 <td align="left">Performs a line-detection filter on an image.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_line_thinning.html">wbt_line_thinning()</a></code></td>
+<td align="left">Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_majority_filter.html">wbt_majority_filter()</a></code></td>
@@ -1532,24 +1612,72 @@
 <td align="left">Performs a median filter on an input image.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_min_dist_classification.html">wbt_min_dist_classification()</a></code></td>
+<td align="left">Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_min_max_contrast_stretch.html">wbt_min_max_contrast_stretch()</a></code></td>
+<td align="left">Performs a min-max contrast stretch on an input greytone image.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_minimum_filter.html">wbt_minimum_filter()</a></code></td>
 <td align="left">Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_mosaic.html">wbt_mosaic()</a></code></td>
+<td align="left">Mosaics two or more images together.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_mosaic_with_feathering.html">wbt_mosaic_with_feathering()</a></code></td>
+<td align="left">Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_normalized_difference_index.html">wbt_normalized_difference_index()</a></code></td>
+<td align="left">Calculate a normalized-difference index (NDI) from two bands of multispectral image data.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_olympic_filter.html">wbt_olympic_filter()</a></code></td>
 <td align="left">Performs an olympic smoothing filter on an image.</td>
 </tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_opening.html">wbt_opening()</a></code></td>
+<td align="left">An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.</td>
+</tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_panchromatic_sharpening.html">wbt_panchromatic_sharpening()</a></code></td>
+<td align="left">Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_parallelepiped_classification.html">wbt_parallelepiped_classification()</a></code></td>
+<td align="left">Performs a supervised parallelepiped classification using training site polygons and multi-spectral images.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_percentage_contrast_stretch.html">wbt_percentage_contrast_stretch()</a></code></td>
+<td align="left">Performs a percentage linear contrast stretch on input images.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_percentile_filter.html">wbt_percentile_filter()</a></code></td>
 <td align="left">Performs a percentile filter on an input image.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_prewitt_filter.html">wbt_prewitt_filter()</a></code></td>
 <td align="left">Performs a Prewitt edge-detection filter on an image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_range_filter.html">wbt_range_filter()</a></code></td>
 <td align="left">Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_remove_spurs.html">wbt_remove_spurs()</a></code></td>
+<td align="left">Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_resample.html">wbt_resample()</a></code></td>
+<td align="left">Resamples one or more input images into a destination image.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_rgb_to_ihs.html">wbt_rgb_to_ihs()</a></code></td>
+<td align="left">Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_roberts_cross_filter.html">wbt_roberts_cross_filter()</a></code></td>
@@ -1560,93 +1688,48 @@
 <td align="left">Performs a Scharr edge-detection filter on an image.</td>
 </tr>
 <tr class="odd">
-<td align="left"><code><a href="../reference/wbt_sobel_filter.html">wbt_sobel_filter()</a></code></td>
-<td align="left">Performs a Sobel edge-detection filter on an image.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_standard_deviation_filter.html">wbt_standard_deviation_filter()</a></code></td>
-<td align="left">Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_total_filter.html">wbt_total_filter()</a></code></td>
-<td align="left">Performs a total filter on an input image.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_unsharp_masking.html">wbt_unsharp_masking()</a></code></td>
-<td align="left">An image sharpening technique that enhances edges.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_user_defined_weights_filter.html">wbt_user_defined_weights_filter()</a></code></td>
-<td align="left">Performs a user-defined weights filter on an image.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="image-processing-toolsimage-enhancement" class="section level3">
-<h3 class="hasAnchor">
-<a href="#image-processing-toolsimage-enhancement" class="anchor"></a>Image Processing Tools/Image Enhancement</h3>
-<table class="table">
-<caption>Toolbox: Image Processing Tools/Image Enhancement</caption>
-<colgroup>
-<col width="29%">
-<col width="70%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_balance_contrast_enhancement.html">wbt_balance_contrast_enhancement()</a></code></td>
-<td align="left">Performs a balance contrast enhancement on a colour-composite image of multispectral data.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_correct_vignetting.html">wbt_correct_vignetting()</a></code></td>
-<td align="left">Corrects the darkening of images towards corners.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_direct_decorrelation_stretch.html">wbt_direct_decorrelation_stretch()</a></code></td>
-<td align="left">Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_gamma_correction.html">wbt_gamma_correction()</a></code></td>
-<td align="left">Performs a gamma correction on an input images.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_gaussian_contrast_stretch.html">wbt_gaussian_contrast_stretch()</a></code></td>
-<td align="left">Performs a Gaussian contrast stretch on input images.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_histogram_equalization.html">wbt_histogram_equalization()</a></code></td>
-<td align="left">Performs a histogram equalization contrast enhancement on an image.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_histogram_matching.html">wbt_histogram_matching()</a></code></td>
-<td align="left">Alters the statistical distribution of a raster image matching it to a specified PDF.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_histogram_matching_two_images.html">wbt_histogram_matching_two_images()</a></code></td>
-<td align="left">This tool alters the cumulative distribution function of a raster image to that of another image.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_min_max_contrast_stretch.html">wbt_min_max_contrast_stretch()</a></code></td>
-<td align="left">Performs a min-max contrast stretch on an input greytone image.</td>
-</tr>
-<tr class="even">
-<td align="left"><code><a href="../reference/wbt_panchromatic_sharpening.html">wbt_panchromatic_sharpening()</a></code></td>
-<td align="left">Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code><a href="../reference/wbt_percentage_contrast_stretch.html">wbt_percentage_contrast_stretch()</a></code></td>
-<td align="left">Performs a percentage linear contrast stretch on input images.</td>
-</tr>
-<tr class="even">
 <td align="left"><code><a href="../reference/wbt_sigmoidal_contrast_stretch.html">wbt_sigmoidal_contrast_stretch()</a></code></td>
 <td align="left">Performs a sigmoidal contrast stretch on input images.</td>
 </tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_sobel_filter.html">wbt_sobel_filter()</a></code></td>
+<td align="left">Performs a Sobel edge-detection filter on an image.</td>
+</tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_split_colour_composite.html">wbt_split_colour_composite()</a></code></td>
+<td align="left">This tool splits an RGB colour composite image into separate multispectral images.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_standard_deviation_contrast_stretch.html">wbt_standard_deviation_contrast_stretch()</a></code></td>
 <td align="left">Performs a standard-deviation contrast stretch on input images.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_standard_deviation_filter.html">wbt_standard_deviation_filter()</a></code></td>
+<td align="left">Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_thicken_raster_line.html">wbt_thicken_raster_line()</a></code></td>
+<td align="left">Thickens single-cell wide lines within a raster image.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_tophat_transform.html">wbt_tophat_transform()</a></code></td>
+<td align="left">Performs either a white or black top-hat transform on an input image.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_total_filter.html">wbt_total_filter()</a></code></td>
+<td align="left">Performs a total filter on an input image.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_unsharp_masking.html">wbt_unsharp_masking()</a></code></td>
+<td align="left">An image sharpening technique that enhances edges.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_user_defined_weights_filter.html">wbt_user_defined_weights_filter()</a></code></td>
+<td align="left">Performs a user-defined weights filter on an image.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_write_function_memory_insertion.html">wbt_write_function_memory_insertion()</a></code></td>
+<td align="left">Performs a write function memory insertion for single-band multi-date change detection.</td>
 </tr>
 </tbody>
 </table>
@@ -1710,16 +1793,24 @@
 <td align="left">Converts one or more LAS files into ASCII text files.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_las_to_laz.html">wbt_las_to_laz()</a></code></td>
+<td align="left">This tool converts one or more LAS files into the LAZ format</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_las_to_multipoint_shapefile.html">wbt_las_to_multipoint_shapefile()</a></code></td>
 <td align="left">Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_las_to_shapefile.html">wbt_las_to_shapefile()</a></code></td>
 <td align="left">Converts one or more LAS files into a vector Shapefile of POINT ShapeType.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_las_to_zlidar.html">wbt_las_to_zlidar()</a></code></td>
 <td align="left">Converts one or more LAS files into the zlidar compressed LiDAR data format.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_laz_to_las.html">wbt_laz_to_las()</a></code></td>
+<td align="left">This tool converts one or more LAZ files into the LAS format</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_block_maximum.html">wbt_lidar_block_maximum()</a></code></td>
@@ -1731,59 +1822,67 @@
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_classify_subset.html">wbt_lidar_classify_subset()</a></code></td>
-<td align="left">Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.</td>
+<td align="left">Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.</td>
 </tr>
 <tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_colourize.html">wbt_lidar_colourize()</a></code></td>
 <td align="left">Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_lidar_contour.html">wbt_lidar_contour()</a></code></td>
+<td align="left">This tool creates a vector contour coverage from an input LiDAR point file.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_digital_surface_model.html">wbt_lidar_digital_surface_model()</a></code></td>
 <td align="left">Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_elevation_slice.html">wbt_lidar_elevation_slice()</a></code></td>
 <td align="left">Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_ground_point_filter.html">wbt_lidar_ground_point_filter()</a></code></td>
 <td align="left">Identifies ground points within LiDAR dataset using a slope-based method.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_hex_binning.html">wbt_lidar_hex_binning()</a></code></td>
 <td align="left">Hex-bins a set of LiDAR points.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_hillshade.html">wbt_lidar_hillshade()</a></code></td>
 <td align="left">Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_histogram.html">wbt_lidar_histogram()</a></code></td>
 <td align="left">Creates a histogram of LiDAR data.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_idw_interpolation.html">wbt_lidar_idw_interpolation()</a></code></td>
 <td align="left">Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_info.html">wbt_lidar_info()</a></code></td>
 <td align="left">Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_join.html">wbt_lidar_join()</a></code></td>
 <td align="left">Joins multiple LiDAR (LAS) files into a single LAS file.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_kappa_index.html">wbt_lidar_kappa_index()</a></code></td>
 <td align="left">Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_nearest_neighbour_gridding.html">wbt_lidar_nearest_neighbour_gridding()</a></code></td>
 <td align="left">Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_point_density.html">wbt_lidar_point_density()</a></code></td>
 <td align="left">Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_lidar_point_return_analysis.html">wbt_lidar_point_return_analysis()</a></code></td>
+<td align="left">This tool performs a quality control check on the return values of points in a LiDAR file.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_point_stats.html">wbt_lidar_point_stats()</a></code></td>
@@ -1818,40 +1917,109 @@
 <td align="left">Identifies ground points within LiDAR point clouds using a segmentation based approach.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_lidar_shift.html">wbt_lidar_shift()</a></code></td>
+<td align="left">Shifts the x,y,z coordinates of a LiDAR file.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_lidar_sibson_interpolation.html">wbt_lidar_sibson_interpolation()</a></code></td>
+<td align="left">This tool interpolates one or more LiDAR tiles using Sibson’s natural neighbour method.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_lidar_sort_by_time.html">wbt_lidar_sort_by_time()</a></code></td>
+<td align="left">This sorts the points in a LiDAR file by the GPS time.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_tin_gridding.html">wbt_lidar_tin_gridding()</a></code></td>
 <td align="left">Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_thin.html">wbt_lidar_thin()</a></code></td>
 <td align="left">Thins a LiDAR point cloud, reducing point density.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_thin_high_density.html">wbt_lidar_thin_high_density()</a></code></td>
 <td align="left">Thins points from high density areas within a LiDAR point cloud.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_tile.html">wbt_lidar_tile()</a></code></td>
 <td align="left">Tiles a LiDAR LAS file into multiple LAS files.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_lidar_tile_footprint.html">wbt_lidar_tile_footprint()</a></code></td>
 <td align="left">Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_lidar_tophat_transform.html">wbt_lidar_tophat_transform()</a></code></td>
 <td align="left">Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_normal_vectors.html">wbt_normal_vectors()</a></code></td>
 <td align="left">Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_select_tiles_by_polygon.html">wbt_select_tiles_by_polygon()</a></code></td>
 <td align="left">Copies LiDAR tiles overlapping with a polygon into an output directory.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_zlidar_to_las.html">wbt_zlidar_to_las()</a></code></td>
 <td align="left">Converts one or more zlidar files into the LAS data format.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="machine-learning" class="section level3">
+<h3 class="hasAnchor">
+<a href="#machine-learning" class="anchor"></a>Machine Learning</h3>
+<table class="table">
+<caption>Toolbox: Machine Learning</caption>
+<colgroup>
+<col width="24%">
+<col width="75%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">function_name</th>
+<th align="left">description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_dbscan.html">wbt_dbscan()</a></code></td>
+<td align="left">Performs a DBSCAN-based unsupervised clustering operation.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_k_means_clustering.html">wbt_k_means_clustering()</a></code></td>
+<td align="left">Performs a k-means clustering operation on a multi-spectral dataset.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_knn_classification.html">wbt_knn_classification()</a></code></td>
+<td align="left">Performs a supervised k-nearest neighbour classification using training site polygons/points and predictor rasters.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_knn_regression.html">wbt_knn_regression()</a></code></td>
+<td align="left">Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_logistic_regression.html">wbt_logistic_regression()</a></code></td>
+<td align="left">Performs a logistic regression analysis using training site polygons/points and predictor rasters.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_modified_k_means_clustering.html">wbt_modified_k_means_clustering()</a></code></td>
+<td align="left">Performs a modified k-means clustering operation on a multi-spectral dataset.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_random_forest_classification.html">wbt_random_forest_classification()</a></code></td>
+<td align="left">Performs a supervised random forest classification using training site polygons/points and predictor rasters.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_random_forest_regression.html">wbt_random_forest_regression()</a></code></td>
+<td align="left">Performs a random forest regression analysis using training site data and predictor rasters.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_svm_classification.html">wbt_svm_classification()</a></code></td>
+<td align="left">Performs an SVM binary classification using training site polygons/points and multiple input images.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_svm_regression.html">wbt_svm_regression()</a></code></td>
+<td align="left">Performs a supervised SVM regression analysis using training site points and predictor rasters.</td>
 </tr>
 </tbody>
 </table>
@@ -1935,92 +2103,100 @@
 <td align="left">Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.</td>
 </tr>
 <tr class="odd">
+<td align="left"><code><a href="../reference/wbt_conditional_evaluation.html">wbt_conditional_evaluation()</a></code></td>
+<td align="left">This tool performs a conditional evaluaton (if-then-else) operation on a raster.</td>
+</tr>
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_cos.html">wbt_cos()</a></code></td>
 <td align="left">Returns the cosine (cos) of each values in a raster.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_cosh.html">wbt_cosh()</a></code></td>
 <td align="left">Returns the hyperbolic cosine (cosh) of each values in a raster.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_crispness_index.html">wbt_crispness_index()</a></code></td>
 <td align="left">Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_cross_tabulation.html">wbt_cross_tabulation()</a></code></td>
 <td align="left">Performs a cross-tabulation on two categorical images.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_cumulative_distribution.html">wbt_cumulative_distribution()</a></code></td>
 <td align="left">Converts a raster image to its cumulative distribution function.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_decrement.html">wbt_decrement()</a></code></td>
 <td align="left">Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_divide.html">wbt_divide()</a></code></td>
 <td align="left">Performs a division operation on two rasters or a raster and a constant value.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_equal_to.html">wbt_equal_to()</a></code></td>
 <td align="left">Performs a equal-to comparison operation on two rasters or a raster and a constant value.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_exp.html">wbt_exp()</a></code></td>
 <td align="left">Returns the exponential (base e) of values in a raster.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_exp2.html">wbt_exp2()</a></code></td>
 <td align="left">Returns the exponential (base 2) of values in a raster.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_floor.html">wbt_floor()</a></code></td>
 <td align="left">Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_greater_than.html">wbt_greater_than()</a></code></td>
 <td align="left">Performs a greater-than comparison operation on two rasters or a raster and a constant value.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_image_autocorrelation.html">wbt_image_autocorrelation()</a></code></td>
 <td align="left">Performs Moran’s I analysis on two or more input images.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_image_correlation.html">wbt_image_correlation()</a></code></td>
 <td align="left">Performs image correlation on two or more input images.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_image_correlation_neighbourhood_analysis.html">wbt_image_correlation_neighbourhood_analysis()</a></code></td>
 <td align="left">Performs image correlation on two input images neighbourhood search windows.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_image_regression.html">wbt_image_regression()</a></code></td>
 <td align="left">Performs image regression analysis on two input images.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_in_place_add.html">wbt_in_place_add()</a></code></td>
 <td align="left">Performs an in-place addition operation (input1 += input2).</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_in_place_divide.html">wbt_in_place_divide()</a></code></td>
 <td align="left">Performs an in-place division operation (input1 /= input2).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_in_place_multiply.html">wbt_in_place_multiply()</a></code></td>
 <td align="left">Performs an in-place multiplication operation (input1 *= input2).</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_in_place_subtract.html">wbt_in_place_subtract()</a></code></td>
 <td align="left">Performs an in-place subtraction operation (input1 -= input2).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_increment.html">wbt_increment()</a></code></td>
 <td align="left">Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_integer_division.html">wbt_integer_division()</a></code></td>
 <td align="left">Performs an integer division operation on two rasters or a raster and a constant value.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>wbt_inverse_pca()</code></td>
+<td align="left">This tool performs an inverse principal component analysis on a series of input component images.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_is_no_data.html">wbt_is_no_data()</a></code></td>
@@ -2091,24 +2267,32 @@
 <td align="left">Performs a 2-sample K-S test for significant differences on two input rasters.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_phi_coefficient.html">wbt_phi_coefficient()</a></code></td>
+<td align="left">This tool performs a binary classification accuracy assessment.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_power.html">wbt_power()</a></code></td>
 <td align="left">Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_principal_component_analysis.html">wbt_principal_component_analysis()</a></code></td>
 <td align="left">Performs a principal component analysis (PCA) on a multi-spectral dataset.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_quantiles.html">wbt_quantiles()</a></code></td>
 <td align="left">Transforms raster values into quantiles.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_random_field.html">wbt_random_field()</a></code></td>
 <td align="left">Creates an image containing random values.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_random_sample.html">wbt_random_sample()</a></code></td>
 <td align="left">Creates an image containing randomly located sample grid cells with unique IDs.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_raster_calculator.html">wbt_raster_calculator()</a></code></td>
+<td align="left">This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.</td>
 </tr>
 <tr class="odd">
 <td align="left"><code><a href="../reference/wbt_raster_histogram.html">wbt_raster_histogram()</a></code></td>
@@ -2209,14 +2393,55 @@
 </tbody>
 </table>
 </div>
+<div id="precision-agriculture" class="section level3">
+<h3 class="hasAnchor">
+<a href="#precision-agriculture" class="anchor"></a>Precision Agriculture</h3>
+<table class="table">
+<caption>Toolbox: Precision Agriculture</caption>
+<colgroup>
+<col width="25%">
+<col width="75%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">function_name</th>
+<th align="left">description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_reconcile_multiple_headers.html">wbt_reconcile_multiple_headers()</a></code></td>
+<td align="left">This tool adjusts the crop yield values for data sets collected with multiple headers or combines.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_recreate_pass_lines.html">wbt_recreate_pass_lines()</a></code></td>
+<td align="left">This tool can be used to approximate the harvester pass lines from yield points.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_remove_field_edge_points.html">wbt_remove_field_edge_points()</a></code></td>
+<td align="left">This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_yield_filter.html">wbt_yield_filter()</a></code></td>
+<td align="left">Filters crop yield values of point data derived from combine harvester yield monitors.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code><a href="../reference/wbt_yield_map.html">wbt_yield_map()</a></code></td>
+<td align="left">This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_yield_normalization.html">wbt_yield_normalization()</a></code></td>
+<td align="left">This tool can be used to normalize the yield points for a field.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="stream-network-analysis" class="section level3">
 <h3 class="hasAnchor">
 <a href="#stream-network-analysis" class="anchor"></a>Stream Network Analysis</h3>
 <table class="table">
 <caption>Toolbox: Stream Network Analysis</caption>
 <colgroup>
-<col width="29%">
-<col width="70%">
+<col width="28%">
+<col width="71%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">function_name</th>
@@ -2276,40 +2501,48 @@
 <td align="left">Removes short first-order streams from a stream network.</td>
 </tr>
 <tr class="even">
+<td align="left"><code><a href="../reference/wbt_repair_stream_vector_topology.html">wbt_repair_stream_vector_topology()</a></code></td>
+<td align="left">This tool resolves topological errors and inconsistencies associated with digitized vector streams.</td>
+</tr>
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_shreve_stream_magnitude.html">wbt_shreve_stream_magnitude()</a></code></td>
 <td align="left">Assigns the Shreve stream magnitude to each link in a stream network.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_strahler_stream_order.html">wbt_strahler_stream_order()</a></code></td>
 <td align="left">Assigns the Strahler stream order to each link in a stream network.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_stream_link_class.html">wbt_stream_link_class()</a></code></td>
 <td align="left">Identifies the exterior/interior links and nodes in a stream network.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_stream_link_identifier.html">wbt_stream_link_identifier()</a></code></td>
 <td align="left">Assigns a unique identifier to each link in a stream network.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_stream_link_length.html">wbt_stream_link_length()</a></code></td>
 <td align="left">Estimates the length of each link (or tributary) in a stream network.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_stream_link_slope.html">wbt_stream_link_slope()</a></code></td>
 <td align="left">Estimates the average slope of each link (or tributary) in a stream network.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_stream_slope_continuous.html">wbt_stream_slope_continuous()</a></code></td>
 <td align="left">Estimates the slope of each grid cell in a stream network.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code><a href="../reference/wbt_topological_stream_order.html">wbt_topological_stream_order()</a></code></td>
 <td align="left">Assigns each link in a stream network its topological order.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code></td>
 <td align="left">Assigns a unique identifier to each tributary in a stream network.</td>
+</tr>
+<tr class="even">
+<td align="left"><code><a href="../reference/wbt_vector_stream_network_analysis.html">wbt_vector_stream_network_analysis()</a></code></td>
+<td align="left">This tool performs common stream network analysis operations on an input vector stream file.</td>
 </tr>
 </tbody>
 </table>

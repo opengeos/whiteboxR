@@ -50,15 +50,21 @@ data("wbttools", package = "whitebox")
 str(wbttools)
 ```
 
-The `wbttools` data set is a data.frame with `r nrow(wbttools)` tools and 4 variables
+The `wbttools` data set is a data.frame with `r nrow(wbttools)` tools and 7 variables
 
  - `"tool_name"` - WhiteboxTools tool name
+ 
+ - `"function_name"` - R function tool name
 
  - `"toolbox_name"` - WhiteboxTools toolbox name
 
+ - `"label"` - WhiteboxTools tool label
+
  - `"description"` - Brief description
 
- - `"function_name"` - R function name
+ - `"github"` - GitHub link
+ 
+ - `"book"` - Reference manual link
  
 ```{r}
 head(wbttools)
@@ -84,9 +90,11 @@ data("wbttoolparameters", package = "whitebox")
 
 The `wbttoolparameters` data set is a _data.frame_ with `r nrow(wbttoolparameters)` parameters and `r ncol(wbttoolparameters)` variables:
 
+ - `"tool_name"` - WhiteboxTools tool name
+ 
  - `"function_name"` - R function name
  
- - `"tool_name"` - WhiteboxTools tool name
+ - `"toolbox_name"` - WhiteboxTools toolbox name
  
  - `"name"` - WhiteboxTools tool parameter name
  
@@ -94,20 +102,19 @@ The `wbttoolparameters` data set is a _data.frame_ with `r nrow(wbttoolparameter
  
  - `"description"` - parameter description
  
- - `"parameter_class"` - parameter type
- 
- - `"parameter_detail"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
-
  - `"default_value"` - parameter default value, if any
  
  - `"optional"` - parameter "optional" flag; note that some combination of optional parameters may be required for certain conditions
  
- - `"argument_name"` - labels for selected subset of `"flags"` **used as R function argument names** for `wbt_` functions
+ - `"parameter_class"` - parameter type
+ 
+ - `"parameter_detail"` - parameter details; character: data type followed by colon and more specifics, For OptionList possible values, comma-separated (if defined)
 
  - `"is_input"` - logical. Classification of 'input' parameters
  
  - `"is_output"` - logical. Classification of 'output' parameters
  
+ - `"argument_name"` - labels for selected subset of `"flags"` **used as R function argument names** for `wbt_` functions
 
 ```{r}
 head(wbttoolparameters)
