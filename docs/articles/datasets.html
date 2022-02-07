@@ -259,52 +259,45 @@
 <div id="example-finding-tools-by-parameter-type" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example-finding-tools-by-parameter-type" class="anchor"></a>Example: Finding Tools by Parameter Type</h3>
-<p>To find the tools that have an “OptionList” argument with parameter label “variant” (flag: <code>--variant=</code>) we can use <code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code></p>
+<p>To find the tools that have an “ExistingFile” argument with file type “Raster” we can use <code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"OptionList"</span>, <span class="va">parameter_class</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"variant"</span>, <span class="va">argument_name</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;                tool_name         function_name            toolbox_name    name</span>
-<span class="co">#&gt; 464       ExtractValleys       extract_valleys Stream Network Analysis Variant</span>
-<span class="co">#&gt; 824      LaplacianFilter      laplacian_filter  Image Processing Tools Variant</span>
-<span class="co">#&gt; 1074 LineDetectionFilter line_detection_filter  Image Processing Tools Variant</span>
-<span class="co">#&gt; 1759         SobelFilter          sobel_filter  Image Processing Tools Variant</span>
-<span class="co">#&gt; 1905     TophatTransform      tophat_transform  Image Processing Tools Variant</span>
-<span class="co">#&gt;          flags</span>
-<span class="co">#&gt; 464  --variant</span>
-<span class="co">#&gt; 824  --variant</span>
-<span class="co">#&gt; 1074 --variant</span>
-<span class="co">#&gt; 1759 --variant</span>
-<span class="co">#&gt; 1905 --variant</span>
-<span class="co">#&gt;                                                                                                                       description</span>
-<span class="co">#&gt; 464  Options include 'LQ' (lower quartile), 'JandR' (Johnston and Rosenfeld), and 'PandD' (Peucker and Douglas); default is 'LQ'.</span>
-<span class="co">#&gt; 824               Optional variant value. Options include 3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), and 5x5(2) (default is 3x3(1)).</span>
-<span class="co">#&gt; 1074                  Optional variant value. Options include 'v' (vertical), 'h' (horizontal), '45', and '135' (default is 'v').</span>
-<span class="co">#&gt; 1759                                                        Optional variant value. Options include 3x3 and 5x5 (default is 3x3).</span>
-<span class="co">#&gt; 1905                                                                 Optional variant value. Options include 'white' and 'black'.</span>
-<span class="co">#&gt;      default_value optional parameter_class</span>
-<span class="co">#&gt; 464             LQ    FALSE      OptionList</span>
-<span class="co">#&gt; 824         3x3(1)     TRUE      OptionList</span>
-<span class="co">#&gt; 1074      vertical     TRUE      OptionList</span>
-<span class="co">#&gt; 1759           3x3     TRUE      OptionList</span>
-<span class="co">#&gt; 1905         white     TRUE      OptionList</span>
-<span class="co">#&gt;                                    parameter_detail is_input is_output</span>
-<span class="co">#&gt; 464                                LQ, JandR, PandD    FALSE     FALSE</span>
-<span class="co">#&gt; 824  3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), 5x5(2)    FALSE     FALSE</span>
-<span class="co">#&gt; 1074                  vertical, horizontal, 45, 135    FALSE     FALSE</span>
-<span class="co">#&gt; 1759                                       3x3, 5x5    FALSE     FALSE</span>
-<span class="co">#&gt; 1905                                   white, black    FALSE     FALSE</span>
-<span class="co">#&gt;      argument_name</span>
-<span class="co">#&gt; 464        variant</span>
-<span class="co">#&gt; 824        variant</span>
-<span class="co">#&gt; 1074       variant</span>
-<span class="co">#&gt; 1759       variant</span>
-<span class="co">#&gt; 1905       variant</span></code></pre></div>
-<p>Check out the code that builds the data in <code>/data-raw/</code> on <a href="https://github.com/giswqs/whiteboxR/tree/master/data-raw">GitHub</a> to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.</p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"ExistingFile"</span>, <span class="va">parameter_class</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"Raster"</span>, <span class="va">parameter_detail</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;                tool_name          function_name             toolbox_name</span>
+<span class="co">#&gt; 1          AbsoluteValue         absolute_value     Math and Stats Tools</span>
+<span class="co">#&gt; 3  AccumulationCurvature accumulation_curvature Geomorphometric Analysis</span>
+<span class="co">#&gt; 7         AdaptiveFilter        adaptive_filter   Image Processing Tools</span>
+<span class="co">#&gt; 12                   Add                    add     Math and Stats Tools</span>
+<span class="co">#&gt; 13                   Add                    add     Math and Stats Tools</span>
+<span class="co">#&gt; 16       AggregateRaster       aggregate_raster             GIS Analysis</span>
+<span class="co">#&gt;                            name      flags                          description</span>
+<span class="co">#&gt; 1                    Input File -i,--input                   Input raster file.</span>
+<span class="co">#&gt; 3              Input Raster DEM   -i,--dem   Name of the input raster DEM file.</span>
+<span class="co">#&gt; 7                    Input File -i,--input                   Input raster file.</span>
+<span class="co">#&gt; 12 Input File Or Constant Value   --input1 Input raster file or constant value.</span>
+<span class="co">#&gt; 13 Input File Or Constant Value   --input2 Input raster file or constant value.</span>
+<span class="co">#&gt; 16                   Input File -i,--input                   Input raster file.</span>
+<span class="co">#&gt;    default_value optional     parameter_class parameter_detail is_input</span>
+<span class="co">#&gt; 1           &lt;NA&gt;    FALSE        ExistingFile           Raster     TRUE</span>
+<span class="co">#&gt; 3           &lt;NA&gt;    FALSE        ExistingFile           Raster    FALSE</span>
+<span class="co">#&gt; 7           &lt;NA&gt;    FALSE        ExistingFile           Raster     TRUE</span>
+<span class="co">#&gt; 12          &lt;NA&gt;    FALSE ExistingFileOrFloat           Raster     TRUE</span>
+<span class="co">#&gt; 13          &lt;NA&gt;    FALSE ExistingFileOrFloat           Raster     TRUE</span>
+<span class="co">#&gt; 16          &lt;NA&gt;    FALSE        ExistingFile           Raster     TRUE</span>
+<span class="co">#&gt;    is_output argument_name</span>
+<span class="co">#&gt; 1      FALSE         input</span>
+<span class="co">#&gt; 3      FALSE           dem</span>
+<span class="co">#&gt; 7      FALSE         input</span>
+<span class="co">#&gt; 12     FALSE        input1</span>
+<span class="co">#&gt; 13     FALSE        input2</span>
+<span class="co">#&gt; 16     FALSE         input</span></code></pre></div>
+<!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
+<!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
 </div>
 </div>
 <div id="appendix-tables-of-function-names-by-toolbox" class="section level2">
 <h2 class="hasAnchor">
 <a href="#appendix-tables-of-function-names-by-toolbox" class="anchor"></a>Appendix: Tables of Function Names by Toolbox</h2>
-<p>The remainder of this vignette are tables of R function names and tool descriptions from <code>wbttoolparameters</code>, organized by WhiteboxTools toolbox name.</p>
+<p>The remainder of this vignette is tables of R function names and tool descriptions from <code>wbttoolparameters</code>, organized by WhiteboxTools toolbox/extension name.</p>
 <div id="data-tools" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-tools" class="anchor"></a>Data Tools</h3>
@@ -315,8 +308,8 @@
 <col width="73%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -436,8 +429,8 @@
 <col width="73%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -813,8 +806,8 @@
 <col width="78%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1190,8 +1183,8 @@
 <col width="78%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1435,8 +1428,8 @@
 <col width="76%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1744,8 +1737,8 @@
 <col width="82%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1977,8 +1970,8 @@
 <col width="75%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -2034,8 +2027,8 @@
 <col width="69%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -2403,8 +2396,8 @@
 <col width="75%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -2444,8 +2437,8 @@
 <col width="71%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">function_name</th>
-<th align="left">description</th>
+<th align="left">Function Name</th>
+<th align="left">Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">

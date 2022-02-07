@@ -136,17 +136,18 @@ The variable `argument_name` is processed to be the subset of `flags` that corre
 
 ### Example: Finding Tools by Parameter Type
 
-To find the tools that have an "OptionList" argument with parameter label "variant" (flag: `--variant=`) we can use `subset()`
+To find the tools that have an "ExistingFile" argument with file type "Raster" we can use `subset()`.
 
 ```{r}
-subset(wbttoolparameters, grepl("OptionList", parameter_class) & grepl("variant", argument_name))
+head(subset(wbttoolparameters, grepl("ExistingFile", parameter_class) & grepl("Raster", parameter_detail)))
 ```
 
-Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata.
+<!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
+<!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
 
 ## Appendix: Tables of Function Names by Toolbox
 
-The remainder of this vignette are tables of R function names and tool descriptions from `wbttoolparameters`, organized by WhiteboxTools toolbox name.
+The remainder of this vignette is tables of R function names and tool descriptions from `wbttoolparameters`, organized by WhiteboxTools toolbox/extension name.
 
 ```{r, echo=FALSE, results='asis'}
 # hide this, we add the parentheses for the docs
@@ -161,6 +162,7 @@ if (requireNamespace("knitr")) {
     print(knitr::kable(
       wbttoolssplt[[nm]],
       caption = paste("Toolbox:", nm),
+      col.names = c("Function Name",  "Description"),
       row.names = FALSE
     ))
   })
