@@ -7,11 +7,10 @@
 [![whitebox
 Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
-[![Binder](https://binder.pangeo.io/badge.svg)](https://binder.pangeo.io/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR/)
 [![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR/)
-[![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://codecov.io/gh/giswqs/whiteboxR)
+[![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Twitter
@@ -249,7 +248,7 @@ The `filter` argument sets the size of the filter kernel.
     # Prints the whitebox-tools license
     wbt_license()
     #> WhiteboxTools License
-    #> Copyright 2017-2020 John Lindsay
+    #> Copyright 2017-2021 John Lindsay
     #> 
     #> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
     #> associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -268,7 +267,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v2.0.0 by Dr. John B. Lindsay (c) 2017-2021
+    #> WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2021
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
@@ -297,7 +296,7 @@ The `filter` argument sets the size of the filter kernel.
     #> LasToZlidar: Converts one or more LAS files into the zlidar compressed LiDAR data format.
     #> LidarBlockMaximum: Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
     #> LidarBlockMinimum: Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
-    #> LidarClassifySubset: Classifies the values in one LiDAR point cloud that correpond with points in a subset cloud.
+    #> LidarClassifySubset: Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
     #> LidarColourize: Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
     #> LidarDigitalSurfaceModel: Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
     #> LidarElevationSlice: Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
