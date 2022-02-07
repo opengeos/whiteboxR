@@ -18,7 +18,7 @@ Enhancements:
  
  - Unsetting working directories requires only a single call to `wbt_wd("")`
  
- - Functions no longer use `match.call()` so unconventional/automated methods for calling tools that do not have a parseable tool name in the call result now work (#45)
+ - Functions no longer use `match.call()` so unconventional/automated methods for calling tools that do not have a parsable tool name in the call result now work (#45)
 
 # whitebox 1.5.1
  

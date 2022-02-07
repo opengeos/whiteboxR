@@ -1,3 +1,4 @@
+AnisotropyLTP
 Anova
 AppVeyor
 Arcosh
@@ -9,7 +10,10 @@ CMD
 Ceil
 Centre
 Centroid
+ClassificationError
 Csv
+Curvedness
+DBSCAN
 DEM's
 DEMs
 DEV
@@ -19,12 +23,16 @@ DInfFlowAccumulation
 DSM
 DUL
 Darboux
+Dbscan
 Delaunay
 Dev
+DiffMeanElev
 DoG
 Downslope
 EPSG
 EXE
+Eastness
+ExistingFile
 FID
 Fairfield
 Fd
@@ -36,7 +44,9 @@ Frontend
 GAT
 GeoTIFF
 Geomorphometry
+Geomorphons
 Geosciences
+Gini
 HH
 Hillshade
 Hillslopes
@@ -58,6 +68,7 @@ Isobasins
 JSON
 JandR
 Jenson
+Knn
 LAZ
 LQ
 Laz
@@ -72,6 +83,7 @@ LoG
 MCE
 MacOS
 Manduchi
+MeanCurvature
 Medoid
 MultiQuadric
 Multidirectional
@@ -79,6 +91,7 @@ MultipointZ
 Multiscale
 NDI
 NoData
+Northness
 Num
 OSAVI
 OptionList
@@ -87,11 +100,13 @@ PandD
 Parallelepiped
 Pennock
 Peucker
+PlanCurvature
 Planchon
 PolyHarmonic
 Polygonize
 Pre
 Prewitt
+ProfileCurvature
 Qin
 RANSAC
 RBF
@@ -106,6 +121,7 @@ Rescale
 Rgb
 Rosenfeld
 SCA
+SVR
 Scharr
 Seibert's
 ShapeType
@@ -119,13 +135,18 @@ Sobel
 Spillout
 Strahler
 Subbasins
+Svm
+TanCurvature
 Tanh
 ThinPlateSpline
 Tomasi
 Tophat
+TotalCurvature
 UDSA
 Unnest
+Unsetting
 Unsharp
+Unsphericity
 Upslope
 VLRs
 Viewshed
@@ -161,6 +182,7 @@ colourize
 countif
 cran
 csv
+curvedness
 darboux
 decorrelation
 depressionless
@@ -185,6 +207,8 @@ frontend
 geo
 geokeys
 geomorphometric
+geomorphon
+geomorphons
 geospatial
 ghrg
 gishub
@@ -218,6 +242,7 @@ kNN
 landform
 las
 laz
+lengthed
 lidar
 liu
 lq
@@ -226,6 +251,7 @@ meso
 metres
 mfd
 modelling
+morphologies
 mosaicing
 multipoint
 multiscale
@@ -242,6 +268,7 @@ num
 nw
 olympic
 parallelepiped
+parsable
 pearson
 planchon
 polyline
@@ -272,6 +299,7 @@ tophat
 topolography
 trendline
 unbreached
+unsphericity
 upslope
 vals
 viewshed
