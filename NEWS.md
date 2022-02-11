@@ -2,7 +2,7 @@
 
  * Update for WhiteboxTools v2.1.0  
  
-   - See https://github.com/jblindsay/whitebox-tools/releases/tag/v2.1.0 for details
+   - See https://www.whiteboxgeo.com/whitebox-geospatial-news/ for details
 
 # whitebox 2.0.0
 
