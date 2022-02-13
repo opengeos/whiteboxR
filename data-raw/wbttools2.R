@@ -40,8 +40,8 @@ wbtp2 <- data.frame(tool_name = do.call('c', lapply(seq_along(n3), function(i) r
 wbttoolparameters2 <- merge(wbttools[,c('function_name','tool_name','toolbox_name')],
       wbtp2, by = "tool_name", all.x=T, sort=F)
 
-wbttoolparameters2$is_input <- grepl("input", wbttoolparameters2$flags)
-wbttoolparameters2$is_output <- grepl("output", wbttoolparameters2$flags)                       
+wbttoolparameters2$is_input <- grepl("input|dem", wbttoolparameters2$flags) | (grepl("Existing|FileList", wbttoolparameters2$parameter_class) & grepl("input", wbttoolparameters2$description, ignore.case = TRUE))
+wbttoolparameters2$is_output <- grepl("output", wbttoolparameters2$flags) | (grepl("NewFile", wbttoolparameters2$parameter_class) & grepl("input", wbttoolparameters2$description, ignore.case = TRUE))
 wbttoolparameters2$argument_name <- unlist(sapply(strsplit(wbttoolparameters2$flags, ","), function(x){ 
   y <- gsub("\\-\\-(.*)", "\\1", x)
   z <- y[!y %in% c("-i", "-o")]
@@ -51,7 +51,6 @@ wbttoolparameters2$argument_name <- unlist(sapply(strsplit(wbttoolparameters2$fl
 wbttoolparameters2$name <- NULL
 colnames(wbttoolparameters2)[4] <- "name"
 
-colnames(wbttoolparameters)
 colnames(wbttoolparameters2)        
 wbttools <- as.data.frame(wbttools)
 wbttoolparameters <- as.data.frame(wbttoolparameters2)
@@ -67,7 +66,7 @@ attr(wbttoolparameters, 'version') <- wbtvs
 # overwrite datasets with new data
 
 wbttools$function_name <- paste0("wbt_", wbttools$function_name)
-wbttoolparameters$function_name <- paste0("wbt_", wbttools$function_name)
+wbttoolparameters$function_name <- paste0("wbt_", wbttoolparameters$function_name)
 
 usethis::use_data(wbttools, overwrite = TRUE)
 usethis::use_data(wbttoolparameters, overwrite = TRUE)
