@@ -45,10 +45,12 @@ wbt_options(): Get/set package options
 whitebox.exe_path - character. Path to executable file. The default value is the package installation directory, subdirectory &quot;WBT&quot;, followed by whitebox_tools.exe or whitebox_tools. Set the whitebox.exe_path option using wbt_init() exe_path argument
 whitebox.wd - character. Path to WhiteboxTools working directory. Used as --wd argument for tools that support it when wd is not specified elsewhere.
 whitebox.verbose - logical. Should standard output from calls to executable be cat() out for readability? Default is result of interactive(). Individual tools may have verbose_mode setting that produce only single-line output when FALSE. These argument values are left as the defaults defined in the package documentation for that function. When whitebox.verbose=FALSE no output is produced. Set the value of whitebox.verbose with wbt_verbose() verbose argument.
+whitebox.compress_rasters - logical. Should raster output from WhiteboxTools be compressed? Default: FALSE. Set the value of whitebox.compress_rasters with wbt_compress_rasters() compress_rasters argument.
 
 
 wbt_wd(): Get or Set the WhiteboxTools working directory
-wbt_verbose(): Check verbose options for WhiteboxTools" />
+wbt_verbose(): Check verbose options for WhiteboxTools
+wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
 
 
 
@@ -145,19 +147,28 @@ wbt_verbose(): Check verbose options for WhiteboxTools" />
 <li><p><strong><code>whitebox.exe_path</code></strong> - character. Path to executable file. The default value is the package installation directory, subdirectory <code>"WBT"</code>, followed by <code>whitebox_tools.exe</code> or <code>whitebox_tools</code>. Set the <code>whitebox.exe_path</code> option using <code>wbt_init()</code> <code>exe_path</code> argument</p></li>
 <li><p><strong><code>whitebox.wd</code></strong> - character. Path to WhiteboxTools working directory. Used as <code>--wd</code> argument for tools that support it when <code>wd</code> is not specified elsewhere.</p></li>
 <li><p><strong><code>whitebox.verbose</code></strong> - logical. Should standard output from calls to executable be <code><a href='https://rdrr.io/r/base/cat.html'>cat()</a></code> out for readability? Default is result of <code><a href='https://rdrr.io/r/base/interactive.html'>interactive()</a></code>. Individual tools may have <code>verbose_mode</code> setting that produce only single-line output when <code>FALSE</code>. These argument values are left as the defaults defined in the package documentation for that function. When <code>whitebox.verbose=FALSE</code> no output is produced. Set the value of <code>whitebox.verbose</code> with <code>wbt_verbose()</code> <code>verbose</code> argument.</p></li>
+<li><p><strong><code>whitebox.compress_rasters</code></strong> - logical. Should raster output from WhiteboxTools be compressed? Default: <code>FALSE</code>. Set the value of <code>whitebox.compress_rasters</code> with <code>wbt_compress_rasters()</code> <code>compress_rasters</code> argument.</p></li>
 </ul>
 
 <p><code>wbt_wd()</code>: Get or Set the WhiteboxTools working directory</p>
 <p><code>wbt_verbose()</code>: Check verbose options for WhiteboxTools</p>
+<p><code>wbt_compress_rasters()</code>: Check raster compression options for WhiteboxTools</p>
     </div>
 
     <pre class="usage"><span class='fu'>wbt_init</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='fu'><a href='wbt_exe_path.html'>wbt_exe_path</a></span><span class='op'>(</span>shell_quote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>wbt_options</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='cn'>NULL</span>, wd <span class='op'>=</span> <span class='cn'>NULL</span>, verbose <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+<span class='fu'>wbt_options</span><span class='op'>(</span>
+  exe_path <span class='op'>=</span> <span class='cn'>NULL</span>,
+  wd <span class='op'>=</span> <span class='cn'>NULL</span>,
+  verbose <span class='op'>=</span> <span class='cn'>NULL</span>,
+  compress_rasters <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span>
 
 <span class='fu'>wbt_wd</span><span class='op'>(</span>wd <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>wbt_verbose</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+<span class='fu'>wbt_verbose</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+
+<span class='fu'>wbt_compress_rasters</span><span class='op'>(</span>compress_rasters <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -178,6 +189,10 @@ wbt_verbose(): Check verbose options for WhiteboxTools" />
       <th>verbose</th>
       <td><p>Default: <code>NULL</code>; if logical, set the package option <code>whitebox.verbose</code> to specified value</p></td>
     </tr>
+    <tr>
+      <th>compress_rasters</th>
+      <td><p>Default: <code>NULL</code>; if logical, set the package option <code>whitebox.compress_rasters</code> to specified value</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -186,12 +201,13 @@ wbt_verbose(): Check verbose options for WhiteboxTools" />
 <p><code>wbt_options()</code>:  an invisible list containing current <code>whitebox.exe_path</code>, <code>whitebox.verbose</code> options</p>
 <p><code>wbt_wd()</code>: character; when working directory is unset, will not add <code>--wd=</code> arguments to calls and should be the same as using <code><a href='https://rdrr.io/r/base/getwd.html'>getwd()</a></code>. See Details.</p>
 <p><code>wbt_verbose()</code>: logical; defaults to result of <code><a href='https://rdrr.io/r/base/interactive.html'>interactive()</a></code></p>
+<p><code>wbt_compress_rasters()</code>: logical; defaults to <code>FALSE</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>wbt_wd()</code>: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the <code>wd</code> argument to <code>wbt_wd()</code> and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use <code>wbt_wd("")</code> which is equivalent to <code>wbt_wd(getwd())</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='install_whitebox.html'>install_whitebox()</a></code> <a href='whitebox-package.html'>whitebox</a></p></div>
+    <div class='dont-index'><p><code><a href='wbt_install.html'>install_whitebox()</a></code> <a href='whitebox-package.html'>whitebox</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
@@ -220,6 +236,12 @@ wbt_verbose(): Check verbose options for WhiteboxTools" />
 <span class='co'>## wbt_verbose():</span>
 
 <span class='fu'>wbt_verbose</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+
+<span class='co'>## wbt_compress_rasters():</span>
+
+<span class='fu'>wbt_compress_rasters</span><span class='op'>(</span>compress_rasters <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
   </div>
