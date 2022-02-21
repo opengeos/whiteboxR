@@ -2,7 +2,11 @@
 % Please edit documentation in R/wbt-method.R
 \name{wbt}
 \alias{wbt}
+\alias{wbt.wbt_result}
 \alias{get_result}
+\alias{wbt.character}
+\alias{wbt.function}
+\alias{wbt.missing}
 \title{Run WhiteboxTools by Tool Name}
 \usage{
 wbt(
@@ -14,7 +18,43 @@ wbt(
   command_only = FALSE
 )
 
+\method{wbt}{wbt_result}(
+  result,
+  tool_name,
+  ...,
+  crs = NULL,
+  verbose_mode = FALSE,
+  command_only = FALSE
+)
+
 get_result(result, history = TRUE, attribute = "output")
+
+\method{wbt}{character}(
+  result,
+  tool_name,
+  ...,
+  crs = NULL,
+  verbose_mode = FALSE,
+  command_only = FALSE
+)
+
+\method{wbt}{`function`}(
+  result,
+  tool_name,
+  ...,
+  crs = NULL,
+  verbose_mode = FALSE,
+  command_only = FALSE
+)
+
+\method{wbt}{missing}(
+  result,
+  tool_name,
+  ...,
+  crs = NULL,
+  verbose_mode = FALSE,
+  command_only = FALSE
+)
 }
 \arguments{
 \item{result}{an object of class \code{wbt_result}}

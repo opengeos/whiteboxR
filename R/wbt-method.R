@@ -25,7 +25,12 @@
 #'    * `history` - history of 'result' when `wbt_result` was passed as input, most recent output at end
 #'
 #' @export
-wbt <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE, command_only = FALSE) {
+wbt <- function(result,
+                tool_name,
+                ...,
+                crs = NULL,
+                verbose_mode = FALSE,
+                command_only = FALSE) {
   
   if (missing(result) || is.null(result)) {
     
@@ -130,6 +135,7 @@ print.wbt_result <- function(x, ...) {
 
 
 #' @export
+#' @rdname wbt
 wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE, command_only = FALSE) {
   # process user input
   userargs <- list(...) 
@@ -174,7 +180,6 @@ get_result <- function(result, history = TRUE, attribute = "output") {
   UseMethod("get_result")
 }
 
-
 #' @export
 get_result.wbt_result <- function(result, history = TRUE, attribute = "output") {
   # if there is $history present, by default return a list of all the results
@@ -193,6 +198,7 @@ as.data.frame.wbt_result <- function(x, ...) {
 }
 
 #' @export
+#' @rdname wbt
 wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FALSE, command_only = FALSE) {
   
   # process user input
@@ -222,6 +228,7 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
   # process user input (convert complex object -> character arguments)
   yrg <- try(.process_user_args(userargs), silent = TRUE)
   if (inherits(yrg, 'try-error')) {
+    message(yrg)
     message("Failed to process user arguments, this should not happen; returning NULL")
     return(NULL)
   }
@@ -236,6 +243,7 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
 
 # support for using exported function names directly as input
 #' @export
+#' @rdname wbt
 wbt.function <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE, command_only = FALSE ) {
   
   tool_name <- deparse(substitute(result))
@@ -247,9 +255,9 @@ wbt.function <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALS
   
 }
 
-
 # start a toolchain with a call where result is missing or tool_name specified as result
 #' @export
+#' @rdname wbt
 wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE, command_only = FALSE) {
   if (is.character(tool_name)) {
     wbt.character(tool_name, result, ..., crs = crs, verbose_mode = verbose_mode, command_only = command_only)
@@ -261,6 +269,9 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   # support raster inputs in the following formats
   pkgin <- sapply(inputargs, function(x) {
     if (inherits(x, 'SpatRaster')) return("terra")
+    if (inherits(x, 'SpatVector')) return("terra")
+    if (inherits(x, 'sf')) return("sf")
+    if (inherits(x, 'sfc')) return("sf")
     if (inherits(x, 'RasterLayer')) return("raster")
     if (inherits(x, 'RasterStack')) return("raster")
     if (inherits(x, 'RasterBrick')) return("raster")
@@ -268,7 +279,8 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   })
   
   # requireNamespace("terra") for terra and/or raster as needed
-  pkgreq <- sapply(unique(pkgin[nchar(pkgin) > 0]), requireNamespace, quietly = TRUE)
+  pkgreq <- sapply(unique(pkgin[nchar(pkgin) > 0]), 
+                   requireNamespace, quietly = TRUE)
   if (any(!pkgreq)) {
     stop("package ", pkgin[!pkgreq], " is required", call. = FALSE)
   }
@@ -281,7 +293,9 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   crsin <- lapply(seq_along(inputargs), function(i) {
     x <- inputargs[[i]]
     if (pkgin[i] == "terra") {
-      x2 <- try(as.character(terra::crs(x)), silent = TRUE)
+      x2 <- try(as.character(terra::crs(x)), silent = FALSE)
+    } else if (pkgin[i] == "sf") {
+      x2 <- try(as.character(sf::st_crs(x)), silent = FALSE)
     } else {
       x2 <- try(if(inherits(x, 'RasterLayer')) raster::wkt(raster::crs(x)))
     }
@@ -314,19 +328,63 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   # if a .tif file is returned as output, then the output is a RasterLayer and so on
   yrg <- lapply(names(userargs), function(argname) {
     x <- userargs[[argname]]
-    if (inherits(x, 'RasterLayer') || inherits(x, 'RasterStack')) {
+    
+    # sfc/sp support
+    if (inherits(x, 'sfc') || inherits(x, 'Spatial')) {
+      if (requireNamespace("sf")) {
+        x <- sf::st_as_sf(x)
+      }
+    }
+    
+    # raster rasterlayer support
+    if (inherits(x, 'RasterLayer') || inherits(x, 'RasterStack') || inherits(x, 'RasterBrick')) {
       if (requireNamespace("raster")) {
         res <- try(raster::filename(x))
         attr(res, "package") <- "raster"
         return(res)
         # return(try(x@file@name))
       }
+    # terra spatraster support
     } else if (inherits(x, 'SpatRaster')) {
       if (requireNamespace("terra")) {
-        res <- try(terra::sources(x)$source)
+        res <- try(terra::sources(x)$source, silent = TRUE)
+        if (inherits(res, 'try-error')) {
+          x <- wbt_source(x)
+          res2 <- attr(x, 'wbt_dsn')
+        }
+        if (is.null(res2)) {
+          message(res[1])
+        } else res <- res2
         attr(res, "package") <- "terra"
         return(res)
         # return(try(x@ptr$filenames))
+      }
+    # vector data support
+    } else if (inherits(x, 'SpatVector') ||
+               inherits(x, 'SpatVectorProxy') || 
+               inherits(x, 'sf')) {
+      src <- attr(x, 'wbt_dsn')
+      
+      if (is.null(src)) {
+        x <- wbt_source(x)
+        src <- attr(x, 'wbt_dsn')
+      }
+      
+      if (!is.null(src) && file.exists(src)) {
+        if (inherits(x, 'SpatVector') ||
+            inherits(x, 'SpatVectorProxy')) {
+          
+          attr(src, "package") <- "terra"
+          
+        } else if (inherits(x, 'sf')) {
+          
+          attr(src, "package") <- "sf"
+          
+        }
+        return(src)
+        
+      } else {
+        stop("load/initialize SpatVector/sf objects with wbt_source()", call. = FALSE)
       }
     } else if (inherits(x, 'try-error'))  {
       return(.warninput(paste0("NOTE: try-error result cannot be used as `", argname,"`")))
@@ -397,14 +455,12 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
 }
 
 .process_tool_params <- function (tool_name,
-                                    userargs,
-                                    result = NULL,
-                                    prm = .get_tool_params(tool_name)) {
-    
+                                  userargs,
+                                  result = NULL,
+                                  prm = .get_tool_params(tool_name)) {
     
   # take output from result to augment as first input if not specified
-  inputprm <- prm$argument_name[prm$is_input | prm$argument_name == "input1" | prm$argument_name == "input1"][1]
-  
+  inputprm <- prm$argument_name[prm$is_input][1]
   if (length(inputprm) && !inputprm %in% names(userargs)) {
     
     #TODO: multi output? is this robust
@@ -593,7 +649,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
         args = newargs,
         stdout = console[1], # return the error message, and a try-error in result
         crs = crs,
-        result = .warninput("ERROR: Tool execution failed")
+        result = .warninput(c("ERROR: Tool execution failed", console[1]))
       )))
   }
   

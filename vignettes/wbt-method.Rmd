@@ -123,23 +123,27 @@ if (run_vignette && requireNamespace("raster")) {
 ```
 
 ```{r}
-# if (run_vignette && requireNamespace("terra")) {
-#   tdem <- terra::rast(dem)
-#
-#   # # terra input; terra output
-#   t1 <- wbt("slope", dem = tdem, output =  file.path(tempdir(), "slope.tif"))
-#   t1
-#   class(t1$result$output)
-# }
+if (run_vignette && requireNamespace("terra")) {
+  tdem <- terra::rast(dem)
+
+  # # terra input; terra output
+  t1 <- wbt("slope", dem = tdem, output =  file.path(tempdir(), "slope.tif"))
+  t1
+  class(t1$result$output)
+}
 ```
 
-The user still needs to specify paths somewhere, but `wbt()` eases the process
+The user still needs to specify paths but `wbt()` eases the process
 of converting input objects to paths and reading output paths to R objects
 after the tool has run. In principle any R object that references a file with
 type that Whitebox supports can be handled under the current (simple; proof of
 concept) system. Using file-based representations may not be the most
 efficient, but allows for a tangible trail of the steps in a workflow to be
 followed that otherwise might be hard to track.
+
+## `wbt_source()`, rasters in memory, and vector data
+
+...
 
 ## Running Sequences of Tools
 
@@ -241,28 +245,28 @@ outputs have CRS information.
 wbt("slope", dem = dem, output = "foo2.tif")
 ```
 
-Likewise for a `RasterLayer` object input without a CRS.
+Likewise for a `SpatRaster` object input without a CRS.
 
 ```{r}
-wbt("slope", dem = raster::raster(dem), output = file.path(tempdir(), "foo.tif"))
+wbt("slope", dem = terra::rast(dem), output = file.path(tempdir(), "foo.tif"))
 ```
 
 
 ### Setting the CRS
 
-If the CRS is specified in the input `RasterLayer` object, `wbt()` makes sure it is
+If the CRS is specified in the input `SpatRaster` object, `wbt()` makes sure it is
 propagated to the R object result. `wbt()` does not alter or copy the source or 
 output files which may or may not have CRS information.
 
 ```{r}
-araster <- raster::raster(dem, crs = "EPSG:26918")
+araster <- terra::set.crs(terra::rast(dem), "EPSG:26918")
 wbt("slope", dem = araster, output = file.path(tempdir(), "foo.tif"))
 ```
 
 Alternately you can specify the `crs` argument to `wbt()` instead of `raster()`. This will directly set the `crs` element of the `wbt_result` of your output.
 
 ```{r}
-wbt("slope", dem = raster::raster(dem), crs = "EPSG:26918", output = file.path(tempdir(), "foo.tif"))
+wbt("slope", dem = terra::rast(dem), crs = "EPSG:26918", output = file.path(tempdir(), "foo.tif"))
 ```
 
 In either case wherever you specify the `crs` argument the `crs` is
@@ -274,8 +278,8 @@ provide a message to the user:
 
 ```{r}
 wbt("add", 
-    input1 = raster::raster(dem, crs = "EPSG:26918"), 
-    input2 = raster::raster(dem), 
+    input1 = terra::set.crs(terra::rast(dem), "EPSG:26918"), 
+    input2 = terra::rast(dem), 
     output = file.path(tempdir(), "foo.tif")
    )
 ```
@@ -284,8 +288,8 @@ This message suppressed if the `crs` argument is specified to `wbt()`
 
 ```{r}
 wbt("add", 
-    input1 = raster::raster(dem, crs = "EPSG:26918"), 
-    input2 = raster::raster(dem), 
+    input1 = terra::set.crs(terra::rast(dem), "EPSG:26918"),
+    input2 = terra::rast(dem), 
     crs = "EPSG:26918",
     output = file.path(tempdir(), "foo.tif")
    )

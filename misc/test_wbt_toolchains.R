@@ -5,7 +5,6 @@ library(whitebox)
 wbt_verbose(FALSE)
 wbt_wd(tempdir())
 
-
 # calculating a wetness index
 dem <- system.file("extdata/DEM2.tif", package = "whitebox")
 
