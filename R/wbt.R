@@ -117,7 +117,7 @@ wbt_options <- function(exe_path = NULL,
     ),
     whitebox.compress_rasters = ifelse(
       nchar(syscpr) == 0,
-      getOption("whitebox.compress_rasters", default = "FALSE"),
+      as.logical(getOption("whitebox.compress_rasters", default = FALSE)),
       syscpr
     )
   ))
@@ -282,9 +282,7 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
   # package option subsequently, default true for interactive use
   res <- as.logical(getOption("whitebox.compress_rasters", default = FALSE))
   
-  if (is.na(res)) {
-    res <- TRUE
-  } else if (is.na(res) || !is.logical(res)) {
+  if (is.na(res) || !is.logical(res)) {
     message('Invalid value for whitebox.compress_rasters, defaulting to FALSE')
     res <- FALSE
   }
@@ -707,18 +705,6 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
     cat(ret, sep = "\n")
   }
   
-  # check for the "unset" attribute and unset option to empty string
-  # if an error status code is returned, this step is skipped (the run doesn't count)
-  # this ensures the tool has been run at least once with new --wd= before dropping the --wd= flag
-  # unsetwd <- attr(getOption("whitebox.wd"), 'unset')
-  # noerror <- attr(ret, 'status')
-  # if (is.null(noerror) || noerror == 0 && !is.null(unsetwd)) {
-  #   if (wbt_verbose()) {
-  #     cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
-  #   }
-  #   wbt_options(wd = "")
-  # }
-  
   invisible(ret)
 }
 
@@ -758,6 +744,15 @@ wbt_system_call <- function(argstring,
       argstring <- paste0(argstring, " --wd=", shQuote(userwd))
     }  
     # don't add the --wd= argument if the system/package option is unset (value == "")
+  }
+  
+  # if compression is not specified in the argstring, then pull the package option 
+  if (!grepl("--compress_rasters", args2)) {
+    crflag <- wbt_compress_rasters()
+    if (crflag) {
+      argstring <- paste(argstring, "--compress_rasters")
+      # add the --compress_rasters flag if needed
+    }  
   }
   
   # allow tool_name to be specified for --run= argument only via tool_name
