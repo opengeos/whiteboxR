@@ -797,6 +797,17 @@ wbt_system_call <- function(argstring,
   invisible(ret)
 }
 
+# support for path expansion in input/output file arguments
+wbt_file_path <- function(x, shell_quote = TRUE) {
+  stopifnot(length(x) == 1)
+  .shQuote <- function(x) if (shell_quote) shQuote(x) else x
+  sapply(x, function(y){
+    if (is.character(y)) {
+      .shQuote(paste0(path.expand(strsplit(y, ";|,")[[1]]), collapse = ","))
+    } else y
+  })
+}
+
 # convenience method for sample DEM
 sample_dem_data <- function() {
   system.file("extdata/DEM.tif", package = "whitebox")[1]

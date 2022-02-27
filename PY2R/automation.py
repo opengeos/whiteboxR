@@ -77,7 +77,7 @@ def function_block(line, ff):
         if "=" not in item:
             ff.write(
                 '  args <- paste(args, paste0("--' + item +
-                '=", ' + item + "))" + "\n"
+                '=", wbt_file_path(' + item + ")))" + "\n"
             )
         elif "verbose" in item:
             continue
