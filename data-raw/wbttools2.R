@@ -44,7 +44,7 @@ wbttoolparameters2$is_input <- grepl("input|dem", wbttoolparameters2$flags) | (g
 wbttoolparameters2$is_output <- grepl("output", wbttoolparameters2$flags) | (grepl("NewFile", wbttoolparameters2$parameter_class) & grepl("input", wbttoolparameters2$description, ignore.case = TRUE))
 wbttoolparameters2$argument_name <- unlist(sapply(strsplit(wbttoolparameters2$flags, ","), function(x){ 
   y <- gsub("\\-\\-(.*)", "\\1", x)
-  z <- y[!y %in% c("-i", "-o")]
+  z <- y[!y %in% c("-i", "-o", "-d", "-p", "-t")]
   if (is.null(z)) return(NA)
   z[1]
 }))
