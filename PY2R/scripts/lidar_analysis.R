@@ -2010,7 +2010,6 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
   if (!is.null(exclude_cls)) {
     args <- paste(args, paste0("--exclude_cls=", exclude_cls))
   }
-  args <- paste(args, paste0("--18"=", wbt_file_path(18")))
   if (!is.null(minz)) {
     args <- paste(args, paste0("--minz=", minz))
   }
