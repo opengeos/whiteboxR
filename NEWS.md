@@ -1,3 +1,11 @@
+# whitebox 2.1.1
+
+ * File path arguments to tools now automatically perform path expansion (converting `~` to your home directory with `path.expand()`). This also works on arguments that contain comma or semicolon delimited lists. (https://github.com/giswqs/whiteboxR/issues/62)
+ 
+ * Corrections to `wbttoolparameters` dataset (updated classification of input/output parameters) 
+ 
+ * Fix for `wbt_lidar_tin_gridding()` `exclude_cls` argument
+
 # whitebox 2.1.0
 
  * Update for WhiteboxTools v2.1.0  
