@@ -13,8 +13,8 @@
 wbt_average_flowpath_slope <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -41,8 +41,8 @@ wbt_average_flowpath_slope <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 wbt_average_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -70,8 +70,8 @@ wbt_average_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mo
 wbt_basins <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -105,8 +105,8 @@ wbt_basins <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL, flat_increment=NULL, fill_pits=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(max_depth)) {
     args <- paste(args, paste0("--max_depth=", max_depth))
   }
@@ -150,9 +150,9 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, min_dist=TRUE, flat_increment=NULL, fill=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--dist=", dist))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--dist=", wbt_file_path(dist)))
   if (!is.null(max_cost)) {
     args <- paste(args, paste0("--max_cost=", max_cost))
   }
@@ -191,8 +191,8 @@ wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, 
 wbt_breach_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -222,10 +222,10 @@ wbt_breach_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE
 wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--roads=", roads))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--roads=", wbt_file_path(roads)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(width)) {
     args <- paste(args, paste0("--width=", width))
   }
@@ -260,8 +260,8 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, w
 wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE, clip=FALSE, pntr=FALSE, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -306,11 +306,11 @@ wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE,
 wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--loading=", loading))
-  args <- paste(args, paste0("--efficiency=", efficiency))
-  args <- paste(args, paste0("--absorption=", absorption))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--loading=", wbt_file_path(loading)))
+  args <- paste(args, paste0("--efficiency=", wbt_file_path(efficiency)))
+  args <- paste(args, paste0("--absorption=", wbt_file_path(absorption)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -338,8 +338,8 @@ wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, wd=NU
 wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -374,8 +374,8 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contributing Area", threshold=NULL, log=FALSE, clip=FALSE, pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -420,11 +420,11 @@ wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contri
 wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--loading=", loading))
-  args <- paste(args, paste0("--efficiency=", efficiency))
-  args <- paste(args, paste0("--absorption=", absorption))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--loading=", wbt_file_path(loading)))
+  args <- paste(args, paste0("--efficiency=", wbt_file_path(efficiency)))
+  args <- paste(args, paste0("--absorption=", wbt_file_path(absorption)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -451,8 +451,8 @@ wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, wd
 wbt_d_inf_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -480,8 +480,8 @@ wbt_d_inf_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress
 wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (zero_background) {
     args <- paste(args, "--zero_background")
   }
@@ -513,9 +513,9 @@ wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, wd=NULL, verbo
 wbt_downslope_distance_to_stream <- function(dem, streams, output, dinf=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (dinf) {
     args <- paste(args, "--dinf")
   }
@@ -548,8 +548,8 @@ wbt_downslope_distance_to_stream <- function(dem, streams, output, dinf=FALSE, w
 wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weights=NULL, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(watersheds)) {
     args <- paste(args, paste0("--watersheds=", watersheds))
   }
@@ -587,8 +587,8 @@ wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weig
 wbt_edge_contamination <- function(dem, output, flow_type="mfd", zfactor="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(flow_type)) {
     args <- paste(args, paste0("--flow_type=", flow_type))
   }
@@ -622,9 +622,9 @@ wbt_edge_contamination <- function(dem, output, flow_type="mfd", zfactor="", wd=
 wbt_elevation_above_stream <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -652,9 +652,9 @@ wbt_elevation_above_stream <- function(dem, streams, output, wd=NULL, verbose_mo
 wbt_elevation_above_stream_euclidean <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -686,8 +686,8 @@ wbt_elevation_above_stream_euclidean <- function(dem, streams, output, wd=NULL, 
 wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -729,8 +729,8 @@ wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributi
 wbt_fd8_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -758,9 +758,9 @@ wbt_fd8_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_r
 wbt_fill_burn <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -790,8 +790,8 @@ wbt_fill_burn <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE, com
 wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, max_depth=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (fix_flats) {
     args <- paste(args, "--fix_flats")
   }
@@ -829,8 +829,8 @@ wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NUL
 wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (fix_flats) {
     args <- paste(args, "--fix_flats")
   }
@@ -865,8 +865,8 @@ wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRU
 wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_increment=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (fix_flats) {
     args <- paste(args, "--fix_flats")
   }
@@ -899,8 +899,8 @@ wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_
 wbt_fill_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -927,8 +927,8 @@ wbt_fill_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE, 
 wbt_find_no_flow_cells <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -956,9 +956,9 @@ wbt_find_no_flow_cells <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 wbt_find_parallel_flow <- function(d8_pntr, streams, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -986,9 +986,9 @@ wbt_find_parallel_flow <- function(d8_pntr, streams, output, wd=NULL, verbose_mo
 wbt_flatten_lakes <- function(dem, lakes, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--lakes=", lakes))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--lakes=", wbt_file_path(lakes)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1015,8 +1015,8 @@ wbt_flatten_lakes <- function(dem, lakes, output, wd=NULL, verbose_mode=FALSE, c
 wbt_flood_order <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1049,10 +1049,10 @@ wbt_flood_order <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_r
 wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accum, out_type="Specific Contributing Area", log=FALSE, clip=FALSE, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_dem=", out_dem))
-  args <- paste(args, paste0("--out_pntr=", out_pntr))
-  args <- paste(args, paste0("--out_accum=", out_accum))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_dem=", wbt_file_path(out_dem)))
+  args <- paste(args, paste0("--out_pntr=", wbt_file_path(out_pntr)))
+  args <- paste(args, paste0("--out_accum=", wbt_file_path(out_accum)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -1092,8 +1092,8 @@ wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accu
 wbt_flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1125,9 +1125,9 @@ wbt_flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verb
 wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1160,9 +1160,9 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, v
 wbt_hydrologic_connectivity <- function(dem, output1, output2, exponent=1.0, threshold=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output1=", output1))
-  args <- paste(args, paste0("--output2=", output2))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output1=", wbt_file_path(output1)))
+  args <- paste(args, paste0("--output2=", wbt_file_path(output2)))
   if (!is.null(exponent)) {
     args <- paste(args, paste0("--exponent=", exponent))
   }
@@ -1200,8 +1200,8 @@ wbt_hydrologic_connectivity <- function(dem, output1, output2, exponent=1.0, thr
 wbt_impoundment_size_index <- function(dem, damlength, out_mean=NULL, out_max=NULL, out_volume=NULL, out_area=NULL, out_dam_height=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--damlength=", damlength))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--damlength=", wbt_file_path(damlength)))
   if (!is.null(out_mean)) {
     args <- paste(args, paste0("--out_mean=", out_mean))
   }
@@ -1245,10 +1245,10 @@ wbt_impoundment_size_index <- function(dem, damlength, out_mean=NULL, out_max=NU
 wbt_insert_dams <- function(dem, dam_pts, output, damlength, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--dam_pts=", dam_pts))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--damlength=", damlength))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--dam_pts=", wbt_file_path(dam_pts)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--damlength=", wbt_file_path(damlength)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1277,9 +1277,9 @@ wbt_insert_dams <- function(dem, dam_pts, output, damlength, wd=NULL, verbose_mo
 wbt_isobasins <- function(dem, output, size, connections=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--size=", size))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--size=", wbt_file_path(size)))
   if (connections) {
     args <- paste(args, "--connections")
   }
@@ -1311,10 +1311,10 @@ wbt_isobasins <- function(dem, output, size, connections=FALSE, wd=NULL, verbose
 wbt_jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--pour_pts=", pour_pts))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--snap_dist=", snap_dist))
+  args <- paste(args, paste0("--pour_pts=", wbt_file_path(pour_pts)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--snap_dist=", wbt_file_path(snap_dist)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1342,9 +1342,9 @@ wbt_jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, wd
 wbt_longest_flowpath <- function(dem, basins, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--basins=", basins))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--basins=", wbt_file_path(basins)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1372,9 +1372,9 @@ wbt_longest_flowpath <- function(dem, basins, output, wd=NULL, verbose_mode=FALS
 wbt_low_points_on_headwater_divides <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1401,8 +1401,8 @@ wbt_low_points_on_headwater_divides <- function(dem, streams, output, wd=NULL, v
 wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1434,8 +1434,8 @@ wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=F
 wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.1, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -1477,8 +1477,8 @@ wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contrib
 wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1511,8 +1511,8 @@ wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 wbt_qin_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=10.0, max_slope=45.0, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -1562,8 +1562,8 @@ wbt_qin_flow_accumulation <- function(dem, output, out_type="specific contributi
 wbt_quinn_flow_accumulation <- function(dem, output, out_type="specific contributing area", exponent=1.0, threshold=NULL, log=FALSE, clip=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -1608,9 +1608,9 @@ wbt_quinn_flow_accumulation <- function(dem, output, out_type="specific contribu
 wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(breach)) {
     args <- paste(args, paste0("--breach=", breach))
   }
@@ -1648,8 +1648,8 @@ wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, wd=NU
 wbt_rho8_flow_accumulation <- function(input, output, out_type="specific contributing area", log=FALSE, clip=FALSE, pntr=FALSE, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_type)) {
     args <- paste(args, paste0("--out_type=", out_type))
   }
@@ -1692,8 +1692,8 @@ wbt_rho8_flow_accumulation <- function(input, output, out_type="specific contrib
 wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1724,8 +1724,8 @@ wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode
 wbt_sink <- function(input, output, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (zero_background) {
     args <- paste(args, "--zero_background")
   }
@@ -1757,10 +1757,10 @@ wbt_sink <- function(input, output, zero_background=FALSE, wd=NULL, verbose_mode
 wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--pour_pts=", pour_pts))
-  args <- paste(args, paste0("--flow_accum=", flow_accum))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--snap_dist=", snap_dist))
+  args <- paste(args, paste0("--pour_pts=", wbt_file_path(pour_pts)))
+  args <- paste(args, paste0("--flow_accum=", wbt_file_path(flow_accum)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--snap_dist=", wbt_file_path(snap_dist)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1790,10 +1790,10 @@ wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, wd=NUL
 wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterations=100, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--rmse=", rmse))
-  args <- paste(args, paste0("--range=", range))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--rmse=", wbt_file_path(rmse)))
+  args <- paste(args, paste0("--range=", wbt_file_path(range)))
   if (!is.null(iterations)) {
     args <- paste(args, paste0("--iterations=", iterations))
   }
@@ -1825,9 +1825,9 @@ wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterati
 wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1859,9 +1859,9 @@ wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--streams=", streams))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1894,9 +1894,9 @@ wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, ve
 wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--seed_pts=", seed_pts))
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--seed_pts=", wbt_file_path(seed_pts)))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1931,9 +1931,9 @@ wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=F
 wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--pour_pts=", pour_pts))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--pour_pts=", wbt_file_path(pour_pts)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }
@@ -1963,8 +1963,8 @@ wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, wd=NUL
 wbt_upslope_depression_storage <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1993,9 +1993,9 @@ wbt_upslope_depression_storage <- function(dem, output, wd=NULL, verbose_mode=FA
 wbt_watershed <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--d8_pntr=", d8_pntr))
-  args <- paste(args, paste0("--pour_pts=", pour_pts))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
+  args <- paste(args, paste0("--pour_pts=", wbt_file_path(pour_pts)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (esri_pntr) {
     args <- paste(args, "--esri_pntr")
   }

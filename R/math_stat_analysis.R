@@ -14,9 +14,9 @@
 wbt_and <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -44,9 +44,9 @@ wbt_and <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_not <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -74,9 +74,9 @@ wbt_not <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_or <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -103,8 +103,8 @@ wbt_or <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress
 wbt_absolute_value <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -132,9 +132,9 @@ wbt_absolute_value <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
 wbt_add <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -162,9 +162,9 @@ wbt_add <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_anova <- function(input, features, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--features=", features))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--features=", wbt_file_path(features)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -191,8 +191,8 @@ wbt_anova <- function(input, features, output, wd=NULL, verbose_mode=FALSE, comp
 wbt_arc_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -219,8 +219,8 @@ wbt_arc_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 wbt_arc_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -247,8 +247,8 @@ wbt_arc_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 wbt_arc_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -275,8 +275,8 @@ wbt_arc_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 wbt_arcosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -303,8 +303,8 @@ wbt_arcosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 wbt_arsinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -331,8 +331,8 @@ wbt_arsinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 wbt_artanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -360,9 +360,9 @@ wbt_artanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 wbt_atan2 <- function(input_y, input_x, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input_y=", input_y))
-  args <- paste(args, paste0("--input_x=", input_x))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input_y=", wbt_file_path(input_y)))
+  args <- paste(args, paste0("--input_x=", wbt_file_path(input_x)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -389,7 +389,7 @@ wbt_atan2 <- function(input_y, input_x, output, wd=NULL, verbose_mode=FALSE, com
 wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -423,9 +423,9 @@ wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=
 wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, field2, radius=NULL, min_points=NULL, stat="pearson", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--field1=", field1))
-  args <- paste(args, paste0("--field2=", field2))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--field1=", wbt_file_path(field1)))
+  args <- paste(args, paste0("--field2=", wbt_file_path(field2)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -462,9 +462,9 @@ wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, fiel
 wbt_attribute_histogram <- function(input, field, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--field=", field))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--field=", wbt_file_path(field)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -494,10 +494,10 @@ wbt_attribute_histogram <- function(input, field, output, wd=NULL, verbose_mode=
 wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--fieldx=", fieldx))
-  args <- paste(args, paste0("--fieldy=", fieldy))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--fieldx=", wbt_file_path(fieldx)))
+  args <- paste(args, paste0("--fieldy=", wbt_file_path(fieldy)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (trendline) {
     args <- paste(args, "--trendline")
   }
@@ -527,8 +527,8 @@ wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=F
 wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -558,8 +558,8 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, false=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(statement)) {
     args <- paste(args, paste0("--statement=", statement))
   }
@@ -595,8 +595,8 @@ wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, f
 wbt_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -623,8 +623,8 @@ wbt_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 wbt_cosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -651,7 +651,7 @@ wbt_cosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 wbt_crispness_index <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -682,9 +682,9 @@ wbt_crispness_index <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE,
 wbt_cross_tabulation <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -711,8 +711,8 @@ wbt_cross_tabulation <- function(input1, input2, output, wd=NULL, verbose_mode=F
 wbt_cumulative_distribution <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -739,8 +739,8 @@ wbt_cumulative_distribution <- function(input, output, wd=NULL, verbose_mode=FAL
 wbt_decrement <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -768,9 +768,9 @@ wbt_decrement <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
 wbt_divide <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -798,9 +798,9 @@ wbt_divide <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
 wbt_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -827,8 +827,8 @@ wbt_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 wbt_exp <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -855,8 +855,8 @@ wbt_exp <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 wbt_exp2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -883,8 +883,8 @@ wbt_exp2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 wbt_floor <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -913,9 +913,9 @@ wbt_floor <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (incl_equals) {
     args <- paste(args, "--incl_equals")
   }
@@ -946,8 +946,8 @@ wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL,
 wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(contiguity)) {
     args <- paste(args, paste0("--contiguity=", contiguity))
   }
@@ -977,7 +977,7 @@ wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", wd=NULL
 wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1011,10 +1011,10 @@ wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=FAL
 wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1, output2, filter=11, stat="pearson", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output1=", output1))
-  args <- paste(args, paste0("--output2=", output2))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output1=", wbt_file_path(output1)))
+  args <- paste(args, paste0("--output2=", wbt_file_path(output2)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -1052,9 +1052,9 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
 wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, standardize=FALSE, scattergram=FALSE, num_samples=1000, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(out_residuals)) {
     args <- paste(args, paste0("--out_residuals=", out_residuals))
   }
@@ -1093,8 +1093,8 @@ wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, sta
 wbt_in_place_add <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1121,8 +1121,8 @@ wbt_in_place_add <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compre
 wbt_in_place_divide <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1149,8 +1149,8 @@ wbt_in_place_divide <- function(input1, input2, wd=NULL, verbose_mode=FALSE, com
 wbt_in_place_multiply <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1177,8 +1177,8 @@ wbt_in_place_multiply <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
 wbt_in_place_subtract <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1205,8 +1205,8 @@ wbt_in_place_subtract <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
 wbt_increment <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1234,9 +1234,9 @@ wbt_increment <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
 wbt_integer_division <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1263,8 +1263,8 @@ wbt_integer_division <- function(input1, input2, output, wd=NULL, verbose_mode=F
 wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--report=", report))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--report=", wbt_file_path(report)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1291,8 +1291,8 @@ wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, ve
 wbt_is_no_data <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1320,9 +1320,9 @@ wbt_is_no_data <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 wbt_kappa_index <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1350,8 +1350,8 @@ wbt_kappa_index <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE,
 wbt_ks_test_for_normality <- function(input, output, num_samples=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
@@ -1383,9 +1383,9 @@ wbt_ks_test_for_normality <- function(input, output, num_samples=NULL, wd=NULL, 
 wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (incl_equals) {
     args <- paste(args, "--incl_equals")
   }
@@ -1416,9 +1416,9 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
 wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--field=", field))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--field=", wbt_file_path(field)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1445,8 +1445,8 @@ wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=F
 wbt_ln <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1473,8 +1473,8 @@ wbt_ln <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=
 wbt_log10 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1501,8 +1501,8 @@ wbt_log10 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 wbt_log2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1530,9 +1530,9 @@ wbt_log2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 wbt_max <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1560,9 +1560,9 @@ wbt_max <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_min <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1590,9 +1590,9 @@ wbt_min <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_modulo <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1620,9 +1620,9 @@ wbt_modulo <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
 wbt_multiply <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1649,8 +1649,8 @@ wbt_multiply <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 wbt_negate <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1678,9 +1678,9 @@ wbt_negate <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 wbt_not_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1709,9 +1709,9 @@ wbt_not_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE
 wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
@@ -1742,9 +1742,9 @@ wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, w
 wbt_phi_coefficient <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1772,9 +1772,9 @@ wbt_phi_coefficient <- function(input1, input2, output, wd=NULL, verbose_mode=FA
 wbt_power <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1803,8 +1803,8 @@ wbt_power <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compr
 wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, standardized=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_comp)) {
     args <- paste(args, paste0("--num_comp=", num_comp))
   }
@@ -1838,8 +1838,8 @@ wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, stan
 wbt_quantiles <- function(input, output, num_quantiles=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_quantiles)) {
     args <- paste(args, paste0("--num_quantiles=", num_quantiles))
   }
@@ -1869,8 +1869,8 @@ wbt_quantiles <- function(input, output, num_quantiles=5, wd=NULL, verbose_mode=
 wbt_random_field <- function(base, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--base=", base))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--base=", wbt_file_path(base)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1898,8 +1898,8 @@ wbt_random_field <- function(base, output, wd=NULL, verbose_mode=FALSE, compress
 wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--base=", base))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--base=", wbt_file_path(base)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
@@ -1929,7 +1929,7 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
 wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(statement)) {
     args <- paste(args, paste0("--statement=", statement))
   }
@@ -1959,8 +1959,8 @@ wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=FA
 wbt_raster_histogram <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1986,7 +1986,7 @@ wbt_raster_histogram <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 wbt_raster_summary_stats <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2013,8 +2013,8 @@ wbt_raster_summary_stats <- function(input, wd=NULL, verbose_mode=FALSE, compres
 wbt_reciprocal <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2045,10 +2045,10 @@ wbt_reciprocal <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, clip_min=NULL, clip_max=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--out_min_val=", out_min_val))
-  args <- paste(args, paste0("--out_max_val=", out_max_val))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--out_min_val=", wbt_file_path(out_min_val)))
+  args <- paste(args, paste0("--out_max_val=", wbt_file_path(out_max_val)))
   if (!is.null(clip_min)) {
     args <- paste(args, paste0("--clip_min=", clip_min))
   }
@@ -2081,8 +2081,8 @@ wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, cli
 wbt_root_mean_square_error <- function(input, base, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--base=", base))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--base=", wbt_file_path(base)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2109,8 +2109,8 @@ wbt_root_mean_square_error <- function(input, base, wd=NULL, verbose_mode=FALSE,
 wbt_round <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2137,8 +2137,8 @@ wbt_round <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 wbt_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2165,8 +2165,8 @@ wbt_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 wbt_sinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2193,8 +2193,8 @@ wbt_sinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 wbt_square <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2221,8 +2221,8 @@ wbt_square <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 wbt_square_root <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2250,9 +2250,9 @@ wbt_square_root <- function(input, output, wd=NULL, verbose_mode=FALSE, compress
 wbt_subtract <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2279,8 +2279,8 @@ wbt_subtract <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 wbt_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2307,8 +2307,8 @@ wbt_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 wbt_tanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2335,8 +2335,8 @@ wbt_tanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 wbt_to_degrees <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2363,8 +2363,8 @@ wbt_to_degrees <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 wbt_to_radians <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2392,8 +2392,8 @@ wbt_to_radians <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 wbt_trend_surface <- function(input, output, order=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(order)) {
     args <- paste(args, paste0("--order=", order))
   }
@@ -2426,10 +2426,10 @@ wbt_trend_surface <- function(input, output, order=1, wd=NULL, verbose_mode=FALS
 wbt_trend_surface_vector_points <- function(input, field, output, cell_size, order=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--field=", field))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--cell_size=", cell_size))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--field=", wbt_file_path(field)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--cell_size=", wbt_file_path(cell_size)))
   if (!is.null(order)) {
     args <- paste(args, paste0("--order=", order))
   }
@@ -2460,8 +2460,8 @@ wbt_trend_surface_vector_points <- function(input, field, output, cell_size, ord
 wbt_truncate <- function(input, output, num_decimals=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_decimals)) {
     args <- paste(args, paste0("--num_decimals=", num_decimals))
   }
@@ -2493,9 +2493,9 @@ wbt_truncate <- function(input, output, num_decimals=NULL, wd=NULL, verbose_mode
 wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--base=", base))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--range=", range))
+  args <- paste(args, paste0("--base=", wbt_file_path(base)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--range=", wbt_file_path(range)))
   if (!is.null(iterations)) {
     args <- paste(args, paste0("--iterations=", iterations))
   }
@@ -2527,9 +2527,9 @@ wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, w
 wbt_two_sample_ks_test <- function(input1, input2, output, num_samples=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
@@ -2561,9 +2561,9 @@ wbt_two_sample_ks_test <- function(input1, input2, output, num_samples=NULL, wd=
 wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(num_samples)) {
     args <- paste(args, paste0("--num_samples=", num_samples))
   }
@@ -2594,9 +2594,9 @@ wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NU
 wbt_xor <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2623,8 +2623,8 @@ wbt_xor <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_z_scores <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2654,8 +2654,8 @@ wbt_z_scores <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ra
 wbt_zonal_statistics <- function(input, features, output=NULL, stat="mean", out_table=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--features=", features))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--features=", wbt_file_path(features)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
