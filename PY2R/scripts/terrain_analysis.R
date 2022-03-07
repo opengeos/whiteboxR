@@ -15,8 +15,8 @@
 wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -50,8 +50,8 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
 wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -84,9 +84,9 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
 wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--routes=", routes))
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--routes=", wbt_file_path(routes)))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(length)) {
     args <- paste(args, paste0("--length=", length))
   }
@@ -120,8 +120,8 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
 wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -152,8 +152,8 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
 wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -189,8 +189,8 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
 wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max_triangle_edge_length=NULL, interval=10.0, base=0.0, smooth=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(field)) {
     args <- paste(args, paste0("--field=", field))
   }
@@ -239,8 +239,8 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
 wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smooth=9, tolerance=10.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(interval)) {
     args <- paste(args, paste0("--interval=", interval))
   }
@@ -281,8 +281,8 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
 wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -317,8 +317,8 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
 wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filterx)) {
     args <- paste(args, paste0("--filterx=", filterx))
   }
@@ -353,8 +353,8 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
 wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filterx)) {
     args <- paste(args, paste0("--filterx=", filterx))
   }
@@ -389,8 +389,8 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
 wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -425,8 +425,8 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
 wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -461,8 +461,8 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
 wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(drop)) {
     args <- paste(args, paste0("--drop=", drop))
   }
@@ -498,8 +498,8 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
 wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -535,8 +535,8 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
 wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -566,8 +566,8 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compres
 wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filterx)) {
     args <- paste(args, paste0("--filterx=", filterx))
   }
@@ -603,8 +603,8 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
 wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -632,9 +632,9 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALS
 wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--watersheds=", watersheds))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--watersheds=", wbt_file_path(watersheds)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -670,9 +670,9 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
 wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_road_width=6.0, typical_width=30.0, max_height=2.0, max_width=60.0, max_increment=0.05, spillout_slope=4.0, remove_embankments=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--road_vec=", road_vec))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--road_vec=", wbt_file_path(road_vec)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(search_dist)) {
     args <- paste(args, paste0("--search_dist=", search_dist))
   }
@@ -726,8 +726,8 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="", zfactor="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -768,8 +768,8 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
 wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -813,8 +813,8 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
 wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -850,8 +850,8 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -888,8 +888,8 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
 wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (line_thin) {
     args <- paste(args, "--line_thin")
   }
@@ -921,8 +921,8 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
 wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -963,10 +963,10 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
 wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, points=NULL, sigma=0.5, step=0.5, num_steps=10, lsp="Slope", z_factor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--output_zscore=", output_zscore))
-  args <- paste(args, paste0("--output_scale=", output_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--output_zscore=", wbt_file_path(output_zscore)))
+  args <- paste(args, paste0("--output_scale=", wbt_file_path(output_scale)))
   if (!is.null(points)) {
     args <- paste(args, paste0("--points=", points))
   }
@@ -1013,8 +1013,8 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
 wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -1051,8 +1051,8 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, forms=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(search)) {
     args <- paste(args, paste0("--search=", search))
   }
@@ -1094,8 +1094,8 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, form
 wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -1133,8 +1133,8 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
 wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -1169,8 +1169,8 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
 wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -1204,8 +1204,8 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
 wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(watershed)) {
     args <- paste(args, paste0("--watershed=", watershed))
   }
@@ -1243,8 +1243,8 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_weight=0.5, brightness=0.5, atmospheric=0.0, palette="atlas", reverse=FALSE, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(altitude)) {
     args <- paste(args, paste0("--altitude=", altitude))
   }
@@ -1300,9 +1300,9 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
 wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -1342,8 +1342,8 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
 wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -1375,8 +1375,8 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
 wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(max_slope)) {
     args <- paste(args, paste0("--max_slope=", max_slope))
   }
@@ -1413,10 +1413,10 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
 wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -1453,10 +1453,10 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
 wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--points=", points))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--points=", wbt_file_path(points)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -1490,8 +1490,8 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
 wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -1525,11 +1525,11 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
 wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
-  args <- paste(args, paste0("--min_scale=", min_scale))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
+  args <- paste(args, paste0("--min_scale=", wbt_file_path(min_scale)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
@@ -1559,8 +1559,8 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
 wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1591,11 +1591,11 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--points=", points))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--min_scale=", min_scale))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--points=", wbt_file_path(points)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--min_scale=", wbt_file_path(min_scale)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
@@ -1629,11 +1629,11 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
 wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
-  args <- paste(args, paste0("--min_scale=", min_scale))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
+  args <- paste(args, paste0("--min_scale=", wbt_file_path(min_scale)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(step)) {
     args <- paste(args, paste0("--step=", step))
   }
@@ -1663,8 +1663,8 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
 wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1693,8 +1693,8 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE
 wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -1729,8 +1729,8 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -1763,8 +1763,8 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1793,8 +1793,8 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -1830,8 +1830,8 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(altitude)) {
     args <- paste(args, paste0("--altitude=", altitude))
   }
@@ -1873,9 +1873,9 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
 wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_digits=3, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
   if (!is.null(sig_digits)) {
     args <- paste(args, paste0("--sig_digits=", sig_digits))
   }
@@ -1921,10 +1921,10 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
 wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -1961,10 +1961,10 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
 wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--points=", points))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--max_scale=", max_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--points=", wbt_file_path(points)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--max_scale=", wbt_file_path(max_scale)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -2002,9 +2002,9 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
 wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--out_mag=", out_mag))
-  args <- paste(args, paste0("--out_scale=", out_scale))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  args <- paste(args, paste0("--out_scale=", wbt_file_path(out_scale)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -2048,9 +2048,9 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
 wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--points=", points))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--points=", wbt_file_path(points)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(min_scale)) {
     args <- paste(args, paste0("--min_scale=", min_scale))
   }
@@ -2092,10 +2092,10 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 wbt_multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--local=", local))
-  args <- paste(args, paste0("--meso=", meso))
-  args <- paste(args, paste0("--broad=", broad))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--local=", wbt_file_path(local)))
+  args <- paste(args, paste0("--meso=", wbt_file_path(meso)))
+  args <- paste(args, paste0("--broad=", wbt_file_path(broad)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(lightness)) {
     args <- paste(args, paste0("--lightness=", lightness))
   }
@@ -2125,8 +2125,8 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
 wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2153,8 +2153,8 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2183,9 +2183,9 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--pos_output=", pos_output))
-  args <- paste(args, paste0("--neg_output=", neg_output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--pos_output=", wbt_file_path(pos_output)))
+  args <- paste(args, paste0("--neg_output=", wbt_file_path(neg_output)))
   if (!is.null(dist)) {
     args <- paste(args, paste0("--dist=", dist))
   }
@@ -2219,8 +2219,8 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
 wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(slope)) {
     args <- paste(args, paste0("--slope=", slope))
   }
@@ -2261,8 +2261,8 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
 wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filterx)) {
     args <- paste(args, paste0("--filterx=", filterx))
   }
@@ -2297,8 +2297,8 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -2332,9 +2332,9 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--lines=", lines))
-  args <- paste(args, paste0("--surface=", surface))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--lines=", wbt_file_path(lines)))
+  args <- paste(args, paste0("--surface=", wbt_file_path(surface)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -2363,8 +2363,8 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
 wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -2399,8 +2399,8 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -2435,8 +2435,8 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
 wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filterx)) {
     args <- paste(args, paste0("--filterx=", filterx))
   }
@@ -2471,8 +2471,8 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
 wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -2507,8 +2507,8 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
 wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -2543,8 +2543,8 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
 wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -2578,8 +2578,8 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -2612,9 +2612,9 @@ wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mod
 wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--sca=", sca))
-  args <- paste(args, paste0("--slope=", slope))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--sca=", wbt_file_path(sca)))
+  args <- paste(args, paste0("--slope=", wbt_file_path(slope)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(sca_exponent)) {
     args <- paste(args, paste0("--sca_exponent=", sca_exponent))
   }
@@ -2655,8 +2655,8 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", date="21/06/2021", interval=15, location="43.5448/-80.2482/-4", height=600, delay=250, label="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(palette)) {
     args <- paste(args, paste0("--palette=", palette))
   }
@@ -2712,8 +2712,8 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
 wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="21/06/2021", time="1300", location="43.5448/-80.2482/-4", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(palette)) {
     args <- paste(args, paste0("--palette=", palette))
   }
@@ -2756,8 +2756,8 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
 wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -2789,8 +2789,8 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALS
 wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -2826,8 +2826,8 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
 wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(bin_size)) {
     args <- paste(args, paste0("--bin_size=", bin_size))
   }
@@ -2864,8 +2864,8 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
 wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(watershed)) {
     args <- paste(args, paste0("--watershed=", watershed))
   }
@@ -2898,8 +2898,8 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
 wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_threshold=1.0, scale_threshold=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(max_scale)) {
     args <- paste(args, paste0("--max_scale=", max_scale))
   }
@@ -2936,8 +2936,8 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
 wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(filter)) {
     args <- paste(args, paste0("--filter=", filter))
   }
@@ -2970,8 +2970,8 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
 wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(zfactor)) {
     args <- paste(args, paste0("--zfactor=", zfactor))
   }
@@ -3009,9 +3009,9 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
 wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--sca=", sca))
-  args <- paste(args, paste0("--slope=", slope))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--sca=", wbt_file_path(sca)))
+  args <- paste(args, paste0("--slope=", wbt_file_path(slope)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(exponent)) {
     args <- paste(args, paste0("--exponent=", exponent))
   }
@@ -3041,8 +3041,8 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
 wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -3071,8 +3071,8 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -3114,10 +3114,10 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
 wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_dist=100.0, utc_offset="0000", start_day=1, end_day=365, start_time="000000", end_time="235959", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--lat=", lat))
-  args <- paste(args, paste0("--long=", long))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--lat=", wbt_file_path(lat)))
+  args <- paste(args, paste0("--long=", wbt_file_path(long)))
   if (!is.null(az_fraction)) {
     args <- paste(args, paste0("--az_fraction=", az_fraction))
   }
@@ -3173,8 +3173,8 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
 wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd", min_scale=1, num_steps=100, step_nonlinearity=1.5, height=600, delay=250, label="", dev_max=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(palette)) {
     args <- paste(args, paste0("--palette=", palette))
   }
@@ -3227,8 +3227,8 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -3263,8 +3263,8 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
 wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -3299,8 +3299,8 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
 wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (log) {
     args <- paste(args, "--log")
   }
@@ -3335,9 +3335,9 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
 wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--stations=", stations))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--stations=", wbt_file_path(stations)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(height)) {
     args <- paste(args, paste0("--height=", height))
   }
@@ -3369,8 +3369,8 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
 wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--dem=", dem))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(height)) {
     args <- paste(args, paste0("--height=", height))
   }
@@ -3404,9 +3404,9 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
 wbt_wetness_index <- function(sca, slope, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--sca=", sca))
-  args <- paste(args, paste0("--slope=", slope))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--sca=", wbt_file_path(sca)))
+  args <- paste(args, paste0("--slope=", wbt_file_path(slope)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }

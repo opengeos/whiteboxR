@@ -59,6 +59,8 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 #' 
 #' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? Default is result of `interactive()`. Individual tools may have `verbose_mode` setting that produce only single-line output when `FALSE`. These argument values are left as the defaults defined in the package documentation for that function. When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument.
 #' 
+#' - **`whitebox.compress_rasters`** - logical. Should raster output from WhiteboxTools be compressed? Default: `FALSE`. Set the value of `whitebox.compress_rasters` with `wbt_compress_rasters()` `compress_rasters` argument.
+#' 
 #' @return `wbt_options()`:  an invisible list containing current `whitebox.exe_path`, `whitebox.verbose` options
 #' @rdname wbt_init
 #' @export 
@@ -71,12 +73,16 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 #' wbt_options(exe_path = "not/a/valid/path/whitebox_tools.exe", verbose = TRUE)
 #'
 #' }
-wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
+wbt_options <- function(exe_path = NULL,
+                        wd = NULL,
+                        verbose = NULL,
+                        compress_rasters = NULL) {
   
   # get the system value
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   syswd <- Sys.getenv("R_WHITEBOX_WD")
   sysvrb <- Sys.getenv("R_WHITEBOX_VERBOSE")
+  syscpr <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS")
   
   # check user input, set package options
   if (!is.null(exe_path)) {
@@ -94,6 +100,10 @@ wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
     options(whitebox.verbose = verbose)
   }
   
+  if (!is.null(compress_rasters)) {
+    options(whitebox.verbose = compress_rasters)
+  }
+  
   invisible(list(
     whitebox.exe_path = ifelse(nchar(syswbt) == 0,
                                getOption("whitebox.exe_path", default = wbt_exe_path(shell_quote = FALSE)),
@@ -104,6 +114,11 @@ wbt_options <- function(exe_path = NULL, wd = NULL, verbose = NULL) {
       nchar(sysvrb) == 0,
       getOption("whitebox.verbose", default = ""),
       sysvrb
+    ),
+    whitebox.compress_rasters = ifelse(
+      nchar(syscpr) == 0,
+      as.logical(getOption("whitebox.compress_rasters", default = FALSE)),
+      syscpr
     )
   ))
 }
@@ -136,8 +151,7 @@ wbt_wd <- function(wd = NULL) {
   if (length(wd) > 0 && (is.na(wd) || wd == "")) {
     curwd <- getwd()
     if(wbt_verbose()) {
-      cat("Reset WhiteboxTools working directory to current R working directory:", curwd, 
-          "\nAfter next tool run package option will be unset so that --wd flag is dropped.")
+      cat("Reset WhiteboxTools working directory to current R working directory:", curwd)
     }
     try(wbt_system_call(paste0("--wd=", curwd)), silent = TRUE)
     if (wbt_verbose()) {
@@ -159,7 +173,7 @@ wbt_wd <- function(wd = NULL) {
     res <- ""
   # otherwise, if the option is invalid directory message
   } else if (!is.null(res) && !dir.exists(res)) {
-    message("Invalid path for whitebox.wd: directory does not exist. Defaulting to current R working directory.\nSee ?getwd")
+    message("Invalid path for `whitebox.wd`: directory does not exist.\nDefaulting to current R working directory: ", getwd())
     res <- getwd()
   }
   
@@ -224,7 +238,60 @@ wbt_verbose <- function(verbose = NULL) {
   invisible(res)
 }
 
+#' @description `wbt_compress_rasters()`: Check raster compression options for WhiteboxTools
+#' 
+#' @param compress_rasters Default: `NULL`; if logical, set the package option `whitebox.compress_rasters` to specified value
+#' 
+#' @return `wbt_compress_rasters()`: logical; defaults to `FALSE`
+#' @rdname wbt_init
 #' @export
+#' @examples 
+#' \dontrun{
+#' 
+#' ## wbt_compress_rasters():
+#'
+#' wbt_compress_rasters(compress_rasters = TRUE)
+#' }
+wbt_compress_rasters <- function(compress_rasters = NULL) {
+  # NA is treated NULL (no effect)
+  if (length(compress_rasters) != 1 || is.na(compress_rasters)) {
+    verbose <- NULL
+  }
+  
+  # system environment var takes precedence
+  syscompress <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS", unset = "")
+  if (syscompress != "") {
+    
+    # take up to first 5 characters, uppercase eval/parse/convert to logical
+    # this should also allow for 0/1 to be specified and converted as needed to logical
+    syscompress <- as.logical(eval(parse(
+      text = toupper(substr(syscompress, 0, 5))
+    )))
+  }
+  
+  # if logical system env var, use that
+  if (is.logical(syscompress) && !is.na(syscompress)) {
+    return(syscompress)
+  }
+  
+  # if logical input, set the package option "compress_rasters"
+  if (is.logical(compress_rasters)) {
+    wbt_options(compress_rasters = compress_rasters)
+  }
+  
+  # package option subsequently, default true for interactive use
+  res <- as.logical(getOption("whitebox.compress_rasters", default = FALSE))
+  
+  if (is.na(res) || !is.logical(res)) {
+    message('Invalid value for whitebox.compress_rasters, defaulting to FALSE')
+    res <- FALSE
+  }
+  
+  invisible(res)
+}
+
+#' @export
+#' @rdname install_whitebox
 wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
   
   stopifnot(is.logical(force))
@@ -638,18 +705,6 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
     cat(ret, sep = "\n")
   }
   
-  # check for the "unset" attribute and unset option to empty string
-  # if an error status code is returned, this step is skipped (the run doesn't count)
-  # this ensures the tool has been run at least once with new --wd= before dropping the --wd= flag
-  # unsetwd <- attr(getOption("whitebox.wd"), 'unset')
-  # noerror <- attr(ret, 'status')
-  # if (is.null(noerror) || noerror == 0 && !is.null(unsetwd)) {
-  #   if (wbt_verbose()) {
-  #     cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
-  #   }
-  #   wbt_options(wd = "")
-  # }
-  
   invisible(ret)
 }
 
@@ -689,6 +744,15 @@ wbt_system_call <- function(argstring,
       argstring <- paste0(argstring, " --wd=", shQuote(userwd))
     }  
     # don't add the --wd= argument if the system/package option is unset (value == "")
+  }
+  
+  # if compression is not specified in the argstring, then pull the package option 
+  if (!grepl("--compress_rasters", args2)) {
+    crflag <- wbt_compress_rasters()
+    if (crflag) {
+      argstring <- paste(argstring, "--compress_rasters")
+      # add the --compress_rasters flag if needed
+    }  
   }
   
   # allow tool_name to be specified for --run= argument only via tool_name
@@ -731,6 +795,17 @@ wbt_system_call <- function(argstring,
   }
   
   invisible(ret)
+}
+
+# support for path expansion in input/output file arguments
+wbt_file_path <- function(x, shell_quote = TRUE) {
+  stopifnot(length(x) == 1)
+  .shQuote <- function(x) if (shell_quote) shQuote(x) else x
+  sapply(x, function(y){
+    if (is.character(y)) {
+      .shQuote(paste0(path.expand(strsplit(y, ";|,")[[1]]), collapse = ","))
+    } else y
+  })
 }
 
 # convenience method for sample DEM

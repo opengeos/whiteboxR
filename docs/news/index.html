@@ -131,13 +131,14 @@
 
     <div id="whitebox-210" class="section level1">
 <h1 class="page-header" data-toc-text="2.1.0">
-<a href="#whitebox-210" class="anchor"></a>whitebox 2.1.0<small> Unreleased </small>
+<a href="#whitebox-210" class="anchor"></a>whitebox 2.1.0<small> 2022-02-11 </small>
 </h1>
 <ul>
 <li>
 <p>Update for WhiteboxTools v2.1.0</p>
 <ul>
-<li>See <a href="https://www.whiteboxgeo.com/whitebox-geospatial-news/" class="uri">https://www.whiteboxgeo.com/whitebox-geospatial-news/</a> for details</li>
+<li>See <a href="https://www.whiteboxgeo.com/whitebox-geospatial-news/" class="uri">https://www.whiteboxgeo.com/whitebox-geospatial-news/</a>
+for details</li>
 </ul>
 </li>
 </ul>
@@ -150,16 +151,26 @@
 <li>
 <p>Update for WhiteboxTools v2.0.0</p>
 <ul>
-<li>See <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0</a> for details</li>
+<li>See <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/v2.0.0</a>
+for details</li>
 </ul>
 </li>
 </ul>
 <p>Enhancements:</p>
 <ul>
-<li><p><code><a href="../reference/install_whitebox.html">whitebox::install_whitebox()</a></code> will call <code><a href="../reference/wbt_init.html">wbt_init()</a></code> on the <code>exe_path</code> after unpacking to target directory</p></li>
-<li><p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> <code>exe_path</code>, <code><a href="../reference/wbt_init.html">wbt_wd()</a></code> <code>wd</code>, and <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> <code>pkg_dir</code> paths can be specified with shorthand <code><a href="https://rdrr.io/r/base/tilde.html">~</a></code> for home directory, which is expanded with <code><a href="https://rdrr.io/r/base/path.expand.html">path.expand()</a></code></p></li>
-<li><p>Unsetting working directories requires only a single call to <code><a href="../reference/wbt_init.html">wbt_wd("")</a></code></p></li>
-<li><p>Functions no longer use <code><a href="https://rdrr.io/r/base/match.call.html">match.call()</a></code> so unconventional/automated methods for calling tools that do not have a parsable tool name in the call result now work (<a href='https://github.com/giswqs/whiteboxR/issues/45'>#45</a>)</p></li>
+<li><p><code><a href="../reference/wbt_install.html">whitebox::install_whitebox()</a></code> will call
+<code><a href="../reference/wbt_init.html">wbt_init()</a></code> on the <code>exe_path</code> after unpacking to
+target directory</p></li>
+<li><p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> <code>exe_path</code>,
+<code><a href="../reference/wbt_init.html">wbt_wd()</a></code> <code>wd</code>, and
+<code><a href="../reference/wbt_install.html">install_whitebox()</a></code> <code>pkg_dir</code> paths can be
+specified with shorthand <code><a href="https://rdrr.io/r/base/tilde.html">~</a></code> for home directory, which is
+expanded with <code><a href="https://rdrr.io/r/base/path.expand.html">path.expand()</a></code></p></li>
+<li><p>Unsetting working directories requires only a single call to
+<code><a href="../reference/wbt_init.html">wbt_wd("")</a></code></p></li>
+<li><p>Functions no longer use <code><a href="https://rdrr.io/r/base/match.call.html">match.call()</a></code> so
+unconventional/automated methods for calling tools that do not have a
+parsable tool name in the call result now work (<a href='https://github.com/giswqs/whiteboxR/issues/45'>#45</a>)</p></li>
 </ul>
 </div>
     <div id="whitebox-151" class="section level1">
@@ -170,37 +181,44 @@
 <li>
 <p>Add package options for custom EXE path and verbosity</p>
 <ul>
-<li>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE path</li>
+<li>Changes behavior of <code><a href="../reference/wbt_init.html">wbt_init()</a></code>; now only checks EXE
+path</li>
 </ul>
 </li>
-<li><p>Adds <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> to handle downloading and installing WhiteboxTools</p></li>
+<li><p>Adds <code><a href="../reference/wbt_install.html">install_whitebox()</a></code> to handle downloading and
+installing WhiteboxTools</p></li>
 </ul>
 <div id="new-package-options" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-package-options" class="anchor"></a>New package options</h2>
 <ul>
 <li>
-<p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> can set any of the other options in the same call as the custom EXE path.</p>
+<p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> can set any of the other options in the
+same call as the custom EXE path.</p>
 <ul>
 <li>
 <code><a href="../reference/wbt_init.html">wbt_options()</a></code> returns current option values</li>
 </ul>
 </li>
 <li>
-<p>Use a system environment variable (<code>R_WHITEBOX_EXE_PATH</code>) or package option (<code>whitebox.exe_path</code>)</p>
+<p>Use a system environment variable
+(<code>R_WHITEBOX_EXE_PATH</code>) or package option
+(<code>whitebox.exe_path</code>)</p>
 <ul>
 <li>Get / set with <code><a href="../reference/wbt_init.html">wbt_init()</a></code>.</li>
 </ul>
 </li>
 <li>
-<p>Verbosity controlled with (<code>R_WHITEBOX_VERBOSE</code>) or package option (<code>whitebox.verbose</code>)</p>
+<p>Verbosity controlled with (<code>R_WHITEBOX_VERBOSE</code>) or
+package option (<code>whitebox.verbose</code>)</p>
 <ul>
 <li>Get / set with <code><a href="../reference/wbt_init.html">wbt_verbose()</a></code>
 </li>
 </ul>
 </li>
 <li>
-<p>Working directory controlled with (<code>R_WHITEBOX_WD</code>) or package option (<code>whitebox.wd</code>)</p>
+<p>Working directory controlled with (<code>R_WHITEBOX_WD</code>) or
+package option (<code>whitebox.wd</code>)</p>
 <ul>
 <li>Get / set with <code><a href="../reference/wbt_init.html">wbt_wd()</a></code>
 </li>
@@ -208,7 +226,9 @@
 </li>
 <li><p>New “whitebox Demo” vignette</p></li>
 <li>
-<p>New data <code>wbttools</code> and <code>wbttoolparameters</code> data.frame built from WhiteboxTools v1.5.0 and <code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> output for full tool library</p>
+<p>New data <code>wbttools</code> and <code>wbttoolparameters</code>
+data.frame built from WhiteboxTools v1.5.0 and
+<code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> output for full tool library</p>
 <ul>
 <li>See the “whitebox Tool Metadata” vignette</li>
 </ul>
@@ -222,7 +242,8 @@
 </h1>
 <ul>
 <li><p>Update to WhiteboxTools v1.5.0</p></li>
-<li><p>More information about this version can be found at <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0</a> for more info.</p></li>
+<li><p>More information about this version can be found at <a href="https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0" class="uri">https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0</a>
+for more info.</p></li>
 </ul>
 </div>
     <div id="whitebox-140" class="section level1">
@@ -288,7 +309,8 @@
 <a href="#whitebox-030" class="anchor"></a>whitebox 0.3.0<small> Unreleased </small>
 </h1>
 <ul>
-<li>update to <a href="https://github.com/jblindsay/whitebox-tools/releases">WhiteboxTools v0.15.0</a>
+<li>update to <a href="https://github.com/jblindsay/whitebox-tools/releases">WhiteboxTools
+v0.15.0</a>
 </li>
 </ul>
 </div>

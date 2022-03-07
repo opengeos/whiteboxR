@@ -14,8 +14,8 @@
 wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--pattern=", pattern))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--pattern=", wbt_file_path(pattern)))
   if (!is.null(proj)) {
     args <- paste(args, paste0("--proj=", proj))
   }
@@ -46,9 +46,9 @@ wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=F
 wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--buildings=", buildings))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--buildings=", wbt_file_path(buildings)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -77,8 +77,8 @@ wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, v
 wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
@@ -112,9 +112,9 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, filter=FA
 wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--polygons=", polygons))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--polygons=", wbt_file_path(polygons)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -142,9 +142,9 @@ wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_
 wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--polygons=", polygons))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--polygons=", wbt_file_path(polygons)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -172,8 +172,8 @@ wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbo
 wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(exclude_cls)) {
     args <- paste(args, paste0("--exclude_cls=", exclude_cls))
   }
@@ -204,9 +204,9 @@ wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, v
 wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--threshold=", threshold))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--threshold=", wbt_file_path(threshold)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -233,8 +233,8 @@ wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verb
 wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -262,7 +262,7 @@ wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode
 wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -295,7 +295,7 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, 
 wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -324,7 +324,7 @@ wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FA
 wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -351,7 +351,7 @@ wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE, compress_raste
 wbt_las_to_laz <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -380,7 +380,7 @@ wbt_las_to_laz <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, comp
 wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -406,7 +406,7 @@ wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, 
 wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -473,7 +473,7 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, compress="brotli", level
 wbt_laz_to_las <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -504,7 +504,7 @@ wbt_laz_to_las <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, comp
 wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -538,7 +538,7 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -574,10 +574,10 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsubset_class=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--base=", base))
-  args <- paste(args, paste0("--subset=", subset))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--subset_class=", subset_class))
+  args <- paste(args, paste0("--base=", wbt_file_path(base)))
+  args <- paste(args, paste0("--subset=", wbt_file_path(subset)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--subset_class=", wbt_file_path(subset_class)))
   if (!is.null(nonsubset_class)) {
     args <- paste(args, paste0("--nonsubset_class=", nonsubset_class))
   }
@@ -608,9 +608,9 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
 wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--in_lidar=", in_lidar))
-  args <- paste(args, paste0("--in_image=", in_image))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--in_lidar=", wbt_file_path(in_lidar)))
+  args <- paste(args, paste0("--in_image=", wbt_file_path(in_image)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -645,7 +645,7 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
 wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, parameter="elevation", returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -704,7 +704,7 @@ wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, param
 wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, radius=0.5, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -754,8 +754,8 @@ wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, 
 wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=FALSE, inclassval=2, outclassval=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(minz)) {
     args <- paste(args, paste0("--minz=", minz))
   }
@@ -804,8 +804,8 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbours=0, slope_threshold=45.0, height_threshold=1.0, classify=TRUE, slope_norm=TRUE, height_above_ground=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -855,9 +855,9 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
 wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--width=", width))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--width=", wbt_file_path(width)))
   if (!is.null(orientation)) {
     args <- paste(args, paste0("--orientation=", orientation))
   }
@@ -890,8 +890,8 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
 wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, radius=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(azimuth)) {
     args <- paste(args, paste0("--azimuth=", azimuth))
   }
@@ -929,8 +929,8 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
 wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(parameter)) {
     args <- paste(args, paste0("--parameter=", parameter))
   }
@@ -971,7 +971,7 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
 wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, weight=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1027,7 +1027,7 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
 wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1063,8 +1063,8 @@ wbt_lidar_info <- function(input, output=NULL, vlr=TRUE, geokeys=TRUE, wd=NULL, 
 wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--inputs=", inputs))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1094,10 +1094,10 @@ wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress
 wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolution=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input1=", input1))
-  args <- paste(args, paste0("--input2=", input2))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--class_accuracy=", class_accuracy))
+  args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
+  args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--class_accuracy=", wbt_file_path(class_accuracy)))
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
@@ -1134,7 +1134,7 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
 wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1191,7 +1191,7 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
 wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolution=1.0, radius=2.5, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1239,7 +1239,7 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
 wbt_lidar_point_return_analysis <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1275,7 +1275,7 @@ wbt_lidar_point_return_analysis <- function(input, output=NULL, wd=NULL, verbose
 wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pulses=FALSE, avg_points_per_pulse=TRUE, z_range=FALSE, intensity_range=FALSE, predom_class=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
@@ -1331,8 +1331,8 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
 wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_samples=5, threshold=0.35, model_size=8, max_slope=80.0, classify=FALSE, last_returns=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -1393,7 +1393,7 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
 wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, num_points=20, exclude_cls=NULL, minz=NULL, maxz=NULL, func_type="ThinPlateSpline", poly_order="none", weight=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1454,8 +1454,8 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
 wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (include_z) {
     args <- paste(args, "--include_z")
   }
@@ -1489,8 +1489,8 @@ wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL,
 wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0, use_median=FALSE, classify=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -1539,8 +1539,8 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=65.0, norm_diff=10.0, azimuth=180.0, altitude=30.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--buildings=", buildings))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--buildings=", wbt_file_path(buildings)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(input)) {
     args <- paste(args, paste0("--input=", input))
   }
@@ -1607,8 +1607,8 @@ wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0
 wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_samples=10, threshold=0.15, model_size=15, max_slope=80.0, norm_diff=10.0, maxzdiff=1.0, classes=FALSE, ground=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -1669,8 +1669,8 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
 wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_diff=2.0, maxzdiff=1.0, classify=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -1712,8 +1712,8 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
 wbt_lidar_shift <- function(input, output, x_shift="", y_shift="", z_shift="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(x_shift)) {
     args <- paste(args, paste0("--x_shift=", x_shift))
   }
@@ -1755,7 +1755,7 @@ wbt_lidar_shift <- function(input, output, x_shift="", y_shift="", z_shift="", w
 wbt_lidar_sibson_interpolation <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls=NULL, minz=NULL, maxz=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -1803,8 +1803,8 @@ wbt_lidar_sibson_interpolation <- function(input, output=NULL, parameter="elevat
 wbt_lidar_sort_by_time <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
@@ -1834,8 +1834,8 @@ wbt_lidar_sort_by_time <- function(input, output, wd=NULL, verbose_mode=FALSE, c
 wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_filtered=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
@@ -1874,9 +1874,9 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
 wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, save_filtered=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
-  args <- paste(args, paste0("--density=", density))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--density=", wbt_file_path(density)))
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
@@ -1913,7 +1913,7 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
 wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, origin_y=0.0, min_points=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(width)) {
     args <- paste(args, paste0("--width=", width))
   }
@@ -1956,8 +1956,8 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
 wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (hull) {
     args <- paste(args, "--hull")
   }
@@ -1994,7 +1994,7 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose
 wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", returns="all", resolution=1.0, exclude_cls="7,18", minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
     args <- paste(args, paste0("--output=", output))
   }
@@ -2010,7 +2010,6 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
   if (!is.null(exclude_cls)) {
     args <- paste(args, paste0("--exclude_cls=", exclude_cls))
   }
-  args <- paste(args, paste0("--18"=", 18"))
   if (!is.null(minz)) {
     args <- paste(args, paste0("--minz=", minz))
   }
@@ -2047,8 +2046,8 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
 wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -2079,8 +2078,8 @@ wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbo
 wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--input=", input))
-  args <- paste(args, paste0("--output=", output))
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(radius)) {
     args <- paste(args, paste0("--radius=", radius))
   }
@@ -2111,9 +2110,9 @@ wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=
 wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
   wbt_init()
   args <- ""
-  args <- paste(args, paste0("--indir=", indir))
-  args <- paste(args, paste0("--outdir=", outdir))
-  args <- paste(args, paste0("--polygons=", polygons))
+  args <- paste(args, paste0("--indir=", wbt_file_path(indir)))
+  args <- paste(args, paste0("--outdir=", wbt_file_path(outdir)))
+  args <- paste(args, paste0("--polygons=", wbt_file_path(polygons)))
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }

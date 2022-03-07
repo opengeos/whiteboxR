@@ -13,4 +13,7 @@ test_that("whitebox datasets", {
   # no list columns
   expect_true(!any(sapply(wbttoolparameters, is.list)))
   
+  # parameters available for every tool
+  expect_true(all(wbttoolparameters$function_name %in% wbttools$function_name))
+  expect_true(all(wbttools$function_name %in% wbttoolparameters$function_name))
 })

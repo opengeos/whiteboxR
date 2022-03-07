@@ -74,10 +74,10 @@ def function_block(line, ff):
     arguments = argument.split(",")
     for item in arguments:
         item = item.strip()
-        if "=" not in item:
+        if "=" not in item and '"' not in item:
             ff.write(
                 '  args <- paste(args, paste0("--' + item +
-                '=", ' + item + "))" + "\n"
+                '=", wbt_file_path(' + item + ")))" + "\n"
             )
         elif "verbose" in item:
             continue
@@ -93,16 +93,17 @@ def function_block(line, ff):
             ff.write("  }" + "\n")
         elif "verbose" not in item:
             para = item.split("=")[0]
-            ff.write("  if (!is.null(" + para + ")) {" + "\n")
-            ff.write(
-                '    args <- paste(args, paste0("--'
-                + para
-                + '=", '
-                + para
-                + "))"
-                + "\n"
-            )
-            ff.write("  }" + "\n")
+            if '"' not in para:
+              ff.write("  if (!is.null(" + para + ")) {" + "\n")
+              ff.write(
+                  '    args <- paste(args, paste0("--'
+                  + para
+                  + '=", '
+                  + para
+                  + "))"
+                  + "\n"
+              )
+              ff.write("  }" + "\n")
 
     ff.write("  tool_name <- \""+function_name+"\"\n")
     # ff.write('  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]' + "\n")
