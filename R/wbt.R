@@ -101,7 +101,7 @@ wbt_options <- function(exe_path = NULL,
   }
   
   if (!is.null(compress_rasters)) {
-    options(whitebox.verbose = compress_rasters)
+    options(whitebox.compress_rasters = compress_rasters)
   }
   
   invisible(list(
@@ -255,7 +255,7 @@ wbt_verbose <- function(verbose = NULL) {
 wbt_compress_rasters <- function(compress_rasters = NULL) {
   # NA is treated NULL (no effect)
   if (length(compress_rasters) != 1 || is.na(compress_rasters)) {
-    verbose <- NULL
+    compress_rasters <- NULL
   }
   
   # system environment var takes precedence
@@ -279,7 +279,7 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
     wbt_options(compress_rasters = compress_rasters)
   }
   
-  # package option subsequently, default true for interactive use
+  # package option subsequently, default FALSE
   res <- as.logical(getOption("whitebox.compress_rasters", default = FALSE))
   
   if (is.na(res) || !is.logical(res)) {
