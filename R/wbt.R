@@ -65,7 +65,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 #' 
 #' - **`whitebox.compress_rasters`** - logical. Should raster output from WhiteboxTools be compressed? Default: `FALSE`. Set the value of `whitebox.compress_rasters` with `wbt_compress_rasters()` `compress_rasters` argument.
 #' 
-#' @return `wbt_options()`:  an invisible list containing current `whitebox.exe_path`, `whitebox.verbose` options
+#' @return `wbt_options()`: an invisible list containing current `whitebox.exe_path`, `whitebox.verbose`, `whitebox.compress_rasters`, and `whitebox.max_procs` options
 #' @rdname wbt_init
 #' @export 
 #' @examples 
@@ -80,13 +80,15 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 wbt_options <- function(exe_path = NULL,
                         wd = NULL,
                         verbose = NULL,
-                        compress_rasters = NULL) {
+                        compress_rasters = NULL,
+                        max_procs = NULL) {
   
   # get the system value
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   syswd <- Sys.getenv("R_WHITEBOX_WD")
   sysvrb <- Sys.getenv("R_WHITEBOX_VERBOSE")
   syscpr <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS")
+  sysmxp <- Sys.getenv("R_WHITEBOX_MAX_PROCS")
   
   # check user input, set package options
   if (!is.null(exe_path)) {
@@ -108,22 +110,31 @@ wbt_options <- function(exe_path = NULL,
     options(whitebox.compress_rasters = compress_rasters)
   }
   
+  if (!is.null(max_procs)) {
+    options(whitebox.max_procs = max_procs)
+  }
+  
   invisible(list(
     whitebox.exe_path = ifelse(nchar(syswbt) == 0,
-                               getOption("whitebox.exe_path", default = wbt_exe_path(shell_quote = FALSE)),
+                               getOption("whitebox.exe_path", 
+                                         default = wbt_exe_path(shell_quote = FALSE)),
                                syswbt),
     whitebox.wd       = ifelse(nchar(syswd)  == 0,
-                               getOption("whitebox.wd", default = ""),       syswd),
-    whitebox.verbose  = ifelse(
-      nchar(sysvrb) == 0,
-      getOption("whitebox.verbose", default = ""),
-      sysvrb
-    ),
-    whitebox.compress_rasters = ifelse(
-      nchar(syscpr) == 0,
-      as.logical(getOption("whitebox.compress_rasters", default = FALSE)),
-      syscpr
-    )
+                               getOption("whitebox.wd", 
+                                         default = ""),
+                               syswd), 
+    whitebox.verbose  = ifelse(nchar(sysvrb) == 0,
+                               getOption("whitebox.verbose", 
+                                         default = ""),
+                               sysvrb),
+    whitebox.compress_rasters = ifelse(nchar(syscpr) == 0,
+                                       as.logical(getOption("whitebox.compress_rasters", 
+                                                            default = FALSE)),
+                                       syscpr),
+    whitebox.max_proc = ifelse(nchar(sysmxp) == 0,
+                                     as.integer(getOption("whitebox.max_proc", 
+                                                          default = -1)),
+                                     sysmxp)
   ))
 }
 
@@ -293,6 +304,54 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
   
   invisible(res)
 }
+
+#' @description `wbt_max_procs()`: Check maximum number of processes for WhiteboxTools
+#' 
+#' @param max_procs Default: `NULL`; if integer, set the package option `whitebox.max_procs` to specified value
+#' 
+#' @return `wbt_max_procs()`: integer; defaults to `-1`
+#' @rdname wbt_init
+#' @export
+#' @examples 
+#' \dontrun{
+#' 
+#' ## wbt_max_procs():
+#'
+#' wbt_max_procs(max_procs = 2)
+#' }
+wbt_max_procs <- function(max_procs = NULL) {
+  # NA is treated NULL (no effect)
+  if (length(max_procs) != 1 || is.na(max_procs)) {
+    max_procs <- NULL
+  }
+  
+  # system environment var takes precedence
+  sysmax_procs <- Sys.getenv("R_WHITEBOX_MAX_PROCS", unset = NA)
+  if (sysmax_procs != "") {
+    sysmax_procs <- as.integer(sysmax_procs)
+  }
+  
+  # if integer system env var, use that
+  if (is.integer(sysmax_procs) && !is.na(sysmax_procs)) {
+    return(sysmax_procs)
+  }
+  
+  # if integer input, set the package option "compress_rasters"
+  if (is.numeric(max_procs)) {
+    wbt_options(max_procs = as.integer(max_procs))
+  }
+  
+  # package option subsequently, default FALSE
+  res <- as.integer(getOption("whitebox.max_procs", default = -1))
+  
+  if (is.na(res) || !is.integer(res)) {
+    message('Invalid value for whitebox.max_procs, defaulting to -1')
+    res <- -1
+  }
+  
+  invisible(res)
+}
+
 
 #' @export
 #' @rdname install_whitebox
