@@ -13,7 +13,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -32,7 +32,7 @@ wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "distance_to_outlet"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -50,7 +50,7 @@ wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--flow_accum=", wbt_file_path(flow_accum)))
@@ -66,7 +66,7 @@ wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=F
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "extract_streams"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -85,7 +85,7 @@ wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filter=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filter=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -106,7 +106,7 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "extract_valleys"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -125,7 +125,7 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -144,7 +144,7 @@ wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "farthest_channel_head"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -163,7 +163,7 @@ wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -182,7 +182,7 @@ wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "find_main_stem"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -201,7 +201,7 @@ wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -220,7 +220,7 @@ wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hack_stream_order"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -239,7 +239,7 @@ wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -258,7 +258,7 @@ wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "horton_stream_order"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -277,7 +277,7 @@ wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -296,7 +296,7 @@ wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "length_of_upstream_channels"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -315,7 +315,7 @@ wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -332,7 +332,7 @@ wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, wd=
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "long_profile"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -351,7 +351,7 @@ wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, wd=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -368,7 +368,7 @@ wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "long_profile_from_points"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -386,7 +386,7 @@ wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
@@ -402,7 +402,7 @@ wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FAL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "raster_streams_to_vector"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -421,7 +421,7 @@ wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
@@ -440,7 +440,7 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "rasterize_streams"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -459,7 +459,7 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_pntr=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -476,7 +476,7 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "remove_short_streams"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -493,7 +493,7 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_repair_stream_vector_topology <- function(input, output, dist="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_repair_stream_vector_topology <- function(input, output, dist="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -508,7 +508,7 @@ wbt_repair_stream_vector_topology <- function(input, output, dist="", wd=NULL, v
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "repair_stream_vector_topology"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -527,7 +527,7 @@ wbt_repair_stream_vector_topology <- function(input, output, dist="", wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -546,7 +546,7 @@ wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALS
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shreve_stream_magnitude"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -565,7 +565,7 @@ wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -584,7 +584,7 @@ wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "strahler_stream_order"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -603,7 +603,7 @@ wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -622,7 +622,7 @@ wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_link_class"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -641,7 +641,7 @@ wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -660,7 +660,7 @@ wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_link_identifier"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -679,7 +679,7 @@ wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -698,7 +698,7 @@ wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zer
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_link_length"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -718,7 +718,7 @@ wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zer
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -738,7 +738,7 @@ wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_link_slope"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -758,7 +758,7 @@ wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -778,7 +778,7 @@ wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_slope_continuous"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -797,7 +797,7 @@ wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -816,7 +816,7 @@ wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FAL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "topological_stream_order"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -835,7 +835,7 @@ wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--d8_pntr=", wbt_file_path(d8_pntr)))
@@ -854,7 +854,7 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "tributary_identifier"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -873,7 +873,7 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_stream_network_analysis <- function(streams, dem, output, cutting_height=10.0, snap=0.1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_vector_stream_network_analysis <- function(streams, dem, output, cutting_height=10.0, snap=0.1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
@@ -892,7 +892,7 @@ wbt_vector_stream_network_analysis <- function(streams, dem, output, cutting_hei
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "vector_stream_network_analysis"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
