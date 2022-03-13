@@ -5,6 +5,10 @@
  * Corrections to `wbttoolparameters` dataset (updated classification of input/output parameters) 
  
  * Fix for `wbt_lidar_tin_gridding()` `exclude_cls` argument
+ 
+ * Add `wbt_compress_rasters()` to set package option `whitebox.compress_rasters`
+ 
+   * Updated how  `--compress_rasters` parameter is passed via command line. Now the flag is added to all commands regardless of whether the value is `TRUE` or `FALSE`. This allows update of settings.json accordingly when `--compress_rasters=FALSE`. RE: https://github.com/jblindsay/whitebox-tools/issues/233#issuecomment-1065955783
 
 # whitebox 2.1.0
 

@@ -184,6 +184,18 @@ test_that("wbt utility functions [requires WhiteboxTools installed]", {
   expect_true(is.character(wbt_tool_help()))
 })
 
+test_that("wbt raster compression", {
+  
+  wbt_geomorphons(whitebox:::sample_dem_data(), output = "test_compressed.tif", compress_rasters = TRUE)
+  
+  wbt_geomorphons(whitebox:::sample_dem_data(), output = "test_no-compress.tif", compress_rasters = FALSE)
+  
+  expect_true(file.size("test_compressed.tif") < file.size("test_no-compress.tif"))
+  
+  unlink(c("test_compressed.tif", "test_no-compress.tif"))
+  
+})
+
 test_that("wbt tool name cleaning", {
   
   # wbt_internal_tool_name(): The internal tool name method is a single place for "name cleaning" to happen so it is standard. It deals with some of the messiness with converting between R function names and WBT tool names.

@@ -20,6 +20,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   initargs <- list(...)
   wd <- initargs[["wd"]]
   verbose <- initargs[["verbose"]]
+  compress_rasters <- initargs[["compress_rasters"]]
   
   if (!is.character(exe_path) || length(exe_path) != 1) {
     stop("exe_path must be a character vector with length 1", call. = FALSE)
@@ -29,8 +30,11 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   
   # if exe_path is not NULL and file exists, and value differs from the wbt_exe_path() result
   if ((!is.null(exe_path) && 
-      file.exists(exe_path) &&
-      exe_path != wbt_exe_path(shell_quote = FALSE)) || !is.null(wd) || !is.null(verbose)) {
+        file.exists(exe_path) &&
+        exe_path != wbt_exe_path(shell_quote = FALSE)) || 
+      !is.null(wd) || 
+      !is.null(verbose) ||
+      !is.null(compress_rasters)) {
     # set the path with wbt_options
     wbt_options(exe_path = exe_path, ...)
   }
@@ -259,7 +263,7 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
   }
   
   # system environment var takes precedence
-  syscompress <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS", unset = "")
+  syscompress <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS", unset = FALSE)
   if (syscompress != "") {
     
     # take up to first 5 characters, uppercase eval/parse/convert to logical
@@ -724,7 +728,6 @@ wbt_system_call <- function(argstring,
   wbt_init()
   wbt_exe <- wbt_exe_path(shell_quote = shell_quote)
   args2 <- argstring
-  
   # messages about misspecified arguments (e.g. tool_name to wbt_tool_help())
   if (length(args2) > 1) {
     message("NOTE: Argument string has length greater than 1; using first value")
@@ -746,13 +749,13 @@ wbt_system_call <- function(argstring,
     # don't add the --wd= argument if the system/package option is unset (value == "")
   }
   
-  # if compression is not specified in the argstring, then pull the package option 
+  # if compression is not specified in the argstring, then pull the package option
   if (!grepl("--compress_rasters", args2)) {
     crflag <- wbt_compress_rasters()
-    if (crflag) {
-      argstring <- paste(argstring, "--compress_rasters")
+    if (is.logical(crflag)) {
+      argstring <- paste0(argstring, " --compress_rasters=", crflag)
       # add the --compress_rasters flag if needed
-    }  
+    }
   }
   
   # allow tool_name to be specified for --run= argument only via tool_name
@@ -773,9 +776,9 @@ wbt_system_call <- function(argstring,
     return(exeargs)
   }
   
-  stopmsg <- paste0("\nError running WhiteboxTools", 
+  stopmsg <- paste0("\nError running WhiteboxTools",
                     ifelse(tool_name != "",  paste0(" (", tool_name, ")"), ""), "\n",
-                    "  whitebox.exe_path: ", wbt_exe, "; File exists? ", 
+                    "  whitebox.exe_path: ", wbt_exe, "; File exists? ",
                                                          file.exists(wbt_exe_path(shell_quote = FALSE)),
                     "\n  Arguments: ", args2)
   ret <- try(suppressWarnings(tryCatch(
@@ -789,7 +792,7 @@ wbt_system_call <- function(argstring,
   } else if (!is.null(attr(ret, "status"))) {
     message(stopmsg, "\n")
     message("System command had status ", attr(ret,"status"))
-    if (length(ret) == 0 || nchar(ret) == 0) {
+    if (length(ret) == 0 || nchar(ret[1]) == 0) {
       ret[1] <- stopmsg
     }
   }

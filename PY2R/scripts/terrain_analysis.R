@@ -26,8 +26,8 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "accumulation_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -58,8 +58,8 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "aspect"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -96,8 +96,8 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "assess_route"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -128,8 +128,8 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "average_normal_vector_angular_deviation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -160,8 +160,8 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "circular_variance_of_aspect"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -212,8 +212,8 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "contours_from_points"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -256,8 +256,8 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "contours_from_raster"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -292,8 +292,8 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "curvedness"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -328,8 +328,8 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "dev_from_mean_elev"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -364,8 +364,8 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "diff_from_mean_elev"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -400,8 +400,8 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "difference_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -436,8 +436,8 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "directional_relief"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -472,8 +472,8 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "downslope_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -512,8 +512,8 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "edge_density"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -540,8 +540,8 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compres
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_above_pit"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -580,8 +580,8 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_percentile"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -608,8 +608,8 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALS
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_relative_to_min_max"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -638,8 +638,8 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_relative_to_watershed_min_max"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -700,8 +700,8 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "embankment_mapping"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -740,8 +740,8 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "exposure_towards_wind_flux"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -788,8 +788,8 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "feature_preserving_smoothing"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -824,8 +824,8 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "fetch_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -864,8 +864,8 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "fill_missing_data"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -896,8 +896,8 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "find_ridges"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -932,8 +932,8 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "gaussian_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -988,8 +988,8 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "gaussian_scale_space"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1024,8 +1024,8 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "generating_function"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1068,8 +1068,8 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, form
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "geomorphons"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1108,8 +1108,8 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hillshade"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1144,8 +1144,8 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "horizon_angle"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1180,8 +1180,8 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "horizontal_excess_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1212,8 +1212,8 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hypsometric_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1272,8 +1272,8 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hypsometrically_tinted_hillshade"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1318,8 +1318,8 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "local_hypsometric_analysis"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1350,8 +1350,8 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "local_quadratic_regression"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1386,8 +1386,8 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "map_off_terrain_objects"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1426,8 +1426,8 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_anisotropy_dev"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1466,8 +1466,8 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_anisotropy_dev_signature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1498,8 +1498,8 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_branch_length"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1536,8 +1536,8 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_difference_from_mean"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1564,8 +1564,8 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_downslope_elev_change"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1602,8 +1602,8 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_elev_dev_signature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1640,8 +1640,8 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_elevation_deviation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1668,8 +1668,8 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_upslope_elev_change"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1704,8 +1704,8 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "maximal_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1740,8 +1740,8 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "mean_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1768,8 +1768,8 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "min_downslope_elev_change"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1804,8 +1804,8 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "minimal_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1844,8 +1844,8 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multidirectional_hillshade"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1894,8 +1894,8 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_elevation_percentile"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1934,8 +1934,8 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_roughness"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1974,8 +1974,8 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_roughness_signature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2020,8 +2020,8 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_std_dev_normals"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2066,8 +2066,8 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_std_dev_normals_signature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2102,8 +2102,8 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_topographic_position_image"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2130,8 +2130,8 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "num_downslope_neighbours"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2158,8 +2158,8 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "num_upslope_neighbours"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2192,8 +2192,8 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "openness"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2236,8 +2236,8 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "pennock_landform_class"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2272,8 +2272,8 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "percent_elev_range"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2308,8 +2308,8 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "plan_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2338,8 +2338,8 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "profile"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2374,8 +2374,8 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "profile_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2410,8 +2410,8 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "relative_aspect"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2446,8 +2446,8 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "relative_topographic_position"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2482,8 +2482,8 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "remove_off_terrain_objects"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2518,8 +2518,8 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "ring_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2554,8 +2554,8 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "rotor"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2586,8 +2586,8 @@ wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mod
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "ruggedness_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2624,8 +2624,8 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "sediment_transport_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2684,8 +2684,8 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shadow_animation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2732,8 +2732,8 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shadow_image"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2764,8 +2764,8 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALS
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shape_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2800,8 +2800,8 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "slope"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2840,8 +2840,8 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "slope_vs_aspect_plot"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2872,8 +2872,8 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "slope_vs_elevation_plot"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2912,8 +2912,8 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "smooth_vegetation_residual"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2944,8 +2944,8 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "spherical_std_dev_of_normals"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2984,8 +2984,8 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "standard_deviation_of_slope"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3018,8 +3018,8 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_power_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3046,8 +3046,8 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "surface_area_ratio"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3082,8 +3082,8 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "tangential_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3142,8 +3142,8 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "time_in_daylight"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3202,8 +3202,8 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "topographic_position_animation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3238,8 +3238,8 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "total_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3274,8 +3274,8 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "unsphericity"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3310,8 +3310,8 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "vertical_excess_curvature"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3344,8 +3344,8 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "viewshed"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3380,8 +3380,8 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "visibility_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -3410,8 +3410,8 @@ wbt_wetness_index <- function(sca, slope, output, wd=NULL, verbose_mode=FALSE, c
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "wetness_index"
   wbt_run_tool(tool_name, args, verbose_mode)

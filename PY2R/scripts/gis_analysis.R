@@ -26,8 +26,8 @@ wbt_aggregate_raster <- function(input, output, agg_factor=2, type="mean", wd=NU
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "aggregate_raster"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -68,8 +68,8 @@ wbt_block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_s
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "block_maximum_gridding"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -110,8 +110,8 @@ wbt_block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_s
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "block_minimum_gridding"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -142,8 +142,8 @@ wbt_centroid <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "centroid"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -170,8 +170,8 @@ wbt_centroid_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "centroid_vector"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -206,8 +206,8 @@ wbt_clump <- function(input, output, diag=TRUE, zero_back=FALSE, wd=NULL, verbos
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "clump"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -246,8 +246,8 @@ wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, max
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "construct_vector_tin"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -280,8 +280,8 @@ wbt_create_hexagonal_vector_grid <- function(input, output, width, orientation="
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "create_hexagonal_vector_grid"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -320,8 +320,8 @@ wbt_create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "create_plane"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -360,8 +360,8 @@ wbt_create_rectangular_vector_grid <- function(input, output, width, height, xor
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "create_rectangular_vector_grid"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -396,8 +396,8 @@ wbt_dissolve <- function(input, output, field=NULL, snap=0.0, wd=NULL, verbose_m
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "dissolve"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -426,8 +426,8 @@ wbt_eliminate_coincident_points <- function(input, output, tolerance, wd=NULL, v
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "eliminate_coincident_points"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -460,8 +460,8 @@ wbt_extend_vector_lines <- function(input, output, dist, extend="both ends", wd=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "extend_vector_lines"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -488,8 +488,8 @@ wbt_extract_nodes <- function(input, output, wd=NULL, verbose_mode=FALSE, compre
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "extract_nodes"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -520,8 +520,8 @@ wbt_extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "extract_raster_values_at_points"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -554,8 +554,8 @@ wbt_filter_raster_features_by_area <- function(input, output, threshold, backgro
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "filter_raster_features_by_area"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -586,8 +586,8 @@ wbt_find_lowest_or_highest_points <- function(input, output, out_type="lowest", 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "find_lowest_or_highest_points"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -640,8 +640,8 @@ wbt_idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "idw_interpolation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -668,8 +668,8 @@ wbt_layer_footprint <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "layer_footprint"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -696,8 +696,8 @@ wbt_medoid <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "medoid"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -732,8 +732,8 @@ wbt_minimum_bounding_box <- function(input, output, criterion="area", features=T
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "minimum_bounding_box"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -764,8 +764,8 @@ wbt_minimum_bounding_circle <- function(input, output, features=TRUE, wd=NULL, v
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "minimum_bounding_circle"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -796,8 +796,8 @@ wbt_minimum_bounding_envelope <- function(input, output, features=TRUE, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "minimum_bounding_envelope"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -828,8 +828,8 @@ wbt_minimum_convex_hull <- function(input, output, features=TRUE, wd=NULL, verbo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "minimum_convex_hull"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -876,8 +876,8 @@ wbt_natural_neighbour_interpolation <- function(input, output, field=NULL, use_z
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "natural_neighbour_interpolation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -922,8 +922,8 @@ wbt_nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, ce
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "nearest_neighbour_gridding"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -948,8 +948,8 @@ wbt_polygon_area <- function(input, wd=NULL, verbose_mode=FALSE, compress_raster
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "polygon_area"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -976,8 +976,8 @@ wbt_polygon_long_axis <- function(input, output, wd=NULL, verbose_mode=FALSE, co
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "polygon_long_axis"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1002,8 +1002,8 @@ wbt_polygon_perimeter <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "polygon_perimeter"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1030,8 +1030,8 @@ wbt_polygon_short_axis <- function(input, output, wd=NULL, verbose_mode=FALSE, c
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "polygon_short_axis"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1092,8 +1092,8 @@ wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "radial_basis_function_interpolation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1134,8 +1134,8 @@ wbt_raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cell
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "raster_area"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1166,8 +1166,8 @@ wbt_raster_cell_assignment <- function(input, output, assign="column", wd=NULL, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "raster_cell_assignment"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1208,8 +1208,8 @@ wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "raster_perimeter"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1242,8 +1242,8 @@ wbt_reclass <- function(input, output, reclass_vals, assign_mode=FALSE, wd=NULL,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "reclass"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1282,8 +1282,8 @@ wbt_reclass_equal_interval <- function(input, output, interval=10.0, start_val=N
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "reclass_equal_interval"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1312,8 +1312,8 @@ wbt_reclass_from_file <- function(input, reclass_file, output, wd=NULL, verbose_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "reclass_from_file"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1344,8 +1344,8 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=FA
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "smooth_vectors"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1376,8 +1376,8 @@ wbt_split_vector_lines <- function(input, output, length=NULL, wd=NULL, verbose_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "split_vector_lines"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1424,8 +1424,8 @@ wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "tin_gridding"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1458,8 +1458,8 @@ wbt_vector_hex_binning <- function(input, output, width, orientation="horizontal
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "vector_hex_binning"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1486,8 +1486,8 @@ wbt_voronoi_diagram <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "voronoi_diagram"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1520,8 +1520,8 @@ wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, ver
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "buffer_raster"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1550,8 +1550,8 @@ wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "cost_allocation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1582,8 +1582,8 @@ wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "cost_distance"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1616,8 +1616,8 @@ wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALS
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "cost_pathway"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1644,8 +1644,8 @@ wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=FALSE,
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "euclidean_allocation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1672,8 +1672,8 @@ wbt_euclidean_distance <- function(input, output, wd=NULL, verbose_mode=FALSE, c
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "euclidean_distance"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1700,8 +1700,8 @@ wbt_average_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, com
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "average_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1730,8 +1730,8 @@ wbt_clip <- function(input, clip, output, wd=NULL, verbose_mode=FALSE, compress_
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "clip"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1764,8 +1764,8 @@ wbt_clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensi
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "clip_raster_to_polygon"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1794,8 +1794,8 @@ wbt_count_if <- function(inputs, output, value, wd=NULL, verbose_mode=FALSE, com
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "count_if"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1824,8 +1824,8 @@ wbt_difference <- function(input, overlay, output, wd=NULL, verbose_mode=FALSE, 
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "difference"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1854,8 +1854,8 @@ wbt_erase <- function(input, erase, output, wd=NULL, verbose_mode=FALSE, compres
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "erase"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1884,8 +1884,8 @@ wbt_erase_polygon_from_raster <- function(input, polygons, output, wd=NULL, verb
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "erase_polygon_from_raster"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1912,8 +1912,8 @@ wbt_highest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, co
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "highest_position"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1946,8 +1946,8 @@ wbt_intersect <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mod
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "intersect"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -1976,8 +1976,8 @@ wbt_line_intersections <- function(input1, input2, output, wd=NULL, verbose_mode
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "line_intersections"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2004,8 +2004,8 @@ wbt_lowest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, com
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "lowest_position"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2032,8 +2032,8 @@ wbt_max_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_absolute_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2060,8 +2060,8 @@ wbt_max_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2092,8 +2092,8 @@ wbt_merge_line_segments <- function(input, output, snap=0.0, wd=NULL, verbose_mo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "merge_line_segments"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2120,8 +2120,8 @@ wbt_min_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "min_absolute_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2148,8 +2148,8 @@ wbt_min_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "min_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2178,8 +2178,8 @@ wbt_percent_equal_to <- function(inputs, comparison, output, wd=NULL, verbose_mo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "percent_equal_to"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2208,8 +2208,8 @@ wbt_percent_greater_than <- function(inputs, comparison, output, wd=NULL, verbos
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "percent_greater_than"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2238,8 +2238,8 @@ wbt_percent_less_than <- function(inputs, comparison, output, wd=NULL, verbose_m
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "percent_less_than"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2268,8 +2268,8 @@ wbt_pick_from_list <- function(inputs, pos_input, output, wd=NULL, verbose_mode=
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "pick_from_list"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2296,8 +2296,8 @@ wbt_polygonize <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "polygonize"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2326,8 +2326,8 @@ wbt_split_with_lines <- function(input, split, output, wd=NULL, verbose_mode=FAL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "split_with_lines"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2354,8 +2354,8 @@ wbt_sum_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "sum_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2388,8 +2388,8 @@ wbt_symmetrical_difference <- function(input, overlay, output, snap=0.0, wd=NULL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "symmetrical_difference"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2422,8 +2422,8 @@ wbt_union <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mode=FA
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "union"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2452,8 +2452,8 @@ wbt_update_nodata_cells <- function(input1, input2, output, wd=NULL, verbose_mod
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "update_nodata_cells"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2494,8 +2494,8 @@ wbt_weighted_overlay <- function(factors, weights, output, cost=NULL, constraint
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "weighted_overlay"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2524,8 +2524,8 @@ wbt_weighted_sum <- function(inputs, weights, output, wd=NULL, verbose_mode=FALS
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "weighted_sum"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2552,8 +2552,8 @@ wbt_boundary_shape_complexity <- function(input, output, wd=NULL, verbose_mode=F
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "boundary_shape_complexity"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2578,8 +2578,8 @@ wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "compactness_ratio"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2610,8 +2610,8 @@ wbt_edge_proportion <- function(input, output, output_text=FALSE, wd=NULL, verbo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "edge_proportion"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2636,8 +2636,8 @@ wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elongation_ratio"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2664,8 +2664,8 @@ wbt_find_patch_or_class_edge_cells <- function(input, output, wd=NULL, verbose_m
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "find_patch_or_class_edge_cells"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2690,8 +2690,8 @@ wbt_hole_proportion <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hole_proportion"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2716,8 +2716,8 @@ wbt_linearity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "linearity_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2744,8 +2744,8 @@ wbt_narrowness_index <- function(input, output, wd=NULL, verbose_mode=FALSE, com
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "narrowness_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2770,8 +2770,8 @@ wbt_patch_orientation <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "patch_orientation"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2796,8 +2796,8 @@ wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compres
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "perimeter_area_ratio"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2828,8 +2828,8 @@ wbt_radius_of_gyration <- function(input, output, text_output=FALSE, wd=NULL, ve
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "radius_of_gyration"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2854,8 +2854,8 @@ wbt_related_circumscribing_circle <- function(input, wd=NULL, verbose_mode=FALSE
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "related_circumscribing_circle"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2880,8 +2880,8 @@ wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=FALSE, compr
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shape_complexity_index"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -2908,8 +2908,8 @@ wbt_shape_complexity_index_raster <- function(input, output, wd=NULL, verbose_mo
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shape_complexity_index_raster"
   wbt_run_tool(tool_name, args, verbose_mode)
