@@ -267,7 +267,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2021
+    #> WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2022
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 

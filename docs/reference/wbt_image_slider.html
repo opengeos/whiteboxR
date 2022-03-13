@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
       </span>
     </div>
 
@@ -148,7 +148,8 @@
   height <span class='op'>=</span> <span class='fl'>600</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose_mode <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>
+  compress_rasters <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  command_only <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -200,11 +201,15 @@
     </tr>
     <tr>
       <th>verbose_mode</th>
-      <td><p>Sets verbose mode. If verbose mode is False, tools will not print output messages.</p></td>
+      <td><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></td>
     </tr>
     <tr>
       <th>compress_rasters</th>
       <td><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></td>
+    </tr>
+    <tr>
+      <th>command_only</th>
+      <td><p>Return command that would be executed by <code><a href='https://rdrr.io/r/base/system.html'>system()</a></code> rather than running tool.</p></td>
     </tr>
     </table>
 
