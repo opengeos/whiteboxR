@@ -48,7 +48,20 @@ test_that("wbt initialization [WhiteboxTools missing]", {
   if (sysbak != "") Sys.setenv("R_WHITEBOX_EXE_PATH" = sysbak)
 })
 
-test_that("wbt working directories", {
+test_that("wbt path expansion", {
+  dem <- as.character(wbt_file_path("~/dem.tif", shell_quote = FALSE)) 
+  dem3a <- as.character(wbt_file_path("~/dem1.tif;~/dem2.tif;~/dem3.tif"))
+  dem3b <- as.character(wbt_file_path("~/dem1.tif,~/dem2.tif,~/dem3.tif"))
+  expect_equal(dem, file.path(path.expand("~"), "dem.tif"))
+  
+  
+  expect_equal(dem3a, shQuote(paste0(file.path(path.expand("~"), 
+                                     sprintf("dem%s.tif", 1:3)), 
+                                     collapse = ",")))
+  expect_equal(dem3a, dem3b)
+})
+
+test_that("wbt setting and using working directories", {
   
   skip_on_cran()
   
@@ -93,6 +106,13 @@ test_that("wbt working directories", {
   
   # cleanup
   unlink(tf)
+})
+
+test_that("wbt reset working directory", {
+  
+  skip_on_cran()
+  
+  skip_if_not(check_whitebox_binary())
   
   ## RESETTING A WORKING DIRECTORY (unset attribute of whitebox.wd)
   
