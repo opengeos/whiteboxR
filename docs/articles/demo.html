@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
       </span>
     </div>
 
@@ -136,9 +136,9 @@ doi: <a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="uri">http://
 <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> calls to a local WhiteboxTools binary: usually
 <code>whitebox_tools</code> or <code>whitebox_tools.exe</code></p>
 <p>You can find the binary path that the package is currently going to
-use with <code><a href="../reference/wbt_exe_path.html">wbt_exe_path()</a></code></p>
+use with <code><a href="../reference/wbt_init.html">wbt_exe_path()</a></code></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_init.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span></code></pre></div>
 </div>
 <div id="interfacing-with-r-spatial-packages" class="section level3">
@@ -172,7 +172,7 @@ follows:</p>
 <span class="co"># Typically the input/output paths are stored as variables</span>
 
 <span class="co"># sample DEM input GeoTIFF</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># output file (to be created)</span>
 <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span></code></pre></div>
@@ -212,7 +212,7 @@ from <code>output</code> and compare the two.</p>
 <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/filename.html">filename</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p><img src="demo_files/figure-html/unnamed-chunk-7-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-7-2.png" width="576"></p>
-<pre><code>#&gt; [1] "/tmp/RtmpIcEjDl/slope.tif"</code></pre>
+<pre><code>#&gt; [1] "/tmp/RtmpF6G173/slope.tif"</code></pre>
 <p>The <code>RasterLayer</code>, <code>SpatRaster</code> and related
 classes in the raster and terra packages are perfect for maintaining the
 linkage between file output and an R object with the data in or out of
@@ -253,11 +253,11 @@ to set the “exe_path” for a session.</p>
 binary executable that commands are passed to.</p>
 <p>The executable path and other options are stored as package options,
 and can be overridden by system environment variables. A default value
-<code><a href="../reference/wbt_exe_path.html">wbt_exe_path(shell_quote = FALSE)</a></code> is passed when the
+<code><a href="../reference/wbt_init.html">wbt_exe_path(shell_quote = FALSE)</a></code> is passed when the
 <code>exe_path</code> argument is unspecified.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># inspect where wbt_init() will be checking</span>
-<span class="fu"><a href="../reference/wbt_exe_path.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="../reference/wbt_init.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; [1] "/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools"</span>
 
 <span class="co"># TRUE when file is found at one of the user specified paths or package default</span>
@@ -392,14 +392,14 @@ in package reference:</p>
 a Digital Elevation Model (DEM) so we can identify flow pathways.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># output file name</span>
 <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
 <p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around
 the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the
@@ -407,14 +407,14 @@ the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> fun
 string.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># output file name</span>
 <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.7s</span></code></pre></div>
+<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
 <p>The above method of creating
 <code><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions(dem = ..., output = ...)</a></code> to handle
 <code><a href="../reference/wbt_run_tool.html">wbt_run_tool("BreachDepressions", args = ...)</a></code> makes it easy
@@ -433,7 +433,7 @@ WhiteboxTools.</p>
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
 
 <span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package<span class="op">=</span><span class="st">"whitebox"</span><span class="op">)</span>
+<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># output file name</span>
 <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></code></pre></div>
@@ -445,7 +445,7 @@ tool)</h4>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></code></pre></div>
 </div>
 <div id="visualize-results-with-raster" class="section level4">
 <h4 class="hasAnchor">
@@ -490,8 +490,8 @@ spatial hydrological analysis of stream networks.</p>
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR">whitebox</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
 
-<span class="co">## Import toy_dem from whitebox package</span>
-<span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"DEM.tif"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
+<span class="co">## Sample DEM from whitebox package</span>
+<span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">toy_dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">toy_file</span>, values <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/raster/man/projection.html">crs</a></span><span class="op">(</span><span class="va">toy_dem</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"EPSG:26918"</span>
 
@@ -515,7 +515,7 @@ spatial hydrological analysis of stream networks.</p>
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></code></pre></div>
 </div>
 <div id="wbt_d8_pointer-calculate-flow-direction" class="section level4">
 <h4 class="hasAnchor">
@@ -604,7 +604,7 @@ DEM.</p>
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   threshold <span class="op">=</span> <span class="fl">100</span>
 <span class="op">)</span>
-<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
 </div>
 <div id="wbt_tributary_identifier-identify-tributaries" class="section level4">
 <h4 class="hasAnchor">
@@ -622,7 +622,7 @@ because it takes takes two inputs:</p>
   streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
 </div>
 <div id="compare-results" class="section level4">
 <h4 class="hasAnchor">
@@ -717,7 +717,7 @@ available commands for executable</p>
 <p>Prints the WhiteboxTools version</p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2021</span>
+<span class="co">#&gt; WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2022</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span>
 <span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span>
@@ -728,7 +728,7 @@ available commands for executable</p>
 <a href="#wbt_list_tools" class="anchor"></a><code>wbt_list_tools()</code>
 </h3>
 <p>Use <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code> to list all available tools in
-WhiteboxTools. In version 2.1.0 there are over 454 tools! See all the
+WhiteboxTools. In version 2.1.0 there are over 455 tools! See all the
 available <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html">toolboxes</a>
 and <a href="https://www.whiteboxgeo.com/whitebox-geospatial-extensions/">extensions</a>.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">

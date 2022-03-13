@@ -67,7 +67,7 @@ test_that("wbt setting and using working directories", {
   
   skip_if_not(check_whitebox_binary())
   
-  dem <- whitebox:::sample_dem_data()
+  dem <- sample_dem_data()
   
   skip_if(dem == "")
   
@@ -192,13 +192,13 @@ test_that("wbt raster compression", {
   
   skip_if_not(check_whitebox_binary())
   
-  dem <- whitebox:::sample_dem_data()
+  dem <- sample_dem_data()
   
   skip_if(dem == "")
   
-  wbt_geomorphons(whitebox:::sample_dem_data(), output = "test_compressed.tif", compress_rasters = TRUE)
+  wbt_geomorphons(sample_dem_data(), output = "test_compressed.tif", compress_rasters = TRUE)
   
-  wbt_geomorphons(whitebox:::sample_dem_data(), output = "test_no-compress.tif", compress_rasters = FALSE)
+  wbt_geomorphons(sample_dem_data(), output = "test_no-compress.tif", compress_rasters = FALSE)
   
   expect_true(file.size("test_compressed.tif") < file.size("test_no-compress.tif"))
   
@@ -217,11 +217,11 @@ test_that("wbt tool name cleaning", {
   # commands generated from match.call() on `whitebox::wbt_wetness_index()`
   #  should match command for a pre-cleaned tool name "wetness_index"
   expect_equal(
-    whitebox::wbt_run_tool("--dem=foo.tif --output=bar.tif",
+    wbt_run_tool("--dem=foo.tif --output=bar.tif",
       tool_name = c("::", "whitebox", "wbt_wetness_index"),
       command_only = TRUE
     ),
-    whitebox:::wbt_system_call(
+    wbt_system_call(
       "--dem=foo.tif --output=bar.tif -v",
       tool_name = "wetness_index",
       command_only = TRUE

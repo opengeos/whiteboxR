@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
       </span>
     </div>
 
@@ -129,6 +129,40 @@
       <small>Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="whitebox-211" class="section level1">
+<h1 class="page-header" data-toc-text="2.1.1">
+<a href="#whitebox-211" class="anchor"></a>whitebox 2.1.1<small> Unreleased </small>
+</h1>
+<ul>
+<li><p>File path arguments to tools now automatically perform path
+expansion (converting <code><a href="https://rdrr.io/r/base/tilde.html">~</a></code> to your home directory with
+<code><a href="https://rdrr.io/r/base/path.expand.html">path.expand()</a></code>). This also works on arguments that contain
+comma or semicolon delimited lists. (<a href="https://github.com/giswqs/whiteboxR/issues/62" class="uri">https://github.com/giswqs/whiteboxR/issues/62</a>)</p></li>
+<li><p>Corrections to <code>wbttoolparameters</code> dataset (updated
+classification of input/output parameters)</p></li>
+<li><p>Fix for <code><a href="../reference/wbt_lidar_tin_gridding.html">wbt_lidar_tin_gridding()</a></code>
+<code>exclude_cls</code> argument</p></li>
+<li>
+<p>Add <code><a href="../reference/wbt_init.html">wbt_compress_rasters()</a></code> to set package option
+<code>whitebox.compress_rasters</code></p>
+<ul>
+<li>Updated how <code>--compress_rasters</code> parameter is passed via
+command line. Now the flag is added to all commands regardless of
+whether the value is <code>TRUE</code> or <code>FALSE</code>. This
+allows update of settings.json accordingly when
+<code>--compress_rasters=FALSE</code>. RE: <a href="https://github.com/jblindsay/whitebox-tools/issues/233#issuecomment-1065955783" class="uri">https://github.com/jblindsay/whitebox-tools/issues/233#issuecomment-1065955783</a>
+</li>
+</ul>
+</li>
+<li><p>Add <code><a href="../reference/wbt_init.html">wbt_max_procs()</a></code> to set package option
+<code>whitebox.max_procs</code></p></li>
+<li><p>All <code>wbt_*()</code> tool functions now take a
+<code>command_only</code> argument that is passed to
+<code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code>. When <code>TRUE</code>, the function
+returns the command that would be run by <code><a href="https://rdrr.io/r/base/system.html">system()</a></code> instead
+of running the tool.</p></li>
+</ul>
+</div>
     <div id="whitebox-210" class="section level1">
 <h1 class="page-header" data-toc-text="2.1.0">
 <a href="#whitebox-210" class="anchor"></a>whitebox 2.1.0<small> 2022-02-11 </small>
