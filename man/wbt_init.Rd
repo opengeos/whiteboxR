@@ -6,6 +6,7 @@
 \alias{wbt_wd}
 \alias{wbt_verbose}
 \alias{wbt_compress_rasters}
+\alias{wbt_max_procs}
 \title{Initialize WhiteboxTools}
 \usage{
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE), ...)
@@ -14,7 +15,8 @@ wbt_options(
   exe_path = NULL,
   wd = NULL,
   verbose = NULL,
-  compress_rasters = NULL
+  compress_rasters = NULL,
+  max_procs = NULL
 )
 
 wbt_wd(wd = NULL)
@@ -22,6 +24,8 @@ wbt_wd(wd = NULL)
 wbt_verbose(verbose = NULL)
 
 wbt_compress_rasters(compress_rasters = NULL)
+
+wbt_max_procs(max_procs = NULL)
 }
 \arguments{
 \item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.}
@@ -33,17 +37,21 @@ wbt_compress_rasters(compress_rasters = NULL)
 \item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
 
 \item{compress_rasters}{Default: \code{NULL}; if logical, set the package option \code{whitebox.compress_rasters} to specified value}
+
+\item{max_procs}{Default: \code{NULL}; if integer, set the package option \code{whitebox.max_procs} to specified value}
 }
 \value{
 \code{wbt_init()}: logical; \code{TRUE} if binary file is found at \code{exe_path}
 
-\code{wbt_options()}:  an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose} options
+\code{wbt_options()}: an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose}, \code{whitebox.compress_rasters}, and \code{whitebox.max_procs} options
 
 \code{wbt_wd()}: character; when working directory is unset, will not add \verb{--wd=} arguments to calls and should be the same as using \code{getwd()}. See Details.
 
 \code{wbt_verbose()}: logical; defaults to result of \code{interactive()}
 
 \code{wbt_compress_rasters()}: logical; defaults to \code{FALSE}
+
+\code{wbt_max_procs()}: integer; defaults to \code{-1}
 }
 \description{
 \code{wbt_init()}: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with \code{exe_path}.
@@ -61,6 +69,8 @@ wbt_compress_rasters(compress_rasters = NULL)
 \code{wbt_verbose()}: Check verbose options for WhiteboxTools
 
 \code{wbt_compress_rasters()}: Check raster compression options for WhiteboxTools
+
+\code{wbt_max_procs()}: Check maximum number of processes for WhiteboxTools
 }
 \details{
 \code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which is equivalent to \code{wbt_wd(getwd())}.
@@ -98,6 +108,12 @@ wbt_verbose(verbose = TRUE)
 ## wbt_compress_rasters():
 
 wbt_compress_rasters(compress_rasters = TRUE)
+}
+\dontrun{
+
+## wbt_max_procs():
+
+wbt_max_procs(max_procs = 2)
 }
 }
 \seealso{
