@@ -2,6 +2,7 @@
 
 export(check_whitebox_binary)
 export(install_whitebox)
+export(sample_dem_data)
 export(wbt_absolute_value)
 export(wbt_accumulation_curvature)
 export(wbt_adaptive_filter)
@@ -539,3 +540,4 @@ export(wbt_z_scores)
 export(wbt_zlidar_to_las)
 export(wbt_zonal_statistics)
 importFrom(utils,browseURL)
+importFrom(utils,download.file)
