@@ -67,7 +67,7 @@ def function_block(line, ff):
     start = line.find("(") + 1
     end = len(line) - 1
     argument = line[start:end]
-    function_head = "wbt_" + function_name + " <- function(" + argument + ") {"
+    function_head = "wbt_" + function_name + " <- function(" + argument + ", command_only=FALSE) {"
     ff.write(function_head + "\n")
     ff.write("  wbt_init()" + "\n")
     ff.write('  args <- ""' + "\n")
@@ -102,7 +102,7 @@ def function_block(line, ff):
 
     ff.write("  tool_name <- \""+function_name+"\"\n")
     # ff.write('  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]' + "\n")
-    ff.write("  wbt_run_tool(tool_name, args, verbose_mode)" + "\n")
+    ff.write("  wbt_run_tool(tool_name, args, verbose_mode, command_only)" + "\n")
     ff.write("}" + "\n")
     ff.write("\n\n")
 

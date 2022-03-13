@@ -12,7 +12,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -30,7 +30,7 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "accumulation_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -47,7 +47,7 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -62,7 +62,7 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "aspect"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -81,7 +81,7 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--routes=", wbt_file_path(routes)))
@@ -100,7 +100,7 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "assess_route"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -117,7 +117,7 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -132,7 +132,7 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "average_normal_vector_angular_deviation"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -149,7 +149,7 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -164,7 +164,7 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "circular_variance_of_aspect"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -186,7 +186,7 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max_triangle_edge_length=NULL, interval=10.0, base=0.0, smooth=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max_triangle_edge_length=NULL, interval=10.0, base=0.0, smooth=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -216,7 +216,7 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "contours_from_points"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -236,7 +236,7 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smooth=9, tolerance=10.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smooth=9, tolerance=10.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -260,7 +260,7 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "contours_from_raster"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -278,7 +278,7 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -296,7 +296,7 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "curvedness"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -314,7 +314,7 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -332,7 +332,7 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "dev_from_mean_elev"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -350,7 +350,7 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -368,7 +368,7 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "diff_from_mean_elev"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -386,7 +386,7 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -404,7 +404,7 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "difference_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -422,7 +422,7 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -440,7 +440,7 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "directional_relief"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -458,7 +458,7 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -476,7 +476,7 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "downslope_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -495,7 +495,7 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -516,7 +516,7 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "edge_density"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -532,7 +532,7 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -544,7 +544,7 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compres
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_above_pit"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -563,7 +563,7 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compres
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -584,7 +584,7 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_percentile"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -600,7 +600,7 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -612,7 +612,7 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALS
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_relative_to_min_max"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -629,7 +629,7 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -642,7 +642,7 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "elev_relative_to_watershed_min_max"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -667,7 +667,7 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_road_width=6.0, typical_width=30.0, max_height=2.0, max_width=60.0, max_increment=0.05, spillout_slope=4.0, remove_embankments=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_road_width=6.0, typical_width=30.0, max_height=2.0, max_width=60.0, max_increment=0.05, spillout_slope=4.0, remove_embankments=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -704,7 +704,7 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "embankment_mapping"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -723,7 +723,7 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="", zfactor="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="", zfactor="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -744,7 +744,7 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "exposure_towards_wind_flux"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -765,7 +765,7 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=15.0, num_iter=3, max_diff=0.5, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -792,7 +792,7 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "feature_preserving_smoothing"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -810,7 +810,7 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -828,7 +828,7 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "fetch_analysis"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -847,7 +847,7 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -868,7 +868,7 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "fill_missing_data"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -885,7 +885,7 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -900,7 +900,7 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "find_ridges"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -918,7 +918,7 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -936,7 +936,7 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "gaussian_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -960,7 +960,7 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, points=NULL, sigma=0.5, step=0.5, num_steps=10, lsp="Slope", z_factor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, points=NULL, sigma=0.5, step=0.5, num_steps=10, lsp="Slope", z_factor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -992,7 +992,7 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "gaussian_scale_space"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1010,7 +1010,7 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1028,7 +1028,7 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "generating_function"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1048,7 +1048,7 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, forms=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, forms=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1072,7 +1072,7 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, form
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "geomorphons"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1091,7 +1091,7 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, form
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1112,7 +1112,7 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hillshade"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1130,7 +1130,7 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1148,7 +1148,7 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "horizon_angle"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1166,7 +1166,7 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1184,7 +1184,7 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "horizontal_excess_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1201,7 +1201,7 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
@@ -1216,7 +1216,7 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hypsometric_analysis"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1240,7 +1240,7 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_weight=0.5, brightness=0.5, atmospheric=0.0, palette="atlas", reverse=FALSE, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_weight=0.5, brightness=0.5, atmospheric=0.0, palette="atlas", reverse=FALSE, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1276,7 +1276,7 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "hypsometrically_tinted_hillshade"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1297,7 +1297,7 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -1322,7 +1322,7 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "local_hypsometric_analysis"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1339,7 +1339,7 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1354,7 +1354,7 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "local_quadratic_regression"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1372,7 +1372,7 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1390,7 +1390,7 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "map_off_terrain_objects"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1410,7 +1410,7 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale=3, step=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1430,7 +1430,7 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_anisotropy_dev"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1450,7 +1450,7 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1470,7 +1470,7 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_anisotropy_dev_signature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1487,7 +1487,7 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1502,7 +1502,7 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_branch_length"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1522,7 +1522,7 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1540,7 +1540,7 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_difference_from_mean"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1556,7 +1556,7 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1568,7 +1568,7 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_downslope_elev_change"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1588,7 +1588,7 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale, step=10, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1606,7 +1606,7 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_elev_dev_signature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1626,7 +1626,7 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_scale, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1644,7 +1644,7 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_elevation_deviation"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1660,7 +1660,7 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1672,7 +1672,7 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_upslope_elev_change"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1690,7 +1690,7 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1708,7 +1708,7 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "maximal_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1726,7 +1726,7 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1744,7 +1744,7 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "mean_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1760,7 +1760,7 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1772,7 +1772,7 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "min_downslope_elev_change"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1790,7 +1790,7 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1808,7 +1808,7 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "minimal_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1827,7 +1827,7 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=NULL, full_mode=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1848,7 +1848,7 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multidirectional_hillshade"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1870,7 +1870,7 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_digits=3, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_digits=3, min_scale=4, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1898,7 +1898,7 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_elevation_percentile"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1918,7 +1918,7 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1938,7 +1938,7 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_roughness"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1958,7 +1958,7 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, min_scale=1, step=1, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1978,7 +1978,7 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_roughness_signature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -1999,7 +1999,7 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2024,7 +2024,7 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_std_dev_normals"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2045,7 +2045,7 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_scale=1, step=1, num_steps=10, step_nonlinearity=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2070,7 +2070,7 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_std_dev_normals_signature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2089,7 +2089,7 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--local=", wbt_file_path(local)))
@@ -2106,7 +2106,7 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "multiscale_topographic_position_image"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2122,7 +2122,7 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2134,7 +2134,7 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "num_downslope_neighbours"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2150,7 +2150,7 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2162,7 +2162,7 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "num_upslope_neighbours"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2180,7 +2180,7 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -2196,7 +2196,7 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "openness"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2216,7 +2216,7 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2240,7 +2240,7 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "pennock_landform_class"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2258,7 +2258,7 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2276,7 +2276,7 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "percent_elev_range"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2294,7 +2294,7 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2312,7 +2312,7 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "plan_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2329,7 +2329,7 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--lines=", wbt_file_path(lines)))
@@ -2342,7 +2342,7 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "profile"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2360,7 +2360,7 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2378,7 +2378,7 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "profile_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2396,7 +2396,7 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2414,7 +2414,7 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "relative_aspect"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2432,7 +2432,7 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2450,7 +2450,7 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "relative_topographic_position"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2468,7 +2468,7 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2486,7 +2486,7 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "remove_off_terrain_objects"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2504,7 +2504,7 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2522,7 +2522,7 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "ring_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2540,7 +2540,7 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2558,7 +2558,7 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "rotor"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2575,7 +2575,7 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2590,7 +2590,7 @@ wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mod
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "ruggedness_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2609,7 +2609,7 @@ wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, slope_exponent=1.3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--sca=", wbt_file_path(sca)))
@@ -2628,7 +2628,7 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "sediment_transport_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2652,7 +2652,7 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", date="21/06/2021", interval=15, location="43.5448/-80.2482/-4", height=600, delay=250, label="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", date="21/06/2021", interval=15, location="43.5448/-80.2482/-4", height=600, delay=250, label="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -2688,7 +2688,7 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shadow_animation"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2709,7 +2709,7 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="21/06/2021", time="1300", location="43.5448/-80.2482/-4", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="21/06/2021", time="1300", location="43.5448/-80.2482/-4", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -2736,7 +2736,7 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shadow_image"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2753,7 +2753,7 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2768,7 +2768,7 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALS
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "shape_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2786,7 +2786,7 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2804,7 +2804,7 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "slope"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2823,7 +2823,7 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -2844,7 +2844,7 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "slope_vs_aspect_plot"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2861,7 +2861,7 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
@@ -2876,7 +2876,7 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "slope_vs_elevation_plot"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2895,7 +2895,7 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_threshold=1.0, scale_threshold=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_threshold=1.0, scale_threshold=5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -2916,7 +2916,7 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "smooth_vegetation_residual"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2933,7 +2933,7 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -2948,7 +2948,7 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "spherical_std_dev_of_normals"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -2967,7 +2967,7 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx=11, filtery=11, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -2988,7 +2988,7 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "standard_deviation_of_slope"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3006,7 +3006,7 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--sca=", wbt_file_path(sca)))
@@ -3022,7 +3022,7 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "stream_power_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3038,7 +3038,7 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3050,7 +3050,7 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "surface_area_ratio"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3068,7 +3068,7 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3086,7 +3086,7 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "tangential_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3111,7 +3111,7 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_dist=100.0, utc_offset="0000", start_day=1, end_day=365, start_time="000000", end_time="235959", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_dist=100.0, utc_offset="0000", start_day=1, end_day=365, start_time="000000", end_time="235959", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3146,7 +3146,7 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "time_in_daylight"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3170,7 +3170,7 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd", min_scale=1, num_steps=100, step_nonlinearity=1.5, height=600, delay=250, label="", dev_max=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd", min_scale=1, num_steps=100, step_nonlinearity=1.5, height=600, delay=250, label="", dev_max=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -3206,7 +3206,7 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "topographic_position_animation"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3224,7 +3224,7 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3242,7 +3242,7 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "total_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3260,7 +3260,7 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3278,7 +3278,7 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "unsphericity"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3296,7 +3296,7 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3314,7 +3314,7 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "vertical_excess_curvature"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3332,7 +3332,7 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3348,7 +3348,7 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "viewshed"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3366,7 +3366,7 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -3384,7 +3384,7 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "visibility_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
@@ -3401,7 +3401,7 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_wetness_index <- function(sca, slope, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE) {
+wbt_wetness_index <- function(sca, slope, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--sca=", wbt_file_path(sca)))
@@ -3414,7 +3414,7 @@ wbt_wetness_index <- function(sca, slope, output, wd=NULL, verbose_mode=FALSE, c
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "wetness_index"
-  wbt_run_tool(tool_name, args, verbose_mode)
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
 
