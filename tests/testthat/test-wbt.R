@@ -69,6 +69,8 @@ test_that("wbt setting and using working directories", {
   
   dem <- whitebox:::sample_dem_data()
   
+  skip_if(dem == "")
+  
   tf <- tempfile(fileext = ".tif")
   
   mywd <- dirname(tf)
@@ -185,6 +187,14 @@ test_that("wbt utility functions [requires WhiteboxTools installed]", {
 })
 
 test_that("wbt raster compression", {
+  
+  skip_on_cran()
+  
+  skip_if_not(check_whitebox_binary())
+  
+  dem <- whitebox:::sample_dem_data()
+  
+  skip_if(dem == "")
   
   wbt_geomorphons(whitebox:::sample_dem_data(), output = "test_compressed.tif", compress_rasters = TRUE)
   

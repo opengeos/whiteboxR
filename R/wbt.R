@@ -870,12 +870,55 @@ wbt_file_path <- function(x, shell_quote = TRUE) {
   })
 }
 
-# convenience method for sample DEM
-sample_dem_data <- function() {
-  system.file("extdata/DEM.tif", package = "whitebox")[1]
+#' Convenience method for path to sample DEM
+#' 
+#' Get a file path to DEM.tif stored in extdata subfolder of whitebox package installation directory. If needed, download the TIFF file from GitHub.
+#' 
+#' @param destfile Path to target location of sample data. Will be downloaded if does not exist. Defaults to file path of extdata subfolder of whitebox package installation directory.
+#' @param ... additional arguments to download.file()
+#'
+#' @return character. 
+#' @export
+#'
+#' @examples
+#' 
+#' if (check_whitebox_binary()) {
+#'   wbt_slope(sample_dem_data(), output = "slope.tif")
+#' }
+#' unlink(c('slope.tif', 'settings.json'))
+#' @importFrom utils download.file
+sample_dem_data <- function(destfile = file.path(system.file('extdata', package="whitebox"), 'DEM.tif'), ...) {
+  if (missing(destfile)) {
+    fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
+  } else {
+    if (!file.exists(destfile)) {
+      fp <- ""
+    } else {
+      fp <- destfile
+    }
+  }
+  if (fp == "") {
+    try(download.file("https://github.com/giswqs/whiteboxR/raw/master/inst/extdata/DEM.tif", 
+                      destfile = destfile, 
+                      mode = "wb", ...))
+    if (missing(destfile)) {
+      fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
+    } else {
+      if (file.exists(destfile)) {
+        fp <- destfile
+      }
+    }
+  }
+  fp
 }
 
-# convenience method for setting RUST_BACKTRACE options for debugging
+#' Convenience method for setting RUST_BACKTRACE options for debugging
+#'
+#' @param RUST_BACKTRACE One of `"0"`, `"1"`, `"full"`
+#'
+#' @return value of system environment variable `RUST_BACKTRACE`
+#' @keywords internal
+#' @noRd
 wbt_rust_backtrace <- function(RUST_BACKTRACE = c("0", "1", "full")) {
   Sys.setenv(RUST_BACKTRACE = match.arg(as.character(RUST_BACKTRACE)[1], 
                                         choices = c("0", "1", "full")))

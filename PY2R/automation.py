@@ -361,10 +361,8 @@ with open(wbt_py) as f:
                         f.write('test_that("' + desc + '", {\n\n')
                         f.write("  skip_on_cran()\n")
                         f.write("  skip_if_not(check_whitebox_binary())\n")
-                        f.write(
-                            '  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
-                        f.write(
-                            '  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
+                        f.write('  dem <- sample_dem_data(); skip_if(dem == "")\n')
+                        f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
                         f.write('  expect_match(ret, "Elapsed Time")\n\n')
                         f.write("})\n")
                         print(test_file_path)
