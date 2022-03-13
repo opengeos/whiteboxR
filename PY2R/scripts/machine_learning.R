@@ -30,8 +30,8 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "dbscan"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -80,8 +80,8 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "k_means_clustering"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -128,8 +128,8 @@ wbt_knn_classification <- function(inputs, training, field, output, scaling="Nor
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "knn_classification"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -178,8 +178,8 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "knn_regression"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -220,8 +220,8 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "logistic_regression"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -268,8 +268,8 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "modified_k_means_clustering"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -322,8 +322,8 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "random_forest_classification"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -372,8 +372,8 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "random_forest_regression"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -426,8 +426,8 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "svm_classification"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -480,8 +480,8 @@ wbt_svm_regression <- function(inputs, training, field, scaling="Normalize", out
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "svm_regression"
   wbt_run_tool(tool_name, args, verbose_mode)

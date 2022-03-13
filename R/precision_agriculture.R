@@ -38,8 +38,8 @@ wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, out
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "reconcile_multiple_headers"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -78,8 +78,8 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "recreate_pass_lines"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -118,8 +118,8 @@ wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "remove_field_edge_points"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -166,8 +166,8 @@ wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "yield_filter"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -204,8 +204,8 @@ wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_chang
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "yield_map"
   wbt_run_tool(tool_name, args, verbose_mode)
@@ -250,8 +250,8 @@ wbt_yield_normalization <- function(input, yield_field, output, standardize=FALS
   if (!is.null(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (compress_rasters) {
-    args <- paste(args, "--compress_rasters")
+  if (!is.null(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "yield_normalization"
   wbt_run_tool(tool_name, args, verbose_mode)

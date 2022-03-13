@@ -81,12 +81,7 @@ def function_block(line, ff):
             )
         elif "verbose" in item:
             continue
-        elif "=FALSE" in item:
-            para = item.split("=")[0]
-            ff.write("  if (" + para + ") {" + "\n")
-            ff.write('    args <- paste(args, "--' + para + '")' + "\n")
-            ff.write("  }" + "\n")
-        elif "=TRUE" in item:
+        elif not "compress_rasters" in item and "=FALSE" in item or "=TRUE" in item:
             para = item.split("=")[0]
             ff.write("  if (" + para + ") {" + "\n")
             ff.write('    args <- paste(args, "--' + para + '")' + "\n")
@@ -110,7 +105,6 @@ def function_block(line, ff):
     ff.write("  wbt_run_tool(tool_name, args, verbose_mode)" + "\n")
     ff.write("}" + "\n")
     ff.write("\n\n")
-
 
 # Extract function example usage
 def function_example(fun_name):
