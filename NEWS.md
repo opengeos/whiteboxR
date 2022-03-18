@@ -1,3 +1,7 @@
+# whitebox 2.1.2
+
+ * Fixes regression in checking "Demo" vignette on CRAN
+ 
 # whitebox 2.1.1
 
  * File path arguments to tools now automatically perform path expansion (converting `~` to your home directory with `path.expand()`). This also works on arguments that contain comma or semicolon delimited lists. (https://github.com/giswqs/whiteboxR/issues/62)
