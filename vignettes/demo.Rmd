@@ -10,6 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   eval = whitebox::check_whitebox_binary(),
+  echo = TRUE,
   collapse = TRUE,
   comment = "#>",
   fig.width = 6,
@@ -17,10 +18,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include=FALSE, echo=FALSE, eval=TRUE}
+# setup so inline stats on version/tools show up
 library(whitebox)
+data("wbttoolparameters", package="whitebox")
+```
 
+```{r setup, include=FALSE}
 # # sample code to check and install whitebox to a custom path
 # if (!whitebox::check_whitebox_binary()) {
 #   wd <- tempdir()
@@ -501,17 +505,13 @@ wbt_version()
 
 ### `wbt_list_tools()`
 
-```{r include=FALSE}
-data("wbttoolparameters", package="whitebox")
-```
-
 Use `wbt_list_tools()` to list all available tools in WhiteboxTools. In version `r attr(wbttoolparameters, 'version')` there are over `r (length(whitebox::wbt_list_tools()) - 1)` tools! See all the available [toolboxes](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html) and [extensions](https://www.whiteboxgeo.com/whitebox-geospatial-extensions/).
 
 ```{r, eval=FALSE}
 wbt_list_tools()
 ```
 
-The full list can be an overwhelming amount of output, so you pass the `keyword` argument to search and filter.
+The full list can be an overwhelming amount of output, so you pass the `keywords` argument to search and filter.
 
 For example we list tools with keyword 'flowaccumulation' in tool name or description.
 
@@ -545,7 +545,7 @@ wbt_toolbox(tool_name = "aspect")
 
 Print the full list by not specifying `tool_name`
 
-```{r, eval=FALSE}
+```{r}
 wbt_toolbox()
 ```
 
