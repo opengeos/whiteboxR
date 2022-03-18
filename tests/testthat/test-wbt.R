@@ -186,11 +186,13 @@ test_that("wbt utility functions [requires WhiteboxTools installed]", {
   expect_true(is.character(wbt_tool_help()))
 })
 
-test_that("wbt raster compression", {
+test_that("wbt raster compression (requires WhiteboxTools v2.1.0 or higher)", {
   
   skip_on_cran()
   
   skip_if_not(check_whitebox_binary())
+  
+  skip_if_not(wbt_version() >= "2.1.0")
   
   dem <- sample_dem_data()
   
