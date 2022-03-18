@@ -9,6 +9,7 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  eval = whitebox::check_whitebox_binary(),
   collapse = TRUE,
   comment = "#>",
   fig.width = 6,
