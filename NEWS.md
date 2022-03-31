@@ -1,3 +1,9 @@
+# whitebox 2.1.3
+
+ * Updates to fix issues with permissions to write _settings.jso*n_
+ 
+ * Generated `whitebox_tools` commands no longer include flags for default arguments
+
 # whitebox 2.1.2
 
  * Fixes regression in checking "Demo" vignette on CRAN

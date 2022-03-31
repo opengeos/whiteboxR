@@ -28,10 +28,10 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
   if (!is.null(min_points)) {
     args <- paste(args, paste0("--min_points=", min_points))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "dbscan"
@@ -79,10 +79,10 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
   if (!is.null(min_class_size)) {
     args <- paste(args, paste0("--min_class_size=", min_class_size))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "k_means_clustering"
@@ -128,10 +128,10 @@ wbt_knn_classification <- function(inputs, training, field, output, scaling="Nor
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "knn_classification"
@@ -179,10 +179,10 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "knn_regression"
@@ -222,10 +222,10 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "logistic_regression"
@@ -271,10 +271,10 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
   if (!is.null(class_change)) {
     args <- paste(args, paste0("--class_change=", class_change))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "modified_k_means_clustering"
@@ -326,10 +326,10 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "random_forest_classification"
@@ -377,10 +377,10 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "random_forest_regression"
@@ -432,10 +432,10 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "svm_classification"
@@ -487,10 +487,10 @@ wbt_svm_regression <- function(inputs, training, field, scaling="Normalize", out
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
-  if (!is.null(wd)) {
+  if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
   }
-  if (!is.null(compress_rasters)) {
+  if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "svm_regression"
