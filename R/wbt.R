@@ -315,7 +315,7 @@ wbt_verbose <- function(verbose = NULL) {
 #'
 #' @param compress_rasters Default: `NULL`; if logical, set the package option `whitebox.compress_rasters` to specified value
 #'
-#' @return `wbt_compress_rasters()`: logical; defaults to `FALSE`
+#' @return `wbt_compress_rasters()`: logical; defaults to `NA`
 #' @rdname wbt_init
 #' @export
 #' @examples
@@ -356,7 +356,7 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
   res <- as.logical(getOption("whitebox.compress_rasters", default = NA))
 
   if (is.na(res) || !is.logical(res)) {
-    res <- FALSE
+    res <- NA
   }
 
   invisible(res)
@@ -366,7 +366,7 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
 #'
 #' @param max_procs Default: `NULL`; if integer, set the package option `whitebox.max_procs` to specified value
 #'
-#' @return `wbt_max_procs()`: integer; defaults to `-1`
+#' @return `wbt_max_procs()`: integer; defaults to `NA_integer_`
 #' @rdname wbt_init
 #' @export
 #' @examples
@@ -399,10 +399,10 @@ wbt_max_procs <- function(max_procs = NULL) {
   }
 
   # package option subsequently, default FALSE
-  res <- as.integer(getOption("whitebox.max_procs", default = NA))
+  res <- as.integer(getOption("whitebox.max_procs", default = NA_integer_))
 
   if (!is.integer(res)) {
-    res <- -1
+    res <- NA_integer_
   }
 
   invisible(res)

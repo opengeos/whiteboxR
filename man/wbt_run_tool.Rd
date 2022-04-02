@@ -30,7 +30,7 @@ arg1 <- paste0("--dem=", dem)
 arg2 <- paste0("--output=", output)
 args <- paste(arg1, arg2)
 wbt_run_tool(tool_name, args)
-} 
+}
 }
 \seealso{
 \link{wbt_list_tools}
