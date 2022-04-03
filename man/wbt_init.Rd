@@ -59,9 +59,9 @@ Returns the file path of WhiteboxTools executable.
 
 \code{wbt_verbose()}: logical; defaults to result of \code{interactive()}
 
-\code{wbt_compress_rasters()}: logical; defaults to \code{FALSE}
+\code{wbt_compress_rasters()}: logical; defaults to \code{NA}
 
-\code{wbt_max_procs()}: integer; defaults to \code{-1}
+\code{wbt_max_procs()}: integer; defaults to \code{NA_integer_}
 }
 \description{
 \code{wbt_init()}: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with \code{exe_path}.

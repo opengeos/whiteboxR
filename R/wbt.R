@@ -1,7 +1,7 @@
 #' Initialize WhiteboxTools
 #'
-#' `wbt_init()`: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with `exe_path`. 
-#' 
+#' `wbt_init()`: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with `exe_path`.
+#'
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
 #' @param ... additional arguments to `wbt_options()`
 #' @return `wbt_init()`: logical; `TRUE` if binary file is found at `exe_path`
@@ -10,29 +10,29 @@
 #' @examples
 #' \dontrun{
 #' ## wbt_init():
-#' 
+#'
 #' # set path to binary as an argument
 #' # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 #' }
 wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
-  
+
   # optional parameters specified by ...
   initargs <- list(...)
   wd <- initargs[["wd"]]
   verbose <- initargs[["verbose"]]
   compress_rasters <- initargs[["compress_rasters"]]
-  
+
   if (!is.character(exe_path) || length(exe_path) != 1) {
     stop("exe_path must be a character vector with length 1", call. = FALSE)
   }
-  
+
   exe_path <- path.expand(exe_path)
-  
+
   # if exe_path is not NULL and file exists, and value differs from the wbt_exe_path() result
-  if ((!is.null(exe_path) && 
+  if ((!is.null(exe_path) &&
         file.exists(exe_path) &&
-        exe_path != wbt_exe_path(shell_quote = FALSE)) || 
-      !is.null(wd) || 
+        exe_path != wbt_exe_path(shell_quote = FALSE)) ||
+      !is.null(wd) ||
       !is.null(verbose) ||
       !is.null(compress_rasters)) {
     # set the path with wbt_options
@@ -41,11 +41,11 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 
   # check whether path exists (using new options)
   res1 <- check_whitebox_binary()
-  
+
   # success? binary found matches path the user (may have) set, return TRUE
   new_exe_path <- wbt_exe_path(shell_quote = FALSE)
   res2 <- new_exe_path == exe_path
-  
+
   # if the wbt_exe_path() output doesnt match user input
   if (!res2) {
     if (wbt_verbose()) {
@@ -56,23 +56,23 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 }
 
 #' @description `wbt_options()`: Get/set package options
-#' 
+#'
 #' - **`whitebox.exe_path`** - character. Path to executable file. The default value is the package installation directory, subdirectory `"WBT"`, followed by `whitebox_tools.exe` or `whitebox_tools`. Set the `whitebox.exe_path` option using `wbt_init()` `exe_path` argument
-#' 
+#'
 #' - **`whitebox.wd`** - character. Path to WhiteboxTools working directory. Used as `--wd` argument for tools that support it when `wd` is not specified elsewhere.
-#' 
+#'
 #' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? Default is result of `interactive()`. Individual tools may have `verbose_mode` setting that produce only single-line output when `FALSE`. These argument values are left as the defaults defined in the package documentation for that function. When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument.
-#' 
+#'
 #' - **`whitebox.compress_rasters`** - logical. Should raster output from WhiteboxTools be compressed? Default: `FALSE`. Set the value of `whitebox.compress_rasters` with `wbt_compress_rasters()` `compress_rasters` argument.
-#' 
+#'
 #' - **`whitebox.max_procs`** - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: `-1` uses all of the available cores.
-#' 
+#'
 #' @return `wbt_options()`: an invisible list containing current `whitebox.exe_path`, `whitebox.verbose`, `whitebox.compress_rasters`, and `whitebox.max_procs` options
 #' @rdname wbt_init
-#' @export 
-#' @examples 
+#' @export
+#' @examples
 #' \dontrun{
-#' 
+#'
 #' ## wbt_options():
 #'
 #' # set multiple options (e.g. exe_path and verbose) with wbt_options()
@@ -84,64 +84,64 @@ wbt_options <- function(exe_path = NULL,
                         verbose = NULL,
                         compress_rasters = NULL,
                         max_procs = NULL) {
-  
+
   # get the system value
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   syswd <- Sys.getenv("R_WHITEBOX_WD")
   sysvrb <- Sys.getenv("R_WHITEBOX_VERBOSE")
   syscpr <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS")
   sysmxp <- Sys.getenv("R_WHITEBOX_MAX_PROCS")
-  
+
   # check user input, set package options
   if (!is.null(exe_path)) {
     if (file.exists(exe_path)) exe_path <- path.expand(exe_path)
     options(whitebox.exe_path = exe_path)
   }
-  
+
   if (!is.null(wd)) {
     # preserve attributes if any on wd
     if (dir.exists(wd)) wd[1] <- path.expand(wd)
-    options(whitebox.wd = wd) 
+    options(whitebox.wd = wd)
   }
-  
+
   if (!is.null(verbose)) {
     options(whitebox.verbose = verbose)
   }
-  
+
   if (!is.null(compress_rasters)) {
     options(whitebox.compress_rasters = compress_rasters)
   }
-  
+
   if (!is.null(max_procs)) {
     options(whitebox.max_procs = max_procs)
   }
-  
+
   invisible(list(
     whitebox.exe_path = ifelse(nchar(syswbt) == 0,
-                               getOption("whitebox.exe_path", 
+                               getOption("whitebox.exe_path",
                                          default = wbt_exe_path(shell_quote = FALSE)),
                                syswbt),
     whitebox.wd       = ifelse(nchar(syswd)  == 0,
-                               getOption("whitebox.wd", 
+                               getOption("whitebox.wd",
                                          default = ""),
-                               syswd), 
+                               syswd),
     whitebox.verbose  = ifelse(nchar(sysvrb) == 0,
-                               getOption("whitebox.verbose", 
+                               getOption("whitebox.verbose",
                                          default = ""),
                                sysvrb),
     whitebox.compress_rasters = ifelse(nchar(syscpr) == 0,
-                                       as.logical(getOption("whitebox.compress_rasters", 
+                                       as.logical(getOption("whitebox.compress_rasters",
                                                             default = FALSE)),
                                        syscpr),
     whitebox.max_proc = ifelse(nchar(sysmxp) == 0,
-                                     as.integer(getOption("whitebox.max_proc", 
+                                     as.integer(getOption("whitebox.max_proc",
                                                           default = -1)),
                                      sysmxp)
   ))
 }
 
-#' @description `wbt_exe_path()`: Get the file path of the WhiteboxTools executable. 
-#' 
+#' @description `wbt_exe_path()`: Get the file path of the WhiteboxTools executable.
+#'
 #' @details `wbt_exe_path()`: Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards-compatible path is returned by `wbt_default_path()`
 #'
 #' @param exe_path Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`
@@ -160,7 +160,7 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   pkgwbt <- getOption("whitebox.exe_path")
   defwbt <- wbt_default_path()
-  
+
   if (!is.null(exe_path) && file.exists(exe_path)) {
     # user specified as argument
     res <- exe_path
@@ -173,7 +173,7 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   } else {
     res <- defwbt
   }
-  
+
   if (shell_quote) {
     return(shQuote(res))
   }
@@ -183,38 +183,38 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
 #' @export
 #' @rdname wbt_init
 wbt_default_path <- function() {
-  
+
   exe <- "whitebox_tools"
-  
+
   # system specific executable filename
   os <- Sys.info()["sysname"]
   if (os == "Windows") {
     exe <- "whitebox_tools.exe"
   }
-  
-  # backwards compatible path  
+
+  # backwards compatible path
   file.path(find.package("whitebox"), "WBT", exe)
 }
 
 #' @description `wbt_wd()`: Get or set the WhiteboxTools working directory. Default: `""` (unset) is your R working directory if no other options are set.
-#' 
+#'
 #' @param wd character; Default: `NULL`; if set the package option `whitebox.wd` is set specified path (if directory exists)
-#' 
+#'
 #' @return `wbt_wd()`: character; when working directory is unset, will not add `--wd=` arguments to calls and should be the same as using `getwd()`. See Details.
-#' 
-#' @details `wbt_wd()`: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. 
+#'
+#' @details `wbt_wd()`: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`.
 #' @rdname wbt_init
 #' @export
-#' @examples 
+#' @examples
 #' \dontrun{
-#' 
+#'
 #' ## wbt_wd():
 #'
 #' # set WBT working directory to R working directory
 #' wbt_wd(wd = getwd())
 #' }
 wbt_wd <- function(wd = NULL) {
-  
+
   # system environment var takes precedence
   syswd <- Sys.getenv("R_WHITEBOX_WD")
   if (nchar(syswd) > 0 && dir.exists(syswd)) {
@@ -231,16 +231,16 @@ wbt_wd <- function(wd = NULL) {
       cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
     }
     wd <- "" #structure(curwd, unset = TRUE)
-  } 
-  
+  }
+
   if (is.character(wd)) {
     # if character input, set the package option "wd"
     wbt_options(wd = wd)
-  } 
-  
+  }
+
   # package option checked next; if missing default is getwd() (unspecified should be same as getwd())
   res <- getOption("whitebox.wd")
-  
+
   # an empty string silently stays an empty string
   if (is.null(res) || nchar(res) == 0) {
     res <- ""
@@ -249,20 +249,20 @@ wbt_wd <- function(wd = NULL) {
     message("Invalid path for `whitebox.wd`: directory does not exist.\nDefaulting to current R working directory: ", getwd())
     res <- getwd()
   }
-  
+
   invisible(res)
 }
 
 #' @description `wbt_verbose()`: Check verbose options for WhiteboxTools
-#' 
+#'
 #' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
-#' 
+#'
 #' @return `wbt_verbose()`: logical; defaults to result of `interactive()`
 #' @rdname wbt_init
 #' @export
-#' @examples 
+#' @examples
 #' \dontrun{
-#' 
+#'
 #' ## wbt_verbose():
 #'
 #' wbt_verbose(verbose = TRUE)
@@ -272,35 +272,35 @@ wbt_verbose <- function(verbose = NULL) {
   if (length(verbose) != 1 || is.na(verbose)) {
     verbose <- NULL
   }
-    
+
   # system environment var takes precedence
   sysverbose <- Sys.getenv("R_WHITEBOX_VERBOSE", unset = "")
   if (sysverbose == "all") {
-    
+
     # wbt_verbose always return logical, "all" is a flavor of true
     return(TRUE)
-    
+
   } else if (sysverbose != "") {
-    
+
     # take up to first 5 characters, uppercase eval/parse/convert to logical
     # this should also allow for 0/1 to be specified and converted as needed to logical
     sysverbose <- as.logical(eval(parse(text = toupper(substr(sysverbose, 0, 5)))))
-    
+
   }
-    
+
   # if logical system env var, use that
   if (is.logical(sysverbose) && !is.na(sysverbose)) {
     return(sysverbose)
   }
-  
+
   # if logical input, set the package option "verbose"
   if (is.logical(verbose) || (!is.null(verbose) && verbose == "all")) {
     wbt_options(verbose = verbose)
   }
-  
+
   # package option subsequently, default true for interactive use
   res <- as.logical(getOption("whitebox.verbose", default = interactive()))
-  
+
   if (is.na(res) || (!is.null(verbose) && verbose == "all")) {
     res <- TRUE
   } else if (is.na(res) || !is.logical(res)) {
@@ -312,15 +312,15 @@ wbt_verbose <- function(verbose = NULL) {
 }
 
 #' @description `wbt_compress_rasters()`: Check raster compression option for WhiteboxTools. Default: `FALSE`
-#' 
+#'
 #' @param compress_rasters Default: `NULL`; if logical, set the package option `whitebox.compress_rasters` to specified value
-#' 
-#' @return `wbt_compress_rasters()`: logical; defaults to `FALSE`
+#'
+#' @return `wbt_compress_rasters()`: logical; defaults to `NA`
 #' @rdname wbt_init
 #' @export
-#' @examples 
+#' @examples
 #' \dontrun{
-#' 
+#'
 #' ## wbt_compress_rasters():
 #'
 #' wbt_compress_rasters(compress_rasters = TRUE)
@@ -330,49 +330,48 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
   if (length(compress_rasters) != 1 || is.na(compress_rasters)) {
     compress_rasters <- NULL
   }
-  
+
   # system environment var takes precedence
-  syscompress <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS", unset = FALSE)
-  if (syscompress != "") {
-    
+  syscompress <- Sys.getenv("R_WHITEBOX_COMPRESS_RASTERS", unset = NA)
+  if (!is.na(syscompress)) {
+
     # take up to first 5 characters, uppercase eval/parse/convert to logical
     # this should also allow for 0/1 to be specified and converted as needed to logical
     syscompress <- as.logical(eval(parse(
       text = toupper(substr(syscompress, 0, 5))
     )))
   }
-  
+
   # if logical system env var, use that
   if (is.logical(syscompress) && !is.na(syscompress)) {
     return(syscompress)
   }
-  
+
   # if logical input, set the package option "compress_rasters"
   if (is.logical(compress_rasters)) {
     wbt_options(compress_rasters = compress_rasters)
   }
-  
+
   # package option subsequently, default FALSE
-  res <- as.logical(getOption("whitebox.compress_rasters", default = FALSE))
-  
+  res <- as.logical(getOption("whitebox.compress_rasters", default = NA))
+
   if (is.na(res) || !is.logical(res)) {
-    message('Invalid value for whitebox.compress_rasters, defaulting to FALSE')
-    res <- FALSE
+    res <- NA
   }
-  
+
   invisible(res)
 }
 
 #' @description `wbt_max_procs()`: Check maximum number of processes for  for tools that run in parallel or partially parallelize. Default: `-1` uses all of the available cores.
-#' 
+#'
 #' @param max_procs Default: `NULL`; if integer, set the package option `whitebox.max_procs` to specified value
-#' 
-#' @return `wbt_max_procs()`: integer; defaults to `-1`
+#'
+#' @return `wbt_max_procs()`: integer; defaults to `NA_integer_`
 #' @rdname wbt_init
 #' @export
-#' @examples 
+#' @examples
 #' \dontrun{
-#' 
+#'
 #' ## wbt_max_procs():
 #'
 #' wbt_max_procs(max_procs = 2)
@@ -382,31 +381,30 @@ wbt_max_procs <- function(max_procs = NULL) {
   if (length(max_procs) != 1 || is.na(max_procs)) {
     max_procs <- NULL
   }
-  
+
   # system environment var takes precedence
   sysmax_procs <- Sys.getenv("R_WHITEBOX_MAX_PROCS", unset = NA)
   if (!is.na(sysmax_procs)) {
     sysmax_procs <- as.integer(sysmax_procs)
   }
-  
+
   # if integer system env var, use that
   if (is.integer(sysmax_procs) && !is.na(sysmax_procs)) {
     return(sysmax_procs)
   }
-  
-  # if integer input, set the package option "compress_rasters"
+
+  # if integer input, set the package option "max_procs"
   if (is.numeric(max_procs)) {
     wbt_options(max_procs = as.integer(max_procs))
   }
-  
+
   # package option subsequently, default FALSE
-  res <- as.integer(getOption("whitebox.max_procs", default = -1))
-  
-  if (is.na(res) || !is.integer(res)) {
-    message('Invalid value for whitebox.max_procs, defaulting to -1')
-    res <- -1
+  res <- as.integer(getOption("whitebox.max_procs", default = NA_integer_))
+
+  if (!is.integer(res)) {
+    res <- NA_integer_
   }
-  
+
   invisible(res)
 }
 
@@ -414,34 +412,34 @@ wbt_max_procs <- function(max_procs = NULL) {
 #' @export
 #' @rdname install_whitebox
 wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
-  
+
   stopifnot(is.logical(force))
   stopifnot(length(pkg_dir) == 1)
   stopifnot(is.character(pkg_dir))
-  
+
   pkg_dir <- path.expand(pkg_dir)
-  
+
   # Check for binary file in 'WBT' directory
   exe_path <- wbt_default_path()
   os <- Sys.info()["sysname"]
-  
+
   .unsupported <- function(){
-    message("Sorry, whitebox download from https://www.whiteboxgeo.com/download-whiteboxtools/ is unsupported for your operating system!\n")     
+    message("Sorry, whitebox download from https://www.whiteboxgeo.com/download-whiteboxtools/ is unsupported for your operating system!\n")
     message("Pre-built binaries are available only for 64-bit Windows, Mac OS Intel and Linux (compiled w/ Ubuntu 20.04).")
     message("See: https://www.whiteboxgeo.com/download-whiteboxtools/ \n")
     message("You can follow the instructions at https://github.com/jblindsay/whitebox-tools to use cargo to build the Rust library from source.\n")
     message(paste0("If you have WhiteboxTools installed already, run `wbt_init(exe_path=...)`': \n",
                  "\twbt_init(exe_path='/home/user/path/to/whitebox_tools')\n"))
   }
-  
+
   # if not in package directory, and user has not specified a path
   if (!file.exists(exe_path) || pkg_dir != find.package('whitebox') || force) {
-    
+
     # install_whitebox/wbt_install is 64-bit only
     if (.Machine$sizeof.pointer != 8) {
       return(invisible(.unsupported()))
     }
-    
+
     if (os == "Linux") {
       url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
     } else if (os == "Windows") {
@@ -472,16 +470,16 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     }
     res <- -1
     for (method in c(if (os == "Windows") "wininet", "libcurl", "auto")) {
-      if (!inherits(try(res <- utils::download.file(url, exe_zip, method = method), silent = TRUE), 
+      if (!inherits(try(res <- utils::download.file(url, exe_zip, method = method), silent = TRUE),
                     "try-error") && res == 0)
         break
     }
-    
+
     if (res != 0) {
       message("Unable to download by any method! Try downloading ZIP manually from https://www.whiteboxgeo.com/download-whiteboxtools/. Installation involves just extracting to your desired directory. Set path to binary with wbt_init(exe_path = '/path/to/whitebox_tools')")
       return(invisible(NULL))
     }
-    
+
     # unzip to either whitebox package or user specified folder
     utils::unzip(exe_zip, exdir = pkg_dir)
 
@@ -501,15 +499,15 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
       cat("You can now start using whitebox\n")
       cat("    library(whitebox)\n")
       cat("    wbt_version()\n")
-      
+
       # call wbt_init (sets package option)
       wbt_init(exe_path = exe_path_out)
-    } 
-    
+    }
+
   } else if (!force) {
     cat("WhiteboxTools binary is located here: ", exe_path, "\n")
   }
-  
+
   # return installed path
   if (check_whitebox_binary()) {
     return(invisible(wbt_exe_path(shell_quote = FALSE)))
@@ -629,7 +627,7 @@ wbt_toolbox <- function(tool_name = NULL) {
                                                     paste0("=", tool_name), ""))
                         )
                         # , command_only = TRUE)
-                          
+
   # TODO: shell problems; fix null tool_name not working on windows
   # system(paste(wbt_exe_path(shell_quote = TRUE), '--toolbox'), intern = TRUE)
   # thread 'main' panicked at 'Unrecognized tool name C:\PROGRA~1\UNIVER~1.0_W\WBT\WHITEB~1.EXE.', src\main.rs:72:21 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -656,8 +654,8 @@ wbt_toolbox <- function(tool_name = NULL) {
 #' wbt_tool_help("lidar_info")
 #' }
 wbt_tool_help <- function(tool_name = NULL) {
-  ret <- wbt_system_call(paste0("--toolhelp", 
-                                ifelse(!is.null(tool_name), 
+  ret <- wbt_system_call(paste0("--toolhelp",
+                                ifelse(!is.null(tool_name),
                                        paste0("=", tool_name), "")))
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
@@ -672,9 +670,9 @@ wbt_tool_help <- function(tool_name = NULL) {
 #'
 #' @param tool_name The name of the tool.
 #' @param quiet Prevent tool output being printed. Default: `FALSE`
-#' 
+#'
 #' @details `quiet` argument can be set to `TRUE` to allow for "quiet" internal use within other functions.
-#' 
+#'
 #' @return Returns the tool parameter descriptions for a specific tool.
 #' @export
 #'
@@ -724,7 +722,7 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' @param verbose_mode Verbose mode. Without this flag, tool outputs will not be printed.
 #' @param command_only Return command that would be run with `system()`? Default: `FALSE`
 #'
-#' @return Returns the (character) output of the tool. 
+#' @return Returns the (character) output of the tool.
 #'
 #' @export
 #' @seealso \link{wbt_list_tools}
@@ -737,24 +735,24 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' arg2 <- paste0("--output=", output)
 #' args <- paste(arg1, arg2)
 #' wbt_run_tool(tool_name, args)
-#' } 
+#' }
 wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = FALSE) {
-  
+
   if (length(tool_name) > 1) {
     # take last tool_name in case of vector length >1
     # e.g. whitebox::wbt_tool_name match.call() output
     tool_name <- tool_name[length(tool_name)]
   }
-  
+
   # build the call with wbt_system_call()
   ret <-  wbt_system_call(paste(args, "-v"),
                           tool_name = tool_name,
                           command_only = command_only)
-        
+
   if (command_only) {
     return(ret)
   }
-  
+
   # produce a custom error message for tools to indicate it did not run
   if (length(ret) == 0 || all(nchar(ret) == 0) || !is.null(attr(ret, 'status'))) {
     ret <- paste(tool_name, "-", "Elapsed Time: NA [did not run]")
@@ -763,12 +761,12 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
     ret <- paste(tool_name, "-", ret[length(ret)])
   } else if (!verbose_mode) {
     ret <- paste(tool_name, "-", ret[length(ret)])
-  } 
-  
+  }
+
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
-  
+
   invisible(ret)
 }
 
@@ -784,7 +782,7 @@ wbt_system_call <- function(argstring,
                             command_only = FALSE,
                             ignore.stderr = FALSE,
                             shell_quote = TRUE) {
-    
+
   wbt_init()
   wbt_exe <- wbt_exe_path(shell_quote = shell_quote)
   args2 <- argstring
@@ -793,58 +791,58 @@ wbt_system_call <- function(argstring,
     message("NOTE: Argument string has length greater than 1; using first value")
     args2 <- args2[1]
   }
-  
+
   # messages about tool_name >1
   if (length(tool_name) > 1) {
     message("NOTE: tool_name argument has length greater than 1; using first name")
     tool_name <- tool_name[1]
   }
-  
-  # if working directory is not specified in the argstring, then pull the package option 
+
+  # if working directory is not specified in the argstring, then pull the package option
   if (!grepl("--wd=", args2)) {
     userwd <- wbt_wd()
     if (nchar(userwd) > 0) {
       argstring <- paste0(argstring, " --wd=", shQuote(userwd))
-    }  
+    }
     # don't add the --wd= argument if the system/package option is unset (value == "")
   }
-  
+
   # if compression is not specified in the argstring, then pull the package option
   if (!grepl("--compress_rasters", args2)) {
     crflag <- wbt_compress_rasters()
-    if (is.logical(crflag)) {
+    if (!is.na(crflag) && is.logical(crflag)) {
       argstring <- paste0(argstring, " --compress_rasters=", crflag)
       # add the --compress_rasters flag if needed
     }
   }
-  
+
   # if compression is not specified in the argstring, then pull the package option
   if (!grepl("--max_procs", args2)) {
     mxpflag <- wbt_max_procs()
-    if (is.integer(mxpflag)) {
+    if (!is.na(mxpflag) && is.integer(mxpflag)) {
       argstring <- paste0(argstring, " --max_procs=", mxpflag)
       # add the --max_procs flag if needed
     }
   }
-  
+
   # allow tool_name to be specified for --run= argument only via tool_name
   if (!is.null(tool_name) && tool_name != "") {
     tool_name <- wbt_internal_tool_name(tool_name)
     args2 <- paste0("--run=", tool_name, " ", argstring)
-    
+
     # TODO: QC on arguments based on supplied tool name and related metadata
-    
+
   } else {
     tool_name <- ""
   }
-  
+
   exeargs <- paste(wbt_exe, args2)
-  
+
   # support command_only argument
   if (command_only) {
     return(exeargs)
   }
-  
+
   stopmsg <- paste0("\nError running WhiteboxTools",
                     ifelse(tool_name != "",  paste0(" (", tool_name, ")"), ""), "\n",
                     "  whitebox.exe_path: ", wbt_exe, "; File exists? ",
@@ -854,7 +852,7 @@ wbt_system_call <- function(argstring,
     system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, ignore.stdout = FALSE),
     error = function(err) stop(stopmsg, "\n\n", err, call. = FALSE)
   )), silent = TRUE)
-  
+
   if (inherits(ret, 'try-error')) {
     message(ret[[1]])
     ret <- ret[[1]]
@@ -865,7 +863,7 @@ wbt_system_call <- function(argstring,
       ret[1] <- stopmsg
     }
   }
-  
+
   invisible(ret)
 }
 
@@ -881,17 +879,17 @@ wbt_file_path <- function(x, shell_quote = TRUE) {
 }
 
 #' Convenience method for path to sample DEM
-#' 
+#'
 #' Get a file path to DEM.tif stored in extdata subfolder of whitebox package installation directory. If needed, download the TIFF file from GitHub.
-#' 
+#'
 #' @param destfile Path to target location of sample data. Will be downloaded if does not exist. Defaults to file path of extdata subfolder of whitebox package installation directory.
 #' @param ... additional arguments to download.file()
 #'
-#' @return character. 
+#' @return character.
 #' @export
 #'
 #' @examples
-#' 
+#'
 #' if (check_whitebox_binary()) {
 #'   wbt_slope(sample_dem_data(), output = "slope.tif")
 #' }
@@ -908,8 +906,8 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
     }
   }
   if (fp == "") {
-    try(download.file("https://github.com/giswqs/whiteboxR/raw/master/inst/extdata/DEM.tif", 
-                      destfile = destfile, 
+    try(download.file("https://github.com/giswqs/whiteboxR/raw/master/inst/extdata/DEM.tif",
+                      destfile = destfile,
                       mode = "wb", ...))
     if (missing(destfile)) {
       fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
@@ -930,7 +928,7 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
 #' @keywords internal
 #' @noRd
 wbt_rust_backtrace <- function(RUST_BACKTRACE = c("0", "1", "full")) {
-  Sys.setenv(RUST_BACKTRACE = match.arg(as.character(RUST_BACKTRACE)[1], 
+  Sys.setenv(RUST_BACKTRACE = match.arg(as.character(RUST_BACKTRACE)[1],
                                         choices = c("0", "1", "full")))
   invisible(Sys.getenv("RUST_BACKTRACE", unset = "0"))
 }
