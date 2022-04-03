@@ -1,9 +1,9 @@
 # whitebox 2.1.3
 
- * Updates to fix issues with permissions to write _settings.jso*n_
+ * Generated `whitebox_tools` commands no longer include flags for default arguments that are stored in settings.json unless specified by the user.
  
- * Generated `whitebox_tools` commands no longer include flags for default arguments
-
+   * Updates to fix issues with permissions to write _settings.json_; thanks to @hewag1975 for reporting problem with whitebox on Shiny Server (https://github.com/giswqs/whiteboxR/issues/67)
+ 
 # whitebox 2.1.2
 
  * Fixes regression in checking "Demo" vignette on CRAN
