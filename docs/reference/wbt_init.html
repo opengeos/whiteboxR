@@ -46,11 +46,14 @@ whitebox.exe_path - character. Path to executable file. The default value is the
 whitebox.wd - character. Path to WhiteboxTools working directory. Used as --wd argument for tools that support it when wd is not specified elsewhere.
 whitebox.verbose - logical. Should standard output from calls to executable be cat() out for readability? Default is result of interactive(). Individual tools may have verbose_mode setting that produce only single-line output when FALSE. These argument values are left as the defaults defined in the package documentation for that function. When whitebox.verbose=FALSE no output is produced. Set the value of whitebox.verbose with wbt_verbose() verbose argument.
 whitebox.compress_rasters - logical. Should raster output from WhiteboxTools be compressed? Default: FALSE. Set the value of whitebox.compress_rasters with wbt_compress_rasters() compress_rasters argument.
+whitebox.max_procs - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: -1 uses all of the available cores.
 
 
-wbt_wd(): Get or Set the WhiteboxTools working directory
+wbt_exe_path(): Get the file path of the WhiteboxTools executable.
+wbt_wd(): Get or set the WhiteboxTools working directory. Default: &quot;&quot; (unset) is your R working directory if no other options are set.
 wbt_verbose(): Check verbose options for WhiteboxTools
-wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
+wbt_compress_rasters(): Check raster compression option for WhiteboxTools. Default: FALSE
+wbt_max_procs(): Check maximum number of processes for  for tools that run in parallel or partially parallelize. Default: -1 uses all of the available cores." />
 
 
 
@@ -82,7 +85,7 @@ wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
       </span>
     </div>
 
@@ -148,34 +151,44 @@ wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
 <li><p><strong><code>whitebox.wd</code></strong> - character. Path to WhiteboxTools working directory. Used as <code>--wd</code> argument for tools that support it when <code>wd</code> is not specified elsewhere.</p></li>
 <li><p><strong><code>whitebox.verbose</code></strong> - logical. Should standard output from calls to executable be <code><a href='https://rdrr.io/r/base/cat.html'>cat()</a></code> out for readability? Default is result of <code><a href='https://rdrr.io/r/base/interactive.html'>interactive()</a></code>. Individual tools may have <code>verbose_mode</code> setting that produce only single-line output when <code>FALSE</code>. These argument values are left as the defaults defined in the package documentation for that function. When <code>whitebox.verbose=FALSE</code> no output is produced. Set the value of <code>whitebox.verbose</code> with <code>wbt_verbose()</code> <code>verbose</code> argument.</p></li>
 <li><p><strong><code>whitebox.compress_rasters</code></strong> - logical. Should raster output from WhiteboxTools be compressed? Default: <code>FALSE</code>. Set the value of <code>whitebox.compress_rasters</code> with <code>wbt_compress_rasters()</code> <code>compress_rasters</code> argument.</p></li>
+<li><p><strong><code>whitebox.max_procs</code></strong> - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: <code>-1</code> uses all of the available cores.</p></li>
 </ul>
 
-<p><code>wbt_wd()</code>: Get or Set the WhiteboxTools working directory</p>
+<p><code>wbt_exe_path()</code>: Get the file path of the WhiteboxTools executable.</p>
+<p><code>wbt_wd()</code>: Get or set the WhiteboxTools working directory. Default: <code>""</code> (unset) is your R working directory if no other options are set.</p>
 <p><code>wbt_verbose()</code>: Check verbose options for WhiteboxTools</p>
-<p><code>wbt_compress_rasters()</code>: Check raster compression options for WhiteboxTools</p>
+<p><code>wbt_compress_rasters()</code>: Check raster compression option for WhiteboxTools. Default: <code>FALSE</code></p>
+<p><code>wbt_max_procs()</code>: Check maximum number of processes for  for tools that run in parallel or partially parallelize. Default: <code>-1</code> uses all of the available cores.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>wbt_init</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='fu'><a href='wbt_exe_path.html'>wbt_exe_path</a></span><span class='op'>(</span>shell_quote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>wbt_init</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='fu'>wbt_exe_path</span><span class='op'>(</span>shell_quote <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='fu'>wbt_options</span><span class='op'>(</span>
   exe_path <span class='op'>=</span> <span class='cn'>NULL</span>,
   wd <span class='op'>=</span> <span class='cn'>NULL</span>,
   verbose <span class='op'>=</span> <span class='cn'>NULL</span>,
-  compress_rasters <span class='op'>=</span> <span class='cn'>NULL</span>
+  compress_rasters <span class='op'>=</span> <span class='cn'>NULL</span>,
+  max_procs <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span>
+
+<span class='fu'>wbt_exe_path</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='cn'>NULL</span>, shell_quote <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+
+<span class='fu'>wbt_default_path</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='fu'>wbt_wd</span><span class='op'>(</span>wd <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='fu'>wbt_verbose</span><span class='op'>(</span>verbose <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
-<span class='fu'>wbt_compress_rasters</span><span class='op'>(</span>compress_rasters <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+<span class='fu'>wbt_compress_rasters</span><span class='op'>(</span>compress_rasters <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+
+<span class='fu'>wbt_max_procs</span><span class='op'>(</span>max_procs <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>exe_path</th>
-      <td><p>Default <code>exe_path</code> is result of <code><a href='wbt_exe_path.html'>wbt_exe_path()</a></code> which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.</p></td>
+      <td><p>Optional: User-supplied path to WhiteboxTools executable. Default: <code>NULL</code></p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -193,18 +206,29 @@ wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
       <th>compress_rasters</th>
       <td><p>Default: <code>NULL</code>; if logical, set the package option <code>whitebox.compress_rasters</code> to specified value</p></td>
     </tr>
+    <tr>
+      <th>max_procs</th>
+      <td><p>Default: <code>NULL</code>; if integer, set the package option <code>whitebox.max_procs</code> to specified value</p></td>
+    </tr>
+    <tr>
+      <th>shell_quote</th>
+      <td><p>Return <code><a href='https://rdrr.io/r/base/shQuote.html'>shQuote()</a></code> result?</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>wbt_init()</code>: logical; <code>TRUE</code> if binary file is found at <code>exe_path</code></p>
-<p><code>wbt_options()</code>:  an invisible list containing current <code>whitebox.exe_path</code>, <code>whitebox.verbose</code> options</p>
+<p><code>wbt_options()</code>: an invisible list containing current <code>whitebox.exe_path</code>, <code>whitebox.verbose</code>, <code>whitebox.compress_rasters</code>, and <code>whitebox.max_procs</code> options</p>
+<p>Returns the file path of WhiteboxTools executable.</p>
 <p><code>wbt_wd()</code>: character; when working directory is unset, will not add <code>--wd=</code> arguments to calls and should be the same as using <code><a href='https://rdrr.io/r/base/getwd.html'>getwd()</a></code>. See Details.</p>
 <p><code>wbt_verbose()</code>: logical; defaults to result of <code><a href='https://rdrr.io/r/base/interactive.html'>interactive()</a></code></p>
 <p><code>wbt_compress_rasters()</code>: logical; defaults to <code>FALSE</code></p>
+<p><code>wbt_max_procs()</code>: integer; defaults to <code>-1</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>wbt_wd()</code>: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the <code>wd</code> argument to <code>wbt_wd()</code> and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use <code>wbt_wd("")</code> which is equivalent to <code>wbt_wd(getwd())</code>.</p>
+    <p><code>wbt_exe_path()</code>: Checks system environment variable <code>R_WHITEBOX_EXE_PATH</code> and package option <code>whitebox.exe_path</code>. Set your desired path with either <code><a href='https://rdrr.io/r/base/Sys.setenv.html'>Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")</a></code> or <code><a href='https://rdrr.io/r/base/options.html'>options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")</a></code>. The default, backwards-compatible path is returned by <code>wbt_default_path()</code></p>
+<p><code>wbt_wd()</code>: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the <code>wd</code> argument to <code>wbt_wd()</code> and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use <code>wbt_wd("")</code> which is equivalent to <code>wbt_wd(getwd())</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='wbt_install.html'>install_whitebox()</a></code> <a href='whitebox-package.html'>whitebox</a></p></div>
@@ -213,7 +237,7 @@ wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## wbt_init():</span>
 
-<span class='co'># or set path to binary as an argument</span>
+<span class='co'># set path to binary as an argument</span>
 <span class='co'># wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")</span>
 <span class='op'>}</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
@@ -223,6 +247,9 @@ wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
 <span class='co'># set multiple options (e.g. exe_path and verbose) with wbt_options()</span>
 <span class='fu'>wbt_options</span><span class='op'>(</span>exe_path <span class='op'>=</span> <span class='st'>"not/a/valid/path/whitebox_tools.exe"</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
+<span class='op'>}</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>wbt_exe_path</span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>}</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 
@@ -242,6 +269,12 @@ wbt_compress_rasters(): Check raster compression options for WhiteboxTools" />
 <span class='co'>## wbt_compress_rasters():</span>
 
 <span class='fu'>wbt_compress_rasters</span><span class='op'>(</span>compress_rasters <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='op'>}</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+
+<span class='co'>## wbt_max_procs():</span>
+
+<span class='fu'>wbt_max_procs</span><span class='op'>(</span>max_procs <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
   </div>

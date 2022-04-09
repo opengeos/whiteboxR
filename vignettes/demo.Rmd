@@ -9,6 +9,8 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  eval = whitebox::check_whitebox_binary(),
+  echo = TRUE,
   collapse = TRUE,
   comment = "#>",
   fig.width = 6,
@@ -16,12 +18,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include=FALSE, echo=FALSE, eval=TRUE}
+# setup so inline stats on version/tools show up
 library(whitebox)
+data("wbttoolparameters", package="whitebox")
+```
 
-# sample code to check and install whitebox to a custom path
-
+```{r setup, include=FALSE}
+# # sample code to check and install whitebox to a custom path
 # if (!whitebox::check_whitebox_binary()) {
 #   wd <- tempdir()
 #   whitebox::install_whitebox(wd)
@@ -83,7 +87,7 @@ library(whitebox)
 # Typically the input/output paths are stored as variables
 
 # sample DEM input GeoTIFF
-input <- system.file("extdata", "DEM.tif", package = "whitebox")
+input <- sample_dem_data()
 
 # output file (to be created)
 output <- file.path(tempdir(), "slope.tif")
@@ -231,7 +235,7 @@ This is mainly to print out the tool name and elapsed time whenever we run a too
 #> wbt_breach_depressions - Elapsed Time (excluding I/O): 0.12s
 ```
 
-This package-level verbose option can also control the `verbose_mode`  values passed to `wbt_*` tool functions. Turning on "full" output requires a third option to be set for this argument: `"all"`. Use `wbt_verbose("all")`. `wbt_verbose()` will still return `TRUE` when the `whitebox.verbose` option is `"all"`.
+This package-level verbose option can also control the `verbose_mode` values passed to `wbt_*` tool functions. Turning on "full" output requires a third option to be set for this argument: `"all"`. Use `wbt_verbose("all")`. `wbt_verbose()` will still return `TRUE` when the `whitebox.verbose` option is `"all"`.
 
 ### Long-term Package Option Settings
 
@@ -253,7 +257,7 @@ For instance, here we use the tool "BreachDepressions" to pre-process a Digital 
 
 ```{r}
 # sample DEM file path in package extdata folder
-input <- system.file("extdata", "DEM.tif", package="whitebox")
+input <- sample_dem_data()
 
 # output file name
 output <- file.path(tempdir(), "output.tif")
@@ -268,7 +272,7 @@ These `wbt_*_tool_name_*()` functions are wrappers around the `wbt_run_tool()` f
 
 ```{r}
 # sample DEM file path in package extdata folder
-input <- system.file("extdata", "DEM.tif", package="whitebox")
+input <- sample_dem_data()
 
 # output file name
 output <- file.path(tempdir(), "output.tif")
@@ -289,7 +293,7 @@ We use the raster R package to read the GeoTIFF outputs from WhiteboxTools.
 library(raster)
 
 # sample DEM file path in package extdata folder
-input <- system.file("extdata", "DEM.tif", package="whitebox")
+input <- sample_dem_data()
 
 # output file name
 output <- file.path(tempdir(), "output.tif")
@@ -340,8 +344,8 @@ Here is a brief snippet based on the beginning of the hydroweight README showing
 library(whitebox)
 library(raster)
 
-## Import toy_dem from whitebox package
-toy_file <- system.file("extdata", "DEM.tif", package = "whitebox")
+## Sample DEM from whitebox package
+toy_file <- sample_dem_data()
 toy_dem <- raster(x = toy_file, values = TRUE)
 crs(toy_dem) <- "EPSG:26918"
 
@@ -501,17 +505,13 @@ wbt_version()
 
 ### `wbt_list_tools()`
 
-```{r include=FALSE}
-data("wbttoolparameters", package="whitebox")
-```
-
 Use `wbt_list_tools()` to list all available tools in WhiteboxTools. In version `r attr(wbttoolparameters, 'version')` there are over `r (length(whitebox::wbt_list_tools()) - 1)` tools! See all the available [toolboxes](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html) and [extensions](https://www.whiteboxgeo.com/whitebox-geospatial-extensions/).
 
 ```{r, eval=FALSE}
 wbt_list_tools()
 ```
 
-The full list can be an overwhelming amount of output, so you pass the `keyword` argument to search and filter.
+The full list can be an overwhelming amount of output, so you pass the `keywords` argument to search and filter.
 
 For example we list tools with keyword 'flowaccumulation' in tool name or description.
 
@@ -545,7 +545,7 @@ wbt_toolbox(tool_name = "aspect")
 
 Print the full list by not specifying `tool_name`
 
-```{r, eval=FALSE}
+```{r}
 wbt_toolbox()
 ```
 

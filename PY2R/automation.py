@@ -67,49 +67,55 @@ def function_block(line, ff):
     start = line.find("(") + 1
     end = len(line) - 1
     argument = line[start:end]
-    function_head = "wbt_" + function_name + " <- function(" + argument + ") {"
+    function_head = "wbt_" + function_name + " <- function(" + argument + ", command_only=FALSE) {"
     ff.write(function_head + "\n")
     ff.write("  wbt_init()" + "\n")
     ff.write('  args <- ""' + "\n")
     arguments = argument.split(",")
     for item in arguments:
         item = item.strip()
-        if "=" not in item:
+        if "=" not in item and '"' not in item:
             ff.write(
                 '  args <- paste(args, paste0("--' + item +
-                '=", ' + item + "))" + "\n"
+                '=", wbt_file_path(' + item + ")))" + "\n"
             )
         elif "verbose" in item:
             continue
-        elif "=FALSE" in item:
-            para = item.split("=")[0]
-            ff.write("  if (" + para + ") {" + "\n")
-            ff.write('    args <- paste(args, "--' + para + '")' + "\n")
-            ff.write("  }" + "\n")
-        elif "=TRUE" in item:
+        elif not "compress_rasters" in item and "=FALSE" in item or "=TRUE" in item:
             para = item.split("=")[0]
             ff.write("  if (" + para + ") {" + "\n")
             ff.write('    args <- paste(args, "--' + para + '")' + "\n")
             ff.write("  }" + "\n")
         elif "verbose" not in item:
             para = item.split("=")[0]
-            ff.write("  if (!is.null(" + para + ")) {" + "\n")
-            ff.write(
-                '    args <- paste(args, paste0("--'
-                + para
-                + '=", '
-                + para
-                + "))"
-                + "\n"
-            )
-            ff.write("  }" + "\n")
+            if '"' not in para and "wd" in para or "compress_rasters" in para:
+              ff.write("  if (!missing(" + para + ")) {" + "\n")
+              ff.write(
+                  '    args <- paste(args, paste0("--'
+                  + para
+                  + '=", '
+                  + para
+                  + "))"
+                  + "\n"
+              )
+              ff.write("  }" + "\n")
+            elif '"' not in para:
+              ff.write("  if (!is.null(" + para + ")) {" + "\n")
+              ff.write(
+                  '    args <- paste(args, paste0("--'
+                  + para
+                  + '=", '
+                  + para
+                  + "))"
+                  + "\n"
+              )
+              ff.write("  }" + "\n")
 
     ff.write("  tool_name <- \""+function_name+"\"\n")
     # ff.write('  tool_name <- tool_name[!grepl("(whitebox|::)", tool_name)]' + "\n")
-    ff.write("  wbt_run_tool(tool_name, args, verbose_mode)" + "\n")
+    ff.write("  wbt_run_tool(tool_name, args, verbose_mode, command_only)" + "\n")
     ff.write("}" + "\n")
     ff.write("\n\n")
-
 
 # Extract function example usage
 def function_example(fun_name):
@@ -305,10 +311,13 @@ with open(wbt_py) as f:
                     i = i + 1
                 ff.write("#' @param wd Changes the working directory.\n")
                 ff.write(
-                    "#' @param verbose_mode Sets verbose mode. If verbose mode is False, tools will not print output messages.\n"
+                    "#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.\n"
                 )
                 ff.write(
                     "#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.\n"
+                )
+                ff.write(
+                    "#' @param command_only Return command that would be executed by `system()` rather than running tool.\n"
                 )
                 ff.write("#'\n")
                 ff.write("#' @return Returns the tool text outputs.\n")
@@ -366,10 +375,8 @@ with open(wbt_py) as f:
                         f.write('test_that("' + desc + '", {\n\n')
                         f.write("  skip_on_cran()\n")
                         f.write("  skip_if_not(check_whitebox_binary())\n")
-                        f.write(
-                            '  dem <- system.file("extdata", "DEM.tif", package = "whitebox")\n')
-                        f.write(
-                            '  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
+                        f.write('  dem <- sample_dem_data(); skip_if(dem == "")\n')
+                        f.write('  ret <- {}(input = dem, output = "output.tif")\n'.format(wbt_fun_name))
                         f.write('  expect_match(ret, "Elapsed Time")\n\n')
                         f.write("})\n")
                         print(test_file_path)

@@ -3,9 +3,12 @@
 \name{wbt_init}
 \alias{wbt_init}
 \alias{wbt_options}
+\alias{wbt_exe_path}
+\alias{wbt_default_path}
 \alias{wbt_wd}
 \alias{wbt_verbose}
 \alias{wbt_compress_rasters}
+\alias{wbt_max_procs}
 \title{Initialize WhiteboxTools}
 \usage{
 wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE), ...)
@@ -14,17 +17,24 @@ wbt_options(
   exe_path = NULL,
   wd = NULL,
   verbose = NULL,
-  compress_rasters = NULL
+  compress_rasters = NULL,
+  max_procs = NULL
 )
+
+wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
+
+wbt_default_path()
 
 wbt_wd(wd = NULL)
 
 wbt_verbose(verbose = NULL)
 
 wbt_compress_rasters(compress_rasters = NULL)
+
+wbt_max_procs(max_procs = NULL)
 }
 \arguments{
-\item{exe_path}{Default \code{exe_path} is result of \code{wbt_exe_path()} which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.}
+\item{exe_path}{Optional: User-supplied path to WhiteboxTools executable. Default: \code{NULL}}
 
 \item{...}{additional arguments to \code{wbt_options()}}
 
@@ -33,17 +43,25 @@ wbt_compress_rasters(compress_rasters = NULL)
 \item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
 
 \item{compress_rasters}{Default: \code{NULL}; if logical, set the package option \code{whitebox.compress_rasters} to specified value}
+
+\item{max_procs}{Default: \code{NULL}; if integer, set the package option \code{whitebox.max_procs} to specified value}
+
+\item{shell_quote}{Return \code{shQuote()} result?}
 }
 \value{
 \code{wbt_init()}: logical; \code{TRUE} if binary file is found at \code{exe_path}
 
-\code{wbt_options()}:  an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose} options
+\code{wbt_options()}: an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose}, \code{whitebox.compress_rasters}, and \code{whitebox.max_procs} options
+
+Returns the file path of WhiteboxTools executable.
 
 \code{wbt_wd()}: character; when working directory is unset, will not add \verb{--wd=} arguments to calls and should be the same as using \code{getwd()}. See Details.
 
 \code{wbt_verbose()}: logical; defaults to result of \code{interactive()}
 
-\code{wbt_compress_rasters()}: logical; defaults to \code{FALSE}
+\code{wbt_compress_rasters()}: logical; defaults to \code{NA}
+
+\code{wbt_max_procs()}: integer; defaults to \code{NA_integer_}
 }
 \description{
 \code{wbt_init()}: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with \code{exe_path}.
@@ -54,22 +72,29 @@ wbt_compress_rasters(compress_rasters = NULL)
 \item \strong{\code{whitebox.wd}} - character. Path to WhiteboxTools working directory. Used as \code{--wd} argument for tools that support it when \code{wd} is not specified elsewhere.
 \item \strong{\code{whitebox.verbose}} - logical. Should standard output from calls to executable be \code{cat()} out for readability? Default is result of \code{interactive()}. Individual tools may have \code{verbose_mode} setting that produce only single-line output when \code{FALSE}. These argument values are left as the defaults defined in the package documentation for that function. When \code{whitebox.verbose=FALSE} no output is produced. Set the value of \code{whitebox.verbose} with \code{wbt_verbose()} \code{verbose} argument.
 \item \strong{\code{whitebox.compress_rasters}} - logical. Should raster output from WhiteboxTools be compressed? Default: \code{FALSE}. Set the value of \code{whitebox.compress_rasters} with \code{wbt_compress_rasters()} \code{compress_rasters} argument.
+\item \strong{\code{whitebox.max_procs}} - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
 
-\code{wbt_wd()}: Get or Set the WhiteboxTools working directory
+\code{wbt_exe_path()}: Get the file path of the WhiteboxTools executable.
+
+\code{wbt_wd()}: Get or set the WhiteboxTools working directory. Default: \code{""} (unset) is your R working directory if no other options are set.
 
 \code{wbt_verbose()}: Check verbose options for WhiteboxTools
 
-\code{wbt_compress_rasters()}: Check raster compression options for WhiteboxTools
+\code{wbt_compress_rasters()}: Check raster compression option for WhiteboxTools. Default: \code{FALSE}
+
+\code{wbt_max_procs()}: Check maximum number of processes for  for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
 \details{
+\code{wbt_exe_path()}: Checks system environment variable \code{R_WHITEBOX_EXE_PATH} and package option \code{whitebox.exe_path}. Set your desired path with either \code{Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")} or \code{options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")}. The default, backwards-compatible path is returned by \code{wbt_default_path()}
+
 \code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which is equivalent to \code{wbt_wd(getwd())}.
 }
 \examples{
 \dontrun{
 ## wbt_init():
 
-# or set path to binary as an argument
+# set path to binary as an argument
 # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 }
 \dontrun{
@@ -79,6 +104,9 @@ wbt_compress_rasters(compress_rasters = NULL)
 # set multiple options (e.g. exe_path and verbose) with wbt_options()
 wbt_options(exe_path = "not/a/valid/path/whitebox_tools.exe", verbose = TRUE)
 
+}
+\dontrun{
+wbt_exe_path()
 }
 \dontrun{
 
@@ -98,6 +126,12 @@ wbt_verbose(verbose = TRUE)
 ## wbt_compress_rasters():
 
 wbt_compress_rasters(compress_rasters = TRUE)
+}
+\dontrun{
+
+## wbt_max_procs():
+
+wbt_max_procs(max_procs = 2)
 }
 }
 \seealso{
