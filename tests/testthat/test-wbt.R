@@ -192,7 +192,7 @@ test_that("wbt raster compression (requires WhiteboxTools v2.1.0 or higher)", {
   
   skip_if_not(check_whitebox_binary())
   
-  skip_if_not(wbt_version() >= "2.1.0")
+  skip_if_not(gsub("WhiteboxTools v([^ ]+) .*", "\\1", wbt_version()[1]) >= "2.1.0")
   
   dem <- sample_dem_data()
   
