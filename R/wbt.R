@@ -836,7 +836,7 @@ wbt_system_call <- function(argstring,
     tool_name <- ""
   }
 
-  exeargs <- paste(wbt_exe, args2)
+  exeargs <- trimws(paste(wbt_exe, args2))
 
   # support command_only argument
   if (command_only) {
