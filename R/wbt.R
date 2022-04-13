@@ -455,7 +455,10 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
     cat("\t", url, "\n")
     cat("(This could take a few minutes, please be patient...)\n")
 
+    # path for downloaded zip file;
+    # remove downloaded zip file when exiting function
     exe_zip <- file.path(pkg_dir, filename)
+    on.exit(unlink(exe_zip), add = TRUE)
 
     if (!dir.exists(pkg_dir)) {
       dir.create(pkg_dir, recursive = TRUE)
