@@ -593,7 +593,7 @@ wbt_version <- function() {
 
 #' All available tools in WhiteboxTools
 #'
-#' @param keywords Keywords may be used to search available tools.
+#' @param keywords Keywords may be used to search available tools. Default `"''"` returns all available tools.
 #'
 #' @return Return all available tools in WhiteboxTools that contain the keywords.
 #' @export
@@ -602,7 +602,7 @@ wbt_version <- function() {
 #' \dontrun{
 #' wbt_list_tools("lidar")
 #' }
-wbt_list_tools <- function(keywords = NULL) {
+wbt_list_tools <- function(keywords = "''") {
   ret <- wbt_system_call(paste("--listtools", keywords))
   ret <- ret[ret != ""]
   if (wbt_verbose()) {
