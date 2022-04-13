@@ -590,7 +590,7 @@ wbt_version <- function() {
 
 #' All available tools in WhiteboxTools
 #'
-#' @param keywords Keywords may be used to search available tools. Default `''` returns all available tools.
+#' @param keywords Keywords may be used to search available tools. Default `"''"` returns all available tools.
 #'
 #' @return Return all available tools in WhiteboxTools that contain the keywords.
 #' @export

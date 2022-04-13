@@ -4,10 +4,10 @@
 \alias{wbt_list_tools}
 \title{All available tools in WhiteboxTools}
 \usage{
-wbt_list_tools(keywords = "")
+wbt_list_tools(keywords = "''")
 }
 \arguments{
-\item{keywords}{Keywords may be used to search available tools. Default \code{''} returns all available tools.}
+\item{keywords}{Keywords may be used to search available tools. Default \code{"''"} returns all available tools.}
 }
 \value{
 Return all available tools in WhiteboxTools that contain the keywords.
