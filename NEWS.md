@@ -2,7 +2,11 @@
 
  * Generated `whitebox_tools` commands no longer include flags for default arguments that are stored in settings.json unless specified by the user.
  
-   * Updates to fix issues with permissions to write _settings.json_; thanks to @hewag1975 for reporting problem with whitebox on Shiny Server (https://github.com/giswqs/whiteboxR/issues/67)
+   * Updates to fix issues with permissions to write _settings.json_; thanks to Henrik (@hewag1975) for reporting problems on Shiny Server (https://github.com/giswqs/whiteboxR/issues/67)
+ 
+ * `wbt_install()` / `install_whitebox()` now removes the downloaded zip file on exit thanks to Christoph Stepper (@cstepper; https://github.com/giswqs/whiteboxR/issues/72)
+ 
+ * New default arguments for `wbt_list_tools()`, `wbt_time_in_daylight()`, `wbt_shadow_image()` thanks to Jens Wiesehahn (@wiesehahn; https://github.com/giswqs/whiteboxR/issues/70, https://github.com/giswqs/whiteboxR/issues/73)
  
 # whitebox 2.1.2
 

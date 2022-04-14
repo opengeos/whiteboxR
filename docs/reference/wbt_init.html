@@ -85,7 +85,7 @@ wbt_max_procs(): Check maximum number of processes for  for tools that run in pa
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.3</span>
       </span>
     </div>
 
@@ -223,8 +223,8 @@ wbt_max_procs(): Check maximum number of processes for  for tools that run in pa
 <p>Returns the file path of WhiteboxTools executable.</p>
 <p><code>wbt_wd()</code>: character; when working directory is unset, will not add <code>--wd=</code> arguments to calls and should be the same as using <code><a href='https://rdrr.io/r/base/getwd.html'>getwd()</a></code>. See Details.</p>
 <p><code>wbt_verbose()</code>: logical; defaults to result of <code><a href='https://rdrr.io/r/base/interactive.html'>interactive()</a></code></p>
-<p><code>wbt_compress_rasters()</code>: logical; defaults to <code>FALSE</code></p>
-<p><code>wbt_max_procs()</code>: integer; defaults to <code>-1</code></p>
+<p><code>wbt_compress_rasters()</code>: logical; defaults to <code>NA</code></p>
+<p><code>wbt_max_procs()</code>: integer; defaults to <code>NA_integer_</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>wbt_exe_path()</code>: Checks system environment variable <code>R_WHITEBOX_EXE_PATH</code> and package option <code>whitebox.exe_path</code>. Set your desired path with either <code><a href='https://rdrr.io/r/base/Sys.setenv.html'>Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")</a></code> or <code><a href='https://rdrr.io/r/base/options.html'>options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")</a></code>. The default, backwards-compatible path is returned by <code>wbt_default_path()</code></p>

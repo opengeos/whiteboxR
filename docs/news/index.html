@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.3</span>
       </span>
     </div>
 
@@ -129,9 +129,40 @@
       <small>Source: <a href='https://github.com/giswqs/whiteboxR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="whitebox-213" class="section level1">
+<h1 class="page-header" data-toc-text="2.1.3">
+<a href="#whitebox-213" class="anchor"></a>whitebox 2.1.3<small> Unreleased </small>
+</h1>
+<ul>
+<li>
+<p>Generated <code>whitebox_tools</code> commands no longer include
+flags for default arguments that are stored in settings.json unless
+specified by the user.</p>
+<ul>
+<li>Updates to fix issues with permissions to write
+<em>settings.json</em>; thanks to Henrik (<a href='https://github.com/hewag1975'>@hewag1975</a>) for reporting
+problems on Shiny Server (<a href="https://github.com/giswqs/whiteboxR/issues/67" class="uri">https://github.com/giswqs/whiteboxR/issues/67</a>)</li>
+</ul>
+</li>
+<li><p><code><a href="../reference/wbt_install.html">wbt_install()</a></code> / <code><a href="../reference/wbt_install.html">install_whitebox()</a></code> now
+removes the downloaded zip file on exit thanks to Christoph Stepper
+(<a href='https://github.com/cstepper'>@cstepper</a>; <a href="https://github.com/giswqs/whiteboxR/issues/72" class="uri">https://github.com/giswqs/whiteboxR/issues/72</a>)</p></li>
+<li><p>New default arguments for <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code>,
+<code><a href="../reference/wbt_time_in_daylight.html">wbt_time_in_daylight()</a></code>, <code><a href="../reference/wbt_shadow_image.html">wbt_shadow_image()</a></code>
+thanks to Jens Wiesehahn (<a href='https://github.com/wiesehahn'>@wiesehahn</a>; <a href="https://github.com/giswqs/whiteboxR/issues/70" class="uri">https://github.com/giswqs/whiteboxR/issues/70</a>, <a href="https://github.com/giswqs/whiteboxR/issues/73" class="uri">https://github.com/giswqs/whiteboxR/issues/73</a>)</p></li>
+</ul>
+</div>
+    <div id="whitebox-212" class="section level1">
+<h1 class="page-header" data-toc-text="2.1.2">
+<a href="#whitebox-212" class="anchor"></a>whitebox 2.1.2<small> 2022-03-21 </small>
+</h1>
+<ul>
+<li>Fixes regression in checking “Demo” vignette on CRAN</li>
+</ul>
+</div>
     <div id="whitebox-211" class="section level1">
 <h1 class="page-header" data-toc-text="2.1.1">
-<a href="#whitebox-211" class="anchor"></a>whitebox 2.1.1<small> Unreleased </small>
+<a href="#whitebox-211" class="anchor"></a>whitebox 2.1.1<small> 2022-03-15 </small>
 </h1>
 <ul>
 <li><p>File path arguments to tools now automatically perform path
