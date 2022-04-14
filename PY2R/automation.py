@@ -36,7 +36,7 @@ def function_header(line):
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")
         line = line.replace("def ", "")
-        line = line.replace(":", "")
+        # line = line.replace(":", ":")
         line = line.replace("And", "and")
         line = line.replace("Not", "not")
         line = line.replace("Or", "or")
@@ -65,7 +65,7 @@ def function_block(line, ff):
     line = line.strip()
     function_name = line[0: line.find("(")]
     start = line.find("(") + 1
-    end = len(line) - 1
+    end = len(line) - 2
     argument = line[start:end]
     function_head = "wbt_" + function_name + " <- function(" + argument + ", command_only=FALSE) {"
     ff.write(function_head + "\n")
