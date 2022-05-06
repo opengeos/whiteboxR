@@ -13,12 +13,7 @@ RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/giswqs/whiteboxR
 BugReports: https://github.com/giswqs/whiteboxR/issues
-Suggests: 
-    knitr,
-    rmarkdown,
-    testthat,
-    terra
+Suggests: knitr, rmarkdown, testthat, terra
 VignetteBuilder: knitr
-Depends: 
-    R (>= 2.10)
+Depends: R (>= 3.0.0)
 LazyData: true
