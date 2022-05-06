@@ -756,10 +756,25 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
     return(ret)
   }
 
+  # identify any warning messages in output
+  warn.idx1 <- grep("\\*{82}", ret)
+  warn.idx2 <- grep("warning\\:", ret, ignore.case = TRUE)
+
   # produce a custom error message for tools to indicate it did not run
   if (length(ret) == 0 || all(nchar(ret) == 0) || !is.null(attr(ret, 'status'))) {
     ret <- paste(tool_name, "-", "Elapsed Time: NA [did not run]")
+  } else if (wbt_verbose() && length(warn.idx2) > 0) {
+    # show all output from first warning indicator to last, and find elapsed time
+    cat(ret[min(c(warn.idx1, warn.idx2)):max(c(warn.idx1, warn.idx2))], sep = "\n")
+    # supports warning messages all on one line, or multi-line
+    #   at end of processing, surrounded by "*"x82
+    mx <- length(ret)
+    if (length(warn.idx1) > 0) {
+      mx <- warn.idx1[1] - 1
+    }
+    ret <- paste(tool_name, "-", ret[mx])
   } else if (wbt_options()$whitebox.verbose == "all") {
+    # in "all" mode the full output is shown
     cat(ret, sep = "\n")
     ret <- paste(tool_name, "-", ret[length(ret)])
   } else if (!verbose_mode) {
