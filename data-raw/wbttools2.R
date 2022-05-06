@@ -69,5 +69,5 @@ attr(wbttoolparameters, 'version') <- wbtvs
 wbttools$function_name <- paste0("wbt_", wbttools$function_name)
 wbttoolparameters$function_name <- paste0("wbt_", wbttoolparameters$function_name)
 
-usethis::use_data(wbttools, overwrite = TRUE)
-usethis::use_data(wbttoolparameters, overwrite = TRUE)
+usethis::use_data(wbttools, compress = 'xz', overwrite = TRUE)
+usethis::use_data(wbttoolparameters, compress = 'xz', overwrite = TRUE)
