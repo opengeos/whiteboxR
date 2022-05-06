@@ -360,7 +360,7 @@ wbt_mosaic <- function(output, inputs=NULL, method="nn", wd=NULL, verbose_mode=F
   args <- ""
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(inputs)) {
-    args <- paste(args, paste0("--inputs=", inputs))
+    args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   }
   if (!is.null(method)) {
     args <- paste(args, paste0("--method=", method))

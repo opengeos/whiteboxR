@@ -451,7 +451,7 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, compress="brotli", level
   wbt_init()
   args <- ""
   if (!is.null(inputs)) {
-    args <- paste(args, paste0("--inputs=", inputs))
+    args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   }
   if (!is.null(outdir)) {
     args <- paste(args, paste0("--outdir=", outdir))
@@ -2194,7 +2194,7 @@ wbt_zlidar_to_las <- function(inputs=NULL, outdir=NULL, wd=NULL, verbose_mode=FA
   wbt_init()
   args <- ""
   if (!is.null(inputs)) {
-    args <- paste(args, paste0("--inputs=", inputs))
+    args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   }
   if (!is.null(outdir)) {
     args <- paste(args, paste0("--outdir=", outdir))
