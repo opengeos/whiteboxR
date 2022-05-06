@@ -15,7 +15,7 @@ wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=FALS
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -44,7 +44,7 @@ wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, compres
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -73,7 +73,7 @@ wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=FALS
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -102,7 +102,7 @@ wbt_convert_raster_format <- function(input, output, wd=NULL, verbose_mode=FALSE
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -143,7 +143,7 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
     args <- paste(args, paste0("--epsg=", epsg))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -176,7 +176,7 @@ wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbos
     args <- paste(args, "--headers")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -209,7 +209,7 @@ wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=
     args <- paste(args, paste0("--dist=", dist))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -244,7 +244,7 @@ wbt_join_tables <- function(input1, pkey, input2, fkey, import_field, wd=NULL, v
   args <- paste(args, paste0("--fkey=", wbt_file_path(fkey)))
   args <- paste(args, paste0("--import_field=", wbt_file_path(import_field)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -273,7 +273,7 @@ wbt_lines_to_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE, co
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -310,7 +310,7 @@ wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, 
     args <- paste(args, paste0("--import_field=", import_field))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -339,7 +339,7 @@ wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compr
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -370,7 +370,7 @@ wbt_modify_no_data_value <- function(input, new_value="-32768.0", wd=NULL, verbo
     args <- paste(args, paste0("--new_value=", new_value))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -403,7 +403,7 @@ wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=
     args <- paste(args, "--exclude_holes")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -444,7 +444,7 @@ wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="fl
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -473,7 +473,7 @@ wbt_polygons_to_lines <- function(input, output, wd=NULL, verbose_mode=FALSE, co
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -500,7 +500,7 @@ wbt_print_geo_tiff_tags <- function(input, wd=NULL, verbose_mode=FALSE, compress
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -529,7 +529,7 @@ wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=FALS
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -558,7 +558,7 @@ wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=FAL
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -587,7 +587,7 @@ wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=F
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -614,7 +614,7 @@ wbt_reinitialize_attribute_table <- function(input, wd=NULL, verbose_mode=FALSE,
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -643,7 +643,7 @@ wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=FALSE,
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -676,7 +676,7 @@ wbt_set_nodata_value <- function(input, output, back_value=0.0, wd=NULL, verbose
     args <- paste(args, paste0("--back_value=", back_value))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -709,7 +709,7 @@ wbt_single_part_to_multi_part <- function(input, output, field=NULL, wd=NULL, ve
     args <- paste(args, paste0("--field=", field))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -754,7 +754,7 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
     args <- paste(args, paste0("--base=", base))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -803,7 +803,7 @@ wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last
     args <- paste(args, paste0("--base=", base))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -848,7 +848,7 @@ wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRU
     args <- paste(args, paste0("--base=", base))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
