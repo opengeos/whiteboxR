@@ -110,7 +110,7 @@ def function_block(line, ff):
                   + "\n"
               )
               ff.write("  }" + "\n")
-            elif '"' not in para and "inputs" in para:
+            elif "inputs" in para or "variant" in para:
               ff.write("  if (!is.null(" + para + ")) {" + "\n")
               ff.write(
                   '    args <- paste(args, paste0("--'

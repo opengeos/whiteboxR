@@ -94,7 +94,7 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(variant)) {
-    args <- paste(args, paste0("--variant=", variant))
+    args <- paste(args, paste0("--variant=", wbt_file_path(variant)))
   }
   if (line_thin) {
     args <- paste(args, "--line_thin")
