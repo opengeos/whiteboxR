@@ -99,6 +99,28 @@ def function_block(line, ff):
                   + "\n"
               )
               ff.write("  }" + "\n")
+            elif '"' not in para and "wd" in para:
+              ff.write("  if (!missing(" + para + ")) {" + "\n")
+              ff.write(
+                  '    args <- paste(args, paste0("--'
+                  + para
+                  + '=", wbt_file_path('
+                  + para
+                  + ")))"
+                  + "\n"
+              )
+              ff.write("  }" + "\n")
+            elif "inputs" in para or "variant" in para:
+              ff.write("  if (!is.null(" + para + ")) {" + "\n")
+              ff.write(
+                  '    args <- paste(args, paste0("--'
+                  + para
+                  + '=", wbt_file_path('
+                  + para
+                  + ")))"
+                  + "\n"
+              )
+              ff.write("  }" + "\n")
             elif '"' not in para:
               ff.write("  if (!is.null(" + para + ")) {" + "\n")
               ff.write(

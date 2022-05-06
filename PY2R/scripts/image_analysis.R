@@ -708,7 +708,7 @@ wbt_tophat_transform <- function(input, output, filterx=11, filtery=11, variant=
     args <- paste(args, paste0("--filtery=", filtery))
   }
   if (!is.null(variant)) {
-    args <- paste(args, paste0("--variant=", variant))
+    args <- paste(args, paste0("--variant=", wbt_file_path(variant)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wd))
@@ -1513,7 +1513,7 @@ wbt_laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, wd=N
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(variant)) {
-    args <- paste(args, paste0("--variant=", variant))
+    args <- paste(args, paste0("--variant=", wbt_file_path(variant)))
   }
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
@@ -1629,7 +1629,7 @@ wbt_line_detection_filter <- function(input, output, variant="vertical", absvals
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(variant)) {
-    args <- paste(args, paste0("--variant=", variant))
+    args <- paste(args, paste0("--variant=", wbt_file_path(variant)))
   }
   if (absvals) {
     args <- paste(args, "--absvals")
@@ -2072,7 +2072,7 @@ wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, wd=NULL, ve
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(variant)) {
-    args <- paste(args, paste0("--variant=", variant))
+    args <- paste(args, paste0("--variant=", wbt_file_path(variant)))
   }
   if (!is.null(clip)) {
     args <- paste(args, paste0("--clip=", clip))
