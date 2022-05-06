@@ -20,11 +20,11 @@ n3 <- lapply(n2, function(x) {
   zz <- data.frame(name = names(res), do.call('rbind', res))
   rownames(zz) <- NULL
   zz
-})             
+})
 
 f <- lapply(seq_along(n3), function(i) {
   x <- p2[[i]][n3[[i]]$name]
-  
+
   res <- as.data.frame(lapply(x, function(y) lapply(y, function(z) paste0(z, collapse = ", "))))
   res2 <- data.frame(
     #name = names(x),
@@ -42,16 +42,17 @@ wbttoolparameters2 <- merge(wbttools[,c('function_name','tool_name','toolbox_nam
 
 wbttoolparameters2$is_input <- grepl("input|dem", wbttoolparameters2$flags) | (grepl("Existing|FileList", wbttoolparameters2$parameter_class) & grepl("input", wbttoolparameters2$description, ignore.case = TRUE))
 wbttoolparameters2$is_output <- grepl("output", wbttoolparameters2$flags) | (grepl("NewFile", wbttoolparameters2$parameter_class) & grepl("input", wbttoolparameters2$description, ignore.case = TRUE))
-wbttoolparameters2$argument_name <- unlist(sapply(strsplit(wbttoolparameters2$flags, ","), function(x){ 
+wbttoolparameters2$argument_name <- unlist(sapply(strsplit(wbttoolparameters2$flags, ","), function(x){
   y <- gsub("\\-\\-(.*)", "\\1", x)
-  z <- y[!y %in% c("-i", "-o", "-d", "-p", "-t")]
+  z <- y[!y %in% c("-a", "-d", "-f", "-h", "-i", "-l", "-l1", "-l2", "-m", "-o", "-o1",
+                   "-o2", "-p", "-p1", "-p2", "-r", "-r1", "-r2", "-s", "-t", "-w", "-x", "-y", "-z")]
   if (is.null(z)) return(NA)
-  z[1]
+  gsub("-", "", z[1], fixed = TRUE)
 }))
 wbttoolparameters2$name <- NULL
 colnames(wbttoolparameters2)[4] <- "name"
 
-colnames(wbttoolparameters2)        
+colnames(wbttoolparameters2)
 wbttools <- as.data.frame(wbttools)
 wbttoolparameters <- as.data.frame(wbttoolparameters2)
 
