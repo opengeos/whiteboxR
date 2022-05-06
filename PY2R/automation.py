@@ -88,7 +88,7 @@ def function_block(line, ff):
             ff.write("  }" + "\n")
         elif "verbose" not in item:
             para = item.split("=")[0]
-            if '"' not in para and "wd" in para or "compress_rasters" in para:
+            if '"' not in para and "compress_rasters" in para:
               ff.write("  if (!missing(" + para + ")) {" + "\n")
               ff.write(
                   '    args <- paste(args, paste0("--'
