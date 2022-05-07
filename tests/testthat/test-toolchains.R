@@ -22,17 +22,17 @@ test_that("wbt toolchains with >1 input", {
   
   skip_on_cran()
   skip_if_not(check_whitebox_binary())
-  skip_if_not_installed("raster")
+  skip_if_not_installed("terra")
   
   # get file path of sample DEM
   dem <- system.file("extdata/DEM.tif", package = "whitebox")
   
   # dem0: create a RasterLayer (no CRS)
-  dem0 <- raster::raster(dem)
+  dem0 <- terra::rast(dem)
   
   # dem1: set the CRS; use wbt_source() to control the temp file location
   demt <- file.path(tempdir(), "dem.tif")
-  dem1 <- wbt_source(raster::raster(dem, crs = "EPSG:26918"), dsn = demt)
+  dem1 <- wbt_source(terra::set.crs(terra::rast(dem), "EPSG:26918"), dsn = demt)
   
   # dem2: in temp directory
   # dem2 <- file.path(tempdir(), "DEM.tif")
@@ -40,9 +40,6 @@ test_that("wbt toolchains with >1 input", {
   # create a path for the output in same directory
   slope1 <- file.path(tempdir(), "slope.tif")
   add2 <- file.path(tempdir(), "add.tif")
-  
-  # writeRaster with CRS info to temp file
-  # raster::writeRaster(dem1, dem2)
   
   # dem3: raster
   step1 <- wbt("slope", dem = dem1, output = slope1)
