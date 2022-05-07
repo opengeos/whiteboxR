@@ -1,22 +1,22 @@
-#' Run WhiteboxTools by Tool Name 
+#' Run WhiteboxTools by Tool Name
 #'
-#' You are required to specify all required arguments as either paths to files, or R object types that can be associated with a file. 
-#' 
+#' You are required to specify all required arguments as either paths to files, or R object types that can be associated with a file.
+#'
 #' Supports SpatRaster / RasterLayer input / output. Arguments are transformed from their source class and passed to WhiteBox tools executable as standard character string arguments involving file paths.
-#'  
+#'
 #' To print help for any tool, see `wbt_tool_help()`
-#' 
+#'
 #' @param result an S3 object of class `wbt_result` to use to supply input arguments, may be _missing_ such that first argument is `tool_name`
-#' @param tool_name character. name of the tool to run. Or a tool/function name (i.e. a symbol) that is non-standard evaluated as a character.  
+#' @param tool_name character. name of the tool to run. Or a tool/function name (i.e. a symbol) that is non-standard evaluated as a character.
 #' @param ... arguments to tool
 #' @param crs character Optional: a WKT Coordinate Reference System string, or other identifier such as EPSG code or PROJ string
 #' @param verbose_mode passed to `wbt_run_tool()`
 #' @param command_only Return command that would be run with `system()`? Default: `FALSE`
 #' @details `tool_name` may be specified with or without quotes or `wbt_` prefix. e.g. `"wbt_slope"`, `wbt_slope`, `slope`, and `"slope"` are identical.
-#' 
+#'
 #' @seealso [wbt_tool_help()]
-#' 
-#' @return a list with class `"wbt_result"` containing elements: 
+#'
+#' @return a list with class `"wbt_result"` containing elements:
 #'    * `tool` - the tool name
 #'    * `args` - arguments passed to executable
 #'    * `stdout` - console output (result of `wbt_run_tool()`)
@@ -31,9 +31,9 @@ wbt <- function(result,
                 crs = NULL,
                 verbose_mode = FALSE,
                 command_only = FALSE) {
-  
+
   if (missing(result) || is.null(result)) {
-    
+
     wbt.missing(
       result = NULL,
       tool_name = gsub("[^A-Za-z_]", "", wbt_internal_tool_name(deparse(
@@ -74,7 +74,7 @@ wbt_error_result <- function(tool_name, args, crs, message) {
 
 #' @export
 print.wbt_result <- function(x, ...) {
-    
+
     cat(paste0('<wbt_result>\n'))
     n <- length(x$history)
     showargs <- trimws(strsplit(x$args, "--")[[1]])
@@ -85,7 +85,7 @@ print.wbt_result <- function(x, ...) {
     } else {
       cat(paste0('No parameters (', x$tool,')\n'))
     }
-    
+
     if (length(x$result) > 0) {
       if (is.null(names(x$result))) {
         if (inherits(x$result, 'try-error')) {
@@ -101,7 +101,7 @@ print.wbt_result <- function(x, ...) {
           cat(paste0("$", y,"\n"))
           if (is.character(resy)) {
            if (file.exists(resy)) {
-            cat('  File result: ', resy, 
+            cat('  File result: ', resy,
                 paste0('exists (Last modified: ', as.character(file.mtime(resy)), ')\n'))
            } else {
              # TODO: are all output arguments "character" reasonably to be construed as files?
@@ -116,18 +116,18 @@ print.wbt_result <- function(x, ...) {
     } else {
       cat(paste0('  NULL result'))
     }
-    
+
     if (n > 1) {
       cat(paste0("--- HISTORY ---\n"))
-      cat(paste0("Prior results (n=", n - 1, ") for:"), 
+      cat(paste0("Prior results (n=", n - 1, ") for:"),
           paste0(sapply(x$history[1:(length(x$history) - 1)], function(y)
                                       if (!is.null(y$tool))
-                                        return(y$tool)), 
+                                        return(y$tool)),
                  collapse = ", "), "\n -",
           paste0(sapply(x$history[1:(length(x$history) - 1)], function(y)
             if (!is.null(y$tool))
               return(paste0(y$tool," (", paste0(names(y$result), collapse=", "), "<",
-                     paste0(sapply(y$result, class), collapse=", "), ">)"))), 
+                     paste0(sapply(y$result, class), collapse=", "), ">)"))),
             collapse = "\n - "))
     }
     cat("\n")
@@ -138,12 +138,12 @@ print.wbt_result <- function(x, ...) {
 #' @rdname wbt
 wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE, command_only = FALSE) {
   # process user input
-  userargs <- list(...) 
-  
+  userargs <- list(...)
+
   # get tool parameters and clean tool name
   prm <- .get_tool_params(tool_name)
   tool_name <- unique(prm$tool_name)[1]
-  
+
   userargs <- .process_tool_params(tool_name = tool_name,
                                    userargs = userargs,
                                    result = result,
@@ -154,13 +154,13 @@ wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FA
     message("Failed to process user arguments, this should not happen; returning NULL")
     return(NULL)
   }
-  
+
   # handle CRS propagation
   crs <- ifelse(is.null(result$crs), "", result$crs)
-  
+
   # TODO: carry over other arguments?
-  
-  # add prior call in history  
+
+  # add prior call in history
   res <- .wbt(tool_name, yrg, prm, crs = crs, verbose_mode = verbose_mode, command_only = command_only)
   if (inherits(res, 'wbt_result')){
     res$history <- c(result$history, list(res))
@@ -169,7 +169,7 @@ wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FA
 }
 
 
-#' @description `get_result()`: return a combined list of results from either the history of a `wbt_result` (if present and `history=TRUE`), or the result of a `wbt_result` 
+#' @description `get_result()`: return a combined list of results from either the history of a `wbt_result` (if present and `history=TRUE`), or the result of a `wbt_result`
 #' @param result an object of class `wbt_result`
 #' @param history Default: `TRUE` returns a list of all history results
 #' @param attribute Default: `"output"`
@@ -183,7 +183,7 @@ get_result <- function(result, history = TRUE, attribute = "output") {
 #' @export
 get_result.wbt_result <- function(result, history = TRUE, attribute = "output") {
   # if there is $history present, by default return a list of all the results
-  if(!is.null(result[["history"]]) && history) 
+  if(!is.null(result[["history"]]) && history)
      sapply(result[["history"]], function(x) x$result[[attribute]])
   else result$result[[attribute]]
   # otherwise, just get the last result as stored in $result
@@ -192,31 +192,31 @@ get_result.wbt_result <- function(result, history = TRUE, attribute = "output") 
 #' @export
 as.data.frame.wbt_result <- function(x, ...) {
   outputlist <- get_result(x)
-  cbind(as.data.frame(unclass(x)[c("tool", "args", "stdout", "crs")], 
-                      ...)[rep(1, length(outputlist)),], 
+  cbind(as.data.frame(unclass(x)[c("tool", "args", "stdout", "crs")],
+                      ...)[rep(1, length(outputlist)),],
         data.frame(output = I(outputlist)))
 }
 
 #' @export
 #' @rdname wbt
 wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FALSE, command_only = FALSE) {
-  
+
   # process user input
-  userargs <- list(...) 
-  
+  userargs <- list(...)
+
   if (!missing(tool_name) && !is.null(tool_name)) {
     warning("wbt.character uses first argument (`result`) as tool_name, `tool_name` ignored", call. = FALSE)
   }
   tool_name <- result
-  
+
   # get tool parameters and clean tool name
   prm <- .get_tool_params(tool_name)
   tool_name <- unique(prm$tool_name)[1]
-  
+
   userargs <- .process_tool_params(tool_name = tool_name,
                                    userargs = userargs,
                                    prm = prm)
-  
+
   # get input CRS; argument takes precedence
   if (missing(crs) || is.null(crs) || crs == "") {
     # is_input is derived from the -i flag which is only defined for --input
@@ -224,7 +224,7 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
     ldx <- prm$is_input | grepl("^input[1-9]+", prm$argument_name)
     crs <- .process_crs(userargs[names(userargs) %in% prm$argument_name[ldx]])
   }
-  
+
   # process user input (convert complex object -> character arguments)
   yrg <- try(.process_user_args(userargs), silent = TRUE)
   if (inherits(yrg, 'try-error')) {
@@ -232,7 +232,7 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
     message("Failed to process user arguments, this should not happen; returning NULL")
     return(NULL)
   }
-  
+
   res <- .wbt(tool_name, yrg, prm, crs = crs, verbose_mode = verbose_mode, command_only = command_only)
   if (inherits(res, 'wbt_result')){
     res$history <- list(res)
@@ -245,14 +245,14 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
 #' @export
 #' @rdname wbt
 wbt.function <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE, command_only = FALSE ) {
-  
+
   tool_name <- deparse(substitute(result))
-  
+
   if (is.character(tool_name)) {
     wbt.character(result = tool_name, tool_name = NULL, ..., crs = crs,
                   verbose_mode = verbose_mode, command_only = command_only)
   }
-  
+
 }
 
 # start a toolchain with a call where result is missing or tool_name specified as result
@@ -265,7 +265,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
 }
 
 .process_crs <- function(inputargs) {
-  
+
   # support raster inputs in the following formats
   pkgin <- sapply(inputargs, function(x) {
     if (inherits(x, 'SpatRaster')) return("terra")
@@ -277,19 +277,19 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     if (inherits(x, 'RasterBrick')) return("raster")
     ""
   })
-  
+
   # requireNamespace("terra") for terra and/or raster as needed
-  pkgreq <- sapply(unique(pkgin[nchar(pkgin) > 0]), 
+  pkgreq <- sapply(unique(pkgin[nchar(pkgin) > 0]),
                    requireNamespace, quietly = TRUE)
   if (any(!pkgreq)) {
     stop("package ", pkgin[!pkgreq], " is required", call. = FALSE)
   }
-  
+
   if (!all(pkgin == pkgin[1])) {
     # if (pkgin[1] != "")
       # message("NOTE: Input spatial object classes do not match.")
   }
-  
+
   crsin <- lapply(seq_along(inputargs), function(i) {
     x <- inputargs[[i]]
     if (pkgin[i] == "terra") {
@@ -304,12 +304,12 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     }
     x2
   })
-  
+
   if (length(crsin) > 0) {
     crsmatch <- do.call('c', lapply(crsin, function(x) x == crsin[[1]]))
     if (length(crsmatch) == 0 || !all(crsmatch) || is.na(crsmatch)) {
       message("NOTE: Input CRS do not match.")
-    } 
+    }
     # take first input CRS
     res <- crsin[[1]]
     attr(res, 'package') <- pkgin[1]
@@ -323,19 +323,19 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
 
 
 .process_user_args <- function(userargs) {
-  
+
   # handle rasters so if given a raster as input, the filename is used as input
   # if a .tif file is returned as output, then the output is a RasterLayer and so on
   yrg <- lapply(names(userargs), function(argname) {
     x <- userargs[[argname]]
-    
+
     # sfc/sp support
     if (inherits(x, 'sfc') || inherits(x, 'Spatial')) {
       if (requireNamespace("sf")) {
         x <- sf::st_as_sf(x)
       }
     }
-    
+
     # raster rasterlayer support
     if (inherits(x, 'RasterLayer') || inherits(x, 'RasterStack') || inherits(x, 'RasterBrick')) {
       if (requireNamespace("raster")) {
@@ -361,28 +361,28 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
       }
     # vector data support
     } else if (inherits(x, 'SpatVector') ||
-               inherits(x, 'SpatVectorProxy') || 
+               inherits(x, 'SpatVectorProxy') ||
                inherits(x, 'sf')) {
       src <- attr(x, 'wbt_dsn')
-      
+
       if (is.null(src)) {
         x <- wbt_source(x)
         src <- attr(x, 'wbt_dsn')
       }
-      
+
       if (!is.null(src) && file.exists(src)) {
         if (inherits(x, 'SpatVector') ||
             inherits(x, 'SpatVectorProxy')) {
-          
+
           attr(src, "package") <- "terra"
-          
+
         } else if (inherits(x, 'sf')) {
-          
+
           attr(src, "package") <- "sf"
-          
+
         }
         return(src)
-        
+
       } else {
         stop("load/initialize SpatVector/sf objects with wbt_source()", call. = FALSE)
       }
@@ -396,7 +396,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
       ))
     } else {
       # allowed inputs "numeric", "integer", "character", "logical"
-      
+
       # shell quote all character (safer if paths contain parentheses)
       # convert all numeric to numeric (handles scientific notation)
       switch(class(x),
@@ -406,7 +406,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     }
   })
   names(yrg) <- names(userargs)
-  
+
   # handle try errors by treating them as if the arguments were not supplied
   yrg <- lapply(yrg, function(y) {
       if (inherits(y, 'try-error')) {
@@ -427,18 +427,13 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
 }
 
 .get_tool_params <- function(tool_name) {
-  
-  wbttoolparameters <- NULL
-  
+
   # remove underscores and other possible prefixes
   tool_name <- gsub("_", "", wbt_internal_tool_name(tool_name))
-  
-  # load latest data cache of parameters
-  load(system.file("data/wbttoolparameters.rda", package = "whitebox")[1])
-  
+
   # return subset by tool_name
   res <- wbttoolparameters[which(toupper(wbttoolparameters$tool_name) %in% toupper(tool_name)), ]
-  
+
   if (nrow(res) == 0) {
     extra <- ''
     if (trimws(tool_name) != '') {
@@ -458,14 +453,14 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
                                   userargs,
                                   result = NULL,
                                   prm = .get_tool_params(tool_name)) {
-    
+
   # take output from result to augment as first input if not specified
   inputprm <- prm$argument_name[prm$is_input][1]
   if (length(inputprm) && !inputprm %in% names(userargs)) {
-    
+
     #TODO: multi output? is this robust
     newinput <- character(0)
-    
+
     if (!is.null(result)) {
       newinput <- result$result
       if (!inherits(newinput, 'try-error')) {
@@ -473,31 +468,31 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
       }
     } else if ("input" %in% names(userargs)) {
       newinput <- userargs$input
-    } 
-    
+    }
+
     if (length(newinput) > 0) {
       # re-arrange and re-name user "input" arg if necessary
       userargs <- c(list(input = newinput), userargs[names(userargs) != "input"])
       names(userargs)[1] <- inputprm
-    }  
+    }
   }
   userargs
 }
 
 .wbt_args <- function(tool_name, args, params = .get_tool_params(tool_name), crs = NULL) {
   # match tool_name and params options for helpful errors
-  
+
   newpkg <- unique(do.call('c', lapply(args, attr, 'package')))[1]
   # construct arg string --param1=value1 --param2=value2
   newargs <- paste(paste0("--", names(args), "=", as.character(args)), collapse = " ")
-  
+
   reqparams <- sapply(params$argument_name[!params$optional], function(x) any(sapply(x, function(y) grepl(y, newargs))))
-  
+
   # at least one required param is missing or a bad parameter is specified
   chkprm <- !names(args) %in% params$argument_name
   if (sum(as.numeric(reqparams)) < length(params$argument_name[!params$optional]) || any(chkprm)) {
     # if (wbt_verbose()) {
-    
+
     # user specified a bad parameter
     invalid <- character()
     if (any(chkprm)) {
@@ -505,16 +500,16 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
               " '", paste0(names(args)[chkprm], collapse = "', '"), "'\n")
       invalid <- names(args)[chkprm]
     }
-    
+
     # inform of required args
     message("Required arguments:")
-    
+
     reqprm <- params$argument_name[!params$optional][!reqparams]
     ismissing <- ifelse(!reqparams, " [ ] ", " [*] ")
     for (i in seq_along(reqparams)) {
       message("-",  ismissing[i], params$argument_name[!params$optional][i], " -- ", params$description[!params$optional][i])
     }
-      
+
     message("")
     # inform of optional args
     optparams <- !params$argument_name[params$optional] %in% names(args)
@@ -532,8 +527,8 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     if (length(reqprm) > 0) {
       reqprm <- paste(paste0(shQuote(reqprm), collapse = ", "), "required")
     }
-    errres <- .warninput(paste0("ERROR: ", 
-                                paste0(c(invalid, reqprm), 
+    errres <- .warninput(paste0("ERROR: ",
+                                paste0(c(invalid, reqprm),
                                        collapse ="; ")))
     attr(errres, 'tool') <- tool_name
     attr(errres, 'args') <- newargs
@@ -549,25 +544,25 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     pkg <- ""
   }
   lapply(args[names(args) %in% "output"], function(x) {
-    # TODO: user defined file patterns and customizable methods 
+    # TODO: user defined file patterns and customizable methods
     # https://jblindsay.github.io/wbt_book/supported_formats.html
-    
+
     # support for GeoTIFF
     if (!is.na(x) & (endsWith(x, ".tif") | endsWith(x, ".tiff"))) {
       wdp <- file.path(wbt_wd(), x)
-      
+
       # check working directory if set
       if (file.exists(wdp)) {
         x <- wdp
-      } 
-      
+      }
+
       # default value is original value
       y <- x
-      
+
       # support for the raster v.s. terra v.s. ? package via attribute passed with crs or prior result
       israster <- attr(crs, 'package')
-      if (length(israster) == 0) israster <- pkg 
-      
+      if (length(israster) == 0) israster <- pkg
+
       if (israster %in% "raster") {
         if (requireNamespace('raster')) {
           y <- suppressWarnings(try(raster::raster(x)))
@@ -575,7 +570,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
             if (length(crs) == 0) {
               crs <- ""
             }
-            # propagate wbt_result CRS if the result has none 
+            # propagate wbt_result CRS if the result has none
             if (is.na(as.character(raster::crs(y))) && !is.na(crs)) {
               raster::crs(y) <- ifelse(!is.character(crs), "", crs)
             }
@@ -601,7 +596,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
       #   }
       ##
       ## TODO: LAS object from lidR package support?
-      #  
+      #
       # } else if (!is.na(x) & endsWith(x, ".las")) {
       #   if (requireNamespace('lidR')) {
       #     # TODO: support additional arguments to readLAS()?
@@ -621,10 +616,10 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
                  crs = NULL,
                  verbose_mode = FALSE,
                  command_only = FALSE) {
-          
+
   # process and check user arguments
   newargs <- .wbt_args(tool_name = tool_name, args = args, params = params, crs = crs)
-  
+
   if (inherits(newargs, 'try-error')) {
     return(invisible(wbt_result(tool_name = tool_name,
                          args = attr(newargs, 'args'),
@@ -632,18 +627,18 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
                          crs = crs,
                          result = newargs)))
   }
-    
+
   # pass through wbt_run_tool
   console <- try(wbt_run_tool(tool_name = tool_name,
                               args = newargs,
                               verbose_mode = verbose_mode,
                               command_only = command_only
                              ),  silent = TRUE)
-                              
+
   if (command_only) {
     return(console[1])
   }
-  
+
   if (inherits(console, 'try-error')) {
     return(invisible(wbt_result(tool_name = tool_name,
         args = newargs,
@@ -652,7 +647,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
         result = .warninput(c("ERROR: Tool execution failed", console[1]))
       )))
   }
-  
+
   if ("output" %in% names(args)) {
     return(invisible(wbt_result(
       tool_name = tool_name,
