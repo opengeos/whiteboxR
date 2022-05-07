@@ -10,7 +10,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval = whitebox::check_whitebox_binary()
 )
 ```
 
@@ -23,7 +24,6 @@ visualize results.
 
 ```{r}
 library(whitebox)
-run_vignette <- check_whitebox_binary()
 ```
 
 ### Getting Started
@@ -100,7 +100,7 @@ the following:
 ## Input and Output with R spatial objects
 
 A feature of `wbt()` is that it handles input/output and file name management
-if you are using R objects as input. It can bean onerous task to manage files 
+if you are using R objects as input. It can be an onerous task to manage files 
 for workflows involving many tool runs.
 
 If you use a `raster` object as your input object frontend, you will get a
@@ -112,7 +112,7 @@ files.
 #### Compare `raster` and `terra` as R raster object frontends
 
 ```{r}
-if (run_vignette && requireNamespace("raster")) {
+if (requireNamespace("raster") && requireNamespace("rgdal")) {
   rdem <- raster::raster(dem)
 
   # raster input; raster output
@@ -123,7 +123,7 @@ if (run_vignette && requireNamespace("raster")) {
 ```
 
 ```{r}
-if (run_vignette && requireNamespace("terra")) {
+if (requireNamespace("terra")) {
   tdem <- terra::rast(dem)
 
   # # terra input; terra output
@@ -143,7 +143,21 @@ followed that otherwise might be hard to track.
 
 ## `wbt_source()`, rasters in memory, and vector data
 
-...
+The terra and raster packages use pointers to a file/raster connection except 
+when a grid is entirely in memory. Processing these types of rasters with 
+whitebox requires writing out as a temporary GeoTIFF file for tool input. In general
+`wbt()` can handle this for you.
+
+Vector data (point, line and polygon geometries) are commonly stored stored in 
+sf data.frames, sp objects, or terra SpatVector objects. These types are
+read into memory on creation. Reading vector data into R memory is
+not needed to run tools, so `wbt_source()` provides a means to annotate objects 
+with information about source file path (similar to how terra/raster handle raster sources)
+such that they can be processed further  by `wbt()` with minimal overhead. 
+Objects like the terra SpatVectorProxy use delayed read by default. Passing a file path 
+to `wbt_source()` will create a SpatVectorProxy with necessary information for use with `wbt()`. 
+The SpatVectorProxy provides a lightweight means to create an R object reference to a large file;
+allowing the heavy lifting for that file to be done primarily by WhiteboxTools.
 
 ## Running Sequences of Tools
 
