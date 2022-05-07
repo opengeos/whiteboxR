@@ -428,6 +428,10 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
 
 .get_tool_params <- function(tool_name) {
 
+  try({
+    wbttoolparameters <- get('wbttoolparameters')
+  }, silent = TRUE)
+  
   # remove underscores and other possible prefixes
   tool_name <- gsub("_", "", wbt_internal_tool_name(tool_name))
 
