@@ -50,7 +50,13 @@ jobs:
           
       - name: Install remotes
         run: Rscript -e "install.packages('remotes')"
-        
+      
+      - name: Install system dependencies
+        if: runner.os == 'macOS'
+        run: |
+          brew install pkg-config
+          brew install gdal
+
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
