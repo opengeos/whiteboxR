@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,23 +33,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -67,7 +63,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/giswqs/whiteboxR/">
+  <a href="https://github.com/giswqs/whiteboxR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -82,29 +78,30 @@
 
       
 
-      </header><script src="datasets_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>whitebox Tool Metadata</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/master/vignettes/datasets.Rmd"><code>vignettes/datasets.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/giswqs/whiteboxR/blob/HEAD/vignettes/datasets.Rmd" class="external-link"><code>vignettes/datasets.Rmd</code></a></small>
       <div class="hidden name"><code>datasets.Rmd</code></div>
 
     </div>
 
     
     
-<div id="whitebox-tool-metadata" class="section level1">
-<h1 class="hasAnchor">
-<a href="#whitebox-tool-metadata" class="anchor"></a><code>whitebox</code> Tool Metadata</h1>
+<div class="section level2">
+<h2 id="whitebox-tool-metadata">
+<code>whitebox</code> Tool Metadata<a class="anchor" aria-label="anchor" href="#whitebox-tool-metadata"></a>
+</h2>
 <p>This vignette provides an introduction to the data sets included in
 the <code>whitebox</code> package. These data sets contain names,
 arguments and other metadata for tools available in WhiteboxTools.</p>
-<div id="what-version-of-whiteboxtools-are-these-data-sets-generated-from" class="section level3">
-<h3 class="hasAnchor">
-<a href="#what-version-of-whiteboxtools-are-these-data-sets-generated-from" class="anchor"></a>What version of WhiteboxTools are these data sets generated
-from?</h3>
+<div class="section level4">
+<h4 id="what-version-of-whiteboxtools-are-these-data-sets-generated-from">What version of WhiteboxTools are these data sets generated
+from?<a class="anchor" aria-label="anchor" href="#what-version-of-whiteboxtools-are-these-data-sets-generated-from"></a>
+</h4>
 <p>These data sets are built to correspond to tool names available in
 the most recent version of WhiteboxTools and correspond to tools
 available in the R package.</p>
@@ -116,18 +113,18 @@ available in the R package.</p>
 should not be an issue, but the data sets are not dynamically generated
 from your whitebox installation.</p>
 </div>
-<div id="whiteboxtools-tool-names-and-r-function-names" class="section level2">
-<h2 class="hasAnchor">
-<a href="#whiteboxtools-tool-names-and-r-function-names" class="anchor"></a>WhiteboxTools Tool Names and R Function Names</h2>
+<div class="section level3">
+<h3 id="whiteboxtools-tool-names-and-r-function-names">WhiteboxTools Tool Names and R Function Names<a class="anchor" aria-label="anchor" href="#whiteboxtools-tool-names-and-r-function-names"></a>
+</h3>
 <p>The first data set provides the relationship between tool names in
 WhiteboxTools and the corresponding exported function in the R
 package.</p>
 <p>It also gives the WhiteboxTools Toolbox name and a brief
 description.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"wbttools"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"wbttools"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">wbttools</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">wbttools</span><span class="op">)</span>
 <span class="co">#&gt; 'data.frame':    518 obs. of  7 variables:</span>
 <span class="co">#&gt;  $ tool_name    : chr  "AbsoluteValue" "AccumulationCurvature" "AdaptiveFilter" "Add" ...</span>
 <span class="co">#&gt;  $ function_name: chr  "wbt_absolute_value" "wbt_accumulation_curvature" "wbt_adaptive_filter" "wbt_add" ...</span>
@@ -149,7 +146,7 @@ description.</p>
 <li><p><code>"book"</code> - Reference manual link</p></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wbttools</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">wbttools</span><span class="op">)</span>
 <span class="co">#&gt;                    tool_name                      function_name</span>
 <span class="co">#&gt; 1              AbsoluteValue                 wbt_absolute_value</span>
 <span class="co">#&gt; 2      AccumulationCurvature         wbt_accumulation_curvature</span>
@@ -198,13 +195,13 @@ WhiteboxTools, but the core words are the same.</p>
 <p>So, <code>StreamSlopeContinuous</code> becomes
 <code><a href="../reference/wbt_stream_slope_continuous.html">wbt_stream_slope_continuous()</a></code> in R, for instance.</p>
 </div>
-<div id="whiteboxtools-tool-and-parameter-names" class="section level2">
-<h2 class="hasAnchor">
-<a href="#whiteboxtools-tool-and-parameter-names" class="anchor"></a>WhiteboxTools Tool and Parameter Names</h2>
+<div class="section level3">
+<h3 id="whiteboxtools-tool-and-parameter-names">WhiteboxTools Tool and Parameter Names<a class="anchor" aria-label="anchor" href="#whiteboxtools-tool-and-parameter-names"></a>
+</h3>
 <p>The second data set provides details about the options by tool
 name.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"wbttoolparameters"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"wbttoolparameters"</span>, package <span class="op">=</span> <span class="st">"whitebox"</span><span class="op">)</span></code></pre></div>
 <p>The <code>wbttoolparameters</code> data set is a <em>data.frame</em>
 with 2082 parameters and 13 variables:</p>
 <ul>
@@ -233,7 +230,7 @@ parameters</p></li>
 for <code>wbt_</code> functions</p></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wbttoolparameters</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">wbttoolparameters</span><span class="op">)</span>
 <span class="co">#&gt;               tool_name              function_name             toolbox_name</span>
 <span class="co">#&gt; 1         AbsoluteValue         wbt_absolute_value     Math and Stats Tools</span>
 <span class="co">#&gt; 2         AbsoluteValue         wbt_absolute_value     Math and Stats Tools</span>
@@ -272,7 +269,7 @@ replaced with two variables in the data set:
 functions with <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> or for inspecting the types
 of tools that can be run on particular data types.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; 'data.frame':    2082 obs. of  13 variables:</span>
 <span class="co">#&gt;  $ tool_name       : chr  "AbsoluteValue" "AbsoluteValue" "AccumulationCurvature" "AccumulationCurvature" ...</span>
 <span class="co">#&gt;  $ function_name   : chr  "wbt_absolute_value" "wbt_absolute_value" "wbt_accumulation_curvature" "wbt_accumulation_curvature" ...</span>
@@ -294,13 +291,13 @@ is convenient.</p>
 <p>The variable <code>argument_name</code> is processed to be the subset
 of <code>flags</code> that corresponds to arguments to R functions,
 which are denoted with <code>function_name</code>.</p>
-<div id="example-finding-tools-by-parameter-type" class="section level3">
-<h3 class="hasAnchor">
-<a href="#example-finding-tools-by-parameter-type" class="anchor"></a>Example: Finding Tools by Parameter Type</h3>
+<div class="section level4">
+<h4 id="example-finding-tools-by-parameter-type">Example: Finding Tools by Parameter Type<a class="anchor" aria-label="anchor" href="#example-finding-tools-by-parameter-type"></a>
+</h4>
 <p>To find the tools that have an “ExistingFile” argument with file type
-“Raster” we can use <code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code>.</p>
+“Raster” we can use <code><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset()</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"ExistingFile"</span>, <span class="va">parameter_class</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"Raster"</span>, <span class="va">parameter_detail</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">wbttoolparameters</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"ExistingFile"</span>, <span class="va">parameter_class</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"Raster"</span>, <span class="va">parameter_detail</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;                tool_name              function_name             toolbox_name</span>
 <span class="co">#&gt; 1          AbsoluteValue         wbt_absolute_value     Math and Stats Tools</span>
 <span class="co">#&gt; 3  AccumulationCurvature wbt_accumulation_curvature Geomorphometric Analysis</span>
@@ -333,15 +330,15 @@ which are denoted with <code>function_name</code>.</p>
 <!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
 </div>
 </div>
-<div id="appendix-tables-of-function-names-by-toolbox" class="section level2">
-<h2 class="hasAnchor">
-<a href="#appendix-tables-of-function-names-by-toolbox" class="anchor"></a>Appendix: Tables of Function Names by Toolbox</h2>
+<div class="section level3">
+<h3 id="appendix-tables-of-function-names-by-toolbox">Appendix: Tables of Function Names by Toolbox<a class="anchor" aria-label="anchor" href="#appendix-tables-of-function-names-by-toolbox"></a>
+</h3>
 <p>The remainder of this vignette is tables of R function names and tool
 descriptions from <code>wbttoolparameters</code>, organized by
 WhiteboxTools toolbox/extension name.</p>
-<div id="data-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#data-tools" class="anchor"></a>Data Tools</h3>
+<div class="section level4">
+<h4 id="data-tools">Data Tools<a class="anchor" aria-label="anchor" href="#data-tools"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Data Tools</caption>
 <colgroup>
@@ -476,9 +473,9 @@ raster.</td>
 </tbody>
 </table>
 </div>
-<div id="geomorphometric-analysis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#geomorphometric-analysis" class="anchor"></a>Geomorphometric Analysis</h3>
+<div class="section level4">
+<h4 id="geomorphometric-analysis">Geomorphometric Analysis<a class="anchor" aria-label="anchor" href="#geomorphometric-analysis"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Geomorphometric Analysis</caption>
 <colgroup>
@@ -932,9 +929,9 @@ tan(slope)).</td>
 </tbody>
 </table>
 </div>
-<div id="gis-analysis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#gis-analysis" class="anchor"></a>GIS Analysis</h3>
+<div class="section level4">
+<h4 id="gis-analysis">GIS Analysis<a class="anchor" aria-label="anchor" href="#gis-analysis"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: GIS Analysis</caption>
 <colgroup>
@@ -1387,9 +1384,9 @@ raster images.</td>
 </tbody>
 </table>
 </div>
-<div id="hydrological-analysis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#hydrological-analysis" class="anchor"></a>Hydrological Analysis</h3>
+<div class="section level4">
+<h4 id="hydrological-analysis">Hydrological Analysis<a class="anchor" aria-label="anchor" href="#hydrological-analysis"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Hydrological Analysis</caption>
 <colgroup>
@@ -1691,9 +1688,9 @@ to a set of target cells.</td>
 </tbody>
 </table>
 </div>
-<div id="image-processing-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#image-processing-tools" class="anchor"></a>Image Processing Tools</h3>
+<div class="section level4">
+<h4 id="image-processing-tools">Image Processing Tools<a class="anchor" aria-label="anchor" href="#image-processing-tools"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Image Processing Tools</caption>
 <colgroup>
@@ -2066,9 +2063,9 @@ single-band multi-date change detection.</td>
 </tbody>
 </table>
 </div>
-<div id="lidar-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#lidar-tools" class="anchor"></a>LiDAR Tools</h3>
+<div class="section level4">
+<h4 id="lidar-tools">LiDAR Tools<a class="anchor" aria-label="anchor" href="#lidar-tools"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: LiDAR Tools</caption>
 <colgroup>
@@ -2361,9 +2358,9 @@ format.</td>
 </tbody>
 </table>
 </div>
-<div id="machine-learning" class="section level3">
-<h3 class="hasAnchor">
-<a href="#machine-learning" class="anchor"></a>Machine Learning</h3>
+<div class="section level4">
+<h4 id="machine-learning">Machine Learning<a class="anchor" aria-label="anchor" href="#machine-learning"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Machine Learning</caption>
 <colgroup>
@@ -2429,9 +2426,9 @@ training site points and predictor rasters.</td>
 </tbody>
 </table>
 </div>
-<div id="math-and-stats-tools" class="section level3">
-<h3 class="hasAnchor">
-<a href="#math-and-stats-tools" class="anchor"></a>Math and Stats Tools</h3>
+<div class="section level4">
+<h4 id="math-and-stats-tools">Math and Stats Tools<a class="anchor" aria-label="anchor" href="#math-and-stats-tools"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Math and Stats Tools</caption>
 <colgroup>
@@ -2875,9 +2872,9 @@ in a raster.</td>
 </tbody>
 </table>
 </div>
-<div id="precision-agriculture" class="section level3">
-<h3 class="hasAnchor">
-<a href="#precision-agriculture" class="anchor"></a>Precision Agriculture</h3>
+<div class="section level4">
+<h4 id="precision-agriculture">Precision Agriculture<a class="anchor" aria-label="anchor" href="#precision-agriculture"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Precision Agriculture</caption>
 <colgroup>
@@ -2922,9 +2919,9 @@ a field.</td>
 </tbody>
 </table>
 </div>
-<div id="stream-network-analysis" class="section level3">
-<h3 class="hasAnchor">
-<a href="#stream-network-analysis" class="anchor"></a>Stream Network Analysis</h3>
+<div class="section level4">
+<h4 id="stream-network-analysis">Stream Network Analysis<a class="anchor" aria-label="anchor" href="#stream-network-analysis"></a>
+</h4>
 <table class="table">
 <caption>Toolbox: Stream Network Analysis</caption>
 <colgroup>
@@ -3072,11 +3069,13 @@ operations on an input vector stream file.</td>
 
 
       <footer><div class="copyright">
-  <p>Developed by Qiusheng Wu, Andrew Brown.</p>
+  <p></p>
+<p>Developed by Qiusheng Wu, Andrew Brown.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>
@@ -3084,6 +3083,8 @@ operations on an input vector stream file.</td>
 
   
 
+
+  
 
   </body>
 </html>

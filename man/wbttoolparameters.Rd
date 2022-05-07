@@ -5,7 +5,7 @@
 \alias{wbttoolparameters}
 \title{WhiteboxTools Tool Parameters}
 \format{
-A \code{data.frame} with 1706 observations of 13 variables
+A \code{data.frame} with 2082 observations of 13 variables
 \itemize{
 \item \code{"function_name"} - R function name
 \item \code{"tool_name"} - WhiteboxTools tool name
@@ -22,10 +22,13 @@ A \code{data.frame} with 1706 observations of 13 variables
 }
 }
 \source{
-\href{https://github.com/jblindsay/whitebox-tools/releases/tag/1.5.0}{WhiteboxTools 1.5.0}
+\href{https://github.com/jblindsay/whitebox-tools/releases/}{WhiteboxTools}
+}
+\usage{
+wbttoolparameters
 }
 \description{
-This data set is a \code{data.frame} containing tools by name, their parameters, and associated metadata, as available in WhiteboxTools 1.5.0
+This data set is a \code{data.frame} containing tool parameters and associated metadata
 }
 \seealso{
 \link{wbttools} \code{\link[=wbt_tool_parameters]{wbt_tool_parameters()}}
