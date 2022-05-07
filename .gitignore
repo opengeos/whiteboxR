@@ -11,3 +11,8 @@ whiteboxR.Rproj
 /doc/
 /Meta/
 *.zip
+*.shp
+*.shx
+*.prj
+*.dbf
+*.tif
