@@ -359,7 +359,7 @@ The `filter` argument sets the size of the filter kernel.
 ## Available Tools
 
 The **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**
-library currently contains more than **448** tools, which are each
+library currently contains more than **518** tools, which are each
 grouped based on their main function into one of the following
 categories: Data Tools, GIS Analysis, Hydrological Analysis, Image
 Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream
