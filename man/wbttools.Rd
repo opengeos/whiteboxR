@@ -17,7 +17,7 @@ A data.frame with 518 observations of 7 variables
 }
 }
 \source{
-\href{https://github.com/jblindsay/whitebox-tools/releases/tag}{WhiteboxTools}
+\href{https://github.com/jblindsay/whitebox-tools/releases/}{WhiteboxTools}
 }
 \usage{
 wbttools

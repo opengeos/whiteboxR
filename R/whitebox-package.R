@@ -29,7 +29,7 @@
 #' - `"description"` - Brief description
 #' - `"github"` - Link to related code on GitHub
 #' - `"book"` - Link to WhiteboxTools Manual
-#' @source [WhiteboxTools](https://github.com/jblindsay/whitebox-tools/releases/tag)
+#' @source [WhiteboxTools](https://github.com/jblindsay/whitebox-tools/releases/)
 #' @seealso [wbttoolparameters] [wbt_list_tools()]
 #' @keywords datasets
 "wbttools"
