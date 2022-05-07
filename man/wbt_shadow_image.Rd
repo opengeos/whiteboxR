@@ -10,7 +10,7 @@ wbt_shadow_image(
   palette = "soft",
   max_dist = "",
   date = "21/06/2021",
-  time = "1300",
+  time = "13:00",
   location = "43.5448/-80.2482/-4",
   wd = NULL,
   verbose_mode = FALSE,

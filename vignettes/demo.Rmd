@@ -33,7 +33,7 @@ data("wbttoolparameters", package="whitebox")
 # }
 
 # system and package dependencies must be met to build the vignette
-stopifnot(requireNamespace("raster"))
+stopifnot(requireNamespace("terra"))
 ```
 
 ## Introduction 
@@ -79,7 +79,7 @@ Saving your "output" file paths as a variable so that you can use them later to 
 A demonstration workflow involving the popular raster package follows:
 
 ```{r}
-library(raster)
+library(terra)
 library(whitebox)
 
 # DEMO: calculate slope with WhiteboxTools and raster
@@ -103,39 +103,41 @@ wbt_slope(input, output, units = 'radians')
 
 ```{r}
 if (file.exists(output)) {
-  # create a RasterLayer from file output path
-  outputras <- raster::raster(output)
+  # create a SpatRaster from file output path
+  outputras <- terra::rast(output)
 }
 ```
 
-In this case, we can achieve a similar slope map result using `raster::terrain()`, so we will create and plot a RasterLayer from `output` and compare the two.
+In this case, we can achieve a similar slope map result using `terra::terrain()`, so we will create and plot a SpatRaster from `output` and compare the two.
 
 ```{r}
 if (file.exists(output)) {
   # par(mfrow = c(2, 1), mar = c(1, 1, 1, 1))
   
   # inspect the output graphically
-  raster::plot(
+  plot(
     outputras,
     main = "whitebox::wbt_slope() [radians]",
-    axes = FALSE, horizontal = TRUE
+    axes = FALSE
   )
   
   # calculate equivalent using raster::terrain() on input
-  raster::plot(
-    raster::terrain(raster::raster(input, crs = "EPSG:26918")),
-    main = "raster::terrain() [radians]",
-    axes = FALSE, horizontal = TRUE
+  plot(
+    terra::terrain(set.crs(terra::rast(input), "EPSG:26918")),
+    main = "terra::terrain() [radians]",
+    axes = FALSE
   )
-
-# the RasterLayer retains a reference to the input file name
-raster::filename(outputras)
 }
 ```
 
-The `RasterLayer`, `SpatRaster` and related classes in the raster and terra packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.
+The `SpatRaster`, `RasterLayer` and related classes in the terra and raster packages are perfect for maintaining the linkage between file output and an R object with the data in or out of memory.
 
-Use `raster::filename()` to get the "source" file name. If you are using a terra `SpatRaster` objects the equivalent method is `terra::sources()`.
+Use `terra::sources()` to get the "source" file name(s). If you are using a raster `RasterLayer` objects the equivalent method is `raster::filename()`.
+
+```{r}
+# the SpatRaster retains a reference to the input file name
+terra::sources(outputras)
+```
 
 ### WhiteboxTools R setup
 
@@ -290,7 +292,7 @@ We use the raster R package to read the GeoTIFF outputs from WhiteboxTools.
 #### Setup
 
 ```{r}
-library(raster)
+library(terra)
 
 # sample DEM file path in package extdata folder
 input <- sample_dem_data()
@@ -306,25 +308,23 @@ output <- file.path(tempdir(), "output.tif")
 wbt_breach_depressions(dem = input, output = output)
 ```
 
-#### Visualize results with `raster`
+#### Visualize results with `terra`
 
 ```{r}
 # create raster object from input file
-input <- raster(input)
+input <- rast(input)
 
 if (file.exists(output)) {
   # create raster object from output file
-  output <- raster(output)
+  output <- rast(output)
   
   # par(mar = c(2, 1, 2, 1))
   # inspect input v.s. output
-  plot(input, axes = FALSE, horizontal = TRUE, box = FALSE, main = "DEM")
-  plot(output, axes = FALSE, horizontal = TRUE, box = FALSE, 
-       main = "DEM (Breached Depressions)")
+  plot(input, axes = FALSE, main = "DEM")
+  plot(output, axes = FALSE, main = "DEM (Breached Depressions)")
   
   # inspect numeric difference (output - input) 
-  plot(output - input, axes = FALSE, horizontal = TRUE, box = FALSE, 
-       main = "Difference ([Breached Depressions] - [DEM])")
+  plot(output - input, axes = FALSE,  main = "Difference ([Breached Depressions] - [DEM])")
 }
 ```
 
@@ -342,12 +342,11 @@ Here is a brief snippet based on the beginning of the hydroweight README showing
 
 ```{r}
 library(whitebox)
-library(raster)
+library(terra)
 
 ## Sample DEM from whitebox package
 toy_file <- sample_dem_data()
-toy_dem <- raster(x = toy_file, values = TRUE)
-crs(toy_dem) <- "EPSG:26918"
+toy_dem <- set.crs(rast(x = toy_file), "EPSG:26918")
 
 ## Generate wd as a temporary directory. 
 ## Replace with your own path, or "." for current directory
@@ -456,7 +455,7 @@ if (file.exists(file.path(wd, "toy_dem_streams.tif"))) {
   # par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))
   
   plot(
-    raster(file.path(wd, "toy_dem_streams.tif")),
+    rast(file.path(wd, "toy_dem_streams.tif")),
     main = "Streams",
     col = "black",
     axes = FALSE,
@@ -465,7 +464,7 @@ if (file.exists(file.path(wd, "toy_dem_streams.tif"))) {
   )
   
   plot(
-    raster(file.path(wd, "toy_dem_tributaries.tif")),
+    rast(file.path(wd, "toy_dem_tributaries.tif")),
     main = "TributaryIdentifier",
     axes = FALSE,
     horizontal = TRUE,

@@ -29,7 +29,7 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
     args <- paste(args, paste0("--min_points=", min_points))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -80,7 +80,7 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
     args <- paste(args, paste0("--min_class_size=", min_class_size))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -129,7 +129,7 @@ wbt_knn_classification <- function(inputs, training, field, output, scaling="Nor
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -180,7 +180,7 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -223,7 +223,7 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -272,7 +272,7 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
     args <- paste(args, paste0("--class_change=", class_change))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -327,7 +327,7 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -378,7 +378,7 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -433,7 +433,7 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -488,7 +488,7 @@ wbt_svm_regression <- function(inputs, training, field, scaling="Normalize", out
     args <- paste(args, paste0("--test_proportion=", test_proportion))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))

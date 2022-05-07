@@ -27,7 +27,7 @@ wbt_distance_to_outlet <- function(d8_pntr, streams, output, esri_pntr=FALSE, ze
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -62,7 +62,7 @@ wbt_extract_streams <- function(flow_accum, output, threshold, zero_background=F
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -94,7 +94,7 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(variant)) {
-    args <- paste(args, paste0("--variant=", variant))
+    args <- paste(args, paste0("--variant=", wbt_file_path(variant)))
   }
   if (line_thin) {
     args <- paste(args, "--line_thin")
@@ -103,7 +103,7 @@ wbt_extract_valleys <- function(dem, output, variant="LQ", line_thin=TRUE, filte
     args <- paste(args, paste0("--filter=", filter))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -142,7 +142,7 @@ wbt_farthest_channel_head <- function(d8_pntr, streams, output, esri_pntr=FALSE,
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -181,7 +181,7 @@ wbt_find_main_stem <- function(d8_pntr, streams, output, esri_pntr=FALSE, zero_b
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -220,7 +220,7 @@ wbt_hack_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -259,7 +259,7 @@ wbt_horton_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE, z
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -298,7 +298,7 @@ wbt_length_of_upstream_channels <- function(d8_pntr, streams, output, esri_pntr=
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -335,7 +335,7 @@ wbt_long_profile <- function(d8_pntr, streams, dem, output, esri_pntr=FALSE, wd=
     args <- paste(args, "--esri_pntr")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -372,7 +372,7 @@ wbt_long_profile_from_points <- function(d8_pntr, points, dem, output, esri_pntr
     args <- paste(args, "--esri_pntr")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -407,7 +407,7 @@ wbt_raster_streams_to_vector <- function(streams, d8_pntr, output, esri_pntr=FAL
     args <- paste(args, "--esri_pntr")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -446,7 +446,7 @@ wbt_rasterize_streams <- function(streams, base, output, nodata=TRUE, feature_id
     args <- paste(args, "--feature_id")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -483,7 +483,7 @@ wbt_remove_short_streams <- function(d8_pntr, streams, output, min_length, esri_
     args <- paste(args, "--esri_pntr")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -516,7 +516,7 @@ wbt_repair_stream_vector_topology <- function(input, output, dist="", wd=NULL, v
     args <- paste(args, paste0("--dist=", dist))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -555,7 +555,7 @@ wbt_shreve_stream_magnitude <- function(d8_pntr, streams, output, esri_pntr=FALS
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -594,7 +594,7 @@ wbt_strahler_stream_order <- function(d8_pntr, streams, output, esri_pntr=FALSE,
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -633,7 +633,7 @@ wbt_stream_link_class <- function(d8_pntr, streams, output, esri_pntr=FALSE, zer
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -672,7 +672,7 @@ wbt_stream_link_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -711,7 +711,7 @@ wbt_stream_link_length <- function(d8_pntr, linkid, output, esri_pntr=FALSE, zer
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -752,7 +752,7 @@ wbt_stream_link_slope <- function(d8_pntr, linkid, dem, output, esri_pntr=FALSE,
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -793,7 +793,7 @@ wbt_stream_slope_continuous <- function(d8_pntr, streams, dem, output, esri_pntr
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -832,7 +832,7 @@ wbt_topological_stream_order <- function(d8_pntr, streams, output, esri_pntr=FAL
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -871,7 +871,7 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
     args <- paste(args, "--zero_background")
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
@@ -910,7 +910,7 @@ wbt_vector_stream_network_analysis <- function(streams, dem, output, cutting_hei
     args <- paste(args, paste0("--snap=", snap))
   }
   if (!missing(wd)) {
-    args <- paste(args, paste0("--wd=", wd))
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
   if (!missing(compress_rasters)) {
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
