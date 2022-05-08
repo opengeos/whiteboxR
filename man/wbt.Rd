@@ -27,7 +27,7 @@ wbt(
   command_only = FALSE
 )
 
-get_result(result, history = TRUE, attribute = "output")
+get_result(result, i = NULL, history = TRUE, attribute = "output")
 
 \method{wbt}{character}(
   result,
@@ -69,6 +69,8 @@ get_result(result, history = TRUE, attribute = "output")
 
 \item{command_only}{Return command that would be run with \code{system()}? Default: \code{FALSE}}
 
+\item{i}{Optional index of result list element to return as result. Default is whole list.}
+
 \item{history}{Default: \code{TRUE} returns a list of all history results}
 
 \item{attribute}{Default: \code{"output"}}
@@ -84,7 +86,7 @@ a list with class \code{"wbt_result"} containing elements:
 \item \code{history} - history of 'result' when \code{wbt_result} was passed as input, most recent output at end
 }
 
-list of result in \code{attribute} if \code{"history"} is present, otherwise the result in \code{attribute}
+list of result in \code{attribute} if \code{"history"} is present, otherwise the result in \code{attribute}. If \code{i} is specified, just the \code{i}th element fo the list.
 }
 \description{
 You are required to specify all required arguments as either paths to files, or R object types that can be associated with a file.

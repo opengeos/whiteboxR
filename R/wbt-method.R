@@ -171,22 +171,35 @@ wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FA
 
 #' @description `get_result()`: return a combined list of results from either the history of a `wbt_result` (if present and `history=TRUE`), or the result of a `wbt_result`
 #' @param result an object of class `wbt_result`
+#' @param i Optional index of result list element to return as result. Default is whole list.
 #' @param history Default: `TRUE` returns a list of all history results
 #' @param attribute Default: `"output"`
-#' @return list of result in `attribute` if `"history"` is present, otherwise the result in `attribute`
+#' @return list of result in `attribute` if `"history"` is present, otherwise the result in `attribute`. If `i` is specified, just the `i`th element of the list. 
 #' @export
 #' @rdname wbt
-get_result <- function(result, history = TRUE, attribute = "output") {
+get_result <- function(result, i = NULL, history = TRUE, attribute = "output") {
   UseMethod("get_result")
 }
 
 #' @export
-get_result.wbt_result <- function(result, history = TRUE, attribute = "output") {
+get_result.wbt_result <- function(result, i = NULL, history = TRUE, attribute = "output") {
   # if there is $history present, by default return a list of all the results
-  if(!is.null(result[["history"]]) && history)
-     sapply(result[["history"]], function(x) x$result[[attribute]])
-  else result$result[[attribute]]
-  # otherwise, just get the last result as stored in $result
+  if (!is.null(result[["history"]]) && history) {
+    res <- sapply(result[["history"]], function(x) x$result[[attribute]])
+  } else {
+    res <- result$result[[attribute]]
+  }
+
+  # get the last result as stored in $result
+  if (is.null(i)) {
+    return(res)
+  } 
+  
+  if (i < 0 || i > length(res)) {
+    stop(sprintf("result list index %s is out of bounds", i), call. = FALSE)
+  }
+  
+  .subset2(res, i)
 }
 
 #' @export
@@ -297,7 +310,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     } else if (pkgin[i] == "sf") {
       x2 <- try(as.character(sf::st_crs(x)), silent = FALSE)
     } else {
-      x2 <- try(if(inherits(x, 'RasterLayer')) raster::wkt(raster::crs(x)))
+      x2 <- try(if (inherits(x, 'RasterLayer')) raster::wkt(raster::crs(x)))
     }
     if (is.null(x2) || inherits(x2, 'try-error')) {
       return("")
