@@ -866,22 +866,18 @@ wbt_system_call <- function(argstring,
                     "  whitebox.exe_path: ", wbt_exe, "; File exists? ",
                                                          file.exists(wbt_exe_path(shell_quote = FALSE)),
                     "\n  Arguments: ", args2)
-  ret <- try(suppressWarnings(tryCatch(
-    system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, ignore.stdout = FALSE),
-    error = function(err) stop(stopmsg, "\n\n", err, call. = FALSE)
-  )), silent = TRUE)
-
-  if (inherits(ret, 'try-error')) {
-    message(ret[[1]])
-    ret <- ret[[1]]
-  } else if (!is.null(attr(ret, "status"))) {
+  
+  ret <- try(suppressWarnings(
+    system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, ignore.stdout = FALSE)
+  ), silent = TRUE)
+  
+  if (!is.null(attr(ret, "status"))) {
     message(stopmsg, "\n")
-    message("System command had status ", attr(ret,"status"))
-    if (length(ret) == 0 || nchar(ret[1]) == 0) {
-      ret[1] <- stopmsg
+    message("System command had status ", attr(ret, "status"))
+    if (length(ret) > 0 && nchar(ret) > 0) {
+      message(paste0(ret, collapse = "\n"))
     }
   }
-
   invisible(ret)
 }
 
