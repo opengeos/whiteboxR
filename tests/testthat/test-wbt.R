@@ -34,7 +34,12 @@ test_that("wbt initialization [WhiteboxTools missing]", {
   
   # try running a tool with the fake path; errors are caught
   #   - cant execute the text file; ignore.stderr = hide system err output during testing
-  expect_silent({res <- wbt_system_call("--run=slope --dem=foo.tif --output=bar.tif", ignore.stderr = TRUE)})
+  
+  if (Sys.info()[["sysname"]] == "Windows") {
+    expect_silent({res <- wbt_system_call("--run=slope --dem=foo.tif --output=bar.tif", ignore.stderr = TRUE)})
+  } else {
+    expect_message({res <- wbt_system_call("--run=slope --dem=foo.tif --output=bar.tif", ignore.stderr = TRUE)})
+  }
   
   # an error will return a character containing the error message
   expect_true(is.character(res))
