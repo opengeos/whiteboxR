@@ -267,7 +267,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2022
+    #> WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2021
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
@@ -279,7 +279,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Lists tools with 'lidar' in tool name or description.
     wbt_list_tools("lidar")
-    #> All 47 Tools containing keywords:
+    #> All 48 Tools containing keywords:
     #> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
     #> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
     #> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
@@ -327,6 +327,7 @@ The `filter` argument sets the size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
+    #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")

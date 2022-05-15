@@ -253,3 +253,8 @@ The whitebox **R** package is distributed under the [MIT license](https://openso
 ## Reporting Bugs
 
 whitebox is distributed as is and without warranty of suitability for application. If you encounter flaws with the software (i.e. bugs) please report the issue. Providing a detailed description of the conditions under which the bug occurred will help to identify the bug. *Use the [Issues tracker](https://github.com/giswqs/whiteboxR/issues) on GitHub to report issues with the software and to request feature enchancements.* Please do not email Dr. Lindsay directly with bugs.
+
+
+```{r, echo = FALSE}
+unlink(c("smoothed.tif","breached.tif","flow_accum.tif"))
+```
