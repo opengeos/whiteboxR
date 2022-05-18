@@ -1,3 +1,9 @@
+# whitebox 2.1.5
+
+ * Added `wbt_install_extension()` and `wbt_activate()` for downloading, installing and activating WhiteboxTools extensions
+
+ * `wbt_internal_tool_name()` now returns tool names in CamelCase, and these are the tool names passed via the command line
+ 
 # whitebox 2.1.4
 
  * Suggest {terra} instead of {raster} and update demo vignette accordingly; drops {rgdal} suggest
