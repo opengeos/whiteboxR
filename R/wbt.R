@@ -537,6 +537,63 @@ install_whitebox <- function(pkg_dir = find.package("whitebox"), force = FALSE) 
   wbt_install(pkg_dir = pkg_dir, force = force)
 }
 
+#' @param extension Extension name
+#' @param destdir Directory to create `/plugins/` directory for extracting extensions
+#' @export
+#' @rdname install_whitebox
+#' @importFrom utils unzip
+wbt_install_extension <- function(extension = c(
+                                  "GeneralToolsetExtension",
+                                  "AgricultureToolset",
+                                  "DemAndSpatialHydrologyToolset",
+                                  "LidarAndRemoteSensingToolset"
+                                 ),
+                                  destdir = dirname(wbt_exe_path(shell_quote = FALSE))) {
+  extension <- match.arg(extension, c(
+        "GeneralToolsetExtension",
+        "AgricultureToolset",
+        "DemAndSpatialHydrologyToolset",
+        "LidarAndRemoteSensingToolset"
+      ), several.ok = TRUE)
+
+  sn <- Sys.info()[["sysname"]]
+  fn <- tempfile(extension, fileext = ".zip")
+  sufx <- switch(sn,
+                 "Windows" = "win",
+                 "Linux" = "linux",
+                 "Darwin" = "MacOS Intel")
+  # GTE
+  if ("GeneralToolsetExtension" %in% extension) {
+    url <- sprintf("https://www.whiteboxgeo.com/GTE_%s/%s_%s.zip", sn, "GeneralToolsetExtension", sufx)
+    fn <- "GeneralToolsetExtension.zip"
+  } else {
+    url <- sprintf("https://www.whiteboxgeo.com/%s/%s_%s.zip", extension, extension, sufx)
+  }
+
+  ed <- file.path(destdir, "plugins")
+  download.file(url, destfile = fn, mode = "wb")
+  unzip(fn, exdir = ed, junkpaths = TRUE)
+  Sys.chmod(list.files(ed, full.names = TRUE), mode = '0755')
+  invisible(unlink(fn))
+}
+
+#' Activate WhiteboxTools Extension Products
+#'
+#' @param email Email Address
+#' @param activation_key Activation Key
+#' @param seat Seat Number (Default `1`)
+#' @param destdir Directory containing `whitebox_tools` and `/plugins/` folder.
+#'
+#' @return `0` for success (invisibly). Try-error on error.
+#' @export
+wbt_activate <- function(email, activation_key, seat = 1,
+                         destdir = dirname(wbt_exe_path(shell_quote = FALSE))) {
+  exeactivate <- ifelse(Sys.info()[["sysname"]] == "Windows",
+                        "register_license.exe", "register_license")
+  input <- c("register", email, seat, activation_key, "y", "N")
+  invisible(try(system(file.path(destdir, "plugins", exeactivate), input = input)))
+}
+
 #' Help description for WhiteboxTools
 #'
 #' @return Returns the help description for WhiteboxTools as an R character vector.
@@ -866,11 +923,11 @@ wbt_system_call <- function(argstring,
                     "  whitebox.exe_path: ", wbt_exe, "; File exists? ",
                                                          file.exists(wbt_exe_path(shell_quote = FALSE)),
                     "\n  Arguments: ", args2)
-  
+
   ret <- try(suppressWarnings(
     system(exeargs, intern = TRUE, ignore.stderr = ignore.stderr, ignore.stdout = FALSE)
   ), silent = TRUE)
-  
+
   if (!is.null(attr(ret, "status"))) {
     message(stopmsg, "\n")
     message("System command had status ", attr(ret, "status"))
