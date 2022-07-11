@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.5</span>
       </span>
     </div>
 
@@ -184,16 +184,15 @@ description.</p>
 <span class="co">#&gt; 6                   https://www.whiteboxgeo.com/manual/wbt_book/available_tools/gis_analysis.html#AggregateRaster</span></code></pre></div>
 <p>The R function naming style differs from the tool names in
 WhiteboxTools, but the core words are the same.</p>
-<p>There are two steps to converting WhiteboxTools to R (if not using
-<code>wbttools</code>!)</p>
-<ol style="list-style-type: decimal">
-<li><p><code>CamelCase</code> tool names change to
-<code>snake_case</code> R function names</p></li>
-<li><p>All R function names have the prefix <code>wbt_</code> and add
-<code>()</code></p></li>
+<p>There are two steps to converting WhiteboxTools tool names to R
+function names 1. <code>CamelCase</code> tool names change to
+<code>snake_case</code></p>
+<ol start="2" style="list-style-type: decimal">
+<li>All R function names have the prefix <code>wbt_</code>
+</li>
 </ol>
 <p>So, <code>StreamSlopeContinuous</code> becomes
-<code><a href="../reference/wbt_stream_slope_continuous.html">wbt_stream_slope_continuous()</a></code> in R, for instance.</p>
+<code><a href="../reference/wbt_stream_slope_continuous.html">wbt_stream_slope_continuous()</a></code> in R.</p>
 </div>
 <div class="section level3">
 <h3 id="whiteboxtools-tool-and-parameter-names">WhiteboxTools Tool and Parameter Names<a class="anchor" aria-label="anchor" href="#whiteboxtools-tool-and-parameter-names"></a>

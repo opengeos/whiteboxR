@@ -32,7 +32,7 @@ command-line program called
 -   Contributors:
     -   Dr. Qiusheng Wu (<https://wetlands.io> |
         <https://blog.gishub.org>)
-    -   Andrew G. Brown (<http://humus.rocks>)
+    -   Andrew G. Brown (<https://humus.rocks>)
 -   GitHub repo: <https://github.com/giswqs/whiteboxR>
 -   CRAN link: <https://cran.r-project.org/package=whitebox>
 -   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
@@ -90,15 +90,7 @@ it with:
 
     install.packages("whitebox")
 
-### 2. R-Forge
-
-**whitebox** is also available on
-[R-Forge](https://r-forge.r-project.org/R/?group_id=2337), so you can
-install it with:
-
-    install.packages("whitebox", repos="http://R-Forge.R-project.org")
-
-### 3. GitHub
+### 2. GitHub
 
 You can alternatively install the development version of **whitebox**
 from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
@@ -279,7 +271,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Lists tools with 'lidar' in tool name or description.
     wbt_list_tools("lidar")
-    #> All 48 Tools containing keywords:
+    #> All 62 Tools containing keywords:
     #> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
     #> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
     #> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
@@ -327,7 +319,21 @@ The `filter` argument sets the size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
+    #> FilterLidar: Filters points within a LiDAR point cloud based on point properties.
+    #> ModifyLidar: Modify points within a LiDAR point cloud based on point properties.
+    #> RecoverFlightlineInfo: Associates LiDAR points by their flightlines.
+    #> LidarSibsonInterpolation: This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
+    #> LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.
+    #> ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.
+    #> LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.
+    #> SplitLidar: Splits LiDAR points up into a series of new files based on their properties.
+    #> ColourizeBasedOnPointReturns: Sets the RGB values of a LiDAR point cloud based on the point returns.
+    #> ClassifyLidar: Classify points within a LiDAR point cloud based on point properties.
+    #> LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.
     #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
+    #> SortLidar: Sorts LiDAR points based on their properties.
+    #> LidarSortByTime: This tool sorts the points in a LiDAR file by the GPS time.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
