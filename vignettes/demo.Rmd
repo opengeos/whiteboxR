@@ -76,7 +76,7 @@ Saving your "output" file paths as a variable so that you can use them later to 
 
 #### Working with Raster Data
 
-A demonstration workflow involving the {terra} package follows:
+A demonstration workflow employing the {terra} package follows:
 
 ```{r}
 library(terra)
