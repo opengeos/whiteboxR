@@ -215,7 +215,7 @@ equivalent method is <code><a href="https://rdrr.io/pkg/raster/man/filename.html
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># the SpatRaster retains a reference to the input file name</span>
 <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/tmp/RtmppSHTXx/slope.tif"</span></code></pre></div>
+<span class="co">#&gt; [1] "/tmp/RtmpO0ThPL/slope.tif"</span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -397,7 +397,7 @@ a Digital Elevation Model (DEM) so we can identify flow pathways.</p>
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
 <p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around
 the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the
@@ -412,7 +412,7 @@ string.</p>
 
 <span class="co"># run breach_depressions tool</span>
 <span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.13s</span></code></pre></div>
+<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
 <p>The above method of creating
 <code>wbt_breach_depressions(dem = ..., output = ...)</code> to handle
 <code>wbt_run_tool("BreachDepressions", args = ...)</code> makes it easy
@@ -512,7 +512,7 @@ spatial hydrological analysis of stream networks.</p>
   dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
   output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></code></pre></div>
+<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.11s</span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_pointer-calculate-flow-direction">
@@ -767,9 +767,9 @@ name or description.</p>
 <span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
 <span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span>
 <span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; QuinnFlowAccumulation: This tool calculates Quinn et al. (1995) flow accumulation.</span>
 <span class="co">#&gt; QinFlowAccumulation: This tool calculates Qin et al. (2007) flow accumulation.</span>
-<span class="co">#&gt; Rho8FlowAccumulation: This tool calculates Fairfield and Leymarie (1991) flow accumulation.</span></code></pre></div>
+<span class="co">#&gt; Rho8FlowAccumulation: This tool calculates Fairfield and Leymarie (1991) flow accumulation.</span>
+<span class="co">#&gt; QuinnFlowAccumulation: This tool calculates Quinn et al. (1995) flow accumulation.</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_tool_help">
