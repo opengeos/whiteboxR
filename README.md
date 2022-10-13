@@ -36,7 +36,7 @@ command-line program called
 -   GitHub repo: <https://github.com/giswqs/whiteboxR>
 -   CRAN link: <https://cran.r-project.org/package=whitebox>
 -   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
--   User Manual: <https://jblindsay.github.io/wbt_book/>
+-   User Manual: <https://www.whiteboxgeo.com/manual/wbt_book/>
 -   Free software: [MIT license](https://opensource.org/licenses/MIT)
 
 **Contents**
