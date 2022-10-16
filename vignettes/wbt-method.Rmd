@@ -1,5 +1,5 @@
 ---
-title: "`wbt()` and `wbt_result`"
+title: "`wbt()` and _wbt_result_"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{`wbt()` and `wbt_result`}
@@ -141,7 +141,7 @@ concept) system. Using file-based representations may not be the most
 efficient, but allows for a tangible trail of the steps in a workflow to be
 followed that otherwise might be hard to track.
 
-# `wbt_source()`, rasters in memory, and vector data
+# `wbt_source()`: rasters in memory, and vector data
 
 The terra and raster packages use pointers to a file/raster connection except 
 when a grid is entirely in memory. Processing these types of rasters with 
@@ -150,14 +150,43 @@ whitebox requires writing out as a temporary GeoTIFF file for tool input. In gen
 
 Vector data (point, line and polygon geometries) are commonly stored stored in 
 sf data.frames, sp objects, or terra SpatVector objects. These types are
-read into memory on creation. Reading vector data into R memory is
-not needed to run tools, so `wbt_source()` provides a means to annotate objects 
+read into memory on creation. 
+
+Reading vector data into R memory is
+not needed to run Whitebox tools, so `wbt_source()` provides a means to annotate objects 
 with information about source file path (similar to how terra/raster handle raster sources)
 such that they can be processed further  by `wbt()` with minimal overhead. 
 Objects like the terra SpatVectorProxy use delayed read by default. Passing a file path 
 to `wbt_source()` will create a SpatVectorProxy with necessary information for use with `wbt()`. 
-The SpatVectorProxy provides a lightweight means to create an R object reference to a large file;
-allowing the heavy lifting for that file to be done primarily by WhiteboxTools.
+
+For instance, we can create a reference for a sample ESRI Shapefile via `wbt_source()`. The result is a SpatVectorProxy.
+
+```{r}
+library(terra)
+shp <- system.file("ex/lux.shp", package = "terra")
+x <- wbt_source(shp)
+x
+```
+
+The SpatVectorProxy provides a light-weight means to create an R object reference to a large file; allowing the "heavy" lifting for that file to be done primarily by WhiteboxTools.
+
+At time of writing this document, WhiteboxTools does not support vector data inputs other than Shapefile. If we have, for example, a GeoPackage, `wbt_source()` will convert the input to a temporary shapefile and return a SpatVectorProxy that references that file. This object can then be used as input to `wbt()`.
+
+```{r}
+# load the data
+x2 <- query(x)
+
+# remove area column
+x2$AREA <- NULL
+
+# create a GeoPackage
+writeVector(x2, filename = file.path(tempdir(), "lux.gpkg"), overwrite = TRUE)
+
+# now the source is a temporary .shp
+x3 <- wbt_source(file.path(tempdir(), "lux.gpkg"))
+
+wbt("polygon_area", input = x3)
+```
 
 # Running Sequences of Tools
 

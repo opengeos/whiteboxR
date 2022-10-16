@@ -603,14 +603,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
             terra::crs(y) <- ifelse(!is.character(crs), "", crs)
           }
         }
-      } else {
-        # no transformation applied for ""
-      }
-      ## TODO: terra for shape output?
-      # } else if (!is.na(x) & endsWith(x, ".shp")) {
-      #   if (requireNamespace('terra')) {
-      #     try(terra::vect(x, crs = ifelse(!is.character(crs), "", crs)))
-      #   }
+      } 
       ##
       ## TODO: LAS object from lidR package support?
       #
@@ -621,6 +614,10 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
       # }
       ##
       return(y)
+    } else if (!is.na(x) && endsWith(x, ".shp")) {
+      if (requireNamespace('terra')) {
+        return(try(terra::vect(x, crs = ifelse(!is.character(crs), "", crs), proxy = TRUE)))
+      }
     } else {
       return(x)
     }
@@ -664,14 +661,21 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
         result = .warninput(c("ERROR: Tool execution failed", console[1]))
       )))
   }
-
-  if ("output" %in% names(args)) {
-    return(invisible(wbt_result(
+  
+  # if tool runs without needing "output" specified
+  # assume it modifies the file specified as the first input
+  if (!"output" %in% names(args)) {
+    # TODO: does this need further generalization/use of tool parameter LUT?
+    args[["output"]] <- args[[grep("dem|input", names(args))[1]]]
+  } 
+  
+  return(invisible(
+    wbt_result(
       tool_name = tool_name,
       args = newargs,
       stdout = console,
       crs = crs,
       result =  .wbt_process_output(args, crs, pkg = attr(newargs, 'package'))
-    )))
-  }
+    )
+  ))
 }

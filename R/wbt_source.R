@@ -15,8 +15,30 @@ wbt_source <- function(x,
                        force = FALSE,
                        verbose = wbt_verbose(),
                        ...) {
+  
+  if (!requireNamespace("terra")) {
+    stop("package `terra` is required to convert vector sources to `wbt()`-compatible SpatVectorProxy", call. = FALSE)
+  }
+  
   if (is.character(x)) {
     if (file.exists(x)) {
+      # convert to shapefile if needed
+      if (!grepl("\\.shp$", x)) {
+        xp <- paste0(basename(x), "_", basename(tempfile()), ".shp")
+        fp <- file.path(tempdir(), xp)
+        
+        if (!requireNamespace("terra")) {
+          stop("package `terra` is required to convert non-Shapefile vector sources to Shapefile")
+        }
+      
+        x2 <- terra::vect(x)
+        if (terra::writeVector(x2, fp)) {
+          x <- fp
+        } else {
+          stop("Failed to convert `x` (", x, ") to Shapefile.")
+        }
+      }
+      
       # a SpatVectorProxy allows us to get some basic info without loading the whole file
       x <- terra::vect(x, proxy = TRUE)
       attr(x, 'wbt_dsn') <- x@ptr$v$source
