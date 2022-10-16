@@ -472,7 +472,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
       on.exit(options(opts), add = TRUE)
     }
     res <- -1
-    for (method in c(if (os == "Windows") "wininet", "libcurl", "auto")) {
+    for (method in c(if (os == "Windows") "internal", "libcurl", "auto")) {
       if (!inherits(try(res <- utils::download.file(url, exe_zip, method = method), silent = TRUE),
                     "try-error") && res == 0)
         break
