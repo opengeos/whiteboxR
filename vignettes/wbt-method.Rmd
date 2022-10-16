@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## `wbt()`
+# `wbt()`
 
 The `wbt()` method is a high-level wrapper function to manage flow of
 information between R and WhiteboxTools. With `wbt()` one can run sequential
@@ -26,7 +26,7 @@ visualize results.
 library(whitebox)
 ```
 
-### Getting Started
+## Getting Started
 
 Know what tool you want to run but _can't remember the required parameters_?
 Just type `wbt("toolname")`
@@ -38,13 +38,13 @@ wbt("slope")
 Output produced on error and with invalid arguments helps guide use
 interactively by prompting with required and optional arguments as a checklist.
 
-### Result Objects
+## Result Objects
 
 All calls to `wbt()` return an S3 object with class `wbt_result`.
 
 ```{r}
 # get file path of sample DEM
-dem <- system.file("extdata/DEM.tif", package = "whitebox")
+dem <- sample_dem_data()
 
 wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif"))
 ```
@@ -61,7 +61,7 @@ wbt("slope", goof = dem, output = file.path(tempdir(), "slope.tif"))
 When a call fails an informative error message issued, and the error will be cached
 inside the result. Prior runs references are stored as well for sequential tool runs; more on that below.
 
-#### `wbt_result` class
+### `wbt_result` class
 
 A `wbt_result` class object is a base R `list()` with standard element
 names (`"tool"`, `"args"`, `"stdout"`, `"crs"`, `"result"`, `"history"`) and
@@ -74,7 +74,7 @@ str(wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif")), max.lev
 Any `output` produced by the tool (usually file paths set by the user) will be
 included in the `wbt_result$result` list.
 
-#### `wbt_result` on error
+### `wbt_result` on error
 
 If there is an error a `try-error` class object with an error message is
 returned in lieu of a list in `$result`
@@ -86,7 +86,7 @@ inherits(x$result, 'try-error')
 message(x$result[1])
 ```
 
-### Vignette Topics
+## Vignette Topics
 
 We now will cover how the `wbt()` method and `wbt_result` class can be used for
 the following:
@@ -97,7 +97,7 @@ the following:
 
  - Handling Coordinate Reference Systems
 
-## Input and Output with R spatial objects
+# Input and Output with R spatial objects
 
 A feature of `wbt()` is that it handles input/output and file name management
 if you are using R objects as input. It can be an onerous task to manage files 
@@ -109,7 +109,7 @@ paths associated with that R object. If you use a `terra` object as
 your input, you will get a `SpatRaster` object likewise linked to its source
 files.
 
-#### Compare `raster` and `terra` as R raster object frontends
+### Compare `raster` and `terra` as R raster object frontends
 
 ```{r}
 if (requireNamespace("raster") && requireNamespace("rgdal")) {
@@ -141,7 +141,7 @@ concept) system. Using file-based representations may not be the most
 efficient, but allows for a tangible trail of the steps in a workflow to be
 followed that otherwise might be hard to track.
 
-## `wbt_source()`, rasters in memory, and vector data
+# `wbt_source()`, rasters in memory, and vector data
 
 The terra and raster packages use pointers to a file/raster connection except 
 when a grid is entirely in memory. Processing these types of rasters with 
@@ -159,7 +159,7 @@ to `wbt_source()` will create a SpatVectorProxy with necessary information for u
 The SpatVectorProxy provides a lightweight means to create an R object reference to a large file;
 allowing the heavy lifting for that file to be done primarily by WhiteboxTools.
 
-## Running Sequences of Tools
+# Running Sequences of Tools
 
 When you call `wbt()` and the first argument is a `wbt_result` the `output`
 from the input `wbt_result` is passed as the first `input` to the new tool run.
@@ -180,7 +180,7 @@ x <- wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif"))
 x2 <- wbt(x, tool_name = "slope", output = file.path(tempdir(), "curvature.tif"))
 ```
 
-### Using pipes
+## Using pipes
 
 Nested chained operation syntax can be transformed to use pipe operators (base
 R 4.1+ `|>` or `magrittr` `%>%`). This can improve the readability of the code (fewer nested parentheses) and the first argument transfer behavior allows results from each step to be transferred to the input of the next.
@@ -215,10 +215,10 @@ error message.
 
 ```{r}
 x <- wbt("slope")
-wbt(x, "slope", output = "foo.tif")
+wbt(x, "slope", output = file.path(tempdir(), "foo.tif"))
 ```
 
-## Coordinate Reference Systems (CRS)
+# Coordinate Reference Systems (CRS)
 
 On top of handling file paths it is necessary for Geographic Information
 Systems to handle Coordinate Reference System (CRS) information.  Many R tools
@@ -245,28 +245,17 @@ substituted for file names and vice versa. User and workflow level attributes
 like CRS and working directory be handled at the same time.
 
 ```{r}
-dem <- system.file("extdata/DEM.tif", package = "whitebox")
+dem <- sample_dem_data()
+
+## equivalent to:
+# dem <- system.file("extdata/DEM.tif", package = "whitebox")
 ```
 
 In the process of reading/writing files that may contain CRS information, such
 as this sample DEM, the CRS can be inspected, modified and propagated to file
 or R objects.
 
-If the input is a path to a file _without_ CRS (such as this DEM) none of the
-outputs have CRS information.
-
-```{r}
-wbt("slope", dem = dem, output = "foo2.tif")
-```
-
-Likewise for a `SpatRaster` object input without a CRS.
-
-```{r}
-wbt("slope", dem = terra::rast(dem), output = file.path(tempdir(), "foo.tif"))
-```
-
-
-### Setting the CRS
+## Setting the CRS
 
 If the CRS is specified in the input `SpatRaster` object, `wbt()` makes sure it is
 propagated to the R object result. `wbt()` does not alter or copy the source or 
@@ -309,7 +298,7 @@ wbt("add",
    )
 ```
  <!--
-## Future Plans
+# Future Plans
 
 Future additions to this vignette may include:
 
@@ -330,3 +319,9 @@ or output file type to be stored: optimized/customizable read/write methods used
 specific file types and generic .rda files with metadata for others.
 
  - Batch of tool runs on e.g. watershed extents -->
+ 
+
+```{r, echo=FALSE} 
+# cleanup tif files in temp 
+unlink(list.files(tempdir(), pattern = "tif$", full.names = TRUE))
+```
