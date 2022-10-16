@@ -72,13 +72,12 @@ head(wbttools)
 
 The R function naming style differs from the tool names in WhiteboxTools, but the core words are the same.
 
-There are two steps to converting WhiteboxTools to R (if not using `wbttools`!)
+There are two steps to converting WhiteboxTools tool names to R  function names
+ 1. `CamelCase` tool names change to `snake_case`
  
- 1. `CamelCase` tool names change to `snake_case` R function names
+ 2. All R function names have the prefix `wbt_`
  
- 2. All R function names have the prefix `wbt_` and add `()`
- 
-So, `StreamSlopeContinuous` becomes `wbt_stream_slope_continuous()` in R, for instance.
+So, `StreamSlopeContinuous` becomes `wbt_stream_slope_continuous()` in R.
  
 ## WhiteboxTools Tool and Parameter Names
 

@@ -3,16 +3,27 @@
 \name{wbt_install}
 \alias{wbt_install}
 \alias{install_whitebox}
+\alias{wbt_install_extension}
 \title{Download and Install WhiteboxTools}
 \usage{
 wbt_install(pkg_dir = find.package("whitebox"), force = FALSE)
 
 install_whitebox(pkg_dir = find.package("whitebox"), force = FALSE)
+
+wbt_install_extension(
+  extension = c("GeneralToolsetExtension", "AgricultureToolset",
+    "DemAndSpatialHydrologyToolset", "LidarAndRemoteSensingToolset"),
+  destdir = dirname(wbt_exe_path(shell_quote = FALSE))
+)
 }
 \arguments{
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
 
 \item{force}{logical. Default \code{FALSE}. Force install?}
+
+\item{extension}{Extension name}
+
+\item{destdir}{Directory to create \verb{/plugins/} directory for extracting extensions}
 }
 \value{
 Prints out the location of the WhiteboxTools binary, if found. \code{NULL} otherwise.

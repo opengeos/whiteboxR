@@ -74,9 +74,9 @@ Many R users will be interacting with raster data with one of the many available
 
 Saving your "output" file paths as a variable so that you can use them later to load the file into an R object is the main way to view your output.
 
-#### `raster`
+#### Working with Raster Data
 
-A demonstration workflow involving the popular raster package follows:
+A demonstration workflow employing the {terra} package follows:
 
 ```{r}
 library(terra)
@@ -285,9 +285,9 @@ wbt_run_tool(tool_name = "BreachDepressions", args = paste0("--dem=", input, " -
 
 The above method of creating `wbt_breach_depressions(dem = ..., output = ...)` to handle `wbt_run_tool("BreachDepressions", args = ...)` makes it easy to generate static methods that have parity with the latest WhiteboxTools interface.
 
-### Example: Compare input v.s. output with `raster`
+### Example: Compare input v.s. output with `terra`
 
-We use the raster R package to read the GeoTIFF outputs from WhiteboxTools.
+We use the {terra} package to read the GeoTIFF outputs from WhiteboxTools.
 
 #### Setup
 

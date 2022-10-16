@@ -34,7 +34,7 @@ This repository is related to the **whitebox** R package for geospatial analysis
 * Authors: Dr. John Lindsay (<https://jblindsay.github.io/ghrg/index.html>)
 * Contributors: 
     * Dr. Qiusheng Wu (<https://wetlands.io> | <https://blog.gishub.org>)
-    * Andrew G. Brown (<http://humus.rocks>)
+    * Andrew G. Brown (<https://humus.rocks>)
 * GitHub repo: <https://github.com/giswqs/whiteboxR>
 * CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
@@ -68,15 +68,7 @@ There are three ways to install the **whitebox** R package.
 install.packages("whitebox")
 ```
 
-### 2. R-Forge
-
-**whitebox** is also available on [R-Forge](https://r-forge.r-project.org/R/?group_id=2337), so you can install it with:
-
-```R
-install.packages("whitebox", repos="http://R-Forge.R-project.org")
-```
-
-### 3. GitHub
+### 2. GitHub
 
 You can alternatively install the development version of **whitebox** from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
 
@@ -253,3 +245,8 @@ The whitebox **R** package is distributed under the [MIT license](https://openso
 ## Reporting Bugs
 
 whitebox is distributed as is and without warranty of suitability for application. If you encounter flaws with the software (i.e. bugs) please report the issue. Providing a detailed description of the conditions under which the bug occurred will help to identify the bug. *Use the [Issues tracker](https://github.com/giswqs/whiteboxR/issues) on GitHub to report issues with the software and to request feature enchancements.* Please do not email Dr. Lindsay directly with bugs.
+
+
+```{r, echo = FALSE}
+unlink(c("smoothed.tif","breached.tif","flow_accum.tif"))
+```
