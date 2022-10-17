@@ -220,7 +220,7 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
   if (!missing(tool_name) && !is.null(tool_name)) {
     warning("wbt.character uses first argument (`result`) as tool_name, `tool_name` ignored", call. = FALSE)
   }
-  tool_name <- result
+  tool_name <- gsub(" ", "", result, fixed = TRUE)
 
   # get tool parameters and clean tool name
   prm <- .get_tool_params(tool_name)
@@ -320,7 +320,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
 
   if (length(crsin) > 0) {
     crsmatch <- do.call('c', lapply(crsin, function(x) x == crsin[[1]]))
-    if (length(crsmatch) == 0 || !all(crsmatch) || is.na(crsmatch)) {
+    if (length(crsmatch) == 0 || !all(crsmatch) || any(is.na(crsmatch))) {
       message("NOTE: Input CRS do not match.")
     }
     # take first input CRS
