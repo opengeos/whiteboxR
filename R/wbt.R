@@ -945,7 +945,7 @@ wbt_system_call <- function(argstring,
   if (!is.null(attr(ret, "status"))) {
     message(stopmsg, "\n")
     message("System command had status ", attr(ret, "status"))
-    if (length(ret) > 0 && nchar(ret) > 0) {
+    if (length(ret) > 0 && nchar(ret[1]) > 0) {
       message(paste0(ret, collapse = "\n"))
     }
   }
