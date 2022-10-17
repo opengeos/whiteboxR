@@ -86,7 +86,7 @@ a list with class \code{"wbt_result"} containing elements:
 \item \code{history} - history of 'result' when \code{wbt_result} was passed as input, most recent output at end
 }
 
-list of result in \code{attribute} if \code{"history"} is present, otherwise the result in \code{attribute}. If \code{i} is specified, just the \code{i}th element fo the list.
+list of result in \code{attribute} if \code{"history"} is present, otherwise the result in \code{attribute}. If \code{i} is specified, just the \code{i}th element of the list.
 }
 \description{
 You are required to specify all required arguments as either paths to files, or R object types that can be associated with a file.

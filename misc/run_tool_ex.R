@@ -1,35 +1,33 @@
 
-library(raster)
+library(terra)
 library(whitebox)
-whitebox::wbt_init("/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools")
 
-wbt_wd("/home/andrew/workspace/wbt-data/wdtest/")
+wbt_wd(tempdir())
 
 # sample DEM with whitebox package
-p <- system.file("extdata/DEM.tif", package = "whitebox")
-
+p <- sample_dem_data()
 wbt(wbt_aggregate_raster, input = p, output = "agg.tif")
 
-# RasterLayer input, output path as character
-x <- wbt(wbt_slope, de = raster(p), output = "slope.tif", unties = 'percent')
+# SpatRaster input, output path as character
+x <- wbt(wbt_slope, dem = rast(p), output = "slope.tif", units = 'percent')
 
 # test for bad result
 inherits(x$result, 'try-error')
 
-# RasterLayer input, output path as character
-x <- wbt(wbt_slope, dem = raster(p), output = "slope.tif")
+# SpatRaster input, output path as character
+x <- wbt(wbt_slope, dem = rast(p), output = "slope.tif")
 
 # wbtresult$output contains a RasterLayer with output raster "slope.tif"
-raster::plot(x$result$output)
+plot(x$result$output)
 
 # y$result$output contains a RasterLayer with output raster "sca.tif"
 y <- wbt(
   wbt_d8_flow_accumulation,
-  input = raster(p),
+  input = rast(p),
   output = "sca.tif",
   out_type = 'specific contributing area'
 )
-raster::plot(y$result$output)
+plot(y$result$output)
 
 # y$result$output contains a RasterLayer with output raster "wi.tif"
 z <- wbt(
@@ -38,7 +36,5 @@ z <- wbt(
   slope = x$result$output,
   output = "wi.tif"
 )
-raster::plot(raster(z$result$output))
 
-all.equal(list.files(wbt_wd()), c("agg.tif", "sca.tif", "settings.json", "slope.tif", "wi.tif"
-))
+plot(z$result$output)

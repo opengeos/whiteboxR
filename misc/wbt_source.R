@@ -1,4 +1,5 @@
 library(soilDB)
+library(terra)
 library(whitebox)
 
 wbt_wd("")    
@@ -24,19 +25,18 @@ wbt("vector_polygons_to_raster",
     output = 'ssurgo3.tif',
     field = "mukey",
     cell_size = 0.0001)
-terra::plot(terra::rast('ssurgo4.tif'))
+plot(rast('ssurgo3.tif')) # TODO update TIFF CRS w/ terra ~1.6-27
 
+wbt("slope", dem = rast(matrix(1:100, nrow=10, ncol=10), crs='EPSG:4326'), output = "output.tif")
 
-wbt("slope", dem = terra::rast(matrix(1:100, nrow=10, ncol=10), crs='EPSG:4326'), output = "output.tif")
+t1 <- rast(matrix(rep(c(0,1),50), nrow=10, ncol=10), crs="EPSG:4326")
+t2 <- rast(matrix(rep(c(1,0),50), nrow=10, ncol=10), crs="EPSG:4326")
 
-t1 <- terra::rast(matrix(rep(c(0,1),50), nrow=10, ncol=10), crs="EPSG:4326")
-t2 <- terra::rast(matrix(rep(c(1,0),50), nrow=10, ncol=10), crs="EPSG:4326")
+plot(t1)
+plot(t2)
 
-terra::plot(t1)
-terra::plot(t2)
-
-whitebox:::wbt_add2(t1, t2, "output.tif") |> 
+t3 <- wbt_add2(t1, t2, "output.tif") |> 
   get_result() |> 
-  terra::rast() |> 
-  terra::plot()
+  rast() 
+plot(c(t1, t2, t3))
 
