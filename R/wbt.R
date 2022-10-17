@@ -992,12 +992,18 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
 
 #' Convenience method for setting RUST_BACKTRACE options for debugging
 #'
-#' @param RUST_BACKTRACE One of `"0"`, `"1"`, `"full"`
+#' @param RUST_BACKTRACE One of `"0"`, `"1"`, `"full"`, Logical values are converted to integer and then character.
 #'
 #' @return value of system environment variable `RUST_BACKTRACE`
-#' @keywords internal
-#' @noRd
+#' @export
+#' @examples 
+#' \dontrun{
+#' wbt_rust_backtrace(TRUE)
+#' }
 wbt_rust_backtrace <- function(RUST_BACKTRACE = c("0", "1", "full")) {
+  if (is.logical(RUST_BACKTRACE)) {
+    RUST_BACKTRACE <- as.integer(RUST_BACKTRACE)
+  }
   Sys.setenv(RUST_BACKTRACE = match.arg(as.character(RUST_BACKTRACE)[1],
                                         choices = c("0", "1", "full")))
   invisible(Sys.getenv("RUST_BACKTRACE", unset = "0"))
