@@ -55,7 +55,7 @@ colnames(wbttoolparameters2)[4] <- "name"
 colnames(wbttoolparameters2)
 wbttools <- as.data.frame(wbttools)
 wbttoolparameters <- as.data.frame(wbttoolparameters2)
-z
+
 # parse version
 wbtvs <- gsub(".*v([0-9.\\-]+\\b).*", "\\1", whitebox::wbt_version()[1])
 
