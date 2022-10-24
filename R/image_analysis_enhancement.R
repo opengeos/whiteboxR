@@ -405,7 +405,7 @@ wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both"
 #'
 #' @param input Name of the input raster image file.
 #' @param output Name of the output raster image file.
-#' @param function Piecewise function break-points e.g. '(50, 0.1); (150, 0.8); (255; 1.0).
+#' @param FUN Piecewise break-points e.g. '(50, 0.1); (150, 0.8); (255; 1.0).
 #' @param greytones Number of greytones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
@@ -414,13 +414,13 @@ wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both"
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_piecewise_contrast_stretch <- function(input, output, function="", greytones=1024, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
-  if (!is.null(function)) {
-    args <- paste(args, paste0("--function=", function))
+  if (!is.null(FUN)) {
+    args <- paste(args, paste0("--FUN=", FUN))
   }
   if (!is.null(greytones)) {
     args <- paste(args, paste0("--greytones=", greytones))

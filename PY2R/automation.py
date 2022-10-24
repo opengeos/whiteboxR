@@ -32,6 +32,7 @@ def function_header(line):
         line = line.replace(
             "callback=None", "wd=NULL, verbose_mode=FALSE, compress_rasters=False"
         )
+        line = line.replace('function=""', 'FUN=""')
         line = line.replace("False", "FALSE")
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")
@@ -331,6 +332,10 @@ with open(wbt_py) as f:
                     elif ("--" in doc_line) and (
                         doc_line.startswith("callback") == False
                     ):
+                        # fix reserved keywords used as argument names
+                        if doc_line.startswith("function"):
+                            doc_line = doc_line.replace("function ", "")
+                            doc_line = "FUN " + doc_line
                         if doc_line.startswith("i --"):
                             doc_line = doc_line.replace("i --", "input --")
                         doc_line = doc_line.replace("-- ", "")
