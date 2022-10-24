@@ -30,5 +30,5 @@ wbt_lidar_sort_by_time(
 Returns the tool text outputs.
 }
 \description{
-This sorts the points in a LiDAR file by the GPS time.
+This tool sorts the points in a LiDAR file by the GPS time.
 }

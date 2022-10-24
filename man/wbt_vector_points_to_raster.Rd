@@ -25,7 +25,7 @@ wbt_vector_points_to_raster(
 
 \item{field}{Input field name in attribute table.}
 
-\item{assign}{Assignment operation, where multiple points are in the same grid cell; options include 'first', 'last' (default), 'min', 'max', 'sum'.}
+\item{assign}{Assignment operation, where multiple points are in the same grid cell; options include 'first', 'last' (default), 'min', 'max', 'sum', 'number'.}
 
 \item{nodata}{Background value to set to NoData. Without this flag, it will be set to 0.0.}
 

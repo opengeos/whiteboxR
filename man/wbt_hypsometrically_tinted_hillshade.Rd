@@ -34,7 +34,7 @@ wbt_hypsometrically_tinted_hillshade(
 
 \item{atmospheric}{Atmospheric effects weight (0.0-1.0).}
 
-\item{palette}{Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.}
+\item{palette}{Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridis', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.}
 
 \item{reverse}{Optional flag indicating whether to use reverse the palette.}
 
