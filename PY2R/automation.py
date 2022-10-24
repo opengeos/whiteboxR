@@ -248,9 +248,15 @@ def function_example(fun_name):
 toolboxes = {
     "# Data Tools #": "data_tools.R",
     "# GIS Analysis #": "gis_analysis.R",
+    "# GIS Analysis/Distance Tools #": "gis_analysis_distance.R",
+    "# GIS Analysis/Overlay Tools #": "gis_analysis_overlay.R",
+    "# GIS Analysis/Patch Shape Tools #": "gis_analysis_patch_shape.R",
     "# Geomorphometric Analysis #": "terrain_analysis.R",
     "# Hydrological Analysis #": "hydro_analysis.R",
     "# Image Processing Tools #": "image_analysis.R",
+    "# Image Processing Tools/Classification #": "image_analysis_classification.R",
+    "# Image Processing Tools/Filters #": "image_analysis_filters.R",
+    "# Image Processing Tools/Image Enhancement #": "image_analysis_enhancement.R",
     "# LiDAR Tools #": "lidar_analysis.R",
     "# Machine Learning #": "machine_learning.R",
     "# Math and Stats Tools #": "math_stat_analysis.R",
@@ -290,7 +296,7 @@ with open(wbt_py) as f:
     lines = f.readlines()
 
     for index, line in enumerate(lines):
-        if index > 566:
+        if index > 700:
             line = line.strip()
 
             # Create an R script for each toolbox

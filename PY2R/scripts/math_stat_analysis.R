@@ -599,6 +599,71 @@ wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, f
 }
 
 
+#' Conditioned latin hypercube
+#'
+#' Implements conditioned Latin Hypercube sampling.
+#'
+#' @param inputs Name of the input raster file.
+#' @param output Output shapefile.
+#' @param samples Number of sample sites returned.
+#' @param iterations Maximum iterations (if stopping criteria not reached).
+#' @param seed Seed for RNG consistency.
+#' @param prob Probability of random resample or resampling worst strata between [0,1].
+#' @param threshold Objective function values below the theshold stop the resampling iterations.
+#' @param temp Initial annealing temperature between [0,1].
+#' @param temp_decay Annealing temperature decay proportion between [0,1]. Reduce temperature by this proportion each annealing cycle.
+#' @param cycle Number of iterations before decaying annealing temperature.
+#' @param average Weight the continuous objective funtion by the 1/N contributing strata.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_conditioned_latin_hypercube <- function(inputs, output, samples=500, iterations=25000, seed=NULL, prob=0.5, threshold=NULL, temp=1.0, temp_decay=0.05, cycle=10, average=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(samples)) {
+    args <- paste(args, paste0("--samples=", samples))
+  }
+  if (!is.null(iterations)) {
+    args <- paste(args, paste0("--iterations=", iterations))
+  }
+  if (!is.null(seed)) {
+    args <- paste(args, paste0("--seed=", seed))
+  }
+  if (!is.null(prob)) {
+    args <- paste(args, paste0("--prob=", prob))
+  }
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(temp)) {
+    args <- paste(args, paste0("--temp=", temp))
+  }
+  if (!is.null(temp_decay)) {
+    args <- paste(args, paste0("--temp_decay=", temp_decay))
+  }
+  if (!is.null(cycle)) {
+    args <- paste(args, paste0("--cycle=", cycle))
+  }
+  if (average) {
+    args <- paste(args, "--average")
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "conditioned_latin_hypercube"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
 #' Cos
 #'
 #' Returns the cosine (cos) of each values in a raster.

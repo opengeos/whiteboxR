@@ -140,6 +140,43 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
 }
 
 
+#' Breakline mapping
+#'
+#' This tool maps breaklines from an input DEM.
+#'
+#' @param dem Name of the input raster image file.
+#' @param output Name of the output vector lines file.
+#' @param threshold Threshold value (0 - infinity but typcially 1 to 5 works well).
+#' @param min_length Minimum line length, in grid cells.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_breakline_mapping <- function(dem, output, threshold=2.0, min_length=3, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (!is.null(min_length)) {
+    args <- paste(args, paste0("--min_length=", min_length))
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "breakline_mapping"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
 #' Circular variance of aspect
 #'
 #' Calculates the circular variance of aspect at a scale for a DEM.
@@ -1065,10 +1102,12 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param search Look up distance.
+#' @param search Look up distance (in cells).
 #' @param threshold Flatness threshold for the classification function (in degrees).
-#' @param tdist Distance (in cells) to begin reducing the flatness threshold to avoid problems with pseudo-flat lines-of-sight.
-#' @param forms Classify geomorphons into 10 common land morphologies, else, output ternary code.
+#' @param fdist Distance (in cells) to begin reducing the flatness threshold to avoid problems with pseudo-flat lines-of-sight.
+#' @param skip Distance (in cells) to begin calculating lines-of-sight.
+#' @param forms Classify geomorphons into 10 common land morphologies, else output ternary pattern.
+#' @param residuals Convert elevation to residuals of a linear model.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
@@ -1076,7 +1115,7 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, forms=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, fdist=0, skip=0, forms=TRUE, residuals=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
@@ -1087,11 +1126,17 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, tdist=0, form
   if (!is.null(threshold)) {
     args <- paste(args, paste0("--threshold=", threshold))
   }
-  if (!is.null(tdist)) {
-    args <- paste(args, paste0("--tdist=", tdist))
+  if (!is.null(fdist)) {
+    args <- paste(args, paste0("--fdist=", fdist))
+  }
+  if (!is.null(skip)) {
+    args <- paste(args, paste0("--skip=", skip))
   }
   if (forms) {
     args <- paste(args, "--forms")
+  }
+  if (residuals) {
+    args <- paste(args, "--residuals")
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -1262,7 +1307,7 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 #' @param hs_weight Weight given to hillshade relative to relief (0.0-1.0).
 #' @param brightness Brightness factor (0.0-1.0).
 #' @param atmospheric Atmospheric effects weight (0.0-1.0).
-#' @param palette Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.
+#' @param palette Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridis', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.
 #' @param reverse Optional flag indicating whether to use reverse the palette.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param full_mode Optional flag indicating whether to use full 360-degrees of illumination sources.
@@ -2636,7 +2681,6 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
@@ -2644,14 +2688,11 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_ruggedness_index <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_ruggedness_index <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
-  if (!is.null(zfactor)) {
-    args <- paste(args, paste0("--zfactor=", zfactor))
-  }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
@@ -3186,7 +3227,7 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
 #' @param start_day Start day of the year (1-365).
 #' @param end_day End day of the year (1-365).
 #' @param start_time Starting hour to track shadows (e.g. 5, 5:00, 05:00:00). Assumes 24-hour time: HH:MM:SS. 'sunrise' is also a valid time.
-#' @param end_time Starting hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.
+#' @param end_time Ending hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.

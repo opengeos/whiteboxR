@@ -235,14 +235,16 @@ wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_join_tables <- function(input1, pkey, input2, fkey, import_field, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_join_tables <- function(input1, pkey, input2, fkey, import_field=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
   args <- paste(args, paste0("--pkey=", wbt_file_path(pkey)))
   args <- paste(args, paste0("--input2=", wbt_file_path(input2)))
   args <- paste(args, paste0("--fkey=", wbt_file_path(fkey)))
-  args <- paste(args, paste0("--import_field=", wbt_file_path(import_field)))
+  if (!is.null(import_field)) {
+    args <- paste(args, paste0("--import_field=", import_field))
+  }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
   }
@@ -771,7 +773,7 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
 #' @param input Input vector Points file.
 #' @param field Input field name in attribute table.
 #' @param output Output raster file.
-#' @param assign Assignment operation, where multiple points are in the same grid cell; options include 'first', 'last' (default), 'min', 'max', 'sum'.
+#' @param assign Assignment operation, where multiple points are in the same grid cell; options include 'first', 'last' (default), 'min', 'max', 'sum', 'number'.
 #' @param nodata Background value to set to NoData. Without this flag, it will be set to 0.0.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
