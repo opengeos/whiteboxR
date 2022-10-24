@@ -33,13 +33,13 @@ wbt_conditioned_latin_hypercube(
 
 \item{seed}{Seed for RNG consistency.}
 
-\item{prob}{Probability of random resample or resampling worst strata between \link{0,1}.}
+\item{prob}{Probability of random resample or resampling worst strata between \verb{[0,1]}.}
 
 \item{threshold}{Objective function values below the theshold stop the resampling iterations.}
 
-\item{temp}{Initial annealing temperature between \link{0,1}.}
+\item{temp}{Initial annealing temperature between \verb{[0,1]}.}
 
-\item{temp_decay}{Annealing temperature decay proportion between \link{0,1}. Reduce temperature by this proportion each annealing cycle.}
+\item{temp_decay}{Annealing temperature decay proportion between \verb{[0,1]}. Reduce temperature by this proportion each annealing cycle.}
 
 \item{cycle}{Number of iterations before decaying annealing temperature.}
 

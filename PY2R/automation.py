@@ -332,6 +332,9 @@ with open(wbt_py) as f:
                     elif ("--" in doc_line) and (
                         doc_line.startswith("callback") == False
                     ):
+                        # fix expected cross-reference (use code block)
+                        doc_line = doc_line.replace("[0,1]", "`[0,1]`")
+                        doc_line = doc_line.replace("[0, 1]", "`[0,1]`")
                         # fix reserved keywords used as argument names
                         if doc_line.startswith("function"):
                             doc_line = doc_line.replace("function ", "")

@@ -608,10 +608,10 @@ wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, f
 #' @param samples Number of sample sites returned.
 #' @param iterations Maximum iterations (if stopping criteria not reached).
 #' @param seed Seed for RNG consistency.
-#' @param prob Probability of random resample or resampling worst strata between [0,1].
+#' @param prob Probability of random resample or resampling worst strata between `[0,1]`.
 #' @param threshold Objective function values below the theshold stop the resampling iterations.
-#' @param temp Initial annealing temperature between [0,1].
-#' @param temp_decay Annealing temperature decay proportion between [0,1]. Reduce temperature by this proportion each annealing cycle.
+#' @param temp Initial annealing temperature between `[0,1]`.
+#' @param temp_decay Annealing temperature decay proportion between `[0,1]`. Reduce temperature by this proportion each annealing cycle.
 #' @param cycle Number of iterations before decaying annealing temperature.
 #' @param average Weight the continuous objective funtion by the 1/N contributing strata.
 #' @param wd Changes the working directory.
