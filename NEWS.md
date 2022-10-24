@@ -1,3 +1,11 @@
+# whitebox 2.1.5.9000 (development)
+
+ * `wbt_rust_backtrace()`, a helper method for debugging Rust-related failures of the command-line tool, is now exported
+
+ * `wbt_run_tool()`: Fix potentially length > 1 logic in `if()` statement for error status messages to avoid warnings/future errors
+
+ * `download.file()` `method="wininet"` has been deprecated so it is no longer in the possible set of methods to try on Windows when a download fails
+ 
 # whitebox 2.1.5
 
  * Added `wbt_install_extension()` and `wbt_activate()` for downloading, installing and activating WhiteboxTools extensions

@@ -111,7 +111,7 @@ if (file.exists(output)) {
 In this case, we can achieve a similar slope map result using `terra::terrain()`, so we will create and plot a SpatRaster from `output` and compare the two.
 
 ```{r}
-if (file.exists(output)) {
+if (file.exists(input) && file.exists(output) && !is.null(outputras)) {
   # par(mfrow = c(2, 1), mar = c(1, 1, 1, 1))
   
   # inspect the output graphically
