@@ -1201,7 +1201,7 @@ wbt_raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cell
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (out_text) {
     args <- paste(args, "--out_text")
@@ -1277,7 +1277,7 @@ wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (out_text) {
     args <- paste(args, "--out_text")

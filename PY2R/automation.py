@@ -111,7 +111,7 @@ def function_block(line, ff):
                   + "\n"
               )
               ff.write("  }" + "\n")
-            elif "inputs" in para or "variant" in para:
+            elif "output" in para or "inputs" in para or "variant" in para or "streams" in para or "lakes" in para:
               ff.write("  if (!is.null(" + para + ")) {" + "\n")
               ff.write(
                   '    args <- paste(args, paste0("--'

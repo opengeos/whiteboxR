@@ -405,7 +405,7 @@ wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -740,7 +740,7 @@ wbt_crispness_index <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE,
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -1077,7 +1077,7 @@ wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=FAL
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -2810,7 +2810,7 @@ wbt_zonal_statistics <- function(input, features, output=NULL, stat="mean", out_
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
   args <- paste(args, paste0("--features=", wbt_file_path(features)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(stat)) {
     args <- paste(args, paste0("--stat=", stat))

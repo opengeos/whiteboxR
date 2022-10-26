@@ -531,10 +531,10 @@ wbt_depth_to_water <- function(dem, output, streams=NULL, lakes=NULL, wd=NULL, v
   args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(streams)) {
-    args <- paste(args, paste0("--streams=", streams))
+    args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
   }
   if (!is.null(lakes)) {
-    args <- paste(args, paste0("--lakes=", lakes))
+    args <- paste(args, paste0("--lakes=", wbt_file_path(lakes)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))

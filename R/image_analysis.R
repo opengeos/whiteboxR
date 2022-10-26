@@ -180,7 +180,7 @@ wbt_ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
     args <- paste(args, paste0("--blue=", blue))
   }
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
