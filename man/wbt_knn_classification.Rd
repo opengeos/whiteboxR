@@ -8,8 +8,8 @@ wbt_knn_classification(
   inputs,
   training,
   field,
-  output,
   scaling = "Normalize",
+  output = NULL,
   k = 5,
   clip = TRUE,
   test_proportion = 0.2,
@@ -26,9 +26,9 @@ wbt_knn_classification(
 
 \item{field}{Name of the attribute containing class name data.}
 
-\item{output}{Name of the output raster file.}
-
 \item{scaling}{Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.}
+
+\item{output}{Name of the output raster file.}
 
 \item{k}{k-parameter, which determines the number of nearest neighbours used.}
 

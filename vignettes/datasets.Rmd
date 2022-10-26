@@ -66,6 +66,8 @@ The `wbttools` data set is a data.frame with `r nrow(wbttools)` tools and 7 vari
  
  - `"book"` - Reference manual link
  
+ - `"is_extension"` - Tool is part of General Toolset Extension (GTE), as opposed to the "open core"
+
 ```{r}
 head(wbttools)
 ```
@@ -140,9 +142,6 @@ To find the tools that have an "ExistingFile" argument with file type "Raster" w
 ```{r}
 head(subset(wbttoolparameters, grepl("ExistingFile", parameter_class) & grepl("Raster", parameter_detail)))
 ```
-
-<!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
-<!-- Check out the code that builds the data in `/data-raw/` on [GitHub](https://github.com/giswqs/whiteboxR/tree/master/data-raw) to see how these objects can be generated for any version of WhiteboxTools that supports JSON output for parameter metadata. -->
 
 ## Appendix: Tables of Function Names by Toolbox
 

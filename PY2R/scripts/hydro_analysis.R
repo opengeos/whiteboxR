@@ -510,6 +510,43 @@ wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, wd=NULL, verbo
 }
 
 
+#' Depth to water
+#'
+#' This tool calculates cartographic depth-to-water (DTW) index.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param streams Name of the input streams vector (optional).
+#' @param lakes Name of the input lakes vector (optional).
+#' @param output Name of the output raster image file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_depth_to_water <- function(dem, output, streams=NULL, lakes=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(streams)) {
+    args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
+  }
+  if (!is.null(lakes)) {
+    args <- paste(args, paste0("--lakes=", wbt_file_path(lakes)))
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "depth_to_water"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
 #' Downslope distance to stream
 #'
 #' Measures distance to the nearest downslope stream cell.
@@ -1451,6 +1488,37 @@ wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=F
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "max_upslope_flowpath_length"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
+#' Max upslope value
+#'
+#' This tool calculates the maximum upslope value from an input values raster along flowpaths.
+#'
+#' @param dem Input DEM; it must be depressionless.
+#' @param values Name of the input values raster file.
+#' @param output Name of the output raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_max_upslope_value <- function(dem, values, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--values=", wbt_file_path(values)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "max_upslope_value"
   wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 

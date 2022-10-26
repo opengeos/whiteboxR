@@ -33,5 +33,5 @@ wbt_flightline_overlap(
 Returns the tool text outputs.
 }
 \description{
-Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight lines in each grid cell.
+Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.
 }

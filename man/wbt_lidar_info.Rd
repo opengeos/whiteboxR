@@ -6,7 +6,8 @@
 \usage{
 wbt_lidar_info(
   input,
-  output = NULL,
+  output,
+  density = TRUE,
   vlr = TRUE,
   geokeys = TRUE,
   wd = NULL,
@@ -19,6 +20,8 @@ wbt_lidar_info(
 \item{input}{Input LiDAR file.}
 
 \item{output}{Output HTML file for summary report.}
+
+\item{density}{Flag indicating whether or not to calculate the average point density and nominal point spacing.}
 
 \item{vlr}{Flag indicating whether or not to print the variable length records (VLRs).}
 
