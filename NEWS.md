@@ -1,4 +1,6 @@
-# whitebox 2.1.5.9000 (development)
+# whitebox 2.2.0
+
+ * Updates for WhiteboxTools v2.2.0
 
  * `wbt_rust_backtrace()`, a helper method for debugging Rust-related failures of the command-line tool, is now exported
 
