@@ -5,7 +5,7 @@
 \alias{wbttools}
 \title{WhiteboxTools Tool List}
 \format{
-A data.frame with 518 observations of 7 variables
+A data.frame with 535 observations of 8 variables
 \itemize{
 \item \code{"tool_name"} - WhiteboxTools tool name
 \item \code{"function_name"} - R function name
@@ -14,6 +14,7 @@ A data.frame with 518 observations of 7 variables
 \item \code{"description"} - Brief description
 \item \code{"github"} - Link to related code on GitHub
 \item \code{"book"} - Link to WhiteboxTools Manual
+\item \code{"is_extension"} - Tool is part of General Toolset Extension (GTE), as opposed to the "open core"
 }
 }
 \source{

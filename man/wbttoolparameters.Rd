@@ -5,7 +5,7 @@
 \alias{wbttoolparameters}
 \title{WhiteboxTools Tool Parameters}
 \format{
-A \code{data.frame} with 2082 observations of 13 variables
+A \code{data.frame} with 2169 observations of 13 variables
 \itemize{
 \item \code{"function_name"} - R function name
 \item \code{"tool_name"} - WhiteboxTools tool name

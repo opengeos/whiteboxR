@@ -9,7 +9,7 @@ wbt_join_tables(
   pkey,
   input2,
   fkey,
-  import_field,
+  import_field = NULL,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE,

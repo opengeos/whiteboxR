@@ -32,6 +32,7 @@ def function_header(line):
         line = line.replace(
             "callback=None", "wd=NULL, verbose_mode=FALSE, compress_rasters=False"
         )
+        line = line.replace('function=""', 'FUN=""')
         line = line.replace("False", "FALSE")
         line = line.replace("True", "TRUE")
         line = line.replace("None", "NULL")
@@ -110,7 +111,7 @@ def function_block(line, ff):
                   + "\n"
               )
               ff.write("  }" + "\n")
-            elif "inputs" in para or "variant" in para:
+            elif "output" in para or "inputs" in para or "variant" in para or "streams" in para or "lakes" in para:
               ff.write("  if (!is.null(" + para + ")) {" + "\n")
               ff.write(
                   '    args <- paste(args, paste0("--'
@@ -248,9 +249,15 @@ def function_example(fun_name):
 toolboxes = {
     "# Data Tools #": "data_tools.R",
     "# GIS Analysis #": "gis_analysis.R",
+    "# GIS Analysis/Distance Tools #": "gis_analysis_distance.R",
+    "# GIS Analysis/Overlay Tools #": "gis_analysis_overlay.R",
+    "# GIS Analysis/Patch Shape Tools #": "gis_analysis_patch_shape.R",
     "# Geomorphometric Analysis #": "terrain_analysis.R",
     "# Hydrological Analysis #": "hydro_analysis.R",
     "# Image Processing Tools #": "image_analysis.R",
+    "# Image Processing Tools/Classification #": "image_analysis_classification.R",
+    "# Image Processing Tools/Filters #": "image_analysis_filters.R",
+    "# Image Processing Tools/Image Enhancement #": "image_analysis_enhancement.R",
     "# LiDAR Tools #": "lidar_analysis.R",
     "# Machine Learning #": "machine_learning.R",
     "# Math and Stats Tools #": "math_stat_analysis.R",
@@ -290,7 +297,7 @@ with open(wbt_py) as f:
     lines = f.readlines()
 
     for index, line in enumerate(lines):
-        if index > 566:
+        if index > 700:
             line = line.strip()
 
             # Create an R script for each toolbox
@@ -325,6 +332,12 @@ with open(wbt_py) as f:
                     elif ("--" in doc_line) and (
                         doc_line.startswith("callback") == False
                     ):
+                        # fix expected cross-reference (use code block)
+                        doc_line = doc_line.replace("[0,1]", "`[0,1]`")
+                        # fix reserved keywords used as argument names
+                        if doc_line.startswith("function"):
+                            doc_line = doc_line.replace("function ", "")
+                            doc_line = "FUN " + doc_line
                         if doc_line.startswith("i --"):
                             doc_line = doc_line.replace("i --", "input --")
                         doc_line = doc_line.replace("-- ", "")

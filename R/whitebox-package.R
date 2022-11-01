@@ -21,7 +21,7 @@
 #' This data set is a `data.frame` containing tools by name and associated R function name
 #' @name wbttools
 #' @docType data
-#' @format A data.frame with 518 observations of 7 variables
+#' @format A data.frame with 535 observations of 8 variables
 #' - `"tool_name"` - WhiteboxTools tool name
 #' - `"function_name"` - R function name
 #' - `"toolbox_name"` - WhiteboxTools toolbox name
@@ -29,6 +29,7 @@
 #' - `"description"` - Brief description
 #' - `"github"` - Link to related code on GitHub
 #' - `"book"` - Link to WhiteboxTools Manual
+#' - `"is_extension"` - Tool is part of General Toolset Extension (GTE), as opposed to the "open core"
 #' @source [WhiteboxTools](https://github.com/jblindsay/whitebox-tools/releases/)
 #' @seealso [wbttoolparameters] [wbt_list_tools()]
 #' @keywords datasets
@@ -42,7 +43,7 @@
 #'
 #' @name wbttoolparameters
 #' @docType data
-#' @format A `data.frame` with 2082 observations of 13 variables
+#' @format A `data.frame` with 2169 observations of 13 variables
 #' - `"function_name"` - R function name
 #' - `"tool_name"` - WhiteboxTools tool name
 #' - `"name"` - parameter name

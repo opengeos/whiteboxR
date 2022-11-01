@@ -109,15 +109,17 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_knn_classification <- function(inputs, training, field, output, scaling="Normalize", k=5, clip=TRUE, test_proportion=0.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_knn_classification <- function(inputs, training, field, scaling="Normalize", output=NULL, k=5, clip=TRUE, test_proportion=0.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
   args <- paste(args, paste0("--training=", wbt_file_path(training)))
   args <- paste(args, paste0("--field=", wbt_file_path(field)))
-  args <- paste(args, paste0("--output=", wbt_file_path(output)))
   if (!is.null(scaling)) {
     args <- paste(args, paste0("--scaling=", scaling))
+  }
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(k)) {
     args <- paste(args, paste0("--k=", k))
@@ -168,7 +170,7 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
     args <- paste(args, paste0("--scaling=", scaling))
   }
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(k)) {
     args <- paste(args, paste0("--k=", k))
@@ -217,7 +219,7 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
     args <- paste(args, paste0("--scaling=", scaling))
   }
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(test_proportion)) {
     args <- paste(args, paste0("--test_proportion=", test_proportion))
@@ -309,7 +311,7 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
   args <- paste(args, paste0("--training=", wbt_file_path(training)))
   args <- paste(args, paste0("--field=", wbt_file_path(field)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(split_criterion)) {
     args <- paste(args, paste0("--split_criterion=", split_criterion))
@@ -363,7 +365,7 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
   args <- paste(args, paste0("--training=", wbt_file_path(training)))
   args <- paste(args, paste0("--field=", wbt_file_path(field)))
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(n_trees)) {
     args <- paste(args, paste0("--n_trees=", n_trees))
@@ -418,7 +420,7 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
     args <- paste(args, paste0("--scaling=", scaling))
   }
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(c)) {
     args <- paste(args, paste0("--c=", c))
@@ -473,7 +475,7 @@ wbt_svm_regression <- function(inputs, training, field, scaling="Normalize", out
     args <- paste(args, paste0("--scaling=", scaling))
   }
   if (!is.null(output)) {
-    args <- paste(args, paste0("--output=", output))
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
   }
   if (!is.null(c)) {
     args <- paste(args, paste0("--c=", c))

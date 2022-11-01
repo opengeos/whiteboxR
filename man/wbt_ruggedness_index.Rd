@@ -7,7 +7,6 @@
 wbt_ruggedness_index(
   dem,
   output,
-  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE,
@@ -18,8 +17,6 @@ wbt_ruggedness_index(
 \item{dem}{Input raster DEM file.}
 
 \item{output}{Output raster file.}
-
-\item{zfactor}{Optional multiplier for when the vertical and horizontal units are not the same.}
 
 \item{wd}{Changes the working directory.}
 

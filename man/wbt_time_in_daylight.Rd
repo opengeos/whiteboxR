@@ -43,7 +43,7 @@ wbt_time_in_daylight(
 
 \item{start_time}{Starting hour to track shadows (e.g. 5, 5:00, 05:00:00). Assumes 24-hour time: HH:MM:SS. 'sunrise' is also a valid time.}
 
-\item{end_time}{Starting hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.}
+\item{end_time}{Ending hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.}
 
 \item{wd}{Changes the working directory.}
 

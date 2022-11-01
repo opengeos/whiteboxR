@@ -17,7 +17,7 @@ wbt_eliminate_coincident_points(
 \arguments{
 \item{input}{Input vector file.}
 
-\item{output}{Output vector polygon file.}
+\item{output}{Output vector points file.}
 
 \item{tolerance}{The distance tolerance for points.}
 
