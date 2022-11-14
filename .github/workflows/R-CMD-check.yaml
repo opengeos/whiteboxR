@@ -23,60 +23,40 @@ jobs:
         config:
           - {os: windows-latest, r: 'release'}
           - {os: macOS-latest, r: 'release', exepath: "/Users/runner/work/_temp/Library/whitebox/WBT/whitebox_tools"}
-          - {os: ubuntu-20.04, r: 'devel', exepath: "/home/runner/work/_temp/Library/whitebox/WBT/whitebox_tools", rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
-#         - {os: ubuntu-18.04, r: '3.6',  rspm: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"}
+          - {os: ubuntu-latest, r: 'devel', exepath: "/home/runner/work/_temp/Library/whitebox/WBT/whitebox_tools"}
+          - {os: ubuntu-latest, r: '3.6'}
 
     env:
-      RSPM: ${{ matrix.config.rspm }}
       R_WHITEBOX_EXE_PATH: ${{ matrix.config.exepath }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
 
-      - uses: r-lib/actions/setup-pandoc@v1
-      
-      - name: Cache R packages
-        if: runner.os != 'Windows'
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+      - uses: r-lib/actions/setup-pandoc@v2
           
-      - name: Install remotes
-        run: Rscript -e "install.packages('remotes')"
-      
       - name: Install system dependencies
         if: runner.os == 'macOS'
         run: |
           brew install pkg-config
           brew install gdal
-
-      - name: Install system dependencies
-        if: runner.os == 'Linux'
-        run: |
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
+          
+      - name: Install remotes
+        run: Rscript -e "install.packages('remotes')"
                  
-      - name: Install dependencies
-        run: Rscript -e "remotes::install_deps(dependencies = TRUE)" -e "remotes::install_cran('rcmdcheck')"
-        
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
       - name: Install WhiteboxTools
         run: Rscript -e "remotes::install_local(force = TRUE)" -e "whitebox::install_whitebox()" 
-        
-      - name: Check
-        run: Rscript -e "rcmdcheck::rcmdcheck(args = c('--no-manual', '--as-cran'), error_on = 'warning', check_dir = 'check')"
 
-      - name: Upload check results
-        if: failure()
-        uses: actions/upload-artifact@main
+      - uses: r-lib/actions/check-r-package@v2
         with:
-          name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: check
+          upload-snapshots: true
+
