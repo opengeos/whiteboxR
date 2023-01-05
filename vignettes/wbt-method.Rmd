@@ -11,7 +11,8 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  eval = whitebox::check_whitebox_binary()
+  eval = whitebox::check_whitebox_binary() & 
+          requireNamespace("terra", quietly = TRUE)
 )
 ```
 
@@ -111,7 +112,7 @@ associated with that R object.
 ### Compare `raster` and `terra` as R raster object frontends
 
 ```{r}
-if (requireNamespace("raster") && requireNamespace("rgdal")) {
+if (requireNamespace("raster")) {
   rdem <- raster::raster(dem)
 
   # raster input; raster output
@@ -122,14 +123,12 @@ if (requireNamespace("raster") && requireNamespace("rgdal")) {
 ```
 
 ```{r}
-if (requireNamespace("terra")) {
-  tdem <- terra::rast(dem)
+tdem <- terra::rast(dem)
 
-  # # terra input; terra output
-  t1 <- wbt("slope", dem = tdem, output =  file.path(tempdir(), "slope.tif"))
-  t1
-  class(t1$result$output)
-}
+## terra input; terra output
+t1 <- wbt("slope", dem = tdem, output =  file.path(tempdir(), "slope.tif"))
+t1
+class(t1$result$output)
 ```
 
 The user still needs to specify paths but `wbt()` eases the process
@@ -167,7 +166,7 @@ x <- wbt_source(shp)
 x
 ```
 
-The SpatVectorProxy provides a light-weight means to create an R object reference to a large file; allowing the "heavy" lifting for that file to be done primarily by WhiteboxTools.
+The SpatVectorProxy provides a light-weight means to create an R object reference to a large file; allowing the "heavy" lifting for that file to be done primarily by WhiteboxTools (or GDAL via {terra}).
 
 At time of writing this document, WhiteboxTools does not support vector data inputs other than Shapefile. If we have, for example, a GeoPackage, `wbt_source()` will convert the input to a temporary shapefile and return a SpatVectorProxy that references that file. This object can then be used as input to `wbt()`.
 
@@ -179,7 +178,7 @@ x2 <- query(x)
 x2$AREA <- NULL
 
 # create a GeoPackage
-writeVector(x2, filename = file.path(tempdir(), "lux.gpkg"), overwrite = TRUE)
+terra::writeVector(x2, filename = file.path(tempdir(), "lux.gpkg"), overwrite = TRUE)
 
 # now the source is a temporary .shp
 x3 <- wbt_source(file.path(tempdir(), "lux.gpkg"))
@@ -210,8 +209,7 @@ x2 <- wbt(x, tool_name = "slope", output = file.path(tempdir(), "curvature.tif")
 
 ## Using pipes
 
-Nested chained operation syntax can be transformed to use pipe operators (base
-R 4.1+ `|>` or `magrittr` `%>%`). This can improve the readability of the code (fewer nested parentheses) and the first argument transfer behavior allows results from each step to be transferred to the input of the next.
+Nested chained operation syntax can be transformed to use pipe operators ({base} R 4.1+ `|>` or {magrittr} `%>%`). This can improve the readability of the code (fewer nested parentheses) and the first argument transfer behavior allows results from each step to be transferred to the input of the next.
 
 ```{r, eval = FALSE, purl = FALSE}
 wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif")) |>
@@ -290,11 +288,11 @@ propagated to the R object result. `wbt()` does not alter or copy the source or
 output files which may or may not have CRS information.
 
 ```{r}
-araster <- terra::set.crs(terra::rast(dem), "EPSG:26918")
+araster <- terra::rast(dem)
 wbt("slope", dem = araster, output = file.path(tempdir(), "foo.tif"))
 ```
 
-Alternately you can specify the `crs` argument to `wbt()` instead of `raster()`. This will directly set the `crs` element of the `wbt_result` of your output.
+Alternately you can specify the `crs` argument to `wbt()` instead of `rast()`. This will directly set the `crs` element of the `wbt_result` of your output.
 
 ```{r}
 wbt("slope", dem = terra::rast(dem), crs = "EPSG:26918", output = file.path(tempdir(), "foo.tif"))
@@ -308,19 +306,22 @@ If two input R objects have different (or no) CRS then the `wbt()` method will
 provide a message to the user:
 
 ```{r}
+r1 <- terra::rast(dem) # default: EPSG:26918
+r2 <- terra::deepcopy(r1)
+crs(r2) <- "EPSG:26917" # something else/wrong
 wbt("add", 
-    input1 = terra::set.crs(terra::rast(dem), "EPSG:26918"), 
-    input2 = terra::rast(dem), 
+    input1 = r1, 
+    input2 = r2, 
     output = file.path(tempdir(), "foo.tif")
    )
 ```
 
-This message suppressed if the `crs` argument is specified to `wbt()`
+This message is suppressed and output CRS set accordingly if the `crs` argument is specified. This user set CRS is only in the SpatRaster object, and does not necessarily match that of the file used as input or returned as output.
 
 ```{r}
 wbt("add", 
-    input1 = terra::set.crs(terra::rast(dem), "EPSG:26918"),
-    input2 = terra::rast(dem), 
+    input1 = r1,
+    input2 = r2, 
     crs = "EPSG:26918",
     output = file.path(tempdir(), "foo.tif")
    )
