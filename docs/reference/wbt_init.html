@@ -30,7 +30,7 @@ wbt_max_procs(): Check maximum number of processes for  for tools that run in pa
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
       </span>
     </div>
 
@@ -89,27 +89,27 @@ wbt_max_procs(): Check maximum number of processes for  for tools that run in pa
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">wbt_init</span><span class="op">(</span>exe_path <span class="op">=</span> <span class="fu">wbt_exe_path</span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span>
-
-<span class="fu">wbt_options</span><span class="op">(</span>
-  exe_path <span class="op">=</span> <span class="cn">NULL</span>,
-  wd <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose <span class="op">=</span> <span class="cn">NULL</span>,
-  compress_rasters <span class="op">=</span> <span class="cn">NULL</span>,
-  max_procs <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span>
-
-<span class="fu">wbt_exe_path</span><span class="op">(</span>exe_path <span class="op">=</span> <span class="cn">NULL</span>, shell_quote <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu">wbt_default_path</span><span class="op">(</span><span class="op">)</span>
-
-<span class="fu">wbt_wd</span><span class="op">(</span>wd <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">wbt_verbose</span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">wbt_compress_rasters</span><span class="op">(</span>compress_rasters <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>
-
-<span class="fu">wbt_max_procs</span><span class="op">(</span>max_procs <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">wbt_init</span><span class="op">(</span>exe_path <span class="op">=</span> <span class="fu">wbt_exe_path</span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_options</span><span class="op">(</span></span>
+<span>  exe_path <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  max_procs <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_exe_path</span><span class="op">(</span>exe_path <span class="op">=</span> <span class="cn">NULL</span>, shell_quote <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_default_path</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_wd</span><span class="op">(</span>wd <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_verbose</span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_compress_rasters</span><span class="op">(</span>compress_rasters <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">wbt_max_procs</span><span class="op">(</span>max_procs <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -148,48 +148,48 @@ Returns the file path of WhiteboxTools executable.
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co">## wbt_init():</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># set path to binary as an argument</span></span>
-<span class="r-in"><span class="co"># wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## wbt_options():</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># set multiple options (e.g. exe_path and verbose) with wbt_options()</span></span>
-<span class="r-in"><span class="fu">wbt_options</span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">"not/a/valid/path/whitebox_tools.exe"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">wbt_exe_path</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## wbt_wd():</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># set WBT working directory to R working directory</span></span>
-<span class="r-in"><span class="fu">wbt_wd</span><span class="op">(</span>wd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## wbt_verbose():</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">wbt_verbose</span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## wbt_compress_rasters():</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">wbt_compress_rasters</span><span class="op">(</span>compress_rasters <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## wbt_max_procs():</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">wbt_max_procs</span><span class="op">(</span>max_procs <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co">## wbt_init():</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># set path to binary as an argument</span></span></span>
+<span class="r-in"><span><span class="co"># wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## wbt_options():</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># set multiple options (e.g. exe_path and verbose) with wbt_options()</span></span></span>
+<span class="r-in"><span><span class="fu">wbt_options</span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">"not/a/valid/path/whitebox_tools.exe"</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">wbt_exe_path</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## wbt_wd():</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># set WBT working directory to R working directory</span></span></span>
+<span class="r-in"><span><span class="fu">wbt_wd</span><span class="op">(</span>wd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## wbt_verbose():</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">wbt_verbose</span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## wbt_compress_rasters():</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">wbt_compress_rasters</span><span class="op">(</span>compress_rasters <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## wbt_max_procs():</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">wbt_max_procs</span><span class="op">(</span>max_procs <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>

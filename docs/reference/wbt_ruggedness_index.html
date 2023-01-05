@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
       </span>
     </div>
 
@@ -66,15 +66,14 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">wbt_ruggedness_index</span><span class="op">(</span>
-  <span class="va">dem</span>,
-  <span class="va">output</span>,
-  zfactor <span class="op">=</span> <span class="cn">NULL</span>,
-  wd <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,
-  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,
-  command_only <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">wbt_ruggedness_index</span><span class="op">(</span></span>
+<span>  <span class="va">dem</span>,</span>
+<span>  <span class="va">output</span>,</span>
+<span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  command_only <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -83,8 +82,6 @@
 <dd><p>Input raster DEM file.</p></dd>
 <dt>output</dt>
 <dd><p>Output raster file.</p></dd>
-<dt>zfactor</dt>
-<dd><p>Optional multiplier for when the vertical and horizontal units are not the same.</p></dd>
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
 <dt>verbose_mode</dt>
