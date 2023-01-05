@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
       </span>
     </div>
 
@@ -124,7 +124,7 @@ doi: <a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="external-lin
 </h2>
 <p>Load the whitebox library.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR" class="external-link">whitebox</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR" class="external-link">whitebox</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="how-whitebox-works">How <code>whitebox</code> works<a class="anchor" aria-label="anchor" href="#how-whitebox-works"></a>
 </h3>
@@ -134,8 +134,8 @@ doi: <a href="http://dx.doi.org/10.1016/j.cageo.2016.07.003" class="external-lin
 <p>You can find the binary path that the package is currently going to
 use with <code><a href="../reference/wbt_init.html">wbt_exe_path()</a></code></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_init.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/home/andrew/.local/share/WBT/whitebox_tools"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_init.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "/home/andrew/.local/share/WBT/whitebox_tools"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="interfacing-with-r-spatial-packages">Interfacing with R spatial packages<a class="anchor" aria-label="anchor" href="#interfacing-with-r-spatial-packages"></a>
@@ -157,53 +157,51 @@ your output.</p>
 </h4>
 <p>A demonstration workflow employing the {terra} package follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span>
-<span class="co">#&gt; terra 1.5.34</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR" class="external-link">whitebox</a></span><span class="op">)</span>
-
-<span class="co"># DEMO: calculate slope with WhiteboxTools and raster</span>
-
-<span class="co"># Typically the input/output paths are stored as variables</span>
-
-<span class="co"># sample DEM input GeoTIFF</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># output file (to be created)</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; terra 1.6.47</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR" class="external-link">whitebox</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># DEMO: calculate slope with WhiteboxTools and raster</span></span>
+<span></span>
+<span><span class="co"># Typically the input/output paths are stored as variables</span></span>
+<span></span>
+<span><span class="co"># sample DEM input GeoTIFF</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># output file (to be created)</span></span>
+<span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span></span></code></pre></div>
 <p>Run a tool such as <code><a href="../reference/wbt_slope.html">wbt_slope()</a></code> or
 <code>"Slope"</code>.</p>
 <p>WhiteboxTools reads from <code>input</code> and writes to
 <code>output</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_slope.html">wbt_slope</a></span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, units <span class="op">=</span> <span class="st">'radians'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_slope.html">wbt_slope</a></span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, units <span class="op">=</span> <span class="st">'radians'</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="co"># create a SpatRaster from file output path</span>
-  <span class="va">outputras</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="co">#&gt; Warning: [rast] can't  get proj4 from srs</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># create a SpatRaster from file output path</span></span>
+<span>  <span class="va">outputras</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p>In this case, we can achieve a similar slope map result using
 <code><a href="https://rdrr.io/pkg/terra/man/terrain.html" class="external-link">terra::terrain()</a></code>, so we will create and plot a SpatRaster
 from <code>output</code> and compare the two.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="co"># par(mfrow = c(2, 1), mar = c(1, 1, 1, 1))</span>
-  
-  <span class="co"># inspect the output graphically</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span>
-    <span class="va">outputras</span>,
-    main <span class="op">=</span> <span class="st">"whitebox::wbt_slope() [radians]"</span>,
-    axes <span class="op">=</span> <span class="cn">FALSE</span>
-  <span class="op">)</span>
-  
-  <span class="co"># calculate equivalent using raster::terrain() on input</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span>
-    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/terrain.html" class="external-link">terrain</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/inplace.html" class="external-link">set.crs</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span>, <span class="st">"EPSG:26918"</span><span class="op">)</span><span class="op">)</span>,
-    main <span class="op">=</span> <span class="st">"terra::terrain() [radians]"</span>,
-    axes <span class="op">=</span> <span class="cn">FALSE</span>
-  <span class="op">)</span>
-<span class="op">}</span>
-<span class="co">#&gt; Warning: [rast] can't  get proj4 from srs</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># par(mfrow = c(2, 1), mar = c(1, 1, 1, 1))</span></span>
+<span>  </span>
+<span>  <span class="co"># inspect the output graphically</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>    <span class="va">outputras</span>,</span>
+<span>    main <span class="op">=</span> <span class="st">"whitebox::wbt_slope() [radians]"</span>,</span>
+<span>    axes <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># calculate equivalent using raster::terrain() on input</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/terrain.html" class="external-link">terrain</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    main <span class="op">=</span> <span class="st">"terra::terrain() [radians]"</span>,</span>
+<span>    axes <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p><img src="demo_files/figure-html/unnamed-chunk-8-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-8-2.png" width="576"></p>
 <p>The <code>SpatRaster</code>, <code>RasterLayer</code> and related
 classes in the terra and raster packages are perfect for maintaining the
@@ -213,9 +211,9 @@ memory.</p>
 If you are using a raster <code>RasterLayer</code> objects the
 equivalent method is <code><a href="https://rdrr.io/pkg/raster/man/filename.html" class="external-link">raster::filename()</a></code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># the SpatRaster retains a reference to the input file name</span>
-<span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/tmp/RtmpO0ThPL/slope.tif"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># the SpatRaster retains a reference to the input file name</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmpfo2F2t/slope.tif"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -251,13 +249,13 @@ and can be overridden by system environment variables. A default value
 <code>wbt_exe_path(shell_quote = FALSE)</code> is passed when the
 <code>exe_path</code> argument is unspecified.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># inspect where wbt_init() will be checking</span>
-<span class="fu"><a href="../reference/wbt_init.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [1] "/home/andrew/.local/share/WBT/whitebox_tools"</span>
-
-<span class="co"># TRUE when file is found at one of the user specified paths or package default</span>
-<span class="co"># FALSE when whitebox_tools does not exist at path</span>
-<span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># inspect where wbt_init() will be checking</span></span>
+<span><span class="fu"><a href="../reference/wbt_init.html">wbt_exe_path</a></span><span class="op">(</span>shell_quote <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "/home/andrew/.local/share/WBT/whitebox_tools"</span></span>
+<span></span>
+<span><span class="co"># TRUE when file is found at one of the user specified paths or package default</span></span>
+<span><span class="co"># FALSE when whitebox_tools does not exist at path</span></span>
+<span><span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>This section will cover optional arguments to <code><a href="../reference/wbt_init.html">wbt_init()</a></code>
 (<code>exe_path</code>, <code>wd</code> and <code>verbose</code>) and
 their corresponding options and helper functions.</p>
@@ -272,13 +270,13 @@ package installation directory, subdirectory <code>"WBT"</code>,
 followed by <code>whitebox_tools.exe</code> or
 <code>whitebox_tools</code> depending on your operating system.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># set path manually to whitebox_tools executable, for instance:</span>
-<span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># set path manually to whitebox_tools executable, for instance:</span></span>
+<span><span class="fu"><a href="../reference/wbt_init.html">wbt_init</a></span><span class="op">(</span>exe_path <span class="op">=</span> <span class="st">'/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools'</span><span class="op">)</span></span></code></pre></div>
 <p>A way to find your <code>whitebox_tools</code> executable is if it is
 in a directory that exists in your PATH. This requires that you have the
 Unix tool <code>which</code> or one of its analogues.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>R_WHITEBOX_EXE_PATH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.which.html" class="external-link">Sys.which</a></span><span class="op">(</span><span class="st">"whitebox_tools"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>R_WHITEBOX_EXE_PATH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.which.html" class="external-link">Sys.which</a></span><span class="op">(</span><span class="st">"whitebox_tools"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>You can also set <code>R_WHITEBOX_EXE_PATH</code> manually.</p>
 <ul>
 <li>Replace the <code><a href="https://rdrr.io/r/base/Sys.which.html" class="external-link">Sys.which()</a></code> call with a custom path string
@@ -324,7 +322,7 @@ WhiteboxTools working directory setting to the new path. After this
 point the flag need not be specified [until you wish to change
 again].</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_init.html">wbt_wd</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="co"># "" equivalent to getwd()</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_init.html">wbt_wd</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="co"># "" equivalent to getwd()</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="verbose-argument">
@@ -347,11 +345,11 @@ vignettes etc.</p>
 <p>In this vignette we use <code>wbt_verbose(TRUE)</code> so the package
 option <code>whitebox.verbose</code> is set to <code>TRUE</code></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># force output when run non-interactively (knitr)</span>
-<span class="fu"><a href="../reference/wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># force output when run non-interactively (knitr)</span></span>
+<span><span class="fu"><a href="../reference/wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>This is mainly to print out the tool name and elapsed time whenever
 we run a tool:</p>
-<pre><code><span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.12s</span></code></pre>
+<pre><code><span><span class="co">#&gt; wbt_breach_depressions - Elapsed Time (excluding I/O): 0.12s</span></span></code></pre>
 <p>This package-level verbose option can also control the
 <code>verbose_mode</code> values passed to <code>wbt_*</code> tool
 functions. Turning on “full” output requires a third option to be set
@@ -389,30 +387,30 @@ in package reference:</p>
 <p>For instance, here we use the tool “BreachDepressions” to pre-process
 a Digital Elevation Model (DEM) so we can identify flow pathways.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># output file name</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
-
-<span class="co"># run breach_depressions tool</span>
-<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># sample DEM file path in package extdata folder</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># output file name</span></span>
+<span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># run breach_depressions tool</span></span>
+<span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></span></code></pre></div>
 <p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around
 the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the
 <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> call given a function-specific argument
 string.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># output file name</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span>
-
-<span class="co"># run breach_depressions tool</span>
-<span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># sample DEM file path in package extdata folder</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># output file name</span></span>
+<span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># run breach_depressions tool</span></span>
+<span><span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.11s</span></span></code></pre></div>
 <p>The above method of creating
 <code>wbt_breach_depressions(dem = ..., output = ...)</code> to handle
 <code>wbt_run_tool("BreachDepressions", args = ...)</code> makes it easy
@@ -427,44 +425,42 @@ WhiteboxTools.</p>
 <h4 id="setup-1">Setup<a class="anchor" aria-label="anchor" href="#setup-1"></a>
 </h4>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span>
-
-<span class="co"># sample DEM file path in package extdata folder</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co"># output file name</span>
-<span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># sample DEM file path in package extdata folder</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># output file name</span></span>
+<span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="run-wbt_breach_depressions-breachdepressions-tool">Run <code>wbt_breach_depressions()</code> (BreachDepressions
 tool)<a class="anchor" aria-label="anchor" href="#run-wbt_breach_depressions-breachdepressions-tool"></a>
 </h4>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># run breach_depressions tool</span>
-<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.10s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># run breach_depressions tool</span></span>
+<span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="visualize-results-with-terra">Visualize results with <code>terra</code><a class="anchor" aria-label="anchor" href="#visualize-results-with-terra"></a>
 </h4>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># create raster object from input file</span>
-<span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span>
-<span class="co">#&gt; Warning: [rast] can't  get proj4 from srs</span>
-
-<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="co"># create raster object from output file</span>
-  <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span>
-  
-  <span class="co"># par(mar = c(2, 1, 2, 1))</span>
-  <span class="co"># inspect input v.s. output</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, main <span class="op">=</span> <span class="st">"DEM"</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, main <span class="op">=</span> <span class="st">"DEM (Breached Depressions)"</span><span class="op">)</span>
-  
-  <span class="co"># inspect numeric difference (output - input) </span>
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>,  main <span class="op">=</span> <span class="st">"Difference ([Breached Depressions] - [DEM])"</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="co">#&gt; Warning: [rast] can't  get proj4 from srs</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># create raster object from input file</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># create raster object from output file</span></span>
+<span>  <span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># par(mar = c(2, 1, 2, 1))</span></span>
+<span>  <span class="co"># inspect input v.s. output</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, main <span class="op">=</span> <span class="st">"DEM"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>, main <span class="op">=</span> <span class="st">"DEM (Breached Depressions)"</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># inspect numeric difference (output - input) </span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>,  main <span class="op">=</span> <span class="st">"Difference ([Breached Depressions] - [DEM])"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p><img src="demo_files/figure-html/unnamed-chunk-17-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-17-2.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-17-3.png" width="576"></p>
 </div>
 </div>
@@ -483,23 +479,22 @@ spatial hydrological analysis of stream networks.</p>
 <h4 id="setup-2">Setup<a class="anchor" aria-label="anchor" href="#setup-2"></a>
 </h4>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR" class="external-link">whitebox</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span>
-
-<span class="co">## Sample DEM from whitebox package</span>
-<span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">toy_dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/inplace.html" class="external-link">set.crs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">toy_file</span><span class="op">)</span>, <span class="st">"EPSG:26918"</span><span class="op">)</span>
-<span class="co">#&gt; Warning: [rast] can't  get proj4 from srs</span>
-
-<span class="co">## Generate wd as a temporary directory. </span>
-<span class="co">## Replace with your own path, or "." for current directory</span>
-<span class="va">wd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="co">## Write toy_dem to working directory</span>
-<span class="fu"><a href="https://rdrr.io/pkg/terra/man/writeRaster.html" class="external-link">writeRaster</a></span><span class="op">(</span>
-  x <span class="op">=</span> <span class="va">toy_dem</span>, filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
-  overwrite <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/giswqs/whiteboxR" class="external-link">whitebox</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/terra/" class="external-link">terra</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Sample DEM from whitebox package</span></span>
+<span><span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">toy_dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">toy_file</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Generate wd as a temporary directory. </span></span>
+<span><span class="co">## Replace with your own path, or "." for current directory</span></span>
+<span><span class="va">wd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Write toy_dem to working directory</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/writeRaster.html" class="external-link">writeRaster</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="va">toy_dem</span>, filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,</span>
+<span>  overwrite <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_breach_depressions-breach-dem-depressions">
@@ -507,12 +502,12 @@ spatial hydrological analysis of stream networks.</p>
 </h4>
 <p>First we pre-process by breaching depressions in the DEM</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Breach depressions to ensure continuous flow</span>
-<span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>
-  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,
-  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.11s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## Breach depressions to ensure continuous flow</span></span>
+<span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span></span>
+<span>  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,</span>
+<span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_pointer-calculate-flow-direction">
@@ -521,12 +516,12 @@ spatial hydrological analysis of stream networks.</p>
 <p>Then we generate the direction of flow on the DEM surface using the
 “D8” flow pointer method</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Generate d8 flow pointer (note: other flow directions are available)</span>
-<span class="fu"><a href="../reference/wbt_d8_pointer.html">wbt_d8_pointer</a></span><span class="op">(</span>
-  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
-  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## Generate d8 flow pointer (note: other flow directions are available)</span></span>
+<span><span class="fu"><a href="../reference/wbt_d8_pointer.html">wbt_d8_pointer</a></span><span class="op">(</span></span>
+<span>  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,</span>
+<span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.2s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_flow_accumulation-flow-accumulation">
@@ -536,18 +531,13 @@ spatial hydrological analysis of stream networks.</p>
 cumulative flow</p>
 <p>For example with <code><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation()</a></code>:</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Generate d8 flow accumulation in units of cells (note: other flow directions are available)</span>
-<span class="fu"><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation</a></span><span class="op">(</span>
-  input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,
-  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
-  out_type <span class="op">=</span> <span class="st">"cells"</span>
-<span class="op">)</span>
-<span class="co">#&gt; **********************************************************************************</span>
-<span class="co">#&gt; WARNING: Interior pit cells were found within the input DEM. It is likely that the </span>
-<span class="co">#&gt;             DEM needs to be processed to remove topographic depressions and flats prior to</span>
-<span class="co">#&gt;             running this tool.</span>
-<span class="co">#&gt; **********************************************************************************</span>
-<span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## Generate d8 flow accumulation in units of cells (note: other flow directions are available)</span></span>
+<span><span class="fu"><a href="../reference/wbt_d8_flow_accumulation.html">wbt_d8_flow_accumulation</a></span><span class="op">(</span></span>
+<span>  input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,</span>
+<span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,</span>
+<span>  out_type <span class="op">=</span> <span class="st">"cells"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.4s</span></span></code></pre></div>
 <div class="section level5">
 <h5 id="additional-flow-direction-and-accumulation-tools">Additional Flow Direction and Accumulation Tools<a class="anchor" aria-label="anchor" href="#additional-flow-direction-and-accumulation-tools"></a>
 </h5>
@@ -565,32 +555,33 @@ D-infinity, and D-infinity.</p>
 </ul>
 <p>Search for more tools involving <code>"flow pointer"</code> by key
 word: <code>wbt_list_tools(keyword = "flow pointer")</code></p>
-<pre><code><span class="co">#&gt; All 25 Tools containing keywords:</span>
-<span class="co">#&gt; AverageFlowpathSlope: Measures the average slope gradient from each grid cell to all upslope divide cells.</span>
-<span class="co">#&gt; AverageUpslopeFlowpathLength: Measures the average length of all upslope flowpaths draining each grid cell.</span>
-<span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span>
-<span class="co">#&gt; D8Pointer: Calculates a D8 flow pointer raster from an input DEM.</span>
-<span class="co">#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; DInfPointer: Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.</span>
-<span class="co">#&gt; DownslopeFlowpathLength: Calculates the downslope flowpath length from each cell to basin outlet.</span>
-<span class="co">#&gt; ExtractStreams: Extracts stream grid cells from a flow accumulation raster.</span>
-<span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; FD8Pointer: Calculates an FD8 flow pointer raster from an input DEM.</span>
-<span class="co">#&gt; FindNoFlowCells: Finds grid cells with no downslope neighbours.</span>
-<span class="co">#&gt; FindParallelFlow: Finds areas of parallel flow in D8 flow direction rasters.</span>
-<span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span>
-<span class="co">#&gt; FlowLengthDiff: Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.</span>
-<span class="co">#&gt; LongProfileFromPoints: Plots the longitudinal profiles from flow-paths initiating from a set of vector points.</span>
-<span class="co">#&gt; LongestFlowpath: Delineates the longest flowpaths for a group of subbasins or watersheds. </span>
-<span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; MaxUpslopeFlowpathLength: Measures the maximum length of all upslope flowpaths draining each grid cell.</span>
-<span class="co">#&gt; NumInflowingNeighbours: Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.</span>
-<span class="co">#&gt; Rho8Pointer: Calculates a stochastic Rho8 flow pointer raster from an input DEM.</span>
-<span class="co">#&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.</span>
-<span class="co">#&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</span>
-<span class="co">#&gt; QinFlowAccumulation: This tool calculates Qin et al. (2007) flow accumulation.</span>
-<span class="co">#&gt; QuinnFlowAccumulation: This tool calculates Quinn et al. (1995) flow accumulation.</span>
-<span class="co">#&gt; Rho8FlowAccumulation: This tool calculates Fairfield and Leymarie (1991) flow accumulation.</span></code></pre>
+<pre><code><span><span class="co">#&gt; All 26 Tools containing keywords:</span></span>
+<span><span class="co">#&gt; AverageFlowpathSlope: Measures the average slope gradient from each grid cell to all upslope divide cells.</span></span>
+<span><span class="co">#&gt; AverageUpslopeFlowpathLength: Measures the average length of all upslope flowpaths draining each grid cell.</span></span>
+<span><span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span></span>
+<span><span class="co">#&gt; D8Pointer: Calculates a D8 flow pointer raster from an input DEM.</span></span>
+<span><span class="co">#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.</span></span>
+<span><span class="co">#&gt; DInfPointer: Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.</span></span>
+<span><span class="co">#&gt; DownslopeFlowpathLength: Calculates the downslope flowpath length from each cell to basin outlet.</span></span>
+<span><span class="co">#&gt; ExtractStreams: Extracts stream grid cells from a flow accumulation raster.</span></span>
+<span><span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
+<span><span class="co">#&gt; FD8Pointer: Calculates an FD8 flow pointer raster from an input DEM.</span></span>
+<span><span class="co">#&gt; FindNoFlowCells: Finds grid cells with no downslope neighbours.</span></span>
+<span><span class="co">#&gt; FindParallelFlow: Finds areas of parallel flow in D8 flow direction rasters.</span></span>
+<span><span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span></span>
+<span><span class="co">#&gt; FlowLengthDiff: Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.</span></span>
+<span><span class="co">#&gt; LongProfileFromPoints: Plots the longitudinal profiles from flow-paths initiating from a set of vector points.</span></span>
+<span><span class="co">#&gt; LongestFlowpath: Delineates the longest flowpaths for a group of subbasins or watersheds. </span></span>
+<span><span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
+<span><span class="co">#&gt; MaxUpslopeFlowpathLength: Measures the maximum length of all upslope flowpaths draining each grid cell.</span></span>
+<span><span class="co">#&gt; NumInflowingNeighbours: Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.</span></span>
+<span><span class="co">#&gt; Rho8Pointer: Calculates a stochastic Rho8 flow pointer raster from an input DEM.</span></span>
+<span><span class="co">#&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.</span></span>
+<span><span class="co">#&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</span></span>
+<span><span class="co">#&gt; Rho8FlowAccumulation: This tool calculates Fairfield and Leymarie (1991) flow accumulation.</span></span>
+<span><span class="co">#&gt; MaxUpslopeValue: This tool calculates the maximum upslope value from an input values raster along flowpaths.</span></span>
+<span><span class="co">#&gt; QuinnFlowAccumulation: This tool calculates Quinn et al. (1995) flow accumulation.</span></span>
+<span><span class="co">#&gt; QinFlowAccumulation: This tool calculates Qin et al. (2007) flow accumulation.</span></span></code></pre>
 <p>This is just an example of the wealth of tool options made available
 by the WhiteboxTools platform.</p>
 </div>
@@ -606,13 +597,13 @@ choose will depend on analysis goals, the choice of flow accumulation
 algorithm used, local topography, as well as resolution and extent of
 DEM.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Generate streams with a stream initiation threshold of 100 cells</span>
-<span class="fu"><a href="../reference/wbt_extract_streams.html">wbt_extract_streams</a></span><span class="op">(</span>
-  flow_accum <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,
-  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
-  threshold <span class="op">=</span> <span class="fl">100</span>
-<span class="op">)</span>
-<span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.0s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">## Generate streams with a stream initiation threshold of 100 cells</span></span>
+<span><span class="fu"><a href="../reference/wbt_extract_streams.html">wbt_extract_streams</a></span><span class="op">(</span></span>
+<span>  flow_accum <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,</span>
+<span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,</span>
+<span>  threshold <span class="op">=</span> <span class="fl">100</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; extract_streams - Elapsed Time (excluding I/O): 0.0s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_tributary_identifier-identify-tributaries">
@@ -626,12 +617,12 @@ because it takes takes two inputs:</p>
 <li><p>And our raster streams file.</p></li>
 </ul>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier</a></span><span class="op">(</span>
-  d8_pntr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>,
-  streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,
-  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.1s</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier</a></span><span class="op">(</span></span>
+<span>  d8_pntr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span>,</span>
+<span>  streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,</span>
+<span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="compare-results">Compare results<a class="anchor" aria-label="anchor" href="#compare-results"></a>
@@ -639,39 +630,39 @@ because it takes takes two inputs:</p>
 <p>Finally, we compare results of <code><a href="../reference/wbt_extract_streams.html">wbt_extract_streams()</a></code>
 with <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_identifier()</a></code></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="co"># par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))</span>
-  
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span>,
-    main <span class="op">=</span> <span class="st">"Streams"</span>,
-    col <span class="op">=</span> <span class="st">"black"</span>,
-    axes <span class="op">=</span> <span class="cn">FALSE</span>,
-    horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
-    box <span class="op">=</span> <span class="cn">FALSE</span>
-  <span class="op">)</span>
-  
-  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span><span class="op">)</span>,
-    main <span class="op">=</span> <span class="st">"TributaryIdentifier"</span>,
-    axes <span class="op">=</span> <span class="cn">FALSE</span>,
-    horizontal <span class="op">=</span> <span class="cn">TRUE</span>,
-    box <span class="op">=</span> <span class="cn">FALSE</span>
-  <span class="op">)</span>
-<span class="op">}</span>
-<span class="co">#&gt; Warning in plot.window(...): "horizontal" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in plot.window(...): "box" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in plot.xy(xy, type, ...): "horizontal" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in plot.xy(xy, type, ...): "box" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in title(...): "horizontal" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in title(...): "box" is not a graphical parameter</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    main <span class="op">=</span> <span class="st">"Streams"</span>,</span>
+<span>    col <span class="op">=</span> <span class="st">"black"</span>,</span>
+<span>    axes <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    horizontal <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    box <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    main <span class="op">=</span> <span class="st">"TributaryIdentifier"</span>,</span>
+<span>    axes <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    horizontal <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    box <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="co">#&gt; Warning in plot.window(...): "horizontal" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in plot.window(...): "box" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in plot.xy(xy, type, ...): "horizontal" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in plot.xy(xy, type, ...): "box" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in title(...): "horizontal" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in title(...): "box" is not a graphical parameter</span></span></code></pre></div>
 <p><img src="demo_files/figure-html/unnamed-chunk-25-1.png" width="576"></p>
-<pre><code><span class="co">#&gt; Warning in plot.window(...): "horizontal" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in plot.window(...): "box" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in plot.xy(xy, type, ...): "horizontal" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in plot.xy(xy, type, ...): "box" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in title(...): "horizontal" is not a graphical parameter</span>
-<span class="co">#&gt; Warning in title(...): "box" is not a graphical parameter</span></code></pre>
+<pre><code><span><span class="co">#&gt; Warning in plot.window(...): "horizontal" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in plot.window(...): "box" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in plot.xy(xy, type, ...): "horizontal" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in plot.xy(xy, type, ...): "box" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in title(...): "horizontal" is not a graphical parameter</span></span>
+<span><span class="co">#&gt; Warning in title(...): "box" is not a graphical parameter</span></span></code></pre>
 <p><img src="demo_files/figure-html/unnamed-chunk-25-2.png" width="576"></p>
 </div>
 </div>
@@ -688,24 +679,26 @@ and metadata.</p>
 <p><code><a href="../reference/wbt_help.html">wbt_help()</a></code> prints the WhiteboxTools help: a listing of
 available commands for executable</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_help.html">wbt_help</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; WhiteboxTools Help</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; The following commands are recognized:</span>
-<span class="co">#&gt; --cd, --wd       Changes the working directory; used in conjunction with --run flag.</span>
-<span class="co">#&gt; -h, --help       Prints help information.</span>
-<span class="co">#&gt; -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"</span>
-<span class="co">#&gt; --listtools      Lists all available tools. Keywords may also be used, --listtools slope.</span>
-<span class="co">#&gt; -r, --run        Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".</span>
-<span class="co">#&gt; --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.</span>
-<span class="co">#&gt; --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".</span>
-<span class="co">#&gt; --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".</span>
-<span class="co">#&gt; -v               Verbose mode. Without this flag, tool outputs will not be printed.</span>
-<span class="co">#&gt; --viewcode       Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span>
-<span class="co">#&gt; --version        Prints the version information.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Example Usage:</span>
-<span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_help.html">wbt_help</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; WhiteboxTools Help</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; The following commands are recognized:</span></span>
+<span><span class="co">#&gt; --cd, --wd          Changes the working directory; used in conjunction with --run flag.</span></span>
+<span><span class="co">#&gt; --compress_rasters  Sets the compress_raster option in the settings.json file; determines if newly created rasters are compressed. e.g. --compress_rasters=true</span></span>
+<span><span class="co">#&gt; -h, --help          Prints help information.</span></span>
+<span><span class="co">#&gt; -l, --license       Prints the whitebox-tools license. Tool names may also be used, --license="Slope"</span></span>
+<span><span class="co">#&gt; --listtools         Lists all available tools. Keywords may also be used, --listtools slope.</span></span>
+<span><span class="co">#&gt; --max_procs         Sets the maximum number of processors used. -1 = all available processors. e.g. --max_procs=2</span></span>
+<span><span class="co">#&gt; -r, --run           Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".</span></span>
+<span><span class="co">#&gt; --toolbox           Prints the toolbox associated with a tool; --toolbox=Slope.</span></span>
+<span><span class="co">#&gt; --toolhelp          Prints the help associated with a tool; --toolhelp="LidarInfo".</span></span>
+<span><span class="co">#&gt; --toolparameters    Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".</span></span>
+<span><span class="co">#&gt; -v                  Verbose mode. Without this flag, tool outputs will not be printed.</span></span>
+<span><span class="co">#&gt; --viewcode          Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span></span>
+<span><span class="co">#&gt; --version           Prints the version information.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Example Usage:</span></span>
+<span><span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_license">
@@ -713,24 +706,24 @@ available commands for executable</p>
 </h3>
 <p><code><a href="../reference/wbt_license.html">wbt_license()</a></code> prints the WhiteboxTools license</p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_license.html">wbt_license</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; WhiteboxTools License</span>
-<span class="co">#&gt; Copyright 2017-2021 John Lindsay</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span>
-<span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span>
-<span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span>
-<span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span>
-<span class="co">#&gt; subject to the following conditions:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span>
-<span class="co">#&gt; portions of the Software.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span>
-<span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
-<span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span>
-<span class="co">#&gt; OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
-<span class="co">#&gt; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_license.html">wbt_license</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; WhiteboxTools License</span></span>
+<span><span class="co">#&gt; Copyright 2017-2022 John Lindsay</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span></span>
+<span><span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span></span>
+<span><span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></span>
+<span><span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span></span>
+<span><span class="co">#&gt; subject to the following conditions:</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span></span>
+<span><span class="co">#&gt; portions of the Software.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span></span>
+<span><span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></span>
+<span><span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span></span>
+<span><span class="co">#&gt; OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></span>
+<span><span class="co">#&gt; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_version">
@@ -738,38 +731,38 @@ available commands for executable</p>
 </h3>
 <p>Prints the WhiteboxTools version</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2021</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span>
-<span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span>
-<span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_version.html">wbt_version</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; WhiteboxTools v2.2.0 by Dr. John B. Lindsay (c) 2017-2023</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span></span>
+<span><span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span></span>
+<span><span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_list_tools">
 <code>wbt_list_tools()</code><a class="anchor" aria-label="anchor" href="#wbt_list_tools"></a>
 </h3>
 <p>Use <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code> to list all available tools in
-WhiteboxTools. In version 2.1.0 there are over 529 tools! See all the
+WhiteboxTools. In version 2.2.0 there are over 535 tools! See all the
 available <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html" class="external-link">toolboxes</a>
 and <a href="https://www.whiteboxgeo.com/whitebox-geospatial-extensions/" class="external-link">extensions</a>.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>The full list can be an overwhelming amount of output, so you pass
 the <code>keywords</code> argument to search and filter.</p>
 <p>For example we list tools with keyword ‘flowaccumulation’ in tool
 name or description.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">"flowaccumulation"</span><span class="op">)</span>
-<span class="co">#&gt; All 8 Tools containing keywords:</span>
-<span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span>
-<span class="co">#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span>
-<span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span>
-<span class="co">#&gt; QinFlowAccumulation: This tool calculates Qin et al. (2007) flow accumulation.</span>
-<span class="co">#&gt; Rho8FlowAccumulation: This tool calculates Fairfield and Leymarie (1991) flow accumulation.</span>
-<span class="co">#&gt; QuinnFlowAccumulation: This tool calculates Quinn et al. (1995) flow accumulation.</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">"flowaccumulation"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; All 8 Tools containing keywords:</span></span>
+<span><span class="co">#&gt; D8FlowAccumulation: Calculates a D8 flow accumulation raster from an input DEM or flow pointer.</span></span>
+<span><span class="co">#&gt; DInfFlowAccumulation: Calculates a D-infinity flow accumulation raster from an input DEM.</span></span>
+<span><span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
+<span><span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span></span>
+<span><span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
+<span><span class="co">#&gt; QinFlowAccumulation: This tool calculates Qin et al. (2007) flow accumulation.</span></span>
+<span><span class="co">#&gt; QuinnFlowAccumulation: This tool calculates Quinn et al. (1995) flow accumulation.</span></span>
+<span><span class="co">#&gt; Rho8FlowAccumulation: This tool calculates Fairfield and Leymarie (1991) flow accumulation.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_tool_help">
@@ -784,25 +777,25 @@ spaces.</p>
 <p><code>wbt_tool_help("tributaryidentifier")</code> shows the command
 line help for a tool by name.</p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"tributaryidentifier"</span><span class="op">)</span>
-<span class="co">#&gt; TributaryIdentifier</span>
-<span class="co">#&gt; Description:</span>
-<span class="co">#&gt; Assigns a unique identifier to each tributary in a stream network.</span>
-<span class="co">#&gt; Toolbox: Stream Network Analysis</span>
-<span class="co">#&gt; Parameters:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Flag               Description</span>
-<span class="co">#&gt; -----------------  -----------</span>
-<span class="co">#&gt; --d8_pntr          Input raster D8 pointer file.</span>
-<span class="co">#&gt; --streams          Input raster streams file.</span>
-<span class="co">#&gt; -o, --output       Output raster file.</span>
-<span class="co">#&gt; --esri_pntr        D8 pointer uses the ESRI style scheme.</span>
-<span class="co">#&gt; --zero_background  Flag indicating whether a background value of zero should be used.</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Example usage:</span>
-<span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif</span>
-<span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif --esri_pntr --zero_background</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_tool_help.html">wbt_tool_help</a></span><span class="op">(</span><span class="st">"tributaryidentifier"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; TributaryIdentifier</span></span>
+<span><span class="co">#&gt; Description:</span></span>
+<span><span class="co">#&gt; Assigns a unique identifier to each tributary in a stream network.</span></span>
+<span><span class="co">#&gt; Toolbox: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; Parameters:</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Flag               Description</span></span>
+<span><span class="co">#&gt; -----------------  -----------</span></span>
+<span><span class="co">#&gt; --d8_pntr          Input raster D8 pointer file.</span></span>
+<span><span class="co">#&gt; --streams          Input raster streams file.</span></span>
+<span><span class="co">#&gt; -o, --output       Output raster file.</span></span>
+<span><span class="co">#&gt; --esri_pntr        D8 pointer uses the ESRI style scheme.</span></span>
+<span><span class="co">#&gt; --zero_background  Flag indicating whether a background value of zero should be used.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Example usage:</span></span>
+<span><span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif</span></span>
+<span><span class="co">#&gt; &gt;&gt;./whitebox_tools -r=TributaryIdentifier -v --wd="/path/to/data/" --d8_pntr=D8.tif --streams=streams.tif -o=output.tif --esri_pntr --zero_background</span></span></code></pre></div>
 <p><code><a href="../reference/wbt_tributary_identifier.html">?wbt_tributary_identifier</a></code> shows the corresponding R
 function help, which is derived from the command line help page and
 other metadata.</p>
@@ -816,540 +809,546 @@ other metadata.</p>
 <p><code><a href="../reference/wbt_toolbox.html">wbt_toolbox()</a></code> prints the toolbox for a specific tool (or
 all tools if none specified)</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span>
-<span class="co">#&gt; Geomorphometric Analysis</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"aspect"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Geomorphometric Analysis</span></span></code></pre></div>
 <p>Print the full list by not specifying <code>tool_name</code></p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; AbsoluteValue: Math and Stats Tools</span>
-<span class="co">#&gt; AccumulationCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; AdaptiveFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Add: Math and Stats Tools</span>
-<span class="co">#&gt; AddPointCoordinatesToTable: Data Tools</span>
-<span class="co">#&gt; AggregateRaster: GIS Analysis</span>
-<span class="co">#&gt; And: Math and Stats Tools</span>
-<span class="co">#&gt; Anova: Math and Stats Tools</span>
-<span class="co">#&gt; ArcCos: Math and Stats Tools</span>
-<span class="co">#&gt; ArcSin: Math and Stats Tools</span>
-<span class="co">#&gt; ArcTan: Math and Stats Tools</span>
-<span class="co">#&gt; Arcosh: Math and Stats Tools</span>
-<span class="co">#&gt; Arsinh: Math and Stats Tools</span>
-<span class="co">#&gt; Artanh: Math and Stats Tools</span>
-<span class="co">#&gt; AsciiToLas: LiDAR Tools</span>
-<span class="co">#&gt; Aspect: Geomorphometric Analysis</span>
-<span class="co">#&gt; AssessRoute: Geomorphometric Analysis</span>
-<span class="co">#&gt; Atan2: Math and Stats Tools</span>
-<span class="co">#&gt; AttributeCorrelation: Math and Stats Tools</span>
-<span class="co">#&gt; AttributeCorrelationNeighbourhoodAnalysis: Math and Stats Tools</span>
-<span class="co">#&gt; AttributeHistogram: Math and Stats Tools</span>
-<span class="co">#&gt; AttributeScattergram: Math and Stats Tools</span>
-<span class="co">#&gt; AverageFlowpathSlope: Hydrological Analysis</span>
-<span class="co">#&gt; AverageNormalVectorAngularDeviation: Geomorphometric Analysis</span>
-<span class="co">#&gt; AverageOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; AverageUpslopeFlowpathLength: Hydrological Analysis</span>
-<span class="co">#&gt; BalanceContrastEnhancement: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; Basins: Hydrological Analysis</span>
-<span class="co">#&gt; BilateralFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; BlockMaximumGridding: GIS Analysis</span>
-<span class="co">#&gt; BlockMinimumGridding: GIS Analysis</span>
-<span class="co">#&gt; BoundaryShapeComplexity: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; BreachDepressions: Hydrological Analysis</span>
-<span class="co">#&gt; BreachDepressionsLeastCost: Hydrological Analysis</span>
-<span class="co">#&gt; BreachSingleCellPits: Hydrological Analysis</span>
-<span class="co">#&gt; BufferRaster: GIS Analysis/Distance Tools</span>
-<span class="co">#&gt; BurnStreamsAtRoads: Hydrological Analysis</span>
-<span class="co">#&gt; CannyEdgeDetection: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Ceil: Math and Stats Tools</span>
-<span class="co">#&gt; Centroid: GIS Analysis</span>
-<span class="co">#&gt; CentroidVector: GIS Analysis</span>
-<span class="co">#&gt; ChangeVectorAnalysis: Image Processing Tools</span>
-<span class="co">#&gt; CircularVarianceOfAspect: Geomorphometric Analysis</span>
-<span class="co">#&gt; ClassifyBuildingsInLidar: LiDAR Tools</span>
-<span class="co">#&gt; ClassifyLidar: LiDAR Tools</span>
-<span class="co">#&gt; ClassifyOverlapPoints: LiDAR Tools</span>
-<span class="co">#&gt; CleanVector: Data Tools</span>
-<span class="co">#&gt; Clip: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; ClipLidarToPolygon: LiDAR Tools</span>
-<span class="co">#&gt; ClipRasterToPolygon: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; Closing: Image Processing Tools</span>
-<span class="co">#&gt; Clump: GIS Analysis</span>
-<span class="co">#&gt; ColourizeBasedOnClass: LiDAR Tools</span>
-<span class="co">#&gt; ColourizeBasedOnPointReturns: LiDAR Tools</span>
-<span class="co">#&gt; CompactnessRatio: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; ConditionalEvaluation: Math and Stats Tools</span>
-<span class="co">#&gt; ConservativeSmoothingFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; ConstructVectorTIN: GIS Analysis</span>
-<span class="co">#&gt; ContoursFromPoints: Geomorphometric Analysis</span>
-<span class="co">#&gt; ContoursFromRaster: Geomorphometric Analysis</span>
-<span class="co">#&gt; ConvertNodataToZero: Data Tools</span>
-<span class="co">#&gt; ConvertRasterFormat: Data Tools</span>
-<span class="co">#&gt; CornerDetection: Image Processing Tools/Filters</span>
-<span class="co">#&gt; CorrectVignetting: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; Cos: Math and Stats Tools</span>
-<span class="co">#&gt; Cosh: Math and Stats Tools</span>
-<span class="co">#&gt; CostAllocation: GIS Analysis/Distance Tools</span>
-<span class="co">#&gt; CostDistance: GIS Analysis/Distance Tools</span>
-<span class="co">#&gt; CostPathway: GIS Analysis/Distance Tools</span>
-<span class="co">#&gt; CountIf: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; CreateColourComposite: Image Processing Tools</span>
-<span class="co">#&gt; CreateHexagonalVectorGrid: GIS Analysis</span>
-<span class="co">#&gt; CreatePlane: GIS Analysis</span>
-<span class="co">#&gt; CreateRectangularVectorGrid: GIS Analysis</span>
-<span class="co">#&gt; CrispnessIndex: Math and Stats Tools</span>
-<span class="co">#&gt; CrossTabulation: Math and Stats Tools</span>
-<span class="co">#&gt; CsvPointsToVector: Data Tools</span>
-<span class="co">#&gt; CumulativeDistribution: Math and Stats Tools</span>
-<span class="co">#&gt; Curvedness: Geomorphometric Analysis</span>
-<span class="co">#&gt; D8FlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; D8MassFlux: Hydrological Analysis</span>
-<span class="co">#&gt; D8Pointer: Hydrological Analysis</span>
-<span class="co">#&gt; DInfFlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; DInfMassFlux: Hydrological Analysis</span>
-<span class="co">#&gt; DInfPointer: Hydrological Analysis</span>
-<span class="co">#&gt; Dbscan: Machine Learning</span>
-<span class="co">#&gt; Decrement: Math and Stats Tools</span>
-<span class="co">#&gt; DepthInSink: Hydrological Analysis</span>
-<span class="co">#&gt; DepthToWater: Hydrological Analysis</span>
-<span class="co">#&gt; DevFromMeanElev: Geomorphometric Analysis</span>
-<span class="co">#&gt; DiffFromMeanElev: Geomorphometric Analysis</span>
-<span class="co">#&gt; DiffOfGaussianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Difference: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; DifferenceCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; DirectDecorrelationStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; DirectionalRelief: Geomorphometric Analysis</span>
-<span class="co">#&gt; Dissolve: GIS Analysis</span>
-<span class="co">#&gt; DistanceToOutlet: Stream Network Analysis</span>
-<span class="co">#&gt; DiversityFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Divide: Math and Stats Tools</span>
-<span class="co">#&gt; DownslopeDistanceToStream: Hydrological Analysis</span>
-<span class="co">#&gt; DownslopeFlowpathLength: Hydrological Analysis</span>
-<span class="co">#&gt; DownslopeIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; EdgeContamination: Hydrological Analysis</span>
-<span class="co">#&gt; EdgeDensity: Geomorphometric Analysis</span>
-<span class="co">#&gt; EdgePreservingMeanFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; EdgeProportion: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; ElevAbovePit: Geomorphometric Analysis</span>
-<span class="co">#&gt; ElevPercentile: Geomorphometric Analysis</span>
-<span class="co">#&gt; ElevRelativeToMinMax: Geomorphometric Analysis</span>
-<span class="co">#&gt; ElevRelativeToWatershedMinMax: Geomorphometric Analysis</span>
-<span class="co">#&gt; ElevationAboveStream: Hydrological Analysis</span>
-<span class="co">#&gt; ElevationAboveStreamEuclidean: Hydrological Analysis</span>
-<span class="co">#&gt; EliminateCoincidentPoints: GIS Analysis</span>
-<span class="co">#&gt; ElongationRatio: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; EmbankmentMapping: Geomorphometric Analysis</span>
-<span class="co">#&gt; EmbossFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; EqualTo: Math and Stats Tools</span>
-<span class="co">#&gt; Erase: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; ErasePolygonFromLidar: LiDAR Tools</span>
-<span class="co">#&gt; ErasePolygonFromRaster: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; EuclideanAllocation: GIS Analysis/Distance Tools</span>
-<span class="co">#&gt; EuclideanDistance: GIS Analysis/Distance Tools</span>
-<span class="co">#&gt; EvaluateTrainingSites: Image Processing Tools/Classification</span>
-<span class="co">#&gt; Exp: Math and Stats Tools</span>
-<span class="co">#&gt; Exp2: Math and Stats Tools</span>
-<span class="co">#&gt; ExportTableToCsv: Data Tools</span>
-<span class="co">#&gt; ExposureTowardsWindFlux: Geomorphometric Analysis</span>
-<span class="co">#&gt; ExtendVectorLines: GIS Analysis</span>
-<span class="co">#&gt; ExtractNodes: GIS Analysis</span>
-<span class="co">#&gt; ExtractRasterValuesAtPoints: GIS Analysis</span>
-<span class="co">#&gt; ExtractStreams: Stream Network Analysis</span>
-<span class="co">#&gt; ExtractValleys: Stream Network Analysis</span>
-<span class="co">#&gt; FD8FlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; FD8Pointer: Hydrological Analysis</span>
-<span class="co">#&gt; FarthestChannelHead: Stream Network Analysis</span>
-<span class="co">#&gt; FastAlmostGaussianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; FeaturePreservingSmoothing: Geomorphometric Analysis</span>
-<span class="co">#&gt; FetchAnalysis: Geomorphometric Analysis</span>
-<span class="co">#&gt; FillBurn: Hydrological Analysis</span>
-<span class="co">#&gt; FillDepressions: Hydrological Analysis</span>
-<span class="co">#&gt; FillDepressionsPlanchonAndDarboux: Hydrological Analysis</span>
-<span class="co">#&gt; FillDepressionsWangAndLiu: Hydrological Analysis</span>
-<span class="co">#&gt; FillMissingData: Geomorphometric Analysis</span>
-<span class="co">#&gt; FillSingleCellPits: Hydrological Analysis</span>
-<span class="co">#&gt; FilterLidar: LiDAR Tools</span>
-<span class="co">#&gt; FilterLidarClasses: LiDAR Tools</span>
-<span class="co">#&gt; FilterLidarScanAngles: LiDAR Tools</span>
-<span class="co">#&gt; FilterRasterFeaturesByArea: GIS Analysis</span>
-<span class="co">#&gt; FindFlightlineEdgePoints: LiDAR Tools</span>
-<span class="co">#&gt; FindLowestOrHighestPoints: GIS Analysis</span>
-<span class="co">#&gt; FindMainStem: Stream Network Analysis</span>
-<span class="co">#&gt; FindNoFlowCells: Hydrological Analysis</span>
-<span class="co">#&gt; FindParallelFlow: Hydrological Analysis</span>
-<span class="co">#&gt; FindPatchOrClassEdgeCells: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; FindRidges: Geomorphometric Analysis</span>
-<span class="co">#&gt; FixDanglingArcs: Data Tools</span>
-<span class="co">#&gt; FlattenLakes: Hydrological Analysis</span>
-<span class="co">#&gt; FlightlineOverlap: LiDAR Tools</span>
-<span class="co">#&gt; FlipImage: Image Processing Tools</span>
-<span class="co">#&gt; FloodOrder: Hydrological Analysis</span>
-<span class="co">#&gt; Floor: Math and Stats Tools</span>
-<span class="co">#&gt; FlowAccumulationFullWorkflow: Hydrological Analysis</span>
-<span class="co">#&gt; FlowLengthDiff: Hydrological Analysis</span>
-<span class="co">#&gt; GammaCorrection: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; GaussianContrastStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; GaussianCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; GaussianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; GaussianScaleSpace: Geomorphometric Analysis</span>
-<span class="co">#&gt; GeneralizeClassifiedRaster: Image Processing Tools/Classification</span>
-<span class="co">#&gt; GeneralizeWithSimilarity: Image Processing Tools/Classification</span>
-<span class="co">#&gt; GeneratingFunction: Geomorphometric Analysis</span>
-<span class="co">#&gt; Geomorphons: Geomorphometric Analysis</span>
-<span class="co">#&gt; GreaterThan: Math and Stats Tools</span>
-<span class="co">#&gt; HackStreamOrder: Stream Network Analysis</span>
-<span class="co">#&gt; HeightAboveGround: LiDAR Tools</span>
-<span class="co">#&gt; HighPassFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; HighPassMedianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; HighestPosition: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; Hillshade: Geomorphometric Analysis</span>
-<span class="co">#&gt; Hillslopes: Hydrological Analysis</span>
-<span class="co">#&gt; HistogramEqualization: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; HistogramMatching: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; HistogramMatchingTwoImages: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; HoleProportion: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; HorizonAngle: Geomorphometric Analysis</span>
-<span class="co">#&gt; HorizontalExcessCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; HortonStreamOrder: Stream Network Analysis</span>
-<span class="co">#&gt; HydrologicConnectivity: Hydrological Analysis</span>
-<span class="co">#&gt; HypsometricAnalysis: Geomorphometric Analysis</span>
-<span class="co">#&gt; HypsometricallyTintedHillshade: Geomorphometric Analysis</span>
-<span class="co">#&gt; IdwInterpolation: GIS Analysis</span>
-<span class="co">#&gt; IhsToRgb: Image Processing Tools</span>
-<span class="co">#&gt; ImageAutocorrelation: Math and Stats Tools</span>
-<span class="co">#&gt; ImageCorrelation: Math and Stats Tools</span>
-<span class="co">#&gt; ImageCorrelationNeighbourhoodAnalysis: Math and Stats Tools</span>
-<span class="co">#&gt; ImageRegression: Math and Stats Tools</span>
-<span class="co">#&gt; ImageSegmentation: Image Processing Tools/Classification</span>
-<span class="co">#&gt; ImageSlider: Image Processing Tools</span>
-<span class="co">#&gt; ImageStackProfile: Image Processing Tools</span>
-<span class="co">#&gt; ImpoundmentSizeIndex: Hydrological Analysis</span>
-<span class="co">#&gt; InPlaceAdd: Math and Stats Tools</span>
-<span class="co">#&gt; InPlaceDivide: Math and Stats Tools</span>
-<span class="co">#&gt; InPlaceMultiply: Math and Stats Tools</span>
-<span class="co">#&gt; InPlaceSubtract: Math and Stats Tools</span>
-<span class="co">#&gt; Increment: Math and Stats Tools</span>
-<span class="co">#&gt; InsertDams: Hydrological Analysis</span>
-<span class="co">#&gt; IntegerDivision: Math and Stats Tools</span>
-<span class="co">#&gt; IntegralImage: Image Processing Tools</span>
-<span class="co">#&gt; Intersect: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; InversePrincipalComponentAnalysis: Math and Stats Tools</span>
-<span class="co">#&gt; IsNoData: Math and Stats Tools</span>
-<span class="co">#&gt; Isobasins: Hydrological Analysis</span>
-<span class="co">#&gt; JensonSnapPourPoints: Hydrological Analysis</span>
-<span class="co">#&gt; JoinTables: Data Tools</span>
-<span class="co">#&gt; KMeansClustering: Machine Learning</span>
-<span class="co">#&gt; KNearestMeanFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; KappaIndex: Math and Stats Tools</span>
-<span class="co">#&gt; KnnClassification: Machine Learning</span>
-<span class="co">#&gt; KnnRegression: Machine Learning</span>
-<span class="co">#&gt; KsTestForNormality: Math and Stats Tools</span>
-<span class="co">#&gt; LaplacianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; LaplacianOfGaussianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; LasToAscii: LiDAR Tools</span>
-<span class="co">#&gt; LasToLaz: LiDAR Tools</span>
-<span class="co">#&gt; LasToMultipointShapefile: LiDAR Tools</span>
-<span class="co">#&gt; LasToShapefile: LiDAR Tools</span>
-<span class="co">#&gt; LasToZlidar: LiDAR Tools</span>
-<span class="co">#&gt; LayerFootprint: GIS Analysis</span>
-<span class="co">#&gt; LazToLas: LiDAR Tools</span>
-<span class="co">#&gt; LeeSigmaFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; LengthOfUpstreamChannels: Stream Network Analysis</span>
-<span class="co">#&gt; LessThan: Math and Stats Tools</span>
-<span class="co">#&gt; LidarBlockMaximum: LiDAR Tools</span>
-<span class="co">#&gt; LidarBlockMinimum: LiDAR Tools</span>
-<span class="co">#&gt; LidarClassifySubset: LiDAR Tools</span>
-<span class="co">#&gt; LidarColourize: LiDAR Tools</span>
-<span class="co">#&gt; LidarContour: LiDAR Tools</span>
-<span class="co">#&gt; LidarDigitalSurfaceModel: LiDAR Tools</span>
-<span class="co">#&gt; LidarEigenvalueFeatures: LiDAR Tools</span>
-<span class="co">#&gt; LidarElevationSlice: LiDAR Tools</span>
-<span class="co">#&gt; LidarGroundPointFilter: LiDAR Tools</span>
-<span class="co">#&gt; LidarHexBinning: LiDAR Tools</span>
-<span class="co">#&gt; LidarHillshade: LiDAR Tools</span>
-<span class="co">#&gt; LidarHistogram: LiDAR Tools</span>
-<span class="co">#&gt; LidarIdwInterpolation: LiDAR Tools</span>
-<span class="co">#&gt; LidarInfo: LiDAR Tools</span>
-<span class="co">#&gt; LidarJoin: LiDAR Tools</span>
-<span class="co">#&gt; LidarKappaIndex: LiDAR Tools</span>
-<span class="co">#&gt; LidarNearestNeighbourGridding: LiDAR Tools</span>
-<span class="co">#&gt; LidarPointDensity: LiDAR Tools</span>
-<span class="co">#&gt; LidarPointReturnAnalysis: LiDAR Tools</span>
-<span class="co">#&gt; LidarPointStats: LiDAR Tools</span>
-<span class="co">#&gt; LidarRansacPlanes: LiDAR Tools</span>
-<span class="co">#&gt; LidarRbfInterpolation: LiDAR Tools</span>
-<span class="co">#&gt; LidarRemoveDuplicates: LiDAR Tools</span>
-<span class="co">#&gt; LidarRemoveOutliers: LiDAR Tools</span>
-<span class="co">#&gt; LidarRooftopAnalysis: LiDAR Tools</span>
-<span class="co">#&gt; LidarSegmentation: LiDAR Tools</span>
-<span class="co">#&gt; LidarSegmentationBasedFilter: LiDAR Tools</span>
-<span class="co">#&gt; LidarShift: LiDAR Tools</span>
-<span class="co">#&gt; LidarSibsonInterpolation: LiDAR Tools</span>
-<span class="co">#&gt; LidarSortByTime: LiDAR Tools</span>
-<span class="co">#&gt; LidarTINGridding: LiDAR Tools</span>
-<span class="co">#&gt; LidarThin: LiDAR Tools</span>
-<span class="co">#&gt; LidarThinHighDensity: LiDAR Tools</span>
-<span class="co">#&gt; LidarTile: LiDAR Tools</span>
-<span class="co">#&gt; LidarTileFootprint: LiDAR Tools</span>
-<span class="co">#&gt; LidarTophatTransform: LiDAR Tools</span>
-<span class="co">#&gt; LineDetectionFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; LineIntersections: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; LineThinning: Image Processing Tools</span>
-<span class="co">#&gt; LinearityIndex: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; LinesToPolygons: Data Tools</span>
-<span class="co">#&gt; ListUniqueValues: Math and Stats Tools</span>
-<span class="co">#&gt; Ln: Math and Stats Tools</span>
-<span class="co">#&gt; LocalHypsometricAnalysis: Geomorphometric Analysis</span>
-<span class="co">#&gt; LocalQuadraticRegression: Geomorphometric Analysis</span>
-<span class="co">#&gt; Log10: Math and Stats Tools</span>
-<span class="co">#&gt; Log2: Math and Stats Tools</span>
-<span class="co">#&gt; LogisticRegression: Machine Learning</span>
-<span class="co">#&gt; LongProfile: Stream Network Analysis</span>
-<span class="co">#&gt; LongProfileFromPoints: Stream Network Analysis</span>
-<span class="co">#&gt; LongestFlowpath: Hydrological Analysis</span>
-<span class="co">#&gt; LowPointsOnHeadwaterDivides: Hydrological Analysis</span>
-<span class="co">#&gt; LowestPosition: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; MDInfFlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; MajorityFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; MapOffTerrainObjects: Geomorphometric Analysis</span>
-<span class="co">#&gt; Max: Math and Stats Tools</span>
-<span class="co">#&gt; MaxAbsoluteOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; MaxAnisotropyDev: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxAnisotropyDevSignature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxBranchLength: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxDifferenceFromMean: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxDownslopeElevChange: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxElevDevSignature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxElevationDeviation: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; MaxUpslopeElevChange: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaxUpslopeFlowpathLength: Hydrological Analysis</span>
-<span class="co">#&gt; MaximalCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MaximumFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; MeanCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MeanFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; MedianFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Medoid: GIS Analysis</span>
-<span class="co">#&gt; MergeLineSegments: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; MergeTableWithCsv: Data Tools</span>
-<span class="co">#&gt; MergeVectors: Data Tools</span>
-<span class="co">#&gt; Min: Math and Stats Tools</span>
-<span class="co">#&gt; MinAbsoluteOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; MinDistClassification: Image Processing Tools/Classification</span>
-<span class="co">#&gt; MinDownslopeElevChange: Geomorphometric Analysis</span>
-<span class="co">#&gt; MinMaxContrastStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; MinOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; MinimalCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MinimumBoundingBox: GIS Analysis</span>
-<span class="co">#&gt; MinimumBoundingCircle: GIS Analysis</span>
-<span class="co">#&gt; MinimumBoundingEnvelope: GIS Analysis</span>
-<span class="co">#&gt; MinimumConvexHull: GIS Analysis</span>
-<span class="co">#&gt; MinimumFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; ModifiedKMeansClustering: Machine Learning</span>
-<span class="co">#&gt; ModifyLidar: LiDAR Tools</span>
-<span class="co">#&gt; ModifyNoDataValue: Data Tools</span>
-<span class="co">#&gt; Modulo: Math and Stats Tools</span>
-<span class="co">#&gt; Mosaic: Image Processing Tools</span>
-<span class="co">#&gt; MosaicWithFeathering: Image Processing Tools</span>
-<span class="co">#&gt; MultiPartToSinglePart: Data Tools</span>
-<span class="co">#&gt; MultidirectionalHillshade: Geomorphometric Analysis</span>
-<span class="co">#&gt; Multiply: Math and Stats Tools</span>
-<span class="co">#&gt; MultiscaleElevationPercentile: Geomorphometric Analysis</span>
-<span class="co">#&gt; MultiscaleRoughness: Geomorphometric Analysis</span>
-<span class="co">#&gt; MultiscaleRoughnessSignature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MultiscaleStdDevNormals: Geomorphometric Analysis</span>
-<span class="co">#&gt; MultiscaleStdDevNormalsSignature: Geomorphometric Analysis</span>
-<span class="co">#&gt; MultiscaleTopographicPositionImage: Geomorphometric Analysis</span>
-<span class="co">#&gt; NarrownessIndex: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; NaturalNeighbourInterpolation: GIS Analysis</span>
-<span class="co">#&gt; NearestNeighbourGridding: GIS Analysis</span>
-<span class="co">#&gt; Negate: Math and Stats Tools</span>
-<span class="co">#&gt; NewRasterFromBase: Data Tools</span>
-<span class="co">#&gt; NormalVectors: LiDAR Tools</span>
-<span class="co">#&gt; NormalizedDifferenceIndex: Image Processing Tools</span>
-<span class="co">#&gt; Not: Math and Stats Tools</span>
-<span class="co">#&gt; NotEqualTo: Math and Stats Tools</span>
-<span class="co">#&gt; NumDownslopeNeighbours: Geomorphometric Analysis</span>
-<span class="co">#&gt; NumInflowingNeighbours: Hydrological Analysis</span>
-<span class="co">#&gt; NumUpslopeNeighbours: Geomorphometric Analysis</span>
-<span class="co">#&gt; OlympicFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Opening: Image Processing Tools</span>
-<span class="co">#&gt; Openness: Geomorphometric Analysis</span>
-<span class="co">#&gt; Or: Math and Stats Tools</span>
-<span class="co">#&gt; PairedSampleTTest: Math and Stats Tools</span>
-<span class="co">#&gt; PanchromaticSharpening: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; ParallelepipedClassification: Image Processing Tools/Classification</span>
-<span class="co">#&gt; PatchOrientation: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; PennockLandformClass: Geomorphometric Analysis</span>
-<span class="co">#&gt; PercentElevRange: Geomorphometric Analysis</span>
-<span class="co">#&gt; PercentEqualTo: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; PercentGreaterThan: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; PercentLessThan: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; PercentageContrastStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; PercentileFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; PerimeterAreaRatio: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; PhiCoefficient: Math and Stats Tools</span>
-<span class="co">#&gt; PickFromList: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; PiecewiseContrastStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; PlanCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; PolygonArea: GIS Analysis</span>
-<span class="co">#&gt; PolygonLongAxis: GIS Analysis</span>
-<span class="co">#&gt; PolygonPerimeter: GIS Analysis</span>
-<span class="co">#&gt; PolygonShortAxis: GIS Analysis</span>
-<span class="co">#&gt; Polygonize: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; PolygonsToLines: Data Tools</span>
-<span class="co">#&gt; Power: Math and Stats Tools</span>
-<span class="co">#&gt; PrewittFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; PrincipalComponentAnalysis: Math and Stats Tools</span>
-<span class="co">#&gt; PrintGeoTiffTags: Data Tools</span>
-<span class="co">#&gt; Profile: Geomorphometric Analysis</span>
-<span class="co">#&gt; ProfileCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; QinFlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; Quantiles: Math and Stats Tools</span>
-<span class="co">#&gt; QuinnFlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; RadialBasisFunctionInterpolation: GIS Analysis</span>
-<span class="co">#&gt; RadiusOfGyration: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; RaiseWalls: Hydrological Analysis</span>
-<span class="co">#&gt; RandomField: Math and Stats Tools</span>
-<span class="co">#&gt; RandomForestClassification: Machine Learning</span>
-<span class="co">#&gt; RandomForestRegression: Machine Learning</span>
-<span class="co">#&gt; RandomSample: Math and Stats Tools</span>
-<span class="co">#&gt; RangeFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; RasterArea: GIS Analysis</span>
-<span class="co">#&gt; RasterCalculator: Math and Stats Tools</span>
-<span class="co">#&gt; RasterCellAssignment: GIS Analysis</span>
-<span class="co">#&gt; RasterHistogram: Math and Stats Tools</span>
-<span class="co">#&gt; RasterPerimeter: GIS Analysis</span>
-<span class="co">#&gt; RasterStreamsToVector: Stream Network Analysis</span>
-<span class="co">#&gt; RasterSummaryStats: Math and Stats Tools</span>
-<span class="co">#&gt; RasterToVectorLines: Data Tools</span>
-<span class="co">#&gt; RasterToVectorPoints: Data Tools</span>
-<span class="co">#&gt; RasterToVectorPolygons: Data Tools</span>
-<span class="co">#&gt; RasterizeStreams: Stream Network Analysis</span>
-<span class="co">#&gt; Reciprocal: Math and Stats Tools</span>
-<span class="co">#&gt; Reclass: GIS Analysis</span>
-<span class="co">#&gt; ReclassEqualInterval: GIS Analysis</span>
-<span class="co">#&gt; ReclassFromFile: GIS Analysis</span>
-<span class="co">#&gt; ReconcileMultipleHeaders: Precision Agriculture</span>
-<span class="co">#&gt; RecoverFlightlineInfo: LiDAR Tools</span>
-<span class="co">#&gt; RecreatePassLines: Precision Agriculture</span>
-<span class="co">#&gt; ReinitializeAttributeTable: Data Tools</span>
-<span class="co">#&gt; RelatedCircumscribingCircle: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; RelativeAspect: Geomorphometric Analysis</span>
-<span class="co">#&gt; RelativeTopographicPosition: Geomorphometric Analysis</span>
-<span class="co">#&gt; RemoveFieldEdgePoints: Precision Agriculture</span>
-<span class="co">#&gt; RemoveOffTerrainObjects: Geomorphometric Analysis</span>
-<span class="co">#&gt; RemovePolygonHoles: Data Tools</span>
-<span class="co">#&gt; RemoveShortStreams: Stream Network Analysis</span>
-<span class="co">#&gt; RemoveSpurs: Image Processing Tools</span>
-<span class="co">#&gt; RepairStreamVectorTopology: Stream Network Analysis</span>
-<span class="co">#&gt; Resample: Image Processing Tools</span>
-<span class="co">#&gt; RescaleValueRange: Math and Stats Tools</span>
-<span class="co">#&gt; RgbToIhs: Image Processing Tools</span>
-<span class="co">#&gt; Rho8FlowAccumulation: Hydrological Analysis</span>
-<span class="co">#&gt; Rho8Pointer: Hydrological Analysis</span>
-<span class="co">#&gt; RingCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; RobertsCrossFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; RootMeanSquareError: Math and Stats Tools</span>
-<span class="co">#&gt; Rotor: Geomorphometric Analysis</span>
-<span class="co">#&gt; Round: Math and Stats Tools</span>
-<span class="co">#&gt; RuggednessIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; ScharrFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; SedimentTransportIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; SelectTilesByPolygon: LiDAR Tools</span>
-<span class="co">#&gt; SetNodataValue: Data Tools</span>
-<span class="co">#&gt; ShadowAnimation: Geomorphometric Analysis</span>
-<span class="co">#&gt; ShadowImage: Geomorphometric Analysis</span>
-<span class="co">#&gt; ShapeComplexityIndex: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; ShapeComplexityIndexRaster: GIS Analysis/Patch Shape Tools</span>
-<span class="co">#&gt; ShapeIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; ShreveStreamMagnitude: Stream Network Analysis</span>
-<span class="co">#&gt; SigmoidalContrastStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; Sin: Math and Stats Tools</span>
-<span class="co">#&gt; SinglePartToMultiPart: Data Tools</span>
-<span class="co">#&gt; Sinh: Math and Stats Tools</span>
-<span class="co">#&gt; Sink: Hydrological Analysis</span>
-<span class="co">#&gt; Slope: Geomorphometric Analysis</span>
-<span class="co">#&gt; SlopeVsAspectPlot: Geomorphometric Analysis</span>
-<span class="co">#&gt; SlopeVsElevationPlot: Geomorphometric Analysis</span>
-<span class="co">#&gt; SmoothVectors: GIS Analysis</span>
-<span class="co">#&gt; SmoothVegetationResidual: Geomorphometric Analysis</span>
-<span class="co">#&gt; SnapPourPoints: Hydrological Analysis</span>
-<span class="co">#&gt; SobelFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; SortLidar: LiDAR Tools</span>
-<span class="co">#&gt; SphericalStdDevOfNormals: Geomorphometric Analysis</span>
-<span class="co">#&gt; SplitColourComposite: Image Processing Tools</span>
-<span class="co">#&gt; SplitLidar: LiDAR Tools</span>
-<span class="co">#&gt; SplitVectorLines: GIS Analysis</span>
-<span class="co">#&gt; SplitWithLines: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; Square: Math and Stats Tools</span>
-<span class="co">#&gt; SquareRoot: Math and Stats Tools</span>
-<span class="co">#&gt; StandardDeviationContrastStretch: Image Processing Tools/Image Enhancement</span>
-<span class="co">#&gt; StandardDeviationFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; StandardDeviationOfSlope: Geomorphometric Analysis</span>
-<span class="co">#&gt; StochasticDepressionAnalysis: Hydrological Analysis</span>
-<span class="co">#&gt; StrahlerOrderBasins: Hydrological Analysis</span>
-<span class="co">#&gt; StrahlerStreamOrder: Stream Network Analysis</span>
-<span class="co">#&gt; StreamLinkClass: Stream Network Analysis</span>
-<span class="co">#&gt; StreamLinkIdentifier: Stream Network Analysis</span>
-<span class="co">#&gt; StreamLinkLength: Stream Network Analysis</span>
-<span class="co">#&gt; StreamLinkSlope: Stream Network Analysis</span>
-<span class="co">#&gt; StreamPowerIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; StreamSlopeContinuous: Stream Network Analysis</span>
-<span class="co">#&gt; Subbasins: Hydrological Analysis</span>
-<span class="co">#&gt; Subtract: Math and Stats Tools</span>
-<span class="co">#&gt; SumOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; SurfaceAreaRatio: Geomorphometric Analysis</span>
-<span class="co">#&gt; SvmClassification: Machine Learning</span>
-<span class="co">#&gt; SvmRegression: Machine Learning</span>
-<span class="co">#&gt; SymmetricalDifference: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; TINGridding: GIS Analysis</span>
-<span class="co">#&gt; Tan: Math and Stats Tools</span>
-<span class="co">#&gt; TangentialCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; Tanh: Math and Stats Tools</span>
-<span class="co">#&gt; ThickenRasterLine: Image Processing Tools</span>
-<span class="co">#&gt; TimeInDaylight: Geomorphometric Analysis</span>
-<span class="co">#&gt; ToDegrees: Math and Stats Tools</span>
-<span class="co">#&gt; ToRadians: Math and Stats Tools</span>
-<span class="co">#&gt; TophatTransform: Image Processing Tools</span>
-<span class="co">#&gt; TopographicPositionAnimation: Geomorphometric Analysis</span>
-<span class="co">#&gt; TopologicalStreamOrder: Stream Network Analysis</span>
-<span class="co">#&gt; TotalCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; TotalFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; TraceDownslopeFlowpaths: Hydrological Analysis</span>
-<span class="co">#&gt; TrendSurface: Math and Stats Tools</span>
-<span class="co">#&gt; TrendSurfaceVectorPoints: Math and Stats Tools</span>
-<span class="co">#&gt; TributaryIdentifier: Stream Network Analysis</span>
-<span class="co">#&gt; Truncate: Math and Stats Tools</span>
-<span class="co">#&gt; TurningBandsSimulation: Math and Stats Tools</span>
-<span class="co">#&gt; TwoSampleKsTest: Math and Stats Tools</span>
-<span class="co">#&gt; Union: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; UnnestBasins: Hydrological Analysis</span>
-<span class="co">#&gt; UnsharpMasking: Image Processing Tools/Filters</span>
-<span class="co">#&gt; Unsphericity: Geomorphometric Analysis</span>
-<span class="co">#&gt; UpdateNodataCells: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; UpslopeDepressionStorage: Hydrological Analysis</span>
-<span class="co">#&gt; UserDefinedWeightsFilter: Image Processing Tools/Filters</span>
-<span class="co">#&gt; VectorHexBinning: GIS Analysis</span>
-<span class="co">#&gt; VectorLinesToRaster: Data Tools</span>
-<span class="co">#&gt; VectorPointsToRaster: Data Tools</span>
-<span class="co">#&gt; VectorPolygonsToRaster: Data Tools</span>
-<span class="co">#&gt; VectorStreamNetworkAnalysis: Stream Network Analysis</span>
-<span class="co">#&gt; VerticalExcessCurvature: Geomorphometric Analysis</span>
-<span class="co">#&gt; Viewshed: Geomorphometric Analysis</span>
-<span class="co">#&gt; VisibilityIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; VoronoiDiagram: GIS Analysis</span>
-<span class="co">#&gt; Watershed: Hydrological Analysis</span>
-<span class="co">#&gt; WeightedOverlay: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; WeightedSum: GIS Analysis/Overlay Tools</span>
-<span class="co">#&gt; WetnessIndex: Geomorphometric Analysis</span>
-<span class="co">#&gt; WilcoxonSignedRankTest: Math and Stats Tools</span>
-<span class="co">#&gt; WriteFunctionMemoryInsertion: Image Processing Tools</span>
-<span class="co">#&gt; Xor: Math and Stats Tools</span>
-<span class="co">#&gt; YieldFilter: Precision Agriculture</span>
-<span class="co">#&gt; YieldMap: Precision Agriculture</span>
-<span class="co">#&gt; YieldNormalization: Precision Agriculture</span>
-<span class="co">#&gt; ZScores: Math and Stats Tools</span>
-<span class="co">#&gt; ZlidarToLas: LiDAR Tools</span>
-<span class="co">#&gt; ZonalStatistics: Math and Stats Tools</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_toolbox.html">wbt_toolbox</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; AbsoluteValue: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AccumulationCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; AdaptiveFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Add: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AddPointCoordinatesToTable: Data Tools</span></span>
+<span><span class="co">#&gt; AggregateRaster: GIS Analysis</span></span>
+<span><span class="co">#&gt; And: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Anova: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ArcCos: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ArcSin: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ArcTan: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Arcosh: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Arsinh: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Artanh: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AsciiToLas: LiDAR Tools</span></span>
+<span><span class="co">#&gt; Aspect: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; AssessRoute: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Atan2: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AttributeCorrelation: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AttributeCorrelationNeighbourhoodAnalysis: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AttributeHistogram: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AttributeScattergram: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; AverageFlowpathSlope: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; AverageNormalVectorAngularDeviation: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; AverageOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; AverageUpslopeFlowpathLength: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; BalanceContrastEnhancement: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; Basins: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; BilateralFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; BlockMaximumGridding: GIS Analysis</span></span>
+<span><span class="co">#&gt; BlockMinimumGridding: GIS Analysis</span></span>
+<span><span class="co">#&gt; BoundaryShapeComplexity: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; BreachDepressions: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; BreachDepressionsLeastCost: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; BreachSingleCellPits: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; BufferRaster: GIS Analysis/Distance Tools</span></span>
+<span><span class="co">#&gt; BurnStreamsAtRoads: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; CannyEdgeDetection: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Ceil: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Centroid: GIS Analysis</span></span>
+<span><span class="co">#&gt; CentroidVector: GIS Analysis</span></span>
+<span><span class="co">#&gt; ChangeVectorAnalysis: Image Processing Tools</span></span>
+<span><span class="co">#&gt; CircularVarianceOfAspect: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ClassifyBuildingsInLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ClassifyLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ClassifyOverlapPoints: LiDAR Tools</span></span>
+<span><span class="co">#&gt; CleanVector: Data Tools</span></span>
+<span><span class="co">#&gt; Clip: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; ClipLidarToPolygon: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ClipRasterToPolygon: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; Closing: Image Processing Tools</span></span>
+<span><span class="co">#&gt; Clump: GIS Analysis</span></span>
+<span><span class="co">#&gt; ColourizeBasedOnClass: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ColourizeBasedOnPointReturns: LiDAR Tools</span></span>
+<span><span class="co">#&gt; CompactnessRatio: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; ConditionalEvaluation: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ConditionedLatinHypercube: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ConservativeSmoothingFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; ConstructVectorTIN: GIS Analysis</span></span>
+<span><span class="co">#&gt; ContoursFromPoints: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ContoursFromRaster: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ConvertNodataToZero: Data Tools</span></span>
+<span><span class="co">#&gt; ConvertRasterFormat: Data Tools</span></span>
+<span><span class="co">#&gt; CornerDetection: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; CorrectVignetting: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; Cos: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Cosh: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; CostAllocation: GIS Analysis/Distance Tools</span></span>
+<span><span class="co">#&gt; CostDistance: GIS Analysis/Distance Tools</span></span>
+<span><span class="co">#&gt; CostPathway: GIS Analysis/Distance Tools</span></span>
+<span><span class="co">#&gt; CountIf: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; CreateColourComposite: Image Processing Tools</span></span>
+<span><span class="co">#&gt; CreateHexagonalVectorGrid: GIS Analysis</span></span>
+<span><span class="co">#&gt; CreatePlane: GIS Analysis</span></span>
+<span><span class="co">#&gt; CreateRectangularVectorGrid: GIS Analysis</span></span>
+<span><span class="co">#&gt; CrispnessIndex: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; CrossTabulation: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; CsvPointsToVector: Data Tools</span></span>
+<span><span class="co">#&gt; CumulativeDistribution: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Curvedness: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; D8FlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; D8MassFlux: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; D8Pointer: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DInfFlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DInfMassFlux: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DInfPointer: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; Dbscan: Machine Learning</span></span>
+<span><span class="co">#&gt; Decrement: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; DepthInSink: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DepthToWater: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DevFromMeanElev: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; DiffFromMeanElev: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; DiffOfGaussianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Difference: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; DifferenceCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; DirectDecorrelationStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; DirectionalRelief: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Dissolve: GIS Analysis</span></span>
+<span><span class="co">#&gt; DistanceToOutlet: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; DiversityFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Divide: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; DownslopeDistanceToStream: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DownslopeFlowpathLength: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; DownslopeIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; EdgeContamination: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; EdgeDensity: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; EdgePreservingMeanFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; EdgeProportion: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; ElevAbovePit: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ElevPercentile: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ElevRelativeToMinMax: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ElevRelativeToWatershedMinMax: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ElevationAboveStream: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; ElevationAboveStreamEuclidean: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; EliminateCoincidentPoints: GIS Analysis</span></span>
+<span><span class="co">#&gt; ElongationRatio: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; EmbankmentMapping: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; EmbossFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; EqualTo: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Erase: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; ErasePolygonFromLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ErasePolygonFromRaster: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; EuclideanAllocation: GIS Analysis/Distance Tools</span></span>
+<span><span class="co">#&gt; EuclideanDistance: GIS Analysis/Distance Tools</span></span>
+<span><span class="co">#&gt; EvaluateTrainingSites: Image Processing Tools/Classification</span></span>
+<span><span class="co">#&gt; Exp: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Exp2: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ExportTableToCsv: Data Tools</span></span>
+<span><span class="co">#&gt; ExposureTowardsWindFlux: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ExtendVectorLines: GIS Analysis</span></span>
+<span><span class="co">#&gt; ExtractNodes: GIS Analysis</span></span>
+<span><span class="co">#&gt; ExtractRasterValuesAtPoints: GIS Analysis</span></span>
+<span><span class="co">#&gt; ExtractStreams: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; ExtractValleys: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; FD8FlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FD8Pointer: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FarthestChannelHead: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; FastAlmostGaussianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; FeaturePreservingSmoothing: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; FetchAnalysis: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; FillBurn: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FillDepressions: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FillDepressionsPlanchonAndDarboux: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FillDepressionsWangAndLiu: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FillMissingData: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; FillSingleCellPits: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FilterLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; FilterLidarClasses: LiDAR Tools</span></span>
+<span><span class="co">#&gt; FilterLidarScanAngles: LiDAR Tools</span></span>
+<span><span class="co">#&gt; FilterRasterFeaturesByArea: GIS Analysis</span></span>
+<span><span class="co">#&gt; FindFlightlineEdgePoints: LiDAR Tools</span></span>
+<span><span class="co">#&gt; FindLowestOrHighestPoints: GIS Analysis</span></span>
+<span><span class="co">#&gt; FindMainStem: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; FindNoFlowCells: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FindParallelFlow: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FindPatchOrClassEdgeCells: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; FindRidges: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; FixDanglingArcs: Data Tools</span></span>
+<span><span class="co">#&gt; FlattenLakes: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FlightlineOverlap: LiDAR Tools</span></span>
+<span><span class="co">#&gt; FlipImage: Image Processing Tools</span></span>
+<span><span class="co">#&gt; FloodOrder: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; Floor: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; FlowAccumulationFullWorkflow: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; FlowLengthDiff: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; GammaCorrection: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; GaussianContrastStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; GaussianCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; GaussianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; GaussianScaleSpace: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; GeneralizeClassifiedRaster: Image Processing Tools/Classification</span></span>
+<span><span class="co">#&gt; GeneralizeWithSimilarity: Image Processing Tools/Classification</span></span>
+<span><span class="co">#&gt; GeneratingFunction: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Geomorphons: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; GreaterThan: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; HackStreamOrder: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; HeatMap: GIS Analysis</span></span>
+<span><span class="co">#&gt; HeightAboveGround: LiDAR Tools</span></span>
+<span><span class="co">#&gt; HighPassBilateralFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; HighPassFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; HighPassMedianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; HighestPosition: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; Hillshade: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Hillslopes: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; HistogramEqualization: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; HistogramMatching: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; HistogramMatchingTwoImages: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; HoleProportion: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; HorizonAngle: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; HorizontalExcessCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; HortonStreamOrder: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; HydrologicConnectivity: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; HypsometricAnalysis: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; HypsometricallyTintedHillshade: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; IdwInterpolation: GIS Analysis</span></span>
+<span><span class="co">#&gt; IhsToRgb: Image Processing Tools</span></span>
+<span><span class="co">#&gt; ImageAutocorrelation: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ImageCorrelation: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ImageCorrelationNeighbourhoodAnalysis: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ImageRegression: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ImageSegmentation: Image Processing Tools/Classification</span></span>
+<span><span class="co">#&gt; ImageSlider: Image Processing Tools</span></span>
+<span><span class="co">#&gt; ImageStackProfile: Image Processing Tools</span></span>
+<span><span class="co">#&gt; ImpoundmentSizeIndex: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; InPlaceAdd: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; InPlaceDivide: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; InPlaceMultiply: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; InPlaceSubtract: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Increment: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; InsertDams: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; IntegerDivision: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; IntegralImage: Image Processing Tools</span></span>
+<span><span class="co">#&gt; Intersect: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; InversePrincipalComponentAnalysis: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; IsNoData: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Isobasins: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; JensonSnapPourPoints: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; JoinTables: Data Tools</span></span>
+<span><span class="co">#&gt; KMeansClustering: Machine Learning</span></span>
+<span><span class="co">#&gt; KNearestMeanFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; KappaIndex: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; KnnClassification: Machine Learning</span></span>
+<span><span class="co">#&gt; KnnRegression: Machine Learning</span></span>
+<span><span class="co">#&gt; KsTestForNormality: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; LaplacianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; LaplacianOfGaussianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; LasToAscii: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LasToLaz: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LasToMultipointShapefile: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LasToShapefile: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LasToZlidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LayerFootprint: GIS Analysis</span></span>
+<span><span class="co">#&gt; LazToLas: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LeeSigmaFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; LengthOfUpstreamChannels: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; LessThan: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; LidarBlockMaximum: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarBlockMinimum: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarClassifySubset: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarColourize: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarContour: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarDigitalSurfaceModel: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarEigenvalueFeatures: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarElevationSlice: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarGroundPointFilter: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarHexBinning: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarHillshade: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarHistogram: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarIdwInterpolation: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarInfo: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarJoin: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarKappaIndex: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarNearestNeighbourGridding: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarPointDensity: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarPointReturnAnalysis: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarPointStats: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarRansacPlanes: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarRbfInterpolation: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarRemoveDuplicates: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarRemoveOutliers: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarRooftopAnalysis: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarSegmentation: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarSegmentationBasedFilter: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarShift: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarSibsonInterpolation: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarSortByTime: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarTINGridding: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarThin: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarThinHighDensity: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarTile: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarTileFootprint: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LidarTophatTransform: LiDAR Tools</span></span>
+<span><span class="co">#&gt; LineDetectionFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; LineIntersections: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; LineThinning: Image Processing Tools</span></span>
+<span><span class="co">#&gt; LinearityIndex: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; LinesToPolygons: Data Tools</span></span>
+<span><span class="co">#&gt; ListUniqueValues: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Ln: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; LocalHypsometricAnalysis: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; LocalQuadraticRegression: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Log10: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Log2: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; LogisticRegression: Machine Learning</span></span>
+<span><span class="co">#&gt; LongProfile: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; LongProfileFromPoints: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; LongestFlowpath: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; LowPointsOnHeadwaterDivides: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; LowestPosition: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MDInfFlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; MajorityFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; MapOffTerrainObjects: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Max: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; MaxAbsoluteOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MaxAnisotropyDev: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxAnisotropyDevSignature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxBranchLength: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxDifferenceFromMean: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxDownslopeElevChange: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxElevDevSignature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxElevationDeviation: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MaxUpslopeElevChange: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaxUpslopeFlowpathLength: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; MaxUpslopeValue: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; MaximalCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MaximumFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; MeanCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MeanFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; MedianFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Medoid: GIS Analysis</span></span>
+<span><span class="co">#&gt; MergeLineSegments: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MergeTableWithCsv: Data Tools</span></span>
+<span><span class="co">#&gt; MergeVectors: Data Tools</span></span>
+<span><span class="co">#&gt; Min: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; MinAbsoluteOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MinDistClassification: Image Processing Tools/Classification</span></span>
+<span><span class="co">#&gt; MinDownslopeElevChange: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MinMaxContrastStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; MinOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MinimalCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MinimumBoundingBox: GIS Analysis</span></span>
+<span><span class="co">#&gt; MinimumBoundingCircle: GIS Analysis</span></span>
+<span><span class="co">#&gt; MinimumBoundingEnvelope: GIS Analysis</span></span>
+<span><span class="co">#&gt; MinimumConvexHull: GIS Analysis</span></span>
+<span><span class="co">#&gt; MinimumFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; ModifiedKMeansClustering: Machine Learning</span></span>
+<span><span class="co">#&gt; ModifyLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ModifyNoDataValue: Data Tools</span></span>
+<span><span class="co">#&gt; Modulo: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Mosaic: Image Processing Tools</span></span>
+<span><span class="co">#&gt; MosaicWithFeathering: Image Processing Tools</span></span>
+<span><span class="co">#&gt; MultiPartToSinglePart: Data Tools</span></span>
+<span><span class="co">#&gt; MultidirectionalHillshade: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Multiply: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; MultiplyOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; MultiscaleElevationPercentile: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MultiscaleRoughness: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MultiscaleRoughnessSignature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MultiscaleStdDevNormals: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MultiscaleStdDevNormalsSignature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; MultiscaleTopographicPositionImage: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; NarrownessIndex: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; NaturalNeighbourInterpolation: GIS Analysis</span></span>
+<span><span class="co">#&gt; NearestNeighbourGridding: GIS Analysis</span></span>
+<span><span class="co">#&gt; Negate: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; NewRasterFromBase: Data Tools</span></span>
+<span><span class="co">#&gt; NormalVectors: LiDAR Tools</span></span>
+<span><span class="co">#&gt; NormalizedDifferenceIndex: Image Processing Tools</span></span>
+<span><span class="co">#&gt; Not: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; NotEqualTo: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; NumDownslopeNeighbours: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; NumInflowingNeighbours: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; NumUpslopeNeighbours: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; OlympicFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Opening: Image Processing Tools</span></span>
+<span><span class="co">#&gt; Openness: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Or: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; PairedSampleTTest: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; PanchromaticSharpening: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; ParallelepipedClassification: Image Processing Tools/Classification</span></span>
+<span><span class="co">#&gt; PatchOrientation: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; PennockLandformClass: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; PercentElevRange: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; PercentEqualTo: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; PercentGreaterThan: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; PercentLessThan: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; PercentageContrastStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; PercentileFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; PerimeterAreaRatio: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; PhiCoefficient: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; PickFromList: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; PiecewiseContrastStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; PlanCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; PolygonArea: GIS Analysis</span></span>
+<span><span class="co">#&gt; PolygonLongAxis: GIS Analysis</span></span>
+<span><span class="co">#&gt; PolygonPerimeter: GIS Analysis</span></span>
+<span><span class="co">#&gt; PolygonShortAxis: GIS Analysis</span></span>
+<span><span class="co">#&gt; Polygonize: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; PolygonsToLines: Data Tools</span></span>
+<span><span class="co">#&gt; Power: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; PrewittFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; PrincipalComponentAnalysis: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; PrintGeoTiffTags: Data Tools</span></span>
+<span><span class="co">#&gt; Profile: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ProfileCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; QinFlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; Quantiles: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; QuinnFlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; RadialBasisFunctionInterpolation: GIS Analysis</span></span>
+<span><span class="co">#&gt; RadiusOfGyration: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; RaiseWalls: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; RandomField: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RandomForestClassification: Machine Learning</span></span>
+<span><span class="co">#&gt; RandomForestRegression: Machine Learning</span></span>
+<span><span class="co">#&gt; RandomSample: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RangeFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; RasterArea: GIS Analysis</span></span>
+<span><span class="co">#&gt; RasterCalculator: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RasterCellAssignment: GIS Analysis</span></span>
+<span><span class="co">#&gt; RasterHistogram: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RasterPerimeter: GIS Analysis</span></span>
+<span><span class="co">#&gt; RasterStreamsToVector: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; RasterSummaryStats: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RasterToVectorLines: Data Tools</span></span>
+<span><span class="co">#&gt; RasterToVectorPoints: Data Tools</span></span>
+<span><span class="co">#&gt; RasterToVectorPolygons: Data Tools</span></span>
+<span><span class="co">#&gt; RasterizeStreams: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; Reciprocal: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Reclass: GIS Analysis</span></span>
+<span><span class="co">#&gt; ReclassEqualInterval: GIS Analysis</span></span>
+<span><span class="co">#&gt; ReclassFromFile: GIS Analysis</span></span>
+<span><span class="co">#&gt; ReconcileMultipleHeaders: Precision Agriculture</span></span>
+<span><span class="co">#&gt; RecoverFlightlineInfo: LiDAR Tools</span></span>
+<span><span class="co">#&gt; RecreatePassLines: Precision Agriculture</span></span>
+<span><span class="co">#&gt; ReinitializeAttributeTable: Data Tools</span></span>
+<span><span class="co">#&gt; RelatedCircumscribingCircle: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; RelativeAspect: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; RelativeTopographicPosition: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; RemoveFieldEdgePoints: Precision Agriculture</span></span>
+<span><span class="co">#&gt; RemoveOffTerrainObjects: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; RemovePolygonHoles: Data Tools</span></span>
+<span><span class="co">#&gt; RemoveShortStreams: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; RemoveSpurs: Image Processing Tools</span></span>
+<span><span class="co">#&gt; RepairStreamVectorTopology: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; Resample: Image Processing Tools</span></span>
+<span><span class="co">#&gt; RescaleValueRange: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RgbToIhs: Image Processing Tools</span></span>
+<span><span class="co">#&gt; Rho8FlowAccumulation: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; Rho8Pointer: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; RingCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; RobertsCrossFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; RootMeanSquareError: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Rotor: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Round: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; RuggednessIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ScharrFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; SedimentTransportIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SelectTilesByPolygon: LiDAR Tools</span></span>
+<span><span class="co">#&gt; SetNodataValue: Data Tools</span></span>
+<span><span class="co">#&gt; ShadowAnimation: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ShadowImage: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ShapeComplexityIndex: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; ShapeComplexityIndexRaster: GIS Analysis/Patch Shape Tools</span></span>
+<span><span class="co">#&gt; ShapeIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ShreveStreamMagnitude: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; SigmoidalContrastStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; Sin: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; SinglePartToMultiPart: Data Tools</span></span>
+<span><span class="co">#&gt; Sinh: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Sink: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; Slope: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SlopeVsAspectPlot: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SlopeVsElevationPlot: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SmoothVectors: GIS Analysis</span></span>
+<span><span class="co">#&gt; SmoothVegetationResidual: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SnapPourPoints: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; SobelFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; SortLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; SphericalStdDevOfNormals: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SplitColourComposite: Image Processing Tools</span></span>
+<span><span class="co">#&gt; SplitLidar: LiDAR Tools</span></span>
+<span><span class="co">#&gt; SplitVectorLines: GIS Analysis</span></span>
+<span><span class="co">#&gt; SplitWithLines: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; Square: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; SquareRoot: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; StandardDeviationContrastStretch: Image Processing Tools/Image Enhancement</span></span>
+<span><span class="co">#&gt; StandardDeviationFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; StandardDeviationOfSlope: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; StochasticDepressionAnalysis: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; StrahlerOrderBasins: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; StrahlerStreamOrder: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; StreamLinkClass: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; StreamLinkIdentifier: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; StreamLinkLength: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; StreamLinkSlope: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; StreamPowerIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; StreamSlopeContinuous: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; Subbasins: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; Subtract: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; SumOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; SurfaceAreaRatio: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; SvmClassification: Machine Learning</span></span>
+<span><span class="co">#&gt; SvmRegression: Machine Learning</span></span>
+<span><span class="co">#&gt; SymmetricalDifference: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; TINGridding: GIS Analysis</span></span>
+<span><span class="co">#&gt; Tan: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; TangentialCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Tanh: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ThickenRasterLine: Image Processing Tools</span></span>
+<span><span class="co">#&gt; TimeInDaylight: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; ToDegrees: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ToRadians: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; TophatTransform: Image Processing Tools</span></span>
+<span><span class="co">#&gt; TopographicPositionAnimation: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; TopologicalStreamOrder: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; TotalCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; TotalFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; TraceDownslopeFlowpaths: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; TravellingSalesmanProblem: GIS Analysis</span></span>
+<span><span class="co">#&gt; TrendSurface: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; TrendSurfaceVectorPoints: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; TributaryIdentifier: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; Truncate: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; TurningBandsSimulation: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; TwoSampleKsTest: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; Union: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; UnnestBasins: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; UnsharpMasking: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; Unsphericity: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; UpdateNodataCells: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; UpslopeDepressionStorage: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; UserDefinedWeightsFilter: Image Processing Tools/Filters</span></span>
+<span><span class="co">#&gt; VectorHexBinning: GIS Analysis</span></span>
+<span><span class="co">#&gt; VectorLinesToRaster: Data Tools</span></span>
+<span><span class="co">#&gt; VectorPointsToRaster: Data Tools</span></span>
+<span><span class="co">#&gt; VectorPolygonsToRaster: Data Tools</span></span>
+<span><span class="co">#&gt; VectorStreamNetworkAnalysis: Stream Network Analysis</span></span>
+<span><span class="co">#&gt; VerticalExcessCurvature: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; Viewshed: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; VisibilityIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; VoronoiDiagram: GIS Analysis</span></span>
+<span><span class="co">#&gt; Watershed: Hydrological Analysis</span></span>
+<span><span class="co">#&gt; WeightedOverlay: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; WeightedSum: GIS Analysis/Overlay Tools</span></span>
+<span><span class="co">#&gt; WetnessIndex: Geomorphometric Analysis</span></span>
+<span><span class="co">#&gt; WilcoxonSignedRankTest: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; WriteFunctionMemoryInsertion: Image Processing Tools</span></span>
+<span><span class="co">#&gt; Xor: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; YieldFilter: Precision Agriculture</span></span>
+<span><span class="co">#&gt; YieldMap: Precision Agriculture</span></span>
+<span><span class="co">#&gt; YieldNormalization: Precision Agriculture</span></span>
+<span><span class="co">#&gt; ZScores: Math and Stats Tools</span></span>
+<span><span class="co">#&gt; ZlidarToLas: LiDAR Tools</span></span>
+<span><span class="co">#&gt; ZonalStatistics: Math and Stats Tools</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_tool_parameters">
@@ -1358,8 +1357,8 @@ all tools if none specified)</p>
 <p><code><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters()</a></code> retrieves the tool parameter
 descriptions for a specific tool as JSON formatted string.</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span>
-<span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_tool_parameters.html">wbt_tool_parameters</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_view_code">
@@ -1368,8 +1367,8 @@ descriptions for a specific tool as JSON formatted string.</p>
 <p>WhiteboxTools is written in Rust and is open source. You can view the
 source code for a specific tool on the source code repository.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span>
-<span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_view_code.html">wbt_view_code</a></span><span class="op">(</span><span class="st">"breach_depressions"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></span></code></pre></div>
 <p>Use the argument <code>viewer=TRUE</code> to use
 <code><a href="https://rdrr.io/r/utils/browseURL.html" class="external-link">browseURL()</a></code> to open a browser window to the corresponding
 GitHub page.</p>

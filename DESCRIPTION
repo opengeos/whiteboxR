@@ -9,7 +9,7 @@ Maintainer: Andrew Brown <brown.andrewg@gmail.com>
 License: MIT + file LICENSE
 SystemRequirements: WhiteboxTools (https://github.com/jblindsay/whitebox-tools/releases/latest)
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/giswqs/whiteboxR
 BugReports: https://github.com/giswqs/whiteboxR/issues
