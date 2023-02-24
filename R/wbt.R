@@ -548,7 +548,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 #' WhiteboxTools and all of its extensions can be uninstalled by passing the `remove=TRUE` argument.
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
-#' @param force logical. Force install? Default `FALSE`. When `remove=TRUE` passed to `unlink()` to change permissions to alloa removal of files/directories.
+#' @param force logical. Force install? Default `FALSE`. When `remove=TRUE` passed to `unlink()` to change permissions to allow removal of files/directories.
 #' @param remove logical. Remove contents of "WBT" folder from `pkg_dir`? Default: `FALSE`
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
 #' @aliases wbt_install

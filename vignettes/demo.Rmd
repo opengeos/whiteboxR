@@ -184,8 +184,7 @@ The default value is the package installation directory, subdirectory `"WBT"`, f
 wbt_init(exe_path = '/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools')
 ```
 
-A way to find your `whitebox_tools` executable is if it is in a directory that exists in your PATH.
-This requires that you have the Unix tool `which` or one of its analogues.
+A way the package will automatically find your `whitebox_tools` executable is if it is in a directory that exists in your PATH. This requires that you have the Unix tool `which` or one of its analogues.
 
 ```r
 Sys.setenv(R_WHITEBOX_EXE_PATH = Sys.which("whitebox_tools"))
@@ -241,10 +240,9 @@ This package-level verbose option can also control the `verbose_mode` values pas
 
 ### Long-term Package Option Settings
 
-For long-term package option settings you can put `whitebox_tools` on your `$PATH` and set `R_WHITEBOX_EXE_PATH`, perhaps in your user `.Rprofile` or `~/.profile`.
+The package will detect when you have added the WhiteboxTools directory to your `PATH` environment variable.
 
-This command will check your PATH environment variable for `whitebox_tools` and set the path to value found: 
-
+For long-term package option settings you can put `whitebox_tools` on your `$PATH` and set `R_WHITEBOX_EXE_PATH`, perhaps in your user `.Rprofile` or `~/.profile`. 
 On Windows you can add the path to `whitebox_tools.exe` as a new entry `R_WHITEBOX_EXE_PATH` in User or System Environment variable.
 
 On Linux/Mac you can set `R_WHITEBOX_EXE_PATH` directly with `export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"`.

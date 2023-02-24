@@ -19,7 +19,7 @@ wbt_install_extension(
 \arguments{
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
 
-\item{force}{logical. Force install? Default \code{FALSE}. When \code{remove=TRUE} passed to \code{unlink()} to change permissions to alloa removal of files/directories.}
+\item{force}{logical. Force install? Default \code{FALSE}. When \code{remove=TRUE} passed to \code{unlink()} to change permissions to allow removal of files/directories.}
 
 \item{remove}{logical. Remove contents of "WBT" folder from \code{pkg_dir}? Default: \code{FALSE}}
 
