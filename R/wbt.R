@@ -160,6 +160,7 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   pkgwbt <- getOption("whitebox.exe_path")
   defwbt <- wbt_default_path()
+  pthwbt <- Sys.which(basename(defwbt))
 
   if (!is.null(exe_path) && file.exists(exe_path)) {
     # user specified as argument
@@ -170,6 +171,9 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   } else if (!is.null(pkgwbt) && file.exists(pkgwbt)) {
     # user specified as package option
     res <- pkgwbt
+  } else if (!is.na(pthwbt) && pthwbt != "" && file.exists(pthwbt)) {
+    # whitebox_tools is on PATH
+    res <- pthwbt
   } else {
     res <- defwbt
   }
