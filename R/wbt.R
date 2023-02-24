@@ -192,8 +192,12 @@ wbt_default_path <- function() {
     exe <- "whitebox_tools.exe"
   }
 
-  # backwards compatible path
-  file.path(find.package("whitebox"), "WBT", exe)
+  if (R.version$major >= 4) {
+    file.path(tools::R_user_dir(package = "whitebox", which = "data"), "WBT", exe)
+  } else {
+    # backwards compatible path
+    file.path(find.package("whitebox"), "WBT", exe)
+  }
 }
 
 #' @description `wbt_wd()`: Get or set the WhiteboxTools working directory. Default: `""` (unset) is your R working directory if no other options are set.
@@ -411,13 +415,18 @@ wbt_max_procs <- function(max_procs = NULL) {
 
 #' @export
 #' @rdname install_whitebox
-wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
+wbt_install <- function(pkg_dir = dirname(wbt_default_path()), force = FALSE, remove = FALSE) {
 
   stopifnot(is.logical(force))
+  stopifnot(is.logical(remove))
   stopifnot(length(pkg_dir) == 1)
   stopifnot(is.character(pkg_dir))
 
   pkg_dir <- path.expand(pkg_dir)
+
+  if (!is.na(remove) && remove) {
+    unlink(list.files(pkg_dir, recursive = TRUE, full.names = TRUE), force = force, recursive = TRUE)
+  }
 
   # Check for binary file in 'WBT' directory
   exe_path <- wbt_default_path()
@@ -524,8 +533,11 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
 #'
 #' This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
 #'
+#' WhiteboxTools and all of its extensions can be uninstalled by passing the `remove=TRUE` argument.
+#'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
-#' @param force logical. Default `FALSE`. Force install?
+#' @param force logical. Force install? Default `FALSE`. When `remove=TRUE` passed to `unlink()` to change permissions to alloa removal of files/directories.
+#' @param remove logical. Remove contents of "WBT" folder from `pkg_dir`? Default: `FALSE`
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
 #' @aliases wbt_install
 #' @examples
@@ -533,8 +545,8 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
 #' install_whitebox()
 #' }
 #' @export
-install_whitebox <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
-  wbt_install(pkg_dir = pkg_dir, force = force)
+install_whitebox <- function(pkg_dir = dirname(wbt_default_path()), force = FALSE, remove = FALSE) {
+  wbt_install(pkg_dir = pkg_dir, force = force, remove = TRUE)
 }
 
 #' @param extension Extension name
@@ -996,7 +1008,7 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
 #'
 #' @return value of system environment variable `RUST_BACKTRACE`
 #' @export
-#' @examples 
+#' @examples
 #' \dontrun{
 #' wbt_rust_backtrace(TRUE)
 #' }
