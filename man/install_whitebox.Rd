@@ -6,17 +6,9 @@
 \alias{wbt_install_extension}
 \title{Download and Install WhiteboxTools}
 \usage{
-wbt_install(
-  pkg_dir = dirname(wbt_default_path()),
-  force = FALSE,
-  remove = FALSE
-)
+wbt_install(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 
-install_whitebox(
-  pkg_dir = dirname(wbt_default_path()),
-  force = FALSE,
-  remove = FALSE
-)
+install_whitebox(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 
 wbt_install_extension(
   extension = c("GeneralToolsetExtension", "AgricultureToolset",

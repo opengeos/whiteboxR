@@ -147,8 +147,6 @@ wbt_options <- function(exe_path = NULL,
 #' @param exe_path Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`
 #' @param shell_quote Return `shQuote()` result?
 #'
-#' @aliases wbt_default_path
-#'
 #' @return Returns the file path of WhiteboxTools executable.
 #' @export
 #' @rdname wbt_init
@@ -183,7 +181,9 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   }
   res
 }
-
+#' @description `wbt_default_path()`: Get the default file path of the WhiteboxTools executable.
+#'
+#' @details `wbt_default_path()`: Returns a path to WhiteboxTools executable including a platform-specific executable (with or without .exe extension)
 #' @export
 #' @rdname wbt_init
 wbt_default_path <- function() {
@@ -195,12 +195,20 @@ wbt_default_path <- function() {
   if (os == "Windows") {
     exe <- "whitebox_tools.exe"
   }
+  file.path(wbt_data_dir(), "WBT", exe)
+}
 
+#' @description `wbt_data_dir()`: Get the directory where WhiteboxTools data are stored.
+#'
+#' @details `wbt_data_dir()`: Uses platform-specific user data directory from `tools::R_user_dir(package = "whitebox", which = "data")` on R 4.0+. On R<4 returns the original default `find.package("whitebox")`.
+#' @export
+#' @rdname wbt_init
+wbt_data_dir <- function() {
   if (R.version$major >= 4) {
-    file.path(tools::R_user_dir(package = "whitebox", which = "data"), "WBT", exe)
+    tools::R_user_dir(package = "whitebox", which = "data")
   } else {
     # backwards compatible path
-    file.path(find.package("whitebox"), "WBT", exe)
+    find.package("whitebox")
   }
 }
 
@@ -419,7 +427,7 @@ wbt_max_procs <- function(max_procs = NULL) {
 
 #' @export
 #' @rdname install_whitebox
-wbt_install <- function(pkg_dir = dirname(wbt_default_path()), force = FALSE, remove = FALSE) {
+wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
 
   stopifnot(is.logical(force))
   stopifnot(is.logical(remove))
@@ -446,7 +454,7 @@ wbt_install <- function(pkg_dir = dirname(wbt_default_path()), force = FALSE, re
   }
 
   # if not in package directory, and user has not specified a path
-  if (!file.exists(exe_path) || pkg_dir != find.package('whitebox') || force) {
+  if (!file.exists(exe_path) || pkg_dir != wbt_default_path() || force) {
 
     # install_whitebox/wbt_install is 64-bit only
     if (.Machine$sizeof.pointer != 8) {
@@ -549,7 +557,7 @@ wbt_install <- function(pkg_dir = dirname(wbt_default_path()), force = FALSE, re
 #' install_whitebox()
 #' }
 #' @export
-install_whitebox <- function(pkg_dir = dirname(wbt_default_path()), force = FALSE, remove = FALSE) {
+install_whitebox <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
   wbt_install(pkg_dir = pkg_dir, force = force, remove = TRUE)
 }
 

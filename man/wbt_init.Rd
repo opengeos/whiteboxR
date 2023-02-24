@@ -5,6 +5,7 @@
 \alias{wbt_options}
 \alias{wbt_exe_path}
 \alias{wbt_default_path}
+\alias{wbt_data_dir}
 \alias{wbt_wd}
 \alias{wbt_verbose}
 \alias{wbt_compress_rasters}
@@ -24,6 +25,8 @@ wbt_options(
 wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
 
 wbt_default_path()
+
+wbt_data_dir()
 
 wbt_wd(wd = NULL)
 
@@ -77,6 +80,10 @@ Returns the file path of WhiteboxTools executable.
 
 \code{wbt_exe_path()}: Get the file path of the WhiteboxTools executable.
 
+\code{wbt_default_path()}: Get the default file path of the WhiteboxTools executable.
+
+\code{wbt_data_dir()}: Get the directory where WhiteboxTools data are stored.
+
 \code{wbt_wd()}: Get or set the WhiteboxTools working directory. Default: \code{""} (unset) is your R working directory if no other options are set.
 
 \code{wbt_verbose()}: Check verbose options for WhiteboxTools
@@ -87,6 +94,10 @@ Returns the file path of WhiteboxTools executable.
 }
 \details{
 \code{wbt_exe_path()}: Checks system environment variable \code{R_WHITEBOX_EXE_PATH} and package option \code{whitebox.exe_path}. Set your desired path with either \code{Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")} or \code{options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")}. The default, backwards-compatible path is returned by \code{wbt_default_path()}
+
+\code{wbt_default_path()}: Returns a path to WhiteboxTools executable including a platform-specific executable (with or without .exe extension)
+
+\code{wbt_data_dir()}: Uses platform-specific user data directory from \code{tools::R_user_dir(package = "whitebox", which = "data")} on R 4.0+. On R<4 returns the original default \code{find.package("whitebox")}.
 
 \code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which is equivalent to \code{wbt_wd(getwd())}.
 }
