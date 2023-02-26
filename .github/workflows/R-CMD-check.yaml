@@ -52,6 +52,7 @@ jobs:
 
       - name: Install WhiteboxTools
         run: |
+          install.packages("whitebox")
           library(whitebox)
           install_whitebox()
         shell: Rscript {0}
