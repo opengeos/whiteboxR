@@ -4,6 +4,8 @@
 #'
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
 #' @param ... additional arguments to `wbt_options()`
+#' @param check_version Check version of WhiteboxTools installed against version R package was built for? Default: `TRUE`
+#'
 #' @return `wbt_init()`: logical; `TRUE` if binary file is found at `exe_path`
 #' @export
 #' @seealso [install_whitebox()] [whitebox]
@@ -14,7 +16,9 @@
 #' # set path to binary as an argument
 #' # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 #' }
-wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
+wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
+                     ...,
+                     check_version = TRUE) {
 
   # optional parameters specified by ...
   initargs <- list(...)
@@ -50,6 +54,36 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
   if (!res2) {
     if (wbt_verbose()) {
       message("WhiteboxTools Executable Path (whitebox.exe_path) reverted to:\n\t", new_exe_path)
+    }
+  } 
+  if (check_version) {
+    # check version info, provide ONE message per session if mismatched
+    exv <- try(wbt_version(extract = TRUE), silent = TRUE)
+    if (is.na(exv)) {
+      exv <- "<NA>"
+    }
+    pkv <- try(attr(wbttools, 'version'), silent = TRUE)
+    if (is.na(pkv)) {
+      pkv <- "<NA>"
+    }
+    if (!inherits(exv, 'try-error') && !inherits(pkv, 'try-error')) {
+      if (isTRUE(exv != pkv)) {
+        warned <- try(get("whitebox.warned_version_difference",
+                          envir = whitebox.env),
+                      silent = TRUE)
+        if (inherits(warned, 'try-error')) {
+          warned <- FALSE
+        }
+        if (wbt_verbose() && isFALSE(warned)) {
+          message("NOTE: Installed WhiteboxTools version (", exv, 
+                  ") is ", ifelse(exv > pkv, "newer", "older"),
+                  " than the package data (", pkv, ").")
+          try(assign("whitebox.warned_version_difference",
+                     value = TRUE,
+                     envir = whitebox.env),
+              silent = TRUE)
+        }
+      }
     }
   }
   return(invisible(res1 && res2))
@@ -656,6 +690,8 @@ wbt_license <- function() {
 
 #' Version information for WhiteboxTools
 #'
+#' @param extract Extract semantic version number from first line of result? Default: `FALSE`
+#'
 #' @return Returns the version information for WhiteboxTools as an R character vector.
 #' @export
 #'
@@ -663,14 +699,16 @@ wbt_license <- function() {
 #' \dontrun{
 #' wbt_version()
 #' }
-wbt_version <- function() {
-  ret <- wbt_system_call("--version")
+wbt_version <- function(extract = FALSE) {
+  ret <- wbt_system_call("--version", check_version = FALSE)
+  if (extract) {
+    return(gsub(".*\\bv([0-9\\.]+)\\b.*", "\\1", ret[1]))
+  }
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
   invisible(ret)
 }
-
 
 #' All available tools in WhiteboxTools
 #'
@@ -874,14 +912,26 @@ wbt_internal_tool_name <- function(tool_name) {
   gsub("^(.)|_(.)", "\\U\\1\\2", gsub("^(whitebox::)?(wbt_)?", "", tool_name), perl = TRUE)
 }
 
-# wrapper method for system()
+#' Wrapper method for `system()` calls of `whitebox_tools`
+#'
+#' @param argstring Concatenated string of parameters passed in tool command.
+#' @param tool_name WhiteboxTools tool name
+#' @param command_only Return command only?
+#' @param ignore.stderr Ignore system() stderr output?
+#' @param shell_quote Should the executable path part of the command be quoted?
+#' @param check_version Should the version of WhiteboxTools installed be checked against the version the package was built with?
+#' @param ... Additional arguments are passed to `wbt_init()`
+#' @keywords internal
+#' @noRd
 wbt_system_call <- function(argstring,
                             tool_name = NULL,
                             command_only = FALSE,
                             ignore.stderr = FALSE,
-                            shell_quote = TRUE) {
+                            shell_quote = TRUE,
+                            check_version = TRUE, 
+                            ...) {
 
-  wbt_init()
+  wbt_init(..., check_version = check_version)
   wbt_exe <- wbt_exe_path(shell_quote = shell_quote)
   args2 <- argstring
   # messages about misspecified arguments (e.g. tool_name to wbt_tool_help())

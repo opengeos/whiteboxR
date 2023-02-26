@@ -3,6 +3,9 @@
   #   1. interactively, or 
   #   2. environment var R_WHITEBOX_VERBOSE=TRUE or package option whitebox.verbose=TRUE
   check_whitebox_binary(silent = !wbt_verbose())
+  
+  # keep track of whether we have warned about version difference
+  assign("whitebox.warned_version_difference", value = FALSE, envir = whitebox.env)
 }
 
 #' Check for WhiteboxTools executable path

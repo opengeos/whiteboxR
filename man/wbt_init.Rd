@@ -12,7 +12,11 @@
 \alias{wbt_max_procs}
 \title{Initialize WhiteboxTools}
 \usage{
-wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE), ...)
+wbt_init(
+  exe_path = wbt_exe_path(shell_quote = FALSE),
+  ...,
+  check_version = TRUE
+)
 
 wbt_options(
   exe_path = NULL,
@@ -40,6 +44,8 @@ wbt_max_procs(max_procs = NULL)
 \item{exe_path}{Optional: User-supplied path to WhiteboxTools executable. Default: \code{NULL}}
 
 \item{...}{additional arguments to \code{wbt_options()}}
+
+\item{check_version}{Check version of WhiteboxTools installed against version R package was built for? Default: \code{TRUE}}
 
 \item{wd}{character; Default: \code{NULL}; if set the package option \code{whitebox.wd} is set specified path (if directory exists)}
 

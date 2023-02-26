@@ -1,3 +1,5 @@
+#' @aliases whitebox-package whitebox whitebox.env
+#' @export whitebox.env
 #' @keywords internal
 #' @section Package options:
 #'
@@ -15,6 +17,9 @@
 #'
 #' @seealso [wbt_init()], [wbt_options()], [install_whitebox()]
 "_PACKAGE"
+
+# whitebox package environment
+whitebox.env <- new.env()
 
 #' WhiteboxTools Tool List
 #'

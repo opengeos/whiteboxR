@@ -4,7 +4,10 @@
 \alias{wbt_version}
 \title{Version information for WhiteboxTools}
 \usage{
-wbt_version()
+wbt_version(extract = FALSE)
+}
+\arguments{
+\item{extract}{Extract semantic version number from first line of result? Default: \code{FALSE}}
 }
 \value{
 Returns the version information for WhiteboxTools as an R character vector.
