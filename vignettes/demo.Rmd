@@ -44,13 +44,13 @@ whitebox is an R frontend for the 'WhiteboxTools' library, which is an advanced 
 
 WhiteboxTools is not a cartographic or spatial data visualization package; instead it is meant to serve as an analytical backend for other data visualization software, mainly GIS.
 
-This demonstration shows how to use the whitebox package to integrate WhiteboxTools with R. 
+This vignette shows how to use the `whitebox` R package to run WhiteboxTools. 
  
 Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in geomorphometric analysis. Computers & Geosciences, 95, 75-84. doi: http://dx.doi.org/10.1016/j.cageo.2016.07.003
 
 ## Setup
 
-Load the whitebox library.
+Load the `whitebox` library.
 
 ```{r}
 library(whitebox)
@@ -58,25 +58,27 @@ library(whitebox)
 
 ### How `whitebox` works
 
-The current implementation of whitebox generates `system()` calls to a local WhiteboxTools binary: usually `whitebox_tools` or `whitebox_tools.exe`
+whitebox generates `system()` calls to a local WhiteboxTools binary: `whitebox_tools` or `whitebox_tools.exe`
 
-You can find the binary path that the package is currently going to use with `wbt_exe_path()`
+You can find the binary path that the package is going to use with `wbt_exe_path()`
 
 ```{r}
 wbt_exe_path(shell_quote = FALSE)
 ```
 
+This command always returns a "default" path, whether or not you have WhiteboxTools installed.
+
 ### Interfacing with R spatial packages
 
-The results of runs of WhiteboxTools via the `whitebox` package are specified as file paths for output files (often rasters in GeoTIFF format, sometimes other formats; other cases shapefiles, HTML output, LiDAR-related files etc.)
+WhiteboxTools input and output are specified as file paths to rasters in GeoTIFF format, shapefiles, HTML output, LiDAR-related files, and more.
 
-Many R users will be interacting with raster data with one of the many available R packages for spatial data. In this vignette we will use the `raster` package for visualization. Just as easily we could have used `terra`, `stars` or other options available in the R ecosystem.
+In this vignette we will use the `terra` package for visualization. Just as easily we could have used `raster`, `stars` or other options available in the R ecosystem.
 
 Saving your "output" file paths as a variable so that you can use them later to load the file into an R object is the main way to view your output.
 
 #### Working with Raster Data
 
-A demonstration workflow employing the {terra} package follows:
+A demonstration employing the {terra} package follows:
 
 ```{r}
 library(terra)
@@ -143,19 +145,15 @@ terra::sources(outputras)
 
 ### Installing WhiteboxTools
 
-If you do not have WhiteboxTools installed in one of the standard locations, and have not set up your package options, the package will not be able to find your WhiteboxTools installation.
-
-Most often you will be able to use `whitebox::install_whitebox()` to download the latest binaries that correspond to the available version of the R package. However, this is not required. 
-
-For general information consult the WhiteboxTools User Manual: https://jblindsay.github.io/wbt_book/install.html
-
-You may download/compile WhiteboxTools yourself and install anywhere for use with the `whitebox` R package. 
-
-For details on building from source see: https://github.com/jblindsay/whitebox-tools
-
-Specify the path to `whitebox_tools` executable with `whitebox.exe_path` option. 
-
 In `whitebox` `wbt_init()` is the standard way to set the "exe_path" for a session.
+
+If you do not have WhiteboxTools installed in the default location, do not have `whitebox_tools` on your PATH, and have not set up your package options, the package will not be able to find your WhiteboxTools installation on load.
+
+Usually you can use `whitebox::install_whitebox()` to download the latest binaries that correspond to the available version of the R package. However, this is not required. You may download/compile WhiteboxTools yourself and install anywhere for use with the `whitebox` R package. 
+
+For general information consult the WhiteboxTools User Manual: https://www.whiteboxgeo.com/manual/wbt_book/install.html
+
+For more details on building from source see: https://github.com/jblindsay/whitebox-tools
 
 ### Package Settings with `wbt_init()`
 
@@ -184,16 +182,7 @@ The default value is the package installation directory, subdirectory `"WBT"`, f
 wbt_init(exe_path = '/home/andrew/workspace/whitebox-tools/target/release/whitebox_tools')
 ```
 
-A way to find your `whitebox_tools` executable is if it is in a directory that exists in your PATH.
-This requires that you have the Unix tool `which` or one of its analogues.
-
-```r
-Sys.setenv(R_WHITEBOX_EXE_PATH = Sys.which("whitebox_tools"))
-```
-
-You can also set `R_WHITEBOX_EXE_PATH` manually.
-
- - Replace the `Sys.which()` call with a custom path string as needed such as `"C:/path/to/whitebox_tools.exe"`.
+The package will automatically find an existing installation when `whitebox_tools` is in a directory on your PATH. 
 
 Package options other than `exe_path` (as detailed in `?whitebox::whitebox` and `?wbt_init`) can be set with `wbt_init(exe_path, ...)`, where `...` is additional named arguments corresponding to the `*` suffix in `whitebox.*` package options names. Use `wbt_options()` or specific methods like `wbt_verbose()`, `wbt_wd()` to get all values or set specific values.
 
@@ -221,10 +210,10 @@ wbt_wd("") # "" equivalent to getwd()
 The `verbose` argument is used to set the package option related to tool "verbosity": `whitebox.verbose`. When `whitebox.verbose` is `FALSE` no output will be `cat()` to the console by running tools. 
 
 A helper method for getting and setting the `whitebox.verbose` option is `wbt_verbose()`. `wbt_verbose()` is used throughout the package to check what level of verbosity should be used.
+
 By default, the result of `wbt_verbose()` is the result of `interactive()` so tools will print extra console output when you are there to see it. This is used in a variety of `wbt_*` methods to allow the package option to control output for many functions in a consistent manner, hide output in your automated tests, markdown documents, vignettes etc.
 
 In this vignette we use `wbt_verbose(TRUE)` so the package option `whitebox.verbose` is set to `TRUE` 
-
 
 ```{r}
 # force output when run non-interactively (knitr)
@@ -241,13 +230,25 @@ This package-level verbose option can also control the `verbose_mode` values pas
 
 ### Long-term Package Option Settings
 
-For long-term package option settings you can put `whitebox_tools` on your `$PATH` and set `R_WHITEBOX_EXE_PATH`, perhaps in your user `.Rprofile` or `~/.profile`.
-
-This command will check your PATH environment variable for `whitebox_tools` and set the path to value found: 
+The package will detect when you have added the WhiteboxTools directory to your `PATH` environment variable. For long-term package option settings you can put `whitebox_tools` on `$PATH` or set `R_WHITEBOX_EXE_PATH` in your user `.Rprofile` or `.Renviron`. 
 
 On Windows you can add the path to `whitebox_tools.exe` as a new entry `R_WHITEBOX_EXE_PATH` in User or System Environment variable.
 
 On Linux/Mac you can set `R_WHITEBOX_EXE_PATH` directly with `export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"`.
+
+ - Note that if you set your `$PATH` in you regular shell profile (`.profile`/`.bashrc`/`.zshrc`) then it will _not_ be sourced by RStudio by default.
+
+This requires that you have the Unix tool `which` or one of its analogues.
+
+You can also set `R_WHITEBOX_EXE_PATH` manually in R:
+
+```r
+Sys.setenv(R_WHITEBOX_EXE_PATH = Sys.which("whitebox_tools"))
+```
+
+ - Replace the `Sys.which()` call with a custom path string as needed such as `"C:/path/to/whitebox_tools.exe"`.
+
+All of the other package options can similarly be set as environment variables. They are prefixed with `R_WHITEBOX_*`. See `?whitebox` for details.
 
 ## Running tools
 
@@ -255,7 +256,7 @@ Specify input and output paths, and any other options, as specified in package r
 
  - https://giswqs.github.io/whiteboxR/reference/index.html
 
-For instance, here we use the tool "BreachDepressions" to pre-process a Digital Elevation Model (DEM) so we can identify flow pathways.
+For instance, "BreachDepressions" is used below to process a Digital Elevation Model (DEM) before we identify flow pathways. This algorithm is prefered over depression filling in most cases and uses Lindsay's (2016) algorithm.
 
 ```{r}
 # sample DEM file path in package extdata folder
@@ -287,7 +288,7 @@ The above method of creating `wbt_breach_depressions(dem = ..., output = ...)` t
 
 ### Example: Compare input v.s. output with `terra`
 
-We use the {terra} package to read the GeoTIFF outputs from WhiteboxTools.
+We use the {terra} package to read the GeoTIFF file output by WhiteboxTools.
 
 #### Setup
 
@@ -334,9 +335,7 @@ Here we will take our processing of DEMs a bit further by performing several Whi
 
 We are interested in identifying and ranking tributaries of watercourses (streams and rivers).
 
-A package that makes use of the whitebox R package is [hydroweight](https://github.com/bkielstr/hydroweight).
-
-Here is a brief snippet based on the beginning of the hydroweight README showing how the breached DEM we made above can be used in a spatial hydrological analysis of stream networks.
+An R package that makes use of the `whitebox` R package is [hydroweight](https://github.com/bkielstr/hydroweight). Here is a brief example on the beginning of the `hydroweight` README showing how the breached DEM above can be used in a spatial analysis of stream networks.
 
 #### Setup
 
@@ -443,8 +442,6 @@ wbt_tributary_identifier(
   output = file.path(wd, "toy_dem_tributaries.tif")
 )
 ```
-
-
 
 #### Compare results
 

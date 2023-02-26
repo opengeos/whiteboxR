@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_list_tools}
 \alias{wbt_list_tools}
-\title{All available tools in WhiteboxTools}
+\title{All available tools in 'WhiteboxTools'}
 \usage{
 wbt_list_tools(keywords = "''")
 }
@@ -13,7 +13,7 @@ wbt_list_tools(keywords = "''")
 Return all available tools in WhiteboxTools that contain the keywords.
 }
 \description{
-All available tools in WhiteboxTools
+All available tools in 'WhiteboxTools'
 }
 \examples{
 \dontrun{

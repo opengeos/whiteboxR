@@ -8,7 +8,7 @@
 #' @param gridcells Optional flag to indicate that the 'size' threshold should be measured in grid cells instead of the default map units.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -42,7 +42,7 @@ wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, ver
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -74,7 +74,7 @@ wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=
 #' @param out_backlink Output backlink raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -107,7 +107,7 @@ wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, ve
 #' @param zero_background Flag indicating whether zero values should be treated as a background.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -140,7 +140,7 @@ wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALS
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -169,7 +169,7 @@ wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=FALSE,
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.

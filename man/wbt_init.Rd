@@ -5,13 +5,18 @@
 \alias{wbt_options}
 \alias{wbt_exe_path}
 \alias{wbt_default_path}
+\alias{wbt_data_dir}
 \alias{wbt_wd}
 \alias{wbt_verbose}
 \alias{wbt_compress_rasters}
 \alias{wbt_max_procs}
-\title{Initialize WhiteboxTools}
+\title{Initialize 'WhiteboxTools'}
 \usage{
-wbt_init(exe_path = wbt_exe_path(shell_quote = FALSE), ...)
+wbt_init(
+  exe_path = wbt_exe_path(shell_quote = FALSE),
+  ...,
+  check_version = TRUE
+)
 
 wbt_options(
   exe_path = NULL,
@@ -25,6 +30,8 @@ wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
 
 wbt_default_path()
 
+wbt_data_dir()
+
 wbt_wd(wd = NULL)
 
 wbt_verbose(verbose = NULL)
@@ -34,9 +41,11 @@ wbt_compress_rasters(compress_rasters = NULL)
 wbt_max_procs(max_procs = NULL)
 }
 \arguments{
-\item{exe_path}{Optional: User-supplied path to WhiteboxTools executable. Default: \code{NULL}}
+\item{exe_path}{Optional: User-supplied path to 'WhiteboxTools' executable. Default: \code{NULL}}
 
 \item{...}{additional arguments to \code{wbt_options()}}
+
+\item{check_version}{Check version of 'WhiteboxTools' installed against version R package was built for? Default: \code{TRUE}}
 
 \item{wd}{character; Default: \code{NULL}; if set the package option \code{whitebox.wd} is set specified path (if directory exists)}
 
@@ -53,7 +62,7 @@ wbt_max_procs(max_procs = NULL)
 
 \code{wbt_options()}: an invisible list containing current \code{whitebox.exe_path}, \code{whitebox.verbose}, \code{whitebox.compress_rasters}, and \code{whitebox.max_procs} options
 
-Returns the file path of WhiteboxTools executable.
+Returns the file path of 'WhiteboxTools' executable.
 
 \code{wbt_wd()}: character; when working directory is unset, will not add \verb{--wd=} arguments to calls and should be the same as using \code{getwd()}. See Details.
 
@@ -64,7 +73,7 @@ Returns the file path of WhiteboxTools executable.
 \code{wbt_max_procs()}: integer; defaults to \code{NA_integer_}
 }
 \description{
-\code{wbt_init()}: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with \code{exe_path}.
+\code{wbt_init()}: Check if a suitable 'WhiteboxTools' executable is present. Search default path in package directory or set it manually with \code{exe_path}.
 
 \code{wbt_options()}: Get/set package options
 \itemize{
@@ -75,18 +84,26 @@ Returns the file path of WhiteboxTools executable.
 \item \strong{\code{whitebox.max_procs}} - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
 
-\code{wbt_exe_path()}: Get the file path of the WhiteboxTools executable.
+\code{wbt_exe_path()}: Get the file path of the 'WhiteboxTools' executable.
 
-\code{wbt_wd()}: Get or set the WhiteboxTools working directory. Default: \code{""} (unset) is your R working directory if no other options are set.
+\code{wbt_default_path()}: Get the default file path of the 'WhiteboxTools' executable.
 
-\code{wbt_verbose()}: Check verbose options for WhiteboxTools
+\code{wbt_data_dir()}: Get the directory where 'WhiteboxTools' data are stored.
 
-\code{wbt_compress_rasters()}: Check raster compression option for WhiteboxTools. Default: \code{FALSE}
+\code{wbt_wd()}: Get or set the 'WhiteboxTools' working directory. Default: \code{""} (unset) is your R working directory if no other options are set.
+
+\code{wbt_verbose()}: Check verbose options for 'WhiteboxTools'
+
+\code{wbt_compress_rasters()}: Check raster compression option for 'WhiteboxTools'. Default: \code{FALSE}
 
 \code{wbt_max_procs()}: Check maximum number of processes for  for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
 \details{
 \code{wbt_exe_path()}: Checks system environment variable \code{R_WHITEBOX_EXE_PATH} and package option \code{whitebox.exe_path}. Set your desired path with either \code{Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")} or \code{options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")}. The default, backwards-compatible path is returned by \code{wbt_default_path()}
+
+\code{wbt_default_path()}: Returns a path to 'WhiteboxTools' executable including a platform-specific executable (with or without .exe extension)
+
+\code{wbt_data_dir()}: Uses platform-specific user data directory from \code{tools::R_user_dir(package = "whitebox", which = "data")} on R 4.0+. On R<4 returns the original default \code{find.package("whitebox")}.
 
 \code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which is equivalent to \code{wbt_wd(getwd())}.
 }

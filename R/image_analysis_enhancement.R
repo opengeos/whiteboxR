@@ -7,7 +7,7 @@
 #' @param band_mean Band mean value.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -43,7 +43,7 @@ wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, wd=
 #' @param n The 'n' parameter.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -84,7 +84,7 @@ wbt_correct_vignetting <- function(input, pp, output, focal_length=304.8, image_
 #' @param clip Optional percent to clip the upper tail by during the stretch.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -120,7 +120,7 @@ wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, wd=
 #' @param gamma Gamma value.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -153,7 +153,7 @@ wbt_gamma_correction <- function(input, output, gamma=0.5, wd=NULL, verbose_mode
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -186,7 +186,7 @@ wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL,
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -219,7 +219,7 @@ wbt_histogram_equalization <- function(input, output, num_tones=256, wd=NULL, ve
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -250,7 +250,7 @@ wbt_histogram_matching <- function(input, histo_file, output, wd=NULL, verbose_m
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -283,7 +283,7 @@ wbt_histogram_matching_two_images <- function(input1, input2, output, wd=NULL, v
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -322,7 +322,7 @@ wbt_min_max_contrast_stretch <- function(input, output, min_val, max_val, num_to
 #' @param method Options include 'brovey' (default) and 'ihs'.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -369,7 +369,7 @@ wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -409,7 +409,7 @@ wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both"
 #' @param greytones Number of greytones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -447,7 +447,7 @@ wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.
@@ -487,7 +487,7 @@ wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, 
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
 #'
 #' @return Returns the tool text outputs.

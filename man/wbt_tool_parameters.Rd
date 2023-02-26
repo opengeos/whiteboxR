@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_tool_parameters}
 \alias{wbt_tool_parameters}
-\title{Tool parameter descriptions for a specific tool in WhiteboxTools}
+\title{Tool parameter descriptions for a specific tool in 'WhiteboxTools'}
 \usage{
 wbt_tool_parameters(tool_name, quiet = FALSE)
 }
