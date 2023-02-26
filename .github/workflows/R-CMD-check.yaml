@@ -39,23 +39,22 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Install system dependencies
+      - name: Install system dependencies (macOS)
         if: runner.os == 'macOS'
         run: |
           brew install pkg-config
           brew install gdal
 
-      - name: Install remotes
-        run: Rscript -e "install.packages('remotes')"
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck
+          extra-packages: any::rcmdcheck, any::covr, local::.
           needs: check
 
       - name: Install WhiteboxTools
-        run: Rscript -e "remotes::install_local(force = TRUE)" -e "whitebox::install_whitebox()"
-
+        run:
+          whitebox::install_whitebox()
+        shell: Rscript {0}
+        
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
