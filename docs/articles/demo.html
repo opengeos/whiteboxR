@@ -213,7 +213,7 @@ equivalent method is <code><a href="https://rdrr.io/pkg/raster/man/filename.html
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># the SpatRaster retains a reference to the input file name</span></span>
 <span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp3Kg7MY/slope.tif"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/RtmpwCK3r3/slope.tif"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -420,7 +420,7 @@ string.</p>
 <span></span>
 <span><span class="co"># run breach_depressions tool</span></span>
 <span><span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.74s</span></span></code></pre></div>
+<span><span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.73s</span></span></code></pre></div>
 <p>The above method of creating
 <code>wbt_breach_depressions(dem = ..., output = ...)</code> to handle
 <code>wbt_run_tool("BreachDepressions", args = ...)</code> makes it easy
@@ -450,7 +450,7 @@ tool)<a class="anchor" aria-label="anchor" href="#run-wbt_breach_depressions-bre
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># run breach_depressions tool</span></span>
 <span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
-<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.75s</span></span></code></pre></div>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.80s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="visualize-results-with-terra">Visualize results with <code>terra</code><a class="anchor" aria-label="anchor" href="#visualize-results-with-terra"></a>
@@ -518,7 +518,7 @@ analysis of stream networks.</p>
 <span>  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,</span>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.75s</span></span></code></pre></div>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.70s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_pointer-calculate-flow-direction">
@@ -532,7 +532,7 @@ analysis of stream networks.</p>
 <span>  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,</span>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.14s</span></span></code></pre></div>
+<span><span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.16s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_flow_accumulation-flow-accumulation">
@@ -548,7 +548,7 @@ cumulative flow</p>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,</span>
 <span>  out_type <span class="op">=</span> <span class="st">"cells"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.48s</span></span></code></pre></div>
+<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.46s</span></span></code></pre></div>
 <div class="section level5">
 <h5 id="additional-flow-direction-and-accumulation-tools">Additional Flow Direction and Accumulation Tools<a class="anchor" aria-label="anchor" href="#additional-flow-direction-and-accumulation-tools"></a>
 </h5>
@@ -629,7 +629,7 @@ because it takes takes two inputs:</p>
 <span>  streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,</span>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.11s</span></span></code></pre></div>
+<span><span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.10s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="compare-results">Compare results<a class="anchor" aria-label="anchor" href="#compare-results"></a>
