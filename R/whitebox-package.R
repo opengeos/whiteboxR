@@ -26,15 +26,15 @@ whitebox.env <- new.env()
 #' This data set is a `data.frame` containing tools by name and associated R function name
 #' @name wbttools
 #' @docType data
-#' @format A data.frame with 535 observations of 8 variables
-#' - `"tool_name"` - WhiteboxTools tool name
+#' @section Variables:
+#' - `"tool_name"` - 'WhiteboxTools' tool name
 #' - `"function_name"` - R function name
-#' - `"toolbox_name"` - WhiteboxTools toolbox name
-#' - `"label"` - WhiteboxTools tool label
+#' - `"toolbox_name"` - 'WhiteboxTools' toolbox name
+#' - `"label"` - 'WhiteboxTools' tool label
 #' - `"description"` - Brief description
-#' - `"github"` - Link to related code on GitHub
-#' - `"book"` - Link to WhiteboxTools Manual
-#' - `"is_extension"` - Tool is part of General Toolset Extension (GTE), as opposed to the "open core"
+#' - `"github"` - Link to related code on 'GitHub'
+#' - `"book"` - Link to 'WhiteboxTools' Manual
+#' - `"is_extension"` - Tool is part of 'General Toolset Extension' (GTE), as opposed to the "open core"
 #' @source [WhiteboxTools](https://github.com/jblindsay/whitebox-tools/releases/)
 #' @seealso [wbttoolparameters] [wbt_list_tools()]
 #' @keywords datasets
@@ -48,9 +48,9 @@ whitebox.env <- new.env()
 #'
 #' @name wbttoolparameters
 #' @docType data
-#' @format A `data.frame` with 2169 observations of 13 variables
+#' @section Variables:
 #' - `"function_name"` - R function name
-#' - `"tool_name"` - WhiteboxTools tool name
+#' - `"tool_name"` - 'WhiteboxTools' tool name
 #' - `"name"` - parameter name
 #' - `"flags"` - flags used to specify parameter on command line; comma separated
 #' - `"description"` - parameter description
