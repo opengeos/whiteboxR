@@ -52,7 +52,7 @@ jobs:
 
       - name: Install WhiteboxTools
         run:
-          whitebox::install_whitebox(".")
+          whitebox::install_whitebox()
         shell: Rscript {0}
         
       - uses: r-lib/actions/check-r-package@v2
