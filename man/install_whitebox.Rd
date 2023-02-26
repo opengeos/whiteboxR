@@ -4,7 +4,7 @@
 \alias{wbt_install}
 \alias{install_whitebox}
 \alias{wbt_install_extension}
-\title{Download and Install WhiteboxTools}
+\title{Download and Install 'WhiteboxTools'}
 \usage{
 wbt_install(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 
@@ -31,10 +31,10 @@ wbt_install_extension(
 Prints out the location of the WhiteboxTools binary, if found. \code{NULL} otherwise.
 }
 \description{
-This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+This function downloads the 'WhiteboxTools' binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
 }
 \details{
-WhiteboxTools and all of its extensions can be uninstalled by passing the \code{remove=TRUE} argument.
+'WhiteboxTools' and all of its extensions can be uninstalled by passing the \code{remove=TRUE} argument.
 }
 \examples{
 \dontrun{

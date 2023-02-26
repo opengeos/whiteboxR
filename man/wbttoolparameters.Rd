@@ -3,7 +3,7 @@
 \docType{data}
 \name{wbttoolparameters}
 \alias{wbttoolparameters}
-\title{WhiteboxTools Tool Parameters}
+\title{'WhiteboxTools' Tool Parameters}
 \format{
 A \code{data.frame} with 2169 observations of 13 variables
 \itemize{

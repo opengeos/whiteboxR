@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_version}
 \alias{wbt_version}
-\title{Version information for WhiteboxTools}
+\title{Version information for 'WhiteboxTools'}
 \usage{
 wbt_version(extract = FALSE)
 }
@@ -10,10 +10,10 @@ wbt_version(extract = FALSE)
 \item{extract}{Extract semantic version number from first line of result? Default: \code{FALSE}}
 }
 \value{
-Returns the version information for WhiteboxTools as an R character vector.
+Returns the version information for 'WhiteboxTools' as an R character vector.
 }
 \description{
-Version information for WhiteboxTools
+Version information for 'WhiteboxTools'
 }
 \examples{
 \dontrun{

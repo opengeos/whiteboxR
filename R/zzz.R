@@ -8,11 +8,11 @@
   assign("whitebox.warned_version_difference", value = FALSE, envir = whitebox.env)
 }
 
-#' Check for WhiteboxTools executable path
+#' Check for 'WhiteboxTools' executable path
 #'
 #' @param silent logical. Print help on installation/setting path. Default `TRUE`.
 #' @seealso [wbt_exe_path()]
-#' @return logical if WhiteboxTools executable file exists.
+#' @return logical if 'WhiteboxTools' executable file exists.
 #' @export
 check_whitebox_binary <- function(silent = TRUE) {
 

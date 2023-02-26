@@ -21,7 +21,7 @@
 # whitebox package environment
 whitebox.env <- new.env()
 
-#' WhiteboxTools Tool List
+#' 'WhiteboxTools' Tool List
 #'
 #' This data set is a `data.frame` containing tools by name and associated R function name
 #' @name wbttools
@@ -40,7 +40,7 @@ whitebox.env <- new.env()
 #' @keywords datasets
 "wbttools"
 
-#' WhiteboxTools Tool Parameters
+#' 'WhiteboxTools' Tool Parameters
 #'
 #' This data set is a `data.frame` containing tool parameters and associated metadata
 #'

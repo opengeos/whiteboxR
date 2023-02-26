@@ -349,7 +349,7 @@ with open(wbt_py) as f:
                     "#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.\n"
                 )
                 ff.write(
-                    "#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.\n"
+                    "#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.\n"
                 )
                 ff.write(
                     "#' @param command_only Return command that would be executed by `system()` rather than running tool.\n"

@@ -3,7 +3,7 @@
 \docType{data}
 \name{wbttools}
 \alias{wbttools}
-\title{WhiteboxTools Tool List}
+\title{'WhiteboxTools' Tool List}
 \format{
 A data.frame with 535 observations of 8 variables
 \itemize{
