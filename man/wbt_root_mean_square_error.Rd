@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the RMSE and other accuracy statistics.
 }
+\keyword{MathandStatsTools}

@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Derives a vector contour coverage from a raster surface.
 }
+\keyword{GeomorphometricAnalysis}

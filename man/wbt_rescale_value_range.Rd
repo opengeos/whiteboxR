@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Performs a min-max contrast stretch on an input greytone image.
 }
+\keyword{MathandStatsTools}

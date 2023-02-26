@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Copies LiDAR tiles overlapping with a polygon into an output directory.
 }
+\keyword{LiDARTools}

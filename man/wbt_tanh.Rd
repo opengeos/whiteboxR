@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the hyperbolic tangent (tanh) of each values in a raster.
 }
+\keyword{MathandStatsTools}

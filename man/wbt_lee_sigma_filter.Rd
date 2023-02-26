@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Performs a Lee (Sigma) smoothing filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

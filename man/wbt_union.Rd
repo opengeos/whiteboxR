@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
 }
+\keyword{GISAnalysisOverlayTools}

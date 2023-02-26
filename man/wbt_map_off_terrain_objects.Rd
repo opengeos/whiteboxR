@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Maps off-terrain objects in a digital elevation model (DEM).
 }
+\keyword{GeomorphometricAnalysis}

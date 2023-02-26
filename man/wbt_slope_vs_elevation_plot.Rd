@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates a slope vs. elevation plot for one or more DEMs.
 }
+\keyword{GeomorphometricAnalysis}

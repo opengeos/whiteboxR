@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a percentage linear contrast stretch on input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

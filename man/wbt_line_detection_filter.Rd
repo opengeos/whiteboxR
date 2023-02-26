@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a line-detection filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

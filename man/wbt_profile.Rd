@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Plots profiles from digital surface models.
 }
+\keyword{GeomorphometricAnalysis}

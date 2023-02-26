@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

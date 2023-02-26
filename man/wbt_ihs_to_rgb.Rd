@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.
 }
+\keyword{ImageProcessingTools}

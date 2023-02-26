@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Identifies Strahler-order basins from an input stream network.
 }
+\keyword{HydrologicalAnalysis}

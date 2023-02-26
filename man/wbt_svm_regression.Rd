@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Performs a supervised SVM regression analysis using training site points and predictor rasters.
 }
+\keyword{MachineLearning}

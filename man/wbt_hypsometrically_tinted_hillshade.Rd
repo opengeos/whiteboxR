@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 Creates an colour shaded relief image from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

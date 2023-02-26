@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 This tool creates an animated GIF of shadows based on an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 This tool calculates the topographic openness index from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Burns-in streams at the sites of road embankments.
 }
+\keyword{HydrologicalAnalysis}

@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
 }
+\keyword{LiDARTools}

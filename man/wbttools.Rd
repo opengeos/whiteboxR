@@ -26,11 +26,12 @@ This data set is a \code{data.frame} containing tools by name and associated R f
 \item \code{"description"} - Brief description
 \item \code{"github"} - Link to related code on 'GitHub'
 \item \code{"book"} - Link to 'WhiteboxTools' Manual
-\item \code{"is_extension"} - Tool is part of (paid) 'General Toolset Extension' (GTE), as opposed to the "open core"
+\item \code{"is_extension"} - Tool is part of 'General Toolset Extension' (GTE), as opposed to the "open core"
 }
 }
 
 \seealso{
 \link{wbttoolparameters} \code{\link[=wbt_list_tools]{wbt_list_tools()}}
 }
+\keyword{General}
 \keyword{datasets}

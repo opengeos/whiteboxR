@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -89,38 +89,69 @@
     <h2>Arguments</h2>
     <dl><dt>inputs</dt>
 <dd><p>Name of the input raster file.</p></dd>
+
+
 <dt>output</dt>
 <dd><p>Output shapefile.</p></dd>
+
+
 <dt>samples</dt>
 <dd><p>Number of sample sites returned.</p></dd>
+
+
 <dt>iterations</dt>
 <dd><p>Maximum iterations (if stopping criteria not reached).</p></dd>
+
+
 <dt>seed</dt>
 <dd><p>Seed for RNG consistency.</p></dd>
+
+
 <dt>prob</dt>
 <dd><p>Probability of random resample or resampling worst strata between <code>[0,1]</code>.</p></dd>
+
+
 <dt>threshold</dt>
 <dd><p>Objective function values below the theshold stop the resampling iterations.</p></dd>
+
+
 <dt>temp</dt>
 <dd><p>Initial annealing temperature between <code>[0,1]</code>.</p></dd>
+
+
 <dt>temp_decay</dt>
 <dd><p>Annealing temperature decay proportion between <code>[0,1]</code>. Reduce temperature by this proportion each annealing cycle.</p></dd>
+
+
 <dt>cycle</dt>
 <dd><p>Number of iterations before decaying annealing temperature.</p></dd>
+
+
 <dt>average</dt>
 <dd><p>Weight the continuous objective funtion by the 1/N contributing strata.</p></dd>
+
+
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
+
+
 <dt>verbose_mode</dt>
 <dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+
+
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+
+
 <dt>command_only</dt>
 <dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the tool text outputs.</p>
+    
+
+<p>Returns the tool text outputs.</p>
     </div>
 
   </div>
@@ -135,7 +166,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

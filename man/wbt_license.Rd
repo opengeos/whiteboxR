@@ -17,3 +17,4 @@ License information for 'WhiteboxTools'
 wbt_license()
 }
 }
+\keyword{General}

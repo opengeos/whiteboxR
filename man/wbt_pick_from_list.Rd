@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Outputs the value from a raster stack specified by a position raster.
 }
+\keyword{GISAnalysisOverlayTools}

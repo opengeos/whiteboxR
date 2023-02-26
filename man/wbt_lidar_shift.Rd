@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Shifts the x,y,z coordinates of a LiDAR file.
 }
+\keyword{LiDARTools}

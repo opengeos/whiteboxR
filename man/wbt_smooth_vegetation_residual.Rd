@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
 }
+\keyword{GeomorphometricAnalysis}

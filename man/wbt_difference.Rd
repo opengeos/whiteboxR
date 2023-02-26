@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 }
+\keyword{GISAnalysisOverlayTools}

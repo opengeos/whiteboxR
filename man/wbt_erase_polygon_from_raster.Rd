@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Erases (cuts out) a vector polygon from a raster.
 }
+\keyword{GISAnalysisOverlayTools}

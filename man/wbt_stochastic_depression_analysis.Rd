@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a stochastic analysis of depressions within a DEM.
 }
+\keyword{HydrologicalAnalysis}

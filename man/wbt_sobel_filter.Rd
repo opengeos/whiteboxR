@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a Sobel edge-detection filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

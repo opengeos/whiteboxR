@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a simple edge-preserving mean filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

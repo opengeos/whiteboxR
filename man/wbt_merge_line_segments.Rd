@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Merges vector line segments into larger features.
 }
+\keyword{GISAnalysisOverlayTools}

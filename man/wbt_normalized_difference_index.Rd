@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
 }
+\keyword{ImageProcessingTools}

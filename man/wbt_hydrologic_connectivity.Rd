@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool evaluates hydrologic connectivity within a DEM.
 }
+\keyword{HydrologicalAnalysis}

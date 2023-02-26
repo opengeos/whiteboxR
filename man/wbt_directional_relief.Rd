@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates relief for cells in an input DEM for a specified direction.
 }
+\keyword{GeomorphometricAnalysis}

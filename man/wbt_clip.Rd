@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Extract all the features, or parts of features, that overlap with the features of the clip vector.
 }
+\keyword{GISAnalysisOverlayTools}

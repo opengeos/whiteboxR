@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 This tool sorts the points in a LiDAR file by the GPS time.
 }
+\keyword{LiDARTools}

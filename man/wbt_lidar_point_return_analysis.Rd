@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 This tool performs a quality control check on the return values of points in a LiDAR file.
 }
+\keyword{LiDARTools}

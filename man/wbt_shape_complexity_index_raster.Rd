@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the complexity of raster polygons or classes.
 }
+\keyword{GISAnalysisPatchShapeTools}

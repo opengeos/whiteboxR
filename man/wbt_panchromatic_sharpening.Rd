@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

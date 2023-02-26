@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
 }
+\keyword{GISAnalysisOverlayTools}

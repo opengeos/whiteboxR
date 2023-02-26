@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.
 }
+\keyword{HydrologicalAnalysis}

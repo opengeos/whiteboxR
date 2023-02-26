@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Measures distance to the nearest downslope stream cell.
 }
+\keyword{HydrologicalAnalysis}

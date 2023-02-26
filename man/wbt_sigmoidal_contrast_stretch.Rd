@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a sigmoidal contrast stretch on input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

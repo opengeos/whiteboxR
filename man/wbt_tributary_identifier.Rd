@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Assigns a unique identifier to each tributary in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

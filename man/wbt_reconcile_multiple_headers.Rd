@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
 }
+\keyword{PrecisionAgriculture}

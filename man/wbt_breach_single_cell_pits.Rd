@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Removes single-cell pits from an input DEM by breaching.
 }
+\keyword{HydrologicalAnalysis}

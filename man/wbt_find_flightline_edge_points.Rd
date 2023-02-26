@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Identifies points along a flightline's edge in a LAS file.
 }
+\keyword{LiDARTools}

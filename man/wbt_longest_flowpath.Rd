@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Delineates the longest flowpaths for a group of subbasins or watersheds.
 }
+\keyword{HydrologicalAnalysis}

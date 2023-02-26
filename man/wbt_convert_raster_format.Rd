@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts raster data from one format to another.
 }
+\keyword{DataTools}

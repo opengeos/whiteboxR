@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Assigns the Shreve stream magnitude to each link in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

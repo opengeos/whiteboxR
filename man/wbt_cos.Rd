@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the cosine (cos) of each values in a raster.
 }
+\keyword{MathandStatsTools}

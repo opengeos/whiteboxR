@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the narrowness of raster polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

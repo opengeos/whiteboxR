@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Interpolates vector points into a raster surface using an inverse-distance weighted scheme.
 }
+\keyword{GISAnalysis}

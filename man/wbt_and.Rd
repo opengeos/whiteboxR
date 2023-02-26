@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a logical AND operator on two Boolean raster images.
 }
+\keyword{MathandStatsTools}

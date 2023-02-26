@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts a raster image to its cumulative distribution function.
 }
+\keyword{MathandStatsTools}

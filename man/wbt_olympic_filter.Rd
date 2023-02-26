@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs an olympic smoothing filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

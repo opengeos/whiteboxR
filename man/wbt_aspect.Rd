@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates an aspect raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

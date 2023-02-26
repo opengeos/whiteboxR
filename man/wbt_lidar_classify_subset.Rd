@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
 }
+\keyword{LiDARTools}

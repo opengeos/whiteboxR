@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 An image sharpening technique that enhances edges.
 }
+\keyword{ImageProcessingToolsFilters}

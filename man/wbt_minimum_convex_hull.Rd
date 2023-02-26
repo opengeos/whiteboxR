@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates a vector convex polygon around vector features.
 }
+\keyword{GISAnalysis}

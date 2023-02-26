@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Returns the 2-argument inverse tangent (atan2).
 }
+\keyword{MathandStatsTools}

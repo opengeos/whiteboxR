@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Performs image correlation on two or more input images.
 }
+\keyword{MathandStatsTools}

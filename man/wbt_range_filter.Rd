@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
 }
+\keyword{ImageProcessingToolsFilters}

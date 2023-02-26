@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
 }
+\keyword{MathandStatsTools}

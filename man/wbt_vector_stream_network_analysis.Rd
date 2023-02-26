@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool performs common stream network analysis operations on an input vector stream file.
 }
+\keyword{StreamNetworkAnalysis}

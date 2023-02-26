@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Performs an in-place multiplication operation (input1 *= input2).
 }
+\keyword{MathandStatsTools}

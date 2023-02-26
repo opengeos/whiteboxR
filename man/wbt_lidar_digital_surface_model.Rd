@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
 }
+\keyword{LiDARTools}

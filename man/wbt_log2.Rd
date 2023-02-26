@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the base-2 logarithm of values in a raster.
 }
+\keyword{MathandStatsTools}

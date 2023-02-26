@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Creates a raster image based on the equation for a simple plane.
 }
+\keyword{GISAnalysis}

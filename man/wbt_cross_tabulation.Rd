@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a cross-tabulation on two categorical images.
 }
+\keyword{MathandStatsTools}

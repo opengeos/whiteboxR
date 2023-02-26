@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 This tool creates an image slider from two input images.
 }
+\keyword{ImageProcessingTools}

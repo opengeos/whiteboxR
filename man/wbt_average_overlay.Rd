@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the average for each grid cell from a group of raster images.
 }
+\keyword{GISAnalysisOverlayTools}

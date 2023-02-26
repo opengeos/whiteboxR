@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).
 }
+\keyword{GeomorphometricAnalysis}

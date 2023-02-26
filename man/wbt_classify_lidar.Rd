@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Classify points within a LiDAR point cloud based on point properties.
 }
+\keyword{LiDARTools}

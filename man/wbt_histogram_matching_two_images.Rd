@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 This tool alters the cumulative distribution function of a raster image to that of another image.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

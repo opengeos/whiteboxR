@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates a histogram for the field values of a vector's attribute table.
 }
+\keyword{MathandStatsTools}

@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

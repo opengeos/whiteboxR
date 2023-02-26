@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
 }
+\keyword{GISAnalysisOverlayTools}

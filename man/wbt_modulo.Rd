@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a modulo operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

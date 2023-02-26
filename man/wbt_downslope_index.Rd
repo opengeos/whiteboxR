@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates the Hjerdt et al. (2004) downslope index.
 }
+\keyword{GeomorphometricAnalysis}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Creates an image containing random values based on a turning-bands simulation.
 }
+\keyword{MathandStatsTools}

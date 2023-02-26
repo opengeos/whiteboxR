@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs an adaptive filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

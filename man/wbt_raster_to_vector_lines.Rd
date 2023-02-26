@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts a raster lines features into a vector of the POLYLINE shapetype.
 }
+\keyword{DataTools}

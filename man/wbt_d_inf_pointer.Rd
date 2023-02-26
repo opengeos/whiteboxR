@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
 }
+\keyword{HydrologicalAnalysis}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Creates a vector minimum bounding rectangle around vector features.
 }
+\keyword{GISAnalysis}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Traces downslope flowpaths from one or more target sites (i.e. seed points).
 }
+\keyword{HydrologicalAnalysis}

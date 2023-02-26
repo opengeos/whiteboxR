@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
 }
+\keyword{ImageProcessingToolsFilters}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

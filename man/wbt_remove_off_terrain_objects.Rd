@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Removes off-terrain objects from a raster digital elevation model (DEM).
 }
+\keyword{GeomorphometricAnalysis}

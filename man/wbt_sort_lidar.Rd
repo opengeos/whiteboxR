@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Sorts LiDAR points based on their properties.
 }
+\keyword{LiDARTools}

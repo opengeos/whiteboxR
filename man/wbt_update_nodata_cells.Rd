@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
 }
+\keyword{GISAnalysisOverlayTools}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Extracts descriptive statistics for a group of patches in a raster.
 }
+\keyword{MathandStatsTools}

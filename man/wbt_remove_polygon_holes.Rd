@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Removes holes within the features of a vector polygon file.
 }
+\keyword{DataTools}

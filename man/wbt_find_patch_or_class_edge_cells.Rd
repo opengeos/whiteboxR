@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Finds all cells located on the edge of patch or class features.
 }
+\keyword{GISAnalysisPatchShapeTools}

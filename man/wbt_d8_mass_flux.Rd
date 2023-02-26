@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a D8 mass flux calculation.
 }
+\keyword{HydrologicalAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Identifies drainage basins that drain to the DEM edge.
 }
+\keyword{HydrologicalAnalysis}

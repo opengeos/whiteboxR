@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.
 }
+\keyword{HydrologicalAnalysis}

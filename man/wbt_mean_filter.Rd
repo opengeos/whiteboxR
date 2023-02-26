@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a mean filter (low-pass filter) on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

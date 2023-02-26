@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.
 }
+\keyword{GeomorphometricAnalysis}

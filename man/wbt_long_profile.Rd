@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Plots the stream longitudinal profiles for one or more rivers.
 }
+\keyword{StreamNetworkAnalysis}

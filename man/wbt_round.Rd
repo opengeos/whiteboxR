@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Rounds the values in an input raster to the nearest integer value.
 }
+\keyword{MathandStatsTools}

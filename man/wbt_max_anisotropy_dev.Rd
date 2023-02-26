@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales.
 }
+\keyword{GeomorphometricAnalysis}

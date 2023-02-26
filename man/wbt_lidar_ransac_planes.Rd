@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
 }
+\keyword{LiDARTools}

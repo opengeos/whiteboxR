@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Identifies the viewshed for a point or set of points.
 }
+\keyword{GeomorphometricAnalysis}

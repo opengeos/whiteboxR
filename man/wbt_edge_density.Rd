@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the density of edges, or breaks-in-slope within DEMs.
 }
+\keyword{GeomorphometricAnalysis}

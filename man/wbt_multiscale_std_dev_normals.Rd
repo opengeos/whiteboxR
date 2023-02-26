@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Calculates surface roughness over a range of spatial scales.
 }
+\keyword{GeomorphometricAnalysis}

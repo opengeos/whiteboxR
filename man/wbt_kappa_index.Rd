@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a kappa index of agreement (KIA) analysis on two categorical raster files.
 }
+\keyword{MathandStatsTools}

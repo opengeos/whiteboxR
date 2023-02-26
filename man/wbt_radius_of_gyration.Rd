@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the distance of cells from their polygon's centroid.
 }
+\keyword{GISAnalysisPatchShapeTools}

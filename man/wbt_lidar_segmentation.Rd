@@ -62,3 +62,4 @@ Returns the tool text outputs.
 \description{
 Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
 }
+\keyword{LiDARTools}

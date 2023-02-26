@@ -1,6 +1,6 @@
-#' Boundary shape complexity
+#' @title Boundary shape complexity
 #'
-#' Calculates the complexity of the boundaries of raster polygons.
+#' @description Calculates the complexity of the boundaries of raster polygons.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -8,6 +8,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -27,15 +29,17 @@ wbt_boundary_shape_complexity <- function(input, output, wd=NULL, verbose_mode=F
 }
 
 
-#' Compactness ratio
+#' @title Compactness ratio
 #'
-#' Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.
+#' @description Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -54,9 +58,9 @@ wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 }
 
 
-#' Edge proportion
+#' @title Edge proportion
 #'
-#' Calculate the proportion of cells in a raster polygon that are edge cells.
+#' @description Calculate the proportion of cells in a raster polygon that are edge cells.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -65,6 +69,8 @@ wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -87,15 +93,17 @@ wbt_edge_proportion <- function(input, output, output_text=FALSE, wd=NULL, verbo
 }
 
 
-#' Elongation ratio
+#' @title Elongation ratio
 #'
-#' Calculates the elongation ratio for vector polygons.
+#' @description Calculates the elongation ratio for vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -114,9 +122,9 @@ wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
 }
 
 
-#' Find patch or class edge cells
+#' @title Find patch or class edge cells
 #'
-#' Finds all cells located on the edge of patch or class features.
+#' @description Finds all cells located on the edge of patch or class features.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -124,6 +132,8 @@ wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -143,15 +153,17 @@ wbt_find_patch_or_class_edge_cells <- function(input, output, wd=NULL, verbose_m
 }
 
 
-#' Hole proportion
+#' @title Hole proportion
 #'
-#' Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
+#' @description Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -170,15 +182,17 @@ wbt_hole_proportion <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 }
 
 
-#' Linearity index
+#' @title Linearity index
 #'
-#' Calculates the linearity index for vector polygons.
+#' @description Calculates the linearity index for vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -197,9 +211,9 @@ wbt_linearity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 }
 
 
-#' Narrowness index
+#' @title Narrowness index
 #'
-#' Calculates the narrowness of raster polygons.
+#' @description Calculates the narrowness of raster polygons.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -207,6 +221,8 @@ wbt_linearity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -226,15 +242,17 @@ wbt_narrowness_index <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Patch orientation
+#' @title Patch orientation
 #'
-#' Calculates the orientation of vector polygons.
+#' @description Calculates the orientation of vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -253,15 +271,17 @@ wbt_patch_orientation <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 }
 
 
-#' Perimeter area ratio
+#' @title Perimeter area ratio
 #'
-#' Calculates the perimeter-area ratio of vector polygons.
+#' @description Calculates the perimeter-area ratio of vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -280,9 +300,9 @@ wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Radius of gyration
+#' @title Radius of gyration
 #'
-#' Calculates the distance of cells from their polygon's centroid.
+#' @description Calculates the distance of cells from their polygon's centroid.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -291,6 +311,8 @@ wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -313,15 +335,17 @@ wbt_radius_of_gyration <- function(input, output, text_output=FALSE, wd=NULL, ve
 }
 
 
-#' Related circumscribing circle
+#' @title Related circumscribing circle
 #'
-#' Calculates the related circumscribing circle of vector polygons.
+#' @description Calculates the related circumscribing circle of vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -340,15 +364,17 @@ wbt_related_circumscribing_circle <- function(input, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Shape complexity index
+#' @title Shape complexity index
 #'
-#' Calculates overall polygon shape complexity or irregularity.
+#' @description Calculates overall polygon shape complexity or irregularity.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -367,9 +393,9 @@ wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=FALSE, compr
 }
 
 
-#' Shape complexity index raster
+#' @title Shape complexity index raster
 #'
-#' Calculates the complexity of raster polygons or classes.
+#' @description Calculates the complexity of raster polygons or classes.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -377,6 +403,8 @@ wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=FALSE, compr
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisPatchShapeTools
 #'
 #' @return Returns the tool text outputs.
 #' @export

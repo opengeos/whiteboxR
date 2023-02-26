@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Performs a modified k-means clustering operation on a multi-spectral dataset.
 }
+\keyword{MachineLearning}

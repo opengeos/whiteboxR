@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates a tangential curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

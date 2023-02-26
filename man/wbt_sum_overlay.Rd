@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the sum for each grid cell from a group of raster images.
 }
+\keyword{GISAnalysisOverlayTools}

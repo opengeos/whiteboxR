@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs Moran's I analysis on two or more input images.
 }
+\keyword{MathandStatsTools}

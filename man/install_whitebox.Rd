@@ -41,3 +41,4 @@ This function downloads the 'WhiteboxTools' binary if needed. Pre-compiled binar
 install_whitebox()
 }
 }
+\keyword{General}

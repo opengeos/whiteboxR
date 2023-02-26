@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Creates a colour-composite image from three bands of multispectral imagery.
 }
+\keyword{ImageProcessingTools}

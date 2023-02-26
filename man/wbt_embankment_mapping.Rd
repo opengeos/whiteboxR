@@ -59,3 +59,4 @@ Returns the tool text outputs.
 \description{
 Maps and/or removes road embankments from an input fine-resolution DEM.
 }
+\keyword{GeomorphometricAnalysis}

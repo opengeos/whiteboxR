@@ -59,3 +59,4 @@ Returns the tool text outputs.
 \description{
 Implements conditioned Latin Hypercube sampling.
 }
+\keyword{MathandStatsTools}

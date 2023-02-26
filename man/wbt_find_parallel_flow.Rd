@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Finds areas of parallel flow in D8 flow direction rasters.
 }
+\keyword{HydrologicalAnalysis}

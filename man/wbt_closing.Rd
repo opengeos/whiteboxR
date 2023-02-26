@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
 }
+\keyword{ImageProcessingTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM.
 }
+\keyword{GeomorphometricAnalysis}

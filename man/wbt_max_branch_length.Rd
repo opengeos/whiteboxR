@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Lindsay and Seibert's (2013) branch length index is used to map drainage divides or ridge lines.
 }
+\keyword{GeomorphometricAnalysis}

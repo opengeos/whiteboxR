@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Performs image regression analysis on two input images.
 }
+\keyword{MathandStatsTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the exponential (base e) of values in a raster.
 }
+\keyword{MathandStatsTools}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 This tool calculates the maximum upslope value from an input values raster along flowpaths.
 }
+\keyword{HydrologicalAnalysis}

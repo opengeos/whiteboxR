@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.
 }
+\keyword{PrecisionAgriculture}

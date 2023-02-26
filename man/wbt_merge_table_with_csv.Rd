@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Merge a vector's attribute table with a table contained within a CSV text file.
 }
+\keyword{DataTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the tangent (tan) of each values in a raster.
 }
+\keyword{MathandStatsTools}

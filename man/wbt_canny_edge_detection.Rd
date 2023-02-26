@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 This tool performs a Canny edge-detection filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

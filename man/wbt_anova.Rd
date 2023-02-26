@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs an analysis of variance (ANOVA) test on a raster dataset.
 }
+\keyword{MathandStatsTools}

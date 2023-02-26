@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 This tool can be used to map the short axis of polygon features.
 }
+\keyword{GISAnalysis}

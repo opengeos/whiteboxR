@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.
 }
+\keyword{GISAnalysis}

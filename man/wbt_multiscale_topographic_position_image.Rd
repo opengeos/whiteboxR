@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Creates a multiscale topographic position image from three DEVmax rasters of differing spatial scale ranges.
 }
+\keyword{GeomorphometricAnalysis}

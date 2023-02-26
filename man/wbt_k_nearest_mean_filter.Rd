@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 A k-nearest mean filter is a type of edge-preserving smoothing filter.
 }
+\keyword{ImageProcessingToolsFilters}

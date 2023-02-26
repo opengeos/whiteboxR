@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Creates a vector Voronoi diagram for a set of vector points.
 }
+\keyword{GISAnalysis}

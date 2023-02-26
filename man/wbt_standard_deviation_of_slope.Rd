@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the standard deviation of slope from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 This tool creates a raster of shadow areas based on an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

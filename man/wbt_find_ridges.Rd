@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Identifies potential ridge and peak grid cells.
 }
+\keyword{GeomorphometricAnalysis}

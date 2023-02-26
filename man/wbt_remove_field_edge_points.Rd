@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.
 }
+\keyword{PrecisionAgriculture}

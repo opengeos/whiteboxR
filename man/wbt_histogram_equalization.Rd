@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a histogram equalization contrast enhancement on an image.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

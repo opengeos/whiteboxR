@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Identifies the parts of features in common between two input vector layers.
 }
+\keyword{GISAnalysisOverlayTools}

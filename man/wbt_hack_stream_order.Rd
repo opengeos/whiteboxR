@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Assigns the Hack stream order to each tributary in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Identifies points where the features of two vector line layers intersect.
 }
+\keyword{GISAnalysisOverlayTools}

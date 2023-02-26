@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates the relative topographic position index from a DEM.
 }
+\keyword{GeomorphometricAnalysis}

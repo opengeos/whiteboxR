@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Filters crop yield values of point data derived from combine harvester yield monitors.
 }
+\keyword{PrecisionAgriculture}

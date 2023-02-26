@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Truncates the values in a raster to the desired number of decimal places.
 }
+\keyword{MathandStatsTools}

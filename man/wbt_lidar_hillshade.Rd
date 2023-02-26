@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.
 }
+\keyword{LiDARTools}

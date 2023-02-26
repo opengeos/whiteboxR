@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Thins points from high density areas within a LiDAR point cloud.
 }
+\keyword{LiDARTools}

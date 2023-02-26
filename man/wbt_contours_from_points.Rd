@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Creates a contour coverage from a set of input points.
 }
+\keyword{GeomorphometricAnalysis}

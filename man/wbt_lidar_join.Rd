@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Joins multiple LiDAR (LAS) files into a single LAS file.
 }
+\keyword{LiDARTools}

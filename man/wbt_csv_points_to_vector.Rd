@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Converts a CSV text file to vector points.
 }
+\keyword{DataTools}

@@ -26,6 +26,7 @@ whitebox.env <- new.env()
 #' This data set is a `data.frame` containing tools by name and associated R function name
 #' @name wbttools
 #' @docType data
+#' @keywords General datasets
 #' @section Variables:
 #' - `"tool_name"` - 'WhiteboxTools' tool name
 #' - `"function_name"` - R function name
@@ -48,6 +49,7 @@ whitebox.env <- new.env()
 #'
 #' @name wbttoolparameters
 #' @docType data
+#' @keywords General datasets
 #' @section Variables:
 #' - `"function_name"` - R function name
 #' - `"tool_name"` - 'WhiteboxTools' tool name

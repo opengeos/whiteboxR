@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Combines two or more input vectors of the same ShapeType creating a single, new output vector.
 }
+\keyword{DataTools}

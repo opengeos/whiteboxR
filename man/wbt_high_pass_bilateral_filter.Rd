@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
 }
+\keyword{ImageProcessingToolsFilters}

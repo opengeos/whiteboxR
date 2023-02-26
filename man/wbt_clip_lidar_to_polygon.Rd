@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Clips a LiDAR point cloud to a vector polygon or polygons.
 }
+\keyword{LiDARTools}

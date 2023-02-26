@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a write function memory insertion for single-band multi-date change detection.
 }
+\keyword{ImageProcessingTools}

@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Removes outliers (high and low points) in a LiDAR point cloud.
 }
+\keyword{LiDARTools}

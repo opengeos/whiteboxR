@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Extracts stream grid cells from a flow accumulation raster.
 }
+\keyword{StreamNetworkAnalysis}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 This tool performs an inverse principal component analysis on a series of input component images.
 }
+\keyword{MathandStatsTools}

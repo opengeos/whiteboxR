@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs an analysis of fetch or upwind distance to an obstacle.
 }
+\keyword{GeomorphometricAnalysis}

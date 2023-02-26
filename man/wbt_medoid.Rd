@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the medoid for a series of vector features contained in a shapefile.
 }
+\keyword{GISAnalysis}

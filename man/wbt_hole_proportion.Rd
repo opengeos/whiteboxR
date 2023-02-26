@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
 }
+\keyword{GISAnalysisPatchShapeTools}

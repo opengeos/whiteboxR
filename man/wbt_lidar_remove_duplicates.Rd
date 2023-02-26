@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Removes duplicate points from a LiDAR data set.
 }
+\keyword{LiDARTools}

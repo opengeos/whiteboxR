@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
 }
+\keyword{ImageProcessingTools}

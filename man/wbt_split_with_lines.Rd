@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Splits the lines or polygons in one layer using the lines in another layer.
 }
+\keyword{GISAnalysisOverlayTools}

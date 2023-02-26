@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 This tool can be used to approximate the harvester pass lines from yield points.
 }
+\keyword{PrecisionAgriculture}

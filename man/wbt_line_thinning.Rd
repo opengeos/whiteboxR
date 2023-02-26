@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
 }
+\keyword{ImageProcessingTools}

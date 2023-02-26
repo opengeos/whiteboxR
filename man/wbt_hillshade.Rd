@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates a hillshade raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Flattens lake polygons in a raster DEM.
 }
+\keyword{HydrologicalAnalysis}

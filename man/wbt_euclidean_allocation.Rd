@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.
 }
+\keyword{GISAnalysisDistanceTools}

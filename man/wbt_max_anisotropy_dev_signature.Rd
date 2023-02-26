@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Calculates the anisotropy in deviation from mean for points over a range of spatial scales.
 }
+\keyword{GeomorphometricAnalysis}

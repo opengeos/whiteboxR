@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool assesses a route for slope, elevation, and visibility variation.
 }
+\keyword{GeomorphometricAnalysis}

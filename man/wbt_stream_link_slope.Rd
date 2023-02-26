@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Estimates the average slope of each link (or tributary) in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

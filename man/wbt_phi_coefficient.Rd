@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 This tool performs a binary classification accuracy assessment.
 }
+\keyword{MathandStatsTools}

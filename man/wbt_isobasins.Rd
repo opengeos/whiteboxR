@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).
 }
+\keyword{HydrologicalAnalysis}

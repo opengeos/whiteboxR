@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
 }
+\keyword{LiDARTools}

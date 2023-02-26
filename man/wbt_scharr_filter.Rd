@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a Scharr edge-detection filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

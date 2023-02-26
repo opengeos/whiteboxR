@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Computes geomorphon patterns.
 }
+\keyword{GeomorphometricAnalysis}

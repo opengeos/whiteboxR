@@ -62,3 +62,4 @@ Returns the tool text outputs.
 \description{
 Identifies roof segments in a LiDAR point cloud.
 }
+\keyword{LiDARTools}

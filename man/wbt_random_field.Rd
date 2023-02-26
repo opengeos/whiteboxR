@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Creates an image containing random values.
 }
+\keyword{MathandStatsTools}

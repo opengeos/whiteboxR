@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 This tool can be used to normalize the yield points for a field.
 }
+\keyword{PrecisionAgriculture}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.
 }
+\keyword{GISAnalysisDistanceTools}

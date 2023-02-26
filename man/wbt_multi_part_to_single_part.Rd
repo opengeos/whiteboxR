@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Converts a vector file containing multi-part features into a vector containing only single-part features.
 }
+\keyword{DataTools}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Assign row or column number to cells.
 }
+\keyword{GISAnalysis}

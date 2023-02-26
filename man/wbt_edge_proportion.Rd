@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculate the proportion of cells in a raster polygon that are edge cells.
 }
+\keyword{GISAnalysisPatchShapeTools}

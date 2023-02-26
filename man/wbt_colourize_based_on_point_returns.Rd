@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Sets the RGB values of a LiDAR point cloud based on the point returns.
 }
+\keyword{LiDARTools}

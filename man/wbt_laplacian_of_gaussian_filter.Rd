@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a Laplacian-of-Gaussian (LoG) filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

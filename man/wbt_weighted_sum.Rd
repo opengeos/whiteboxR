@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a weighted-sum overlay on multiple input raster images.
 }
+\keyword{GISAnalysisOverlayTools}

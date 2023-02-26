@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
 }
+\keyword{GISAnalysisOverlayTools}

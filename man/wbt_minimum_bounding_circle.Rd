@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.
 }
+\keyword{GISAnalysis}

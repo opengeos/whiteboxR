@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the elevation percentile raster from a DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a Gaussian filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

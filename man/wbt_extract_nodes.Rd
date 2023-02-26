@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts vector lines or polygons into vertex points.
 }
+\keyword{GISAnalysis}

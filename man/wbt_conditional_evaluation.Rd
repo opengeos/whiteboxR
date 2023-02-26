@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool performs a conditional evaluation (if-then-else) operation on a raster.
 }
+\keyword{MathandStatsTools}

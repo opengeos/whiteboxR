@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
 }
+\keyword{HydrologicalAnalysis}

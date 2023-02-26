@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.
 }
+\keyword{DataTools}

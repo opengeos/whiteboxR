@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Resamples one or more input images into a destination image.
 }
+\keyword{ImageProcessingTools}

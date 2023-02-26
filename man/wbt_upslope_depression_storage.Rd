@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Estimates the average upslope depression storage depth.
 }
+\keyword{HydrologicalAnalysis}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.
 }
+\keyword{MathandStatsTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).
 }
+\keyword{MathandStatsTools}

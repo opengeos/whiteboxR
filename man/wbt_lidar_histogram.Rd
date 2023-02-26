@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Creates a histogram of LiDAR data.
 }
+\keyword{LiDARTools}

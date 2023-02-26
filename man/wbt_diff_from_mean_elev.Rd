@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates difference from mean elevation (equivalent to a high-pass filter).
 }
+\keyword{GeomorphometricAnalysis}

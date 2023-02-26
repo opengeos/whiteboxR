@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Measures the average slope gradient from each grid cell to all upslope divide cells.
 }
+\keyword{HydrologicalAnalysis}

@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Prints the tags within a GeoTIFF.
 }
+\keyword{DataTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
 }
+\keyword{GISAnalysisOverlayTools}

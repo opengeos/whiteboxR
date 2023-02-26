@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Extracts the values of raster(s) at vector point locations.
 }
+\keyword{GISAnalysis}

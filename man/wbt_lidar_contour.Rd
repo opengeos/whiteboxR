@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 This tool creates a vector contour coverage from an input LiDAR point file.
 }
+\keyword{LiDARTools}

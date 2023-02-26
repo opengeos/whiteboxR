@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the maximum upslope change in elevation between a grid cell and its eight downslope neighbors.
 }
+\keyword{GeomorphometricAnalysis}

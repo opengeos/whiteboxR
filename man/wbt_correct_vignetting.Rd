@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Corrects the darkening of images towards corners.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

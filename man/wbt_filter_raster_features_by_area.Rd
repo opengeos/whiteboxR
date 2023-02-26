@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Removes small-area features from a raster.
 }
+\keyword{GISAnalysis}

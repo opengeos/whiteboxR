@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
 }
+\keyword{HydrologicalAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Measures the depth of sinks (depressions) in a DEM.
 }
+\keyword{HydrologicalAnalysis}

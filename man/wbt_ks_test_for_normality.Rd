@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Evaluates whether the values in a raster are normally distributed.
 }
+\keyword{MathandStatsTools}

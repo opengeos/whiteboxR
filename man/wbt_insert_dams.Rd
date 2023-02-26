@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates the impoundment size resulting from damming a DEM.
 }
+\keyword{HydrologicalAnalysis}

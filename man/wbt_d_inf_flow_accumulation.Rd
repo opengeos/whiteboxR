@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Calculates a D-infinity flow accumulation raster from an input DEM.
 }
+\keyword{HydrologicalAnalysis}

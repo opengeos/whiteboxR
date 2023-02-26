@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

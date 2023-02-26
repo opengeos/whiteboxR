@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Estimates the relative visibility of sites in a DEM.
 }
+\keyword{GeomorphometricAnalysis}

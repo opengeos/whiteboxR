@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.
 }
+\keyword{LiDARTools}

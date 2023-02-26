@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs an emboss filter on an image, similar to a hillshade operation.
 }
+\keyword{ImageProcessingToolsFilters}

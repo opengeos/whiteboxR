@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Classifies hillslope zones based on slope, profile curvature, and plan curvature.
 }
+\keyword{GeomorphometricAnalysis}

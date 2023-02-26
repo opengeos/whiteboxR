@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
 }
+\keyword{HydrologicalAnalysis}

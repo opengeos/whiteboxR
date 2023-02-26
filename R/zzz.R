@@ -14,6 +14,7 @@
 #' @seealso [wbt_exe_path()]
 #' @return logical if 'WhiteboxTools' executable file exists.
 #' @export
+#' @keywords General
 check_whitebox_binary <- function(silent = TRUE) {
 
   # look in standard locations

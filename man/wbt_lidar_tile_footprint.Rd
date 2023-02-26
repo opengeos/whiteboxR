@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

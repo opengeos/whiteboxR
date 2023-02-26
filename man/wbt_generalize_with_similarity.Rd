@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Generalizes a raster containing class or object features by removing small features using similarity criteria of neighbouring features.
 }
+\keyword{ImageProcessingToolsClassification}

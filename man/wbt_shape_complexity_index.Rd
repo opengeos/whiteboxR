@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Calculates overall polygon shape complexity or irregularity.
 }
+\keyword{GISAnalysisPatchShapeTools}

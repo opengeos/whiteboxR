@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates deviation from mean elevation.
 }
+\keyword{GeomorphometricAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates a hypsometric curve for one or more DEMs.
 }
+\keyword{GeomorphometricAnalysis}

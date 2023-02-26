@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Extract whole watersheds for a set of outlet points.
 }
+\keyword{HydrologicalAnalysis}

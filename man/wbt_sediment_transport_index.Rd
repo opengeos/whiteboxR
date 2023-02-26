@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the sediment transport index.
 }
+\keyword{GeomorphometricAnalysis}

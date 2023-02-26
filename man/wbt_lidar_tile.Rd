@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Tiles a LiDAR LAS file into multiple LAS files.
 }
+\keyword{LiDARTools}

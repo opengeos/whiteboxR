@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a principal component analysis (PCA) on a multi-spectral dataset.
 }
+\keyword{MathandStatsTools}

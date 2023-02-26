@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts one or more zlidar files into the LAS data format.
 }
+\keyword{LiDARTools}

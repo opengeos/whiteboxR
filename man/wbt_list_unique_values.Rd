@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Lists the unique values contained in a field within a vector's attribute table.
 }
+\keyword{MathandStatsTools}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Converts one or more ASCII files containing LiDAR points into LAS files.
 }
+\keyword{LiDARTools}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the downslope flowpath length from each cell to basin outlet.
 }
+\keyword{HydrologicalAnalysis}

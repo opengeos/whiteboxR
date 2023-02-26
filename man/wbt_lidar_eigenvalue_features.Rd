@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculate eigenvalue-based metrics from a LiDAR point cloud.
 }
+\keyword{LiDARTools}

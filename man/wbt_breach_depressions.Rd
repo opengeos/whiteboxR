@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.
 }
+\keyword{HydrologicalAnalysis}

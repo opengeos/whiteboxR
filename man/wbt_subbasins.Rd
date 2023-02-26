@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Identifies the catchments, or sub-basin, draining to each link in a stream network.
 }
+\keyword{HydrologicalAnalysis}

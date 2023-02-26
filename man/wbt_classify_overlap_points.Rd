@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Classifies or filters LAS points in regions of overlapping flight lines.
 }
+\keyword{LiDARTools}

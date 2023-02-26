@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the total length of channels upstream.
 }
+\keyword{StreamNetworkAnalysis}

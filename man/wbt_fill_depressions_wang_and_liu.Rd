@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.
 }
+\keyword{HydrologicalAnalysis}

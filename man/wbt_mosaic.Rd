@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Mosaics two or more images together.
 }
+\keyword{ImageProcessingTools}

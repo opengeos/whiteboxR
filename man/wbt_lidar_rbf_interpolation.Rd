@@ -62,3 +62,4 @@ Returns the tool text outputs.
 \description{
 Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

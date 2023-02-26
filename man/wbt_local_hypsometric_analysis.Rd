@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 This tool calculates a local, neighbourhood-based hypsometric integral raster.
 }
+\keyword{GeomorphometricAnalysis}

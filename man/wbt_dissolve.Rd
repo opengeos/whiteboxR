@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Removes the interior, or shared, boundaries within a vector polygon coverage.
 }
+\keyword{GISAnalysis}

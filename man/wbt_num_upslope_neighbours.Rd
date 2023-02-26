@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the number of upslope neighbours to each grid cell in a DEM.
 }
+\keyword{GeomorphometricAnalysis}

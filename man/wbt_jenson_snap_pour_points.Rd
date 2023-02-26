@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell.
 }
+\keyword{HydrologicalAnalysis}

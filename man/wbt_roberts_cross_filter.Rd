@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a Robert's cross edge-detection filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a high pass median filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

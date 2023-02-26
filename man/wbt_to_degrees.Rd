@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts a raster from radians to degrees.
 }
+\keyword{MathandStatsTools}

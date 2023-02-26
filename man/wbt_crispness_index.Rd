@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is.
 }
+\keyword{MathandStatsTools}

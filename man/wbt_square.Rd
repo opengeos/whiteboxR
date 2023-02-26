@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Squares the values in a raster.
 }
+\keyword{MathandStatsTools}

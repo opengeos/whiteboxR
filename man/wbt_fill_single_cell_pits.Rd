@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Raises pit cells to the elevation of their lowest neighbour.
 }
+\keyword{HydrologicalAnalysis}

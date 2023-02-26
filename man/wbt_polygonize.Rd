@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
 }
+\keyword{GISAnalysisOverlayTools}

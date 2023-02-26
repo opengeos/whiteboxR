@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Calculates the perimeter of vector polygons.
 }
+\keyword{GISAnalysis}

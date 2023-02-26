@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Performs image correlation on two input images neighbourhood search windows.
 }
+\keyword{MathandStatsTools}

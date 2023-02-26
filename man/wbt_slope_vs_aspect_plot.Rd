@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 This tool creates a slope-aspect relation plot from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Calculates the related circumscribing circle of vector polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

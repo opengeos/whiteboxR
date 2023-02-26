@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Transforms an input image (summed area table) into its integral image equivalent.
 }
+\keyword{ImageProcessingTools}

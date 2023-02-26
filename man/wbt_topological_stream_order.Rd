@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Assigns each link in a stream network its topological order.
 }
+\keyword{StreamNetworkAnalysis}

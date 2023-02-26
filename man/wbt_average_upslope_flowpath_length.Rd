@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Measures the average length of all upslope flowpaths draining each grid cell.
 }
+\keyword{HydrologicalAnalysis}

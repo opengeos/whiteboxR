@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
 }
+\keyword{HydrologicalAnalysis}

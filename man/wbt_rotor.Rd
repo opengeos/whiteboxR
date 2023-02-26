@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 This tool calculates rotor from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

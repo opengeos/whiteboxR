@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 This tool can be used to inspect the overlap in spectral signatures of training sites for various classes.
 }
+\keyword{ImageProcessingToolsClassification}

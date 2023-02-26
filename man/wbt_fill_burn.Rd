@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Burns streams into a DEM using the FillBurn (Saunders, 1999) method.
 }
+\keyword{HydrologicalAnalysis}

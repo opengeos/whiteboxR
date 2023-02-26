@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the perimeters of polygons or classes within a raster image.
 }
+\keyword{GISAnalysis}

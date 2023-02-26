@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the distance to the furthest upstream channel head for each stream cell.
 }
+\keyword{StreamNetworkAnalysis}

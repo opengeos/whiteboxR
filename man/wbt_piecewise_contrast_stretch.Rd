@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a piecewise contrast stretch on an input image.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
 }
+\keyword{LiDARTools}

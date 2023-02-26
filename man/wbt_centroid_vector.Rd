@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 }
+\keyword{GISAnalysis}

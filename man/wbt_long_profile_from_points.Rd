@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Plots the longitudinal profiles from flow-paths initiating from a set of vector points.
 }
+\keyword{StreamNetworkAnalysis}

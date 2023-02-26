@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.
 }
+\keyword{DataTools}

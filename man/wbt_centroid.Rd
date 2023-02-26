@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the centroid, or average location, of raster polygon objects.
 }
+\keyword{GISAnalysis}

@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Estimates the slope of each grid cell in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

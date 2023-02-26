@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme.
 }
+\keyword{GISAnalysis}

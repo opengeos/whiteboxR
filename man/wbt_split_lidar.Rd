@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Splits LiDAR points up into a series of new files based on their properties.
 }
+\keyword{LiDARTools}

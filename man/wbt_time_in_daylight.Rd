@@ -59,3 +59,4 @@ Returns the tool text outputs.
 \description{
 Calculates the proportion of time a location is not within an area of shadow.
 }
+\keyword{GeomorphometricAnalysis}

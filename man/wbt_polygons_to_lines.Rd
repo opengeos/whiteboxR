@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts vector polygons to polylines.
 }
+\keyword{DataTools}

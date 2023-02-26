@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Returns the natural logarithm of values in a raster.
 }
+\keyword{MathandStatsTools}

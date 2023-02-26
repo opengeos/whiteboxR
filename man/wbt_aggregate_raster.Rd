@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Aggregates a raster to a lower resolution.
 }
+\keyword{GISAnalysis}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a standard-deviation contrast stretch on input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

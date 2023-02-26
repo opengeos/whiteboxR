@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

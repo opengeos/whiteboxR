@@ -47,3 +47,4 @@ Returns the tool text outputs.
 \description{
 Breaches the depressions in a DEM using a least-cost pathway method.
 }
+\keyword{HydrologicalAnalysis}

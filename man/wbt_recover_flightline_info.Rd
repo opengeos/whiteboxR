@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Associates LiDAR points by their flightlines.
 }
+\keyword{LiDARTools}

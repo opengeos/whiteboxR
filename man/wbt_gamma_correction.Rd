@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a gamma correction on an input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

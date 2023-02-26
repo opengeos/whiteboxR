@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 This tool resolves topological errors and inconsistencies associated with digitized vector streams.
 }
+\keyword{StreamNetworkAnalysis}

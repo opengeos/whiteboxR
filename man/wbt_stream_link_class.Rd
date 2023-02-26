@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Identifies the exterior/interior links and nodes in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

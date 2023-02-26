@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a Difference of Gaussian (DoG) filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

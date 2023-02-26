@@ -59,3 +59,4 @@ Returns the tool text outputs.
 \description{
 Interpolates vector points into a raster surface using a radial basis function scheme.
 }
+\keyword{GISAnalysis}

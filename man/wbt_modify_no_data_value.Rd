@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts nodata values in a raster to zero.
 }
+\keyword{DataTools}

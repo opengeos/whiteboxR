@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
 }
+\keyword{ImageProcessingToolsFilters}

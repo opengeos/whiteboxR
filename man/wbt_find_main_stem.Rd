@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Finds the main stem, based on stream lengths, of each stream network.
 }
+\keyword{StreamNetworkAnalysis}

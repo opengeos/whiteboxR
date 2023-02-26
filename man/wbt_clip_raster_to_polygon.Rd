@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Clips a raster to a vector polygon.
 }
+\keyword{GISAnalysisOverlayTools}

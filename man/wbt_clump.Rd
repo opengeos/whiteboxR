@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Groups cells that form discrete areas, assigning them unique identifiers.
 }
+\keyword{GISAnalysis}

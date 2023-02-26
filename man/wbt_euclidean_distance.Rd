@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the Shih and Wu (2004) Euclidean distance transform.
 }
+\keyword{GISAnalysisDistanceTools}

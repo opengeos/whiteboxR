@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Extends vector lines by a specified distance.
 }
+\keyword{GISAnalysis}

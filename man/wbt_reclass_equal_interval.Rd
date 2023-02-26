@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Reclassifies the values in a raster image based on equal-ranges.
 }
+\keyword{GISAnalysis}

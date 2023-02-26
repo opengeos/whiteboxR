@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Estimates the trend surface of an input raster file.
 }
+\keyword{MathandStatsTools}

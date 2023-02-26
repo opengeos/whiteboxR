@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 This tool calculates the unsphericity curvature from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

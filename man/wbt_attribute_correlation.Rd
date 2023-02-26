@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Performs a correlation analysis on attribute fields from a vector database.
 }
+\keyword{MathandStatsTools}

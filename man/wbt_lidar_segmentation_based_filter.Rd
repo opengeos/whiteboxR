@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Identifies ground points within LiDAR point clouds using a segmentation based approach.
 }
+\keyword{LiDARTools}

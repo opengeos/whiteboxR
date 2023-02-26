@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Removes null features and lines/polygons with fewer than the required number of vertices.
 }
+\keyword{DataTools}

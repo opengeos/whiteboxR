@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Estimates a trend surface from vector points.
 }
+\keyword{MathandStatsTools}

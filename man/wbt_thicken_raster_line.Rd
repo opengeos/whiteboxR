@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Thickens single-cell wide lines within a raster image.
 }
+\keyword{ImageProcessingTools}

@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Performs a correlation on two input vector attributes within a neighbourhood search windows.
 }
+\keyword{MathandStatsTools}

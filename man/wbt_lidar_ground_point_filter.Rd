@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Identifies ground points within LiDAR dataset using a slope-based method.
 }
+\keyword{LiDARTools}

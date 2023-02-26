@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the circular variance of aspect at a scale for a DEM.
 }
+\keyword{GeomorphometricAnalysis}

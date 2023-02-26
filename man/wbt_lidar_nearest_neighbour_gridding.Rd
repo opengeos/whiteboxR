@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Removes points in a LAS file with certain specified class values.
 }
+\keyword{LiDARTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Identifies NoData valued pixels in an image.
 }
+\keyword{MathandStatsTools}

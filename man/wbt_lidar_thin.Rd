@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Thins a LiDAR point cloud, reducing point density.
 }
+\keyword{LiDARTools}

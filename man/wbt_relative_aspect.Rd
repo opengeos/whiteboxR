@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates relative aspect (relative to a user-specified direction) from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

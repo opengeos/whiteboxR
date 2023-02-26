@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
 }
+\keyword{ImageProcessingTools}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value.
 }
+\keyword{MathandStatsTools}

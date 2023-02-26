@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates the relative stream power index.
 }
+\keyword{GeomorphometricAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
 }
+\keyword{ImageProcessingTools}

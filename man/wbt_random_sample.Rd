@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates an image containing randomly located sample grid cells with unique IDs.
 }
+\keyword{MathandStatsTools}

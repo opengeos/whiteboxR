@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Hex-bins a set of vector points.
 }
+\keyword{GISAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the spherical standard deviation of surface normals for a DEM.
 }
+\keyword{GeomorphometricAnalysis}

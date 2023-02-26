@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a region-growing based segmentation on a set of multi-spectral images.
 }
+\keyword{ImageProcessingToolsClassification}

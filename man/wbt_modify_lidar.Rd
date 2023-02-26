@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Modify points within a LiDAR point cloud based on point properties.
 }
+\keyword{LiDARTools}

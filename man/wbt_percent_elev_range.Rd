@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates percent of elevation range from a DEM.
 }
+\keyword{GeomorphometricAnalysis}

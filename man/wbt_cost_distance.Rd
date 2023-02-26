@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs cost-distance accumulation on a cost surface and a group of source cells.
 }
+\keyword{GISAnalysisDistanceTools}

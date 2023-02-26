@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Identifies corner patterns in boolean images using hit-and-miss pattern matching.
 }
+\keyword{ImageProcessingToolsFilters}

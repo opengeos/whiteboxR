@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

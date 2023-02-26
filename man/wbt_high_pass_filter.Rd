@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a high-pass filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

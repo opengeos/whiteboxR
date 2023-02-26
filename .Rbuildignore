@@ -13,6 +13,7 @@
 ^doc$
 ^Meta$
 ^data-raw$
+^_pkgdown\.yml$
 WBT/
 CRAN/
 PY2R/

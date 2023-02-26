@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates a the surface area ratio of each grid cell in an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

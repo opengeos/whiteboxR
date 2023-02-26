@@ -20,3 +20,4 @@ All available tools in 'WhiteboxTools'
 wbt_list_tools("lidar")
 }
 }
+\keyword{General}

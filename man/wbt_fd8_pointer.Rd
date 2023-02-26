@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates an FD8 flow pointer raster from an input DEM.
 }
+\keyword{HydrologicalAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.
 }
+\keyword{GISAnalysis}

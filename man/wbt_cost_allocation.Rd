@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.
 }
+\keyword{GISAnalysisDistanceTools}

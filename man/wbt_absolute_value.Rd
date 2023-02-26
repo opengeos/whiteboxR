@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the absolute value of every cell in a raster.
 }
+\keyword{MathandStatsTools}

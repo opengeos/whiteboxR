@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Reclassifies a LiDAR points that lie within vector building footprints.
 }
+\keyword{LiDARTools}

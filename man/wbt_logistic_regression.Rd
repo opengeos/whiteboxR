@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Performs a logistic regression analysis using training site polygons/points and predictor rasters.
 }
+\keyword{MachineLearning}

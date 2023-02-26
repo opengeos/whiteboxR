@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Standardizes the values in an input raster by converting to z-scores.
 }
+\keyword{MathandStatsTools}

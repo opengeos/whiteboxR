@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 This tool calculates the shape index from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

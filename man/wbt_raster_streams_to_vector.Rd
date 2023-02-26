@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Converts a raster stream file into a vector file.
 }
+\keyword{StreamNetworkAnalysis}

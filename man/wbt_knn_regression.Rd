@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.
 }
+\keyword{MachineLearning}

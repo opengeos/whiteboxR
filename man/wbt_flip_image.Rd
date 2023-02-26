@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Reflects an image in the vertical or horizontal axis.
 }
+\keyword{ImageProcessingTools}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Calculates the distance of stream grid cells to the channel network outlet cell.
 }
+\keyword{StreamNetworkAnalysis}

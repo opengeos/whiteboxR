@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Rasterizes vector streams based on Lindsay (2016) method.
 }
+\keyword{StreamNetworkAnalysis}

@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Performs a supervised random forest classification using training site polygons/points and predictor rasters.
 }
+\keyword{MachineLearning}

@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Merge a vector's attribute table with another table based on a common field.
 }
+\keyword{DataTools}

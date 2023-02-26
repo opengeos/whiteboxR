@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Reclassifies the values in a raster image using reclass ranges in a text file.
 }
+\keyword{GISAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Performs a balance contrast enhancement on a colour-composite image of multispectral data.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

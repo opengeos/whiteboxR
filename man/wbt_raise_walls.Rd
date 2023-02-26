@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Raises walls in a DEM along a line or around a polygon, e.g. a watershed.
 }
+\keyword{HydrologicalAnalysis}

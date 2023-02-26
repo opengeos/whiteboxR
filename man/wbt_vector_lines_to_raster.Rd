@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Converts a vector containing polylines into a raster.
 }
+\keyword{DataTools}

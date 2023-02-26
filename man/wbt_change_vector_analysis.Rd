@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a change vector analysis on a two-date multi-spectral dataset.
 }
+\keyword{ImageProcessingTools}

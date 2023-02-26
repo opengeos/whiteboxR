@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Identifies the depressions in a DEM, giving each feature a unique identifier.
 }
+\keyword{HydrologicalAnalysis}

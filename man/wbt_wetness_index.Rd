@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Calculates the topographic wetness index, Ln(A / tan(slope)).
 }
+\keyword{GeomorphometricAnalysis}

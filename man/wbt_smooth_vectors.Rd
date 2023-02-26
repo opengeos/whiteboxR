@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.
 }
+\keyword{GISAnalysis}

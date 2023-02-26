@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
 }
+\keyword{LiDARTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Creates a histogram from raster values.
 }
+\keyword{MathandStatsTools}

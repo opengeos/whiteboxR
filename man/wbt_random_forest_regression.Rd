@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 Performs a random forest regression analysis using training site data and predictor rasters.
 }
+\keyword{MachineLearning}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a 2-sample K-S test for significant differences on two input rasters.
 }
+\keyword{MathandStatsTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Performs an in-place addition operation (input1 += input2).
 }
+\keyword{MathandStatsTools}

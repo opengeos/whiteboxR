@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Removes any coincident, or nearly coincident, points from a vector points file.
 }
+\keyword{GISAnalysis}

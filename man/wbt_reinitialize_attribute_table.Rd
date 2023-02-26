@@ -29,3 +29,4 @@ Returns the tool text outputs.
 \description{
 Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
 }
+\keyword{DataTools}

@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 This tool converts one or more LAS files into the LAZ format.
 }
+\keyword{LiDARTools}

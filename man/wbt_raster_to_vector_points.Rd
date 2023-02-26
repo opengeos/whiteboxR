@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Converts a raster dataset to a vector of the POINT shapetype.
 }
+\keyword{DataTools}

@@ -44,3 +44,4 @@ Returns the tool text outputs.
 \description{
 Creates a rectangular vector grid.
 }
+\keyword{GISAnalysis}

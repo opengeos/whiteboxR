@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs either a white or black top-hat transform on an input image.
 }
+\keyword{ImageProcessingTools}

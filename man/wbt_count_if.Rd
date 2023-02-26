@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Counts the number of occurrences of a specified value in a cell-stack of rasters.
 }
+\keyword{GISAnalysisOverlayTools}

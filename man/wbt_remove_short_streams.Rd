@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Removes short first-order streams from a stream network.
 }
+\keyword{StreamNetworkAnalysis}

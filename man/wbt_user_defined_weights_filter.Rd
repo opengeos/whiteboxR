@@ -41,3 +41,4 @@ Returns the tool text outputs.
 \description{
 Performs a user-defined weights filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

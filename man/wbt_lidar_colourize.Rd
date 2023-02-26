@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
 }
+\keyword{LiDARTools}

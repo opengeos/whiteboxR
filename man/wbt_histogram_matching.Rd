@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Alters the statistical distribution of a raster image matching it to a specified PDF.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

@@ -50,3 +50,4 @@ Returns the tool text outputs.
 \description{
 This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
 }
+\keyword{LiDARTools}

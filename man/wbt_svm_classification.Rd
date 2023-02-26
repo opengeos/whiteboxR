@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Performs an SVM binary classification using training site polygons/points and multiple input images.
 }
+\keyword{MachineLearning}

@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs a supervised parallelepiped classification using training site polygons and multi-spectral images.
 }
+\keyword{ImageProcessingToolsClassification}

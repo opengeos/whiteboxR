@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Performs cost-distance pathway analysis using a series of destination grid cells.
 }
+\keyword{GISAnalysisDistanceTools}

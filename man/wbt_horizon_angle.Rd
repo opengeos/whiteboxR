@@ -38,3 +38,4 @@ Returns the tool text outputs.
 \description{
 Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

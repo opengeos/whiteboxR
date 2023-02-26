@@ -32,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Creates a vector polygon footprint of the area covered by a raster grid or vector layer.
 }
+\keyword{GISAnalysis}

@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.
 }
+\keyword{LiDARTools}
