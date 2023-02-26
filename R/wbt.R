@@ -62,14 +62,14 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
     if (is.na(exv)) {
       exv <- "<NA>"
     }
-    pkv <- try(attr(wbttools, 'version'), silent = TRUE)
+    pkv <- try(attr(whitebox::wbttools, 'version'), silent = TRUE)
     if (is.na(pkv)) {
       pkv <- "<NA>"
     }
     if (!inherits(exv, 'try-error') && !inherits(pkv, 'try-error')) {
       if (isTRUE(exv != pkv)) {
         warned <- try(get("whitebox.warned_version_difference",
-                          envir = whitebox.env),
+                          envir = whitebox::whitebox.env),
                       silent = TRUE)
         if (inherits(warned, 'try-error')) {
           warned <- FALSE
@@ -80,7 +80,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
                   " than the package data (", pkv, ").")
           try(assign("whitebox.warned_version_difference",
                      value = TRUE,
-                     envir = whitebox.env),
+                     envir = whitebox::whitebox.env),
               silent = TRUE)
         }
       }
