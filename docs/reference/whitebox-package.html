@@ -18,7 +18,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -77,7 +77,7 @@
 <li><p><strong><code>whitebox.verbose</code></strong> - logical. Should standard output from calls to executable be <code><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat()</a></code> out for readability? Default is result of <code><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive()</a></code>. Individual tools may have <code>verbose_mode</code> setting that produce only single-line output when <code>FALSE</code>. These argument values are left as the defaults defined in the package documentation for that function. When <code>whitebox.verbose=FALSE</code> no output is produced. Set the value of <code>whitebox.verbose</code> with <code><a href="wbt_init.html">wbt_verbose()</a></code> <code>verbose</code> argument.</p></li>
 <li><p><strong><code>whitebox.compress_rasters</code></strong> - logical. Should raster output from WhiteboxTools be compressed? Default: <code>FALSE</code>. Set the value of <code>whitebox.compress_rasters</code> with <code><a href="wbt_init.html">wbt_compress_rasters()</a></code> <code>compress_rasters</code> argument.</p></li>
 <li><p><strong><code>whitebox.max_procs</code></strong> - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: <code>-1</code> uses all of the available cores.</p></li>
-</ul><p>The package options can be overridden with system environment variables: <code>R_WHITEBOX_EXE_PATH</code> (character) and <code>R_WHITEBOX_VERBOSE</code>, respectively.</p>
+</ul><p>The package options can be overridden with system environment variables: <code>R_WHITEBOX_EXE_PATH</code>, <code>R_WHITEBOX_WD</code>, <code>R_WHITEBOX_VERBOSE</code>, <code>R_WHITEBOX_COMPRESS_RASTERS</code> and <code>R_WHITEBOX_MAX_PROCS</code>.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -101,7 +101,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
