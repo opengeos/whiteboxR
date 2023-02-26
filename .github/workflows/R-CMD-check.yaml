@@ -47,11 +47,12 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::covr, local::.
+          extra-packages: any::rcmdcheck, any::covr, any::remotes
           needs: check
 
       - name: Install WhiteboxTools
-        run:
+        run: |
+          remotes::install_local(".")
           whitebox::install_whitebox()
         shell: Rscript {0}
         
