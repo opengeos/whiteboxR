@@ -236,7 +236,7 @@ On Windows you can add the path to `whitebox_tools.exe` as a new entry `R_WHITEB
 
 On Linux/Mac you can set `R_WHITEBOX_EXE_PATH` directly with `export R_WHITEBOX_EXE_PATH="/path/to/whitebox_tools"`.
 
- - Note that if you set your `$PATH` in you regular shell profile (`.profile`/`.bashrc`/`.zshrc`) then it will _not_ be sourced by RStudio by default.
+ - Note that if you set your `$PATH` in you regular shell profile (`.profile`/`.bashrc`/`.zshrc`) then it will _not_ be sourced by _RStudio_ for your R session by default.
 
 This requires that you have the Unix tool `which` or one of its analogues.
 
@@ -256,7 +256,7 @@ Specify input and output paths, and any other options, as specified in package r
 
  - https://giswqs.github.io/whiteboxR/reference/index.html
 
-For instance, "BreachDepressions" is used below to process a Digital Elevation Model (DEM) before we identify flow pathways. This algorithm is prefered over depression filling in most cases and uses Lindsay's (2016) algorithm.
+For instance, "BreachDepressions" is used below to process a Digital Elevation Model (DEM) before we identify flow pathways. This tool uses uses Lindsay's (2016) algorithm, which is preferred over depression filling in most cases.
 
 ```{r}
 # sample DEM file path in package extdata folder
