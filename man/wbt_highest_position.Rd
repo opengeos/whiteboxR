@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_highest_position}
 \alias{wbt_highest_position}
-\title{Highest position
-Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.}
+\title{Highest position}
 \usage{
 wbt_highest_position(
   inputs,
@@ -31,7 +30,6 @@ wbt_highest_position(
 Returns the tool text outputs.
 }
 \description{
-Highest position
 Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
 }
 \keyword{GISAnalysisOverlayTools}

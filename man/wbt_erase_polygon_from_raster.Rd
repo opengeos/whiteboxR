@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_erase_polygon_from_raster}
 \alias{wbt_erase_polygon_from_raster}
-\title{Erase polygon from raster
-Erases (cuts out) a vector polygon from a raster.}
+\title{Erase polygon from raster}
 \usage{
 wbt_erase_polygon_from_raster(
   input,
@@ -34,7 +33,6 @@ wbt_erase_polygon_from_raster(
 Returns the tool text outputs.
 }
 \description{
-Erase polygon from raster
 Erases (cuts out) a vector polygon from a raster.
 }
 \keyword{GISAnalysisOverlayTools}

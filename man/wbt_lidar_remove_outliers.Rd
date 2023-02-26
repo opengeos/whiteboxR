@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_remove_outliers}
 \alias{wbt_lidar_remove_outliers}
-\title{Lidar remove outliers
-Removes outliers (high and low points) in a LiDAR point cloud.}
+\title{Lidar remove outliers}
 \usage{
 wbt_lidar_remove_outliers(
   input,
@@ -43,7 +42,6 @@ wbt_lidar_remove_outliers(
 Returns the tool text outputs.
 }
 \description{
-Lidar remove outliers
 Removes outliers (high and low points) in a LiDAR point cloud.
 }
 \keyword{LiDARTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_balance_contrast_enhancement}
 \alias{wbt_balance_contrast_enhancement}
-\title{Balance contrast enhancement
-Performs a balance contrast enhancement on a colour-composite image of multispectral data.}
+\title{Balance contrast enhancement}
 \usage{
 wbt_balance_contrast_enhancement(
   input,
@@ -34,7 +33,6 @@ wbt_balance_contrast_enhancement(
 Returns the tool text outputs.
 }
 \description{
-Balance contrast enhancement
 Performs a balance contrast enhancement on a colour-composite image of multispectral data.
 }
 \keyword{ImageProcessingToolsImageEnhancement}

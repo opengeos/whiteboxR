@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_standard_deviation_filter}
 \alias{wbt_standard_deviation_filter}
-\title{Standard deviation filter
-Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.}
+\title{Standard deviation filter}
 \usage{
 wbt_standard_deviation_filter(
   input,
@@ -37,7 +36,6 @@ wbt_standard_deviation_filter(
 Returns the tool text outputs.
 }
 \description{
-Standard deviation filter
 Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
 }
 \keyword{ImageProcessingToolsFilters}

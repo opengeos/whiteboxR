@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_sin}
 \alias{wbt_sin}
-\title{Sin
-Returns the sine (sin) of each values in a raster.}
+\title{Sin}
 \usage{
 wbt_sin(
   input,
@@ -31,7 +30,6 @@ wbt_sin(
 Returns the tool text outputs.
 }
 \description{
-Sin
 Returns the sine (sin) of each values in a raster.
 }
 \keyword{MathandStatsTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_stochastic_depression_analysis}
 \alias{wbt_stochastic_depression_analysis}
-\title{Stochastic depression analysis
-Performs a stochastic analysis of depressions within a DEM.}
+\title{Stochastic depression analysis}
 \usage{
 wbt_stochastic_depression_analysis(
   dem,
@@ -40,7 +39,6 @@ wbt_stochastic_depression_analysis(
 Returns the tool text outputs.
 }
 \description{
-Stochastic depression analysis
 Performs a stochastic analysis of depressions within a DEM.
 }
 \keyword{HydrologicalAnalysis}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_create_rectangular_vector_grid}
 \alias{wbt_create_rectangular_vector_grid}
-\title{Create rectangular vector grid
-Creates a rectangular vector grid.}
+\title{Create rectangular vector grid}
 \usage{
 wbt_create_rectangular_vector_grid(
   input,
@@ -43,7 +42,6 @@ wbt_create_rectangular_vector_grid(
 Returns the tool text outputs.
 }
 \description{
-Create rectangular vector grid
 Creates a rectangular vector grid.
 }
 \keyword{GISAnalysis}

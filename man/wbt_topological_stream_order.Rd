@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_topological_stream_order}
 \alias{wbt_topological_stream_order}
-\title{Topological stream order
-Assigns each link in a stream network its topological order.}
+\title{Topological stream order}
 \usage{
 wbt_topological_stream_order(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_topological_stream_order(
 Returns the tool text outputs.
 }
 \description{
-Topological stream order
 Assigns each link in a stream network its topological order.
 }
 \keyword{StreamNetworkAnalysis}

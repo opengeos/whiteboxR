@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_point_density}
 \alias{wbt_lidar_point_density}
-\title{Lidar point density
-Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.}
+\title{Lidar point density}
 \usage{
 wbt_lidar_point_density(
   input,
@@ -49,7 +48,6 @@ wbt_lidar_point_density(
 Returns the tool text outputs.
 }
 \description{
-Lidar point density
 Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
 \keyword{LiDARTools}

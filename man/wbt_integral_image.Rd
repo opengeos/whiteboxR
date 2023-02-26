@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_integral_image}
 \alias{wbt_integral_image}
-\title{Integral image
-Transforms an input image (summed area table) into its integral image equivalent.}
+\title{Integral image}
 \usage{
 wbt_integral_image(
   input,
@@ -31,7 +30,6 @@ wbt_integral_image(
 Returns the tool text outputs.
 }
 \description{
-Integral image
 Transforms an input image (summed area table) into its integral image equivalent.
 }
 \keyword{ImageProcessingTools}

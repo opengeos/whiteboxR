@@ -1,5 +1,6 @@
-#' Adaptive filter
-#' Performs an adaptive filter on an image.
+#' @title Adaptive filter
+#'
+#' @description Performs an adaptive filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -40,8 +41,9 @@ wbt_adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold
 }
 
 
-#' Bilateral filter
-#' A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
+#' @title Bilateral filter
+#'
+#' @description A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -78,8 +80,9 @@ wbt_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, 
 }
 
 
-#' Canny edge detection
-#' This tool performs a Canny edge-detection filter on an input image.
+#' @title Canny edge detection
+#'
+#' @description This tool performs a Canny edge-detection filter on an input image.
 #'
 #' @param input Name of the input raster image file.
 #' @param output Name of the output raster image file.
@@ -124,8 +127,9 @@ wbt_canny_edge_detection <- function(input, output, sigma=0.5, low=0.05, high=0.
 }
 
 
-#' Conservative smoothing filter
-#' Performs a conservative-smoothing filter on an image.
+#' @title Conservative smoothing filter
+#'
+#' @description Performs a conservative-smoothing filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -162,8 +166,9 @@ wbt_conservative_smoothing_filter <- function(input, output, filterx=3, filtery=
 }
 
 
-#' Corner detection
-#' Identifies corner patterns in boolean images using hit-and-miss pattern matching.
+#' @title Corner detection
+#'
+#' @description Identifies corner patterns in boolean images using hit-and-miss pattern matching.
 #'
 #' @param input Input boolean image.
 #' @param output Output raster file.
@@ -192,8 +197,9 @@ wbt_corner_detection <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Diff of gaussian filter
-#' Performs a Difference of Gaussian (DoG) filter on an image.
+#' @title Diff of gaussian filter
+#'
+#' @description Performs a Difference of Gaussian (DoG) filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -230,8 +236,9 @@ wbt_diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, w
 }
 
 
-#' Diversity filter
-#' Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
+#' @title Diversity filter
+#'
+#' @description Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -268,8 +275,9 @@ wbt_diversity_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 }
 
 
-#' Edge preserving mean filter
-#' Performs a simple edge-preserving mean filter on an input image.
+#' @title Edge preserving mean filter
+#'
+#' @description Performs a simple edge-preserving mean filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -304,8 +312,9 @@ wbt_edge_preserving_mean_filter <- function(input, output, threshold, filter=11,
 }
 
 
-#' Emboss filter
-#' Performs an emboss filter on an image, similar to a hillshade operation.
+#' @title Emboss filter
+#'
+#' @description Performs an emboss filter on an image, similar to a hillshade operation.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -342,8 +351,9 @@ wbt_emboss_filter <- function(input, output, direction="n", clip=0.0, wd=NULL, v
 }
 
 
-#' Fast almost gaussian filter
-#' Performs a fast approximate Gaussian filter on an image.
+#' @title Fast almost gaussian filter
+#'
+#' @description Performs a fast approximate Gaussian filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -376,8 +386,9 @@ wbt_fast_almost_gaussian_filter <- function(input, output, sigma=1.8, wd=NULL, v
 }
 
 
-#' Gaussian filter
-#' Performs a Gaussian filter on an image.
+#' @title Gaussian filter
+#'
+#' @description Performs a Gaussian filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -410,8 +421,9 @@ wbt_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL, verbose_mode
 }
 
 
-#' High pass bilateral filter
-#' Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
+#' @title High pass bilateral filter
+#'
+#' @description Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -448,8 +460,9 @@ wbt_high_pass_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma
 }
 
 
-#' High pass filter
-#' Performs a high-pass filter on an input image.
+#' @title High pass filter
+#'
+#' @description Performs a high-pass filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -486,8 +499,9 @@ wbt_high_pass_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 }
 
 
-#' High pass median filter
-#' Performs a high pass median filter on an input image.
+#' @title High pass median filter
+#'
+#' @description Performs a high pass median filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -528,8 +542,9 @@ wbt_high_pass_median_filter <- function(input, output, filterx=11, filtery=11, s
 }
 
 
-#' K nearest mean filter
-#' A k-nearest mean filter is a type of edge-preserving smoothing filter.
+#' @title K nearest mean filter
+#'
+#' @description A k-nearest mean filter is a type of edge-preserving smoothing filter.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -570,8 +585,9 @@ wbt_k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5
 }
 
 
-#' Laplacian filter
-#' Performs a Laplacian filter on an image.
+#' @title Laplacian filter
+#'
+#' @description Performs a Laplacian filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -608,8 +624,9 @@ wbt_laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, wd=N
 }
 
 
-#' Laplacian of gaussian filter
-#' Performs a Laplacian-of-Gaussian (LoG) filter on an image.
+#' @title Laplacian of gaussian filter
+#'
+#' @description Performs a Laplacian-of-Gaussian (LoG) filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -642,8 +659,9 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL,
 }
 
 
-#' Lee sigma filter
-#' Performs a Lee (Sigma) smoothing filter on an image.
+#' @title Lee sigma filter
+#'
+#' @description Performs a Lee (Sigma) smoothing filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -688,8 +706,9 @@ wbt_lee_sigma_filter <- function(input, output, filterx=11, filtery=11, sigma=10
 }
 
 
-#' Line detection filter
-#' Performs a line-detection filter on an image.
+#' @title Line detection filter
+#'
+#' @description Performs a line-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -730,8 +749,9 @@ wbt_line_detection_filter <- function(input, output, variant="vertical", absvals
 }
 
 
-#' Majority filter
-#' Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
+#' @title Majority filter
+#'
+#' @description Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -768,8 +788,9 @@ wbt_majority_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, 
 }
 
 
-#' Maximum filter
-#' Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
+#' @title Maximum filter
+#'
+#' @description Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -806,8 +827,9 @@ wbt_maximum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 }
 
 
-#' Mean filter
-#' Performs a mean filter (low-pass filter) on an input image.
+#' @title Mean filter
+#'
+#' @description Performs a mean filter (low-pass filter) on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -844,8 +866,9 @@ wbt_mean_filter <- function(input, output, filterx=3, filtery=3, wd=NULL, verbos
 }
 
 
-#' Median filter
-#' Performs a median filter on an input image.
+#' @title Median filter
+#'
+#' @description Performs a median filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -886,8 +909,9 @@ wbt_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 }
 
 
-#' Minimum filter
-#' Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
+#' @title Minimum filter
+#'
+#' @description Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -924,8 +948,9 @@ wbt_minimum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 }
 
 
-#' Olympic filter
-#' Performs an olympic smoothing filter on an image.
+#' @title Olympic filter
+#'
+#' @description Performs an olympic smoothing filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -962,8 +987,9 @@ wbt_olympic_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 }
 
 
-#' Percentile filter
-#' Performs a percentile filter on an input image.
+#' @title Percentile filter
+#'
+#' @description Performs a percentile filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1004,8 +1030,9 @@ wbt_percentile_filter <- function(input, output, filterx=11, filtery=11, sig_dig
 }
 
 
-#' Prewitt filter
-#' Performs a Prewitt edge-detection filter on an image.
+#' @title Prewitt filter
+#'
+#' @description Performs a Prewitt edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1038,8 +1065,9 @@ wbt_prewitt_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FA
 }
 
 
-#' Range filter
-#' Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
+#' @title Range filter
+#'
+#' @description Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1076,8 +1104,9 @@ wbt_range_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 }
 
 
-#' Roberts cross filter
-#' Performs a Robert's cross edge-detection filter on an image.
+#' @title Roberts cross filter
+#'
+#' @description Performs a Robert's cross edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1110,8 +1139,9 @@ wbt_roberts_cross_filter <- function(input, output, clip=0.0, wd=NULL, verbose_m
 }
 
 
-#' Scharr filter
-#' Performs a Scharr edge-detection filter on an image.
+#' @title Scharr filter
+#'
+#' @description Performs a Scharr edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1144,8 +1174,9 @@ wbt_scharr_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FAL
 }
 
 
-#' Sobel filter
-#' Performs a Sobel edge-detection filter on an image.
+#' @title Sobel filter
+#'
+#' @description Performs a Sobel edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1182,8 +1213,9 @@ wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, wd=NULL, ve
 }
 
 
-#' Standard deviation filter
-#' Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
+#' @title Standard deviation filter
+#'
+#' @description Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1220,8 +1252,9 @@ wbt_standard_deviation_filter <- function(input, output, filterx=11, filtery=11,
 }
 
 
-#' Total filter
-#' Performs a total filter on an input image.
+#' @title Total filter
+#'
+#' @description Performs a total filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1258,8 +1291,9 @@ wbt_total_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 }
 
 
-#' Unsharp masking
-#' An image sharpening technique that enhances edges.
+#' @title Unsharp masking
+#'
+#' @description An image sharpening technique that enhances edges.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1300,8 +1334,9 @@ wbt_unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, thresho
 }
 
 
-#' User ined weights filter
-#' Performs a user-defined weights filter on an image.
+#' @title User ined weights filter
+#'
+#' @description Performs a user-defined weights filter on an image.
 #'
 #' @param input Input raster file.
 #' @param weights Input weights file.

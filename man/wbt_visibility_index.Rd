@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_visibility_index}
 \alias{wbt_visibility_index}
-\title{Visibility index
-Estimates the relative visibility of sites in a DEM.}
+\title{Visibility index}
 \usage{
 wbt_visibility_index(
   dem,
@@ -37,7 +36,6 @@ wbt_visibility_index(
 Returns the tool text outputs.
 }
 \description{
-Visibility index
 Estimates the relative visibility of sites in a DEM.
 }
 \keyword{GeomorphometricAnalysis}

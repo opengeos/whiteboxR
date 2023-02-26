@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_shift}
 \alias{wbt_lidar_shift}
-\title{Lidar shift
-Shifts the x,y,z coordinates of a LiDAR file.}
+\title{Lidar shift}
 \usage{
 wbt_lidar_shift(
   input,
@@ -40,7 +39,6 @@ wbt_lidar_shift(
 Returns the tool text outputs.
 }
 \description{
-Lidar shift
 Shifts the x,y,z coordinates of a LiDAR file.
 }
 \keyword{LiDARTools}

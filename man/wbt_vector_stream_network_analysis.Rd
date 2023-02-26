@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_vector_stream_network_analysis}
 \alias{wbt_vector_stream_network_analysis}
-\title{Vector stream network analysis
-This tool performs common stream network analysis operations on an input vector stream file.}
+\title{Vector stream network analysis}
 \usage{
 wbt_vector_stream_network_analysis(
   streams,
@@ -40,7 +39,6 @@ wbt_vector_stream_network_analysis(
 Returns the tool text outputs.
 }
 \description{
-Vector stream network analysis
 This tool performs common stream network analysis operations on an input vector stream file.
 }
 \keyword{StreamNetworkAnalysis}

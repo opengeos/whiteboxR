@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_total_filter}
 \alias{wbt_total_filter}
-\title{Total filter
-Performs a total filter on an input image.}
+\title{Total filter}
 \usage{
 wbt_total_filter(
   input,
@@ -37,7 +36,6 @@ wbt_total_filter(
 Returns the tool text outputs.
 }
 \description{
-Total filter
 Performs a total filter on an input image.
 }
 \keyword{ImageProcessingToolsFilters}

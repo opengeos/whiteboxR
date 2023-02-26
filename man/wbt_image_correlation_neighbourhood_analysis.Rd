@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_image_correlation_neighbourhood_analysis}
 \alias{wbt_image_correlation_neighbourhood_analysis}
-\title{Image correlation neighbourhood analysis
-Performs image correlation on two input images neighbourhood search windows.}
+\title{Image correlation neighbourhood analysis}
 \usage{
 wbt_image_correlation_neighbourhood_analysis(
   input1,
@@ -43,7 +42,6 @@ wbt_image_correlation_neighbourhood_analysis(
 Returns the tool text outputs.
 }
 \description{
-Image correlation neighbourhood analysis
 Performs image correlation on two input images neighbourhood search windows.
 }
 \keyword{MathandStatsTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_difference_from_mean}
 \alias{wbt_max_difference_from_mean}
-\title{Max difference from mean
-Calculates the maximum difference from mean elevation over a range of spatial scales.}
+\title{Max difference from mean}
 \usage{
 wbt_max_difference_from_mean(
   dem,
@@ -43,7 +42,6 @@ wbt_max_difference_from_mean(
 Returns the tool text outputs.
 }
 \description{
-Max difference from mean
 Calculates the maximum difference from mean elevation over a range of spatial scales.
 }
 \keyword{GeomorphometricAnalysis}

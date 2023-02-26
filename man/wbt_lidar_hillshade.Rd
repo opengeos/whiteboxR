@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_hillshade}
 \alias{wbt_lidar_hillshade}
-\title{Lidar hillshade
-Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.}
+\title{Lidar hillshade}
 \usage{
 wbt_lidar_hillshade(
   input,
@@ -40,7 +39,6 @@ wbt_lidar_hillshade(
 Returns the tool text outputs.
 }
 \description{
-Lidar hillshade
 Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.
 }
 \keyword{LiDARTools}

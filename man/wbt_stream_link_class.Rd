@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_stream_link_class}
 \alias{wbt_stream_link_class}
-\title{Stream link class
-Identifies the exterior/interior links and nodes in a stream network.}
+\title{Stream link class}
 \usage{
 wbt_stream_link_class(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_stream_link_class(
 Returns the tool text outputs.
 }
 \description{
-Stream link class
 Identifies the exterior/interior links and nodes in a stream network.
 }
 \keyword{StreamNetworkAnalysis}

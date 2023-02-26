@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_square}
 \alias{wbt_square}
-\title{Square
-Squares the values in a raster.}
+\title{Square}
 \usage{
 wbt_square(
   input,
@@ -31,7 +30,6 @@ wbt_square(
 Returns the tool text outputs.
 }
 \description{
-Square
 Squares the values in a raster.
 }
 \keyword{MathandStatsTools}

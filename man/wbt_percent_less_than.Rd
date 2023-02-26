@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_percent_less_than}
 \alias{wbt_percent_less_than}
-\title{Percent less than
-Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.}
+\title{Percent less than}
 \usage{
 wbt_percent_less_than(
   inputs,
@@ -34,7 +33,6 @@ wbt_percent_less_than(
 Returns the tool text outputs.
 }
 \description{
-Percent less than
 Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
 }
 \keyword{GISAnalysisOverlayTools}

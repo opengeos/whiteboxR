@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_local_quadratic_regression}
 \alias{wbt_local_quadratic_regression}
-\title{Local quadratic regression
-This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).}
+\title{Local quadratic regression}
 \usage{
 wbt_local_quadratic_regression(
   dem,
@@ -34,7 +33,6 @@ wbt_local_quadratic_regression(
 Returns the tool text outputs.
 }
 \description{
-Local quadratic regression
 This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
 }
 \keyword{GeomorphometricAnalysis}

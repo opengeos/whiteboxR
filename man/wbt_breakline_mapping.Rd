@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_breakline_mapping}
 \alias{wbt_breakline_mapping}
-\title{Breakline mapping
-This tool maps breaklines from an input DEM.}
+\title{Breakline mapping}
 \usage{
 wbt_breakline_mapping(
   dem,
@@ -37,7 +36,6 @@ wbt_breakline_mapping(
 Returns the tool text outputs.
 }
 \description{
-Breakline mapping
 This tool maps breaklines from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

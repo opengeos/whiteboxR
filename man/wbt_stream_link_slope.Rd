@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_stream_link_slope}
 \alias{wbt_stream_link_slope}
-\title{Stream link slope
-Estimates the average slope of each link (or tributary) in a stream network.}
+\title{Stream link slope}
 \usage{
 wbt_stream_link_slope(
   d8_pntr,
@@ -43,7 +42,6 @@ wbt_stream_link_slope(
 Returns the tool text outputs.
 }
 \description{
-Stream link slope
 Estimates the average slope of each link (or tributary) in a stream network.
 }
 \keyword{StreamNetworkAnalysis}

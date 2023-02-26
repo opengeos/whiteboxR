@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_in_place_divide}
 \alias{wbt_in_place_divide}
-\title{In place divide
-Performs an in-place division operation (input1 /= input2).}
+\title{In place divide}
 \usage{
 wbt_in_place_divide(
   input1,
@@ -31,7 +30,6 @@ wbt_in_place_divide(
 Returns the tool text outputs.
 }
 \description{
-In place divide
 Performs an in-place division operation (input1 /= input2).
 }
 \keyword{MathandStatsTools}

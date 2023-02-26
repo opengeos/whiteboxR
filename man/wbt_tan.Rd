@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_tan}
 \alias{wbt_tan}
-\title{Tan
-Returns the tangent (tan) of each values in a raster.}
+\title{Tan}
 \usage{
 wbt_tan(
   input,
@@ -31,7 +30,6 @@ wbt_tan(
 Returns the tool text outputs.
 }
 \description{
-Tan
 Returns the tangent (tan) of each values in a raster.
 }
 \keyword{MathandStatsTools}

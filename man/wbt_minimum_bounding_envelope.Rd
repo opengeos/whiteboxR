@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_minimum_bounding_envelope}
 \alias{wbt_minimum_bounding_envelope}
-\title{Minimum bounding envelope
-Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.}
+\title{Minimum bounding envelope}
 \usage{
 wbt_minimum_bounding_envelope(
   input,
@@ -34,7 +33,6 @@ wbt_minimum_bounding_envelope(
 Returns the tool text outputs.
 }
 \description{
-Minimum bounding envelope
 Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.
 }
 \keyword{GISAnalysis}

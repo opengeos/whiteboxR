@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_stream_power_index}
 \alias{wbt_stream_power_index}
-\title{Stream power index
-Calculates the relative stream power index.}
+\title{Stream power index}
 \usage{
 wbt_stream_power_index(
   sca,
@@ -37,7 +36,6 @@ wbt_stream_power_index(
 Returns the tool text outputs.
 }
 \description{
-Stream power index
 Calculates the relative stream power index.
 }
 \keyword{GeomorphometricAnalysis}

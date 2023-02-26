@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_cos}
 \alias{wbt_cos}
-\title{Cos
-Returns the cosine (cos) of each values in a raster.}
+\title{Cos}
 \usage{
 wbt_cos(
   input,
@@ -31,7 +30,6 @@ wbt_cos(
 Returns the tool text outputs.
 }
 \description{
-Cos
 Returns the cosine (cos) of each values in a raster.
 }
 \keyword{MathandStatsTools}

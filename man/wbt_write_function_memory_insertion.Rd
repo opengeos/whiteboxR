@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_write_function_memory_insertion}
 \alias{wbt_write_function_memory_insertion}
-\title{Write function memory insertion
-Performs a write function memory insertion for single-band multi-date change detection.}
+\title{Write function memory insertion}
 \usage{
 wbt_write_function_memory_insertion(
   input1,
@@ -37,7 +36,6 @@ wbt_write_function_memory_insertion(
 Returns the tool text outputs.
 }
 \description{
-Write function memory insertion
 Performs a write function memory insertion for single-band multi-date change detection.
 }
 \keyword{ImageProcessingTools}

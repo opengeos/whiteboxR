@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_snap_pour_points}
 \alias{wbt_snap_pour_points}
-\title{Snap pour points
-Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.}
+\title{Snap pour points}
 \usage{
 wbt_snap_pour_points(
   pour_pts,
@@ -37,7 +36,6 @@ wbt_snap_pour_points(
 Returns the tool text outputs.
 }
 \description{
-Snap pour points
 Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
 }
 \keyword{HydrologicalAnalysis}

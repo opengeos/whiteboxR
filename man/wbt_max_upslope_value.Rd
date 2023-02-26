@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_max_upslope_value}
 \alias{wbt_max_upslope_value}
-\title{Max upslope value
-This tool calculates the maximum upslope value from an input values raster along flowpaths.}
+\title{Max upslope value}
 \usage{
 wbt_max_upslope_value(
   dem,
@@ -34,7 +33,6 @@ wbt_max_upslope_value(
 Returns the tool text outputs.
 }
 \description{
-Max upslope value
 This tool calculates the maximum upslope value from an input values raster along flowpaths.
 }
 \keyword{HydrologicalAnalysis}

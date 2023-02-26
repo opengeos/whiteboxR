@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_correct_vignetting}
 \alias{wbt_correct_vignetting}
-\title{Correct vignetting
-Corrects the darkening of images towards corners.}
+\title{Correct vignetting}
 \usage{
 wbt_correct_vignetting(
   input,
@@ -43,7 +42,6 @@ wbt_correct_vignetting(
 Returns the tool text outputs.
 }
 \description{
-Correct vignetting
 Corrects the darkening of images towards corners.
 }
 \keyword{ImageProcessingToolsImageEnhancement}

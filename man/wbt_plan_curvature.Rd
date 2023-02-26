@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_plan_curvature}
 \alias{wbt_plan_curvature}
-\title{Plan curvature
-Calculates a plan (contour) curvature raster from an input DEM.}
+\title{Plan curvature}
 \usage{
 wbt_plan_curvature(
   dem,
@@ -37,7 +36,6 @@ wbt_plan_curvature(
 Returns the tool text outputs.
 }
 \description{
-Plan curvature
 Calculates a plan (contour) curvature raster from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

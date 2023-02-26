@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_clump}
 \alias{wbt_clump}
-\title{Clump
-Groups cells that form discrete areas, assigning them unique identifiers.}
+\title{Clump}
 \usage{
 wbt_clump(
   input,
@@ -37,7 +36,6 @@ wbt_clump(
 Returns the tool text outputs.
 }
 \description{
-Clump
 Groups cells that form discrete areas, assigning them unique identifiers.
 }
 \keyword{GISAnalysis}

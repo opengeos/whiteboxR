@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_cross_tabulation}
 \alias{wbt_cross_tabulation}
-\title{Cross tabulation
-Performs a cross-tabulation on two categorical images.}
+\title{Cross tabulation}
 \usage{
 wbt_cross_tabulation(
   input1,
@@ -34,7 +33,6 @@ wbt_cross_tabulation(
 Returns the tool text outputs.
 }
 \description{
-Cross tabulation
 Performs a cross-tabulation on two categorical images.
 }
 \keyword{MathandStatsTools}

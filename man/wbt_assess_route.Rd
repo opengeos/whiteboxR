@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_assess_route}
 \alias{wbt_assess_route}
-\title{Assess route
-This tool assesses a route for slope, elevation, and visibility variation.}
+\title{Assess route}
 \usage{
 wbt_assess_route(
   routes,
@@ -40,7 +39,6 @@ wbt_assess_route(
 Returns the tool text outputs.
 }
 \description{
-Assess route
 This tool assesses a route for slope, elevation, and visibility variation.
 }
 \keyword{GeomorphometricAnalysis}

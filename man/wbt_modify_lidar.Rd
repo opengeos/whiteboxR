@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_modify_lidar}
 \alias{wbt_modify_lidar}
-\title{Modify lidar
-Modify points within a LiDAR point cloud based on point properties.}
+\title{Modify lidar}
 \usage{
 wbt_modify_lidar(
   input,
@@ -34,7 +33,6 @@ wbt_modify_lidar(
 Returns the tool text outputs.
 }
 \description{
-Modify lidar
 Modify points within a LiDAR point cloud based on point properties.
 }
 \keyword{LiDARTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_centroid}
 \alias{wbt_centroid}
-\title{Centroid
-Calculates the centroid, or average location, of raster polygon objects.}
+\title{Centroid}
 \usage{
 wbt_centroid(
   input,
@@ -34,7 +33,6 @@ wbt_centroid(
 Returns the tool text outputs.
 }
 \description{
-Centroid
 Calculates the centroid, or average location, of raster polygon objects.
 }
 \keyword{GISAnalysis}

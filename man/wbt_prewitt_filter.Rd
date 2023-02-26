@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_prewitt_filter}
 \alias{wbt_prewitt_filter}
-\title{Prewitt filter
-Performs a Prewitt edge-detection filter on an image.}
+\title{Prewitt filter}
 \usage{
 wbt_prewitt_filter(
   input,
@@ -34,7 +33,6 @@ wbt_prewitt_filter(
 Returns the tool text outputs.
 }
 \description{
-Prewitt filter
 Performs a Prewitt edge-detection filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

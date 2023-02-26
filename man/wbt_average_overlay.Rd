@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_average_overlay}
 \alias{wbt_average_overlay}
-\title{Average overlay
-Calculates the average for each grid cell from a group of raster images.}
+\title{Average overlay}
 \usage{
 wbt_average_overlay(
   inputs,
@@ -31,7 +30,6 @@ wbt_average_overlay(
 Returns the tool text outputs.
 }
 \description{
-Average overlay
 Calculates the average for each grid cell from a group of raster images.
 }
 \keyword{GISAnalysisOverlayTools}

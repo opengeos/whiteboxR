@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_quantiles}
 \alias{wbt_quantiles}
-\title{Quantiles
-Transforms raster values into quantiles.}
+\title{Quantiles}
 \usage{
 wbt_quantiles(
   input,
@@ -34,7 +33,6 @@ wbt_quantiles(
 Returns the tool text outputs.
 }
 \description{
-Quantiles
 Transforms raster values into quantiles.
 }
 \keyword{MathandStatsTools}

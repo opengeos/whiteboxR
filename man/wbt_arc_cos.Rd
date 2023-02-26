@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_arc_cos}
 \alias{wbt_arc_cos}
-\title{Arc cos
-Returns the inverse cosine (arccos) of each values in a raster.}
+\title{Arc cos}
 \usage{
 wbt_arc_cos(
   input,
@@ -31,7 +30,6 @@ wbt_arc_cos(
 Returns the tool text outputs.
 }
 \description{
-Arc cos
 Returns the inverse cosine (arccos) of each values in a raster.
 }
 \keyword{MathandStatsTools}

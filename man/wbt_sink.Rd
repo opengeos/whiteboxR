@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_sink}
 \alias{wbt_sink}
-\title{Sink
-Identifies the depressions in a DEM, giving each feature a unique identifier.}
+\title{Sink}
 \usage{
 wbt_sink(
   input,
@@ -34,7 +33,6 @@ wbt_sink(
 Returns the tool text outputs.
 }
 \description{
-Sink
 Identifies the depressions in a DEM, giving each feature a unique identifier.
 }
 \keyword{HydrologicalAnalysis}

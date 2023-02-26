@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_unsphericity}
 \alias{wbt_unsphericity}
-\title{Unsphericity
-This tool calculates the unsphericity curvature from an input DEM.}
+\title{Unsphericity}
 \usage{
 wbt_unsphericity(
   dem,
@@ -37,7 +36,6 @@ wbt_unsphericity(
 Returns the tool text outputs.
 }
 \description{
-Unsphericity
 This tool calculates the unsphericity curvature from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

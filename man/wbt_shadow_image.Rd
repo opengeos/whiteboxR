@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_shadow_image}
 \alias{wbt_shadow_image}
-\title{Shadow image
-This tool creates a raster of shadow areas based on an input DEM.}
+\title{Shadow image}
 \usage{
 wbt_shadow_image(
   input,
@@ -46,7 +45,6 @@ wbt_shadow_image(
 Returns the tool text outputs.
 }
 \description{
-Shadow image
 This tool creates a raster of shadow areas based on an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

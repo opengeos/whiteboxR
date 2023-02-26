@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_elevation_above_stream_euclidean}
 \alias{wbt_elevation_above_stream_euclidean}
-\title{Elevation above stream euclidean
-Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.}
+\title{Elevation above stream euclidean}
 \usage{
 wbt_elevation_above_stream_euclidean(
   dem,
@@ -34,7 +33,6 @@ wbt_elevation_above_stream_euclidean(
 Returns the tool text outputs.
 }
 \description{
-Elevation above stream euclidean
 Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.
 }
 \keyword{HydrologicalAnalysis}

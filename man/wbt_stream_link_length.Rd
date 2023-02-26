@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_stream_link_length}
 \alias{wbt_stream_link_length}
-\title{Stream link length
-Estimates the length of each link (or tributary) in a stream network.}
+\title{Stream link length}
 \usage{
 wbt_stream_link_length(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_stream_link_length(
 Returns the tool text outputs.
 }
 \description{
-Stream link length
 Estimates the length of each link (or tributary) in a stream network.
 }
 \keyword{StreamNetworkAnalysis}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_edge_preserving_mean_filter}
 \alias{wbt_edge_preserving_mean_filter}
-\title{Edge preserving mean filter
-Performs a simple edge-preserving mean filter on an input image.}
+\title{Edge preserving mean filter}
 \usage{
 wbt_edge_preserving_mean_filter(
   input,
@@ -37,7 +36,6 @@ wbt_edge_preserving_mean_filter(
 Returns the tool text outputs.
 }
 \description{
-Edge preserving mean filter
 Performs a simple edge-preserving mean filter on an input image.
 }
 \keyword{ImageProcessingToolsFilters}

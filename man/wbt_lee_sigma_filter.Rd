@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_lee_sigma_filter}
 \alias{wbt_lee_sigma_filter}
-\title{Lee sigma filter
-Performs a Lee (Sigma) smoothing filter on an image.}
+\title{Lee sigma filter}
 \usage{
 wbt_lee_sigma_filter(
   input,
@@ -43,7 +42,6 @@ wbt_lee_sigma_filter(
 Returns the tool text outputs.
 }
 \description{
-Lee sigma filter
 Performs a Lee (Sigma) smoothing filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

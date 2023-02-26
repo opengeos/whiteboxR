@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_slope_vs_aspect_plot}
 \alias{wbt_slope_vs_aspect_plot}
-\title{Slope vs aspect plot
-This tool creates a slope-aspect relation plot from an input DEM.}
+\title{Slope vs aspect plot}
 \usage{
 wbt_slope_vs_aspect_plot(
   input,
@@ -40,7 +39,6 @@ wbt_slope_vs_aspect_plot(
 Returns the tool text outputs.
 }
 \description{
-Slope vs aspect plot
 This tool creates a slope-aspect relation plot from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

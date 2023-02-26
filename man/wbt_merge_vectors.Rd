@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_merge_vectors}
 \alias{wbt_merge_vectors}
-\title{Merge vectors
-Combines two or more input vectors of the same ShapeType creating a single, new output vector.}
+\title{Merge vectors}
 \usage{
 wbt_merge_vectors(
   inputs,
@@ -31,7 +30,6 @@ wbt_merge_vectors(
 Returns the tool text outputs.
 }
 \description{
-Merge vectors
 Combines two or more input vectors of the same ShapeType creating a single, new output vector.
 }
 \keyword{DataTools}

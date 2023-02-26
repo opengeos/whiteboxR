@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_conservative_smoothing_filter}
 \alias{wbt_conservative_smoothing_filter}
-\title{Conservative smoothing filter
-Performs a conservative-smoothing filter on an image.}
+\title{Conservative smoothing filter}
 \usage{
 wbt_conservative_smoothing_filter(
   input,
@@ -37,7 +36,6 @@ wbt_conservative_smoothing_filter(
 Returns the tool text outputs.
 }
 \description{
-Conservative smoothing filter
 Performs a conservative-smoothing filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

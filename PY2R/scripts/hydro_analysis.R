@@ -1,5 +1,6 @@
-#' Average flowpath slope
-#' Measures the average slope gradient from each grid cell to all upslope divide cells.
+#' @title Average flowpath slope
+#'
+#' @description Measures the average slope gradient from each grid cell to all upslope divide cells.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -28,8 +29,9 @@ wbt_average_flowpath_slope <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 }
 
 
-#' Average upslope flowpath length
-#' Measures the average length of all upslope flowpaths draining each grid cell.
+#' @title Average upslope flowpath length
+#'
+#' @description Measures the average length of all upslope flowpaths draining each grid cell.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -58,8 +60,9 @@ wbt_average_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mo
 }
 
 
-#' Basins
-#' Identifies drainage basins that drain to the DEM edge.
+#' @title Basins
+#'
+#' @description Identifies drainage basins that drain to the DEM edge.
 #'
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param output Output raster file.
@@ -92,8 +95,9 @@ wbt_basins <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 }
 
 
-#' Breach depressions
-#' Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.
+#' @title Breach depressions
+#'
+#' @description Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -138,8 +142,9 @@ wbt_breach_depressions <- function(dem, output, max_depth=NULL, max_length=NULL,
 }
 
 
-#' Breach depressions least cost
-#' Breaches the depressions in a DEM using a least-cost pathway method.
+#' @title Breach depressions least cost
+#'
+#' @description Breaches the depressions in a DEM using a least-cost pathway method.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -186,8 +191,9 @@ wbt_breach_depressions_least_cost <- function(dem, output, dist, max_cost=NULL, 
 }
 
 
-#' Breach single cell pits
-#' Removes single-cell pits from an input DEM by breaching.
+#' @title Breach single cell pits
+#'
+#' @description Removes single-cell pits from an input DEM by breaching.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -216,8 +222,9 @@ wbt_breach_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Burn streams at roads
-#' Burns-in streams at the sites of road embankments.
+#' @title Burn streams at roads
+#'
+#' @description Burns-in streams at the sites of road embankments.
 #'
 #' @param dem Input raster digital elevation model (DEM) file.
 #' @param streams Input vector streams file.
@@ -254,8 +261,9 @@ wbt_burn_streams_at_roads <- function(dem, streams, roads, output, width=NULL, w
 }
 
 
-#' D8 flow accumulation
-#' Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
+#' @title D8 flow accumulation
+#'
+#' @description Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
 #'
 #' @param input Input raster DEM or D8 pointer file.
 #' @param output Output raster file.
@@ -304,8 +312,9 @@ wbt_d8_flow_accumulation <- function(input, output, out_type="cells", log=FALSE,
 }
 
 
-#' D8 mass flux
-#' Performs a D8 mass flux calculation.
+#' @title D8 mass flux
+#'
+#' @description Performs a D8 mass flux calculation.
 #'
 #' @param dem Input raster DEM file.
 #' @param loading Input loading raster file.
@@ -340,8 +349,9 @@ wbt_d8_mass_flux <- function(dem, loading, efficiency, absorption, output, wd=NU
 }
 
 
-#' D8 pointer
-#' Calculates a D8 flow pointer raster from an input DEM.
+#' @title D8 pointer
+#'
+#' @description Calculates a D8 flow pointer raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -374,8 +384,9 @@ wbt_d8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode=F
 }
 
 
-#' D inf flow accumulation
-#' Calculates a D-infinity flow accumulation raster from an input DEM.
+#' @title D inf flow accumulation
+#'
+#' @description Calculates a D-infinity flow accumulation raster from an input DEM.
 #'
 #' @param input Input raster DEM or D-infinity pointer file.
 #' @param output Output raster file.
@@ -424,8 +435,9 @@ wbt_d_inf_flow_accumulation <- function(input, output, out_type="Specific Contri
 }
 
 
-#' D inf mass flux
-#' Performs a D-infinity mass flux calculation.
+#' @title D inf mass flux
+#'
+#' @description Performs a D-infinity mass flux calculation.
 #'
 #' @param dem Input raster DEM file.
 #' @param loading Input loading raster file.
@@ -460,8 +472,9 @@ wbt_d_inf_mass_flux <- function(dem, loading, efficiency, absorption, output, wd
 }
 
 
-#' D inf pointer
-#' Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
+#' @title D inf pointer
+#'
+#' @description Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -490,8 +503,9 @@ wbt_d_inf_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress
 }
 
 
-#' Depth in sink
-#' Measures the depth of sinks (depressions) in a DEM.
+#' @title Depth in sink
+#'
+#' @description Measures the depth of sinks (depressions) in a DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -524,8 +538,9 @@ wbt_depth_in_sink <- function(dem, output, zero_background=FALSE, wd=NULL, verbo
 }
 
 
-#' Depth to water
-#' This tool calculates cartographic depth-to-water (DTW) index.
+#' @title Depth to water
+#'
+#' @description This tool calculates cartographic depth-to-water (DTW) index.
 #'
 #' @param dem Name of the input raster DEM file.
 #' @param streams Name of the input streams vector (optional).
@@ -562,8 +577,9 @@ wbt_depth_to_water <- function(dem, output, streams=NULL, lakes=NULL, wd=NULL, v
 }
 
 
-#' Downslope distance to stream
-#' Measures distance to the nearest downslope stream cell.
+#' @title Downslope distance to stream
+#'
+#' @description Measures distance to the nearest downslope stream cell.
 #'
 #' @param dem Input raster DEM file.
 #' @param streams Input raster streams file.
@@ -598,8 +614,9 @@ wbt_downslope_distance_to_stream <- function(dem, streams, output, dinf=FALSE, w
 }
 
 
-#' Downslope flowpath length
-#' Calculates the downslope flowpath length from each cell to basin outlet.
+#' @title Downslope flowpath length
+#'
+#' @description Calculates the downslope flowpath length from each cell to basin outlet.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param watersheds Optional input watershed raster file.
@@ -640,8 +657,9 @@ wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weig
 }
 
 
-#' Edge contamination
-#' This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
+#' @title Edge contamination
+#'
+#' @description This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
@@ -678,8 +696,9 @@ wbt_edge_contamination <- function(dem, output, flow_type="mfd", zfactor="", wd=
 }
 
 
-#' Elevation above stream
-#' Calculates the elevation of cells above the nearest downslope stream cell.
+#' @title Elevation above stream
+#'
+#' @description Calculates the elevation of cells above the nearest downslope stream cell.
 #'
 #' @param dem Input raster DEM file.
 #' @param streams Input raster streams file.
@@ -710,8 +729,9 @@ wbt_elevation_above_stream <- function(dem, streams, output, wd=NULL, verbose_mo
 }
 
 
-#' Elevation above stream euclidean
-#' Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.
+#' @title Elevation above stream euclidean
+#'
+#' @description Calculates the elevation of cells above the nearest (Euclidean distance) stream cell.
 #'
 #' @param dem Input raster DEM file.
 #' @param streams Input raster streams file.
@@ -742,8 +762,9 @@ wbt_elevation_above_stream_euclidean <- function(dem, streams, output, wd=NULL, 
 }
 
 
-#' Fd8 flow accumulation
-#' Calculates an FD8 flow accumulation raster from an input DEM.
+#' @title Fd8 flow accumulation
+#'
+#' @description Calculates an FD8 flow accumulation raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -792,8 +813,9 @@ wbt_fd8_flow_accumulation <- function(dem, output, out_type="specific contributi
 }
 
 
-#' Fd8 pointer
-#' Calculates an FD8 flow pointer raster from an input DEM.
+#' @title Fd8 pointer
+#'
+#' @description Calculates an FD8 flow pointer raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -822,8 +844,9 @@ wbt_fd8_pointer <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_r
 }
 
 
-#' Fill burn
-#' Burns streams into a DEM using the FillBurn (Saunders, 1999) method.
+#' @title Fill burn
+#'
+#' @description Burns streams into a DEM using the FillBurn (Saunders, 1999) method.
 #'
 #' @param dem Input raster DEM file.
 #' @param streams Input vector streams file.
@@ -854,8 +877,9 @@ wbt_fill_burn <- function(dem, streams, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Fill depressions
-#' Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.
+#' @title Fill depressions
+#'
+#' @description Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -896,8 +920,9 @@ wbt_fill_depressions <- function(dem, output, fix_flats=TRUE, flat_increment=NUL
 }
 
 
-#' Fill depressions planchon and darboux
-#' Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.
+#' @title Fill depressions planchon and darboux
+#'
+#' @description Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -934,8 +959,9 @@ wbt_fill_depressions_planchon_and_darboux <- function(dem, output, fix_flats=TRU
 }
 
 
-#' Fill depressions wang and liu
-#' Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.
+#' @title Fill depressions wang and liu
+#'
+#' @description Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -972,8 +998,9 @@ wbt_fill_depressions_wang_and_liu <- function(dem, output, fix_flats=TRUE, flat_
 }
 
 
-#' Fill single cell pits
-#' Raises pit cells to the elevation of their lowest neighbour.
+#' @title Fill single cell pits
+#'
+#' @description Raises pit cells to the elevation of their lowest neighbour.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1002,8 +1029,9 @@ wbt_fill_single_cell_pits <- function(dem, output, wd=NULL, verbose_mode=FALSE, 
 }
 
 
-#' Find no flow cells
-#' Finds grid cells with no downslope neighbours.
+#' @title Find no flow cells
+#'
+#' @description Finds grid cells with no downslope neighbours.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1032,8 +1060,9 @@ wbt_find_no_flow_cells <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Find parallel flow
-#' Finds areas of parallel flow in D8 flow direction rasters.
+#' @title Find parallel flow
+#'
+#' @description Finds areas of parallel flow in D8 flow direction rasters.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param streams Input raster streams file.
@@ -1064,8 +1093,9 @@ wbt_find_parallel_flow <- function(d8_pntr, streams, output, wd=NULL, verbose_mo
 }
 
 
-#' Flatten lakes
-#' Flattens lake polygons in a raster DEM.
+#' @title Flatten lakes
+#'
+#' @description Flattens lake polygons in a raster DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param lakes Input lakes vector polygons file.
@@ -1096,8 +1126,9 @@ wbt_flatten_lakes <- function(dem, lakes, output, wd=NULL, verbose_mode=FALSE, c
 }
 
 
-#' Flood order
-#' Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations.
+#' @title Flood order
+#'
+#' @description Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1126,8 +1157,9 @@ wbt_flood_order <- function(dem, output, wd=NULL, verbose_mode=FALSE, compress_r
 }
 
 
-#' Flow accumulation full workflow
-#' Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
+#' @title Flow accumulation full workflow
+#'
+#' @description Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
 #'
 #' @param dem Input raster DEM file.
 #' @param out_dem Output raster DEM file.
@@ -1176,8 +1208,9 @@ wbt_flow_accumulation_full_workflow <- function(dem, out_dem, out_pntr, out_accu
 }
 
 
-#' Flow length diff
-#' Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.
+#' @title Flow length diff
+#'
+#' @description Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param output Output raster file.
@@ -1210,8 +1243,9 @@ wbt_flow_length_diff <- function(d8_pntr, output, esri_pntr=FALSE, wd=NULL, verb
 }
 
 
-#' Hillslopes
-#' Identifies the individual hillslopes draining to each link in a stream network.
+#' @title Hillslopes
+#'
+#' @description Identifies the individual hillslopes draining to each link in a stream network.
 #'
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param streams Input raster streams file.
@@ -1246,8 +1280,9 @@ wbt_hillslopes <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, v
 }
 
 
-#' Hydrologic connectivity
-#' This tool evaluates hydrologic connectivity within a DEM.
+#' @title Hydrologic connectivity
+#'
+#' @description This tool evaluates hydrologic connectivity within a DEM.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output1 Name of the output downslope unsaturated length (DUL) file.
@@ -1286,8 +1321,9 @@ wbt_hydrologic_connectivity <- function(dem, output1, output2, exponent=1.0, thr
 }
 
 
-#' Impoundment size index
-#' Calculates the impoundment size resulting from damming a DEM.
+#' @title Impoundment size index
+#'
+#' @description Calculates the impoundment size resulting from damming a DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param out_mean Output mean flooded depth file.
@@ -1336,8 +1372,9 @@ wbt_impoundment_size_index <- function(dem, damlength, out_mean=NULL, out_max=NU
 }
 
 
-#' Insert dams
-#' Calculates the impoundment size resulting from damming a DEM.
+#' @title Insert dams
+#'
+#' @description Calculates the impoundment size resulting from damming a DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param dam_pts Input vector dam points file.
@@ -1370,8 +1407,9 @@ wbt_insert_dams <- function(dem, dam_pts, output, damlength, wd=NULL, verbose_mo
 }
 
 
-#' Isobasins
-#' Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).
+#' @title Isobasins
+#'
+#' @description Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1406,8 +1444,9 @@ wbt_isobasins <- function(dem, output, size, connections=FALSE, wd=NULL, verbose
 }
 
 
-#' Jenson snap pour points
-#' Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell.
+#' @title Jenson snap pour points
+#'
+#' @description Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell.
 #'
 #' @param pour_pts Input vector pour points (outlet) file.
 #' @param streams Input raster streams file.
@@ -1440,8 +1479,9 @@ wbt_jenson_snap_pour_points <- function(pour_pts, streams, output, snap_dist, wd
 }
 
 
-#' Longest flowpath
-#' Delineates the longest flowpaths for a group of subbasins or watersheds.
+#' @title Longest flowpath
+#'
+#' @description Delineates the longest flowpaths for a group of subbasins or watersheds.
 #'
 #' @param dem Input raster DEM file.
 #' @param basins Input raster basins file.
@@ -1472,8 +1512,9 @@ wbt_longest_flowpath <- function(dem, basins, output, wd=NULL, verbose_mode=FALS
 }
 
 
-#' Low points on headwater divides
-#' This tool locates saddle points along ridges within a digital elevation model (DEM).
+#' @title Low points on headwater divides
+#'
+#' @description This tool locates saddle points along ridges within a digital elevation model (DEM).
 #'
 #' @param dem Name of the input DEM raster file.
 #' @param streams Name of the input stream channel raster file.
@@ -1504,8 +1545,9 @@ wbt_low_points_on_headwater_divides <- function(dem, streams, output, wd=NULL, v
 }
 
 
-#' Max upslope flowpath length
-#' Measures the maximum length of all upslope flowpaths draining each grid cell.
+#' @title Max upslope flowpath length
+#'
+#' @description Measures the maximum length of all upslope flowpaths draining each grid cell.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1534,8 +1576,9 @@ wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=F
 }
 
 
-#' Max upslope value
-#' This tool calculates the maximum upslope value from an input values raster along flowpaths.
+#' @title Max upslope value
+#'
+#' @description This tool calculates the maximum upslope value from an input values raster along flowpaths.
 #'
 #' @param dem Input DEM; it must be depressionless.
 #' @param values Name of the input values raster file.
@@ -1566,8 +1609,9 @@ wbt_max_upslope_value <- function(dem, values, output, wd=NULL, verbose_mode=FAL
 }
 
 
-#' Md inf flow accumulation
-#' Calculates an FD8 flow accumulation raster from an input DEM.
+#' @title Md inf flow accumulation
+#'
+#' @description Calculates an FD8 flow accumulation raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1616,8 +1660,9 @@ wbt_md_inf_flow_accumulation <- function(dem, output, out_type="specific contrib
 }
 
 
-#' Num inflowing neighbours
-#' Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
+#' @title Num inflowing neighbours
+#'
+#' @description Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1646,8 +1691,9 @@ wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 }
 
 
-#' Qin flow accumulation
-#' This tool calculates Qin et al. (2007) flow accumulation.
+#' @title Qin flow accumulation
+#'
+#' @description This tool calculates Qin et al. (2007) flow accumulation.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
@@ -1700,8 +1746,9 @@ wbt_qin_flow_accumulation <- function(dem, output, out_type="specific contributi
 }
 
 
-#' Quinn flow accumulation
-#' This tool calculates Quinn et al. (1995) flow accumulation.
+#' @title Quinn flow accumulation
+#'
+#' @description This tool calculates Quinn et al. (1995) flow accumulation.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
@@ -1750,8 +1797,9 @@ wbt_quinn_flow_accumulation <- function(dem, output, out_type="specific contribu
 }
 
 
-#' Raise walls
-#' Raises walls in a DEM along a line or around a polygon, e.g. a watershed.
+#' @title Raise walls
+#'
+#' @description Raises walls in a DEM along a line or around a polygon, e.g. a watershed.
 #'
 #' @param input Input vector lines or polygons file.
 #' @param breach Optional input vector breach lines.
@@ -1790,8 +1838,9 @@ wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, wd=NU
 }
 
 
-#' Rho8 flow accumulation
-#' This tool calculates Fairfield and Leymarie (1991) flow accumulation.
+#' @title Rho8 flow accumulation
+#'
+#' @description This tool calculates Fairfield and Leymarie (1991) flow accumulation.
 #'
 #' @param input Input DEM or Rho8 pointer file; if a DEM is used, it must be depressionless.
 #' @param output Name of the output raster file.
@@ -1840,8 +1889,9 @@ wbt_rho8_flow_accumulation <- function(input, output, out_type="specific contrib
 }
 
 
-#' Rho8 pointer
-#' Calculates a stochastic Rho8 flow pointer raster from an input DEM.
+#' @title Rho8 pointer
+#'
+#' @description Calculates a stochastic Rho8 flow pointer raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -1874,8 +1924,9 @@ wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode
 }
 
 
-#' Sink
-#' Identifies the depressions in a DEM, giving each feature a unique identifier.
+#' @title Sink
+#'
+#' @description Identifies the depressions in a DEM, giving each feature a unique identifier.
 #'
 #' @param input Input raster DEM file.
 #' @param output Output raster file.
@@ -1908,8 +1959,9 @@ wbt_sink <- function(input, output, zero_background=FALSE, wd=NULL, verbose_mode
 }
 
 
-#' Snap pour points
-#' Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
+#' @title Snap pour points
+#'
+#' @description Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.
 #'
 #' @param pour_pts Input vector pour points (outlet) file.
 #' @param flow_accum Input raster D8 flow accumulation file.
@@ -1942,8 +1994,9 @@ wbt_snap_pour_points <- function(pour_pts, flow_accum, output, snap_dist, wd=NUL
 }
 
 
-#' Stochastic depression analysis
-#' Performs a stochastic analysis of depressions within a DEM.
+#' @title Stochastic depression analysis
+#'
+#' @description Performs a stochastic analysis of depressions within a DEM.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output file.
@@ -1980,8 +2033,9 @@ wbt_stochastic_depression_analysis <- function(dem, output, rmse, range, iterati
 }
 
 
-#' Strahler order basins
-#' Identifies Strahler-order basins from an input stream network.
+#' @title Strahler order basins
+#'
+#' @description Identifies Strahler-order basins from an input stream network.
 #'
 #' @param d8_pntr Input raster D8 pointer file.
 #' @param streams Input raster streams file.
@@ -2016,8 +2070,9 @@ wbt_strahler_order_basins <- function(d8_pntr, streams, output, esri_pntr=FALSE,
 }
 
 
-#' Subbasins
-#' Identifies the catchments, or sub-basin, draining to each link in a stream network.
+#' @title Subbasins
+#'
+#' @description Identifies the catchments, or sub-basin, draining to each link in a stream network.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param streams Input raster streams file.
@@ -2052,8 +2107,9 @@ wbt_subbasins <- function(d8_pntr, streams, output, esri_pntr=FALSE, wd=NULL, ve
 }
 
 
-#' Trace downslope flowpaths
-#' Traces downslope flowpaths from one or more target sites (i.e. seed points).
+#' @title Trace downslope flowpaths
+#'
+#' @description Traces downslope flowpaths from one or more target sites (i.e. seed points).
 #'
 #' @param seed_pts Input vector seed points file.
 #' @param d8_pntr Input D8 pointer raster file.
@@ -2092,8 +2148,9 @@ wbt_trace_downslope_flowpaths <- function(seed_pts, d8_pntr, output, esri_pntr=F
 }
 
 
-#' Unnest basins
-#' Extract whole watersheds for a set of outlet points.
+#' @title Unnest basins
+#'
+#' @description Extract whole watersheds for a set of outlet points.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param pour_pts Input vector pour points (outlet) file.
@@ -2128,8 +2185,9 @@ wbt_unnest_basins <- function(d8_pntr, pour_pts, output, esri_pntr=FALSE, wd=NUL
 }
 
 
-#' Upslope depression storage
-#' Estimates the average upslope depression storage depth.
+#' @title Upslope depression storage
+#'
+#' @description Estimates the average upslope depression storage depth.
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
@@ -2158,8 +2216,9 @@ wbt_upslope_depression_storage <- function(dem, output, wd=NULL, verbose_mode=FA
 }
 
 
-#' Watershed
-#' Identifies the watershed, or drainage basin, draining to a set of target cells.
+#' @title Watershed
+#'
+#' @description Identifies the watershed, or drainage basin, draining to a set of target cells.
 #'
 #' @param d8_pntr Input D8 pointer raster file.
 #' @param pour_pts Input pour points (outlet) file.

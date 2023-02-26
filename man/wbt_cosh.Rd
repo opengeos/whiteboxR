@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_cosh}
 \alias{wbt_cosh}
-\title{Cosh
-Returns the hyperbolic cosine (cosh) of each values in a raster.}
+\title{Cosh}
 \usage{
 wbt_cosh(
   input,
@@ -31,7 +30,6 @@ wbt_cosh(
 Returns the tool text outputs.
 }
 \description{
-Cosh
 Returns the hyperbolic cosine (cosh) of each values in a raster.
 }
 \keyword{MathandStatsTools}

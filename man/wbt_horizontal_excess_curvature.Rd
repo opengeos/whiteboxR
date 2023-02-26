@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_horizontal_excess_curvature}
 \alias{wbt_horizontal_excess_curvature}
-\title{Horizontal excess curvature
-This tool calculates horizontal excess curvature from an input DEM.}
+\title{Horizontal excess curvature}
 \usage{
 wbt_horizontal_excess_curvature(
   dem,
@@ -37,7 +36,6 @@ wbt_horizontal_excess_curvature(
 Returns the tool text outputs.
 }
 \description{
-Horizontal excess curvature
 This tool calculates horizontal excess curvature from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

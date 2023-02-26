@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_decrement}
 \alias{wbt_decrement}
-\title{Decrement
-Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).}
+\title{Decrement}
 \usage{
 wbt_decrement(
   input,
@@ -31,7 +30,6 @@ wbt_decrement(
 Returns the tool text outputs.
 }
 \description{
-Decrement
 Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).
 }
 \keyword{MathandStatsTools}

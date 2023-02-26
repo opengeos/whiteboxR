@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_relative_aspect}
 \alias{wbt_relative_aspect}
-\title{Relative aspect
-Calculates relative aspect (relative to a user-specified direction) from an input DEM.}
+\title{Relative aspect}
 \usage{
 wbt_relative_aspect(
   dem,
@@ -37,7 +36,6 @@ wbt_relative_aspect(
 Returns the tool text outputs.
 }
 \description{
-Relative aspect
 Calculates relative aspect (relative to a user-specified direction) from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_paired_sample_t_test}
 \alias{wbt_paired_sample_t_test}
-\title{Paired sample t test
-Performs a 2-sample K-S test for significant differences on two input rasters.}
+\title{Paired sample t test}
 \usage{
 wbt_paired_sample_t_test(
   input1,
@@ -37,7 +36,6 @@ wbt_paired_sample_t_test(
 Returns the tool text outputs.
 }
 \description{
-Paired sample t test
 Performs a 2-sample K-S test for significant differences on two input rasters.
 }
 \keyword{MathandStatsTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_equal_to}
 \alias{wbt_equal_to}
-\title{Equal to
-Performs a equal-to comparison operation on two rasters or a raster and a constant value.}
+\title{Equal to}
 \usage{
 wbt_equal_to(
   input1,
@@ -34,7 +33,6 @@ wbt_equal_to(
 Returns the tool text outputs.
 }
 \description{
-Equal to
 Performs a equal-to comparison operation on two rasters or a raster and a constant value.
 }
 \keyword{MathandStatsTools}

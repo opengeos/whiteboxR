@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_tile}
 \alias{wbt_lidar_tile}
-\title{Lidar tile
-Tiles a LiDAR LAS file into multiple LAS files.}
+\title{Lidar tile}
 \usage{
 wbt_lidar_tile(
   input,
@@ -43,7 +42,6 @@ wbt_lidar_tile(
 Returns the tool text outputs.
 }
 \description{
-Lidar tile
 Tiles a LiDAR LAS file into multiple LAS files.
 }
 \keyword{LiDARTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_breach_single_cell_pits}
 \alias{wbt_breach_single_cell_pits}
-\title{Breach single cell pits
-Removes single-cell pits from an input DEM by breaching.}
+\title{Breach single cell pits}
 \usage{
 wbt_breach_single_cell_pits(
   dem,
@@ -31,7 +30,6 @@ wbt_breach_single_cell_pits(
 Returns the tool text outputs.
 }
 \description{
-Breach single cell pits
 Removes single-cell pits from an input DEM by breaching.
 }
 \keyword{HydrologicalAnalysis}

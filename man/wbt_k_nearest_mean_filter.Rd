@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_k_nearest_mean_filter}
 \alias{wbt_k_nearest_mean_filter}
-\title{K nearest mean filter
-A k-nearest mean filter is a type of edge-preserving smoothing filter.}
+\title{K nearest mean filter}
 \usage{
 wbt_k_nearest_mean_filter(
   input,
@@ -40,7 +39,6 @@ wbt_k_nearest_mean_filter(
 Returns the tool text outputs.
 }
 \description{
-K nearest mean filter
 A k-nearest mean filter is a type of edge-preserving smoothing filter.
 }
 \keyword{ImageProcessingToolsFilters}

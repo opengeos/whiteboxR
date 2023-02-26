@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_gaussian_filter}
 \alias{wbt_gaussian_filter}
-\title{Gaussian filter
-Performs a Gaussian filter on an image.}
+\title{Gaussian filter}
 \usage{
 wbt_gaussian_filter(
   input,
@@ -34,7 +33,6 @@ wbt_gaussian_filter(
 Returns the tool text outputs.
 }
 \description{
-Gaussian filter
 Performs a Gaussian filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_raster_summary_stats}
 \alias{wbt_raster_summary_stats}
-\title{Raster summary stats
-Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total.}
+\title{Raster summary stats}
 \usage{
 wbt_raster_summary_stats(
   input,
@@ -28,7 +27,6 @@ wbt_raster_summary_stats(
 Returns the tool text outputs.
 }
 \description{
-Raster summary stats
 Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total.
 }
 \keyword{MathandStatsTools}

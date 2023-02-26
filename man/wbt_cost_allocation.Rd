@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_distance.R
 \name{wbt_cost_allocation}
 \alias{wbt_cost_allocation}
-\title{Cost allocation
-Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.}
+\title{Cost allocation}
 \usage{
 wbt_cost_allocation(
   source,
@@ -34,7 +33,6 @@ wbt_cost_allocation(
 Returns the tool text outputs.
 }
 \description{
-Cost allocation
 Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.
 }
 \keyword{GISAnalysisDistanceTools}

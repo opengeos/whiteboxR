@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_trace_downslope_flowpaths}
 \alias{wbt_trace_downslope_flowpaths}
-\title{Trace downslope flowpaths
-Traces downslope flowpaths from one or more target sites (i.e. seed points).}
+\title{Trace downslope flowpaths}
 \usage{
 wbt_trace_downslope_flowpaths(
   seed_pts,
@@ -40,7 +39,6 @@ wbt_trace_downslope_flowpaths(
 Returns the tool text outputs.
 }
 \description{
-Trace downslope flowpaths
 Traces downslope flowpaths from one or more target sites (i.e. seed points).
 }
 \keyword{HydrologicalAnalysis}

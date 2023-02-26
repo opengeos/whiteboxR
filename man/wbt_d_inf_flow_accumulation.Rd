@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_d_inf_flow_accumulation}
 \alias{wbt_d_inf_flow_accumulation}
-\title{D inf flow accumulation
-Calculates a D-infinity flow accumulation raster from an input DEM.}
+\title{D inf flow accumulation}
 \usage{
 wbt_d_inf_flow_accumulation(
   input,
@@ -46,7 +45,6 @@ wbt_d_inf_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
-D inf flow accumulation
 Calculates a D-infinity flow accumulation raster from an input DEM.
 }
 \keyword{HydrologicalAnalysis}

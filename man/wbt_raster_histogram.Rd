@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_raster_histogram}
 \alias{wbt_raster_histogram}
-\title{Raster histogram
-Creates a histogram from raster values.}
+\title{Raster histogram}
 \usage{
 wbt_raster_histogram(
   input,
@@ -31,7 +30,6 @@ wbt_raster_histogram(
 Returns the tool text outputs.
 }
 \description{
-Raster histogram
 Creates a histogram from raster values.
 }
 \keyword{MathandStatsTools}

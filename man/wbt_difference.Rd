@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_difference}
 \alias{wbt_difference}
-\title{Difference
-Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.}
+\title{Difference}
 \usage{
 wbt_difference(
   input,
@@ -34,7 +33,6 @@ wbt_difference(
 Returns the tool text outputs.
 }
 \description{
-Difference
 Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 }
 \keyword{GISAnalysisOverlayTools}

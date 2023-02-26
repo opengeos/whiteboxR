@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_arsinh}
 \alias{wbt_arsinh}
-\title{Arsinh
-Returns the inverse hyperbolic sine (arsinh) of each values in a raster.}
+\title{Arsinh}
 \usage{
 wbt_arsinh(
   input,
@@ -31,7 +30,6 @@ wbt_arsinh(
 Returns the tool text outputs.
 }
 \description{
-Arsinh
 Returns the inverse hyperbolic sine (arsinh) of each values in a raster.
 }
 \keyword{MathandStatsTools}

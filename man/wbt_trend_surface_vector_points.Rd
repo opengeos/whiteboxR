@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_trend_surface_vector_points}
 \alias{wbt_trend_surface_vector_points}
-\title{Trend surface vector points
-Estimates a trend surface from vector points.}
+\title{Trend surface vector points}
 \usage{
 wbt_trend_surface_vector_points(
   input,
@@ -40,7 +39,6 @@ wbt_trend_surface_vector_points(
 Returns the tool text outputs.
 }
 \description{
-Trend surface vector points
 Estimates a trend surface from vector points.
 }
 \keyword{MathandStatsTools}

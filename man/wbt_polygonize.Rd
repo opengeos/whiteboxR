@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_polygonize}
 \alias{wbt_polygonize}
-\title{Polygonize
-Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.}
+\title{Polygonize}
 \usage{
 wbt_polygonize(
   inputs,
@@ -31,7 +30,6 @@ wbt_polygonize(
 Returns the tool text outputs.
 }
 \description{
-Polygonize
 Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
 }
 \keyword{GISAnalysisOverlayTools}

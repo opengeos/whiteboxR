@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multiscale_elevation_percentile}
 \alias{wbt_multiscale_elevation_percentile}
-\title{Multiscale elevation percentile
-Calculates surface roughness over a range of spatial scales.}
+\title{Multiscale elevation percentile}
 \usage{
 wbt_multiscale_elevation_percentile(
   dem,
@@ -49,7 +48,6 @@ wbt_multiscale_elevation_percentile(
 Returns the tool text outputs.
 }
 \description{
-Multiscale elevation percentile
 Calculates surface roughness over a range of spatial scales.
 }
 \keyword{GeomorphometricAnalysis}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_elevation_deviation}
 \alias{wbt_max_elevation_deviation}
-\title{Max elevation deviation
-Calculates the maximum elevation deviation over a range of spatial scales.}
+\title{Max elevation deviation}
 \usage{
 wbt_max_elevation_deviation(
   dem,
@@ -43,7 +42,6 @@ wbt_max_elevation_deviation(
 Returns the tool text outputs.
 }
 \description{
-Max elevation deviation
 Calculates the maximum elevation deviation over a range of spatial scales.
 }
 \keyword{GeomorphometricAnalysis}

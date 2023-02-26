@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_fill_depressions_planchon_and_darboux}
 \alias{wbt_fill_depressions_planchon_and_darboux}
-\title{Fill depressions planchon and darboux
-Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.}
+\title{Fill depressions planchon and darboux}
 \usage{
 wbt_fill_depressions_planchon_and_darboux(
   dem,
@@ -37,7 +36,6 @@ wbt_fill_depressions_planchon_and_darboux(
 Returns the tool text outputs.
 }
 \description{
-Fill depressions planchon and darboux
 Fills all of the depressions in a DEM using the Planchon and Darboux (2002) method.
 }
 \keyword{HydrologicalAnalysis}

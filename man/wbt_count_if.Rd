@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_count_if}
 \alias{wbt_count_if}
-\title{Count if
-Counts the number of occurrences of a specified value in a cell-stack of rasters.}
+\title{Count if}
 \usage{
 wbt_count_if(
   inputs,
@@ -34,7 +33,6 @@ wbt_count_if(
 Returns the tool text outputs.
 }
 \description{
-Count if
 Counts the number of occurrences of a specified value in a cell-stack of rasters.
 }
 \keyword{GISAnalysisOverlayTools}

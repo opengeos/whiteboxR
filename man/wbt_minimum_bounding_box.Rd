@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_minimum_bounding_box}
 \alias{wbt_minimum_bounding_box}
-\title{Minimum bounding box
-Creates a vector minimum bounding rectangle around vector features.}
+\title{Minimum bounding box}
 \usage{
 wbt_minimum_bounding_box(
   input,
@@ -37,7 +36,6 @@ wbt_minimum_bounding_box(
 Returns the tool text outputs.
 }
 \description{
-Minimum bounding box
 Creates a vector minimum bounding rectangle around vector features.
 }
 \keyword{GISAnalysis}

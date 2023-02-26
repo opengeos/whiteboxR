@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_conditioned_latin_hypercube}
 \alias{wbt_conditioned_latin_hypercube}
-\title{Conditioned latin hypercube
-Implements conditioned Latin Hypercube sampling.}
+\title{Conditioned latin hypercube}
 \usage{
 wbt_conditioned_latin_hypercube(
   inputs,
@@ -58,7 +57,6 @@ wbt_conditioned_latin_hypercube(
 Returns the tool text outputs.
 }
 \description{
-Conditioned latin hypercube
 Implements conditioned Latin Hypercube sampling.
 }
 \keyword{MathandStatsTools}

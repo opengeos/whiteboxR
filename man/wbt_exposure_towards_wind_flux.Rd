@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_exposure_towards_wind_flux}
 \alias{wbt_exposure_towards_wind_flux}
-\title{Exposure towards wind flux
-This tool evaluates hydrologic connectivity within a DEM.}
+\title{Exposure towards wind flux}
 \usage{
 wbt_exposure_towards_wind_flux(
   dem,
@@ -40,7 +39,6 @@ wbt_exposure_towards_wind_flux(
 Returns the tool text outputs.
 }
 \description{
-Exposure towards wind flux
 This tool evaluates hydrologic connectivity within a DEM.
 }
 \keyword{GeomorphometricAnalysis}

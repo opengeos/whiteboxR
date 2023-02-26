@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_ceil}
 \alias{wbt_ceil}
-\title{Ceil
-Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.}
+\title{Ceil}
 \usage{
 wbt_ceil(
   input,
@@ -31,7 +30,6 @@ wbt_ceil(
 Returns the tool text outputs.
 }
 \description{
-Ceil
 Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.
 }
 \keyword{MathandStatsTools}

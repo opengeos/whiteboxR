@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_min_downslope_elev_change}
 \alias{wbt_min_downslope_elev_change}
-\title{Min downslope elev change
-Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors.}
+\title{Min downslope elev change}
 \usage{
 wbt_min_downslope_elev_change(
   dem,
@@ -31,7 +30,6 @@ wbt_min_downslope_elev_change(
 Returns the tool text outputs.
 }
 \description{
-Min downslope elev change
 Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors.
 }
 \keyword{GeomorphometricAnalysis}

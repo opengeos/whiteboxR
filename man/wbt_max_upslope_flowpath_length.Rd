@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_max_upslope_flowpath_length}
 \alias{wbt_max_upslope_flowpath_length}
-\title{Max upslope flowpath length
-Measures the maximum length of all upslope flowpaths draining each grid cell.}
+\title{Max upslope flowpath length}
 \usage{
 wbt_max_upslope_flowpath_length(
   dem,
@@ -31,7 +30,6 @@ wbt_max_upslope_flowpath_length(
 Returns the tool text outputs.
 }
 \description{
-Max upslope flowpath length
 Measures the maximum length of all upslope flowpaths draining each grid cell.
 }
 \keyword{HydrologicalAnalysis}

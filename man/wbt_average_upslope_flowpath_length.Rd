@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_average_upslope_flowpath_length}
 \alias{wbt_average_upslope_flowpath_length}
-\title{Average upslope flowpath length
-Measures the average length of all upslope flowpaths draining each grid cell.}
+\title{Average upslope flowpath length}
 \usage{
 wbt_average_upslope_flowpath_length(
   dem,
@@ -31,7 +30,6 @@ wbt_average_upslope_flowpath_length(
 Returns the tool text outputs.
 }
 \description{
-Average upslope flowpath length
 Measures the average length of all upslope flowpaths draining each grid cell.
 }
 \keyword{HydrologicalAnalysis}

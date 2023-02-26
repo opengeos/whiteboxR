@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_d_inf_mass_flux}
 \alias{wbt_d_inf_mass_flux}
-\title{D inf mass flux
-Performs a D-infinity mass flux calculation.}
+\title{D inf mass flux}
 \usage{
 wbt_d_inf_mass_flux(
   dem,
@@ -40,7 +39,6 @@ wbt_d_inf_mass_flux(
 Returns the tool text outputs.
 }
 \description{
-D inf mass flux
 Performs a D-infinity mass flux calculation.
 }
 \keyword{HydrologicalAnalysis}

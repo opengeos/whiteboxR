@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_and}
 \alias{wbt_and}
-\title{And
-Performs a logical AND operator on two Boolean raster images.}
+\title{And}
 \usage{
 wbt_and(
   input1,
@@ -34,7 +33,6 @@ wbt_and(
 Returns the tool text outputs.
 }
 \description{
-And
 Performs a logical AND operator on two Boolean raster images.
 }
 \keyword{MathandStatsTools}

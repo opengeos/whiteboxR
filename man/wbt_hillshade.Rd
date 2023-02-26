@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_hillshade}
 \alias{wbt_hillshade}
-\title{Hillshade
-Calculates a hillshade raster from an input DEM.}
+\title{Hillshade}
 \usage{
 wbt_hillshade(
   dem,
@@ -40,7 +39,6 @@ wbt_hillshade(
 Returns the tool text outputs.
 }
 \description{
-Hillshade
 Calculates a hillshade raster from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

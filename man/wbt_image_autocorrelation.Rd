@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_image_autocorrelation}
 \alias{wbt_image_autocorrelation}
-\title{Image autocorrelation
-Performs Moran's I analysis on two or more input images.}
+\title{Image autocorrelation}
 \usage{
 wbt_image_autocorrelation(
   inputs,
@@ -34,7 +33,6 @@ wbt_image_autocorrelation(
 Returns the tool text outputs.
 }
 \description{
-Image autocorrelation
 Performs Moran's I analysis on two or more input images.
 }
 \keyword{MathandStatsTools}

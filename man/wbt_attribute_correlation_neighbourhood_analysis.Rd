@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_attribute_correlation_neighbourhood_analysis}
 \alias{wbt_attribute_correlation_neighbourhood_analysis}
-\title{Attribute correlation neighbourhood analysis
-Performs a correlation on two input vector attributes within a neighbourhood search windows.}
+\title{Attribute correlation neighbourhood analysis}
 \usage{
 wbt_attribute_correlation_neighbourhood_analysis(
   input,
@@ -43,7 +42,6 @@ wbt_attribute_correlation_neighbourhood_analysis(
 Returns the tool text outputs.
 }
 \description{
-Attribute correlation neighbourhood analysis
 Performs a correlation on two input vector attributes within a neighbourhood search windows.
 }
 \keyword{MathandStatsTools}

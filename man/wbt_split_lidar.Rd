@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_split_lidar}
 \alias{wbt_split_lidar}
-\title{Split lidar
-Splits LiDAR points up into a series of new files based on their properties.}
+\title{Split lidar}
 \usage{
 wbt_split_lidar(
   input,
@@ -37,7 +36,6 @@ wbt_split_lidar(
 Returns the tool text outputs.
 }
 \description{
-Split lidar
 Splits LiDAR points up into a series of new files based on their properties.
 }
 \keyword{LiDARTools}

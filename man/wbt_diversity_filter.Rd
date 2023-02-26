@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_diversity_filter}
 \alias{wbt_diversity_filter}
-\title{Diversity filter
-Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.}
+\title{Diversity filter}
 \usage{
 wbt_diversity_filter(
   input,
@@ -37,7 +36,6 @@ wbt_diversity_filter(
 Returns the tool text outputs.
 }
 \description{
-Diversity filter
 Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
 }
 \keyword{ImageProcessingToolsFilters}

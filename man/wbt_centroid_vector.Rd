@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_centroid_vector}
 \alias{wbt_centroid_vector}
-\title{Centroid vector
-Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.}
+\title{Centroid vector}
 \usage{
 wbt_centroid_vector(
   input,
@@ -31,7 +30,6 @@ wbt_centroid_vector(
 Returns the tool text outputs.
 }
 \description{
-Centroid vector
 Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 }
 \keyword{GISAnalysis}

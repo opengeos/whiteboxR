@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_elev_dev_signature}
 \alias{wbt_max_elev_dev_signature}
-\title{Max elev dev signature
-Calculates the maximum elevation deviation over a range of spatial scales and for a set of points.}
+\title{Max elev dev signature}
 \usage{
 wbt_max_elev_dev_signature(
   dem,
@@ -43,7 +42,6 @@ wbt_max_elev_dev_signature(
 Returns the tool text outputs.
 }
 \description{
-Max elev dev signature
 Calculates the maximum elevation deviation over a range of spatial scales and for a set of points.
 }
 \keyword{GeomorphometricAnalysis}

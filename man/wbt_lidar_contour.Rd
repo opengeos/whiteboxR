@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_contour}
 \alias{wbt_lidar_contour}
-\title{Lidar contour
-This tool creates a vector contour coverage from an input LiDAR point file.}
+\title{Lidar contour}
 \usage{
 wbt_lidar_contour(
   input,
@@ -55,7 +54,6 @@ wbt_lidar_contour(
 Returns the tool text outputs.
 }
 \description{
-Lidar contour
 This tool creates a vector contour coverage from an input LiDAR point file.
 }
 \keyword{LiDARTools}

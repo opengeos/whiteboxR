@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multiscale_std_dev_normals_signature}
 \alias{wbt_multiscale_std_dev_normals_signature}
-\title{Multiscale std dev normals signature
-Calculates the surface roughness for points over a range of spatial scales.}
+\title{Multiscale std dev normals signature}
 \usage{
 wbt_multiscale_std_dev_normals_signature(
   dem,
@@ -46,7 +45,6 @@ wbt_multiscale_std_dev_normals_signature(
 Returns the tool text outputs.
 }
 \description{
-Multiscale std dev normals signature
 Calculates the surface roughness for points over a range of spatial scales.
 }
 \keyword{GeomorphometricAnalysis}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_split_vector_lines}
 \alias{wbt_split_vector_lines}
-\title{Split vector lines
-This tool can be used to split a vector line coverage into even-lengthed segments.}
+\title{Split vector lines}
 \usage{
 wbt_split_vector_lines(
   input,
@@ -34,7 +33,6 @@ wbt_split_vector_lines(
 Returns the tool text outputs.
 }
 \description{
-Split vector lines
 This tool can be used to split a vector line coverage into even-lengthed segments.
 }
 \keyword{GISAnalysis}

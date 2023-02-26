@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_truncate}
 \alias{wbt_truncate}
-\title{Truncate
-Truncates the values in a raster to the desired number of decimal places.}
+\title{Truncate}
 \usage{
 wbt_truncate(
   input,
@@ -34,7 +33,6 @@ wbt_truncate(
 Returns the tool text outputs.
 }
 \description{
-Truncate
 Truncates the values in a raster to the desired number of decimal places.
 }
 \keyword{MathandStatsTools}

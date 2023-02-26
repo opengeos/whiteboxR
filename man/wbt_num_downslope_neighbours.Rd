@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_num_downslope_neighbours}
 \alias{wbt_num_downslope_neighbours}
-\title{Num downslope neighbours
-Calculates the number of downslope neighbours to each grid cell in a DEM.}
+\title{Num downslope neighbours}
 \usage{
 wbt_num_downslope_neighbours(
   dem,
@@ -31,7 +30,6 @@ wbt_num_downslope_neighbours(
 Returns the tool text outputs.
 }
 \description{
-Num downslope neighbours
 Calculates the number of downslope neighbours to each grid cell in a DEM.
 }
 \keyword{GeomorphometricAnalysis}

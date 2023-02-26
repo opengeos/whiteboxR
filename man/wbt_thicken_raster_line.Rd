@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_thicken_raster_line}
 \alias{wbt_thicken_raster_line}
-\title{Thicken raster line
-Thickens single-cell wide lines within a raster image.}
+\title{Thicken raster line}
 \usage{
 wbt_thicken_raster_line(
   input,
@@ -31,7 +30,6 @@ wbt_thicken_raster_line(
 Returns the tool text outputs.
 }
 \description{
-Thicken raster line
 Thickens single-cell wide lines within a raster image.
 }
 \keyword{ImageProcessingTools}

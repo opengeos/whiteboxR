@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_not_equal_to}
 \alias{wbt_not_equal_to}
-\title{Not equal to
-Performs a not-equal-to comparison operation on two rasters or a raster and a constant value.}
+\title{Not equal to}
 \usage{
 wbt_not_equal_to(
   input1,
@@ -34,7 +33,6 @@ wbt_not_equal_to(
 Returns the tool text outputs.
 }
 \description{
-Not equal to
 Performs a not-equal-to comparison operation on two rasters or a raster and a constant value.
 }
 \keyword{MathandStatsTools}

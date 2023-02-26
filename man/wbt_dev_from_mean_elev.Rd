@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_dev_from_mean_elev}
 \alias{wbt_dev_from_mean_elev}
-\title{Dev from mean elev
-Calculates deviation from mean elevation.}
+\title{Dev from mean elev}
 \usage{
 wbt_dev_from_mean_elev(
   dem,
@@ -37,7 +36,6 @@ wbt_dev_from_mean_elev(
 Returns the tool text outputs.
 }
 \description{
-Dev from mean elev
 Calculates deviation from mean elevation.
 }
 \keyword{GeomorphometricAnalysis}

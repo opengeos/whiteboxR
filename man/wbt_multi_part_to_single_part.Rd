@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_multi_part_to_single_part}
 \alias{wbt_multi_part_to_single_part}
-\title{Multi part to single part
-Converts a vector file containing multi-part features into a vector containing only single-part features.}
+\title{Multi part to single part}
 \usage{
 wbt_multi_part_to_single_part(
   input,
@@ -34,7 +33,6 @@ wbt_multi_part_to_single_part(
 Returns the tool text outputs.
 }
 \description{
-Multi part to single part
 Converts a vector file containing multi-part features into a vector containing only single-part features.
 }
 \keyword{DataTools}

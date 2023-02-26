@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_new_raster_from_base}
 \alias{wbt_new_raster_from_base}
-\title{New raster from base
-Creates a new raster using a base image.}
+\title{New raster from base}
 \usage{
 wbt_new_raster_from_base(
   base,
@@ -40,7 +39,6 @@ wbt_new_raster_from_base(
 Returns the tool text outputs.
 }
 \description{
-New raster from base
 Creates a new raster using a base image.
 }
 \keyword{DataTools}

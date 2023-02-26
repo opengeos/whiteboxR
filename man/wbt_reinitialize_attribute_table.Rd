@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_reinitialize_attribute_table}
 \alias{wbt_reinitialize_attribute_table}
-\title{Reinitialize attribute table
-Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).}
+\title{Reinitialize attribute table}
 \usage{
 wbt_reinitialize_attribute_table(
   input,
@@ -28,7 +27,6 @@ wbt_reinitialize_attribute_table(
 Returns the tool text outputs.
 }
 \description{
-Reinitialize attribute table
 Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
 }
 \keyword{DataTools}

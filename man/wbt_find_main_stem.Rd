@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_find_main_stem}
 \alias{wbt_find_main_stem}
-\title{Find main stem
-Finds the main stem, based on stream lengths, of each stream network.}
+\title{Find main stem}
 \usage{
 wbt_find_main_stem(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_find_main_stem(
 Returns the tool text outputs.
 }
 \description{
-Find main stem
 Finds the main stem, based on stream lengths, of each stream network.
 }
 \keyword{StreamNetworkAnalysis}

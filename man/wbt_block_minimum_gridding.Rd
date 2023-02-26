@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_block_minimum_gridding}
 \alias{wbt_block_minimum_gridding}
-\title{Block minimum gridding
-Creates a raster grid based on a set of vector points and assigns grid values using a block minimum scheme.}
+\title{Block minimum gridding}
 \usage{
 wbt_block_minimum_gridding(
   input,
@@ -43,7 +42,6 @@ wbt_block_minimum_gridding(
 Returns the tool text outputs.
 }
 \description{
-Block minimum gridding
 Creates a raster grid based on a set of vector points and assigns grid values using a block minimum scheme.
 }
 \keyword{GISAnalysis}

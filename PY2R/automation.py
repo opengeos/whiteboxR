@@ -318,7 +318,8 @@ with open(wbt_py) as f:
                 title = line.replace("def", "").strip().split("(")[0]
                 title = title.replace("_", " ")
                 title = title[0].upper() + title[1:]
-                ff.write("#' {}\n".format(title))
+                ff.write("#' @title {}\n".format(title))
+                ff.write("#'\n")
                 i = 1
                 while True:
                     doc_line = lines[index + i].strip()
@@ -327,7 +328,7 @@ with open(wbt_py) as f:
                     elif doc_line.startswith('"""'):
                         description = doc_line[3:] + "\n"
                         desc = description.strip().replace(".", "")
-                        ff.write("#' {}".format(description))
+                        ff.write("#' @description {}".format(description))
                         ff.write("#'\n")
                     elif ("--" in doc_line) and (
                         doc_line.startswith("callback") == False

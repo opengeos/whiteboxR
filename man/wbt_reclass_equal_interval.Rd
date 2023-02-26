@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_reclass_equal_interval}
 \alias{wbt_reclass_equal_interval}
-\title{Reclass equal interval
-Reclassifies the values in a raster image based on equal-ranges.}
+\title{Reclass equal interval}
 \usage{
 wbt_reclass_equal_interval(
   input,
@@ -40,7 +39,6 @@ wbt_reclass_equal_interval(
 Returns the tool text outputs.
 }
 \description{
-Reclass equal interval
 Reclassifies the values in a raster image based on equal-ranges.
 }
 \keyword{GISAnalysis}

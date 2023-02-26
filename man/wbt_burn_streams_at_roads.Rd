@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_burn_streams_at_roads}
 \alias{wbt_burn_streams_at_roads}
-\title{Burn streams at roads
-Burns-in streams at the sites of road embankments.}
+\title{Burn streams at roads}
 \usage{
 wbt_burn_streams_at_roads(
   dem,
@@ -40,7 +39,6 @@ wbt_burn_streams_at_roads(
 Returns the tool text outputs.
 }
 \description{
-Burn streams at roads
 Burns-in streams at the sites of road embankments.
 }
 \keyword{HydrologicalAnalysis}

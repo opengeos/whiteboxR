@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_related_circumscribing_circle}
 \alias{wbt_related_circumscribing_circle}
-\title{Related circumscribing circle
-Calculates the related circumscribing circle of vector polygons.}
+\title{Related circumscribing circle}
 \usage{
 wbt_related_circumscribing_circle(
   input,
@@ -28,7 +27,6 @@ wbt_related_circumscribing_circle(
 Returns the tool text outputs.
 }
 \description{
-Related circumscribing circle
 Calculates the related circumscribing circle of vector polygons.
 }
 \keyword{GISAnalysisPatchShapeTools}

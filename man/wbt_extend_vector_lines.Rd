@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_extend_vector_lines}
 \alias{wbt_extend_vector_lines}
-\title{Extend vector lines
-Extends vector lines by a specified distance.}
+\title{Extend vector lines}
 \usage{
 wbt_extend_vector_lines(
   input,
@@ -37,7 +36,6 @@ wbt_extend_vector_lines(
 Returns the tool text outputs.
 }
 \description{
-Extend vector lines
 Extends vector lines by a specified distance.
 }
 \keyword{GISAnalysis}

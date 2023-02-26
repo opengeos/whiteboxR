@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_union}
 \alias{wbt_union}
-\title{Union
-Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.}
+\title{Union}
 \usage{
 wbt_union(
   input,
@@ -37,7 +36,6 @@ wbt_union(
 Returns the tool text outputs.
 }
 \description{
-Union
 Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
 }
 \keyword{GISAnalysisOverlayTools}

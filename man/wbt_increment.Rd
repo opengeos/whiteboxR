@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_increment}
 \alias{wbt_increment}
-\title{Increment
-Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd).}
+\title{Increment}
 \usage{
 wbt_increment(
   input,
@@ -31,7 +30,6 @@ wbt_increment(
 Returns the tool text outputs.
 }
 \description{
-Increment
 Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd).
 }
 \keyword{MathandStatsTools}

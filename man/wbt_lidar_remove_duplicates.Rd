@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_remove_duplicates}
 \alias{wbt_lidar_remove_duplicates}
-\title{Lidar remove duplicates
-Removes duplicate points from a LiDAR data set.}
+\title{Lidar remove duplicates}
 \usage{
 wbt_lidar_remove_duplicates(
   input,
@@ -34,7 +33,6 @@ wbt_lidar_remove_duplicates(
 Returns the tool text outputs.
 }
 \description{
-Lidar remove duplicates
 Removes duplicate points from a LiDAR data set.
 }
 \keyword{LiDARTools}

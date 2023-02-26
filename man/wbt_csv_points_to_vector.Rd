@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_csv_points_to_vector}
 \alias{wbt_csv_points_to_vector}
-\title{Csv points to vector
-Converts a CSV text file to vector points.}
+\title{Csv points to vector}
 \usage{
 wbt_csv_points_to_vector(
   input,
@@ -40,7 +39,6 @@ wbt_csv_points_to_vector(
 Returns the tool text outputs.
 }
 \description{
-Csv points to vector
 Converts a CSV text file to vector points.
 }
 \keyword{DataTools}

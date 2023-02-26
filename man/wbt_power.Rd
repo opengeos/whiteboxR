@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_power}
 \alias{wbt_power}
-\title{Power
-Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value.}
+\title{Power}
 \usage{
 wbt_power(
   input1,
@@ -34,7 +33,6 @@ wbt_power(
 Returns the tool text outputs.
 }
 \description{
-Power
 Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value.
 }
 \keyword{MathandStatsTools}

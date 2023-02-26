@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_upslope_depression_storage}
 \alias{wbt_upslope_depression_storage}
-\title{Upslope depression storage
-Estimates the average upslope depression storage depth.}
+\title{Upslope depression storage}
 \usage{
 wbt_upslope_depression_storage(
   dem,
@@ -31,7 +30,6 @@ wbt_upslope_depression_storage(
 Returns the tool text outputs.
 }
 \description{
-Upslope depression storage
 Estimates the average upslope depression storage depth.
 }
 \keyword{HydrologicalAnalysis}

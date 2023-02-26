@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_isobasins}
 \alias{wbt_isobasins}
-\title{Isobasins
-Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).}
+\title{Isobasins}
 \usage{
 wbt_isobasins(
   dem,
@@ -37,7 +36,6 @@ wbt_isobasins(
 Returns the tool text outputs.
 }
 \description{
-Isobasins
 Divides a landscape into nearly equal sized drainage basins (i.e. watersheds).
 }
 \keyword{HydrologicalAnalysis}

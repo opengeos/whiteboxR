@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_pennock_landform_class}
 \alias{wbt_pennock_landform_class}
-\title{Pennock landform class
-Classifies hillslope zones based on slope, profile curvature, and plan curvature.}
+\title{Pennock landform class}
 \usage{
 wbt_pennock_landform_class(
   dem,
@@ -43,7 +42,6 @@ wbt_pennock_landform_class(
 Returns the tool text outputs.
 }
 \description{
-Pennock landform class
 Classifies hillslope zones based on slope, profile curvature, and plan curvature.
 }
 \keyword{GeomorphometricAnalysis}

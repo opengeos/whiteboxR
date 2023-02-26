@@ -2,8 +2,7 @@
 % Please edit documentation in R/precision_agriculture.R
 \name{wbt_recreate_pass_lines}
 \alias{wbt_recreate_pass_lines}
-\title{Recreate pass lines
-This tool can be used to approximate the harvester pass lines from yield points.}
+\title{Recreate pass lines}
 \usage{
 wbt_recreate_pass_lines(
   input,
@@ -43,7 +42,6 @@ wbt_recreate_pass_lines(
 Returns the tool text outputs.
 }
 \description{
-Recreate pass lines
 This tool can be used to approximate the harvester pass lines from yield points.
 }
 \keyword{PrecisionAgriculture}

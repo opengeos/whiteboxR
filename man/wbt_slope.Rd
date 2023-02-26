@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_slope}
 \alias{wbt_slope}
-\title{Slope
-Calculates a slope raster from an input DEM.}
+\title{Slope}
 \usage{
 wbt_slope(
   dem,
@@ -37,7 +36,6 @@ wbt_slope(
 Returns the tool text outputs.
 }
 \description{
-Slope
 Calculates a slope raster from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

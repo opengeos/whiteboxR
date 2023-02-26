@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_downslope_elev_change}
 \alias{wbt_max_downslope_elev_change}
-\title{Max downslope elev change
-Calculates the maximum downslope change in elevation between a grid cell and its eight downslope neighbors.}
+\title{Max downslope elev change}
 \usage{
 wbt_max_downslope_elev_change(
   dem,
@@ -31,7 +30,6 @@ wbt_max_downslope_elev_change(
 Returns the tool text outputs.
 }
 \description{
-Max downslope elev change
 Calculates the maximum downslope change in elevation between a grid cell and its eight downslope neighbors.
 }
 \keyword{GeomorphometricAnalysis}

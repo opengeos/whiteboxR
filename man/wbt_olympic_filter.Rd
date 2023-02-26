@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_olympic_filter}
 \alias{wbt_olympic_filter}
-\title{Olympic filter
-Performs an olympic smoothing filter on an image.}
+\title{Olympic filter}
 \usage{
 wbt_olympic_filter(
   input,
@@ -37,7 +36,6 @@ wbt_olympic_filter(
 Returns the tool text outputs.
 }
 \description{
-Olympic filter
 Performs an olympic smoothing filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_dbscan}
 \alias{wbt_dbscan}
-\title{Dbscan
-Performs a DBSCAN-based unsupervised clustering operation.}
+\title{Dbscan}
 \usage{
 wbt_dbscan(
   inputs,
@@ -40,7 +39,6 @@ wbt_dbscan(
 Returns the tool text outputs.
 }
 \description{
-Dbscan
 Performs a DBSCAN-based unsupervised clustering operation.
 }
 \keyword{MachineLearning}

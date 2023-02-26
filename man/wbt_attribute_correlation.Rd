@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_attribute_correlation}
 \alias{wbt_attribute_correlation}
-\title{Attribute correlation
-Performs a correlation analysis on attribute fields from a vector database.}
+\title{Attribute correlation}
 \usage{
 wbt_attribute_correlation(
   input,
@@ -31,7 +30,6 @@ wbt_attribute_correlation(
 Returns the tool text outputs.
 }
 \description{
-Attribute correlation
 Performs a correlation analysis on attribute fields from a vector database.
 }
 \keyword{MathandStatsTools}

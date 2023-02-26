@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_percent_greater_than}
 \alias{wbt_percent_greater_than}
-\title{Percent greater than
-Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.}
+\title{Percent greater than}
 \usage{
 wbt_percent_greater_than(
   inputs,
@@ -34,7 +33,6 @@ wbt_percent_greater_than(
 Returns the tool text outputs.
 }
 \description{
-Percent greater than
 Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
 }
 \keyword{GISAnalysisOverlayTools}

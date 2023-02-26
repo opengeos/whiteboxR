@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_greater_than}
 \alias{wbt_greater_than}
-\title{Greater than
-Performs a greater-than comparison operation on two rasters or a raster and a constant value.}
+\title{Greater than}
 \usage{
 wbt_greater_than(
   input1,
@@ -37,7 +36,6 @@ wbt_greater_than(
 Returns the tool text outputs.
 }
 \description{
-Greater than
 Performs a greater-than comparison operation on two rasters or a raster and a constant value.
 }
 \keyword{MathandStatsTools}

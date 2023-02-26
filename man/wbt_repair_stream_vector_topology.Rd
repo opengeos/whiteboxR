@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_repair_stream_vector_topology}
 \alias{wbt_repair_stream_vector_topology}
-\title{Repair stream vector topology
-This tool resolves topological errors and inconsistencies associated with digitized vector streams.}
+\title{Repair stream vector topology}
 \usage{
 wbt_repair_stream_vector_topology(
   input,
@@ -34,7 +33,6 @@ wbt_repair_stream_vector_topology(
 Returns the tool text outputs.
 }
 \description{
-Repair stream vector topology
 This tool resolves topological errors and inconsistencies associated with digitized vector streams.
 }
 \keyword{StreamNetworkAnalysis}

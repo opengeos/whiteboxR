@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_scharr_filter}
 \alias{wbt_scharr_filter}
-\title{Scharr filter
-Performs a Scharr edge-detection filter on an image.}
+\title{Scharr filter}
 \usage{
 wbt_scharr_filter(
   input,
@@ -34,7 +33,6 @@ wbt_scharr_filter(
 Returns the tool text outputs.
 }
 \description{
-Scharr filter
 Performs a Scharr edge-detection filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

@@ -1,5 +1,6 @@
-#' Dbscan
-#' Performs a DBSCAN-based unsupervised clustering operation.
+#' @title Dbscan
+#'
+#' @description Performs a DBSCAN-based unsupervised clustering operation.
 #'
 #' @param inputs Names of the input rasters.
 #' @param scaling Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.
@@ -40,8 +41,9 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
 }
 
 
-#' K means clustering
-#' Performs a k-means clustering operation on a multi-spectral dataset.
+#' @title K means clustering
+#'
+#' @description Performs a k-means clustering operation on a multi-spectral dataset.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -92,8 +94,9 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
 }
 
 
-#' Knn classification
-#' Performs a supervised k-nearest neighbour classification using training site polygons/points and predictor rasters.
+#' @title Knn classification
+#'
+#' @description Performs a supervised k-nearest neighbour classification using training site polygons/points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param scaling Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.
@@ -144,8 +147,9 @@ wbt_knn_classification <- function(inputs, training, field, scaling="Normalize",
 }
 
 
-#' Knn regression
-#' Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.
+#' @title Knn regression
+#'
+#' @description Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param scaling Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.
@@ -196,8 +200,9 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
 }
 
 
-#' Logistic regression
-#' Performs a logistic regression analysis using training site polygons/points and predictor rasters.
+#' @title Logistic regression
+#'
+#' @description Performs a logistic regression analysis using training site polygons/points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param scaling Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.
@@ -240,8 +245,9 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
 }
 
 
-#' Modified k means clustering
-#' Performs a modified k-means clustering operation on a multi-spectral dataset.
+#' @title Modified k means clustering
+#'
+#' @description Performs a modified k-means clustering operation on a multi-spectral dataset.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -290,8 +296,9 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
 }
 
 
-#' Random forest classification
-#' Performs a supervised random forest classification using training site polygons/points and predictor rasters.
+#' @title Random forest classification
+#'
+#' @description Performs a supervised random forest classification using training site polygons/points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param training Name of the input training site polygons/points shapefile.
@@ -346,8 +353,9 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
 }
 
 
-#' Random forest regression
-#' Performs a random forest regression analysis using training site data and predictor rasters.
+#' @title Random forest regression
+#'
+#' @description Performs a random forest regression analysis using training site data and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param training Name of the input training site points shapefile.
@@ -398,8 +406,9 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
 }
 
 
-#' Svm classification
-#' Performs an SVM binary classification using training site polygons/points and multiple input images.
+#' @title Svm classification
+#'
+#' @description Performs an SVM binary classification using training site polygons/points and multiple input images.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param scaling Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.
@@ -454,8 +463,9 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
 }
 
 
-#' Svm regression
-#' Performs a supervised SVM regression analysis using training site points and predictor rasters.
+#' @title Svm regression
+#'
+#' @description Performs a supervised SVM regression analysis using training site points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
 #' @param scaling Scaling method for predictors. Options include 'None', 'Normalize', and 'Standardize'.

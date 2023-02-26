@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_change_vector_analysis}
 \alias{wbt_change_vector_analysis}
-\title{Change vector analysis
-Performs a change vector analysis on a two-date multi-spectral dataset.}
+\title{Change vector analysis}
 \usage{
 wbt_change_vector_analysis(
   date1,
@@ -37,7 +36,6 @@ wbt_change_vector_analysis(
 Returns the tool text outputs.
 }
 \description{
-Change vector analysis
 Performs a change vector analysis on a two-date multi-spectral dataset.
 }
 \keyword{ImageProcessingTools}

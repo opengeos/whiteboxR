@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_maximum_filter}
 \alias{wbt_maximum_filter}
-\title{Maximum filter
-Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.}
+\title{Maximum filter}
 \usage{
 wbt_maximum_filter(
   input,
@@ -37,7 +36,6 @@ wbt_maximum_filter(
 Returns the tool text outputs.
 }
 \description{
-Maximum filter
 Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
 }
 \keyword{ImageProcessingToolsFilters}

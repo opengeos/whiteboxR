@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_profile}
 \alias{wbt_profile}
-\title{Profile
-Plots profiles from digital surface models.}
+\title{Profile}
 \usage{
 wbt_profile(
   lines,
@@ -34,7 +33,6 @@ wbt_profile(
 Returns the tool text outputs.
 }
 \description{
-Profile
 Plots profiles from digital surface models.
 }
 \keyword{GeomorphometricAnalysis}

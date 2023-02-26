@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_eliminate_coincident_points}
 \alias{wbt_eliminate_coincident_points}
-\title{Eliminate coincident points
-Removes any coincident, or nearly coincident, points from a vector points file.}
+\title{Eliminate coincident points}
 \usage{
 wbt_eliminate_coincident_points(
   input,
@@ -34,7 +33,6 @@ wbt_eliminate_coincident_points(
 Returns the tool text outputs.
 }
 \description{
-Eliminate coincident points
 Removes any coincident, or nearly coincident, points from a vector points file.
 }
 \keyword{GISAnalysis}

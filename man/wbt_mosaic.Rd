@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_mosaic}
 \alias{wbt_mosaic}
-\title{Mosaic
-Mosaics two or more images together.}
+\title{Mosaic}
 \usage{
 wbt_mosaic(
   output,
@@ -34,7 +33,6 @@ wbt_mosaic(
 Returns the tool text outputs.
 }
 \description{
-Mosaic
 Mosaics two or more images together.
 }
 \keyword{ImageProcessingTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_hillslopes}
 \alias{wbt_hillslopes}
-\title{Hillslopes
-Identifies the individual hillslopes draining to each link in a stream network.}
+\title{Hillslopes}
 \usage{
 wbt_hillslopes(
   d8_pntr,
@@ -37,7 +36,6 @@ wbt_hillslopes(
 Returns the tool text outputs.
 }
 \description{
-Hillslopes
 Identifies the individual hillslopes draining to each link in a stream network.
 }
 \keyword{HydrologicalAnalysis}

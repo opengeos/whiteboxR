@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_crispness_index}
 \alias{wbt_crispness_index}
-\title{Crispness index
-Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is.}
+\title{Crispness index}
 \usage{
 wbt_crispness_index(
   input,
@@ -31,7 +30,6 @@ wbt_crispness_index(
 Returns the tool text outputs.
 }
 \description{
-Crispness index
 Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is.
 }
 \keyword{MathandStatsTools}

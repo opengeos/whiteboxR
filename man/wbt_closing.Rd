@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_closing}
 \alias{wbt_closing}
-\title{Closing
-A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.}
+\title{Closing}
 \usage{
 wbt_closing(
   input,
@@ -37,7 +36,6 @@ wbt_closing(
 Returns the tool text outputs.
 }
 \description{
-Closing
 A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
 }
 \keyword{ImageProcessingTools}

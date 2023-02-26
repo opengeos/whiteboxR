@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_modify_no_data_value}
 \alias{wbt_modify_no_data_value}
-\title{Modify no data value
-Converts nodata values in a raster to zero.}
+\title{Modify no data value}
 \usage{
 wbt_modify_no_data_value(
   input,
@@ -31,7 +30,6 @@ wbt_modify_no_data_value(
 Returns the tool text outputs.
 }
 \description{
-Modify no data value
 Converts nodata values in a raster to zero.
 }
 \keyword{DataTools}

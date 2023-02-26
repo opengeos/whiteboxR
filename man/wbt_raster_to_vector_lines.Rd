@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_raster_to_vector_lines}
 \alias{wbt_raster_to_vector_lines}
-\title{Raster to vector lines
-Converts a raster lines features into a vector of the POLYLINE shapetype.}
+\title{Raster to vector lines}
 \usage{
 wbt_raster_to_vector_lines(
   input,
@@ -31,7 +30,6 @@ wbt_raster_to_vector_lines(
 Returns the tool text outputs.
 }
 \description{
-Raster to vector lines
 Converts a raster lines features into a vector of the POLYLINE shapetype.
 }
 \keyword{DataTools}

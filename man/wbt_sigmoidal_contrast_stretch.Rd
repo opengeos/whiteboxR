@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_sigmoidal_contrast_stretch}
 \alias{wbt_sigmoidal_contrast_stretch}
-\title{Sigmoidal contrast stretch
-Performs a sigmoidal contrast stretch on input images.}
+\title{Sigmoidal contrast stretch}
 \usage{
 wbt_sigmoidal_contrast_stretch(
   input,
@@ -40,7 +39,6 @@ wbt_sigmoidal_contrast_stretch(
 Returns the tool text outputs.
 }
 \description{
-Sigmoidal contrast stretch
 Performs a sigmoidal contrast stretch on input images.
 }
 \keyword{ImageProcessingToolsImageEnhancement}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_in_place_subtract}
 \alias{wbt_in_place_subtract}
-\title{In place subtract
-Performs an in-place subtraction operation (input1 -= input2).}
+\title{In place subtract}
 \usage{
 wbt_in_place_subtract(
   input1,
@@ -31,7 +30,6 @@ wbt_in_place_subtract(
 Returns the tool text outputs.
 }
 \description{
-In place subtract
 Performs an in-place subtraction operation (input1 -= input2).
 }
 \keyword{MathandStatsTools}

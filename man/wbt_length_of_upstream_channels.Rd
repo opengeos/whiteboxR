@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_length_of_upstream_channels}
 \alias{wbt_length_of_upstream_channels}
-\title{Length of upstream channels
-Calculates the total length of channels upstream.}
+\title{Length of upstream channels}
 \usage{
 wbt_length_of_upstream_channels(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_length_of_upstream_channels(
 Returns the tool text outputs.
 }
 \description{
-Length of upstream channels
 Calculates the total length of channels upstream.
 }
 \keyword{StreamNetworkAnalysis}

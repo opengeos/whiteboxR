@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_point_return_analysis}
 \alias{wbt_lidar_point_return_analysis}
-\title{Lidar point return analysis
-This tool performs a quality control check on the return values of points in a LiDAR file.}
+\title{Lidar point return analysis}
 \usage{
 wbt_lidar_point_return_analysis(
   input,
@@ -31,7 +30,6 @@ wbt_lidar_point_return_analysis(
 Returns the tool text outputs.
 }
 \description{
-Lidar point return analysis
 This tool performs a quality control check on the return values of points in a LiDAR file.
 }
 \keyword{LiDARTools}

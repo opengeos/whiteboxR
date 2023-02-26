@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_anova}
 \alias{wbt_anova}
-\title{Anova
-Performs an analysis of variance (ANOVA) test on a raster dataset.}
+\title{Anova}
 \usage{
 wbt_anova(
   input,
@@ -34,7 +33,6 @@ wbt_anova(
 Returns the tool text outputs.
 }
 \description{
-Anova
 Performs an analysis of variance (ANOVA) test on a raster dataset.
 }
 \keyword{MathandStatsTools}

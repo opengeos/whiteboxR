@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_line_intersections}
 \alias{wbt_line_intersections}
-\title{Line intersections
-Identifies points where the features of two vector line layers intersect.}
+\title{Line intersections}
 \usage{
 wbt_line_intersections(
   input1,
@@ -34,7 +33,6 @@ wbt_line_intersections(
 Returns the tool text outputs.
 }
 \description{
-Line intersections
 Identifies points where the features of two vector line layers intersect.
 }
 \keyword{GISAnalysisOverlayTools}

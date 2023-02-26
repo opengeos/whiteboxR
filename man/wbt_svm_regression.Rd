@@ -2,8 +2,7 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_svm_regression}
 \alias{wbt_svm_regression}
-\title{Svm regression
-Performs a supervised SVM regression analysis using training site points and predictor rasters.}
+\title{Svm regression}
 \usage{
 wbt_svm_regression(
   inputs,
@@ -52,7 +51,6 @@ wbt_svm_regression(
 Returns the tool text outputs.
 }
 \description{
-Svm regression
 Performs a supervised SVM regression analysis using training site points and predictor rasters.
 }
 \keyword{MachineLearning}

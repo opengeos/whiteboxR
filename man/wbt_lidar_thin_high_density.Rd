@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_thin_high_density}
 \alias{wbt_lidar_thin_high_density}
-\title{Lidar thin high density
-Thins points from high density areas within a LiDAR point cloud.}
+\title{Lidar thin high density}
 \usage{
 wbt_lidar_thin_high_density(
   input,
@@ -40,7 +39,6 @@ wbt_lidar_thin_high_density(
 Returns the tool text outputs.
 }
 \description{
-Lidar thin high density
 Thins points from high density areas within a LiDAR point cloud.
 }
 \keyword{LiDARTools}

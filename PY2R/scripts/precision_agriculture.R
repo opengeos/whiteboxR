@@ -1,5 +1,6 @@
-#' Reconcile multiple headers
-#' This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
+#' @title Reconcile multiple headers
+#'
+#' @description This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
 #'
 #' @param input Name of the input points shapefile.
 #' @param region_field Name of the attribute containing region data.
@@ -48,8 +49,9 @@ wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, out
 }
 
 
-#' Recreate pass lines
-#' This tool can be used to approximate the harvester pass lines from yield points.
+#' @title Recreate pass lines
+#'
+#' @description This tool can be used to approximate the harvester pass lines from yield points.
 #'
 #' @param input Name of the input points shapefile.
 #' @param yield_field_name Name of the attribute containing yield data.
@@ -90,8 +92,9 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 }
 
 
-#' Remove field edge points
-#' This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.
+#' @title Remove field edge points
+#'
+#' @description This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.
 #'
 #' @param input Name of the input points shapefile.
 #' @param output Name of the output points shapefile.
@@ -132,8 +135,9 @@ wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in
 }
 
 
-#' Yield filter
-#' Filters crop yield values of point data derived from combine harvester yield monitors.
+#' @title Yield filter
+#'
+#' @description Filters crop yield values of point data derived from combine harvester yield monitors.
 #'
 #' @param input Name of the input points shapefile.
 #' @param yield_field Name of the attribute containing yield data.
@@ -182,8 +186,9 @@ wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096
 }
 
 
-#' Yield map
-#' This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.
+#' @title Yield map
+#'
+#' @description This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.
 #'
 #' @param input Name of the input points shapefile.
 #' @param pass_field_name Name of the attribute containing pass line ID.
@@ -222,8 +227,9 @@ wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_chang
 }
 
 
-#' Yield normalization
-#' This tool can be used to normalize the yield points for a field.
+#' @title Yield normalization
+#'
+#' @description This tool can be used to normalize the yield points for a field.
 #'
 #' @param input Name of the input points shapefile.
 #' @param yield_field Name of the attribute containing yield data.

@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_weighted_sum}
 \alias{wbt_weighted_sum}
-\title{Weighted sum
-Performs a weighted-sum overlay on multiple input raster images.}
+\title{Weighted sum}
 \usage{
 wbt_weighted_sum(
   inputs,
@@ -34,7 +33,6 @@ wbt_weighted_sum(
 Returns the tool text outputs.
 }
 \description{
-Weighted sum
 Performs a weighted-sum overlay on multiple input raster images.
 }
 \keyword{GISAnalysisOverlayTools}

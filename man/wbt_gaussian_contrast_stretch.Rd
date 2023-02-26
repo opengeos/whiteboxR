@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_gaussian_contrast_stretch}
 \alias{wbt_gaussian_contrast_stretch}
-\title{Gaussian contrast stretch
-Performs a Gaussian contrast stretch on input images.}
+\title{Gaussian contrast stretch}
 \usage{
 wbt_gaussian_contrast_stretch(
   input,
@@ -34,7 +33,6 @@ wbt_gaussian_contrast_stretch(
 Returns the tool text outputs.
 }
 \description{
-Gaussian contrast stretch
 Performs a Gaussian contrast stretch on input images.
 }
 \keyword{ImageProcessingToolsImageEnhancement}

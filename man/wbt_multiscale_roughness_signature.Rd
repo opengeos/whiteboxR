@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multiscale_roughness_signature}
 \alias{wbt_multiscale_roughness_signature}
-\title{Multiscale roughness signature
-Calculates the surface roughness for points over a range of spatial scales.}
+\title{Multiscale roughness signature}
 \usage{
 wbt_multiscale_roughness_signature(
   dem,
@@ -43,7 +42,6 @@ wbt_multiscale_roughness_signature(
 Returns the tool text outputs.
 }
 \description{
-Multiscale roughness signature
 Calculates the surface roughness for points over a range of spatial scales.
 }
 \keyword{GeomorphometricAnalysis}

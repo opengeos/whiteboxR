@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_not}
 \alias{wbt_not}
-\title{Not
-Performs a logical NOT operator on two Boolean raster images.}
+\title{Not}
 \usage{
 wbt_not(
   input1,
@@ -34,7 +33,6 @@ wbt_not(
 Returns the tool text outputs.
 }
 \description{
-Not
 Performs a logical NOT operator on two Boolean raster images.
 }
 \keyword{MathandStatsTools}

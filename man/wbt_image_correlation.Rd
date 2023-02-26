@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_image_correlation}
 \alias{wbt_image_correlation}
-\title{Image correlation
-Performs image correlation on two or more input images.}
+\title{Image correlation}
 \usage{
 wbt_image_correlation(
   inputs,
@@ -31,7 +30,6 @@ wbt_image_correlation(
 Returns the tool text outputs.
 }
 \description{
-Image correlation
 Performs image correlation on two or more input images.
 }
 \keyword{MathandStatsTools}

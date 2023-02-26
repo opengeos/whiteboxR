@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_classification.R
 \name{wbt_parallelepiped_classification}
 \alias{wbt_parallelepiped_classification}
-\title{Parallelepiped classification
-Performs a supervised parallelepiped classification using training site polygons and multi-spectral images.}
+\title{Parallelepiped classification}
 \usage{
 wbt_parallelepiped_classification(
   inputs,
@@ -37,7 +36,6 @@ wbt_parallelepiped_classification(
 Returns the tool text outputs.
 }
 \description{
-Parallelepiped classification
 Performs a supervised parallelepiped classification using training site polygons and multi-spectral images.
 }
 \keyword{ImageProcessingToolsClassification}

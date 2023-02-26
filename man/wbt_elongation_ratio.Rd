@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_elongation_ratio}
 \alias{wbt_elongation_ratio}
-\title{Elongation ratio
-Calculates the elongation ratio for vector polygons.}
+\title{Elongation ratio}
 \usage{
 wbt_elongation_ratio(
   input,
@@ -28,7 +27,6 @@ wbt_elongation_ratio(
 Returns the tool text outputs.
 }
 \description{
-Elongation ratio
 Calculates the elongation ratio for vector polygons.
 }
 \keyword{GISAnalysisPatchShapeTools}

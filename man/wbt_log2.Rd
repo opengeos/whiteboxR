@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_log2}
 \alias{wbt_log2}
-\title{Log2
-Returns the base-2 logarithm of values in a raster.}
+\title{Log2}
 \usage{
 wbt_log2(
   input,
@@ -31,7 +30,6 @@ wbt_log2(
 Returns the tool text outputs.
 }
 \description{
-Log2
 Returns the base-2 logarithm of values in a raster.
 }
 \keyword{MathandStatsTools}

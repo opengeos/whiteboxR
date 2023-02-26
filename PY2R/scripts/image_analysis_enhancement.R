@@ -1,5 +1,6 @@
-#' Balance contrast enhancement
-#' Performs a balance contrast enhancement on a colour-composite image of multispectral data.
+#' @title Balance contrast enhancement
+#'
+#' @description Performs a balance contrast enhancement on a colour-composite image of multispectral data.
 #'
 #' @param input Input colour composite image file.
 #' @param output Output raster file.
@@ -32,8 +33,9 @@ wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, wd=
 }
 
 
-#' Correct vignetting
-#' Corrects the darkening of images towards corners.
+#' @title Correct vignetting
+#'
+#' @description Corrects the darkening of images towards corners.
 #'
 #' @param input Input raster file.
 #' @param pp Input principal point file.
@@ -76,8 +78,9 @@ wbt_correct_vignetting <- function(input, pp, output, focal_length=304.8, image_
 }
 
 
-#' Direct decorrelation stretch
-#' Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.
+#' @title Direct decorrelation stretch
+#'
+#' @description Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.
 #'
 #' @param input Input colour composite image file.
 #' @param output Output raster file.
@@ -114,8 +117,9 @@ wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, wd=
 }
 
 
-#' Gamma correction
-#' Performs a gamma correction on an input images.
+#' @title Gamma correction
+#'
+#' @description Performs a gamma correction on an input images.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -148,8 +152,9 @@ wbt_gamma_correction <- function(input, output, gamma=0.5, wd=NULL, verbose_mode
 }
 
 
-#' Gaussian contrast stretch
-#' Performs a Gaussian contrast stretch on input images.
+#' @title Gaussian contrast stretch
+#'
+#' @description Performs a Gaussian contrast stretch on input images.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -182,8 +187,9 @@ wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL,
 }
 
 
-#' Histogram equalization
-#' Performs a histogram equalization contrast enhancement on an image.
+#' @title Histogram equalization
+#'
+#' @description Performs a histogram equalization contrast enhancement on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -216,8 +222,9 @@ wbt_histogram_equalization <- function(input, output, num_tones=256, wd=NULL, ve
 }
 
 
-#' Histogram matching
-#' Alters the statistical distribution of a raster image matching it to a specified PDF.
+#' @title Histogram matching
+#'
+#' @description Alters the statistical distribution of a raster image matching it to a specified PDF.
 #'
 #' @param input Input raster file.
 #' @param histo_file Input reference probability distribution function (pdf) text file.
@@ -248,8 +255,9 @@ wbt_histogram_matching <- function(input, histo_file, output, wd=NULL, verbose_m
 }
 
 
-#' Histogram matching two images
-#' This tool alters the cumulative distribution function of a raster image to that of another image.
+#' @title Histogram matching two images
+#'
+#' @description This tool alters the cumulative distribution function of a raster image to that of another image.
 #'
 #' @param input1 Input raster file to modify.
 #' @param input2 Input reference raster file.
@@ -280,8 +288,9 @@ wbt_histogram_matching_two_images <- function(input1, input2, output, wd=NULL, v
 }
 
 
-#' Min max contrast stretch
-#' Performs a min-max contrast stretch on an input greytone image.
+#' @title Min max contrast stretch
+#'
+#' @description Performs a min-max contrast stretch on an input greytone image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -318,8 +327,9 @@ wbt_min_max_contrast_stretch <- function(input, output, min_val, max_val, num_to
 }
 
 
-#' Panchromatic sharpening
-#' Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.
+#' @title Panchromatic sharpening
+#'
+#' @description Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.
 #'
 #' @param red Input red band image file. Optionally specified if colour-composite not specified.
 #' @param green Input green band image file. Optionally specified if colour-composite not specified.
@@ -368,8 +378,9 @@ wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=
 }
 
 
-#' Percentage contrast stretch
-#' Performs a percentage linear contrast stretch on input images.
+#' @title Percentage contrast stretch
+#'
+#' @description Performs a percentage linear contrast stretch on input images.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -410,8 +421,9 @@ wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both"
 }
 
 
-#' Piecewise contrast stretch
-#' Performs a piecewise contrast stretch on an input image.
+#' @title Piecewise contrast stretch
+#'
+#' @description Performs a piecewise contrast stretch on an input image.
 #'
 #' @param input Name of the input raster image file.
 #' @param output Name of the output raster image file.
@@ -448,8 +460,9 @@ wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024
 }
 
 
-#' Sigmoidal contrast stretch
-#' Performs a sigmoidal contrast stretch on input images.
+#' @title Sigmoidal contrast stretch
+#'
+#' @description Performs a sigmoidal contrast stretch on input images.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -490,8 +503,9 @@ wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, 
 }
 
 
-#' Standard deviation contrast stretch
-#' Performs a standard-deviation contrast stretch on input images.
+#' @title Standard deviation contrast stretch
+#'
+#' @description Performs a standard-deviation contrast stretch on input images.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.

@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_or}
 \alias{wbt_or}
-\title{Or
-Performs a logical OR operator on two Boolean raster images.}
+\title{Or}
 \usage{
 wbt_or(
   input1,
@@ -34,7 +33,6 @@ wbt_or(
 Returns the tool text outputs.
 }
 \description{
-Or
 Performs a logical OR operator on two Boolean raster images.
 }
 \keyword{MathandStatsTools}

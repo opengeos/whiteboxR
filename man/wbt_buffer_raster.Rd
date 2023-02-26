@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_distance.R
 \name{wbt_buffer_raster}
 \alias{wbt_buffer_raster}
-\title{Buffer raster
-Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.}
+\title{Buffer raster}
 \usage{
 wbt_buffer_raster(
   input,
@@ -37,7 +36,6 @@ wbt_buffer_raster(
 Returns the tool text outputs.
 }
 \description{
-Buffer raster
 Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.
 }
 \keyword{GISAnalysisDistanceTools}

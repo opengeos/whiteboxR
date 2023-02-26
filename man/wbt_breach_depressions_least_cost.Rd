@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_breach_depressions_least_cost}
 \alias{wbt_breach_depressions_least_cost}
-\title{Breach depressions least cost
-Breaches the depressions in a DEM using a least-cost pathway method.}
+\title{Breach depressions least cost}
 \usage{
 wbt_breach_depressions_least_cost(
   dem,
@@ -46,7 +45,6 @@ wbt_breach_depressions_least_cost(
 Returns the tool text outputs.
 }
 \description{
-Breach depressions least cost
 Breaches the depressions in a DEM using a least-cost pathway method.
 }
 \keyword{HydrologicalAnalysis}

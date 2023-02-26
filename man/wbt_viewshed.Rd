@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_viewshed}
 \alias{wbt_viewshed}
-\title{Viewshed
-Identifies the viewshed for a point or set of points.}
+\title{Viewshed}
 \usage{
 wbt_viewshed(
   dem,
@@ -37,7 +36,6 @@ wbt_viewshed(
 Returns the tool text outputs.
 }
 \description{
-Viewshed
 Identifies the viewshed for a point or set of points.
 }
 \keyword{GeomorphometricAnalysis}

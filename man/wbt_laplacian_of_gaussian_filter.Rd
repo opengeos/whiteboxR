@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_laplacian_of_gaussian_filter}
 \alias{wbt_laplacian_of_gaussian_filter}
-\title{Laplacian of gaussian filter
-Performs a Laplacian-of-Gaussian (LoG) filter on an image.}
+\title{Laplacian of gaussian filter}
 \usage{
 wbt_laplacian_of_gaussian_filter(
   input,
@@ -34,7 +33,6 @@ wbt_laplacian_of_gaussian_filter(
 Returns the tool text outputs.
 }
 \description{
-Laplacian of gaussian filter
 Performs a Laplacian-of-Gaussian (LoG) filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

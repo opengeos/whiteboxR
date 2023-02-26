@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_impoundment_size_index}
 \alias{wbt_impoundment_size_index}
-\title{Impoundment size index
-Calculates the impoundment size resulting from damming a DEM.}
+\title{Impoundment size index}
 \usage{
 wbt_impoundment_size_index(
   dem,
@@ -46,7 +45,6 @@ wbt_impoundment_size_index(
 Returns the tool text outputs.
 }
 \description{
-Impoundment size index
 Calculates the impoundment size resulting from damming a DEM.
 }
 \keyword{HydrologicalAnalysis}

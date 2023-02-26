@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_ruggedness_index}
 \alias{wbt_ruggedness_index}
-\title{Ruggedness index
-Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM.}
+\title{Ruggedness index}
 \usage{
 wbt_ruggedness_index(
   dem,
@@ -31,7 +30,6 @@ wbt_ruggedness_index(
 Returns the tool text outputs.
 }
 \description{
-Ruggedness index
 Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

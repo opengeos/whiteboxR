@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_rho8_flow_accumulation}
 \alias{wbt_rho8_flow_accumulation}
-\title{Rho8 flow accumulation
-This tool calculates Fairfield and Leymarie (1991) flow accumulation.}
+\title{Rho8 flow accumulation}
 \usage{
 wbt_rho8_flow_accumulation(
   input,
@@ -46,7 +45,6 @@ wbt_rho8_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
-Rho8 flow accumulation
 This tool calculates Fairfield and Leymarie (1991) flow accumulation.
 }
 \keyword{HydrologicalAnalysis}

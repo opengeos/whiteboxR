@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_random_sample}
 \alias{wbt_random_sample}
-\title{Random sample
-Creates an image containing randomly located sample grid cells with unique IDs.}
+\title{Random sample}
 \usage{
 wbt_random_sample(
   base,
@@ -34,7 +33,6 @@ wbt_random_sample(
 Returns the tool text outputs.
 }
 \description{
-Random sample
 Creates an image containing randomly located sample grid cells with unique IDs.
 }
 \keyword{MathandStatsTools}

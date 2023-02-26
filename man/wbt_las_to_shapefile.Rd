@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_las_to_shapefile}
 \alias{wbt_las_to_shapefile}
-\title{Las to shapefile
-Converts one or more LAS files into a vector Shapefile of POINT ShapeType.}
+\title{Las to shapefile}
 \usage{
 wbt_las_to_shapefile(
   input,
@@ -28,7 +27,6 @@ wbt_las_to_shapefile(
 Returns the tool text outputs.
 }
 \description{
-Las to shapefile
 Converts one or more LAS files into a vector Shapefile of POINT ShapeType.
 }
 \keyword{LiDARTools}

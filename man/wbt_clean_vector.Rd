@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_clean_vector}
 \alias{wbt_clean_vector}
-\title{Clean vector
-Removes null features and lines/polygons with fewer than the required number of vertices.}
+\title{Clean vector}
 \usage{
 wbt_clean_vector(
   input,
@@ -31,7 +30,6 @@ wbt_clean_vector(
 Returns the tool text outputs.
 }
 \description{
-Clean vector
 Removes null features and lines/polygons with fewer than the required number of vertices.
 }
 \keyword{DataTools}

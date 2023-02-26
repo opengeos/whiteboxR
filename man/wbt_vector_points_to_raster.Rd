@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_vector_points_to_raster}
 \alias{wbt_vector_points_to_raster}
-\title{Vector points to raster
-Converts a vector containing points into a raster.}
+\title{Vector points to raster}
 \usage{
 wbt_vector_points_to_raster(
   input,
@@ -46,7 +45,6 @@ wbt_vector_points_to_raster(
 Returns the tool text outputs.
 }
 \description{
-Vector points to raster
 Converts a vector containing points into a raster.
 }
 \keyword{DataTools}

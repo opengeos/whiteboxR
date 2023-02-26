@@ -1,5 +1,6 @@
-#' Average overlay
-#' Calculates the average for each grid cell from a group of raster images.
+#' @title Average overlay
+#'
+#' @description Calculates the average for each grid cell from a group of raster images.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -28,8 +29,9 @@ wbt_average_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Clip
-#' Extract all the features, or parts of features, that overlap with the features of the clip vector.
+#' @title Clip
+#'
+#' @description Extract all the features, or parts of features, that overlap with the features of the clip vector.
 #'
 #' @param input Input vector file.
 #' @param clip Input clip polygon vector file.
@@ -60,8 +62,9 @@ wbt_clip <- function(input, clip, output, wd=NULL, verbose_mode=FALSE, compress_
 }
 
 
-#' Clip raster to polygon
-#' Clips a raster to a vector polygon.
+#' @title Clip raster to polygon
+#'
+#' @description Clips a raster to a vector polygon.
 #'
 #' @param input Input raster file.
 #' @param polygons Input vector polygons file.
@@ -96,8 +99,9 @@ wbt_clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensi
 }
 
 
-#' Count if
-#' Counts the number of occurrences of a specified value in a cell-stack of rasters.
+#' @title Count if
+#'
+#' @description Counts the number of occurrences of a specified value in a cell-stack of rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -128,8 +132,9 @@ wbt_count_if <- function(inputs, output, value, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Difference
-#' Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
+#' @title Difference
+#'
+#' @description Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -160,8 +165,9 @@ wbt_difference <- function(input, overlay, output, wd=NULL, verbose_mode=FALSE, 
 }
 
 
-#' Erase
-#' Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
+#' @title Erase
+#'
+#' @description Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
 #'
 #' @param input Input vector file.
 #' @param erase Input erase polygon vector file.
@@ -192,8 +198,9 @@ wbt_erase <- function(input, erase, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Erase polygon from raster
-#' Erases (cuts out) a vector polygon from a raster.
+#' @title Erase polygon from raster
+#'
+#' @description Erases (cuts out) a vector polygon from a raster.
 #'
 #' @param input Input raster file.
 #' @param polygons Input vector polygons file.
@@ -224,8 +231,9 @@ wbt_erase_polygon_from_raster <- function(input, polygons, output, wd=NULL, verb
 }
 
 
-#' Highest position
-#' Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
+#' @title Highest position
+#'
+#' @description Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -254,8 +262,9 @@ wbt_highest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, co
 }
 
 
-#' Intersect
-#' Identifies the parts of features in common between two input vector layers.
+#' @title Intersect
+#'
+#' @description Identifies the parts of features in common between two input vector layers.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -290,8 +299,9 @@ wbt_intersect <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mod
 }
 
 
-#' Line intersections
-#' Identifies points where the features of two vector line layers intersect.
+#' @title Line intersections
+#'
+#' @description Identifies points where the features of two vector line layers intersect.
 #'
 #' @param input1 Input vector polyline file.
 #' @param input2 Input vector polyline file.
@@ -322,8 +332,9 @@ wbt_line_intersections <- function(input1, input2, output, wd=NULL, verbose_mode
 }
 
 
-#' Lowest position
-#' Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
+#' @title Lowest position
+#'
+#' @description Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -352,8 +363,9 @@ wbt_lowest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Max absolute overlay
-#' Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
+#' @title Max absolute overlay
+#'
+#' @description Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -382,8 +394,9 @@ wbt_max_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Max overlay
-#' Evaluates the maximum value for each grid cell from a stack of input rasters.
+#' @title Max overlay
+#'
+#' @description Evaluates the maximum value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -412,8 +425,9 @@ wbt_max_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Merge line segments
-#' Merges vector line segments into larger features.
+#' @title Merge line segments
+#'
+#' @description Merges vector line segments into larger features.
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.
@@ -446,8 +460,9 @@ wbt_merge_line_segments <- function(input, output, snap=0.0, wd=NULL, verbose_mo
 }
 
 
-#' Min absolute overlay
-#' Evaluates the minimum absolute value for each grid cell from a stack of input rasters.
+#' @title Min absolute overlay
+#'
+#' @description Evaluates the minimum absolute value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -476,8 +491,9 @@ wbt_min_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Min overlay
-#' Evaluates the minimum value for each grid cell from a stack of input rasters.
+#' @title Min overlay
+#'
+#' @description Evaluates the minimum value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -506,8 +522,9 @@ wbt_min_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Multiply overlay
-#' Calculates the sum for each grid cell from a group of raster images.
+#' @title Multiply overlay
+#'
+#' @description Calculates the sum for each grid cell from a group of raster images.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -536,8 +553,9 @@ wbt_multiply_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, co
 }
 
 
-#' Percent equal to
-#' Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
+#' @title Percent equal to
+#'
+#' @description Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param comparison Input comparison raster file.
@@ -568,8 +586,9 @@ wbt_percent_equal_to <- function(inputs, comparison, output, wd=NULL, verbose_mo
 }
 
 
-#' Percent greater than
-#' Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
+#' @title Percent greater than
+#'
+#' @description Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param comparison Input comparison raster file.
@@ -600,8 +619,9 @@ wbt_percent_greater_than <- function(inputs, comparison, output, wd=NULL, verbos
 }
 
 
-#' Percent less than
-#' Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
+#' @title Percent less than
+#'
+#' @description Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param comparison Input comparison raster file.
@@ -632,8 +652,9 @@ wbt_percent_less_than <- function(inputs, comparison, output, wd=NULL, verbose_m
 }
 
 
-#' Pick from list
-#' Outputs the value from a raster stack specified by a position raster.
+#' @title Pick from list
+#'
+#' @description Outputs the value from a raster stack specified by a position raster.
 #'
 #' @param inputs Input raster files.
 #' @param pos_input Input position raster file.
@@ -664,8 +685,9 @@ wbt_pick_from_list <- function(inputs, pos_input, output, wd=NULL, verbose_mode=
 }
 
 
-#' Polygonize
-#' Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
+#' @title Polygonize
+#'
+#' @description Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
 #'
 #' @param inputs Input vector polyline file.
 #' @param output Output vector polygon file.
@@ -694,8 +716,9 @@ wbt_polygonize <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress
 }
 
 
-#' Split with lines
-#' Splits the lines or polygons in one layer using the lines in another layer.
+#' @title Split with lines
+#'
+#' @description Splits the lines or polygons in one layer using the lines in another layer.
 #'
 #' @param input Input vector line or polygon file.
 #' @param split Input vector polyline file.
@@ -726,8 +749,9 @@ wbt_split_with_lines <- function(input, split, output, wd=NULL, verbose_mode=FAL
 }
 
 
-#' Sum overlay
-#' Calculates the sum for each grid cell from a group of raster images.
+#' @title Sum overlay
+#'
+#' @description Calculates the sum for each grid cell from a group of raster images.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -756,8 +780,9 @@ wbt_sum_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Symmetrical difference
-#' Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
+#' @title Symmetrical difference
+#'
+#' @description Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -792,8 +817,9 @@ wbt_symmetrical_difference <- function(input, overlay, output, snap=0.0, wd=NULL
 }
 
 
-#' Union
-#' Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
+#' @title Union
+#'
+#' @description Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -828,8 +854,9 @@ wbt_union <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mode=FA
 }
 
 
-#' Update nodata cells
-#' Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
+#' @title Update nodata cells
+#'
+#' @description Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
 #'
 #' @param input1 Input raster file 1.
 #' @param input2 Input raster file 2; update layer.
@@ -860,8 +887,9 @@ wbt_update_nodata_cells <- function(input1, input2, output, wd=NULL, verbose_mod
 }
 
 
-#' Weighted overlay
-#' Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
+#' @title Weighted overlay
+#'
+#' @description Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
 #'
 #' @param factors Input factor raster files.
 #' @param weights Weight values, contained in quotes and separated by commas or semicolons. Must have the same number as factors.
@@ -904,8 +932,9 @@ wbt_weighted_overlay <- function(factors, weights, output, cost=NULL, constraint
 }
 
 
-#' Weighted sum
-#' Performs a weighted-sum overlay on multiple input raster images.
+#' @title Weighted sum
+#'
+#' @description Performs a weighted-sum overlay on multiple input raster images.
 #'
 #' @param inputs Input raster files.
 #' @param weights Weight values, contained in quotes and separated by commas or semicolons.

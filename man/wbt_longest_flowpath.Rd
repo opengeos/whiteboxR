@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_longest_flowpath}
 \alias{wbt_longest_flowpath}
-\title{Longest flowpath
-Delineates the longest flowpaths for a group of subbasins or watersheds.}
+\title{Longest flowpath}
 \usage{
 wbt_longest_flowpath(
   dem,
@@ -34,7 +33,6 @@ wbt_longest_flowpath(
 Returns the tool text outputs.
 }
 \description{
-Longest flowpath
 Delineates the longest flowpaths for a group of subbasins or watersheds.
 }
 \keyword{HydrologicalAnalysis}

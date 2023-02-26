@@ -1,5 +1,6 @@
-#' Change vector analysis
-#' Performs a change vector analysis on a two-date multi-spectral dataset.
+#' @title Change vector analysis
+#'
+#' @description Performs a change vector analysis on a two-date multi-spectral dataset.
 #'
 #' @param date1 Input raster files for the earlier date.
 #' @param date2 Input raster files for the later date.
@@ -32,8 +33,9 @@ wbt_change_vector_analysis <- function(date1, date2, magnitude, direction, wd=NU
 }
 
 
-#' Closing
-#' A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
+#' @title Closing
+#'
+#' @description A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -70,8 +72,9 @@ wbt_closing <- function(input, output, filterx=11, filtery=11, wd=NULL, verbose_
 }
 
 
-#' Create colour composite
-#' Creates a colour-composite image from three bands of multispectral imagery.
+#' @title Create colour composite
+#'
+#' @description Creates a colour-composite image from three bands of multispectral imagery.
 #'
 #' @param red Input red band image file.
 #' @param green Input green band image file.
@@ -116,8 +119,9 @@ wbt_create_colour_composite <- function(red, green, blue, output, opacity=NULL, 
 }
 
 
-#' Flip image
-#' Reflects an image in the vertical or horizontal axis.
+#' @title Flip image
+#'
+#' @description Reflects an image in the vertical or horizontal axis.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -150,8 +154,9 @@ wbt_flip_image <- function(input, output, direction="vertical", wd=NULL, verbose
 }
 
 
-#' Ihs to rgb
-#' Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.
+#' @title Ihs to rgb
+#'
+#' @description Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.
 #'
 #' @param intensity Input intensity file.
 #' @param hue Input hue file.
@@ -198,8 +203,9 @@ wbt_ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 }
 
 
-#' Image slider
-#' This tool creates an image slider from two input images.
+#' @title Image slider
+#'
+#' @description This tool creates an image slider from two input images.
 #'
 #' @param input1 Name of the left input image file.
 #' @param palette1 Left image palette; options are 'grey', 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'rgb'.
@@ -258,8 +264,9 @@ wbt_image_slider <- function(input1, input2, output, palette1="grey", reverse1=F
 }
 
 
-#' Image stack profile
-#' Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
+#' @title Image stack profile
+#'
+#' @description Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
 #'
 #' @param inputs Input multispectral image files.
 #' @param points Input vector points file.
@@ -290,8 +297,9 @@ wbt_image_stack_profile <- function(inputs, points, output, wd=NULL, verbose_mod
 }
 
 
-#' Integral image
-#' Transforms an input image (summed area table) into its integral image equivalent.
+#' @title Integral image
+#'
+#' @description Transforms an input image (summed area table) into its integral image equivalent.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -320,8 +328,9 @@ wbt_integral_image <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
 }
 
 
-#' Line thinning
-#' Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
+#' @title Line thinning
+#'
+#' @description Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -350,8 +359,9 @@ wbt_line_thinning <- function(input, output, wd=NULL, verbose_mode=FALSE, compre
 }
 
 
-#' Mosaic
-#' Mosaics two or more images together.
+#' @title Mosaic
+#'
+#' @description Mosaics two or more images together.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -386,8 +396,9 @@ wbt_mosaic <- function(output, inputs=NULL, method="nn", wd=NULL, verbose_mode=F
 }
 
 
-#' Mosaic with feathering
-#' Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
+#' @title Mosaic with feathering
+#'
+#' @description Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
 #'
 #' @param input1 Input raster file to modify.
 #' @param input2 Input reference raster file.
@@ -426,8 +437,9 @@ wbt_mosaic_with_feathering <- function(input1, input2, output, method="cc", weig
 }
 
 
-#' Normalized difference index
-#' Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
+#' @title Normalized difference index
+#'
+#' @description Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
 #'
 #' @param input1 Input image 1 (e.g. near-infrared band).
 #' @param input2 Input image 2 (e.g. red band).
@@ -466,8 +478,9 @@ wbt_normalized_difference_index <- function(input1, input2, output, clip=0.0, co
 }
 
 
-#' Opening
-#' An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
+#' @title Opening
+#'
+#' @description An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -504,8 +517,9 @@ wbt_opening <- function(input, output, filterx=11, filtery=11, wd=NULL, verbose_
 }
 
 
-#' Remove spurs
-#' Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
+#' @title Remove spurs
+#'
+#' @description Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -538,8 +552,9 @@ wbt_remove_spurs <- function(input, output, iterations=10, wd=NULL, verbose_mode
 }
 
 
-#' Resample
-#' Resamples one or more input images into a destination image.
+#' @title Resample
+#'
+#' @description Resamples one or more input images into a destination image.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -580,8 +595,9 @@ wbt_resample <- function(inputs, output, cell_size=NULL, base=NULL, method="cc",
 }
 
 
-#' Rgb to ihs
-#' Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images.
+#' @title Rgb to ihs
+#'
+#' @description Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images.
 #'
 #' @param red Input red band image file. Optionally specified if colour-composite not specified.
 #' @param green Input green band image file. Optionally specified if colour-composite not specified.
@@ -628,8 +644,9 @@ wbt_rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 }
 
 
-#' Split colour composite
-#' This tool splits an RGB colour composite image into separate multispectral images.
+#' @title Split colour composite
+#'
+#' @description This tool splits an RGB colour composite image into separate multispectral images.
 #'
 #' @param input Input colour composite image file.
 #' @param red Output red band file.
@@ -668,8 +685,9 @@ wbt_split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, w
 }
 
 
-#' Thicken raster line
-#' Thickens single-cell wide lines within a raster image.
+#' @title Thicken raster line
+#'
+#' @description Thickens single-cell wide lines within a raster image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -698,8 +716,9 @@ wbt_thicken_raster_line <- function(input, output, wd=NULL, verbose_mode=FALSE, 
 }
 
 
-#' Tophat transform
-#' Performs either a white or black top-hat transform on an input image.
+#' @title Tophat transform
+#'
+#' @description Performs either a white or black top-hat transform on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -740,8 +759,9 @@ wbt_tophat_transform <- function(input, output, filterx=11, filtery=11, variant=
 }
 
 
-#' Write function memory insertion
-#' Performs a write function memory insertion for single-band multi-date change detection.
+#' @title Write function memory insertion
+#'
+#' @description Performs a write function memory insertion for single-band multi-date change detection.
 #'
 #' @param input1 Input raster file associated with the first date.
 #' @param input2 Input raster file associated with the second date.

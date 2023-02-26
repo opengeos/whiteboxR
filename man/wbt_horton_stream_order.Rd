@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_horton_stream_order}
 \alias{wbt_horton_stream_order}
-\title{Horton stream order
-Assigns the Horton stream order to each tributary in a stream network.}
+\title{Horton stream order}
 \usage{
 wbt_horton_stream_order(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_horton_stream_order(
 Returns the tool text outputs.
 }
 \description{
-Horton stream order
 Assigns the Horton stream order to each tributary in a stream network.
 }
 \keyword{StreamNetworkAnalysis}

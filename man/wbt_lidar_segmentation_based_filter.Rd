@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_segmentation_based_filter}
 \alias{wbt_lidar_segmentation_based_filter}
-\title{Lidar segmentation based filter
-Identifies ground points within LiDAR point clouds using a segmentation based approach.}
+\title{Lidar segmentation based filter}
 \usage{
 wbt_lidar_segmentation_based_filter(
   input,
@@ -43,7 +42,6 @@ wbt_lidar_segmentation_based_filter(
 Returns the tool text outputs.
 }
 \description{
-Lidar segmentation based filter
 Identifies ground points within LiDAR point clouds using a segmentation based approach.
 }
 \keyword{LiDARTools}

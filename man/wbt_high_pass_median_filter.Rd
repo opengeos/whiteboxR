@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_high_pass_median_filter}
 \alias{wbt_high_pass_median_filter}
-\title{High pass median filter
-Performs a high pass median filter on an input image.}
+\title{High pass median filter}
 \usage{
 wbt_high_pass_median_filter(
   input,
@@ -40,7 +39,6 @@ wbt_high_pass_median_filter(
 Returns the tool text outputs.
 }
 \description{
-High pass median filter
 Performs a high pass median filter on an input image.
 }
 \keyword{ImageProcessingToolsFilters}

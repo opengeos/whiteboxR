@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_polygon_perimeter}
 \alias{wbt_polygon_perimeter}
-\title{Polygon perimeter
-Calculates the perimeter of vector polygons.}
+\title{Polygon perimeter}
 \usage{
 wbt_polygon_perimeter(
   input,
@@ -28,7 +27,6 @@ wbt_polygon_perimeter(
 Returns the tool text outputs.
 }
 \description{
-Polygon perimeter
 Calculates the perimeter of vector polygons.
 }
 \keyword{GISAnalysis}

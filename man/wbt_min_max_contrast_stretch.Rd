@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_min_max_contrast_stretch}
 \alias{wbt_min_max_contrast_stretch}
-\title{Min max contrast stretch
-Performs a min-max contrast stretch on an input greytone image.}
+\title{Min max contrast stretch}
 \usage{
 wbt_min_max_contrast_stretch(
   input,
@@ -40,7 +39,6 @@ wbt_min_max_contrast_stretch(
 Returns the tool text outputs.
 }
 \description{
-Min max contrast stretch
 Performs a min-max contrast stretch on an input greytone image.
 }
 \keyword{ImageProcessingToolsImageEnhancement}

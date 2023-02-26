@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_hole_proportion}
 \alias{wbt_hole_proportion}
-\title{Hole proportion
-Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.}
+\title{Hole proportion}
 \usage{
 wbt_hole_proportion(
   input,
@@ -28,7 +27,6 @@ wbt_hole_proportion(
 Returns the tool text outputs.
 }
 \description{
-Hole proportion
 Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
 }
 \keyword{GISAnalysisPatchShapeTools}

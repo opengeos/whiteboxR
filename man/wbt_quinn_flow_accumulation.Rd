@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_quinn_flow_accumulation}
 \alias{wbt_quinn_flow_accumulation}
-\title{Quinn flow accumulation
-This tool calculates Quinn et al. (1995) flow accumulation.}
+\title{Quinn flow accumulation}
 \usage{
 wbt_quinn_flow_accumulation(
   dem,
@@ -46,7 +45,6 @@ wbt_quinn_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
-Quinn flow accumulation
 This tool calculates Quinn et al. (1995) flow accumulation.
 }
 \keyword{HydrologicalAnalysis}

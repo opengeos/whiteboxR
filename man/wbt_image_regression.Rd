@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_image_regression}
 \alias{wbt_image_regression}
-\title{Image regression
-Performs image regression analysis on two input images.}
+\title{Image regression}
 \usage{
 wbt_image_regression(
   input1,
@@ -46,7 +45,6 @@ wbt_image_regression(
 Returns the tool text outputs.
 }
 \description{
-Image regression
 Performs image regression analysis on two input images.
 }
 \keyword{MathandStatsTools}

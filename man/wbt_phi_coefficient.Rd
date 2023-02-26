@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_phi_coefficient}
 \alias{wbt_phi_coefficient}
-\title{Phi coefficient
-This tool performs a binary classification accuracy assessment.}
+\title{Phi coefficient}
 \usage{
 wbt_phi_coefficient(
   input1,
@@ -34,7 +33,6 @@ wbt_phi_coefficient(
 Returns the tool text outputs.
 }
 \description{
-Phi coefficient
 This tool performs a binary classification accuracy assessment.
 }
 \keyword{MathandStatsTools}

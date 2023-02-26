@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_distance.R
 \name{wbt_cost_pathway}
 \alias{wbt_cost_pathway}
-\title{Cost pathway
-Performs cost-distance pathway analysis using a series of destination grid cells.}
+\title{Cost pathway}
 \usage{
 wbt_cost_pathway(
   destination,
@@ -37,7 +36,6 @@ wbt_cost_pathway(
 Returns the tool text outputs.
 }
 \description{
-Cost pathway
 Performs cost-distance pathway analysis using a series of destination grid cells.
 }
 \keyword{GISAnalysisDistanceTools}

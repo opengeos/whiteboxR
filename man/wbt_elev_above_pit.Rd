@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_elev_above_pit}
 \alias{wbt_elev_above_pit}
-\title{Elev above pit
-Calculate the elevation of each grid cell above the nearest downstream pit cell or grid edge cell.}
+\title{Elev above pit}
 \usage{
 wbt_elev_above_pit(
   dem,
@@ -31,7 +30,6 @@ wbt_elev_above_pit(
 Returns the tool text outputs.
 }
 \description{
-Elev above pit
 Calculate the elevation of each grid cell above the nearest downstream pit cell or grid edge cell.
 }
 \keyword{GeomorphometricAnalysis}

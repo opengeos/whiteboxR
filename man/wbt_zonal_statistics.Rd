@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_zonal_statistics}
 \alias{wbt_zonal_statistics}
-\title{Zonal statistics
-Extracts descriptive statistics for a group of patches in a raster.}
+\title{Zonal statistics}
 \usage{
 wbt_zonal_statistics(
   input,
@@ -40,7 +39,6 @@ wbt_zonal_statistics(
 Returns the tool text outputs.
 }
 \description{
-Zonal statistics
 Extracts descriptive statistics for a group of patches in a raster.
 }
 \keyword{MathandStatsTools}

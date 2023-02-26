@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_farthest_channel_head}
 \alias{wbt_farthest_channel_head}
-\title{Farthest channel head
-Calculates the distance to the furthest upstream channel head for each stream cell.}
+\title{Farthest channel head}
 \usage{
 wbt_farthest_channel_head(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_farthest_channel_head(
 Returns the tool text outputs.
 }
 \description{
-Farthest channel head
 Calculates the distance to the furthest upstream channel head for each stream cell.
 }
 \keyword{StreamNetworkAnalysis}

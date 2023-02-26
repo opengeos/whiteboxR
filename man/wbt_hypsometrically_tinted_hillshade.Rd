@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_hypsometrically_tinted_hillshade}
 \alias{wbt_hypsometrically_tinted_hillshade}
-\title{Hypsometrically tinted hillshade
-Creates an colour shaded relief image from an input DEM.}
+\title{Hypsometrically tinted hillshade}
 \usage{
 wbt_hypsometrically_tinted_hillshade(
   dem,
@@ -55,7 +54,6 @@ wbt_hypsometrically_tinted_hillshade(
 Returns the tool text outputs.
 }
 \description{
-Hypsometrically tinted hillshade
 Creates an colour shaded relief image from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

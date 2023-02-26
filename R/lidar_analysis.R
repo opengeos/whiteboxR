@@ -1,5 +1,6 @@
-#' Ascii to las
-#' Converts one or more ASCII files containing LiDAR points into LAS files.
+#' @title Ascii to las
+#'
+#' @description Converts one or more ASCII files containing LiDAR points into LAS files.
 #'
 #' @param inputs Input LiDAR  ASCII files (.csv).
 #' @param pattern Input field pattern.
@@ -32,8 +33,9 @@ wbt_ascii_to_las <- function(inputs, pattern, proj=NULL, wd=NULL, verbose_mode=F
 }
 
 
-#' Classify buildings in lidar
-#' Reclassifies a LiDAR points that lie within vector building footprints.
+#' @title Classify buildings in lidar
+#'
+#' @description Reclassifies a LiDAR points that lie within vector building footprints.
 #'
 #' @param input Input LiDAR file.
 #' @param buildings Input vector polygons file.
@@ -64,8 +66,9 @@ wbt_classify_buildings_in_lidar <- function(input, buildings, output, wd=NULL, v
 }
 
 
-#' Classify lidar
-#' Classify points within a LiDAR point cloud based on point properties.
+#' @title Classify lidar
+#'
+#' @description Classify points within a LiDAR point cloud based on point properties.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -124,8 +127,9 @@ wbt_classify_lidar <- function(input, output=NULL, radius=1.5, grd_threshold=0.1
 }
 
 
-#' Classify overlap points
-#' Classifies or filters LAS points in regions of overlapping flight lines.
+#' @title Classify overlap points
+#'
+#' @description Classifies or filters LAS points in regions of overlapping flight lines.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -166,8 +170,9 @@ wbt_classify_overlap_points <- function(input, output, resolution=2.0, criterion
 }
 
 
-#' Clip lidar to polygon
-#' Clips a LiDAR point cloud to a vector polygon or polygons.
+#' @title Clip lidar to polygon
+#'
+#' @description Clips a LiDAR point cloud to a vector polygon or polygons.
 #'
 #' @param input Input LiDAR file.
 #' @param polygons Input vector polygons file.
@@ -198,8 +203,9 @@ wbt_clip_lidar_to_polygon <- function(input, polygons, output, wd=NULL, verbose_
 }
 
 
-#' Colourize based on class
-#' Sets the RGB values of a LiDAR point cloud based on the point classification values.
+#' @title Colourize based on class
+#'
+#' @description Sets the RGB values of a LiDAR point cloud based on the point classification values.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -246,8 +252,9 @@ wbt_colourize_based_on_class <- function(input, output=NULL, intensity_blending=
 }
 
 
-#' Colourize based on point returns
-#' Sets the RGB values of a LiDAR point cloud based on the point returns.
+#' @title Colourize based on point returns
+#'
+#' @description Sets the RGB values of a LiDAR point cloud based on the point returns.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -302,8 +309,9 @@ wbt_colourize_based_on_point_returns <- function(input, output=NULL, intensity_b
 }
 
 
-#' Erase polygon from lidar
-#' Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.
+#' @title Erase polygon from lidar
+#'
+#' @description Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.
 #'
 #' @param input Input LiDAR file.
 #' @param polygons Input vector polygons file.
@@ -334,8 +342,9 @@ wbt_erase_polygon_from_lidar <- function(input, polygons, output, wd=NULL, verbo
 }
 
 
-#' Filter lidar
-#' Filters points within a LiDAR point cloud based on point properties.
+#' @title Filter lidar
+#'
+#' @description Filters points within a LiDAR point cloud based on point properties.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -370,8 +379,9 @@ wbt_filter_lidar <- function(input, output=NULL, statement="", wd=NULL, verbose_
 }
 
 
-#' Filter lidar classes
-#' Removes points in a LAS file with certain specified class values.
+#' @title Filter lidar classes
+#'
+#' @description Removes points in a LAS file with certain specified class values.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -404,8 +414,9 @@ wbt_filter_lidar_classes <- function(input, output, exclude_cls=NULL, wd=NULL, v
 }
 
 
-#' Filter lidar scan angles
-#' Removes points in a LAS file with scan angles greater than a threshold.
+#' @title Filter lidar scan angles
+#'
+#' @description Removes points in a LAS file with scan angles greater than a threshold.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -436,8 +447,9 @@ wbt_filter_lidar_scan_angles <- function(input, output, threshold, wd=NULL, verb
 }
 
 
-#' Find flightline edge points
-#' Identifies points along a flightline's edge in a LAS file.
+#' @title Find flightline edge points
+#'
+#' @description Identifies points along a flightline's edge in a LAS file.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
@@ -466,8 +478,9 @@ wbt_find_flightline_edge_points <- function(input, output, wd=NULL, verbose_mode
 }
 
 
-#' Flightline overlap
-#' Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.
+#' @title Flightline overlap
+#'
+#' @description Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
@@ -502,8 +515,9 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, 
 }
 
 
-#' Height above ground
-#' Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
+#' @title Height above ground
+#'
+#' @description Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -534,8 +548,9 @@ wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FA
 }
 
 
-#' Las to ascii
-#' Converts one or more LAS files into ASCII text files.
+#' @title Las to ascii
+#'
+#' @description Converts one or more LAS files into ASCII text files.
 #'
 #' @param inputs Input LiDAR files.
 #' @param wd Changes the working directory.
@@ -562,8 +577,9 @@ wbt_las_to_ascii <- function(inputs, wd=NULL, verbose_mode=FALSE, compress_raste
 }
 
 
-#' Las to laz
-#' This tool converts one or more LAS files into the LAZ format.
+#' @title Las to laz
+#'
+#' @description This tool converts one or more LAS files into the LAZ format.
 #'
 #' @param input Name of the input LAS files (leave blank to use all LAS files in WorkingDirectory.
 #' @param output Output LAZ file (including extension).
@@ -594,8 +610,9 @@ wbt_las_to_laz <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, comp
 }
 
 
-#' Las to multipoint shapefile
-#' Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
+#' @title Las to multipoint shapefile
+#'
+#' @description Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file.
 #' @param wd Changes the working directory.
@@ -622,8 +639,9 @@ wbt_las_to_multipoint_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, 
 }
 
 
-#' Las to shapefile
-#' Converts one or more LAS files into a vector Shapefile of POINT ShapeType.
+#' @title Las to shapefile
+#'
+#' @description Converts one or more LAS files into a vector Shapefile of POINT ShapeType.
 #'
 #' @param input Input LiDAR file.
 #' @param wd Changes the working directory.
@@ -650,8 +668,9 @@ wbt_las_to_shapefile <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
 }
 
 
-#' Las to zlidar
-#' Converts one or more LAS files into the zlidar compressed LiDAR data format.
+#' @title Las to zlidar
+#'
+#' @description Converts one or more LAS files into the zlidar compressed LiDAR data format.
 #'
 #' @param inputs Input LAS files.
 #' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.
@@ -692,8 +711,9 @@ wbt_las_to_zlidar <- function(inputs=NULL, outdir=NULL, compress="brotli", level
 }
 
 
-#' Laz to las
-#' This tool converts one or more LAZ files into the LAS format.
+#' @title Laz to las
+#'
+#' @description This tool converts one or more LAZ files into the LAS format.
 #'
 #' @param input Name of the input LAZ files (leave blank to use all LAZ files in WorkingDirectory.
 #' @param output Output LAS file (including extension).
@@ -724,8 +744,9 @@ wbt_laz_to_las <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE, comp
 }
 
 
-#' Lidar block maximum
-#' Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#' @title Lidar block maximum
+#'
+#' @description Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
@@ -760,8 +781,9 @@ wbt_lidar_block_maximum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 }
 
 
-#' Lidar block minimum
-#' Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#' @title Lidar block minimum
+#'
+#' @description Creates a block-minimum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
@@ -796,8 +818,9 @@ wbt_lidar_block_minimum <- function(input, output=NULL, resolution=1.0, wd=NULL,
 }
 
 
-#' Lidar classify subset
-#' Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
+#' @title Lidar classify subset
+#'
+#' @description Classifies the values in one LiDAR point cloud that correspond with points in a subset cloud.
 #'
 #' @param base Input base LiDAR file.
 #' @param subset Input subset LiDAR file.
@@ -834,8 +857,9 @@ wbt_lidar_classify_subset <- function(base, subset, output, subset_class, nonsub
 }
 
 
-#' Lidar colourize
-#' Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
+#' @title Lidar colourize
+#'
+#' @description Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
 #'
 #' @param in_lidar Input LiDAR file.
 #' @param in_image Input colour image file.
@@ -866,8 +890,9 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
 }
 
 
-#' Lidar contour
-#' This tool creates a vector contour coverage from an input LiDAR point file.
+#' @title Lidar contour
+#'
+#' @description This tool creates a vector contour coverage from an input LiDAR point file.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output vector lines file.
@@ -930,8 +955,9 @@ wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, param
 }
 
 
-#' Lidar digital surface model
-#' Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
+#' @title Lidar digital surface model
+#'
+#' @description Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -982,8 +1008,9 @@ wbt_lidar_digital_surface_model <- function(input, output=NULL, resolution=1.0, 
 }
 
 
-#' Lidar eigenvalue features
-#' Calculate eigenvalue-based metrics from a LiDAR point cloud.
+#' @title Lidar eigenvalue features
+#'
+#' @description Calculate eigenvalue-based metrics from a LiDAR point cloud.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param num_neighbours Number of neighbours used in search.
@@ -1018,8 +1045,9 @@ wbt_lidar_eigenvalue_features <- function(input, num_neighbours=NULL, radius=NUL
 }
 
 
-#' Lidar elevation slice
-#' Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
+#' @title Lidar elevation slice
+#'
+#' @description Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1068,8 +1096,9 @@ wbt_lidar_elevation_slice <- function(input, output, minz=NULL, maxz=NULL, cls=F
 }
 
 
-#' Lidar ground point filter
-#' Identifies ground points within LiDAR dataset using a slope-based method.
+#' @title Lidar ground point filter
+#'
+#' @description Identifies ground points within LiDAR dataset using a slope-based method.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1126,8 +1155,9 @@ wbt_lidar_ground_point_filter <- function(input, output, radius=2.0, min_neighbo
 }
 
 
-#' Lidar hex binning
-#' Hex-bins a set of LiDAR points.
+#' @title Lidar hex binning
+#'
+#' @description Hex-bins a set of LiDAR points.
 #'
 #' @param input Input base file.
 #' @param output Output vector polygon file.
@@ -1162,8 +1192,9 @@ wbt_lidar_hex_binning <- function(input, output, width, orientation="horizontal"
 }
 
 
-#' Lidar hillshade
-#' Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.
+#' @title Lidar hillshade
+#'
+#' @description Calculates a hillshade value for points within a LAS file and stores these data in the RGB field.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
@@ -1204,8 +1235,9 @@ wbt_lidar_hillshade <- function(input, output, azimuth=315.0, altitude=30.0, rad
 }
 
 
-#' Lidar histogram
-#' Creates a histogram of LiDAR data.
+#' @title Lidar histogram
+#'
+#' @description Creates a histogram of LiDAR data.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
@@ -1242,8 +1274,9 @@ wbt_lidar_histogram <- function(input, output, parameter="elevation", clip=1.0, 
 }
 
 
-#' Lidar idw interpolation
-#' Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
+#' @title Lidar idw interpolation
+#'
+#' @description Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -1306,8 +1339,9 @@ wbt_lidar_idw_interpolation <- function(input, output=NULL, parameter="elevation
 }
 
 
-#' Lidar info
-#' Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
+#' @title Lidar info
+#'
+#' @description Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output HTML file for summary report.
@@ -1348,8 +1382,9 @@ wbt_lidar_info <- function(input, output, density=TRUE, vlr=TRUE, geokeys=TRUE, 
 }
 
 
-#' Lidar join
-#' Joins multiple LiDAR (LAS) files into a single LAS file.
+#' @title Lidar join
+#'
+#' @description Joins multiple LiDAR (LAS) files into a single LAS file.
 #'
 #' @param inputs Input LiDAR files.
 #' @param output Output LiDAR file.
@@ -1378,8 +1413,9 @@ wbt_lidar_join <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress
 }
 
 
-#' Lidar kappa index
-#' Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.
+#' @title Lidar kappa index
+#'
+#' @description Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.
 #'
 #' @param input1 Input LiDAR classification file.
 #' @param input2 Input LiDAR reference file.
@@ -1416,8 +1452,9 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
 }
 
 
-#' Lidar nearest neighbour gridding
-#' Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#' @title Lidar nearest neighbour gridding
+#'
+#' @description Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -1476,8 +1513,9 @@ wbt_lidar_nearest_neighbour_gridding <- function(input, output=NULL, parameter="
 }
 
 
-#' Lidar point density
-#' Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
+#' @title Lidar point density
+#'
+#' @description Calculates the spatial pattern of point density for a LiDAR data set. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -1532,8 +1570,9 @@ wbt_lidar_point_density <- function(input, output=NULL, returns="all", resolutio
 }
 
 
-#' Lidar point return analysis
-#' This tool performs a quality control check on the return values of points in a LiDAR file.
+#' @title Lidar point return analysis
+#'
+#' @description This tool performs a quality control check on the return values of points in a LiDAR file.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -1564,8 +1603,9 @@ wbt_lidar_point_return_analysis <- function(input, output=NULL, wd=NULL, verbose
 }
 
 
-#' Lidar point stats
-#' Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.
+#' @title Lidar point stats
+#'
+#' @description Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file.
 #' @param resolution Output raster's grid resolution.
@@ -1620,8 +1660,9 @@ wbt_lidar_point_stats <- function(input, resolution=1.0, num_points=TRUE, num_pu
 }
 
 
-#' Lidar ransac planes
-#' Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
+#' @title Lidar ransac planes
+#'
+#' @description Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1682,8 +1723,9 @@ wbt_lidar_ransac_planes <- function(input, output, radius=2.0, num_iter=50, num_
 }
 
 
-#' Lidar rbf interpolation
-#' Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
+#' @title Lidar rbf interpolation
+#'
+#' @description Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -1754,8 +1796,9 @@ wbt_lidar_rbf_interpolation <- function(input, output=NULL, parameter="elevation
 }
 
 
-#' Lidar remove duplicates
-#' Removes duplicate points from a LiDAR data set.
+#' @title Lidar remove duplicates
+#'
+#' @description Removes duplicate points from a LiDAR data set.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1788,8 +1831,9 @@ wbt_lidar_remove_duplicates <- function(input, output, include_z=FALSE, wd=NULL,
 }
 
 
-#' Lidar remove outliers
-#' Removes outliers (high and low points) in a LiDAR point cloud.
+#' @title Lidar remove outliers
+#'
+#' @description Removes outliers (high and low points) in a LiDAR point cloud.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1834,8 +1878,9 @@ wbt_lidar_remove_outliers <- function(input, output, radius=2.0, elev_diff=50.0,
 }
 
 
-#' Lidar rooftop analysis
-#' Identifies roof segments in a LiDAR point cloud.
+#' @title Lidar rooftop analysis
+#'
+#' @description Identifies roof segments in a LiDAR point cloud.
 #'
 #' @param input Input LiDAR file.
 #' @param buildings Input vector build footprint polygons file.
@@ -1904,8 +1949,9 @@ wbt_lidar_rooftop_analysis <- function(buildings, output, input=NULL, radius=2.0
 }
 
 
-#' Lidar segmentation
-#' Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
+#' @title Lidar segmentation
+#'
+#' @description Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -1974,8 +2020,9 @@ wbt_lidar_segmentation <- function(input, output, radius=2.0, num_iter=50, num_s
 }
 
 
-#' Lidar segmentation based filter
-#' Identifies ground points within LiDAR point clouds using a segmentation based approach.
+#' @title Lidar segmentation based filter
+#'
+#' @description Identifies ground points within LiDAR point clouds using a segmentation based approach.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output file.
@@ -2020,8 +2067,9 @@ wbt_lidar_segmentation_based_filter <- function(input, output, radius=5.0, norm_
 }
 
 
-#' Lidar shift
-#' Shifts the x,y,z coordinates of a LiDAR file.
+#' @title Lidar shift
+#'
+#' @description Shifts the x,y,z coordinates of a LiDAR file.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -2062,8 +2110,9 @@ wbt_lidar_shift <- function(input, output, x_shift="", y_shift="", z_shift="", w
 }
 
 
-#' Lidar sibson interpolation
-#' This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
+#' @title Lidar sibson interpolation
+#'
+#' @description This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
 #'
 #' @param input Name of the input LiDAR points (leave blank to use all files in WorkingDirectory.
 #' @param output Output raster file (including extension).
@@ -2118,8 +2167,9 @@ wbt_lidar_sibson_interpolation <- function(input, output=NULL, parameter="elevat
 }
 
 
-#' Lidar sort by time
-#' This tool sorts the points in a LiDAR file by the GPS time.
+#' @title Lidar sort by time
+#'
+#' @description This tool sorts the points in a LiDAR file by the GPS time.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -2148,8 +2198,9 @@ wbt_lidar_sort_by_time <- function(input, output, wd=NULL, verbose_mode=FALSE, c
 }
 
 
-#' Lidar thin
-#' Thins a LiDAR point cloud, reducing point density.
+#' @title Lidar thin
+#'
+#' @description Thins a LiDAR point cloud, reducing point density.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -2190,8 +2241,9 @@ wbt_lidar_thin <- function(input, output, resolution=2.0, method="lowest", save_
 }
 
 
-#' Lidar thin high density
-#' Thins points from high density areas within a LiDAR point cloud.
+#' @title Lidar thin high density
+#'
+#' @description Thins points from high density areas within a LiDAR point cloud.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -2230,8 +2282,9 @@ wbt_lidar_thin_high_density <- function(input, output, density, resolution=1.0, 
 }
 
 
-#' Lidar tile
-#' Tiles a LiDAR LAS file into multiple LAS files.
+#' @title Lidar tile
+#'
+#' @description Tiles a LiDAR LAS file into multiple LAS files.
 #'
 #' @param input Input LiDAR file.
 #' @param width Width of tiles in the X dimension; default 1000.0.
@@ -2278,8 +2331,9 @@ wbt_lidar_tile <- function(input, width=1000.0, height=1000.0, origin_x=0.0, ori
 }
 
 
-#' Lidar tile footprint
-#' Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.
+#' @title Lidar tile footprint
+#'
+#' @description Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output vector polygon file.
@@ -2312,8 +2366,9 @@ wbt_lidar_tile_footprint <- function(input, output, hull=FALSE, wd=NULL, verbose
 }
 
 
-#' Lidar tin gridding
-#' Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.
+#' @title Lidar tin gridding
+#'
+#' @description Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
@@ -2372,8 +2427,9 @@ wbt_lidar_tin_gridding <- function(input, output=NULL, parameter="elevation", re
 }
 
 
-#' Lidar tophat transform
-#' Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
+#' @title Lidar tophat transform
+#'
+#' @description Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -2406,8 +2462,9 @@ wbt_lidar_tophat_transform <- function(input, output, radius=1.0, wd=NULL, verbo
 }
 
 
-#' Modify lidar
-#' Modify points within a LiDAR point cloud based on point properties.
+#' @title Modify lidar
+#'
+#' @description Modify points within a LiDAR point cloud based on point properties.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -2442,8 +2499,9 @@ wbt_modify_lidar <- function(input, output=NULL, statement="", wd=NULL, verbose_
 }
 
 
-#' Normal vectors
-#' Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
+#' @title Normal vectors
+#'
+#' @description Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
 #'
 #' @param input Input LiDAR file.
 #' @param output Output LiDAR file.
@@ -2476,8 +2534,9 @@ wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=
 }
 
 
-#' Recover flightline info
-#' Associates LiDAR points by their flightlines.
+#' @title Recover flightline info
+#'
+#' @description Associates LiDAR points by their flightlines.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -2522,8 +2581,9 @@ wbt_recover_flightline_info <- function(input, output, max_time_diff=5.0, pt_src
 }
 
 
-#' Select tiles by polygon
-#' Copies LiDAR tiles overlapping with a polygon into an output directory.
+#' @title Select tiles by polygon
+#'
+#' @description Copies LiDAR tiles overlapping with a polygon into an output directory.
 #'
 #' @param indir Input LAS file source directory.
 #' @param outdir Output directory into which LAS files within the polygon are copied.
@@ -2554,8 +2614,9 @@ wbt_select_tiles_by_polygon <- function(indir, outdir, polygons, wd=NULL, verbos
 }
 
 
-#' Sort lidar
-#' Sorts LiDAR points based on their properties.
+#' @title Sort lidar
+#'
+#' @description Sorts LiDAR points based on their properties.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output LiDAR points.
@@ -2590,8 +2651,9 @@ wbt_sort_lidar <- function(input, output=NULL, criteria="", wd=NULL, verbose_mod
 }
 
 
-#' Split lidar
-#' Splits LiDAR points up into a series of new files based on their properties.
+#' @title Split lidar
+#'
+#' @description Splits LiDAR points up into a series of new files based on their properties.
 #'
 #' @param input Name of the input LiDAR points.
 #' @param criterion Criterion on which to base the split of the input file. Options include 'num_pts, 'x', 'y', 'z', intensity, 'class', 'user_data', 'point_source_id', 'scan_angle', 'time'.
@@ -2630,8 +2692,9 @@ wbt_split_lidar <- function(input, criterion="num_pts", interval="", min_pts=5, 
 }
 
 
-#' Zlidar to las
-#' Converts one or more zlidar files into the LAS data format.
+#' @title Zlidar to las
+#'
+#' @description Converts one or more zlidar files into the LAS data format.
 #'
 #' @param inputs Input ZLidar files.
 #' @param outdir Output directory into which zlidar files are created. If unspecified, it is assumed to be the same as the inputs.

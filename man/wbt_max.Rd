@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_max}
 \alias{wbt_max}
-\title{Max
-Performs a MAX operation on two rasters or a raster and a constant value.}
+\title{Max}
 \usage{
 wbt_max(
   input1,
@@ -34,7 +33,6 @@ wbt_max(
 Returns the tool text outputs.
 }
 \description{
-Max
 Performs a MAX operation on two rasters or a raster and a constant value.
 }
 \keyword{MathandStatsTools}

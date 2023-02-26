@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_anisotropy_dev_signature}
 \alias{wbt_max_anisotropy_dev_signature}
-\title{Max anisotropy dev signature
-Calculates the anisotropy in deviation from mean for points over a range of spatial scales.}
+\title{Max anisotropy dev signature}
 \usage{
 wbt_max_anisotropy_dev_signature(
   dem,
@@ -43,7 +42,6 @@ wbt_max_anisotropy_dev_signature(
 Returns the tool text outputs.
 }
 \description{
-Max anisotropy dev signature
 Calculates the anisotropy in deviation from mean for points over a range of spatial scales.
 }
 \keyword{GeomorphometricAnalysis}

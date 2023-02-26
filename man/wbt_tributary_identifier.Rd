@@ -2,8 +2,7 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_tributary_identifier}
 \alias{wbt_tributary_identifier}
-\title{Tributary identifier
-Assigns a unique identifier to each tributary in a stream network.}
+\title{Tributary identifier}
 \usage{
 wbt_tributary_identifier(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_tributary_identifier(
 Returns the tool text outputs.
 }
 \description{
-Tributary identifier
 Assigns a unique identifier to each tributary in a stream network.
 }
 \keyword{StreamNetworkAnalysis}

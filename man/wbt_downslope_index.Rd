@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_downslope_index}
 \alias{wbt_downslope_index}
-\title{Downslope index
-Calculates the Hjerdt et al. (2004) downslope index.}
+\title{Downslope index}
 \usage{
 wbt_downslope_index(
   dem,
@@ -37,7 +36,6 @@ wbt_downslope_index(
 Returns the tool text outputs.
 }
 \description{
-Downslope index
 Calculates the Hjerdt et al. (2004) downslope index.
 }
 \keyword{GeomorphometricAnalysis}

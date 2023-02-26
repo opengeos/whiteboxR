@@ -2,8 +2,7 @@
 % Please edit documentation in R/precision_agriculture.R
 \name{wbt_yield_map}
 \alias{wbt_yield_map}
-\title{Yield map
-This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.}
+\title{Yield map}
 \usage{
 wbt_yield_map(
   input,
@@ -40,7 +39,6 @@ wbt_yield_map(
 Returns the tool text outputs.
 }
 \description{
-Yield map
 This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.
 }
 \keyword{PrecisionAgriculture}

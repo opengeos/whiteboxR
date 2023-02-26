@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_elev_relative_to_watershed_min_max}
 \alias{wbt_elev_relative_to_watershed_min_max}
-\title{Elev relative to watershed min max
-Calculates the elevation of a location relative to the minimum and maximum elevations in a watershed.}
+\title{Elev relative to watershed min max}
 \usage{
 wbt_elev_relative_to_watershed_min_max(
   dem,
@@ -34,7 +33,6 @@ wbt_elev_relative_to_watershed_min_max(
 Returns the tool text outputs.
 }
 \description{
-Elev relative to watershed min max
 Calculates the elevation of a location relative to the minimum and maximum elevations in a watershed.
 }
 \keyword{GeomorphometricAnalysis}

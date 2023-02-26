@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_print_geo_tiff_tags}
 \alias{wbt_print_geo_tiff_tags}
-\title{Print geo tiff tags
-Prints the tags within a GeoTIFF.}
+\title{Print geo tiff tags}
 \usage{
 wbt_print_geo_tiff_tags(
   input,
@@ -28,7 +27,6 @@ wbt_print_geo_tiff_tags(
 Returns the tool text outputs.
 }
 \description{
-Print geo tiff tags
 Prints the tags within a GeoTIFF.
 }
 \keyword{DataTools}

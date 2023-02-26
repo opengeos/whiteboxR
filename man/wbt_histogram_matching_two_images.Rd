@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_histogram_matching_two_images}
 \alias{wbt_histogram_matching_two_images}
-\title{Histogram matching two images
-This tool alters the cumulative distribution function of a raster image to that of another image.}
+\title{Histogram matching two images}
 \usage{
 wbt_histogram_matching_two_images(
   input1,
@@ -34,7 +33,6 @@ wbt_histogram_matching_two_images(
 Returns the tool text outputs.
 }
 \description{
-Histogram matching two images
 This tool alters the cumulative distribution function of a raster image to that of another image.
 }
 \keyword{ImageProcessingToolsImageEnhancement}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_circular_variance_of_aspect}
 \alias{wbt_circular_variance_of_aspect}
-\title{Circular variance of aspect
-Calculates the circular variance of aspect at a scale for a DEM.}
+\title{Circular variance of aspect}
 \usage{
 wbt_circular_variance_of_aspect(
   dem,
@@ -34,7 +33,6 @@ wbt_circular_variance_of_aspect(
 Returns the tool text outputs.
 }
 \description{
-Circular variance of aspect
 Calculates the circular variance of aspect at a scale for a DEM.
 }
 \keyword{GeomorphometricAnalysis}

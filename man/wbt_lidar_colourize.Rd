@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_colourize}
 \alias{wbt_lidar_colourize}
-\title{Lidar colourize
-Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.}
+\title{Lidar colourize}
 \usage{
 wbt_lidar_colourize(
   in_lidar,
@@ -34,7 +33,6 @@ wbt_lidar_colourize(
 Returns the tool text outputs.
 }
 \description{
-Lidar colourize
 Adds the red-green-blue colour fields of a LiDAR (LAS) file based on an input image.
 }
 \keyword{LiDARTools}

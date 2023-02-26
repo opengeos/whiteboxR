@@ -2,8 +2,7 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_svm_classification}
 \alias{wbt_svm_classification}
-\title{Svm classification
-Performs an SVM binary classification using training site polygons/points and multiple input images.}
+\title{Svm classification}
 \usage{
 wbt_svm_classification(
   inputs,
@@ -52,7 +51,6 @@ wbt_svm_classification(
 Returns the tool text outputs.
 }
 \description{
-Svm classification
 Performs an SVM binary classification using training site polygons/points and multiple input images.
 }
 \keyword{MachineLearning}

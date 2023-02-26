@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_topographic_position_animation}
 \alias{wbt_topographic_position_animation}
-\title{Topographic position animation
-This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).}
+\title{Topographic position animation}
 \usage{
 wbt_topographic_position_animation(
   input,
@@ -55,7 +54,6 @@ wbt_topographic_position_animation(
 Returns the tool text outputs.
 }
 \description{
-Topographic position animation
 This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).
 }
 \keyword{GeomorphometricAnalysis}

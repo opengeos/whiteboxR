@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_gaussian_scale_space}
 \alias{wbt_gaussian_scale_space}
-\title{Gaussian scale space
-This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.}
+\title{Gaussian scale space}
 \usage{
 wbt_gaussian_scale_space(
   dem,
@@ -55,7 +54,6 @@ wbt_gaussian_scale_space(
 Returns the tool text outputs.
 }
 \description{
-Gaussian scale space
 This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

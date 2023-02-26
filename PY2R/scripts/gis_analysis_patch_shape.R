@@ -1,5 +1,6 @@
-#' Boundary shape complexity
-#' Calculates the complexity of the boundaries of raster polygons.
+#' @title Boundary shape complexity
+#'
+#' @description Calculates the complexity of the boundaries of raster polygons.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -28,8 +29,9 @@ wbt_boundary_shape_complexity <- function(input, output, wd=NULL, verbose_mode=F
 }
 
 
-#' Compactness ratio
-#' Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.
+#' @title Compactness ratio
+#'
+#' @description Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -56,8 +58,9 @@ wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 }
 
 
-#' Edge proportion
-#' Calculate the proportion of cells in a raster polygon that are edge cells.
+#' @title Edge proportion
+#'
+#' @description Calculate the proportion of cells in a raster polygon that are edge cells.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -90,8 +93,9 @@ wbt_edge_proportion <- function(input, output, output_text=FALSE, wd=NULL, verbo
 }
 
 
-#' Elongation ratio
-#' Calculates the elongation ratio for vector polygons.
+#' @title Elongation ratio
+#'
+#' @description Calculates the elongation ratio for vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -118,8 +122,9 @@ wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
 }
 
 
-#' Find patch or class edge cells
-#' Finds all cells located on the edge of patch or class features.
+#' @title Find patch or class edge cells
+#'
+#' @description Finds all cells located on the edge of patch or class features.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -148,8 +153,9 @@ wbt_find_patch_or_class_edge_cells <- function(input, output, wd=NULL, verbose_m
 }
 
 
-#' Hole proportion
-#' Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
+#' @title Hole proportion
+#'
+#' @description Calculates the proportion of the total area of a polygon's holes relative to the area of the polygon's hull.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -176,8 +182,9 @@ wbt_hole_proportion <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 }
 
 
-#' Linearity index
-#' Calculates the linearity index for vector polygons.
+#' @title Linearity index
+#'
+#' @description Calculates the linearity index for vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -204,8 +211,9 @@ wbt_linearity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 }
 
 
-#' Narrowness index
-#' Calculates the narrowness of raster polygons.
+#' @title Narrowness index
+#'
+#' @description Calculates the narrowness of raster polygons.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -234,8 +242,9 @@ wbt_narrowness_index <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Patch orientation
-#' Calculates the orientation of vector polygons.
+#' @title Patch orientation
+#'
+#' @description Calculates the orientation of vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -262,8 +271,9 @@ wbt_patch_orientation <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 }
 
 
-#' Perimeter area ratio
-#' Calculates the perimeter-area ratio of vector polygons.
+#' @title Perimeter area ratio
+#'
+#' @description Calculates the perimeter-area ratio of vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -290,8 +300,9 @@ wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Radius of gyration
-#' Calculates the distance of cells from their polygon's centroid.
+#' @title Radius of gyration
+#'
+#' @description Calculates the distance of cells from their polygon's centroid.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -324,8 +335,9 @@ wbt_radius_of_gyration <- function(input, output, text_output=FALSE, wd=NULL, ve
 }
 
 
-#' Related circumscribing circle
-#' Calculates the related circumscribing circle of vector polygons.
+#' @title Related circumscribing circle
+#'
+#' @description Calculates the related circumscribing circle of vector polygons.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -352,8 +364,9 @@ wbt_related_circumscribing_circle <- function(input, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Shape complexity index
-#' Calculates overall polygon shape complexity or irregularity.
+#' @title Shape complexity index
+#'
+#' @description Calculates overall polygon shape complexity or irregularity.
 #'
 #' @param input Input vector polygon file.
 #' @param wd Changes the working directory.
@@ -380,8 +393,9 @@ wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=FALSE, compr
 }
 
 
-#' Shape complexity index raster
-#' Calculates the complexity of raster polygons or classes.
+#' @title Shape complexity index raster
+#'
+#' @description Calculates the complexity of raster polygons or classes.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.

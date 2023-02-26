@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_polygon_short_axis}
 \alias{wbt_polygon_short_axis}
-\title{Polygon short axis
-This tool can be used to map the short axis of polygon features.}
+\title{Polygon short axis}
 \usage{
 wbt_polygon_short_axis(
   input,
@@ -31,7 +30,6 @@ wbt_polygon_short_axis(
 Returns the tool text outputs.
 }
 \description{
-Polygon short axis
 This tool can be used to map the short axis of polygon features.
 }
 \keyword{GISAnalysis}

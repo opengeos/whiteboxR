@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_extract_nodes}
 \alias{wbt_extract_nodes}
-\title{Extract nodes
-Converts vector lines or polygons into vertex points.}
+\title{Extract nodes}
 \usage{
 wbt_extract_nodes(
   input,
@@ -31,7 +30,6 @@ wbt_extract_nodes(
 Returns the tool text outputs.
 }
 \description{
-Extract nodes
 Converts vector lines or polygons into vertex points.
 }
 \keyword{GISAnalysis}

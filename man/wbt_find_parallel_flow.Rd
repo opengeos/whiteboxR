@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_find_parallel_flow}
 \alias{wbt_find_parallel_flow}
-\title{Find parallel flow
-Finds areas of parallel flow in D8 flow direction rasters.}
+\title{Find parallel flow}
 \usage{
 wbt_find_parallel_flow(
   d8_pntr,
@@ -34,7 +33,6 @@ wbt_find_parallel_flow(
 Returns the tool text outputs.
 }
 \description{
-Find parallel flow
 Finds areas of parallel flow in D8 flow direction rasters.
 }
 \keyword{HydrologicalAnalysis}

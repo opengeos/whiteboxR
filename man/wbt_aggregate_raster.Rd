@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_aggregate_raster}
 \alias{wbt_aggregate_raster}
-\title{Aggregate raster
-Aggregates a raster to a lower resolution.}
+\title{Aggregate raster}
 \usage{
 wbt_aggregate_raster(
   input,
@@ -37,7 +36,6 @@ wbt_aggregate_raster(
 Returns the tool text outputs.
 }
 \description{
-Aggregate raster
 Aggregates a raster to a lower resolution.
 }
 \keyword{GISAnalysis}

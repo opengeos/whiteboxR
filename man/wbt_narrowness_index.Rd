@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_narrowness_index}
 \alias{wbt_narrowness_index}
-\title{Narrowness index
-Calculates the narrowness of raster polygons.}
+\title{Narrowness index}
 \usage{
 wbt_narrowness_index(
   input,
@@ -31,7 +30,6 @@ wbt_narrowness_index(
 Returns the tool text outputs.
 }
 \description{
-Narrowness index
 Calculates the narrowness of raster polygons.
 }
 \keyword{GISAnalysisPatchShapeTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_reclass}
 \alias{wbt_reclass}
-\title{Reclass
-Reclassifies the values in a raster image.}
+\title{Reclass}
 \usage{
 wbt_reclass(
   input,
@@ -37,7 +36,6 @@ wbt_reclass(
 Returns the tool text outputs.
 }
 \description{
-Reclass
 Reclassifies the values in a raster image.
 }
 \keyword{GISAnalysis}

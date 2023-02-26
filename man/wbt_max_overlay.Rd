@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_max_overlay}
 \alias{wbt_max_overlay}
-\title{Max overlay
-Evaluates the maximum value for each grid cell from a stack of input rasters.}
+\title{Max overlay}
 \usage{
 wbt_max_overlay(
   inputs,
@@ -31,7 +30,6 @@ wbt_max_overlay(
 Returns the tool text outputs.
 }
 \description{
-Max overlay
 Evaluates the maximum value for each grid cell from a stack of input rasters.
 }
 \keyword{GISAnalysisOverlayTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_heat_map}
 \alias{wbt_heat_map}
-\title{Heat map
-This tool calculates a heat map, or kernel density estimation (KDE), for an input point set.}
+\title{Heat map}
 \usage{
 wbt_heat_map(
   input,
@@ -46,7 +45,6 @@ wbt_heat_map(
 Returns the tool text outputs.
 }
 \description{
-Heat map
 This tool calculates a heat map, or kernel density estimation (KDE), for an input point set.
 }
 \keyword{GISAnalysis}

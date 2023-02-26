@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_negate}
 \alias{wbt_negate}
-\title{Negate
-Changes the sign of values in a raster or the 0-1 values of a Boolean raster.}
+\title{Negate}
 \usage{
 wbt_negate(
   input,
@@ -31,7 +30,6 @@ wbt_negate(
 Returns the tool text outputs.
 }
 \description{
-Negate
 Changes the sign of values in a raster or the 0-1 values of a Boolean raster.
 }
 \keyword{MathandStatsTools}

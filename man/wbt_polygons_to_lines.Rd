@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_polygons_to_lines}
 \alias{wbt_polygons_to_lines}
-\title{Polygons to lines
-Converts vector polygons to polylines.}
+\title{Polygons to lines}
 \usage{
 wbt_polygons_to_lines(
   input,
@@ -31,7 +30,6 @@ wbt_polygons_to_lines(
 Returns the tool text outputs.
 }
 \description{
-Polygons to lines
 Converts vector polygons to polylines.
 }
 \keyword{DataTools}

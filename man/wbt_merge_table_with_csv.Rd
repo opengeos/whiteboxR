@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_merge_table_with_csv}
 \alias{wbt_merge_table_with_csv}
-\title{Merge table with csv
-Merge a vector's attribute table with a table contained within a CSV text file.}
+\title{Merge table with csv}
 \usage{
 wbt_merge_table_with_csv(
   input,
@@ -40,7 +39,6 @@ wbt_merge_table_with_csv(
 Returns the tool text outputs.
 }
 \description{
-Merge table with csv
 Merge a vector's attribute table with a table contained within a CSV text file.
 }
 \keyword{DataTools}

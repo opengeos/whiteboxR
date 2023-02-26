@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_strahler_order_basins}
 \alias{wbt_strahler_order_basins}
-\title{Strahler order basins
-Identifies Strahler-order basins from an input stream network.}
+\title{Strahler order basins}
 \usage{
 wbt_strahler_order_basins(
   d8_pntr,
@@ -37,7 +36,6 @@ wbt_strahler_order_basins(
 Returns the tool text outputs.
 }
 \description{
-Strahler order basins
 Identifies Strahler-order basins from an input stream network.
 }
 \keyword{HydrologicalAnalysis}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_remove_spurs}
 \alias{wbt_remove_spurs}
-\title{Remove spurs
-Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.}
+\title{Remove spurs}
 \usage{
 wbt_remove_spurs(
   input,
@@ -34,7 +33,6 @@ wbt_remove_spurs(
 Returns the tool text outputs.
 }
 \description{
-Remove spurs
 Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
 }
 \keyword{ImageProcessingTools}

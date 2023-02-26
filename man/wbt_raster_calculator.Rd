@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_raster_calculator}
 \alias{wbt_raster_calculator}
-\title{Raster calculator
-This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.}
+\title{Raster calculator}
 \usage{
 wbt_raster_calculator(
   output,
@@ -31,7 +30,6 @@ wbt_raster_calculator(
 Returns the tool text outputs.
 }
 \description{
-Raster calculator
 This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
 }
 \keyword{MathandStatsTools}

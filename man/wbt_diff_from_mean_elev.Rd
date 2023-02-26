@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_diff_from_mean_elev}
 \alias{wbt_diff_from_mean_elev}
-\title{Diff from mean elev
-Calculates difference from mean elevation (equivalent to a high-pass filter).}
+\title{Diff from mean elev}
 \usage{
 wbt_diff_from_mean_elev(
   dem,
@@ -37,7 +36,6 @@ wbt_diff_from_mean_elev(
 Returns the tool text outputs.
 }
 \description{
-Diff from mean elev
 Calculates difference from mean elevation (equivalent to a high-pass filter).
 }
 \keyword{GeomorphometricAnalysis}

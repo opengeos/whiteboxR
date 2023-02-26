@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_height_above_ground}
 \alias{wbt_height_above_ground}
-\title{Height above ground
-Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.}
+\title{Height above ground}
 \usage{
 wbt_height_above_ground(
   input,
@@ -31,7 +30,6 @@ wbt_height_above_ground(
 Returns the tool text outputs.
 }
 \description{
-Height above ground
 Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
 }
 \keyword{LiDARTools}

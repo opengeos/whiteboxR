@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_layer_footprint}
 \alias{wbt_layer_footprint}
-\title{Layer footprint
-Creates a vector polygon footprint of the area covered by a raster grid or vector layer.}
+\title{Layer footprint}
 \usage{
 wbt_layer_footprint(
   input,
@@ -31,7 +30,6 @@ wbt_layer_footprint(
 Returns the tool text outputs.
 }
 \description{
-Layer footprint
 Creates a vector polygon footprint of the area covered by a raster grid or vector layer.
 }
 \keyword{GISAnalysis}

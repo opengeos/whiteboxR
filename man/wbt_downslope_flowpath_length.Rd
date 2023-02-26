@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_downslope_flowpath_length}
 \alias{wbt_downslope_flowpath_length}
-\title{Downslope flowpath length
-Calculates the downslope flowpath length from each cell to basin outlet.}
+\title{Downslope flowpath length}
 \usage{
 wbt_downslope_flowpath_length(
   d8_pntr,
@@ -40,7 +39,6 @@ wbt_downslope_flowpath_length(
 Returns the tool text outputs.
 }
 \description{
-Downslope flowpath length
 Calculates the downslope flowpath length from each cell to basin outlet.
 }
 \keyword{HydrologicalAnalysis}

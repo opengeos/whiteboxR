@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_classify_lidar}
 \alias{wbt_classify_lidar}
-\title{Classify lidar
-Classify points within a LiDAR point cloud based on point properties.}
+\title{Classify lidar}
 \usage{
 wbt_classify_lidar(
   input,
@@ -52,7 +51,6 @@ wbt_classify_lidar(
 Returns the tool text outputs.
 }
 \description{
-Classify lidar
 Classify points within a LiDAR point cloud based on point properties.
 }
 \keyword{LiDARTools}

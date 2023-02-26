@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_normalized_difference_index}
 \alias{wbt_normalized_difference_index}
-\title{Normalized difference index
-Calculate a normalized-difference index (NDI) from two bands of multispectral image data.}
+\title{Normalized difference index}
 \usage{
 wbt_normalized_difference_index(
   input1,
@@ -40,7 +39,6 @@ wbt_normalized_difference_index(
 Returns the tool text outputs.
 }
 \description{
-Normalized difference index
 Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
 }
 \keyword{ImageProcessingTools}

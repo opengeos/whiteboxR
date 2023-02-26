@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_segmentation}
 \alias{wbt_lidar_segmentation}
-\title{Lidar segmentation
-Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.}
+\title{Lidar segmentation}
 \usage{
 wbt_lidar_segmentation(
   input,
@@ -61,7 +60,6 @@ wbt_lidar_segmentation(
 Returns the tool text outputs.
 }
 \description{
-Lidar segmentation
 Segments a LiDAR point cloud based on differences in the orientation of fitted planar surfaces and point proximity.
 }
 \keyword{LiDARTools}

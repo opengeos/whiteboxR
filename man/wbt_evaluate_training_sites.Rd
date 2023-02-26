@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_classification.R
 \name{wbt_evaluate_training_sites}
 \alias{wbt_evaluate_training_sites}
-\title{Evaluate training sites
-This tool can be used to inspect the overlap in spectral signatures of training sites for various classes.}
+\title{Evaluate training sites}
 \usage{
 wbt_evaluate_training_sites(
   inputs,
@@ -37,7 +36,6 @@ wbt_evaluate_training_sites(
 Returns the tool text outputs.
 }
 \description{
-Evaluate training sites
 This tool can be used to inspect the overlap in spectral signatures of training sites for various classes.
 }
 \keyword{ImageProcessingToolsClassification}

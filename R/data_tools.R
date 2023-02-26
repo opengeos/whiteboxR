@@ -1,5 +1,6 @@
-#' Add point coordinates to table
-#' Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.
+#' @title Add point coordinates to table
+#'
+#' @description Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.
 #'
 #' @param input Input vector Points file.
 #' @param wd Changes the working directory.
@@ -26,8 +27,9 @@ wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=FALS
 }
 
 
-#' Clean vector
-#' Removes null features and lines/polygons with fewer than the required number of vertices.
+#' @title Clean vector
+#'
+#' @description Removes null features and lines/polygons with fewer than the required number of vertices.
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.
@@ -56,8 +58,9 @@ wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Convert nodata to zero
-#' Converts nodata values in a raster to zero.
+#' @title Convert nodata to zero
+#'
+#' @description Converts nodata values in a raster to zero.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -86,8 +89,9 @@ wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=FALS
 }
 
 
-#' Convert raster format
-#' Converts raster data from one format to another.
+#' @title Convert raster format
+#'
+#' @description Converts raster data from one format to another.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -116,8 +120,9 @@ wbt_convert_raster_format <- function(input, output, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Csv points to vector
-#' Converts a CSV text file to vector points.
+#' @title Csv points to vector
+#'
+#' @description Converts a CSV text file to vector points.
 #'
 #' @param input Input CSV file (i.e. source of data to be imported).
 #' @param output Output vector file.
@@ -158,8 +163,9 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
 }
 
 
-#' Export table to csv
-#' Exports an attribute table to a CSV text file.
+#' @title Export table to csv
+#'
+#' @description Exports an attribute table to a CSV text file.
 #'
 #' @param input Input vector file.
 #' @param output Output csv file.
@@ -192,8 +198,9 @@ wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbos
 }
 
 
-#' Fix dangling arcs
-#' This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.
+#' @title Fix dangling arcs
+#'
+#' @description This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.
 #'
 #' @param input Name of the input lines vector file.
 #' @param output Name of the output lines vector file.
@@ -226,8 +233,9 @@ wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=
 }
 
 
-#' Join tables
-#' Merge a vector's attribute table with another table based on a common field.
+#' @title Join tables
+#'
+#' @description Merge a vector's attribute table with another table based on a common field.
 #'
 #' @param input1 Input primary vector file (i.e. the table to be modified).
 #' @param pkey Primary key field.
@@ -264,8 +272,9 @@ wbt_join_tables <- function(input1, pkey, input2, fkey, import_field=NULL, wd=NU
 }
 
 
-#' Lines to polygons
-#' Converts vector polylines to polygons.
+#' @title Lines to polygons
+#'
+#' @description Converts vector polylines to polygons.
 #'
 #' @param input Input vector line file.
 #' @param output Output vector polygon file.
@@ -294,8 +303,9 @@ wbt_lines_to_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE, co
 }
 
 
-#' Merge table with csv
-#' Merge a vector's attribute table with a table contained within a CSV text file.
+#' @title Merge table with csv
+#'
+#' @description Merge a vector's attribute table with a table contained within a CSV text file.
 #'
 #' @param input Input primary vector file (i.e. the table to be modified).
 #' @param pkey Primary key field.
@@ -332,8 +342,9 @@ wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, 
 }
 
 
-#' Merge vectors
-#' Combines two or more input vectors of the same ShapeType creating a single, new output vector.
+#' @title Merge vectors
+#'
+#' @description Combines two or more input vectors of the same ShapeType creating a single, new output vector.
 #'
 #' @param inputs Input vector files.
 #' @param output Output vector file.
@@ -362,8 +373,9 @@ wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compr
 }
 
 
-#' Modify no data value
-#' Converts nodata values in a raster to zero.
+#' @title Modify no data value
+#'
+#' @description Converts nodata values in a raster to zero.
 #'
 #' @param input Input raster file.
 #' @param new_value New NoData value.
@@ -394,8 +406,9 @@ wbt_modify_no_data_value <- function(input, new_value="-32768.0", wd=NULL, verbo
 }
 
 
-#' Multi part to single part
-#' Converts a vector file containing multi-part features into a vector containing only single-part features.
+#' @title Multi part to single part
+#'
+#' @description Converts a vector file containing multi-part features into a vector containing only single-part features.
 #'
 #' @param input Input vector line or polygon file.
 #' @param output Output vector line or polygon file.
@@ -428,8 +441,9 @@ wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=
 }
 
 
-#' New raster from base
-#' Creates a new raster using a base image.
+#' @title New raster from base
+#'
+#' @description Creates a new raster using a base image.
 #'
 #' @param base Input base raster file.
 #' @param output Output raster file.
@@ -470,8 +484,9 @@ wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="fl
 }
 
 
-#' Polygons to lines
-#' Converts vector polygons to polylines.
+#' @title Polygons to lines
+#'
+#' @description Converts vector polygons to polylines.
 #'
 #' @param input Input vector polygon file.
 #' @param output Output vector lines file.
@@ -500,8 +515,9 @@ wbt_polygons_to_lines <- function(input, output, wd=NULL, verbose_mode=FALSE, co
 }
 
 
-#' Print geo tiff tags
-#' Prints the tags within a GeoTIFF.
+#' @title Print geo tiff tags
+#'
+#' @description Prints the tags within a GeoTIFF.
 #'
 #' @param input Input GeoTIFF file.
 #' @param wd Changes the working directory.
@@ -528,8 +544,9 @@ wbt_print_geo_tiff_tags <- function(input, wd=NULL, verbose_mode=FALSE, compress
 }
 
 
-#' Raster to vector lines
-#' Converts a raster lines features into a vector of the POLYLINE shapetype.
+#' @title Raster to vector lines
+#'
+#' @description Converts a raster lines features into a vector of the POLYLINE shapetype.
 #'
 #' @param input Input raster lines file.
 #' @param output Output raster file.
@@ -558,8 +575,9 @@ wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=FALS
 }
 
 
-#' Raster to vector points
-#' Converts a raster dataset to a vector of the POINT shapetype.
+#' @title Raster to vector points
+#'
+#' @description Converts a raster dataset to a vector of the POINT shapetype.
 #'
 #' @param input Input raster file.
 #' @param output Output vector points file.
@@ -588,8 +606,9 @@ wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=FAL
 }
 
 
-#' Raster to vector polygons
-#' Converts a raster dataset to a vector of the POLYGON shapetype.
+#' @title Raster to vector polygons
+#'
+#' @description Converts a raster dataset to a vector of the POLYGON shapetype.
 #'
 #' @param input Input raster file.
 #' @param output Output vector polygons file.
@@ -618,8 +637,9 @@ wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=F
 }
 
 
-#' Reinitialize attribute table
-#' Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
+#' @title Reinitialize attribute table
+#'
+#' @description Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
 #'
 #' @param input Input vector file.
 #' @param wd Changes the working directory.
@@ -646,8 +666,9 @@ wbt_reinitialize_attribute_table <- function(input, wd=NULL, verbose_mode=FALSE,
 }
 
 
-#' Remove polygon holes
-#' Removes holes within the features of a vector polygon file.
+#' @title Remove polygon holes
+#'
+#' @description Removes holes within the features of a vector polygon file.
 #'
 #' @param input Input vector polygon file.
 #' @param output Output vector polygon file.
@@ -676,8 +697,9 @@ wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=FALSE,
 }
 
 
-#' Set nodata value
-#' Assign a specified value in an input image to the NoData value.
+#' @title Set nodata value
+#'
+#' @description Assign a specified value in an input image to the NoData value.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -710,8 +732,9 @@ wbt_set_nodata_value <- function(input, output, back_value=0.0, wd=NULL, verbose
 }
 
 
-#' Single part to multi part
-#' Converts a vector file containing multi-part features into a vector containing only single-part features.
+#' @title Single part to multi part
+#'
+#' @description Converts a vector file containing multi-part features into a vector containing only single-part features.
 #'
 #' @param input Input vector line or polygon file.
 #' @param field Grouping ID field name in attribute table.
@@ -744,8 +767,9 @@ wbt_single_part_to_multi_part <- function(input, output, field=NULL, wd=NULL, ve
 }
 
 
-#' Vector lines to raster
-#' Converts a vector containing polylines into a raster.
+#' @title Vector lines to raster
+#'
+#' @description Converts a vector containing polylines into a raster.
 #'
 #' @param input Input vector lines file.
 #' @param field Input field name in attribute table.
@@ -790,8 +814,9 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
 }
 
 
-#' Vector points to raster
-#' Converts a vector containing points into a raster.
+#' @title Vector points to raster
+#'
+#' @description Converts a vector containing points into a raster.
 #'
 #' @param input Input vector Points file.
 #' @param field Input field name in attribute table.
@@ -840,8 +865,9 @@ wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last
 }
 
 
-#' Vector polygons to raster
-#' Converts a vector containing polygons into a raster.
+#' @title Vector polygons to raster
+#'
+#' @description Converts a vector containing polygons into a raster.
 #'
 #' @param input Input vector polygons file.
 #' @param field Input field name in attribute table.

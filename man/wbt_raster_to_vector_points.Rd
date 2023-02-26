@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_raster_to_vector_points}
 \alias{wbt_raster_to_vector_points}
-\title{Raster to vector points
-Converts a raster dataset to a vector of the POINT shapetype.}
+\title{Raster to vector points}
 \usage{
 wbt_raster_to_vector_points(
   input,
@@ -31,7 +30,6 @@ wbt_raster_to_vector_points(
 Returns the tool text outputs.
 }
 \description{
-Raster to vector points
 Converts a raster dataset to a vector of the POINT shapetype.
 }
 \keyword{DataTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_idw_interpolation}
 \alias{wbt_lidar_idw_interpolation}
-\title{Lidar idw interpolation
-Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.}
+\title{Lidar idw interpolation}
 \usage{
 wbt_lidar_idw_interpolation(
   input,
@@ -55,7 +54,6 @@ wbt_lidar_idw_interpolation(
 Returns the tool text outputs.
 }
 \description{
-Lidar idw interpolation
 Interpolates LAS files using an inverse-distance weighted (IDW) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
 }
 \keyword{LiDARTools}

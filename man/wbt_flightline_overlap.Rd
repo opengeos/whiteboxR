@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_flightline_overlap}
 \alias{wbt_flightline_overlap}
-\title{Flightline overlap
-Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.}
+\title{Flightline overlap}
 \usage{
 wbt_flightline_overlap(
   input,
@@ -34,7 +33,6 @@ wbt_flightline_overlap(
 Returns the tool text outputs.
 }
 \description{
-Flightline overlap
 Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.
 }
 \keyword{LiDARTools}

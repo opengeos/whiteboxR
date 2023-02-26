@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_rooftop_analysis}
 \alias{wbt_lidar_rooftop_analysis}
-\title{Lidar rooftop analysis
-Identifies roof segments in a LiDAR point cloud.}
+\title{Lidar rooftop analysis}
 \usage{
 wbt_lidar_rooftop_analysis(
   buildings,
@@ -61,7 +60,6 @@ wbt_lidar_rooftop_analysis(
 Returns the tool text outputs.
 }
 \description{
-Lidar rooftop analysis
 Identifies roof segments in a LiDAR point cloud.
 }
 \keyword{LiDARTools}

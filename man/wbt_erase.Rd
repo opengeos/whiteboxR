@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_erase}
 \alias{wbt_erase}
-\title{Erase
-Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.}
+\title{Erase}
 \usage{
 wbt_erase(
   input,
@@ -34,7 +33,6 @@ wbt_erase(
 Returns the tool text outputs.
 }
 \description{
-Erase
 Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
 }
 \keyword{GISAnalysisOverlayTools}

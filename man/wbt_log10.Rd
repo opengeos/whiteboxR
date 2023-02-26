@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_log10}
 \alias{wbt_log10}
-\title{Log10
-Returns the base-10 logarithm of values in a raster.}
+\title{Log10}
 \usage{
 wbt_log10(
   input,
@@ -31,7 +30,6 @@ wbt_log10(
 Returns the tool text outputs.
 }
 \description{
-Log10
 Returns the base-10 logarithm of values in a raster.
 }
 \keyword{MathandStatsTools}

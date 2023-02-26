@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_principal_component_analysis}
 \alias{wbt_principal_component_analysis}
-\title{Principal component analysis
-Performs a principal component analysis (PCA) on a multi-spectral dataset.}
+\title{Principal component analysis}
 \usage{
 wbt_principal_component_analysis(
   inputs,
@@ -37,7 +36,6 @@ wbt_principal_component_analysis(
 Returns the tool text outputs.
 }
 \description{
-Principal component analysis
 Performs a principal component analysis (PCA) on a multi-spectral dataset.
 }
 \keyword{MathandStatsTools}

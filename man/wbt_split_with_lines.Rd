@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_split_with_lines}
 \alias{wbt_split_with_lines}
-\title{Split with lines
-Splits the lines or polygons in one layer using the lines in another layer.}
+\title{Split with lines}
 \usage{
 wbt_split_with_lines(
   input,
@@ -34,7 +33,6 @@ wbt_split_with_lines(
 Returns the tool text outputs.
 }
 \description{
-Split with lines
 Splits the lines or polygons in one layer using the lines in another layer.
 }
 \keyword{GISAnalysisOverlayTools}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_surface_area_ratio}
 \alias{wbt_surface_area_ratio}
-\title{Surface area ratio
-Calculates a the surface area ratio of each grid cell in an input DEM.}
+\title{Surface area ratio}
 \usage{
 wbt_surface_area_ratio(
   dem,
@@ -31,7 +30,6 @@ wbt_surface_area_ratio(
 Returns the tool text outputs.
 }
 \description{
-Surface area ratio
 Calculates a the surface area ratio of each grid cell in an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

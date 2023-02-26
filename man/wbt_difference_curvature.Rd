@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_difference_curvature}
 \alias{wbt_difference_curvature}
-\title{Difference curvature
-This tool calculates difference curvature from an input DEM.}
+\title{Difference curvature}
 \usage{
 wbt_difference_curvature(
   dem,
@@ -37,7 +36,6 @@ wbt_difference_curvature(
 Returns the tool text outputs.
 }
 \description{
-Difference curvature
 This tool calculates difference curvature from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

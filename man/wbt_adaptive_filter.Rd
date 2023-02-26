@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_adaptive_filter}
 \alias{wbt_adaptive_filter}
-\title{Adaptive filter
-Performs an adaptive filter on an image.}
+\title{Adaptive filter}
 \usage{
 wbt_adaptive_filter(
   input,
@@ -40,7 +39,6 @@ wbt_adaptive_filter(
 Returns the tool text outputs.
 }
 \description{
-Adaptive filter
 Performs an adaptive filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

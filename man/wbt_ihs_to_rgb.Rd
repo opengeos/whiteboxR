@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_ihs_to_rgb}
 \alias{wbt_ihs_to_rgb}
-\title{Ihs to rgb
-Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.}
+\title{Ihs to rgb}
 \usage{
 wbt_ihs_to_rgb(
   intensity,
@@ -46,7 +45,6 @@ wbt_ihs_to_rgb(
 Returns the tool text outputs.
 }
 \description{
-Ihs to rgb
 Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.
 }
 \keyword{ImageProcessingTools}

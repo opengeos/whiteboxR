@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_xor}
 \alias{wbt_xor}
-\title{Xor
-Performs a logical XOR operator on two Boolean raster images.}
+\title{Xor}
 \usage{
 wbt_xor(
   input1,
@@ -34,7 +33,6 @@ wbt_xor(
 Returns the tool text outputs.
 }
 \description{
-Xor
 Performs a logical XOR operator on two Boolean raster images.
 }
 \keyword{MathandStatsTools}

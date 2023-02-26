@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_ground_point_filter}
 \alias{wbt_lidar_ground_point_filter}
-\title{Lidar ground point filter
-Identifies ground points within LiDAR dataset using a slope-based method.}
+\title{Lidar ground point filter}
 \usage{
 wbt_lidar_ground_point_filter(
   input,
@@ -52,7 +51,6 @@ wbt_lidar_ground_point_filter(
 Returns the tool text outputs.
 }
 \description{
-Lidar ground point filter
 Identifies ground points within LiDAR dataset using a slope-based method.
 }
 \keyword{LiDARTools}

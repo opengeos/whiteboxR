@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_ring_curvature}
 \alias{wbt_ring_curvature}
-\title{Ring curvature
-This tool calculates ring curvature from an input DEM.}
+\title{Ring curvature}
 \usage{
 wbt_ring_curvature(
   dem,
@@ -37,7 +36,6 @@ wbt_ring_curvature(
 Returns the tool text outputs.
 }
 \description{
-Ring curvature
 This tool calculates ring curvature from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

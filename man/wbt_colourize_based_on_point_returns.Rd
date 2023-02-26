@@ -2,8 +2,7 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_colourize_based_on_point_returns}
 \alias{wbt_colourize_based_on_point_returns}
-\title{Colourize based on point returns
-Sets the RGB values of a LiDAR point cloud based on the point returns.}
+\title{Colourize based on point returns}
 \usage{
 wbt_colourize_based_on_point_returns(
   input,
@@ -46,7 +45,6 @@ wbt_colourize_based_on_point_returns(
 Returns the tool text outputs.
 }
 \description{
-Colourize based on point returns
 Sets the RGB values of a LiDAR point cloud based on the point returns.
 }
 \keyword{LiDARTools}

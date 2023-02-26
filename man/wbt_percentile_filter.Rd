@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_percentile_filter}
 \alias{wbt_percentile_filter}
-\title{Percentile filter
-Performs a percentile filter on an input image.}
+\title{Percentile filter}
 \usage{
 wbt_percentile_filter(
   input,
@@ -40,7 +39,6 @@ wbt_percentile_filter(
 Returns the tool text outputs.
 }
 \description{
-Percentile filter
 Performs a percentile filter on an input image.
 }
 \keyword{ImageProcessingToolsFilters}

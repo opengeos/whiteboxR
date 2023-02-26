@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_two_sample_ks_test}
 \alias{wbt_two_sample_ks_test}
-\title{Two sample ks test
-Performs a 2-sample K-S test for significant differences on two input rasters.}
+\title{Two sample ks test}
 \usage{
 wbt_two_sample_ks_test(
   input1,
@@ -37,7 +36,6 @@ wbt_two_sample_ks_test(
 Returns the tool text outputs.
 }
 \description{
-Two sample ks test
 Performs a 2-sample K-S test for significant differences on two input rasters.
 }
 \keyword{MathandStatsTools}

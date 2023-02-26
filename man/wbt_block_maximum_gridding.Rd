@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_block_maximum_gridding}
 \alias{wbt_block_maximum_gridding}
-\title{Block maximum gridding
-Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme.}
+\title{Block maximum gridding}
 \usage{
 wbt_block_maximum_gridding(
   input,
@@ -43,7 +42,6 @@ wbt_block_maximum_gridding(
 Returns the tool text outputs.
 }
 \description{
-Block maximum gridding
 Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme.
 }
 \keyword{GISAnalysis}

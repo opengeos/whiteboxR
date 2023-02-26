@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_sobel_filter}
 \alias{wbt_sobel_filter}
-\title{Sobel filter
-Performs a Sobel edge-detection filter on an image.}
+\title{Sobel filter}
 \usage{
 wbt_sobel_filter(
   input,
@@ -37,7 +36,6 @@ wbt_sobel_filter(
 Returns the tool text outputs.
 }
 \description{
-Sobel filter
 Performs a Sobel edge-detection filter on an image.
 }
 \keyword{ImageProcessingToolsFilters}

@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_reciprocal}
 \alias{wbt_reciprocal}
-\title{Reciprocal
-Returns the reciprocal (i.e. 1 / z) of values in a raster.}
+\title{Reciprocal}
 \usage{
 wbt_reciprocal(
   input,
@@ -31,7 +30,6 @@ wbt_reciprocal(
 Returns the tool text outputs.
 }
 \description{
-Reciprocal
 Returns the reciprocal (i.e. 1 / z) of values in a raster.
 }
 \keyword{MathandStatsTools}

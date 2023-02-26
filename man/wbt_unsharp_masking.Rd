@@ -2,8 +2,7 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_unsharp_masking}
 \alias{wbt_unsharp_masking}
-\title{Unsharp masking
-An image sharpening technique that enhances edges.}
+\title{Unsharp masking}
 \usage{
 wbt_unsharp_masking(
   input,
@@ -40,7 +39,6 @@ wbt_unsharp_masking(
 Returns the tool text outputs.
 }
 \description{
-Unsharp masking
 An image sharpening technique that enhances edges.
 }
 \keyword{ImageProcessingToolsFilters}

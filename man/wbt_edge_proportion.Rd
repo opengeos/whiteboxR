@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_edge_proportion}
 \alias{wbt_edge_proportion}
-\title{Edge proportion
-Calculate the proportion of cells in a raster polygon that are edge cells.}
+\title{Edge proportion}
 \usage{
 wbt_edge_proportion(
   input,
@@ -34,7 +33,6 @@ wbt_edge_proportion(
 Returns the tool text outputs.
 }
 \description{
-Edge proportion
 Calculate the proportion of cells in a raster polygon that are edge cells.
 }
 \keyword{GISAnalysisPatchShapeTools}

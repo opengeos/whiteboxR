@@ -2,8 +2,7 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_generating_function}
 \alias{wbt_generating_function}
-\title{Generating function
-This tool calculates generating function from an input DEM.}
+\title{Generating function}
 \usage{
 wbt_generating_function(
   dem,
@@ -37,7 +36,6 @@ wbt_generating_function(
 Returns the tool text outputs.
 }
 \description{
-Generating function
 This tool calculates generating function from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

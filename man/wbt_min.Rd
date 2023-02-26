@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_min}
 \alias{wbt_min}
-\title{Min
-Performs a MIN operation on two rasters or a raster and a constant value.}
+\title{Min}
 \usage{
 wbt_min(
   input1,
@@ -34,7 +33,6 @@ wbt_min(
 Returns the tool text outputs.
 }
 \description{
-Min
 Performs a MIN operation on two rasters or a raster and a constant value.
 }
 \keyword{MathandStatsTools}

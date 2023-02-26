@@ -2,8 +2,7 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_convert_raster_format}
 \alias{wbt_convert_raster_format}
-\title{Convert raster format
-Converts raster data from one format to another.}
+\title{Convert raster format}
 \usage{
 wbt_convert_raster_format(
   input,
@@ -31,7 +30,6 @@ wbt_convert_raster_format(
 Returns the tool text outputs.
 }
 \description{
-Convert raster format
 Converts raster data from one format to another.
 }
 \keyword{DataTools}

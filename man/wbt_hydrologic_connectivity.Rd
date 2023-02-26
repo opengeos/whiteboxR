@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_hydrologic_connectivity}
 \alias{wbt_hydrologic_connectivity}
-\title{Hydrologic connectivity
-This tool evaluates hydrologic connectivity within a DEM.}
+\title{Hydrologic connectivity}
 \usage{
 wbt_hydrologic_connectivity(
   dem,
@@ -40,7 +39,6 @@ wbt_hydrologic_connectivity(
 Returns the tool text outputs.
 }
 \description{
-Hydrologic connectivity
 This tool evaluates hydrologic connectivity within a DEM.
 }
 \keyword{HydrologicalAnalysis}

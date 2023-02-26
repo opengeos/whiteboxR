@@ -2,8 +2,7 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_extract_raster_values_at_points}
 \alias{wbt_extract_raster_values_at_points}
-\title{Extract raster values at points
-Extracts the values of raster(s) at vector point locations.}
+\title{Extract raster values at points}
 \usage{
 wbt_extract_raster_values_at_points(
   inputs,
@@ -34,7 +33,6 @@ wbt_extract_raster_values_at_points(
 Returns the tool text outputs.
 }
 \description{
-Extract raster values at points
 Extracts the values of raster(s) at vector point locations.
 }
 \keyword{GISAnalysis}

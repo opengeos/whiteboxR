@@ -2,8 +2,7 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_round}
 \alias{wbt_round}
-\title{Round
-Rounds the values in an input raster to the nearest integer value.}
+\title{Round}
 \usage{
 wbt_round(
   input,
@@ -31,7 +30,6 @@ wbt_round(
 Returns the tool text outputs.
 }
 \description{
-Round
 Rounds the values in an input raster to the nearest integer value.
 }
 \keyword{MathandStatsTools}

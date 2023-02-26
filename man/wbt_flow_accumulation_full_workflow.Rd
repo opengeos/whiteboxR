@@ -2,8 +2,7 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_flow_accumulation_full_workflow}
 \alias{wbt_flow_accumulation_full_workflow}
-\title{Flow accumulation full workflow
-Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.}
+\title{Flow accumulation full workflow}
 \usage{
 wbt_flow_accumulation_full_workflow(
   dem,
@@ -49,7 +48,6 @@ wbt_flow_accumulation_full_workflow(
 Returns the tool text outputs.
 }
 \description{
-Flow accumulation full workflow
 Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.
 }
 \keyword{HydrologicalAnalysis}
