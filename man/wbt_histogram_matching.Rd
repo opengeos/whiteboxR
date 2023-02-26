@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_histogram_matching}
 \alias{wbt_histogram_matching}
-\title{Histogram matching}
+\title{Histogram matching
+Alters the statistical distribution of a raster image matching it to a specified PDF.}
 \usage{
 wbt_histogram_matching(
   input,
@@ -33,5 +34,7 @@ wbt_histogram_matching(
 Returns the tool text outputs.
 }
 \description{
+Histogram matching
 Alters the statistical distribution of a raster image matching it to a specified PDF.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

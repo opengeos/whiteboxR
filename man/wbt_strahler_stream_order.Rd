@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_strahler_stream_order}
 \alias{wbt_strahler_stream_order}
-\title{Strahler stream order}
+\title{Strahler stream order
+Assigns the Strahler stream order to each link in a stream network.}
 \usage{
 wbt_strahler_stream_order(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_strahler_stream_order(
 Returns the tool text outputs.
 }
 \description{
+Strahler stream order
 Assigns the Strahler stream order to each link in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

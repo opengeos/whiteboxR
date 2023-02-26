@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_rescale_value_range}
 \alias{wbt_rescale_value_range}
-\title{Rescale value range}
+\title{Rescale value range
+Performs a min-max contrast stretch on an input greytone image.}
 \usage{
 wbt_rescale_value_range(
   input,
@@ -42,5 +43,7 @@ wbt_rescale_value_range(
 Returns the tool text outputs.
 }
 \description{
+Rescale value range
 Performs a min-max contrast stretch on an input greytone image.
 }
+\keyword{MathandStatsTools}

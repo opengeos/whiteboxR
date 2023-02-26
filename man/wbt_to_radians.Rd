@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_to_radians}
 \alias{wbt_to_radians}
-\title{To radians}
+\title{To radians
+Converts a raster from degrees to radians.}
 \usage{
 wbt_to_radians(
   input,
@@ -30,5 +31,7 @@ wbt_to_radians(
 Returns the tool text outputs.
 }
 \description{
+To radians
 Converts a raster from degrees to radians.
 }
+\keyword{MathandStatsTools}

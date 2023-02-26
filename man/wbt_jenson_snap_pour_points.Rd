@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_jenson_snap_pour_points}
 \alias{wbt_jenson_snap_pour_points}
-\title{Jenson snap pour points}
+\title{Jenson snap pour points
+Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell.}
 \usage{
 wbt_jenson_snap_pour_points(
   pour_pts,
@@ -36,5 +37,7 @@ wbt_jenson_snap_pour_points(
 Returns the tool text outputs.
 }
 \description{
+Jenson snap pour points
 Moves outlet points used to specify points of interest in a watershedding operation to the nearest stream cell.
 }
+\keyword{HydrologicalAnalysis}

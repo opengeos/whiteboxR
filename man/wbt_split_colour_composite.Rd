@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_split_colour_composite}
 \alias{wbt_split_colour_composite}
-\title{Split colour composite}
+\title{Split colour composite
+This tool splits an RGB colour composite image into separate multispectral images.}
 \usage{
 wbt_split_colour_composite(
   input,
@@ -36,5 +37,7 @@ wbt_split_colour_composite(
 Returns the tool text outputs.
 }
 \description{
+Split colour composite
 This tool splits an RGB colour composite image into separate multispectral images.
 }
+\keyword{ImageProcessingTools}

@@ -18,3 +18,4 @@ Check for 'WhiteboxTools' executable path
 \seealso{
 \code{\link[=wbt_exe_path]{wbt_exe_path()}}
 }
+\keyword{General}

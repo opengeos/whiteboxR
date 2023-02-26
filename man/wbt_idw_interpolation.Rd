@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_idw_interpolation}
 \alias{wbt_idw_interpolation}
-\title{Idw interpolation}
+\title{Idw interpolation
+Interpolates vector points into a raster surface using an inverse-distance weighted scheme.}
 \usage{
 wbt_idw_interpolation(
   input,
@@ -51,5 +52,7 @@ wbt_idw_interpolation(
 Returns the tool text outputs.
 }
 \description{
+Idw interpolation
 Interpolates vector points into a raster surface using an inverse-distance weighted scheme.
 }
+\keyword{GISAnalysis}

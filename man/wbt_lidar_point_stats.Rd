@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_point_stats}
 \alias{wbt_lidar_point_stats}
-\title{Lidar point stats}
+\title{Lidar point stats
+Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.}
 \usage{
 wbt_lidar_point_stats(
   input,
@@ -48,5 +49,7 @@ wbt_lidar_point_stats(
 Returns the tool text outputs.
 }
 \description{
+Lidar point stats
 Creates several rasters summarizing the distribution of LAS point data. When the input/output parameters are not specified, the tool works on all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

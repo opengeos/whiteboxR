@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_raster_perimeter}
 \alias{wbt_raster_perimeter}
-\title{Raster perimeter}
+\title{Raster perimeter
+Calculates the perimeters of polygons or classes within a raster image.}
 \usage{
 wbt_raster_perimeter(
   input,
@@ -39,5 +40,7 @@ wbt_raster_perimeter(
 Returns the tool text outputs.
 }
 \description{
+Raster perimeter
 Calculates the perimeters of polygons or classes within a raster image.
 }
+\keyword{GISAnalysis}

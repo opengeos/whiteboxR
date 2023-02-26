@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_edge_contamination}
 \alias{wbt_edge_contamination}
-\title{Edge contamination}
+\title{Edge contamination
+This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.}
 \usage{
 wbt_edge_contamination(
   dem,
@@ -36,5 +37,7 @@ wbt_edge_contamination(
 Returns the tool text outputs.
 }
 \description{
+Edge contamination
 This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
 }
+\keyword{HydrologicalAnalysis}

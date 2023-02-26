@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_shreve_stream_magnitude}
 \alias{wbt_shreve_stream_magnitude}
-\title{Shreve stream magnitude}
+\title{Shreve stream magnitude
+Assigns the Shreve stream magnitude to each link in a stream network.}
 \usage{
 wbt_shreve_stream_magnitude(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_shreve_stream_magnitude(
 Returns the tool text outputs.
 }
 \description{
+Shreve stream magnitude
 Assigns the Shreve stream magnitude to each link in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

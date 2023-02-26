@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_flow_length_diff}
 \alias{wbt_flow_length_diff}
-\title{Flow length diff}
+\title{Flow length diff
+Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.}
 \usage{
 wbt_flow_length_diff(
   d8_pntr,
@@ -33,5 +34,7 @@ wbt_flow_length_diff(
 Returns the tool text outputs.
 }
 \description{
+Flow length diff
 Calculates the local maximum absolute difference in downslope flowpath length, useful in mapping drainage divides and ridges.
 }
+\keyword{HydrologicalAnalysis}

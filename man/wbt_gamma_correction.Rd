@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_gamma_correction}
 \alias{wbt_gamma_correction}
-\title{Gamma correction}
+\title{Gamma correction
+Performs a gamma correction on an input images.}
 \usage{
 wbt_gamma_correction(
   input,
@@ -33,5 +34,7 @@ wbt_gamma_correction(
 Returns the tool text outputs.
 }
 \description{
+Gamma correction
 Performs a gamma correction on an input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

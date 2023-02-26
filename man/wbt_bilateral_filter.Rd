@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_bilateral_filter}
 \alias{wbt_bilateral_filter}
-\title{Bilateral filter}
+\title{Bilateral filter
+A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).}
 \usage{
 wbt_bilateral_filter(
   input,
@@ -36,5 +37,7 @@ wbt_bilateral_filter(
 Returns the tool text outputs.
 }
 \description{
+Bilateral filter
 A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
 }
+\keyword{ImageProcessingToolsFilters}

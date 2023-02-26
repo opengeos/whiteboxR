@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_minimum_convex_hull}
 \alias{wbt_minimum_convex_hull}
-\title{Minimum convex hull}
+\title{Minimum convex hull
+Creates a vector convex polygon around vector features.}
 \usage{
 wbt_minimum_convex_hull(
   input,
@@ -33,5 +34,7 @@ wbt_minimum_convex_hull(
 Returns the tool text outputs.
 }
 \description{
+Minimum convex hull
 Creates a vector convex polygon around vector features.
 }
+\keyword{GISAnalysis}

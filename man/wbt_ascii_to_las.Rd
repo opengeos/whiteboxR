@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_ascii_to_las}
 \alias{wbt_ascii_to_las}
-\title{Ascii to las}
+\title{Ascii to las
+Converts one or more ASCII files containing LiDAR points into LAS files.}
 \usage{
 wbt_ascii_to_las(
   inputs,
@@ -33,5 +34,7 @@ wbt_ascii_to_las(
 Returns the tool text outputs.
 }
 \description{
+Ascii to las
 Converts one or more ASCII files containing LiDAR points into LAS files.
 }
+\keyword{LiDARTools}

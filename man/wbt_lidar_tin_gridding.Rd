@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_tin_gridding}
 \alias{wbt_lidar_tin_gridding}
-\title{Lidar tin gridding}
+\title{Lidar tin gridding
+Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.}
 \usage{
 wbt_lidar_tin_gridding(
   input,
@@ -51,5 +52,7 @@ wbt_lidar_tin_gridding(
 Returns the tool text outputs.
 }
 \description{
+Lidar tin gridding
 Creates a raster grid based on a Delaunay triangular irregular network (TIN) fitted to LiDAR points.
 }
+\keyword{LiDARTools}

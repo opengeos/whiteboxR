@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_less_than}
 \alias{wbt_less_than}
-\title{Less than}
+\title{Less than
+Performs a less-than comparison operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_less_than(
   input1,
@@ -36,5 +37,7 @@ wbt_less_than(
 Returns the tool text outputs.
 }
 \description{
+Less than
 Performs a less-than comparison operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

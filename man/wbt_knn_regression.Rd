@@ -2,7 +2,8 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_knn_regression}
 \alias{wbt_knn_regression}
-\title{Knn regression}
+\title{Knn regression
+Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.}
 \usage{
 wbt_knn_regression(
   inputs,
@@ -48,5 +49,7 @@ wbt_knn_regression(
 Returns the tool text outputs.
 }
 \description{
+Knn regression
 Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.
 }
+\keyword{MachineLearning}

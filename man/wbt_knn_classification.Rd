@@ -2,7 +2,8 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_knn_classification}
 \alias{wbt_knn_classification}
-\title{Knn classification}
+\title{Knn classification
+Performs a supervised k-nearest neighbour classification using training site polygons/points and predictor rasters.}
 \usage{
 wbt_knn_classification(
   inputs,
@@ -48,5 +49,7 @@ wbt_knn_classification(
 Returns the tool text outputs.
 }
 \description{
+Knn classification
 Performs a supervised k-nearest neighbour classification using training site polygons/points and predictor rasters.
 }
+\keyword{MachineLearning}

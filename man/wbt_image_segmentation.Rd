@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_classification.R
 \name{wbt_image_segmentation}
 \alias{wbt_image_segmentation}
-\title{Image segmentation}
+\title{Image segmentation
+Performs a region-growing based segmentation on a set of multi-spectral images.}
 \usage{
 wbt_image_segmentation(
   inputs,
@@ -39,5 +40,7 @@ wbt_image_segmentation(
 Returns the tool text outputs.
 }
 \description{
+Image segmentation
 Performs a region-growing based segmentation on a set of multi-spectral images.
 }
+\keyword{ImageProcessingToolsClassification}

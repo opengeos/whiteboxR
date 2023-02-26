@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_filter_raster_features_by_area}
 \alias{wbt_filter_raster_features_by_area}
-\title{Filter raster features by area}
+\title{Filter raster features by area
+Removes small-area features from a raster.}
 \usage{
 wbt_filter_raster_features_by_area(
   input,
@@ -36,5 +37,7 @@ wbt_filter_raster_features_by_area(
 Returns the tool text outputs.
 }
 \description{
+Filter raster features by area
 Removes small-area features from a raster.
 }
+\keyword{GISAnalysis}

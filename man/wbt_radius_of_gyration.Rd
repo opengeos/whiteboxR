@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_radius_of_gyration}
 \alias{wbt_radius_of_gyration}
-\title{Radius of gyration}
+\title{Radius of gyration
+Calculates the distance of cells from their polygon's centroid.}
 \usage{
 wbt_radius_of_gyration(
   input,
@@ -33,5 +34,7 @@ wbt_radius_of_gyration(
 Returns the tool text outputs.
 }
 \description{
+Radius of gyration
 Calculates the distance of cells from their polygon's centroid.
 }
+\keyword{GISAnalysisPatchShapeTools}

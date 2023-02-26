@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_rbf_interpolation}
 \alias{wbt_lidar_rbf_interpolation}
-\title{Lidar rbf interpolation}
+\title{Lidar rbf interpolation
+Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.}
 \usage{
 wbt_lidar_rbf_interpolation(
   input,
@@ -60,5 +61,7 @@ wbt_lidar_rbf_interpolation(
 Returns the tool text outputs.
 }
 \description{
+Lidar rbf interpolation
 Interpolates LAS files using a radial basis function (RBF) scheme. When the input/output parameters are not specified, the tool interpolates all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

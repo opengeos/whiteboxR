@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_average_flowpath_slope}
 \alias{wbt_average_flowpath_slope}
-\title{Average flowpath slope}
+\title{Average flowpath slope
+Measures the average slope gradient from each grid cell to all upslope divide cells.}
 \usage{
 wbt_average_flowpath_slope(
   dem,
@@ -30,5 +31,7 @@ wbt_average_flowpath_slope(
 Returns the tool text outputs.
 }
 \description{
+Average flowpath slope
 Measures the average slope gradient from each grid cell to all upslope divide cells.
 }
+\keyword{HydrologicalAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_num_inflowing_neighbours}
 \alias{wbt_num_inflowing_neighbours}
-\title{Num inflowing neighbours}
+\title{Num inflowing neighbours
+Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.}
 \usage{
 wbt_num_inflowing_neighbours(
   dem,
@@ -30,5 +31,7 @@ wbt_num_inflowing_neighbours(
 Returns the tool text outputs.
 }
 \description{
+Num inflowing neighbours
 Computes the number of inflowing neighbours to each cell in an input DEM based on the D8 algorithm.
 }
+\keyword{HydrologicalAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multiscale_std_dev_normals}
 \alias{wbt_multiscale_std_dev_normals}
-\title{Multiscale std dev normals}
+\title{Multiscale std dev normals
+Calculates surface roughness over a range of spatial scales.}
 \usage{
 wbt_multiscale_std_dev_normals(
   dem,
@@ -45,5 +46,7 @@ wbt_multiscale_std_dev_normals(
 Returns the tool text outputs.
 }
 \description{
+Multiscale std dev normals
 Calculates surface roughness over a range of spatial scales.
 }
+\keyword{GeomorphometricAnalysis}

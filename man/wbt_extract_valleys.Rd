@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_extract_valleys}
 \alias{wbt_extract_valleys}
-\title{Extract valleys}
+\title{Extract valleys
+Identifies potential valley bottom grid cells based on local topolography alone.}
 \usage{
 wbt_extract_valleys(
   dem,
@@ -39,5 +40,7 @@ wbt_extract_valleys(
 Returns the tool text outputs.
 }
 \description{
+Extract valleys
 Identifies potential valley bottom grid cells based on local topolography alone.
 }
+\keyword{StreamNetworkAnalysis}

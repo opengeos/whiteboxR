@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_geomorphons}
 \alias{wbt_geomorphons}
-\title{Geomorphons}
+\title{Geomorphons
+Computes geomorphon patterns.}
 \usage{
 wbt_geomorphons(
   dem,
@@ -48,5 +49,7 @@ wbt_geomorphons(
 Returns the tool text outputs.
 }
 \description{
+Geomorphons
 Computes geomorphon patterns.
 }
+\keyword{GeomorphometricAnalysis}

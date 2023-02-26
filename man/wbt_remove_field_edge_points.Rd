@@ -2,7 +2,8 @@
 % Please edit documentation in R/precision_agriculture.R
 \name{wbt_remove_field_edge_points}
 \alias{wbt_remove_field_edge_points}
-\title{Remove field edge points}
+\title{Remove field edge points
+This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.}
 \usage{
 wbt_remove_field_edge_points(
   input,
@@ -39,5 +40,7 @@ wbt_remove_field_edge_points(
 Returns the tool text outputs.
 }
 \description{
+Remove field edge points
 This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.
 }
+\keyword{PrecisionAgriculture}

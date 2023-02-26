@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_remove_off_terrain_objects}
 \alias{wbt_remove_off_terrain_objects}
-\title{Remove off terrain objects}
+\title{Remove off terrain objects
+Removes off-terrain objects from a raster digital elevation model (DEM).}
 \usage{
 wbt_remove_off_terrain_objects(
   dem,
@@ -36,5 +37,7 @@ wbt_remove_off_terrain_objects(
 Returns the tool text outputs.
 }
 \description{
+Remove off terrain objects
 Removes off-terrain objects from a raster digital elevation model (DEM).
 }
+\keyword{GeomorphometricAnalysis}

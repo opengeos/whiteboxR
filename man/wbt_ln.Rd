@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_ln}
 \alias{wbt_ln}
-\title{Ln}
+\title{Ln
+Returns the natural logarithm of values in a raster.}
 \usage{
 wbt_ln(
   input,
@@ -30,5 +31,7 @@ wbt_ln(
 Returns the tool text outputs.
 }
 \description{
+Ln
 Returns the natural logarithm of values in a raster.
 }
+\keyword{MathandStatsTools}

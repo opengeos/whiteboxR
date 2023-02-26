@@ -25,3 +25,4 @@ Retrieves the tool parameter descriptions for a specific tool.
 wbt_tool_parameters("lidar_info")
 }
 }
+\keyword{General}

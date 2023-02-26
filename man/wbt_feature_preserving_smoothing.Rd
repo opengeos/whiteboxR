@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_feature_preserving_smoothing}
 \alias{wbt_feature_preserving_smoothing}
-\title{Feature preserving smoothing}
+\title{Feature preserving smoothing
+Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.}
 \usage{
 wbt_feature_preserving_smoothing(
   dem,
@@ -45,5 +46,7 @@ wbt_feature_preserving_smoothing(
 Returns the tool text outputs.
 }
 \description{
+Feature preserving smoothing
 Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.
 }
+\keyword{GeomorphometricAnalysis}

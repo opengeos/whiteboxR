@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_distance_to_outlet}
 \alias{wbt_distance_to_outlet}
-\title{Distance to outlet}
+\title{Distance to outlet
+Calculates the distance of stream grid cells to the channel network outlet cell.}
 \usage{
 wbt_distance_to_outlet(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_distance_to_outlet(
 Returns the tool text outputs.
 }
 \description{
+Distance to outlet
 Calculates the distance of stream grid cells to the channel network outlet cell.
 }
+\keyword{StreamNetworkAnalysis}

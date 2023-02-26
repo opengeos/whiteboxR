@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_depth_in_sink}
 \alias{wbt_depth_in_sink}
-\title{Depth in sink}
+\title{Depth in sink
+Measures the depth of sinks (depressions) in a DEM.}
 \usage{
 wbt_depth_in_sink(
   dem,
@@ -33,5 +34,7 @@ wbt_depth_in_sink(
 Returns the tool text outputs.
 }
 \description{
+Depth in sink
 Measures the depth of sinks (depressions) in a DEM.
 }
+\keyword{HydrologicalAnalysis}

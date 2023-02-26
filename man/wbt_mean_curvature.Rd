@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_mean_curvature}
 \alias{wbt_mean_curvature}
-\title{Mean curvature}
+\title{Mean curvature
+Calculates a mean curvature raster from an input DEM.}
 \usage{
 wbt_mean_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_mean_curvature(
 Returns the tool text outputs.
 }
 \description{
+Mean curvature
 Calculates a mean curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

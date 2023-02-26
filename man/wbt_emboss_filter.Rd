@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_emboss_filter}
 \alias{wbt_emboss_filter}
-\title{Emboss filter}
+\title{Emboss filter
+Performs an emboss filter on an image, similar to a hillshade operation.}
 \usage{
 wbt_emboss_filter(
   input,
@@ -36,5 +37,7 @@ wbt_emboss_filter(
 Returns the tool text outputs.
 }
 \description{
+Emboss filter
 Performs an emboss filter on an image, similar to a hillshade operation.
 }
+\keyword{ImageProcessingToolsFilters}

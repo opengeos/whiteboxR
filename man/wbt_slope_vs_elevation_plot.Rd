@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_slope_vs_elevation_plot}
 \alias{wbt_slope_vs_elevation_plot}
-\title{Slope vs elevation plot}
+\title{Slope vs elevation plot
+Creates a slope vs. elevation plot for one or more DEMs.}
 \usage{
 wbt_slope_vs_elevation_plot(
   inputs,
@@ -33,5 +34,7 @@ wbt_slope_vs_elevation_plot(
 Returns the tool text outputs.
 }
 \description{
+Slope vs elevation plot
 Creates a slope vs. elevation plot for one or more DEMs.
 }
+\keyword{GeomorphometricAnalysis}

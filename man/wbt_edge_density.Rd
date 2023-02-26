@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_edge_density}
 \alias{wbt_edge_density}
-\title{Edge density}
+\title{Edge density
+Calculates the density of edges, or breaks-in-slope within DEMs.}
 \usage{
 wbt_edge_density(
   dem,
@@ -39,5 +40,7 @@ wbt_edge_density(
 Returns the tool text outputs.
 }
 \description{
+Edge density
 Calculates the density of edges, or breaks-in-slope within DEMs.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_panchromatic_sharpening}
 \alias{wbt_panchromatic_sharpening}
-\title{Panchromatic sharpening}
+\title{Panchromatic sharpening
+Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.}
 \usage{
 wbt_panchromatic_sharpening(
   pan,
@@ -45,5 +46,7 @@ wbt_panchromatic_sharpening(
 Returns the tool text outputs.
 }
 \description{
+Panchromatic sharpening
 Increases the spatial resolution of image data by combining multispectral bands with panchromatic data.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

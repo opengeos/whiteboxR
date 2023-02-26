@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_classification.R
 \name{wbt_generalize_with_similarity}
 \alias{wbt_generalize_with_similarity}
-\title{Generalize with similarity}
+\title{Generalize with similarity
+Generalizes a raster containing class or object features by removing small features using similarity criteria of neighbouring features.}
 \usage{
 wbt_generalize_with_similarity(
   input,
@@ -36,5 +37,7 @@ wbt_generalize_with_similarity(
 Returns the tool text outputs.
 }
 \description{
+Generalize with similarity
 Generalizes a raster containing class or object features by removing small features using similarity criteria of neighbouring features.
 }
+\keyword{ImageProcessingToolsClassification}

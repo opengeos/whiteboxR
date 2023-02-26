@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_filter_lidar}
 \alias{wbt_filter_lidar}
-\title{Filter lidar}
+\title{Filter lidar
+Filters points within a LiDAR point cloud based on point properties.}
 \usage{
 wbt_filter_lidar(
   input,
@@ -33,5 +34,7 @@ wbt_filter_lidar(
 Returns the tool text outputs.
 }
 \description{
+Filter lidar
 Filters points within a LiDAR point cloud based on point properties.
 }
+\keyword{LiDARTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_artanh}
 \alias{wbt_artanh}
-\title{Artanh}
+\title{Artanh
+Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.}
 \usage{
 wbt_artanh(
   input,
@@ -30,5 +31,7 @@ wbt_artanh(
 Returns the tool text outputs.
 }
 \description{
+Artanh
 Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.
 }
+\keyword{MathandStatsTools}

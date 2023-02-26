@@ -1,5 +1,4 @@
 #' Buffer raster
-#'
 #' Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.
 #'
 #' @param input Input raster file.
@@ -10,6 +9,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisDistanceTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -34,7 +35,6 @@ wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, ver
 
 
 #' Cost allocation
-#'
 #' Identifies the source cell to which each grid cell is connected by a least-cost pathway in a cost-distance analysis.
 #'
 #' @param source Input source raster file.
@@ -44,6 +44,8 @@ wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, ver
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisDistanceTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -65,7 +67,6 @@ wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=
 
 
 #' Cost distance
-#'
 #' Performs cost-distance accumulation on a cost surface and a group of source cells.
 #'
 #' @param source Input source raster file.
@@ -76,6 +77,8 @@ wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisDistanceTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -98,7 +101,6 @@ wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, ve
 
 
 #' Cost pathway
-#'
 #' Performs cost-distance pathway analysis using a series of destination grid cells.
 #'
 #' @param destination Input destination raster file.
@@ -109,6 +111,8 @@ wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisDistanceTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -133,7 +137,6 @@ wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALS
 
 
 #' Euclidean allocation
-#'
 #' Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.
 #'
 #' @param input Input raster file.
@@ -142,6 +145,8 @@ wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALS
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisDistanceTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -162,7 +167,6 @@ wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=FALSE,
 
 
 #' Euclidean distance
-#'
 #' Calculates the Shih and Wu (2004) Euclidean distance transform.
 #'
 #' @param input Input raster file.
@@ -171,6 +175,8 @@ wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=FALSE,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisDistanceTools
 #'
 #' @return Returns the tool text outputs.
 #' @export

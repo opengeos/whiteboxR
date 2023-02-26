@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_branch_length}
 \alias{wbt_max_branch_length}
-\title{Max branch length}
+\title{Max branch length
+Lindsay and Seibert's (2013) branch length index is used to map drainage divides or ridge lines.}
 \usage{
 wbt_max_branch_length(
   dem,
@@ -33,5 +34,7 @@ wbt_max_branch_length(
 Returns the tool text outputs.
 }
 \description{
+Max branch length
 Lindsay and Seibert's (2013) branch length index is used to map drainage divides or ridge lines.
 }
+\keyword{GeomorphometricAnalysis}

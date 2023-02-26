@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_remove_short_streams}
 \alias{wbt_remove_short_streams}
-\title{Remove short streams}
+\title{Remove short streams
+Removes short first-order streams from a stream network.}
 \usage{
 wbt_remove_short_streams(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_remove_short_streams(
 Returns the tool text outputs.
 }
 \description{
+Remove short streams
 Removes short first-order streams from a stream network.
 }
+\keyword{StreamNetworkAnalysis}

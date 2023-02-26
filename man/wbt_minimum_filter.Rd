@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_minimum_filter}
 \alias{wbt_minimum_filter}
-\title{Minimum filter}
+\title{Minimum filter
+Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.}
 \usage{
 wbt_minimum_filter(
   input,
@@ -36,5 +37,7 @@ wbt_minimum_filter(
 Returns the tool text outputs.
 }
 \description{
+Minimum filter
 Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
 }
+\keyword{ImageProcessingToolsFilters}

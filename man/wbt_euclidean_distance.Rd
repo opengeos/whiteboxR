@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_distance.R
 \name{wbt_euclidean_distance}
 \alias{wbt_euclidean_distance}
-\title{Euclidean distance}
+\title{Euclidean distance
+Calculates the Shih and Wu (2004) Euclidean distance transform.}
 \usage{
 wbt_euclidean_distance(
   input,
@@ -30,5 +31,7 @@ wbt_euclidean_distance(
 Returns the tool text outputs.
 }
 \description{
+Euclidean distance
 Calculates the Shih and Wu (2004) Euclidean distance transform.
 }
+\keyword{GISAnalysisDistanceTools}

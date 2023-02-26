@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_vector_hex_binning}
 \alias{wbt_vector_hex_binning}
-\title{Vector hex binning}
+\title{Vector hex binning
+Hex-bins a set of vector points.}
 \usage{
 wbt_vector_hex_binning(
   input,
@@ -36,5 +37,7 @@ wbt_vector_hex_binning(
 Returns the tool text outputs.
 }
 \description{
+Vector hex binning
 Hex-bins a set of vector points.
 }
+\keyword{GISAnalysis}

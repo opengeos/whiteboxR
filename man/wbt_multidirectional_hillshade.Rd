@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multidirectional_hillshade}
 \alias{wbt_multidirectional_hillshade}
-\title{Multidirectional hillshade}
+\title{Multidirectional hillshade
+Calculates a multi-direction hillshade raster from an input DEM.}
 \usage{
 wbt_multidirectional_hillshade(
   dem,
@@ -39,5 +40,7 @@ wbt_multidirectional_hillshade(
 Returns the tool text outputs.
 }
 \description{
+Multidirectional hillshade
 Calculates a multi-direction hillshade raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

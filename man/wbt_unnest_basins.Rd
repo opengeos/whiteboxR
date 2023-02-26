@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_unnest_basins}
 \alias{wbt_unnest_basins}
-\title{Unnest basins}
+\title{Unnest basins
+Extract whole watersheds for a set of outlet points.}
 \usage{
 wbt_unnest_basins(
   d8_pntr,
@@ -36,5 +37,7 @@ wbt_unnest_basins(
 Returns the tool text outputs.
 }
 \description{
+Unnest basins
 Extract whole watersheds for a set of outlet points.
 }
+\keyword{HydrologicalAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_random_forest_classification}
 \alias{wbt_random_forest_classification}
-\title{Random forest classification}
+\title{Random forest classification
+Performs a supervised random forest classification using training site polygons/points and predictor rasters.}
 \usage{
 wbt_random_forest_classification(
   inputs,
@@ -51,5 +52,7 @@ wbt_random_forest_classification(
 Returns the tool text outputs.
 }
 \description{
+Random forest classification
 Performs a supervised random forest classification using training site polygons/points and predictor rasters.
 }
+\keyword{MachineLearning}

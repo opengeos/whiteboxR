@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_breakline_mapping}
 \alias{wbt_breakline_mapping}
-\title{Breakline mapping}
+\title{Breakline mapping
+This tool maps breaklines from an input DEM.}
 \usage{
 wbt_breakline_mapping(
   dem,
@@ -20,7 +21,7 @@ wbt_breakline_mapping(
 
 \item{output}{Name of the output vector lines file.}
 
-\item{threshold}{Threshold value (0 - infinity but typically 1 to 5 works well).}
+\item{threshold}{Threshold value (0 - infinity but typcially 1 to 5 works well).}
 
 \item{min_length}{Minimum line length, in grid cells.}
 
@@ -36,5 +37,7 @@ wbt_breakline_mapping(
 Returns the tool text outputs.
 }
 \description{
+Breakline mapping
 This tool maps breaklines from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

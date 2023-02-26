@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_sinh}
 \alias{wbt_sinh}
-\title{Sinh}
+\title{Sinh
+Returns the hyperbolic sine (sinh) of each values in a raster.}
 \usage{
 wbt_sinh(
   input,
@@ -30,5 +31,7 @@ wbt_sinh(
 Returns the tool text outputs.
 }
 \description{
+Sinh
 Returns the hyperbolic sine (sinh) of each values in a raster.
 }
+\keyword{MathandStatsTools}

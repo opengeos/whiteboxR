@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_random_field}
 \alias{wbt_random_field}
-\title{Random field}
+\title{Random field
+Creates an image containing random values.}
 \usage{
 wbt_random_field(
   base,
@@ -30,5 +31,7 @@ wbt_random_field(
 Returns the tool text outputs.
 }
 \description{
+Random field
 Creates an image containing random values.
 }
+\keyword{MathandStatsTools}

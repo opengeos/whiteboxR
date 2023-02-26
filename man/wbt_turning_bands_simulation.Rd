@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_turning_bands_simulation}
 \alias{wbt_turning_bands_simulation}
-\title{Turning bands simulation}
+\title{Turning bands simulation
+Creates an image containing random values based on a turning-bands simulation.}
 \usage{
 wbt_turning_bands_simulation(
   base,
@@ -36,5 +37,7 @@ wbt_turning_bands_simulation(
 Returns the tool text outputs.
 }
 \description{
+Turning bands simulation
 Creates an image containing random values based on a turning-bands simulation.
 }
+\keyword{MathandStatsTools}

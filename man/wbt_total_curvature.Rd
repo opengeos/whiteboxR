@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_total_curvature}
 \alias{wbt_total_curvature}
-\title{Total curvature}
+\title{Total curvature
+Calculates a total curvature raster from an input DEM.}
 \usage{
 wbt_total_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_total_curvature(
 Returns the tool text outputs.
 }
 \description{
+Total curvature
 Calculates a total curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_info}
 \alias{wbt_lidar_info}
-\title{Lidar info}
+\title{Lidar info
+Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.}
 \usage{
 wbt_lidar_info(
   input,
@@ -39,5 +40,7 @@ wbt_lidar_info(
 Returns the tool text outputs.
 }
 \description{
+Lidar info
 Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
 }
+\keyword{LiDARTools}

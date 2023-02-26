@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_aspect}
 \alias{wbt_aspect}
-\title{Aspect}
+\title{Aspect
+Calculates an aspect raster from an input DEM.}
 \usage{
 wbt_aspect(
   dem,
@@ -33,5 +34,7 @@ wbt_aspect(
 Returns the tool text outputs.
 }
 \description{
+Aspect
 Calculates an aspect raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

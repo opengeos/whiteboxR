@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_reclass_from_file}
 \alias{wbt_reclass_from_file}
-\title{Reclass from file}
+\title{Reclass from file
+Reclassifies the values in a raster image using reclass ranges in a text file.}
 \usage{
 wbt_reclass_from_file(
   input,
@@ -33,5 +34,7 @@ wbt_reclass_from_file(
 Returns the tool text outputs.
 }
 \description{
+Reclass from file
 Reclassifies the values in a raster image using reclass ranges in a text file.
 }
+\keyword{GISAnalysis}

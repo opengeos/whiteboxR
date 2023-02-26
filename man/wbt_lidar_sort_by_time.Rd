@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_sort_by_time}
 \alias{wbt_lidar_sort_by_time}
-\title{Lidar sort by time}
+\title{Lidar sort by time
+This tool sorts the points in a LiDAR file by the GPS time.}
 \usage{
 wbt_lidar_sort_by_time(
   input,
@@ -30,5 +31,7 @@ wbt_lidar_sort_by_time(
 Returns the tool text outputs.
 }
 \description{
+Lidar sort by time
 This tool sorts the points in a LiDAR file by the GPS time.
 }
+\keyword{LiDARTools}

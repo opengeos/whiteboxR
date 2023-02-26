@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_absolute_value}
 \alias{wbt_absolute_value}
-\title{Absolute value}
+\title{Absolute value
+Calculates the absolute value of every cell in a raster.}
 \usage{
 wbt_absolute_value(
   input,
@@ -30,5 +31,7 @@ wbt_absolute_value(
 Returns the tool text outputs.
 }
 \description{
+Absolute value
 Calculates the absolute value of every cell in a raster.
 }
+\keyword{MathandStatsTools}

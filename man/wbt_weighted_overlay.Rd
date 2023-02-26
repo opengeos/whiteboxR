@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_weighted_overlay}
 \alias{wbt_weighted_overlay}
-\title{Weighted overlay}
+\title{Weighted overlay
+Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).}
 \usage{
 wbt_weighted_overlay(
   factors,
@@ -42,5 +43,7 @@ wbt_weighted_overlay(
 Returns the tool text outputs.
 }
 \description{
+Weighted overlay
 Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
 }
+\keyword{GISAnalysisOverlayTools}

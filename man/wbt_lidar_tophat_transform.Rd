@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_tophat_transform}
 \alias{wbt_lidar_tophat_transform}
-\title{Lidar tophat transform}
+\title{Lidar tophat transform
+Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.}
 \usage{
 wbt_lidar_tophat_transform(
   input,
@@ -33,5 +34,7 @@ wbt_lidar_tophat_transform(
 Returns the tool text outputs.
 }
 \description{
+Lidar tophat transform
 Performs a white top-hat transform on a Lidar dataset; as an estimate of height above ground, this is useful for modelling the vegetation canopy.
 }
+\keyword{LiDARTools}

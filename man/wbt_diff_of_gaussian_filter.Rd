@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_diff_of_gaussian_filter}
 \alias{wbt_diff_of_gaussian_filter}
-\title{Diff of gaussian filter}
+\title{Diff of gaussian filter
+Performs a Difference of Gaussian (DoG) filter on an image.}
 \usage{
 wbt_diff_of_gaussian_filter(
   input,
@@ -36,5 +37,7 @@ wbt_diff_of_gaussian_filter(
 Returns the tool text outputs.
 }
 \description{
+Diff of gaussian filter
 Performs a Difference of Gaussian (DoG) filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

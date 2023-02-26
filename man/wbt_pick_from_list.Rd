@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_pick_from_list}
 \alias{wbt_pick_from_list}
-\title{Pick from list}
+\title{Pick from list
+Outputs the value from a raster stack specified by a position raster.}
 \usage{
 wbt_pick_from_list(
   inputs,
@@ -33,5 +34,7 @@ wbt_pick_from_list(
 Returns the tool text outputs.
 }
 \description{
+Pick from list
 Outputs the value from a raster stack specified by a position raster.
 }
+\keyword{GISAnalysisOverlayTools}

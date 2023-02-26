@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_smooth_vectors}
 \alias{wbt_smooth_vectors}
-\title{Smooth vectors}
+\title{Smooth vectors
+Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.}
 \usage{
 wbt_smooth_vectors(
   input,
@@ -33,5 +34,7 @@ wbt_smooth_vectors(
 Returns the tool text outputs.
 }
 \description{
+Smooth vectors
 Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.
 }
+\keyword{GISAnalysis}

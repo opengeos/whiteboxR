@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_add}
 \alias{wbt_add}
-\title{Add}
+\title{Add
+Performs an addition operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_add(
   input1,
@@ -33,5 +34,7 @@ wbt_add(
 Returns the tool text outputs.
 }
 \description{
+Add
 Performs an addition operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

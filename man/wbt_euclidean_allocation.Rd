@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_distance.R
 \name{wbt_euclidean_allocation}
 \alias{wbt_euclidean_allocation}
-\title{Euclidean allocation}
+\title{Euclidean allocation
+Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.}
 \usage{
 wbt_euclidean_allocation(
   input,
@@ -30,5 +31,7 @@ wbt_euclidean_allocation(
 Returns the tool text outputs.
 }
 \description{
+Euclidean allocation
 Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.
 }
+\keyword{GISAnalysisDistanceTools}

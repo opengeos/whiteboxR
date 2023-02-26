@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_vector_lines_to_raster}
 \alias{wbt_vector_lines_to_raster}
-\title{Vector lines to raster}
+\title{Vector lines to raster
+Converts a vector containing polylines into a raster.}
 \usage{
 wbt_vector_lines_to_raster(
   input,
@@ -42,5 +43,7 @@ wbt_vector_lines_to_raster(
 Returns the tool text outputs.
 }
 \description{
+Vector lines to raster
 Converts a vector containing polylines into a raster.
 }
+\keyword{DataTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_percent_elev_range}
 \alias{wbt_percent_elev_range}
-\title{Percent elev range}
+\title{Percent elev range
+Calculates percent of elevation range from a DEM.}
 \usage{
 wbt_percent_elev_range(
   dem,
@@ -36,5 +37,7 @@ wbt_percent_elev_range(
 Returns the tool text outputs.
 }
 \description{
+Percent elev range
 Calculates percent of elevation range from a DEM.
 }
+\keyword{GeomorphometricAnalysis}

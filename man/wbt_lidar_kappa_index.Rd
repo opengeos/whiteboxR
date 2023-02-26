@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_kappa_index}
 \alias{wbt_lidar_kappa_index}
-\title{Lidar kappa index}
+\title{Lidar kappa index
+Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.}
 \usage{
 wbt_lidar_kappa_index(
   input1,
@@ -39,5 +40,7 @@ wbt_lidar_kappa_index(
 Returns the tool text outputs.
 }
 \description{
+Lidar kappa index
 Performs a kappa index of agreement (KIA) analysis on the classifications of two LAS files.
 }
+\keyword{LiDARTools}

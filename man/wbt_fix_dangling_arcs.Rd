@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_fix_dangling_arcs}
 \alias{wbt_fix_dangling_arcs}
-\title{Fix dangling arcs}
+\title{Fix dangling arcs
+This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.}
 \usage{
 wbt_fix_dangling_arcs(
   input,
@@ -33,5 +34,7 @@ wbt_fix_dangling_arcs(
 Returns the tool text outputs.
 }
 \description{
+Fix dangling arcs
 This tool fixes undershot and overshot arcs, two common topological errors, in an input vector lines file.
 }
+\keyword{DataTools}

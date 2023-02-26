@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_compactness_ratio}
 \alias{wbt_compactness_ratio}
-\title{Compactness ratio}
+\title{Compactness ratio
+Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.}
 \usage{
 wbt_compactness_ratio(
   input,
@@ -27,5 +28,7 @@ wbt_compactness_ratio(
 Returns the tool text outputs.
 }
 \description{
+Compactness ratio
 Calculates the compactness ratio (A/P), a measure of shape complexity, for vector polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

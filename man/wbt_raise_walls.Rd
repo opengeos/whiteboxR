@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_raise_walls}
 \alias{wbt_raise_walls}
-\title{Raise walls}
+\title{Raise walls
+Raises walls in a DEM along a line or around a polygon, e.g. a watershed.}
 \usage{
 wbt_raise_walls(
   input,
@@ -39,5 +40,7 @@ wbt_raise_walls(
 Returns the tool text outputs.
 }
 \description{
+Raise walls
 Raises walls in a DEM along a line or around a polygon, e.g. a watershed.
 }
+\keyword{HydrologicalAnalysis}

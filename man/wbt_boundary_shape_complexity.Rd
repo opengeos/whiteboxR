@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_boundary_shape_complexity}
 \alias{wbt_boundary_shape_complexity}
-\title{Boundary shape complexity}
+\title{Boundary shape complexity
+Calculates the complexity of the boundaries of raster polygons.}
 \usage{
 wbt_boundary_shape_complexity(
   input,
@@ -30,5 +31,7 @@ wbt_boundary_shape_complexity(
 Returns the tool text outputs.
 }
 \description{
+Boundary shape complexity
 Calculates the complexity of the boundaries of raster polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

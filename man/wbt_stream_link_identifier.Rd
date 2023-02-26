@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_stream_link_identifier}
 \alias{wbt_stream_link_identifier}
-\title{Stream link identifier}
+\title{Stream link identifier
+Assigns a unique identifier to each link in a stream network.}
 \usage{
 wbt_stream_link_identifier(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_stream_link_identifier(
 Returns the tool text outputs.
 }
 \description{
+Stream link identifier
 Assigns a unique identifier to each link in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

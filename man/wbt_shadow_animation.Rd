@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_shadow_animation}
 \alias{wbt_shadow_animation}
-\title{Shadow animation}
+\title{Shadow animation
+This tool creates an animated GIF of shadows based on an input DEM.}
 \usage{
 wbt_shadow_animation(
   input,
@@ -54,5 +55,7 @@ wbt_shadow_animation(
 Returns the tool text outputs.
 }
 \description{
+Shadow animation
 This tool creates an animated GIF of shadows based on an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

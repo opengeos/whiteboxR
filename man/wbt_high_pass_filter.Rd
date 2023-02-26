@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_high_pass_filter}
 \alias{wbt_high_pass_filter}
-\title{High pass filter}
+\title{High pass filter
+Performs a high-pass filter on an input image.}
 \usage{
 wbt_high_pass_filter(
   input,
@@ -36,5 +37,7 @@ wbt_high_pass_filter(
 Returns the tool text outputs.
 }
 \description{
+High pass filter
 Performs a high-pass filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

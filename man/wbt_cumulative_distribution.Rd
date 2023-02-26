@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_cumulative_distribution}
 \alias{wbt_cumulative_distribution}
-\title{Cumulative distribution}
+\title{Cumulative distribution
+Converts a raster image to its cumulative distribution function.}
 \usage{
 wbt_cumulative_distribution(
   input,
@@ -30,5 +31,7 @@ wbt_cumulative_distribution(
 Returns the tool text outputs.
 }
 \description{
+Cumulative distribution
 Converts a raster image to its cumulative distribution function.
 }
+\keyword{MathandStatsTools}

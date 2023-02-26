@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_relative_topographic_position}
 \alias{wbt_relative_topographic_position}
-\title{Relative topographic position}
+\title{Relative topographic position
+Calculates the relative topographic position index from a DEM.}
 \usage{
 wbt_relative_topographic_position(
   dem,
@@ -36,5 +37,7 @@ wbt_relative_topographic_position(
 Returns the tool text outputs.
 }
 \description{
+Relative topographic position
 Calculates the relative topographic position index from a DEM.
 }
+\keyword{GeomorphometricAnalysis}

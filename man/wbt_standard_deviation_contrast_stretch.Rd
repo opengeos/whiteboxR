@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_standard_deviation_contrast_stretch}
 \alias{wbt_standard_deviation_contrast_stretch}
-\title{Standard deviation contrast stretch}
+\title{Standard deviation contrast stretch
+Performs a standard-deviation contrast stretch on input images.}
 \usage{
 wbt_standard_deviation_contrast_stretch(
   input,
@@ -36,5 +37,7 @@ wbt_standard_deviation_contrast_stretch(
 Returns the tool text outputs.
 }
 \description{
+Standard deviation contrast stretch
 Performs a standard-deviation contrast stretch on input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

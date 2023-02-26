@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_attribute_histogram}
 \alias{wbt_attribute_histogram}
-\title{Attribute histogram}
+\title{Attribute histogram
+Creates a histogram for the field values of a vector's attribute table.}
 \usage{
 wbt_attribute_histogram(
   input,
@@ -33,5 +34,7 @@ wbt_attribute_histogram(
 Returns the tool text outputs.
 }
 \description{
+Attribute histogram
 Creates a histogram for the field values of a vector's attribute table.
 }
+\keyword{MathandStatsTools}

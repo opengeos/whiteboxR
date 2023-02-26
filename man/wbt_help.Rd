@@ -17,3 +17,4 @@ Help description for 'WhiteboxTools'
 wbt_help()
 }
 }
+\keyword{General}

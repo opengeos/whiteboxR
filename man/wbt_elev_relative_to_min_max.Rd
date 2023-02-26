@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_elev_relative_to_min_max}
 \alias{wbt_elev_relative_to_min_max}
-\title{Elev relative to min max}
+\title{Elev relative to min max
+Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM.}
 \usage{
 wbt_elev_relative_to_min_max(
   dem,
@@ -30,5 +31,7 @@ wbt_elev_relative_to_min_max(
 Returns the tool text outputs.
 }
 \description{
+Elev relative to min max
 Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM.
 }
+\keyword{GeomorphometricAnalysis}

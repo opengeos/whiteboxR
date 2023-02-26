@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_qin_flow_accumulation}
 \alias{wbt_qin_flow_accumulation}
-\title{Qin flow accumulation}
+\title{Qin flow accumulation
+This tool calculates Qin et al. (2007) flow accumulation.}
 \usage{
 wbt_qin_flow_accumulation(
   dem,
@@ -48,5 +49,7 @@ wbt_qin_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
+Qin flow accumulation
 This tool calculates Qin et al. (2007) flow accumulation.
 }
+\keyword{HydrologicalAnalysis}

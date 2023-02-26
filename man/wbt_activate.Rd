@@ -26,3 +26,4 @@ wbt_activate(
 \description{
 Activate 'WhiteboxTools' Extensions
 }
+\keyword{General}

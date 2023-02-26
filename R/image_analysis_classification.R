@@ -1,5 +1,4 @@
 #' Evaluate training sites
-#'
 #' This tool can be used to inspect the overlap in spectral signatures of training sites for various classes.
 #'
 #' @param inputs Name of the input band images.
@@ -10,6 +9,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsClassification
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -32,7 +33,6 @@ wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, v
 
 
 #' Generalize classified raster
-#'
 #' Generalizes a raster containing class or object features by removing small features.
 #'
 #' @param input Name of the input raster image file.
@@ -43,6 +43,8 @@ wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, v
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsClassification
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -69,7 +71,6 @@ wbt_generalize_classified_raster <- function(input, output, min_size=4, method="
 
 
 #' Generalize with similarity
-#'
 #' Generalizes a raster containing class or object features by removing small features using similarity criteria of neighbouring features.
 #'
 #' @param input Name of the input raster image file.
@@ -80,6 +81,8 @@ wbt_generalize_classified_raster <- function(input, output, min_size=4, method="
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsClassification
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -104,7 +107,6 @@ wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4
 
 
 #' Image segmentation
-#'
 #' Performs a region-growing based segmentation on a set of multi-spectral images.
 #'
 #' @param inputs Names of the input band images.
@@ -116,6 +118,8 @@ wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsClassification
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -145,7 +149,6 @@ wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_
 
 
 #' Min dist classification
-#'
 #' Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.
 #'
 #' @param inputs Names of the input band images.
@@ -157,6 +160,8 @@ wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsClassification
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -182,7 +187,6 @@ wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=
 
 
 #' Parallelepiped classification
-#'
 #' Performs a supervised parallelepiped classification using training site polygons and multi-spectral images.
 #'
 #' @param inputs Name of the input band images.
@@ -193,6 +197,8 @@ wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsClassification
 #'
 #' @return Returns the tool text outputs.
 #' @export

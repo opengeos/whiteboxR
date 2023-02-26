@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_digital_surface_model}
 \alias{wbt_lidar_digital_surface_model}
-\title{Lidar digital surface model}
+\title{Lidar digital surface model
+Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.}
 \usage{
 wbt_lidar_digital_surface_model(
   input,
@@ -45,5 +46,7 @@ wbt_lidar_digital_surface_model(
 Returns the tool text outputs.
 }
 \description{
+Lidar digital surface model
 Creates a top-surface digital surface model (DSM) from a LiDAR point cloud.
 }
+\keyword{LiDARTools}

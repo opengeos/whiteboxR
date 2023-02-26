@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_breach_depressions}
 \alias{wbt_breach_depressions}
-\title{Breach depressions}
+\title{Breach depressions
+Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.}
 \usage{
 wbt_breach_depressions(
   dem,
@@ -42,5 +43,7 @@ wbt_breach_depressions(
 Returns the tool text outputs.
 }
 \description{
+Breach depressions
 Breaches all of the depressions in a DEM using Lindsay's (2016) algorithm. This should be preferred over depression filling in most cases.
 }
+\keyword{HydrologicalAnalysis}

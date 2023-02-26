@@ -33,4 +33,5 @@ This data set is a \code{data.frame} containing tools by name and associated R f
 \seealso{
 \link{wbttoolparameters} \code{\link[=wbt_list_tools]{wbt_list_tools()}}
 }
+\keyword{General}
 \keyword{datasets}

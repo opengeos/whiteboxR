@@ -2,7 +2,8 @@
 % Please edit documentation in R/precision_agriculture.R
 \name{wbt_yield_filter}
 \alias{wbt_yield_filter}
-\title{Yield filter}
+\title{Yield filter
+Filters crop yield values of point data derived from combine harvester yield monitors.}
 \usage{
 wbt_yield_filter(
   input,
@@ -48,5 +49,7 @@ wbt_yield_filter(
 Returns the tool text outputs.
 }
 \description{
+Yield filter
 Filters crop yield values of point data derived from combine harvester yield monitors.
 }
+\keyword{PrecisionAgriculture}

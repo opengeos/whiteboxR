@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_mosaic_with_feathering}
 \alias{wbt_mosaic_with_feathering}
-\title{Mosaic with feathering}
+\title{Mosaic with feathering
+Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.}
 \usage{
 wbt_mosaic_with_feathering(
   input1,
@@ -39,5 +40,7 @@ wbt_mosaic_with_feathering(
 Returns the tool text outputs.
 }
 \description{
+Mosaic with feathering
 Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
 }
+\keyword{ImageProcessingTools}

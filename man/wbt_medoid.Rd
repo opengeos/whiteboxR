@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_medoid}
 \alias{wbt_medoid}
-\title{Medoid}
+\title{Medoid
+Calculates the medoid for a series of vector features contained in a shapefile.}
 \usage{
 wbt_medoid(
   input,
@@ -30,5 +31,7 @@ wbt_medoid(
 Returns the tool text outputs.
 }
 \description{
+Medoid
 Calculates the medoid for a series of vector features contained in a shapefile.
 }
+\keyword{GISAnalysis}

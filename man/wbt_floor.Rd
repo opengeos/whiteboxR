@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_floor}
 \alias{wbt_floor}
-\title{Floor}
+\title{Floor
+Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.}
 \usage{
 wbt_floor(
   input,
@@ -30,5 +31,7 @@ wbt_floor(
 Returns the tool text outputs.
 }
 \description{
+Floor
 Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
 }
+\keyword{MathandStatsTools}

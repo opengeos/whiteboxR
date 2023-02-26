@@ -27,3 +27,5 @@ if (check_whitebox_binary()) {
 }
 unlink(c('slope.tif', 'settings.json'))
 }
+\keyword{General}
+\keyword{datasets}

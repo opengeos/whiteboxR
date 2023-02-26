@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_sediment_transport_index}
 \alias{wbt_sediment_transport_index}
-\title{Sediment transport index}
+\title{Sediment transport index
+Calculates the sediment transport index.}
 \usage{
 wbt_sediment_transport_index(
   sca,
@@ -39,5 +40,7 @@ wbt_sediment_transport_index(
 Returns the tool text outputs.
 }
 \description{
+Sediment transport index
 Calculates the sediment transport index.
 }
+\keyword{GeomorphometricAnalysis}

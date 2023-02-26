@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multiscale_topographic_position_image}
 \alias{wbt_multiscale_topographic_position_image}
-\title{Multiscale topographic position image}
+\title{Multiscale topographic position image
+Creates a multiscale topographic position image from three DEVmax rasters of differing spatial scale ranges.}
 \usage{
 wbt_multiscale_topographic_position_image(
   local,
@@ -39,5 +40,7 @@ wbt_multiscale_topographic_position_image(
 Returns the tool text outputs.
 }
 \description{
+Multiscale topographic position image
 Creates a multiscale topographic position image from three DEVmax rasters of differing spatial scale ranges.
 }
+\keyword{GeomorphometricAnalysis}

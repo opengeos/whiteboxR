@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_export_table_to_csv}
 \alias{wbt_export_table_to_csv}
-\title{Export table to csv}
+\title{Export table to csv
+Exports an attribute table to a CSV text file.}
 \usage{
 wbt_export_table_to_csv(
   input,
@@ -33,5 +34,7 @@ wbt_export_table_to_csv(
 Returns the tool text outputs.
 }
 \description{
+Export table to csv
 Exports an attribute table to a CSV text file.
 }
+\keyword{DataTools}

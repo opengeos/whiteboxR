@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_list_unique_values}
 \alias{wbt_list_unique_values}
-\title{List unique values}
+\title{List unique values
+Lists the unique values contained in a field within a vector's attribute table.}
 \usage{
 wbt_list_unique_values(
   input,
@@ -33,5 +34,7 @@ wbt_list_unique_values(
 Returns the tool text outputs.
 }
 \description{
+List unique values
 Lists the unique values contained in a field within a vector's attribute table.
 }
+\keyword{MathandStatsTools}

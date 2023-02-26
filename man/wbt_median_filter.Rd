@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_median_filter}
 \alias{wbt_median_filter}
-\title{Median filter}
+\title{Median filter
+Performs a median filter on an input image.}
 \usage{
 wbt_median_filter(
   input,
@@ -39,5 +40,7 @@ wbt_median_filter(
 Returns the tool text outputs.
 }
 \description{
+Median filter
 Performs a median filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

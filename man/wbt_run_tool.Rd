@@ -35,3 +35,4 @@ wbt_run_tool(tool_name, args)
 \seealso{
 \link{wbt_list_tools}
 }
+\keyword{General}

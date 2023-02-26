@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_raster_area}
 \alias{wbt_raster_area}
-\title{Raster area}
+\title{Raster area
+Calculates the area of polygons or classes within a raster image.}
 \usage{
 wbt_raster_area(
   input,
@@ -39,5 +40,7 @@ wbt_raster_area(
 Returns the tool text outputs.
 }
 \description{
+Raster area
 Calculates the area of polygons or classes within a raster image.
 }
+\keyword{GISAnalysis}

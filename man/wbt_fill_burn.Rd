@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_fill_burn}
 \alias{wbt_fill_burn}
-\title{Fill burn}
+\title{Fill burn
+Burns streams into a DEM using the FillBurn (Saunders, 1999) method.}
 \usage{
 wbt_fill_burn(
   dem,
@@ -33,5 +34,7 @@ wbt_fill_burn(
 Returns the tool text outputs.
 }
 \description{
+Fill burn
 Burns streams into a DEM using the FillBurn (Saunders, 1999) method.
 }
+\keyword{HydrologicalAnalysis}

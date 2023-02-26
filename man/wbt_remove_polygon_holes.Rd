@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_remove_polygon_holes}
 \alias{wbt_remove_polygon_holes}
-\title{Remove polygon holes}
+\title{Remove polygon holes
+Removes holes within the features of a vector polygon file.}
 \usage{
 wbt_remove_polygon_holes(
   input,
@@ -30,5 +31,7 @@ wbt_remove_polygon_holes(
 Returns the tool text outputs.
 }
 \description{
+Remove polygon holes
 Removes holes within the features of a vector polygon file.
 }
+\keyword{DataTools}

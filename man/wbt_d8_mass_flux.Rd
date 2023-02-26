@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_d8_mass_flux}
 \alias{wbt_d8_mass_flux}
-\title{D8 mass flux}
+\title{D8 mass flux
+Performs a D8 mass flux calculation.}
 \usage{
 wbt_d8_mass_flux(
   dem,
@@ -39,5 +40,7 @@ wbt_d8_mass_flux(
 Returns the tool text outputs.
 }
 \description{
+D8 mass flux
 Performs a D8 mass flux calculation.
 }
+\keyword{HydrologicalAnalysis}

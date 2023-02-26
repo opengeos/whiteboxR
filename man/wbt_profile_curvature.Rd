@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_profile_curvature}
 \alias{wbt_profile_curvature}
-\title{Profile curvature}
+\title{Profile curvature
+Calculates a profile curvature raster from an input DEM.}
 \usage{
 wbt_profile_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_profile_curvature(
 Returns the tool text outputs.
 }
 \description{
+Profile curvature
 Calculates a profile curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

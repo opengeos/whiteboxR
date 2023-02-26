@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_basins}
 \alias{wbt_basins}
-\title{Basins}
+\title{Basins
+Identifies drainage basins that drain to the DEM edge.}
 \usage{
 wbt_basins(
   d8_pntr,
@@ -33,5 +34,7 @@ wbt_basins(
 Returns the tool text outputs.
 }
 \description{
+Basins
 Identifies drainage basins that drain to the DEM edge.
 }
+\keyword{HydrologicalAnalysis}

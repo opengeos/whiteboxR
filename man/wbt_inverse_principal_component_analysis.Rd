@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_inverse_principal_component_analysis}
 \alias{wbt_inverse_principal_component_analysis}
-\title{Inverse principal component analysis}
+\title{Inverse principal component analysis
+This tool performs an inverse principal component analysis on a series of input component images.}
 \usage{
 wbt_inverse_principal_component_analysis(
   inputs,
@@ -30,5 +31,7 @@ wbt_inverse_principal_component_analysis(
 Returns the tool text outputs.
 }
 \description{
+Inverse principal component analysis
 This tool performs an inverse principal component analysis on a series of input component images.
 }
+\keyword{MathandStatsTools}

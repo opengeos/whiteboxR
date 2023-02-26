@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_stream_slope_continuous}
 \alias{wbt_stream_slope_continuous}
-\title{Stream slope continuous}
+\title{Stream slope continuous
+Estimates the slope of each grid cell in a stream network.}
 \usage{
 wbt_stream_slope_continuous(
   d8_pntr,
@@ -42,5 +43,7 @@ wbt_stream_slope_continuous(
 Returns the tool text outputs.
 }
 \description{
+Stream slope continuous
 Estimates the slope of each grid cell in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

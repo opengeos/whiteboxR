@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_elevation_above_stream}
 \alias{wbt_elevation_above_stream}
-\title{Elevation above stream}
+\title{Elevation above stream
+Calculates the elevation of cells above the nearest downslope stream cell.}
 \usage{
 wbt_elevation_above_stream(
   dem,
@@ -33,5 +34,7 @@ wbt_elevation_above_stream(
 Returns the tool text outputs.
 }
 \description{
+Elevation above stream
 Calculates the elevation of cells above the nearest downslope stream cell.
 }
+\keyword{HydrologicalAnalysis}

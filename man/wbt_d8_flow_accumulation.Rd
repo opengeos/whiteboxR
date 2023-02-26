@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_d8_flow_accumulation}
 \alias{wbt_d8_flow_accumulation}
-\title{D8 flow accumulation}
+\title{D8 flow accumulation
+Calculates a D8 flow accumulation raster from an input DEM or flow pointer.}
 \usage{
 wbt_d8_flow_accumulation(
   input,
@@ -45,5 +46,7 @@ wbt_d8_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
+D8 flow accumulation
 Calculates a D8 flow accumulation raster from an input DEM or flow pointer.
 }
+\keyword{HydrologicalAnalysis}

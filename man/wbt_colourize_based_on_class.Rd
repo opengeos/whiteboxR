@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_colourize_based_on_class}
 \alias{wbt_colourize_based_on_class}
-\title{Colourize based on class}
+\title{Colourize based on class
+Sets the RGB values of a LiDAR point cloud based on the point classification values.}
 \usage{
 wbt_colourize_based_on_class(
   input,
@@ -42,5 +43,7 @@ wbt_colourize_based_on_class(
 Returns the tool text outputs.
 }
 \description{
+Colourize based on class
 Sets the RGB values of a LiDAR point cloud based on the point classification values.
 }
+\keyword{LiDARTools}

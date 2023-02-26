@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_linearity_index}
 \alias{wbt_linearity_index}
-\title{Linearity index}
+\title{Linearity index
+Calculates the linearity index for vector polygons.}
 \usage{
 wbt_linearity_index(
   input,
@@ -27,5 +28,7 @@ wbt_linearity_index(
 Returns the tool text outputs.
 }
 \description{
+Linearity index
 Calculates the linearity index for vector polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

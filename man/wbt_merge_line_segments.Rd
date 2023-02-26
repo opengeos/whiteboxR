@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_merge_line_segments}
 \alias{wbt_merge_line_segments}
-\title{Merge line segments}
+\title{Merge line segments
+Merges vector line segments into larger features.}
 \usage{
 wbt_merge_line_segments(
   input,
@@ -33,5 +34,7 @@ wbt_merge_line_segments(
 Returns the tool text outputs.
 }
 \description{
+Merge line segments
 Merges vector line segments into larger features.
 }
+\keyword{GISAnalysisOverlayTools}

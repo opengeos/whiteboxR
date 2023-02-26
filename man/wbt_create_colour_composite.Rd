@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_create_colour_composite}
 \alias{wbt_create_colour_composite}
-\title{Create colour composite}
+\title{Create colour composite
+Creates a colour-composite image from three bands of multispectral imagery.}
 \usage{
 wbt_create_colour_composite(
   red,
@@ -45,5 +46,7 @@ wbt_create_colour_composite(
 Returns the tool text outputs.
 }
 \description{
+Create colour composite
 Creates a colour-composite image from three bands of multispectral imagery.
 }
+\keyword{ImageProcessingTools}

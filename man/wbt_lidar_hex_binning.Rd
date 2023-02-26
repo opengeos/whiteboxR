@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_hex_binning}
 \alias{wbt_lidar_hex_binning}
-\title{Lidar hex binning}
+\title{Lidar hex binning
+Hex-bins a set of LiDAR points.}
 \usage{
 wbt_lidar_hex_binning(
   input,
@@ -36,5 +37,7 @@ wbt_lidar_hex_binning(
 Returns the tool text outputs.
 }
 \description{
+Lidar hex binning
 Hex-bins a set of LiDAR points.
 }
+\keyword{LiDARTools}

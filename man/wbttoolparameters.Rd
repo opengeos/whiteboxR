@@ -37,4 +37,5 @@ This data set is a \code{data.frame} containing tool parameters and associated m
 \seealso{
 \link{wbttools} \code{\link[=wbt_tool_parameters]{wbt_tool_parameters()}}
 }
+\keyword{General}
 \keyword{datasets}

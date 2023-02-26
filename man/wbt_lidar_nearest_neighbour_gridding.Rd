@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_nearest_neighbour_gridding}
 \alias{wbt_lidar_nearest_neighbour_gridding}
-\title{Lidar nearest neighbour gridding}
+\title{Lidar nearest neighbour gridding
+Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.}
 \usage{
 wbt_lidar_nearest_neighbour_gridding(
   input,
@@ -51,5 +52,7 @@ wbt_lidar_nearest_neighbour_gridding(
 Returns the tool text outputs.
 }
 \description{
+Lidar nearest neighbour gridding
 Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

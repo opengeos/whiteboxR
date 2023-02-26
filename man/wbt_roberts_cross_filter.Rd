@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_roberts_cross_filter}
 \alias{wbt_roberts_cross_filter}
-\title{Roberts cross filter}
+\title{Roberts cross filter
+Performs a Robert's cross edge-detection filter on an image.}
 \usage{
 wbt_roberts_cross_filter(
   input,
@@ -33,5 +34,7 @@ wbt_roberts_cross_filter(
 Returns the tool text outputs.
 }
 \description{
+Roberts cross filter
 Performs a Robert's cross edge-detection filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

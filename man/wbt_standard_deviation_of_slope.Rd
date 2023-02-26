@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_standard_deviation_of_slope}
 \alias{wbt_standard_deviation_of_slope}
-\title{Standard deviation of slope}
+\title{Standard deviation of slope
+Calculates the standard deviation of slope from an input DEM.}
 \usage{
 wbt_standard_deviation_of_slope(
   input,
@@ -39,5 +40,7 @@ wbt_standard_deviation_of_slope(
 Returns the tool text outputs.
 }
 \description{
+Standard deviation of slope
 Calculates the standard deviation of slope from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

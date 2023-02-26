@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_arc_tan}
 \alias{wbt_arc_tan}
-\title{Arc tan}
+\title{Arc tan
+Returns the inverse tangent (arctan) of each values in a raster.}
 \usage{
 wbt_arc_tan(
   input,
@@ -30,5 +31,7 @@ wbt_arc_tan(
 Returns the tool text outputs.
 }
 \description{
+Arc tan
 Returns the inverse tangent (arctan) of each values in a raster.
 }
+\keyword{MathandStatsTools}

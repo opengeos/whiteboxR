@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_rasterize_streams}
 \alias{wbt_rasterize_streams}
-\title{Rasterize streams}
+\title{Rasterize streams
+Rasterizes vector streams based on Lindsay (2016) method.}
 \usage{
 wbt_rasterize_streams(
   streams,
@@ -39,5 +40,7 @@ wbt_rasterize_streams(
 Returns the tool text outputs.
 }
 \description{
+Rasterize streams
 Rasterizes vector streams based on Lindsay (2016) method.
 }
+\keyword{StreamNetworkAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_histogram_equalization}
 \alias{wbt_histogram_equalization}
-\title{Histogram equalization}
+\title{Histogram equalization
+Performs a histogram equalization contrast enhancement on an image.}
 \usage{
 wbt_histogram_equalization(
   input,
@@ -33,5 +34,7 @@ wbt_histogram_equalization(
 Returns the tool text outputs.
 }
 \description{
+Histogram equalization
 Performs a histogram equalization contrast enhancement on an image.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_horizon_angle}
 \alias{wbt_horizon_angle}
-\title{Horizon angle}
+\title{Horizon angle
+Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM.}
 \usage{
 wbt_horizon_angle(
   dem,
@@ -36,5 +37,7 @@ wbt_horizon_angle(
 Returns the tool text outputs.
 }
 \description{
+Horizon angle
 Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_clip_lidar_to_polygon}
 \alias{wbt_clip_lidar_to_polygon}
-\title{Clip lidar to polygon}
+\title{Clip lidar to polygon
+Clips a LiDAR point cloud to a vector polygon or polygons.}
 \usage{
 wbt_clip_lidar_to_polygon(
   input,
@@ -33,5 +34,7 @@ wbt_clip_lidar_to_polygon(
 Returns the tool text outputs.
 }
 \description{
+Clip lidar to polygon
 Clips a LiDAR point cloud to a vector polygon or polygons.
 }
+\keyword{LiDARTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_directional_relief}
 \alias{wbt_directional_relief}
-\title{Directional relief}
+\title{Directional relief
+Calculates relief for cells in an input DEM for a specified direction.}
 \usage{
 wbt_directional_relief(
   dem,
@@ -36,5 +37,7 @@ wbt_directional_relief(
 Returns the tool text outputs.
 }
 \description{
+Directional relief
 Calculates relief for cells in an input DEM for a specified direction.
 }
+\keyword{GeomorphometricAnalysis}

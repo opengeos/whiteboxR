@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_fill_depressions}
 \alias{wbt_fill_depressions}
-\title{Fill depressions}
+\title{Fill depressions
+Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.}
 \usage{
 wbt_fill_depressions(
   dem,
@@ -39,5 +40,7 @@ wbt_fill_depressions(
 Returns the tool text outputs.
 }
 \description{
+Fill depressions
 Fills all of the depressions in a DEM. Depression breaching should be preferred in most cases.
 }
+\keyword{HydrologicalAnalysis}

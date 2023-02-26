@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_vertical_excess_curvature}
 \alias{wbt_vertical_excess_curvature}
-\title{Vertical excess curvature}
+\title{Vertical excess curvature
+This tool calculates vertical excess curvature from an input DEM.}
 \usage{
 wbt_vertical_excess_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_vertical_excess_curvature(
 Returns the tool text outputs.
 }
 \description{
+Vertical excess curvature
 This tool calculates vertical excess curvature from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

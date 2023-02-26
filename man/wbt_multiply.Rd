@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_multiply}
 \alias{wbt_multiply}
-\title{Multiply}
+\title{Multiply
+Performs a multiplication operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_multiply(
   input1,
@@ -33,5 +34,7 @@ wbt_multiply(
 Returns the tool text outputs.
 }
 \description{
+Multiply
 Performs a multiplication operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

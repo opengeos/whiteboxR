@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_average_normal_vector_angular_deviation}
 \alias{wbt_average_normal_vector_angular_deviation}
-\title{Average normal vector angular deviation}
+\title{Average normal vector angular deviation
+Calculates the circular variance of aspect at a scale for a DEM.}
 \usage{
 wbt_average_normal_vector_angular_deviation(
   dem,
@@ -33,5 +34,7 @@ wbt_average_normal_vector_angular_deviation(
 Returns the tool text outputs.
 }
 \description{
+Average normal vector angular deviation
 Calculates the circular variance of aspect at a scale for a DEM.
 }
+\keyword{GeomorphometricAnalysis}

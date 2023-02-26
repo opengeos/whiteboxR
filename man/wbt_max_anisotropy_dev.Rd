@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_max_anisotropy_dev}
 \alias{wbt_max_anisotropy_dev}
-\title{Max anisotropy dev}
+\title{Max anisotropy dev
+Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales.}
 \usage{
 wbt_max_anisotropy_dev(
   dem,
@@ -42,5 +43,7 @@ wbt_max_anisotropy_dev(
 Returns the tool text outputs.
 }
 \description{
+Max anisotropy dev
 Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales.
 }
+\keyword{GeomorphometricAnalysis}

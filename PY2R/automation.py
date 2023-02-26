@@ -295,18 +295,19 @@ desc = ""
 
 with open(wbt_py) as f:
     lines = f.readlines()
-
+    tbx = ""
     for index, line in enumerate(lines):
         if index > 700:
             line = line.strip()
-
+            
             # Create an R script for each toolbox
             if line in toolboxes:
+                tbx = line.replace("#", "").strip().replace(" ", "").replace("/", "")
                 script_path = os.path.join(
                     dir_path, "scripts", toolboxes[line])
                 ff = open(script_path, "w")
                 print(script_path)
-
+                
                 # add code example to documentation
                 if toolboxes[line] == "math_stat_analysis.R":
                     add_example = True
@@ -318,7 +319,6 @@ with open(wbt_py) as f:
                 title = title.replace("_", " ")
                 title = title[0].upper() + title[1:]
                 ff.write("#' {}\n".format(title))
-                ff.write("#'\n")
                 i = 1
                 while True:
                     doc_line = lines[index + i].strip()
@@ -354,6 +354,8 @@ with open(wbt_py) as f:
                 ff.write(
                     "#' @param command_only Return command that would be executed by `system()` rather than running tool.\n"
                 )
+                ff.write("#'\n")
+                ff.write("#' @keywords {}\n".format(tbx))
                 ff.write("#'\n")
                 ff.write("#' @return Returns the tool text outputs.\n")
                 ff.write("#' @export\n")

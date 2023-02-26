@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_natural_neighbour_interpolation}
 \alias{wbt_natural_neighbour_interpolation}
-\title{Natural neighbour interpolation}
+\title{Natural neighbour interpolation
+Creates a raster grid based on Sibson's natural neighbour method.}
 \usage{
 wbt_natural_neighbour_interpolation(
   input,
@@ -45,5 +46,7 @@ wbt_natural_neighbour_interpolation(
 Returns the tool text outputs.
 }
 \description{
+Natural neighbour interpolation
 Creates a raster grid based on Sibson's natural neighbour method.
 }
+\keyword{GISAnalysis}

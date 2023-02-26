@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_fill_single_cell_pits}
 \alias{wbt_fill_single_cell_pits}
-\title{Fill single cell pits}
+\title{Fill single cell pits
+Raises pit cells to the elevation of their lowest neighbour.}
 \usage{
 wbt_fill_single_cell_pits(
   dem,
@@ -30,5 +31,7 @@ wbt_fill_single_cell_pits(
 Returns the tool text outputs.
 }
 \description{
+Fill single cell pits
 Raises pit cells to the elevation of their lowest neighbour.
 }
+\keyword{HydrologicalAnalysis}

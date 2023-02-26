@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_percent_equal_to}
 \alias{wbt_percent_equal_to}
-\title{Percent equal to}
+\title{Percent equal to
+Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.}
 \usage{
 wbt_percent_equal_to(
   inputs,
@@ -33,5 +34,7 @@ wbt_percent_equal_to(
 Returns the tool text outputs.
 }
 \description{
+Percent equal to
 Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
 }
+\keyword{GISAnalysisOverlayTools}

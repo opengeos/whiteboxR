@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_fd8_pointer}
 \alias{wbt_fd8_pointer}
-\title{Fd8 pointer}
+\title{Fd8 pointer
+Calculates an FD8 flow pointer raster from an input DEM.}
 \usage{
 wbt_fd8_pointer(
   dem,
@@ -30,5 +31,7 @@ wbt_fd8_pointer(
 Returns the tool text outputs.
 }
 \description{
+Fd8 pointer
 Calculates an FD8 flow pointer raster from an input DEM.
 }
+\keyword{HydrologicalAnalysis}

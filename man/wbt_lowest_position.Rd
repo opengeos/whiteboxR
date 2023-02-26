@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_lowest_position}
 \alias{wbt_lowest_position}
-\title{Lowest position}
+\title{Lowest position
+Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.}
 \usage{
 wbt_lowest_position(
   inputs,
@@ -30,5 +31,7 @@ wbt_lowest_position(
 Returns the tool text outputs.
 }
 \description{
+Lowest position
 Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
 }
+\keyword{GISAnalysisOverlayTools}

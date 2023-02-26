@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_shape_complexity_index}
 \alias{wbt_shape_complexity_index}
-\title{Shape complexity index}
+\title{Shape complexity index
+Calculates overall polygon shape complexity or irregularity.}
 \usage{
 wbt_shape_complexity_index(
   input,
@@ -27,5 +28,7 @@ wbt_shape_complexity_index(
 Returns the tool text outputs.
 }
 \description{
+Shape complexity index
 Calculates overall polygon shape complexity or irregularity.
 }
+\keyword{GISAnalysisPatchShapeTools}

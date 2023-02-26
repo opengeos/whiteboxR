@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_percentage_contrast_stretch}
 \alias{wbt_percentage_contrast_stretch}
-\title{Percentage contrast stretch}
+\title{Percentage contrast stretch
+Performs a percentage linear contrast stretch on input images.}
 \usage{
 wbt_percentage_contrast_stretch(
   input,
@@ -39,5 +40,7 @@ wbt_percentage_contrast_stretch(
 Returns the tool text outputs.
 }
 \description{
+Percentage contrast stretch
 Performs a percentage linear contrast stretch on input images.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

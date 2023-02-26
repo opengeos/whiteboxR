@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_voronoi_diagram}
 \alias{wbt_voronoi_diagram}
-\title{Voronoi diagram}
+\title{Voronoi diagram
+Creates a vector Voronoi diagram for a set of vector points.}
 \usage{
 wbt_voronoi_diagram(
   input,
@@ -30,5 +31,7 @@ wbt_voronoi_diagram(
 Returns the tool text outputs.
 }
 \description{
+Voronoi diagram
 Creates a vector Voronoi diagram for a set of vector points.
 }
+\keyword{GISAnalysis}

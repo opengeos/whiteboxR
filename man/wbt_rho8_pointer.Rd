@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_rho8_pointer}
 \alias{wbt_rho8_pointer}
-\title{Rho8 pointer}
+\title{Rho8 pointer
+Calculates a stochastic Rho8 flow pointer raster from an input DEM.}
 \usage{
 wbt_rho8_pointer(
   dem,
@@ -33,5 +34,7 @@ wbt_rho8_pointer(
 Returns the tool text outputs.
 }
 \description{
+Rho8 pointer
 Calculates a stochastic Rho8 flow pointer raster from an input DEM.
 }
+\keyword{HydrologicalAnalysis}

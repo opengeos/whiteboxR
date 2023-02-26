@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_find_flightline_edge_points}
 \alias{wbt_find_flightline_edge_points}
-\title{Find flightline edge points}
+\title{Find flightline edge points
+Identifies points along a flightline's edge in a LAS file.}
 \usage{
 wbt_find_flightline_edge_points(
   input,
@@ -30,5 +31,7 @@ wbt_find_flightline_edge_points(
 Returns the tool text outputs.
 }
 \description{
+Find flightline edge points
 Identifies points along a flightline's edge in a LAS file.
 }
+\keyword{LiDARTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_shape_complexity_index_raster}
 \alias{wbt_shape_complexity_index_raster}
-\title{Shape complexity index raster}
+\title{Shape complexity index raster
+Calculates the complexity of raster polygons or classes.}
 \usage{
 wbt_shape_complexity_index_raster(
   input,
@@ -30,5 +31,7 @@ wbt_shape_complexity_index_raster(
 Returns the tool text outputs.
 }
 \description{
+Shape complexity index raster
 Calculates the complexity of raster polygons or classes.
 }
+\keyword{GISAnalysisPatchShapeTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_contours_from_points}
 \alias{wbt_contours_from_points}
-\title{Contours from points}
+\title{Contours from points
+Creates a contour coverage from a set of input points.}
 \usage{
 wbt_contours_from_points(
   input,
@@ -48,5 +49,7 @@ wbt_contours_from_points(
 Returns the tool text outputs.
 }
 \description{
+Contours from points
 Creates a contour coverage from a set of input points.
 }
+\keyword{GeomorphometricAnalysis}

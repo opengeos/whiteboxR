@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_multiply_overlay}
 \alias{wbt_multiply_overlay}
-\title{Multiply overlay}
+\title{Multiply overlay
+Calculates the sum for each grid cell from a group of raster images.}
 \usage{
 wbt_multiply_overlay(
   inputs,
@@ -30,5 +31,7 @@ wbt_multiply_overlay(
 Returns the tool text outputs.
 }
 \description{
+Multiply overlay
 Calculates the sum for each grid cell from a group of raster images.
 }
+\keyword{GISAnalysisOverlayTools}

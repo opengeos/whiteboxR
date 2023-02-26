@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_spherical_std_dev_of_normals}
 \alias{wbt_spherical_std_dev_of_normals}
-\title{Spherical std dev of normals}
+\title{Spherical std dev of normals
+Calculates the spherical standard deviation of surface normals for a DEM.}
 \usage{
 wbt_spherical_std_dev_of_normals(
   dem,
@@ -33,5 +34,7 @@ wbt_spherical_std_dev_of_normals(
 Returns the tool text outputs.
 }
 \description{
+Spherical std dev of normals
 Calculates the spherical standard deviation of surface normals for a DEM.
 }
+\keyword{GeomorphometricAnalysis}

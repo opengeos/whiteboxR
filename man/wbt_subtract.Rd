@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_subtract}
 \alias{wbt_subtract}
-\title{Subtract}
+\title{Subtract
+Performs a differencing operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_subtract(
   input1,
@@ -33,5 +34,7 @@ wbt_subtract(
 Returns the tool text outputs.
 }
 \description{
+Subtract
 Performs a differencing operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

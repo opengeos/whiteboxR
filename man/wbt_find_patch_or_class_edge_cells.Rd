@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_find_patch_or_class_edge_cells}
 \alias{wbt_find_patch_or_class_edge_cells}
-\title{Find patch or class edge cells}
+\title{Find patch or class edge cells
+Finds all cells located on the edge of patch or class features.}
 \usage{
 wbt_find_patch_or_class_edge_cells(
   input,
@@ -30,5 +31,7 @@ wbt_find_patch_or_class_edge_cells(
 Returns the tool text outputs.
 }
 \description{
+Find patch or class edge cells
 Finds all cells located on the edge of patch or class features.
 }
+\keyword{GISAnalysisPatchShapeTools}

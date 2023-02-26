@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_raster_to_vector_polygons}
 \alias{wbt_raster_to_vector_polygons}
-\title{Raster to vector polygons}
+\title{Raster to vector polygons
+Converts a raster dataset to a vector of the POLYGON shapetype.}
 \usage{
 wbt_raster_to_vector_polygons(
   input,
@@ -30,5 +31,7 @@ wbt_raster_to_vector_polygons(
 Returns the tool text outputs.
 }
 \description{
+Raster to vector polygons
 Converts a raster dataset to a vector of the POLYGON shapetype.
 }
+\keyword{DataTools}

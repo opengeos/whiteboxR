@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_create_hexagonal_vector_grid}
 \alias{wbt_create_hexagonal_vector_grid}
-\title{Create hexagonal vector grid}
+\title{Create hexagonal vector grid
+Creates a hexagonal vector grid.}
 \usage{
 wbt_create_hexagonal_vector_grid(
   input,
@@ -36,5 +37,7 @@ wbt_create_hexagonal_vector_grid(
 Returns the tool text outputs.
 }
 \description{
+Create hexagonal vector grid
 Creates a hexagonal vector grid.
 }
+\keyword{GISAnalysis}

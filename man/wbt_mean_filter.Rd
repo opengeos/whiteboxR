@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_mean_filter}
 \alias{wbt_mean_filter}
-\title{Mean filter}
+\title{Mean filter
+Performs a mean filter (low-pass filter) on an input image.}
 \usage{
 wbt_mean_filter(
   input,
@@ -36,5 +37,7 @@ wbt_mean_filter(
 Returns the tool text outputs.
 }
 \description{
+Mean filter
 Performs a mean filter (low-pass filter) on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

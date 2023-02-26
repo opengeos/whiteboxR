@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_raster_streams_to_vector}
 \alias{wbt_raster_streams_to_vector}
-\title{Raster streams to vector}
+\title{Raster streams to vector
+Converts a raster stream file into a vector file.}
 \usage{
 wbt_raster_streams_to_vector(
   streams,
@@ -36,5 +37,7 @@ wbt_raster_streams_to_vector(
 Returns the tool text outputs.
 }
 \description{
+Raster streams to vector
 Converts a raster stream file into a vector file.
 }
+\keyword{StreamNetworkAnalysis}

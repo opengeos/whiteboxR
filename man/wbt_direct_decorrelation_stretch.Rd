@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_direct_decorrelation_stretch}
 \alias{wbt_direct_decorrelation_stretch}
-\title{Direct decorrelation stretch}
+\title{Direct decorrelation stretch
+Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.}
 \usage{
 wbt_direct_decorrelation_stretch(
   input,
@@ -36,5 +37,7 @@ wbt_direct_decorrelation_stretch(
 Returns the tool text outputs.
 }
 \description{
+Direct decorrelation stretch
 Performs a direct decorrelation stretch enhancement on a colour-composite image of multispectral data.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

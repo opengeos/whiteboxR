@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_range_filter}
 \alias{wbt_range_filter}
-\title{Range filter}
+\title{Range filter
+Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.}
 \usage{
 wbt_range_filter(
   input,
@@ -36,5 +37,7 @@ wbt_range_filter(
 Returns the tool text outputs.
 }
 \description{
+Range filter
 Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
 }
+\keyword{ImageProcessingToolsFilters}

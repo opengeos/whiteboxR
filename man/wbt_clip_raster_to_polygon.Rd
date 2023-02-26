@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_clip_raster_to_polygon}
 \alias{wbt_clip_raster_to_polygon}
-\title{Clip raster to polygon}
+\title{Clip raster to polygon
+Clips a raster to a vector polygon.}
 \usage{
 wbt_clip_raster_to_polygon(
   input,
@@ -36,5 +37,7 @@ wbt_clip_raster_to_polygon(
 Returns the tool text outputs.
 }
 \description{
+Clip raster to polygon
 Clips a raster to a vector polygon.
 }
+\keyword{GISAnalysisOverlayTools}

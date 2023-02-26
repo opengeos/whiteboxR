@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_line_detection_filter}
 \alias{wbt_line_detection_filter}
-\title{Line detection filter}
+\title{Line detection filter
+Performs a line-detection filter on an image.}
 \usage{
 wbt_line_detection_filter(
   input,
@@ -39,5 +40,7 @@ wbt_line_detection_filter(
 Returns the tool text outputs.
 }
 \description{
+Line detection filter
 Performs a line-detection filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

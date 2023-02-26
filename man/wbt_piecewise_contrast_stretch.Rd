@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_enhancement.R
 \name{wbt_piecewise_contrast_stretch}
 \alias{wbt_piecewise_contrast_stretch}
-\title{Piecewise contrast stretch}
+\title{Piecewise contrast stretch
+Performs a piecewise contrast stretch on an input image.}
 \usage{
 wbt_piecewise_contrast_stretch(
   input,
@@ -36,5 +37,7 @@ wbt_piecewise_contrast_stretch(
 Returns the tool text outputs.
 }
 \description{
+Piecewise contrast stretch
 Performs a piecewise contrast stretch on an input image.
 }
+\keyword{ImageProcessingToolsImageEnhancement}

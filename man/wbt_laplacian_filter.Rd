@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_laplacian_filter}
 \alias{wbt_laplacian_filter}
-\title{Laplacian filter}
+\title{Laplacian filter
+Performs a Laplacian filter on an image.}
 \usage{
 wbt_laplacian_filter(
   input,
@@ -36,5 +37,7 @@ wbt_laplacian_filter(
 Returns the tool text outputs.
 }
 \description{
+Laplacian filter
 Performs a Laplacian filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_opening}
 \alias{wbt_opening}
-\title{Opening}
+\title{Opening
+An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.}
 \usage{
 wbt_opening(
   input,
@@ -36,5 +37,7 @@ wbt_opening(
 Returns the tool text outputs.
 }
 \description{
+Opening
 An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
 }
+\keyword{ImageProcessingTools}

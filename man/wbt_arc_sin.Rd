@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_arc_sin}
 \alias{wbt_arc_sin}
-\title{Arc sin}
+\title{Arc sin
+Returns the inverse sine (arcsin) of each values in a raster.}
 \usage{
 wbt_arc_sin(
   input,
@@ -30,5 +31,7 @@ wbt_arc_sin(
 Returns the tool text outputs.
 }
 \description{
+Arc sin
 Returns the inverse sine (arcsin) of each values in a raster.
 }
+\keyword{MathandStatsTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_create_plane}
 \alias{wbt_create_plane}
-\title{Create plane}
+\title{Create plane
+Creates a raster image based on the equation for a simple plane.}
 \usage{
 wbt_create_plane(
   base,
@@ -39,5 +40,7 @@ wbt_create_plane(
 Returns the tool text outputs.
 }
 \description{
+Create plane
 Creates a raster image based on the equation for a simple plane.
 }
+\keyword{GISAnalysis}

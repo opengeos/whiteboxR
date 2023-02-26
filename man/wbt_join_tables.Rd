@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_join_tables}
 \alias{wbt_join_tables}
-\title{Join tables}
+\title{Join tables
+Merge a vector's attribute table with another table based on a common field.}
 \usage{
 wbt_join_tables(
   input1,
@@ -39,5 +40,7 @@ wbt_join_tables(
 Returns the tool text outputs.
 }
 \description{
+Join tables
 Merge a vector's attribute table with another table based on a common field.
 }
+\keyword{DataTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_rotor}
 \alias{wbt_rotor}
-\title{Rotor}
+\title{Rotor
+This tool calculates rotor from an input DEM.}
 \usage{
 wbt_rotor(
   dem,
@@ -36,5 +37,7 @@ wbt_rotor(
 Returns the tool text outputs.
 }
 \description{
+Rotor
 This tool calculates rotor from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

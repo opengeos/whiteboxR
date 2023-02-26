@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_image_stack_profile}
 \alias{wbt_image_stack_profile}
-\title{Image stack profile}
+\title{Image stack profile
+Plots an image stack profile (i.e. signature) for a set of points and multispectral images.}
 \usage{
 wbt_image_stack_profile(
   inputs,
@@ -33,5 +34,7 @@ wbt_image_stack_profile(
 Returns the tool text outputs.
 }
 \description{
+Image stack profile
 Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
 }
+\keyword{ImageProcessingTools}

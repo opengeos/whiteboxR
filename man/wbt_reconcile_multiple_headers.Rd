@@ -2,7 +2,8 @@
 % Please edit documentation in R/precision_agriculture.R
 \name{wbt_reconcile_multiple_headers}
 \alias{wbt_reconcile_multiple_headers}
-\title{Reconcile multiple headers}
+\title{Reconcile multiple headers
+This tool adjusts the crop yield values for data sets collected with multiple headers or combines.}
 \usage{
 wbt_reconcile_multiple_headers(
   input,
@@ -48,5 +49,7 @@ wbt_reconcile_multiple_headers(
 Returns the tool text outputs.
 }
 \description{
+Reconcile multiple headers
 This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
 }
+\keyword{PrecisionAgriculture}

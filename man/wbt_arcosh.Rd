@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_arcosh}
 \alias{wbt_arcosh}
-\title{Arcosh}
+\title{Arcosh
+Returns the inverse hyperbolic cosine (arcosh) of each values in a raster.}
 \usage{
 wbt_arcosh(
   input,
@@ -30,5 +31,7 @@ wbt_arcosh(
 Returns the tool text outputs.
 }
 \description{
+Arcosh
 Returns the inverse hyperbolic cosine (arcosh) of each values in a raster.
 }
+\keyword{MathandStatsTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_select_tiles_by_polygon}
 \alias{wbt_select_tiles_by_polygon}
-\title{Select tiles by polygon}
+\title{Select tiles by polygon
+Copies LiDAR tiles overlapping with a polygon into an output directory.}
 \usage{
 wbt_select_tiles_by_polygon(
   indir,
@@ -33,5 +34,7 @@ wbt_select_tiles_by_polygon(
 Returns the tool text outputs.
 }
 \description{
+Select tiles by polygon
 Copies LiDAR tiles overlapping with a polygon into an output directory.
 }
+\keyword{LiDARTools}

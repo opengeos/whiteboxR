@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_las_to_laz}
 \alias{wbt_las_to_laz}
-\title{Las to laz}
+\title{Las to laz
+This tool converts one or more LAS files into the LAZ format.}
 \usage{
 wbt_las_to_laz(
   input,
@@ -30,5 +31,7 @@ wbt_las_to_laz(
 Returns the tool text outputs.
 }
 \description{
+Las to laz
 This tool converts one or more LAS files into the LAZ format.
 }
+\keyword{LiDARTools}

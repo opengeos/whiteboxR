@@ -1,5 +1,4 @@
 #' And
-#'
 #' Performs a logical AND operator on two Boolean raster images.
 #'
 #' @param input1 Input raster file.
@@ -9,6 +8,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -30,7 +31,6 @@ wbt_and <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Not
-#'
 #' Performs a logical NOT operator on two Boolean raster images.
 #'
 #' @param input1 Input raster file.
@@ -40,6 +40,8 @@ wbt_and <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -61,7 +63,6 @@ wbt_not <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Or
-#'
 #' Performs a logical OR operator on two Boolean raster images.
 #'
 #' @param input1 Input raster file.
@@ -71,6 +72,8 @@ wbt_not <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -92,7 +95,6 @@ wbt_or <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress
 
 
 #' Absolute value
-#'
 #' Calculates the absolute value of every cell in a raster.
 #'
 #' @param input Input raster file.
@@ -101,6 +103,8 @@ wbt_or <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -121,7 +125,6 @@ wbt_absolute_value <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
 
 
 #' Add
-#'
 #' Performs an addition operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -131,6 +134,8 @@ wbt_absolute_value <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -152,7 +157,6 @@ wbt_add <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Anova
-#'
 #' Performs an analysis of variance (ANOVA) test on a raster dataset.
 #'
 #' @param input Input raster file.
@@ -162,6 +166,8 @@ wbt_add <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -183,7 +189,6 @@ wbt_anova <- function(input, features, output, wd=NULL, verbose_mode=FALSE, comp
 
 
 #' Arc cos
-#'
 #' Returns the inverse cosine (arccos) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -192,6 +197,8 @@ wbt_anova <- function(input, features, output, wd=NULL, verbose_mode=FALSE, comp
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -212,7 +219,6 @@ wbt_arc_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 
 
 #' Arc sin
-#'
 #' Returns the inverse sine (arcsin) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -221,6 +227,8 @@ wbt_arc_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -241,7 +249,6 @@ wbt_arc_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 
 
 #' Arc tan
-#'
 #' Returns the inverse tangent (arctan) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -250,6 +257,8 @@ wbt_arc_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -270,7 +279,6 @@ wbt_arc_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 
 
 #' Arcosh
-#'
 #' Returns the inverse hyperbolic cosine (arcosh) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -279,6 +287,8 @@ wbt_arc_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ras
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -299,7 +309,6 @@ wbt_arcosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 
 
 #' Arsinh
-#'
 #' Returns the inverse hyperbolic sine (arsinh) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -308,6 +317,8 @@ wbt_arcosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -328,7 +339,6 @@ wbt_arsinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 
 
 #' Artanh
-#'
 #' Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -337,6 +347,8 @@ wbt_arsinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -357,7 +369,6 @@ wbt_artanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 
 
 #' Atan2
-#'
 #' Returns the 2-argument inverse tangent (atan2).
 #'
 #' @param input_y Input y raster file or constant value (rise).
@@ -367,6 +378,8 @@ wbt_artanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -388,7 +401,6 @@ wbt_atan2 <- function(input_y, input_x, output, wd=NULL, verbose_mode=FALSE, com
 
 
 #' Attribute correlation
-#'
 #' Performs a correlation analysis on attribute fields from a vector database.
 #'
 #' @param input Input vector file.
@@ -397,6 +409,8 @@ wbt_atan2 <- function(input_y, input_x, output, wd=NULL, verbose_mode=FALSE, com
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -419,7 +433,6 @@ wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=
 
 
 #' Attribute correlation neighbourhood analysis
-#'
 #' Performs a correlation on two input vector attributes within a neighbourhood search windows.
 #'
 #' @param input Input vector file.
@@ -432,6 +445,8 @@ wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -462,7 +477,6 @@ wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, fiel
 
 
 #' Attribute histogram
-#'
 #' Creates a histogram for the field values of a vector's attribute table.
 #'
 #' @param input Input raster file.
@@ -472,6 +486,8 @@ wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, fiel
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -493,7 +509,6 @@ wbt_attribute_histogram <- function(input, field, output, wd=NULL, verbose_mode=
 
 
 #' Attribute scattergram
-#'
 #' Creates a scattergram for two field values of a vector's attribute table.
 #'
 #' @param input Input raster file.
@@ -505,6 +520,8 @@ wbt_attribute_histogram <- function(input, field, output, wd=NULL, verbose_mode=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -530,7 +547,6 @@ wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=F
 
 
 #' Ceil
-#'
 #' Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.
 #'
 #' @param input Input raster file.
@@ -539,6 +555,8 @@ wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=F
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -559,7 +577,6 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' Conditional evaluation
-#'
 #' This tool performs a conditional evaluation (if-then-else) operation on a raster.
 #'
 #' @param input Name of the input raster file.
@@ -571,6 +588,8 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -600,7 +619,6 @@ wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, f
 
 
 #' Conditioned latin hypercube
-#'
 #' Implements conditioned Latin Hypercube sampling.
 #'
 #' @param inputs Name of the input raster file.
@@ -609,15 +627,17 @@ wbt_conditional_evaluation <- function(input, output, statement="", true=NULL, f
 #' @param iterations Maximum iterations (if stopping criteria not reached).
 #' @param seed Seed for RNG consistency.
 #' @param prob Probability of random resample or resampling worst strata between `[0,1]`.
-#' @param threshold Objective function values below the threshold stop the resampling iterations.
+#' @param threshold Objective function values below the theshold stop the resampling iterations.
 #' @param temp Initial annealing temperature between `[0,1]`.
 #' @param temp_decay Annealing temperature decay proportion between `[0,1]`. Reduce temperature by this proportion each annealing cycle.
 #' @param cycle Number of iterations before decaying annealing temperature.
-#' @param average Weight the continuous objective function by the 1/N contributing strata.
+#' @param average Weight the continuous objective funtion by the 1/N contributing strata.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -665,7 +685,6 @@ wbt_conditioned_latin_hypercube <- function(inputs, output, samples=500, iterati
 
 
 #' Cos
-#'
 #' Returns the cosine (cos) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -674,6 +693,8 @@ wbt_conditioned_latin_hypercube <- function(inputs, output, samples=500, iterati
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -694,7 +715,6 @@ wbt_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 
 
 #' Cosh
-#'
 #' Returns the hyperbolic cosine (cosh) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -703,6 +723,8 @@ wbt_cos <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -723,7 +745,6 @@ wbt_cosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' Crispness index
-#'
 #' Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is.
 #'
 #' @param input Input raster file.
@@ -732,6 +753,8 @@ wbt_cosh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -754,7 +777,6 @@ wbt_crispness_index <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE,
 
 
 #' Cross tabulation
-#'
 #' Performs a cross-tabulation on two categorical images.
 #'
 #' @param input1 Input raster file 1.
@@ -764,6 +786,8 @@ wbt_crispness_index <- function(input, output=NULL, wd=NULL, verbose_mode=FALSE,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -785,7 +809,6 @@ wbt_cross_tabulation <- function(input1, input2, output, wd=NULL, verbose_mode=F
 
 
 #' Cumulative distribution
-#'
 #' Converts a raster image to its cumulative distribution function.
 #'
 #' @param input Input raster file.
@@ -794,6 +817,8 @@ wbt_cross_tabulation <- function(input1, input2, output, wd=NULL, verbose_mode=F
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -814,7 +839,6 @@ wbt_cumulative_distribution <- function(input, output, wd=NULL, verbose_mode=FAL
 
 
 #' Decrement
-#'
 #' Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).
 #'
 #' @param input Input raster file.
@@ -823,6 +847,8 @@ wbt_cumulative_distribution <- function(input, output, wd=NULL, verbose_mode=FAL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -843,7 +869,6 @@ wbt_decrement <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
 
 
 #' Divide
-#'
 #' Performs a division operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -853,6 +878,8 @@ wbt_decrement <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -874,7 +901,6 @@ wbt_divide <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
 
 
 #' Equal to
-#'
 #' Performs a equal-to comparison operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -884,6 +910,8 @@ wbt_divide <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -905,7 +933,6 @@ wbt_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 
 
 #' Exp
-#'
 #' Returns the exponential (base e) of values in a raster.
 #'
 #' @param input Input raster file.
@@ -914,6 +941,8 @@ wbt_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -934,7 +963,6 @@ wbt_exp <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 
 
 #' Exp2
-#'
 #' Returns the exponential (base 2) of values in a raster.
 #'
 #' @param input Input raster file.
@@ -943,6 +971,8 @@ wbt_exp <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -963,7 +993,6 @@ wbt_exp2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' Floor
-#'
 #' Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
 #'
 #' @param input Input raster file.
@@ -972,6 +1001,8 @@ wbt_exp2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -992,7 +1023,6 @@ wbt_floor <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 
 
 #' Greater than
-#'
 #' Performs a greater-than comparison operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1003,6 +1033,8 @@ wbt_floor <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1027,7 +1059,6 @@ wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL,
 
 
 #' Image autocorrelation
-#'
 #' Performs Moran's I analysis on two or more input images.
 #'
 #' @param inputs Input raster files.
@@ -1037,6 +1068,8 @@ wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1060,7 +1093,6 @@ wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", wd=NULL
 
 
 #' Image correlation
-#'
 #' Performs image correlation on two or more input images.
 #'
 #' @param inputs Input raster files.
@@ -1069,6 +1101,8 @@ wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", wd=NULL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1091,7 +1125,6 @@ wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=FAL
 
 
 #' Image correlation neighbourhood analysis
-#'
 #' Performs image correlation on two input images neighbourhood search windows.
 #'
 #' @param input1 Input raster file.
@@ -1104,6 +1137,8 @@ wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=FAL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1132,7 +1167,6 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
 
 
 #' Image regression
-#'
 #' Performs image regression analysis on two input images.
 #'
 #' @param input1 Input raster file (independent variable, X).
@@ -1146,6 +1180,8 @@ wbt_image_correlation_neighbourhood_analysis <- function(input1, input2, output1
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1179,7 +1215,6 @@ wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, sta
 
 
 #' In place add
-#'
 #' Performs an in-place addition operation (input1 += input2).
 #'
 #' @param input1 Input raster file.
@@ -1188,6 +1223,8 @@ wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, sta
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1208,7 +1245,6 @@ wbt_in_place_add <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compre
 
 
 #' In place divide
-#'
 #' Performs an in-place division operation (input1 /= input2).
 #'
 #' @param input1 Input raster file.
@@ -1217,6 +1253,8 @@ wbt_in_place_add <- function(input1, input2, wd=NULL, verbose_mode=FALSE, compre
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1237,7 +1275,6 @@ wbt_in_place_divide <- function(input1, input2, wd=NULL, verbose_mode=FALSE, com
 
 
 #' In place multiply
-#'
 #' Performs an in-place multiplication operation (input1 *= input2).
 #'
 #' @param input1 Input raster file.
@@ -1246,6 +1283,8 @@ wbt_in_place_divide <- function(input1, input2, wd=NULL, verbose_mode=FALSE, com
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1266,7 +1305,6 @@ wbt_in_place_multiply <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
 
 
 #' In place subtract
-#'
 #' Performs an in-place subtraction operation (input1 -= input2).
 #'
 #' @param input1 Input raster file.
@@ -1275,6 +1313,8 @@ wbt_in_place_multiply <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1295,7 +1335,6 @@ wbt_in_place_subtract <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
 
 
 #' Increment
-#'
 #' Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd).
 #'
 #' @param input Input raster file.
@@ -1304,6 +1343,8 @@ wbt_in_place_subtract <- function(input1, input2, wd=NULL, verbose_mode=FALSE, c
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1324,7 +1365,6 @@ wbt_increment <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
 
 
 #' Integer division
-#'
 #' Performs an integer division operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1334,6 +1374,8 @@ wbt_increment <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_r
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1355,7 +1397,6 @@ wbt_integer_division <- function(input1, input2, output, wd=NULL, verbose_mode=F
 
 
 #' Inverse principal component analysis
-#'
 #' This tool performs an inverse principal component analysis on a series of input component images.
 #'
 #' @param inputs Name of the input PCA component images.
@@ -1364,6 +1405,8 @@ wbt_integer_division <- function(input1, input2, output, wd=NULL, verbose_mode=F
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1384,7 +1427,6 @@ wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, ve
 
 
 #' Is no data
-#'
 #' Identifies NoData valued pixels in an image.
 #'
 #' @param input Input raster file.
@@ -1393,6 +1435,8 @@ wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1413,7 +1457,6 @@ wbt_is_no_data <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 
 
 #' Kappa index
-#'
 #' Performs a kappa index of agreement (KIA) analysis on two categorical raster files.
 #'
 #' @param input1 Input classification raster file.
@@ -1423,6 +1466,8 @@ wbt_is_no_data <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1444,7 +1489,6 @@ wbt_kappa_index <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE,
 
 
 #' Ks test for normality
-#'
 #' Evaluates whether the values in a raster are normally distributed.
 #'
 #' @param input Input raster file.
@@ -1454,6 +1498,8 @@ wbt_kappa_index <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1477,7 +1523,6 @@ wbt_ks_test_for_normality <- function(input, output, num_samples=NULL, wd=NULL, 
 
 
 #' Less than
-#'
 #' Performs a less-than comparison operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1488,6 +1533,8 @@ wbt_ks_test_for_normality <- function(input, output, num_samples=NULL, wd=NULL, 
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1512,7 +1559,6 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
 
 
 #' List unique values
-#'
 #' Lists the unique values contained in a field within a vector's attribute table.
 #'
 #' @param input Input raster file.
@@ -1522,6 +1568,8 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1543,7 +1591,6 @@ wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=F
 
 
 #' Ln
-#'
 #' Returns the natural logarithm of values in a raster.
 #'
 #' @param input Input raster file.
@@ -1552,6 +1599,8 @@ wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=F
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1572,7 +1621,6 @@ wbt_ln <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=
 
 
 #' Log10
-#'
 #' Returns the base-10 logarithm of values in a raster.
 #'
 #' @param input Input raster file.
@@ -1581,6 +1629,8 @@ wbt_ln <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1601,7 +1651,6 @@ wbt_log10 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 
 
 #' Log2
-#'
 #' Returns the base-2 logarithm of values in a raster.
 #'
 #' @param input Input raster file.
@@ -1610,6 +1659,8 @@ wbt_log10 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1630,7 +1681,6 @@ wbt_log2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' Max
-#'
 #' Performs a MAX operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1640,6 +1690,8 @@ wbt_log2 <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1661,7 +1713,6 @@ wbt_max <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Min
-#'
 #' Performs a MIN operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1671,6 +1722,8 @@ wbt_max <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1692,7 +1745,6 @@ wbt_min <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Modulo
-#'
 #' Performs a modulo operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1702,6 +1754,8 @@ wbt_min <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1723,7 +1777,6 @@ wbt_modulo <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
 
 
 #' Multiply
-#'
 #' Performs a multiplication operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1733,6 +1786,8 @@ wbt_modulo <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, comp
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1754,7 +1809,6 @@ wbt_multiply <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 
 
 #' Negate
-#'
 #' Changes the sign of values in a raster or the 0-1 values of a Boolean raster.
 #'
 #' @param input Input raster file.
@@ -1763,6 +1817,8 @@ wbt_multiply <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1783,7 +1839,6 @@ wbt_negate <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 
 
 #' Not equal to
-#'
 #' Performs a not-equal-to comparison operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1793,6 +1848,8 @@ wbt_negate <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1814,7 +1871,6 @@ wbt_not_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE
 
 
 #' Paired sample t test
-#'
 #' Performs a 2-sample K-S test for significant differences on two input rasters.
 #'
 #' @param input1 First input raster file.
@@ -1825,6 +1881,8 @@ wbt_not_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1849,7 +1907,6 @@ wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, w
 
 
 #' Phi coefficient
-#'
 #' This tool performs a binary classification accuracy assessment.
 #'
 #' @param input1 Name of the first input raster image file.
@@ -1859,6 +1916,8 @@ wbt_paired_sample_t_test <- function(input1, input2, output, num_samples=NULL, w
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1880,7 +1939,6 @@ wbt_phi_coefficient <- function(input1, input2, output, wd=NULL, verbose_mode=FA
 
 
 #' Power
-#'
 #' Raises the values in grid cells of one rasters, or a constant value, by values in another raster or constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -1890,6 +1948,8 @@ wbt_phi_coefficient <- function(input1, input2, output, wd=NULL, verbose_mode=FA
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1911,7 +1971,6 @@ wbt_power <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compr
 
 
 #' Principal component analysis
-#'
 #' Performs a principal component analysis (PCA) on a multi-spectral dataset.
 #'
 #' @param inputs Input raster files.
@@ -1922,6 +1981,8 @@ wbt_power <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compr
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1948,7 +2009,6 @@ wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, stan
 
 
 #' Quantiles
-#'
 #' Transforms raster values into quantiles.
 #'
 #' @param input Input raster file.
@@ -1958,6 +2018,8 @@ wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, stan
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1981,7 +2043,6 @@ wbt_quantiles <- function(input, output, num_quantiles=5, wd=NULL, verbose_mode=
 
 
 #' Random field
-#'
 #' Creates an image containing random values.
 #'
 #' @param base Input raster file.
@@ -1990,6 +2051,8 @@ wbt_quantiles <- function(input, output, num_quantiles=5, wd=NULL, verbose_mode=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2010,7 +2073,6 @@ wbt_random_field <- function(base, output, wd=NULL, verbose_mode=FALSE, compress
 
 
 #' Random sample
-#'
 #' Creates an image containing randomly located sample grid cells with unique IDs.
 #'
 #' @param base Input raster file.
@@ -2020,6 +2082,8 @@ wbt_random_field <- function(base, output, wd=NULL, verbose_mode=FALSE, compress
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2043,7 +2107,6 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
 
 
 #' Raster calculator
-#'
 #' This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
 #'
 #' @param statement Statement e.g. cos("raster1") * 35.0 + "raster2". This statement must be a valid Rust statement.
@@ -2052,6 +2115,8 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2074,7 +2139,6 @@ wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=FA
 
 
 #' Raster histogram
-#'
 #' Creates a histogram from raster values.
 #'
 #' @param input Input raster file.
@@ -2083,6 +2147,8 @@ wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=FA
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2103,7 +2169,6 @@ wbt_raster_histogram <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 
 
 #' Raster summary stats
-#'
 #' Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total.
 #'
 #' @param input Input raster file.
@@ -2111,6 +2176,8 @@ wbt_raster_histogram <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2130,7 +2197,6 @@ wbt_raster_summary_stats <- function(input, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Reciprocal
-#'
 #' Returns the reciprocal (i.e. 1 / z) of values in a raster.
 #'
 #' @param input Input raster file.
@@ -2139,6 +2205,8 @@ wbt_raster_summary_stats <- function(input, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2159,7 +2227,6 @@ wbt_reciprocal <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 
 
 #' Rescale value range
-#'
 #' Performs a min-max contrast stretch on an input greytone image.
 #'
 #' @param input Input raster file.
@@ -2172,6 +2239,8 @@ wbt_reciprocal <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2200,7 +2269,6 @@ wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, cli
 
 
 #' Root mean square error
-#'
 #' Calculates the RMSE and other accuracy statistics.
 #'
 #' @param input Input raster file.
@@ -2209,6 +2277,8 @@ wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, cli
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2229,7 +2299,6 @@ wbt_root_mean_square_error <- function(input, base, wd=NULL, verbose_mode=FALSE,
 
 
 #' Round
-#'
 #' Rounds the values in an input raster to the nearest integer value.
 #'
 #' @param input Input raster file.
@@ -2238,6 +2307,8 @@ wbt_root_mean_square_error <- function(input, base, wd=NULL, verbose_mode=FALSE,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2258,7 +2329,6 @@ wbt_round <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 
 
 #' Sin
-#'
 #' Returns the sine (sin) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -2267,6 +2337,8 @@ wbt_round <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raste
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2287,7 +2359,6 @@ wbt_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 
 
 #' Sinh
-#'
 #' Returns the hyperbolic sine (sinh) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -2296,6 +2367,8 @@ wbt_sin <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2316,7 +2389,6 @@ wbt_sinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' Square
-#'
 #' Squares the values in a raster.
 #'
 #' @param input Input raster file.
@@ -2325,6 +2397,8 @@ wbt_sinh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2345,7 +2419,6 @@ wbt_square <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 
 
 #' Square root
-#'
 #' Returns the square root of the values in a raster.
 #'
 #' @param input Input raster file.
@@ -2354,6 +2427,8 @@ wbt_square <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2374,7 +2449,6 @@ wbt_square_root <- function(input, output, wd=NULL, verbose_mode=FALSE, compress
 
 
 #' Subtract
-#'
 #' Performs a differencing operation on two rasters or a raster and a constant value.
 #'
 #' @param input1 Input raster file or constant value.
@@ -2384,6 +2458,8 @@ wbt_square_root <- function(input, output, wd=NULL, verbose_mode=FALSE, compress
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2405,7 +2481,6 @@ wbt_subtract <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 
 
 #' Tan
-#'
 #' Returns the tangent (tan) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -2414,6 +2489,8 @@ wbt_subtract <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, co
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2434,7 +2511,6 @@ wbt_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 
 
 #' Tanh
-#'
 #' Returns the hyperbolic tangent (tanh) of each values in a raster.
 #'
 #' @param input Input raster file.
@@ -2443,6 +2519,8 @@ wbt_tan <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2463,7 +2541,6 @@ wbt_tanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' To degrees
-#'
 #' Converts a raster from radians to degrees.
 #'
 #' @param input Input raster file.
@@ -2472,6 +2549,8 @@ wbt_tanh <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2492,7 +2571,6 @@ wbt_to_degrees <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 
 
 #' To radians
-#'
 #' Converts a raster from degrees to radians.
 #'
 #' @param input Input raster file.
@@ -2501,6 +2579,8 @@ wbt_to_degrees <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2521,7 +2601,6 @@ wbt_to_radians <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 
 
 #' Trend surface
-#'
 #' Estimates the trend surface of an input raster file.
 #'
 #' @param input Input raster file.
@@ -2531,6 +2610,8 @@ wbt_to_radians <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2554,7 +2635,6 @@ wbt_trend_surface <- function(input, output, order=1, wd=NULL, verbose_mode=FALS
 
 
 #' Trend surface vector points
-#'
 #' Estimates a trend surface from vector points.
 #'
 #' @param input Input vector Points file.
@@ -2566,6 +2646,8 @@ wbt_trend_surface <- function(input, output, order=1, wd=NULL, verbose_mode=FALS
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2591,7 +2673,6 @@ wbt_trend_surface_vector_points <- function(input, field, output, cell_size, ord
 
 
 #' Truncate
-#'
 #' Truncates the values in a raster to the desired number of decimal places.
 #'
 #' @param input Input raster file.
@@ -2601,6 +2682,8 @@ wbt_trend_surface_vector_points <- function(input, field, output, cell_size, ord
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2624,7 +2707,6 @@ wbt_truncate <- function(input, output, num_decimals=NULL, wd=NULL, verbose_mode
 
 
 #' Turning bands simulation
-#'
 #' Creates an image containing random values based on a turning-bands simulation.
 #'
 #' @param base Input base raster file.
@@ -2635,6 +2717,8 @@ wbt_truncate <- function(input, output, num_decimals=NULL, wd=NULL, verbose_mode
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2659,7 +2743,6 @@ wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, w
 
 
 #' Two sample ks test
-#'
 #' Performs a 2-sample K-S test for significant differences on two input rasters.
 #'
 #' @param input1 First input raster file.
@@ -2670,6 +2753,8 @@ wbt_turning_bands_simulation <- function(base, output, range, iterations=1000, w
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2694,7 +2779,6 @@ wbt_two_sample_ks_test <- function(input1, input2, output, num_samples=NULL, wd=
 
 
 #' Wilcoxon signed rank test
-#'
 #' Performs a 2-sample K-S test for significant differences on two input rasters.
 #'
 #' @param input1 First input raster file.
@@ -2705,6 +2789,8 @@ wbt_two_sample_ks_test <- function(input1, input2, output, num_samples=NULL, wd=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2729,7 +2815,6 @@ wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NU
 
 
 #' Xor
-#'
 #' Performs a logical XOR operator on two Boolean raster images.
 #'
 #' @param input1 Input raster file.
@@ -2739,6 +2824,8 @@ wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NU
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2760,7 +2847,6 @@ wbt_xor <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Z scores
-#'
 #' Standardizes the values in an input raster by converting to z-scores.
 #'
 #' @param input Input raster file.
@@ -2769,6 +2855,8 @@ wbt_xor <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2789,7 +2877,6 @@ wbt_z_scores <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ra
 
 
 #' Zonal statistics
-#'
 #' Extracts descriptive statistics for a group of patches in a raster.
 #'
 #' @param input Input data raster file.
@@ -2801,6 +2888,8 @@ wbt_z_scores <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_ra
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
 #'
 #' @return Returns the tool text outputs.
 #' @export

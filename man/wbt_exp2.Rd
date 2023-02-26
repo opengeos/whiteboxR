@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_exp2}
 \alias{wbt_exp2}
-\title{Exp2}
+\title{Exp2
+Returns the exponential (base 2) of values in a raster.}
 \usage{
 wbt_exp2(
   input,
@@ -30,5 +31,7 @@ wbt_exp2(
 Returns the tool text outputs.
 }
 \description{
+Exp2
 Returns the exponential (base 2) of values in a raster.
 }
+\keyword{MathandStatsTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_add_point_coordinates_to_table}
 \alias{wbt_add_point_coordinates_to_table}
-\title{Add point coordinates to table}
+\title{Add point coordinates to table
+Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.}
 \usage{
 wbt_add_point_coordinates_to_table(
   input,
@@ -27,5 +28,7 @@ wbt_add_point_coordinates_to_table(
 Returns the tool text outputs.
 }
 \description{
+Add point coordinates to table
 Modifies the attribute table of a point vector by adding fields containing each point's X and Y coordinates.
 }
+\keyword{DataTools}

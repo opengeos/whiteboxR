@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_find_no_flow_cells}
 \alias{wbt_find_no_flow_cells}
-\title{Find no flow cells}
+\title{Find no flow cells
+Finds grid cells with no downslope neighbours.}
 \usage{
 wbt_find_no_flow_cells(
   dem,
@@ -30,5 +31,7 @@ wbt_find_no_flow_cells(
 Returns the tool text outputs.
 }
 \description{
+Find no flow cells
 Finds grid cells with no downslope neighbours.
 }
+\keyword{HydrologicalAnalysis}

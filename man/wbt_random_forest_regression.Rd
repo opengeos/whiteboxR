@@ -2,7 +2,8 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_random_forest_regression}
 \alias{wbt_random_forest_regression}
-\title{Random forest regression}
+\title{Random forest regression
+Performs a random forest regression analysis using training site data and predictor rasters.}
 \usage{
 wbt_random_forest_regression(
   inputs,
@@ -48,5 +49,7 @@ wbt_random_forest_regression(
 Returns the tool text outputs.
 }
 \description{
+Random forest regression
 Performs a random forest regression analysis using training site data and predictor rasters.
 }
+\keyword{MachineLearning}

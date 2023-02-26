@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_resample}
 \alias{wbt_resample}
-\title{Resample}
+\title{Resample
+Resamples one or more input images into a destination image.}
 \usage{
 wbt_resample(
   inputs,
@@ -39,5 +40,7 @@ wbt_resample(
 Returns the tool text outputs.
 }
 \description{
+Resample
 Resamples one or more input images into a destination image.
 }
+\keyword{ImageProcessingTools}

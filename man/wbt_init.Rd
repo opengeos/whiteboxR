@@ -154,3 +154,4 @@ wbt_max_procs(max_procs = 2)
 \seealso{
 \code{\link[=install_whitebox]{install_whitebox()}} \link{whitebox}
 }
+\keyword{General}

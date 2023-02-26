@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_distance.R
 \name{wbt_cost_distance}
 \alias{wbt_cost_distance}
-\title{Cost distance}
+\title{Cost distance
+Performs cost-distance accumulation on a cost surface and a group of source cells.}
 \usage{
 wbt_cost_distance(
   source,
@@ -36,5 +37,7 @@ wbt_cost_distance(
 Returns the tool text outputs.
 }
 \description{
+Cost distance
 Performs cost-distance accumulation on a cost surface and a group of source cells.
 }
+\keyword{GISAnalysisDistanceTools}

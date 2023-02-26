@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_flatten_lakes}
 \alias{wbt_flatten_lakes}
-\title{Flatten lakes}
+\title{Flatten lakes
+Flattens lake polygons in a raster DEM.}
 \usage{
 wbt_flatten_lakes(
   dem,
@@ -33,5 +34,7 @@ wbt_flatten_lakes(
 Returns the tool text outputs.
 }
 \description{
+Flatten lakes
 Flattens lake polygons in a raster DEM.
 }
+\keyword{HydrologicalAnalysis}

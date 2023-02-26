@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_filter_lidar_scan_angles}
 \alias{wbt_filter_lidar_scan_angles}
-\title{Filter lidar scan angles}
+\title{Filter lidar scan angles
+Removes points in a LAS file with scan angles greater than a threshold.}
 \usage{
 wbt_filter_lidar_scan_angles(
   input,
@@ -33,5 +34,7 @@ wbt_filter_lidar_scan_angles(
 Returns the tool text outputs.
 }
 \description{
+Filter lidar scan angles
 Removes points in a LAS file with scan angles greater than a threshold.
 }
+\keyword{LiDARTools}

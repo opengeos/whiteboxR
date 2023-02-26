@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_clip}
 \alias{wbt_clip}
-\title{Clip}
+\title{Clip
+Extract all the features, or parts of features, that overlap with the features of the clip vector.}
 \usage{
 wbt_clip(
   input,
@@ -33,5 +34,7 @@ wbt_clip(
 Returns the tool text outputs.
 }
 \description{
+Clip
 Extract all the features, or parts of features, that overlap with the features of the clip vector.
 }
+\keyword{GISAnalysisOverlayTools}

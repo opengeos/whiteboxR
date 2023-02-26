@@ -1,5 +1,4 @@
 #' Aggregate raster
-#'
 #' Aggregates a raster to a lower resolution.
 #'
 #' @param input Input raster file.
@@ -10,6 +9,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -36,7 +37,6 @@ wbt_aggregate_raster <- function(input, output, agg_factor=2, type="mean", wd=NU
 
 
 #' Block maximum gridding
-#'
 #' Creates a raster grid based on a set of vector points and assigns grid values using a block maximum scheme.
 #'
 #' @param input Input vector Points file.
@@ -49,6 +49,8 @@ wbt_aggregate_raster <- function(input, output, agg_factor=2, type="mean", wd=NU
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -79,7 +81,6 @@ wbt_block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 
 
 #' Block minimum gridding
-#'
 #' Creates a raster grid based on a set of vector points and assigns grid values using a block minimum scheme.
 #'
 #' @param input Input vector Points file.
@@ -92,6 +93,8 @@ wbt_block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -122,7 +125,6 @@ wbt_block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 
 
 #' Centroid
-#'
 #' Calculates the centroid, or average location, of raster polygon objects.
 #'
 #' @param input Input raster file.
@@ -132,6 +134,8 @@ wbt_block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -155,7 +159,6 @@ wbt_centroid <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode
 
 
 #' Centroid vector
-#'
 #' Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 #'
 #' @param input Input vector file.
@@ -164,6 +167,8 @@ wbt_centroid <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -184,7 +189,6 @@ wbt_centroid_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
 
 
 #' Clump
-#'
 #' Groups cells that form discrete areas, assigning them unique identifiers.
 #'
 #' @param input Input raster file.
@@ -195,6 +199,8 @@ wbt_centroid_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -221,7 +227,6 @@ wbt_clump <- function(input, output, diag=TRUE, zero_back=FALSE, wd=NULL, verbos
 
 
 #' Construct vector tin
-#'
 #' Creates a vector triangular irregular network (TIN) for a set of vector points.
 #'
 #' @param input Input vector points file.
@@ -233,6 +238,8 @@ wbt_clump <- function(input, output, diag=TRUE, zero_back=FALSE, wd=NULL, verbos
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -262,7 +269,6 @@ wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, max
 
 
 #' Create hexagonal vector grid
-#'
 #' Creates a hexagonal vector grid.
 #'
 #' @param input Input base file.
@@ -273,6 +279,8 @@ wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, max
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -297,7 +305,6 @@ wbt_create_hexagonal_vector_grid <- function(input, output, width, orientation="
 
 
 #' Create plane
-#'
 #' Creates a raster image based on the equation for a simple plane.
 #'
 #' @param base Input base raster file.
@@ -309,6 +316,8 @@ wbt_create_hexagonal_vector_grid <- function(input, output, width, orientation="
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -338,7 +347,6 @@ wbt_create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=
 
 
 #' Create rectangular vector grid
-#'
 #' Creates a rectangular vector grid.
 #'
 #' @param input Input base file.
@@ -351,6 +359,8 @@ wbt_create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -379,7 +389,6 @@ wbt_create_rectangular_vector_grid <- function(input, output, width, height, xor
 
 
 #' Dissolve
-#'
 #' Removes the interior, or shared, boundaries within a vector polygon coverage.
 #'
 #' @param input Input vector file.
@@ -390,6 +399,8 @@ wbt_create_rectangular_vector_grid <- function(input, output, width, height, xor
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -416,7 +427,6 @@ wbt_dissolve <- function(input, output, field=NULL, snap=0.0, wd=NULL, verbose_m
 
 
 #' Eliminate coincident points
-#'
 #' Removes any coincident, or nearly coincident, points from a vector points file.
 #'
 #' @param input Input vector file.
@@ -426,6 +436,8 @@ wbt_dissolve <- function(input, output, field=NULL, snap=0.0, wd=NULL, verbose_m
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -447,7 +459,6 @@ wbt_eliminate_coincident_points <- function(input, output, tolerance, wd=NULL, v
 
 
 #' Extend vector lines
-#'
 #' Extends vector lines by a specified distance.
 #'
 #' @param input Input vector polyline file.
@@ -458,6 +469,8 @@ wbt_eliminate_coincident_points <- function(input, output, tolerance, wd=NULL, v
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -482,7 +495,6 @@ wbt_extend_vector_lines <- function(input, output, dist, extend="both ends", wd=
 
 
 #' Extract nodes
-#'
 #' Converts vector lines or polygons into vertex points.
 #'
 #' @param input Input vector lines or polygon file.
@@ -491,6 +503,8 @@ wbt_extend_vector_lines <- function(input, output, dist, extend="both ends", wd=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -511,7 +525,6 @@ wbt_extract_nodes <- function(input, output, wd=NULL, verbose_mode=FALSE, compre
 
 
 #' Extract raster values at points
-#'
 #' Extracts the values of raster(s) at vector point locations.
 #'
 #' @param inputs Input raster files.
@@ -521,6 +534,8 @@ wbt_extract_nodes <- function(input, output, wd=NULL, verbose_mode=FALSE, compre
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -544,7 +559,6 @@ wbt_extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, 
 
 
 #' Filter raster features by area
-#'
 #' Removes small-area features from a raster.
 #'
 #' @param input Input raster file.
@@ -555,6 +569,8 @@ wbt_extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, 
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -579,7 +595,6 @@ wbt_filter_raster_features_by_area <- function(input, output, threshold, backgro
 
 
 #' Find lowest or highest points
-#'
 #' Locates the lowest and/or highest valued cells in a raster.
 #'
 #' @param input Input raster file.
@@ -589,6 +604,8 @@ wbt_filter_raster_features_by_area <- function(input, output, threshold, backgro
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -612,7 +629,6 @@ wbt_find_lowest_or_highest_points <- function(input, output, out_type="lowest", 
 
 
 #' Heat map
-#'
 #' This tool calculates a heat map, or kernel density estimation (KDE), for an input point set.
 #'
 #' @param input Name of the input points shapefile.
@@ -626,6 +642,8 @@ wbt_find_lowest_or_highest_points <- function(input, output, out_type="lowest", 
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -661,7 +679,6 @@ wbt_heat_map <- function(input, output, weight_field=NULL, bandwidth="", kernel=
 
 
 #' Idw interpolation
-#'
 #' Interpolates vector points into a raster surface using an inverse-distance weighted scheme.
 #'
 #' @param input Input vector Points file.
@@ -677,6 +694,8 @@ wbt_heat_map <- function(input, output, weight_field=NULL, bandwidth="", kernel=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -716,7 +735,6 @@ wbt_idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0,
 
 
 #' Layer footprint
-#'
 #' Creates a vector polygon footprint of the area covered by a raster grid or vector layer.
 #'
 #' @param input Input raster or vector file.
@@ -725,6 +743,8 @@ wbt_idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -745,7 +765,6 @@ wbt_layer_footprint <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
 
 
 #' Medoid
-#'
 #' Calculates the medoid for a series of vector features contained in a shapefile.
 #'
 #' @param input Input vector file.
@@ -754,6 +773,8 @@ wbt_layer_footprint <- function(input, output, wd=NULL, verbose_mode=FALSE, comp
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -774,7 +795,6 @@ wbt_medoid <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 
 
 #' Minimum bounding box
-#'
 #' Creates a vector minimum bounding rectangle around vector features.
 #'
 #' @param input Input vector file.
@@ -785,6 +805,8 @@ wbt_medoid <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rast
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -811,7 +833,6 @@ wbt_minimum_bounding_box <- function(input, output, criterion="area", features=T
 
 
 #' Minimum bounding circle
-#'
 #' Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.
 #'
 #' @param input Input vector file.
@@ -821,6 +842,8 @@ wbt_minimum_bounding_box <- function(input, output, criterion="area", features=T
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -844,7 +867,6 @@ wbt_minimum_bounding_circle <- function(input, output, features=TRUE, wd=NULL, v
 
 
 #' Minimum bounding envelope
-#'
 #' Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.
 #'
 #' @param input Input vector file.
@@ -854,6 +876,8 @@ wbt_minimum_bounding_circle <- function(input, output, features=TRUE, wd=NULL, v
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -877,7 +901,6 @@ wbt_minimum_bounding_envelope <- function(input, output, features=TRUE, wd=NULL,
 
 
 #' Minimum convex hull
-#'
 #' Creates a vector convex polygon around vector features.
 #'
 #' @param input Input vector file.
@@ -887,6 +910,8 @@ wbt_minimum_bounding_envelope <- function(input, output, features=TRUE, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -910,7 +935,6 @@ wbt_minimum_convex_hull <- function(input, output, features=TRUE, wd=NULL, verbo
 
 
 #' Natural neighbour interpolation
-#'
 #' Creates a raster grid based on Sibson's natural neighbour method.
 #'
 #' @param input Input vector points file.
@@ -924,6 +948,8 @@ wbt_minimum_convex_hull <- function(input, output, features=TRUE, wd=NULL, verbo
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -959,7 +985,6 @@ wbt_natural_neighbour_interpolation <- function(input, output, field=NULL, use_z
 
 
 #' Nearest neighbour gridding
-#'
 #' Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour.
 #'
 #' @param input Input vector Points file.
@@ -973,6 +998,8 @@ wbt_natural_neighbour_interpolation <- function(input, output, field=NULL, use_z
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1006,7 +1033,6 @@ wbt_nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, ce
 
 
 #' Polygon area
-#'
 #' Calculates the area of vector polygons.
 #'
 #' @param input Input vector polygon file.
@@ -1014,6 +1040,8 @@ wbt_nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, ce
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1033,7 +1061,6 @@ wbt_polygon_area <- function(input, wd=NULL, verbose_mode=FALSE, compress_raster
 
 
 #' Polygon long axis
-#'
 #' This tool can be used to map the long axis of polygon features.
 #'
 #' @param input Input vector polygons file.
@@ -1042,6 +1069,8 @@ wbt_polygon_area <- function(input, wd=NULL, verbose_mode=FALSE, compress_raster
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1062,7 +1091,6 @@ wbt_polygon_long_axis <- function(input, output, wd=NULL, verbose_mode=FALSE, co
 
 
 #' Polygon perimeter
-#'
 #' Calculates the perimeter of vector polygons.
 #'
 #' @param input Input vector polygon file.
@@ -1070,6 +1098,8 @@ wbt_polygon_long_axis <- function(input, output, wd=NULL, verbose_mode=FALSE, co
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1089,7 +1119,6 @@ wbt_polygon_perimeter <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 
 
 #' Polygon short axis
-#'
 #' This tool can be used to map the short axis of polygon features.
 #'
 #' @param input Input vector polygons file.
@@ -1098,6 +1127,8 @@ wbt_polygon_perimeter <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1118,7 +1149,6 @@ wbt_polygon_short_axis <- function(input, output, wd=NULL, verbose_mode=FALSE, c
 
 
 #' Radial basis function interpolation
-#'
 #' Interpolates vector points into a raster surface using a radial basis function scheme.
 #'
 #' @param input Input vector points file.
@@ -1136,6 +1166,8 @@ wbt_polygon_short_axis <- function(input, output, wd=NULL, verbose_mode=FALSE, c
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1181,7 +1213,6 @@ wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=
 
 
 #' Raster area
-#'
 #' Calculates the area of polygons or classes within a raster image.
 #'
 #' @param input Input raster file.
@@ -1193,6 +1224,8 @@ wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1224,7 +1257,6 @@ wbt_raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cell
 
 
 #' Raster cell assignment
-#'
 #' Assign row or column number to cells.
 #'
 #' @param input Input raster file.
@@ -1234,6 +1266,8 @@ wbt_raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cell
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1257,7 +1291,6 @@ wbt_raster_cell_assignment <- function(input, output, assign="column", wd=NULL, 
 
 
 #' Raster perimeter
-#'
 #' Calculates the perimeters of polygons or classes within a raster image.
 #'
 #' @param input Input raster file.
@@ -1269,6 +1302,8 @@ wbt_raster_cell_assignment <- function(input, output, assign="column", wd=NULL, 
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1300,7 +1335,6 @@ wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid
 
 
 #' Reclass
-#'
 #' Reclassifies the values in a raster image.
 #'
 #' @param input Input raster file.
@@ -1311,6 +1345,8 @@ wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1335,7 +1371,6 @@ wbt_reclass <- function(input, output, reclass_vals, assign_mode=FALSE, wd=NULL,
 
 
 #' Reclass equal interval
-#'
 #' Reclassifies the values in a raster image based on equal-ranges.
 #'
 #' @param input Input raster file.
@@ -1347,6 +1382,8 @@ wbt_reclass <- function(input, output, reclass_vals, assign_mode=FALSE, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1376,7 +1413,6 @@ wbt_reclass_equal_interval <- function(input, output, interval=10.0, start_val=N
 
 
 #' Reclass from file
-#'
 #' Reclassifies the values in a raster image using reclass ranges in a text file.
 #'
 #' @param input Input raster file.
@@ -1386,6 +1422,8 @@ wbt_reclass_equal_interval <- function(input, output, interval=10.0, start_val=N
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1407,7 +1445,6 @@ wbt_reclass_from_file <- function(input, reclass_file, output, wd=NULL, verbose_
 
 
 #' Smooth vectors
-#'
 #' Smooths a vector coverage of either a POLYLINE or POLYGON base ShapeType.
 #'
 #' @param input Input vector POLYLINE or POLYGON file.
@@ -1417,6 +1454,8 @@ wbt_reclass_from_file <- function(input, reclass_file, output, wd=NULL, verbose_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1440,7 +1479,6 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=FA
 
 
 #' Split vector lines
-#'
 #' This tool can be used to split a vector line coverage into even-lengthed segments.
 #'
 #' @param input Name of the input lines shapefile.
@@ -1450,6 +1488,8 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=FA
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1473,7 +1513,6 @@ wbt_split_vector_lines <- function(input, output, length=NULL, wd=NULL, verbose_
 
 
 #' Tin gridding
-#'
 #' Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.
 #'
 #' @param input Input vector points file.
@@ -1487,6 +1526,8 @@ wbt_split_vector_lines <- function(input, output, length=NULL, wd=NULL, verbose_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1522,7 +1563,6 @@ wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=
 
 
 #' Travelling salesman problem
-#'
 #' This tool finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.
 #'
 #' @param input Name of the input points shapefile.
@@ -1532,6 +1572,8 @@ wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1555,7 +1597,6 @@ wbt_travelling_salesman_problem <- function(input, output, duration=60, wd=NULL,
 
 
 #' Vector hex binning
-#'
 #' Hex-bins a set of vector points.
 #'
 #' @param input Input base file.
@@ -1566,6 +1607,8 @@ wbt_travelling_salesman_problem <- function(input, output, duration=60, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1590,7 +1633,6 @@ wbt_vector_hex_binning <- function(input, output, width, orientation="horizontal
 
 
 #' Voronoi diagram
-#'
 #' Creates a vector Voronoi diagram for a set of vector points.
 #'
 #' @param input Input vector points file.
@@ -1599,6 +1641,8 @@ wbt_vector_hex_binning <- function(input, output, width, orientation="horizontal
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export

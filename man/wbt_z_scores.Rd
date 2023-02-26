@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_z_scores}
 \alias{wbt_z_scores}
-\title{Z scores}
+\title{Z scores
+Standardizes the values in an input raster by converting to z-scores.}
 \usage{
 wbt_z_scores(
   input,
@@ -30,5 +31,7 @@ wbt_z_scores(
 Returns the tool text outputs.
 }
 \description{
+Z scores
 Standardizes the values in an input raster by converting to z-scores.
 }
+\keyword{MathandStatsTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_histogram}
 \alias{wbt_lidar_histogram}
-\title{Lidar histogram}
+\title{Lidar histogram
+Creates a histogram of LiDAR data.}
 \usage{
 wbt_lidar_histogram(
   input,
@@ -36,5 +37,7 @@ wbt_lidar_histogram(
 Returns the tool text outputs.
 }
 \description{
+Lidar histogram
 Creates a histogram of LiDAR data.
 }
+\keyword{LiDARTools}

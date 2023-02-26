@@ -1,5 +1,4 @@
 #' Dbscan
-#'
 #' Performs a DBSCAN-based unsupervised clustering operation.
 #'
 #' @param inputs Names of the input rasters.
@@ -11,6 +10,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -40,7 +41,6 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
 
 
 #' K means clustering
-#'
 #' Performs a k-means clustering operation on a multi-spectral dataset.
 #'
 #' @param inputs Input raster files.
@@ -55,6 +55,8 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -91,7 +93,6 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
 
 
 #' Knn classification
-#'
 #' Performs a supervised k-nearest neighbour classification using training site polygons/points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -106,6 +107,8 @@ wbt_k_means_clustering <- function(inputs, output, classes, out_html=NULL, max_i
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -142,7 +145,6 @@ wbt_knn_classification <- function(inputs, training, field, scaling="Normalize",
 
 
 #' Knn regression
-#'
 #' Performs a supervised k-nearest neighbour regression using training site points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -157,6 +159,8 @@ wbt_knn_classification <- function(inputs, training, field, scaling="Normalize",
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -193,7 +197,6 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
 
 
 #' Logistic regression
-#'
 #' Performs a logistic regression analysis using training site polygons/points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -206,6 +209,8 @@ wbt_knn_regression <- function(inputs, training, field, scaling="Normalize", out
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -236,7 +241,6 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
 
 
 #' Modified k means clustering
-#'
 #' Performs a modified k-means clustering operation on a multi-spectral dataset.
 #'
 #' @param inputs Input raster files.
@@ -250,6 +254,8 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -285,7 +291,6 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
 
 
 #' Random forest classification
-#'
 #' Performs a supervised random forest classification using training site polygons/points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -301,6 +306,8 @@ wbt_modified_k_means_clustering <- function(inputs, output, out_html=NULL, start
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -340,7 +347,6 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
 
 
 #' Random forest regression
-#'
 #' Performs a random forest regression analysis using training site data and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -355,6 +361,8 @@ wbt_random_forest_classification <- function(inputs, training, field, output=NUL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -391,7 +399,6 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
 
 
 #' Svm classification
-#'
 #' Performs an SVM binary classification using training site polygons/points and multiple input images.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -407,6 +414,8 @@ wbt_random_forest_regression <- function(inputs, training, field, output=NULL, n
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -446,7 +455,6 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
 
 
 #' Svm regression
-#'
 #' Performs a supervised SVM regression analysis using training site points and predictor rasters.
 #'
 #' @param inputs Names of the input predictor rasters.
@@ -462,6 +470,8 @@ wbt_svm_classification <- function(inputs, training, field, scaling="Normalize",
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MachineLearning
 #'
 #' @return Returns the tool text outputs.
 #' @export

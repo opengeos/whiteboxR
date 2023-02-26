@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_min_overlay}
 \alias{wbt_min_overlay}
-\title{Min overlay}
+\title{Min overlay
+Evaluates the minimum value for each grid cell from a stack of input rasters.}
 \usage{
 wbt_min_overlay(
   inputs,
@@ -30,5 +31,7 @@ wbt_min_overlay(
 Returns the tool text outputs.
 }
 \description{
+Min overlay
 Evaluates the minimum value for each grid cell from a stack of input rasters.
 }
+\keyword{GISAnalysisOverlayTools}

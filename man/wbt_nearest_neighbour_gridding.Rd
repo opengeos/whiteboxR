@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_nearest_neighbour_gridding}
 \alias{wbt_nearest_neighbour_gridding}
-\title{Nearest neighbour gridding}
+\title{Nearest neighbour gridding
+Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour.}
 \usage{
 wbt_nearest_neighbour_gridding(
   input,
@@ -45,5 +46,7 @@ wbt_nearest_neighbour_gridding(
 Returns the tool text outputs.
 }
 \description{
+Nearest neighbour gridding
 Creates a raster grid based on a set of vector points and assigns grid values using the nearest neighbour.
 }
+\keyword{GISAnalysis}

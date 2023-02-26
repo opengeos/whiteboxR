@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_eigenvalue_features}
 \alias{wbt_lidar_eigenvalue_features}
-\title{Lidar eigenvalue features}
+\title{Lidar eigenvalue features
+Calculate eigenvalue-based metrics from a LiDAR point cloud.}
 \usage{
 wbt_lidar_eigenvalue_features(
   input,
@@ -33,5 +34,7 @@ wbt_lidar_eigenvalue_features(
 Returns the tool text outputs.
 }
 \description{
+Lidar eigenvalue features
 Calculate eigenvalue-based metrics from a LiDAR point cloud.
 }
+\keyword{LiDARTools}

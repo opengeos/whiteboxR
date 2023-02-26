@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_join}
 \alias{wbt_lidar_join}
-\title{Lidar join}
+\title{Lidar join
+Joins multiple LiDAR (LAS) files into a single LAS file.}
 \usage{
 wbt_lidar_join(
   inputs,
@@ -30,5 +31,7 @@ wbt_lidar_join(
 Returns the tool text outputs.
 }
 \description{
+Lidar join
 Joins multiple LiDAR (LAS) files into a single LAS file.
 }
+\keyword{LiDARTools}

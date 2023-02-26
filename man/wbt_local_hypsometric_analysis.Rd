@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_local_hypsometric_analysis}
 \alias{wbt_local_hypsometric_analysis}
-\title{Local hypsometric analysis}
+\title{Local hypsometric analysis
+This tool calculates a local, neighbourhood-based hypsometric integral raster.}
 \usage{
 wbt_local_hypsometric_analysis(
   input,
@@ -45,5 +46,7 @@ wbt_local_hypsometric_analysis(
 Returns the tool text outputs.
 }
 \description{
+Local hypsometric analysis
 This tool calculates a local, neighbourhood-based hypsometric integral raster.
 }
+\keyword{GeomorphometricAnalysis}

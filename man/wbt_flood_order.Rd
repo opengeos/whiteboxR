@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_flood_order}
 \alias{wbt_flood_order}
-\title{Flood order}
+\title{Flood order
+Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations.}
 \usage{
 wbt_flood_order(
   dem,
@@ -30,5 +31,7 @@ wbt_flood_order(
 Returns the tool text outputs.
 }
 \description{
+Flood order
 Assigns each DEM grid cell its order in the sequence of inundations that are encountered during a search starting from the edges, moving inward at increasing elevations.
 }
+\keyword{HydrologicalAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_extract_streams}
 \alias{wbt_extract_streams}
-\title{Extract streams}
+\title{Extract streams
+Extracts stream grid cells from a flow accumulation raster.}
 \usage{
 wbt_extract_streams(
   flow_accum,
@@ -36,5 +37,7 @@ wbt_extract_streams(
 Returns the tool text outputs.
 }
 \description{
+Extract streams
 Extracts stream grid cells from a flow accumulation raster.
 }
+\keyword{StreamNetworkAnalysis}

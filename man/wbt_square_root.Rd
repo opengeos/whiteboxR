@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_square_root}
 \alias{wbt_square_root}
-\title{Square root}
+\title{Square root
+Returns the square root of the values in a raster.}
 \usage{
 wbt_square_root(
   input,
@@ -30,5 +31,7 @@ wbt_square_root(
 Returns the tool text outputs.
 }
 \description{
+Square root
 Returns the square root of the values in a raster.
 }
+\keyword{MathandStatsTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_update_nodata_cells}
 \alias{wbt_update_nodata_cells}
-\title{Update nodata cells}
+\title{Update nodata cells
+Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.}
 \usage{
 wbt_update_nodata_cells(
   input1,
@@ -33,5 +34,7 @@ wbt_update_nodata_cells(
 Returns the tool text outputs.
 }
 \description{
+Update nodata cells
 Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
 }
+\keyword{GISAnalysisOverlayTools}

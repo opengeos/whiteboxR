@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_minimum_bounding_circle}
 \alias{wbt_minimum_bounding_circle}
-\title{Minimum bounding circle}
+\title{Minimum bounding circle
+Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.}
 \usage{
 wbt_minimum_bounding_circle(
   input,
@@ -33,5 +34,7 @@ wbt_minimum_bounding_circle(
 Returns the tool text outputs.
 }
 \description{
+Minimum bounding circle
 Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.
 }
+\keyword{GISAnalysis}

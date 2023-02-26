@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_travelling_salesman_problem}
 \alias{wbt_travelling_salesman_problem}
-\title{Travelling salesman problem}
+\title{Travelling salesman problem
+This tool finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.}
 \usage{
 wbt_travelling_salesman_problem(
   input,
@@ -33,5 +34,7 @@ wbt_travelling_salesman_problem(
 Returns the tool text outputs.
 }
 \description{
+Travelling salesman problem
 This tool finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.
 }
+\keyword{GISAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_perimeter_area_ratio}
 \alias{wbt_perimeter_area_ratio}
-\title{Perimeter area ratio}
+\title{Perimeter area ratio
+Calculates the perimeter-area ratio of vector polygons.}
 \usage{
 wbt_perimeter_area_ratio(
   input,
@@ -27,5 +28,7 @@ wbt_perimeter_area_ratio(
 Returns the tool text outputs.
 }
 \description{
+Perimeter area ratio
 Calculates the perimeter-area ratio of vector polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_conditional_evaluation}
 \alias{wbt_conditional_evaluation}
-\title{Conditional evaluation}
+\title{Conditional evaluation
+This tool performs a conditional evaluation (if-then-else) operation on a raster.}
 \usage{
 wbt_conditional_evaluation(
   input,
@@ -39,5 +40,7 @@ wbt_conditional_evaluation(
 Returns the tool text outputs.
 }
 \description{
+Conditional evaluation
 This tool performs a conditional evaluation (if-then-else) operation on a raster.
 }
+\keyword{MathandStatsTools}

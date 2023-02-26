@@ -2,7 +2,8 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_k_means_clustering}
 \alias{wbt_k_means_clustering}
-\title{K means clustering}
+\title{K means clustering
+Performs a k-means clustering operation on a multi-spectral dataset.}
 \usage{
 wbt_k_means_clustering(
   inputs,
@@ -48,5 +49,7 @@ wbt_k_means_clustering(
 Returns the tool text outputs.
 }
 \description{
+K means clustering
 Performs a k-means clustering operation on a multi-spectral dataset.
 }
+\keyword{MachineLearning}

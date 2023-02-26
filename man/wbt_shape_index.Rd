@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_shape_index}
 \alias{wbt_shape_index}
-\title{Shape index}
+\title{Shape index
+This tool calculates the shape index from an input DEM.}
 \usage{
 wbt_shape_index(
   dem,
@@ -33,5 +34,7 @@ wbt_shape_index(
 Returns the tool text outputs.
 }
 \description{
+Shape index
 This tool calculates the shape index from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

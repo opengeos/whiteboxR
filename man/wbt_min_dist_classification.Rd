@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_classification.R
 \name{wbt_min_dist_classification}
 \alias{wbt_min_dist_classification}
-\title{Min dist classification}
+\title{Min dist classification
+Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.}
 \usage{
 wbt_min_dist_classification(
   inputs,
@@ -39,5 +40,7 @@ wbt_min_dist_classification(
 Returns the tool text outputs.
 }
 \description{
+Min dist classification
 Performs a supervised minimum-distance classification using training site polygons and multi-spectral images.
 }
+\keyword{ImageProcessingToolsClassification}

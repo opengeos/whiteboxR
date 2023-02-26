@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_depth_to_water}
 \alias{wbt_depth_to_water}
-\title{Depth to water}
+\title{Depth to water
+This tool calculates cartographic depth-to-water (DTW) index.}
 \usage{
 wbt_depth_to_water(
   dem,
@@ -36,5 +37,7 @@ wbt_depth_to_water(
 Returns the tool text outputs.
 }
 \description{
+Depth to water
 This tool calculates cartographic depth-to-water (DTW) index.
 }
+\keyword{HydrologicalAnalysis}

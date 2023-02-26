@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_classification.R
 \name{wbt_generalize_classified_raster}
 \alias{wbt_generalize_classified_raster}
-\title{Generalize classified raster}
+\title{Generalize classified raster
+Generalizes a raster containing class or object features by removing small features.}
 \usage{
 wbt_generalize_classified_raster(
   input,
@@ -36,5 +37,7 @@ wbt_generalize_classified_raster(
 Returns the tool text outputs.
 }
 \description{
+Generalize classified raster
 Generalizes a raster containing class or object features by removing small features.
 }
+\keyword{ImageProcessingToolsClassification}

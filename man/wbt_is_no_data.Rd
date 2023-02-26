@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_is_no_data}
 \alias{wbt_is_no_data}
-\title{Is no data}
+\title{Is no data
+Identifies NoData valued pixels in an image.}
 \usage{
 wbt_is_no_data(
   input,
@@ -30,5 +31,7 @@ wbt_is_no_data(
 Returns the tool text outputs.
 }
 \description{
+Is no data
 Identifies NoData valued pixels in an image.
 }
+\keyword{MathandStatsTools}

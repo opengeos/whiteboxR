@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_curvedness}
 \alias{wbt_curvedness}
-\title{Curvedness}
+\title{Curvedness
+This tool calculates curvedness from an input DEM.}
 \usage{
 wbt_curvedness(
   dem,
@@ -36,5 +37,7 @@ wbt_curvedness(
 Returns the tool text outputs.
 }
 \description{
+Curvedness
 This tool calculates curvedness from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_normal_vectors}
 \alias{wbt_normal_vectors}
-\title{Normal vectors}
+\title{Normal vectors
+Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.}
 \usage{
 wbt_normal_vectors(
   input,
@@ -33,5 +34,7 @@ wbt_normal_vectors(
 Returns the tool text outputs.
 }
 \description{
+Normal vectors
 Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
 }
+\keyword{LiDARTools}

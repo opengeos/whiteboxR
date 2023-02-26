@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_user_defined_weights_filter}
 \alias{wbt_user_defined_weights_filter}
-\title{User ined weights filter}
+\title{User ined weights filter
+Performs a user-defined weights filter on an image.}
 \usage{
 wbt_user_defined_weights_filter(
   input,
@@ -39,5 +40,7 @@ wbt_user_defined_weights_filter(
 Returns the tool text outputs.
 }
 \description{
+User ined weights filter
 Performs a user-defined weights filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

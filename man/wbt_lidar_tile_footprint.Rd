@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_tile_footprint}
 \alias{wbt_lidar_tile_footprint}
-\title{Lidar tile footprint}
+\title{Lidar tile footprint
+Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.}
 \usage{
 wbt_lidar_tile_footprint(
   input,
@@ -33,5 +34,7 @@ wbt_lidar_tile_footprint(
 Returns the tool text outputs.
 }
 \description{
+Lidar tile footprint
 Creates a vector polygon of the convex hull of a LiDAR point cloud. When the input/output parameters are not specified, the tool works with all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

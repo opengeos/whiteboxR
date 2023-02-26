@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_patch_shape.R
 \name{wbt_patch_orientation}
 \alias{wbt_patch_orientation}
-\title{Patch orientation}
+\title{Patch orientation
+Calculates the orientation of vector polygons.}
 \usage{
 wbt_patch_orientation(
   input,
@@ -27,5 +28,7 @@ wbt_patch_orientation(
 Returns the tool text outputs.
 }
 \description{
+Patch orientation
 Calculates the orientation of vector polygons.
 }
+\keyword{GISAnalysisPatchShapeTools}

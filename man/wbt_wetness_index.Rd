@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_wetness_index}
 \alias{wbt_wetness_index}
-\title{Wetness index}
+\title{Wetness index
+Calculates the topographic wetness index, Ln(A / tan(slope)).}
 \usage{
 wbt_wetness_index(
   sca,
@@ -33,5 +34,7 @@ wbt_wetness_index(
 Returns the tool text outputs.
 }
 \description{
+Wetness index
 Calculates the topographic wetness index, Ln(A / tan(slope)).
 }
+\keyword{GeomorphometricAnalysis}

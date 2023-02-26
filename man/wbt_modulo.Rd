@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_modulo}
 \alias{wbt_modulo}
-\title{Modulo}
+\title{Modulo
+Performs a modulo operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_modulo(
   input1,
@@ -33,5 +34,7 @@ wbt_modulo(
 Returns the tool text outputs.
 }
 \description{
+Modulo
 Performs a modulo operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

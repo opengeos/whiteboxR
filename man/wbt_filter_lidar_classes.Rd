@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_filter_lidar_classes}
 \alias{wbt_filter_lidar_classes}
-\title{Filter lidar classes}
+\title{Filter lidar classes
+Removes points in a LAS file with certain specified class values.}
 \usage{
 wbt_filter_lidar_classes(
   input,
@@ -33,5 +34,7 @@ wbt_filter_lidar_classes(
 Returns the tool text outputs.
 }
 \description{
+Filter lidar classes
 Removes points in a LAS file with certain specified class values.
 }
+\keyword{LiDARTools}

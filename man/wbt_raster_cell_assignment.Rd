@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_raster_cell_assignment}
 \alias{wbt_raster_cell_assignment}
-\title{Raster cell assignment}
+\title{Raster cell assignment
+Assign row or column number to cells.}
 \usage{
 wbt_raster_cell_assignment(
   input,
@@ -33,5 +34,7 @@ wbt_raster_cell_assignment(
 Returns the tool text outputs.
 }
 \description{
+Raster cell assignment
 Assign row or column number to cells.
 }
+\keyword{GISAnalysis}

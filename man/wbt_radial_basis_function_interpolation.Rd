@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_radial_basis_function_interpolation}
 \alias{wbt_radial_basis_function_interpolation}
-\title{Radial basis function interpolation}
+\title{Radial basis function interpolation
+Interpolates vector points into a raster surface using a radial basis function scheme.}
 \usage{
 wbt_radial_basis_function_interpolation(
   input,
@@ -57,5 +58,7 @@ wbt_radial_basis_function_interpolation(
 Returns the tool text outputs.
 }
 \description{
+Radial basis function interpolation
 Interpolates vector points into a raster surface using a radial basis function scheme.
 }
+\keyword{GISAnalysis}

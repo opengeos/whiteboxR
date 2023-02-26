@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_hack_stream_order}
 \alias{wbt_hack_stream_order}
-\title{Hack stream order}
+\title{Hack stream order
+Assigns the Hack stream order to each tributary in a stream network.}
 \usage{
 wbt_hack_stream_order(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_hack_stream_order(
 Returns the tool text outputs.
 }
 \description{
+Hack stream order
 Assigns the Hack stream order to each tributary in a stream network.
 }
+\keyword{StreamNetworkAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_time_in_daylight}
 \alias{wbt_time_in_daylight}
-\title{Time in daylight}
+\title{Time in daylight
+Calculates the proportion of time a location is not within an area of shadow.}
 \usage{
 wbt_time_in_daylight(
   dem,
@@ -57,5 +58,7 @@ wbt_time_in_daylight(
 Returns the tool text outputs.
 }
 \description{
+Time in daylight
 Calculates the proportion of time a location is not within an area of shadow.
 }
+\keyword{GeomorphometricAnalysis}

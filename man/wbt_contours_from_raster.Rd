@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_contours_from_raster}
 \alias{wbt_contours_from_raster}
-\title{Contours from raster}
+\title{Contours from raster
+Derives a vector contour coverage from a raster surface.}
 \usage{
 wbt_contours_from_raster(
   input,
@@ -42,5 +43,7 @@ wbt_contours_from_raster(
 Returns the tool text outputs.
 }
 \description{
+Contours from raster
 Derives a vector contour coverage from a raster surface.
 }
+\keyword{GeomorphometricAnalysis}

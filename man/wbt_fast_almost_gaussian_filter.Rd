@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_fast_almost_gaussian_filter}
 \alias{wbt_fast_almost_gaussian_filter}
-\title{Fast almost gaussian filter}
+\title{Fast almost gaussian filter
+Performs a fast approximate Gaussian filter on an image.}
 \usage{
 wbt_fast_almost_gaussian_filter(
   input,
@@ -33,5 +34,7 @@ wbt_fast_almost_gaussian_filter(
 Returns the tool text outputs.
 }
 \description{
+Fast almost gaussian filter
 Performs a fast approximate Gaussian filter on an image.
 }
+\keyword{ImageProcessingToolsFilters}

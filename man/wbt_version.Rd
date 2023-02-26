@@ -20,3 +20,4 @@ Version information for 'WhiteboxTools'
 wbt_version()
 }
 }
+\keyword{General}

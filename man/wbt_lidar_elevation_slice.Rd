@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_elevation_slice}
 \alias{wbt_lidar_elevation_slice}
-\title{Lidar elevation slice}
+\title{Lidar elevation slice
+Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.}
 \usage{
 wbt_lidar_elevation_slice(
   input,
@@ -45,5 +46,7 @@ wbt_lidar_elevation_slice(
 Returns the tool text outputs.
 }
 \description{
+Lidar elevation slice
 Outputs all of the points within a LiDAR (LAS) point file that lie between a specified elevation range.
 }
+\keyword{LiDARTools}

@@ -1,0 +1,70 @@
+reference:
+- title: \'WhiteboxTools\' R Reference
+- subtitle: General
+  desc: 
+- contents:
+  - has_keyword("General")
+- subtitle: Data Tools
+  desc: 
+- contents:
+  - has_keyword("DataTools")
+- subtitle: GIS Analysis
+  desc: 
+- contents:
+  - has_keyword("GISAnalysis")
+- subtitle: GIS Analysis (Distance)
+  desc: 
+- contents:
+  - has_keyword("GISAnalysisDistanceTools")
+- subtitle: GIS Analysis (Overlay)
+  desc: 
+- contents:
+  - has_keyword("GISAnalysisOverlayTools")
+- subtitle: GIS Analysis (Patch Shape)
+  desc: 
+- contents:
+  - has_keyword("GISAnalysisPatchShapeTools")
+- subtitle: Geomorphometric Analysis
+  desc: 
+- contents:
+  - has_keyword("GeomorphometricAnalysis")
+- subtitle: Hydrological Analysis
+  desc: 
+- contents:
+  - has_keyword("HydrologicalAnalysis")
+- subtitle: Image Processing
+  desc: 
+- contents:
+  - has_keyword("ImageProcessingTools")
+- subtitle: Image Processing (Classification)
+  desc: 
+- contents:
+  - has_keyword("ImageProcessingToolsClassification")
+- subtitle: Image Processing (Filters)
+  desc: 
+- contents:
+  - has_keyword("ImageProcessingToolsFilters")
+- subtitle: Image Processing (Enhancement)
+  desc: 
+- contents:
+  - has_keyword("ImageProcessingToolsImageEnhancement")
+- subtitle: LiDAR
+  desc: 
+- contents:
+  - has_keyword("LiDARTools")
+- subtitle: Machine Learning
+  desc: 
+- contents:
+  - has_keyword("MachineLearning")
+- subtitle: Math and Statistics
+  desc: 
+- contents:
+  - has_keyword("MathandStatsTools")
+- subtitle: Precision Agriculture
+  desc: 
+- contents:
+  - has_keyword("PrecisionAgriculture")
+- subtitle: Stream Network Analysis
+  desc: 
+- contents:
+  - has_keyword("StreamNetworkAnalysis")

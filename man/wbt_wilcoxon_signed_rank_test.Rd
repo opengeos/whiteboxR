@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_wilcoxon_signed_rank_test}
 \alias{wbt_wilcoxon_signed_rank_test}
-\title{Wilcoxon signed rank test}
+\title{Wilcoxon signed rank test
+Performs a 2-sample K-S test for significant differences on two input rasters.}
 \usage{
 wbt_wilcoxon_signed_rank_test(
   input1,
@@ -36,5 +37,7 @@ wbt_wilcoxon_signed_rank_test(
 Returns the tool text outputs.
 }
 \description{
+Wilcoxon signed rank test
 Performs a 2-sample K-S test for significant differences on two input rasters.
 }
+\keyword{MathandStatsTools}

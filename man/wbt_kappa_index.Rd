@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_kappa_index}
 \alias{wbt_kappa_index}
-\title{Kappa index}
+\title{Kappa index
+Performs a kappa index of agreement (KIA) analysis on two categorical raster files.}
 \usage{
 wbt_kappa_index(
   input1,
@@ -33,5 +34,7 @@ wbt_kappa_index(
 Returns the tool text outputs.
 }
 \description{
+Kappa index
 Performs a kappa index of agreement (KIA) analysis on two categorical raster files.
 }
+\keyword{MathandStatsTools}

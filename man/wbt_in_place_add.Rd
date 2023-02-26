@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_in_place_add}
 \alias{wbt_in_place_add}
-\title{In place add}
+\title{In place add
+Performs an in-place addition operation (input1 += input2).}
 \usage{
 wbt_in_place_add(
   input1,
@@ -30,5 +31,7 @@ wbt_in_place_add(
 Returns the tool text outputs.
 }
 \description{
+In place add
 Performs an in-place addition operation (input1 += input2).
 }
+\keyword{MathandStatsTools}

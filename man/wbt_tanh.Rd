@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_tanh}
 \alias{wbt_tanh}
-\title{Tanh}
+\title{Tanh
+Returns the hyperbolic tangent (tanh) of each values in a raster.}
 \usage{
 wbt_tanh(
   input,
@@ -30,5 +31,7 @@ wbt_tanh(
 Returns the tool text outputs.
 }
 \description{
+Tanh
 Returns the hyperbolic tangent (tanh) of each values in a raster.
 }
+\keyword{MathandStatsTools}

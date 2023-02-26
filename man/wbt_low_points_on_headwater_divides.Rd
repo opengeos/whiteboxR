@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_low_points_on_headwater_divides}
 \alias{wbt_low_points_on_headwater_divides}
-\title{Low points on headwater divides}
+\title{Low points on headwater divides
+This tool locates saddle points along ridges within a digital elevation model (DEM).}
 \usage{
 wbt_low_points_on_headwater_divides(
   dem,
@@ -33,5 +34,7 @@ wbt_low_points_on_headwater_divides(
 Returns the tool text outputs.
 }
 \description{
+Low points on headwater divides
 This tool locates saddle points along ridges within a digital elevation model (DEM).
 }
+\keyword{HydrologicalAnalysis}

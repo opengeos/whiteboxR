@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_divide}
 \alias{wbt_divide}
-\title{Divide}
+\title{Divide
+Performs a division operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_divide(
   input1,
@@ -33,5 +34,7 @@ wbt_divide(
 Returns the tool text outputs.
 }
 \description{
+Divide
 Performs a division operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

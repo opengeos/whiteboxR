@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_embankment_mapping}
 \alias{wbt_embankment_mapping}
-\title{Embankment mapping}
+\title{Embankment mapping
+Maps and/or removes road embankments from an input fine-resolution DEM.}
 \usage{
 wbt_embankment_mapping(
   dem,
@@ -57,5 +58,7 @@ wbt_embankment_mapping(
 Returns the tool text outputs.
 }
 \description{
+Embankment mapping
 Maps and/or removes road embankments from an input fine-resolution DEM.
 }
+\keyword{GeomorphometricAnalysis}

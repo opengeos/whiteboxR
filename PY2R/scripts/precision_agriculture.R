@@ -1,5 +1,4 @@
 #' Reconcile multiple headers
-#'
 #' This tool adjusts the crop yield values for data sets collected with multiple headers or combines.
 #'
 #' @param input Name of the input points shapefile.
@@ -14,6 +13,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords PrecisionAgriculture
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -48,7 +49,6 @@ wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, out
 
 
 #' Recreate pass lines
-#'
 #' This tool can be used to approximate the harvester pass lines from yield points.
 #'
 #' @param input Name of the input points shapefile.
@@ -61,6 +61,8 @@ wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, out
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords PrecisionAgriculture
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -89,7 +91,6 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 
 
 #' Remove field edge points
-#'
 #' This tool can be used to remove, or flag, most of the points along the edges from a crop yield data set.
 #'
 #' @param input Name of the input points shapefile.
@@ -101,6 +102,8 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords PrecisionAgriculture
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -130,7 +133,6 @@ wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in
 
 
 #' Yield filter
-#'
 #' Filters crop yield values of point data derived from combine harvester yield monitors.
 #'
 #' @param input Name of the input points shapefile.
@@ -145,6 +147,8 @@ wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords PrecisionAgriculture
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -179,7 +183,6 @@ wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096
 
 
 #' Yield map
-#'
 #' This tool can be used to create a segmented-vector polygon yield map from a set of harvester points.
 #'
 #' @param input Name of the input points shapefile.
@@ -191,6 +194,8 @@ wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords PrecisionAgriculture
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -218,7 +223,6 @@ wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_chang
 
 
 #' Yield normalization
-#'
 #' This tool can be used to normalize the yield points for a field.
 #'
 #' @param input Name of the input points shapefile.
@@ -232,6 +236,8 @@ wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_chang
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords PrecisionAgriculture
 #'
 #' @return Returns the tool text outputs.
 #' @export

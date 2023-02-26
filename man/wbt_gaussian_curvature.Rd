@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_gaussian_curvature}
 \alias{wbt_gaussian_curvature}
-\title{Gaussian curvature}
+\title{Gaussian curvature
+Calculates a mean curvature raster from an input DEM.}
 \usage{
 wbt_gaussian_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_gaussian_curvature(
 Returns the tool text outputs.
 }
 \description{
+Gaussian curvature
 Calculates a mean curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_exp}
 \alias{wbt_exp}
-\title{Exp}
+\title{Exp
+Returns the exponential (base e) of values in a raster.}
 \usage{
 wbt_exp(
   input,
@@ -30,5 +31,7 @@ wbt_exp(
 Returns the tool text outputs.
 }
 \description{
+Exp
 Returns the exponential (base e) of values in a raster.
 }
+\keyword{MathandStatsTools}

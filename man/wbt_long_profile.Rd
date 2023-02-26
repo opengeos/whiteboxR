@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_long_profile}
 \alias{wbt_long_profile}
-\title{Long profile}
+\title{Long profile
+Plots the stream longitudinal profiles for one or more rivers.}
 \usage{
 wbt_long_profile(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_long_profile(
 Returns the tool text outputs.
 }
 \description{
+Long profile
 Plots the stream longitudinal profiles for one or more rivers.
 }
+\keyword{StreamNetworkAnalysis}

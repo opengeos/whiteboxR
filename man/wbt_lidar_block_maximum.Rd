@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_block_maximum}
 \alias{wbt_lidar_block_maximum}
-\title{Lidar block maximum}
+\title{Lidar block maximum
+Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.}
 \usage{
 wbt_lidar_block_maximum(
   input,
@@ -33,5 +34,7 @@ wbt_lidar_block_maximum(
 Returns the tool text outputs.
 }
 \description{
+Lidar block maximum
 Creates a block-maximum raster from an input LAS file. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

@@ -1,5 +1,4 @@
 #' Accumulation curvature
-#'
 #' This tool calculates accumulation curvature from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -10,6 +9,8 @@
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -36,7 +37,6 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
 
 
 #' Aspect
-#'
 #' Calculates an aspect raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -46,6 +46,8 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -69,7 +71,6 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
 
 
 #' Assess route
-#'
 #' This tool assesses a route for slope, elevation, and visibility variation.
 #'
 #' @param routes Name of the input routes vector file.
@@ -81,6 +82,8 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=FALSE, c
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -108,7 +111,6 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
 
 
 #' Average normal vector angular deviation
-#'
 #' Calculates the circular variance of aspect at a scale for a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -118,6 +120,8 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -141,17 +145,18 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
 
 
 #' Breakline mapping
-#'
 #' This tool maps breaklines from an input DEM.
 #'
 #' @param dem Name of the input raster image file.
 #' @param output Name of the output vector lines file.
-#' @param threshold Threshold value (0 - infinity but typically 1 to 5 works well).
+#' @param threshold Threshold value (0 - infinity but typcially 1 to 5 works well).
 #' @param min_length Minimum line length, in grid cells.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -178,7 +183,6 @@ wbt_breakline_mapping <- function(dem, output, threshold=2.0, min_length=3, wd=N
 
 
 #' Circular variance of aspect
-#'
 #' Calculates the circular variance of aspect at a scale for a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -188,6 +192,8 @@ wbt_breakline_mapping <- function(dem, output, threshold=2.0, min_length=3, wd=N
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -211,7 +217,6 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
 
 
 #' Contours from points
-#'
 #' Creates a contour coverage from a set of input points.
 #'
 #' @param input Input vector points file.
@@ -226,6 +231,8 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -264,7 +271,6 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
 
 
 #' Contours from raster
-#'
 #' Derives a vector contour coverage from a raster surface.
 #'
 #' @param input Input surface raster file.
@@ -277,6 +283,8 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -309,7 +317,6 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
 
 
 #' Curvedness
-#'
 #' This tool calculates curvedness from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -320,6 +327,8 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -346,7 +355,6 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
 
 
 #' Dev from mean elev
-#'
 #' Calculates deviation from mean elevation.
 #'
 #' @param dem Input raster DEM file.
@@ -357,6 +365,8 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -383,7 +393,6 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
 
 
 #' Diff from mean elev
-#'
 #' Calculates difference from mean elevation (equivalent to a high-pass filter).
 #'
 #' @param dem Input raster DEM file.
@@ -394,6 +403,8 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -420,7 +431,6 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
 
 
 #' Difference curvature
-#'
 #' This tool calculates difference curvature from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -431,6 +441,8 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -457,7 +469,6 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
 
 
 #' Directional relief
-#'
 #' Calculates relief for cells in an input DEM for a specified direction.
 #'
 #' @param dem Input raster DEM file.
@@ -468,6 +479,8 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -494,7 +507,6 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
 
 
 #' Downslope index
-#'
 #' Calculates the Hjerdt et al. (2004) downslope index.
 #'
 #' @param dem Input raster DEM file.
@@ -505,6 +517,8 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -531,7 +545,6 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
 
 
 #' Edge density
-#'
 #' Calculates the density of edges, or breaks-in-slope within DEMs.
 #'
 #' @param dem Input raster DEM file.
@@ -543,6 +556,8 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -572,7 +587,6 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
 
 
 #' Elev above pit
-#'
 #' Calculate the elevation of each grid cell above the nearest downstream pit cell or grid edge cell.
 #'
 #' @param dem Input raster DEM file.
@@ -581,6 +595,8 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -601,7 +617,6 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compres
 
 
 #' Elev percentile
-#'
 #' Calculates the elevation percentile raster from a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -613,6 +628,8 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -642,7 +659,6 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
 
 
 #' Elev relative to min max
-#'
 #' Calculates the elevation of a location relative to the minimum and maximum elevations in a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -651,6 +667,8 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -671,7 +689,6 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALS
 
 
 #' Elev relative to watershed min max
-#'
 #' Calculates the elevation of a location relative to the minimum and maximum elevations in a watershed.
 #'
 #' @param dem Input raster DEM file.
@@ -681,6 +698,8 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=FALS
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -702,7 +721,6 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
 
 
 #' Embankment mapping
-#'
 #' Maps and/or removes road embankments from an input fine-resolution DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -720,6 +738,8 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -765,7 +785,6 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 
 
 #' Exposure towards wind flux
-#'
 #' This tool evaluates hydrologic connectivity within a DEM.
 #'
 #' @param dem Name of the input DEM raster file.
@@ -777,6 +796,8 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -806,7 +827,6 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
 
 
 #' Feature preserving smoothing
-#'
 #' Reduces short-scale variation in an input DEM using a modified Sun et al. (2007) algorithm.
 #'
 #' @param dem Input raster DEM file.
@@ -820,6 +840,8 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -855,7 +877,6 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
 
 
 #' Fetch analysis
-#'
 #' Performs an analysis of fetch or upwind distance to an obstacle.
 #'
 #' @param dem Input raster DEM file.
@@ -866,6 +887,8 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -892,7 +915,6 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 
 
 #' Fill missing data
-#'
 #' Fills NoData holes in a DEM.
 #'
 #' @param input Input raster file.
@@ -904,6 +926,8 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -933,7 +957,6 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
 
 
 #' Find ridges
-#'
 #' Identifies potential ridge and peak grid cells.
 #'
 #' @param dem Input raster DEM file.
@@ -943,6 +966,8 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -966,7 +991,6 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
 
 
 #' Gaussian curvature
-#'
 #' Calculates a mean curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -977,6 +1001,8 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=F
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1003,7 +1029,6 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
 
 
 #' Gaussian scale space
-#'
 #' This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
 #'
 #' @param dem Name of the input DEM raster file.
@@ -1020,6 +1045,8 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1060,7 +1087,6 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
 
 
 #' Generating function
-#'
 #' This tool calculates generating function from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -1071,6 +1097,8 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1097,7 +1125,6 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 
 
 #' Geomorphons
-#'
 #' Computes geomorphon patterns.
 #'
 #' @param dem Input raster DEM file.
@@ -1112,6 +1139,8 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1150,7 +1179,6 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, fdist=0, skip
 
 
 #' Hillshade
-#'
 #' Calculates a hillshade raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1162,6 +1190,8 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, fdist=0, skip
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1191,7 +1221,6 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
 
 
 #' Horizon angle
-#'
 #' Calculates horizon angle (maximum upwind slope) for each grid cell in an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1202,6 +1231,8 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1228,7 +1259,6 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
 
 
 #' Horizontal excess curvature
-#'
 #' This tool calculates horizontal excess curvature from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -1239,6 +1269,8 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1265,7 +1297,6 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
 
 
 #' Hypsometric analysis
-#'
 #' Calculates a hypsometric curve for one or more DEMs.
 #'
 #' @param inputs Input DEM files.
@@ -1275,6 +1306,8 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1298,7 +1331,6 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 
 
 #' Hypsometrically tinted hillshade
-#'
 #' Creates an colour shaded relief image from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1315,6 +1347,8 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1359,7 +1393,6 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
 
 
 #' Local hypsometric analysis
-#'
 #' This tool calculates a local, neighbourhood-based hypsometric integral raster.
 #'
 #' @param input Name of the input raster DEM file.
@@ -1373,6 +1406,8 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1406,7 +1441,6 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
 
 
 #' Local quadratic regression
-#'
 #' This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
 #'
 #' @param dem Name of the input DEM raster file.
@@ -1416,6 +1450,8 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1439,7 +1475,6 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
 
 
 #' Map off terrain objects
-#'
 #' Maps off-terrain objects in a digital elevation model (DEM).
 #'
 #' @param dem Input raster DEM file.
@@ -1450,6 +1485,8 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1476,7 +1513,6 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
 
 
 #' Max anisotropy dev
-#'
 #' Calculates the maximum anisotropy (directionality) in elevation deviation over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -1489,6 +1525,8 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1517,7 +1555,6 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
 
 
 #' Max anisotropy dev signature
-#'
 #' Calculates the anisotropy in deviation from mean for points over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -1530,6 +1567,8 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1558,7 +1597,6 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
 
 
 #' Max branch length
-#'
 #' Lindsay and Seibert's (2013) branch length index is used to map drainage divides or ridge lines.
 #'
 #' @param dem Input raster DEM file.
@@ -1568,6 +1606,8 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1591,7 +1631,6 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
 
 
 #' Max difference from mean
-#'
 #' Calculates the maximum difference from mean elevation over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -1604,6 +1643,8 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1630,7 +1671,6 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
 
 
 #' Max downslope elev change
-#'
 #' Calculates the maximum downslope change in elevation between a grid cell and its eight downslope neighbors.
 #'
 #' @param dem Input raster DEM file.
@@ -1639,6 +1679,8 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1659,7 +1701,6 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 
 
 #' Max elev dev signature
-#'
 #' Calculates the maximum elevation deviation over a range of spatial scales and for a set of points.
 #'
 #' @param dem Input raster DEM file.
@@ -1672,6 +1713,8 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1698,7 +1741,6 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
 
 
 #' Max elevation deviation
-#'
 #' Calculates the maximum elevation deviation over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -1711,6 +1753,8 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1737,7 +1781,6 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
 
 
 #' Max upslope elev change
-#'
 #' Calculates the maximum upslope change in elevation between a grid cell and its eight downslope neighbors.
 #'
 #' @param dem Input raster DEM file.
@@ -1746,6 +1789,8 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1766,7 +1811,6 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE
 
 
 #' Maximal curvature
-#'
 #' Calculates a mean curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1777,6 +1821,8 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FALSE
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1803,7 +1849,6 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 
 
 #' Mean curvature
-#'
 #' Calculates a mean curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1814,6 +1859,8 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1840,7 +1887,6 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 
 
 #' Min downslope elev change
-#'
 #' Calculates the minimum downslope change in elevation between a grid cell and its eight downslope neighbors.
 #'
 #' @param dem Input raster DEM file.
@@ -1849,6 +1895,8 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1869,7 +1917,6 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 
 
 #' Minimal curvature
-#'
 #' Calculates a mean curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1880,6 +1927,8 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=FAL
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1906,7 +1955,6 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 
 
 #' Multidirectional hillshade
-#'
 #' Calculates a multi-direction hillshade raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -1918,6 +1966,8 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1947,7 +1997,6 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
 
 
 #' Multiscale elevation percentile
-#'
 #' Calculates surface roughness over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -1962,6 +2011,8 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1998,7 +2049,6 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
 
 
 #' Multiscale roughness
-#'
 #' Calculates surface roughness over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -2011,6 +2061,8 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2039,7 +2091,6 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
 
 
 #' Multiscale roughness signature
-#'
 #' Calculates the surface roughness for points over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -2052,6 +2103,8 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2080,7 +2133,6 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
 
 
 #' Multiscale std dev normals
-#'
 #' Calculates surface roughness over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -2094,6 +2146,8 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2127,7 +2181,6 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
 
 
 #' Multiscale std dev normals signature
-#'
 #' Calculates the surface roughness for points over a range of spatial scales.
 #'
 #' @param dem Input raster DEM file.
@@ -2141,6 +2194,8 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2174,7 +2229,6 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 
 
 #' Multiscale topographic position image
-#'
 #' Creates a multiscale topographic position image from three DEVmax rasters of differing spatial scale ranges.
 #'
 #' @param local Input local-scale topographic position (DEVmax) raster file.
@@ -2186,6 +2240,8 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2211,7 +2267,6 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
 
 
 #' Num downslope neighbours
-#'
 #' Calculates the number of downslope neighbours to each grid cell in a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2220,6 +2275,8 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2240,7 +2297,6 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 
 
 #' Num upslope neighbours
-#'
 #' Calculates the number of upslope neighbours to each grid cell in a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2249,6 +2305,8 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2269,7 +2327,6 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 
 
 #' Openness
-#'
 #' This tool calculates the topographic openness index from an input DEM.
 #'
 #' @param input Name of the input raster DEM file.
@@ -2280,6 +2337,8 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALSE,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2304,7 +2363,6 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
 
 
 #' Pennock landform class
-#'
 #' Classifies hillslope zones based on slope, profile curvature, and plan curvature.
 #'
 #' @param dem Input raster DEM file.
@@ -2317,6 +2375,8 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2349,7 +2409,6 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
 
 
 #' Percent elev range
-#'
 #' Calculates percent of elevation range from a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2360,6 +2419,8 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2386,7 +2447,6 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 
 
 #' Plan curvature
-#'
 #' Calculates a plan (contour) curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2397,6 +2457,8 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2423,7 +2485,6 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 
 
 #' Profile
-#'
 #' Plots profiles from digital surface models.
 #'
 #' @param lines Input vector line file.
@@ -2433,6 +2494,8 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2454,7 +2517,6 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
 
 
 #' Profile curvature
-#'
 #' Calculates a profile curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2465,6 +2527,8 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=FALSE, com
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2491,7 +2555,6 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 
 
 #' Relative aspect
-#'
 #' Calculates relative aspect (relative to a user-specified direction) from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2502,6 +2565,8 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2528,7 +2593,6 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
 
 
 #' Relative topographic position
-#'
 #' Calculates the relative topographic position index from a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2539,6 +2603,8 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2565,7 +2631,6 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
 
 
 #' Remove off terrain objects
-#'
 #' Removes off-terrain objects from a raster digital elevation model (DEM).
 #'
 #' @param dem Input raster DEM file.
@@ -2576,6 +2641,8 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2602,7 +2669,6 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
 
 
 #' Ring curvature
-#'
 #' This tool calculates ring curvature from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -2613,6 +2679,8 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2639,7 +2707,6 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
 
 
 #' Rotor
-#'
 #' This tool calculates rotor from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -2650,6 +2717,8 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2676,7 +2745,6 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 
 
 #' Ruggedness index
-#'
 #' Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2685,6 +2753,8 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2705,7 +2775,6 @@ wbt_ruggedness_index <- function(dem, output, wd=NULL, verbose_mode=FALSE, compr
 
 
 #' Sediment transport index
-#'
 #' Calculates the sediment transport index.
 #'
 #' @param sca Input raster specific contributing area (SCA) file.
@@ -2717,6 +2786,8 @@ wbt_ruggedness_index <- function(dem, output, wd=NULL, verbose_mode=FALSE, compr
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2744,7 +2815,6 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 
 
 #' Shadow animation
-#'
 #' This tool creates an animated GIF of shadows based on an input DEM.
 #'
 #' @param input Name of the input digital surface model (DSM) raster file.
@@ -2761,6 +2831,8 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2805,7 +2877,6 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
 
 
 #' Shadow image
-#'
 #' This tool creates a raster of shadow areas based on an input DEM.
 #'
 #' @param input Name of the input digital surface model (DSM) raster file.
@@ -2819,6 +2890,8 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2854,7 +2927,6 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
 
 
 #' Shape index
-#'
 #' This tool calculates the shape index from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -2864,6 +2936,8 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2887,7 +2961,6 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALS
 
 
 #' Slope
-#'
 #' Calculates a slope raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -2898,6 +2971,8 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=FALS
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2924,7 +2999,6 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
 
 
 #' Slope vs aspect plot
-#'
 #' This tool creates a slope-aspect relation plot from an input DEM.
 #'
 #' @param input Name of the input raster image file.
@@ -2936,6 +3010,8 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2965,7 +3041,6 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
 
 
 #' Slope vs elevation plot
-#'
 #' Creates a slope vs. elevation plot for one or more DEMs.
 #'
 #' @param inputs Input DEM files.
@@ -2975,6 +3050,8 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -2998,7 +3075,6 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
 
 
 #' Smooth vegetation residual
-#'
 #' This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
 #'
 #' @param input Name of the input digital elevation model (DEM) raster file.
@@ -3010,6 +3086,8 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3039,7 +3117,6 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
 
 
 #' Spherical std dev of normals
-#'
 #' Calculates the spherical standard deviation of surface normals for a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -3049,6 +3126,8 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3072,7 +3151,6 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
 
 
 #' Standard deviation of slope
-#'
 #' Calculates the standard deviation of slope from an input DEM.
 #'
 #' @param input Input raster DEM file.
@@ -3084,6 +3162,8 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3113,7 +3193,6 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
 
 
 #' Stream power index
-#'
 #' Calculates the relative stream power index.
 #'
 #' @param sca Input raster specific contributing area (SCA) file.
@@ -3124,6 +3203,8 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3148,7 +3229,6 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
 
 
 #' Surface area ratio
-#'
 #' Calculates a the surface area ratio of each grid cell in an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -3157,6 +3237,8 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3177,7 +3259,6 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 
 
 #' Tangential curvature
-#'
 #' Calculates a tangential curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -3188,6 +3269,8 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=FALSE, com
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3214,7 +3297,6 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
 
 
 #' Time in daylight
-#'
 #' Calculates the proportion of time a location is not within an area of shadow.
 #'
 #' @param dem Input raster DEM file.
@@ -3232,6 +3314,8 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3275,7 +3359,6 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
 
 
 #' Topographic position animation
-#'
 #' This tool creates an animated GIF of multi-scale local topographic position (elevation deviation).
 #'
 #' @param input Name of the input digital elevation model (DEM) raster file.
@@ -3292,6 +3375,8 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3336,7 +3421,6 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 
 
 #' Total curvature
-#'
 #' Calculates a total curvature raster from an input DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -3347,6 +3431,8 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3373,7 +3459,6 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
 
 
 #' Unsphericity
-#'
 #' This tool calculates the unsphericity curvature from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -3384,6 +3469,8 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3410,7 +3497,6 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
 
 
 #' Vertical excess curvature
-#'
 #' This tool calculates vertical excess curvature from an input DEM.
 #'
 #' @param dem Name of the input raster DEM file.
@@ -3421,6 +3507,8 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3447,7 +3535,6 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
 
 
 #' Viewshed
-#'
 #' Identifies the viewshed for a point or set of points.
 #'
 #' @param dem Input raster DEM file.
@@ -3458,6 +3545,8 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3482,7 +3571,6 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
 
 
 #' Visibility index
-#'
 #' Estimates the relative visibility of sites in a DEM.
 #'
 #' @param dem Input raster DEM file.
@@ -3493,6 +3581,8 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -3519,7 +3609,6 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
 
 
 #' Wetness index
-#'
 #' Calculates the topographic wetness index, Ln(A / tan(slope)).
 #'
 #' @param sca Input raster specific contributing area (SCA) file.
@@ -3529,6 +3618,8 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
 #'
 #' @return Returns the tool text outputs.
 #' @export

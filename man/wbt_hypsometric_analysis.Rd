@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_hypsometric_analysis}
 \alias{wbt_hypsometric_analysis}
-\title{Hypsometric analysis}
+\title{Hypsometric analysis
+Calculates a hypsometric curve for one or more DEMs.}
 \usage{
 wbt_hypsometric_analysis(
   inputs,
@@ -33,5 +34,7 @@ wbt_hypsometric_analysis(
 Returns the tool text outputs.
 }
 \description{
+Hypsometric analysis
 Calculates a hypsometric curve for one or more DEMs.
 }
+\keyword{GeomorphometricAnalysis}

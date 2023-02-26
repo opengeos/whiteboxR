@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_zlidar_to_las}
 \alias{wbt_zlidar_to_las}
-\title{Zlidar to las}
+\title{Zlidar to las
+Converts one or more zlidar files into the LAS data format.}
 \usage{
 wbt_zlidar_to_las(
   inputs = NULL,
@@ -30,5 +31,7 @@ wbt_zlidar_to_las(
 Returns the tool text outputs.
 }
 \description{
+Zlidar to las
 Converts one or more zlidar files into the LAS data format.
 }
+\keyword{LiDARTools}

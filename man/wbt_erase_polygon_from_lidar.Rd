@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_erase_polygon_from_lidar}
 \alias{wbt_erase_polygon_from_lidar}
-\title{Erase polygon from lidar}
+\title{Erase polygon from lidar
+Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.}
 \usage{
 wbt_erase_polygon_from_lidar(
   input,
@@ -33,5 +34,7 @@ wbt_erase_polygon_from_lidar(
 Returns the tool text outputs.
 }
 \description{
+Erase polygon from lidar
 Erases (cuts out) a vector polygon or polygons from a LiDAR point cloud.
 }
+\keyword{LiDARTools}

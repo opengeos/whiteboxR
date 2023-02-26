@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_tin_gridding}
 \alias{wbt_tin_gridding}
-\title{Tin gridding}
+\title{Tin gridding
+Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.}
 \usage{
 wbt_tin_gridding(
   input,
@@ -45,5 +46,7 @@ wbt_tin_gridding(
 Returns the tool text outputs.
 }
 \description{
+Tin gridding
 Creates a raster grid based on a triangular irregular network (TIN) fitted to vector points.
 }
+\keyword{GISAnalysis}

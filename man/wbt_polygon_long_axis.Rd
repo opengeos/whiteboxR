@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_polygon_long_axis}
 \alias{wbt_polygon_long_axis}
-\title{Polygon long axis}
+\title{Polygon long axis
+This tool can be used to map the long axis of polygon features.}
 \usage{
 wbt_polygon_long_axis(
   input,
@@ -30,5 +31,7 @@ wbt_polygon_long_axis(
 Returns the tool text outputs.
 }
 \description{
+Polygon long axis
 This tool can be used to map the long axis of polygon features.
 }
+\keyword{GISAnalysis}

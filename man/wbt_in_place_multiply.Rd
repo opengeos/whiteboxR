@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_in_place_multiply}
 \alias{wbt_in_place_multiply}
-\title{In place multiply}
+\title{In place multiply
+Performs an in-place multiplication operation (input1 *= input2).}
 \usage{
 wbt_in_place_multiply(
   input1,
@@ -30,5 +31,7 @@ wbt_in_place_multiply(
 Returns the tool text outputs.
 }
 \description{
+In place multiply
 Performs an in-place multiplication operation (input1 *= input2).
 }
+\keyword{MathandStatsTools}

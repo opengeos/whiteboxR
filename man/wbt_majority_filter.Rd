@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_majority_filter}
 \alias{wbt_majority_filter}
-\title{Majority filter}
+\title{Majority filter
+Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.}
 \usage{
 wbt_majority_filter(
   input,
@@ -36,5 +37,7 @@ wbt_majority_filter(
 Returns the tool text outputs.
 }
 \description{
+Majority filter
 Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
 }
+\keyword{ImageProcessingToolsFilters}

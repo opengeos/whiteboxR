@@ -2,7 +2,8 @@
 % Please edit documentation in R/stream_network_analysis.R
 \name{wbt_long_profile_from_points}
 \alias{wbt_long_profile_from_points}
-\title{Long profile from points}
+\title{Long profile from points
+Plots the longitudinal profiles from flow-paths initiating from a set of vector points.}
 \usage{
 wbt_long_profile_from_points(
   d8_pntr,
@@ -39,5 +40,7 @@ wbt_long_profile_from_points(
 Returns the tool text outputs.
 }
 \description{
+Long profile from points
 Plots the longitudinal profiles from flow-paths initiating from a set of vector points.
 }
+\keyword{StreamNetworkAnalysis}

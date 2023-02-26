@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_minimal_curvature}
 \alias{wbt_minimal_curvature}
-\title{Minimal curvature}
+\title{Minimal curvature
+Calculates a mean curvature raster from an input DEM.}
 \usage{
 wbt_minimal_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_minimal_curvature(
 Returns the tool text outputs.
 }
 \description{
+Minimal curvature
 Calculates a mean curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_dissolve}
 \alias{wbt_dissolve}
-\title{Dissolve}
+\title{Dissolve
+Removes the interior, or shared, boundaries within a vector polygon coverage.}
 \usage{
 wbt_dissolve(
   input,
@@ -36,5 +37,7 @@ wbt_dissolve(
 Returns the tool text outputs.
 }
 \description{
+Dissolve
 Removes the interior, or shared, boundaries within a vector polygon coverage.
 }
+\keyword{GISAnalysis}

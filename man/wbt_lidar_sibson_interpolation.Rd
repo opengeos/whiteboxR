@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_sibson_interpolation}
 \alias{wbt_lidar_sibson_interpolation}
-\title{Lidar sibson interpolation}
+\title{Lidar sibson interpolation
+This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.}
 \usage{
 wbt_lidar_sibson_interpolation(
   input,
@@ -48,5 +49,7 @@ wbt_lidar_sibson_interpolation(
 Returns the tool text outputs.
 }
 \description{
+Lidar sibson interpolation
 This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
 }
+\keyword{LiDARTools}

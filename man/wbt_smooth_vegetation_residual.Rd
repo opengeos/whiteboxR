@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_smooth_vegetation_residual}
 \alias{wbt_smooth_vegetation_residual}
-\title{Smooth vegetation residual}
+\title{Smooth vegetation residual
+This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.}
 \usage{
 wbt_smooth_vegetation_residual(
   input,
@@ -39,5 +40,7 @@ wbt_smooth_vegetation_residual(
 Returns the tool text outputs.
 }
 \description{
+Smooth vegetation residual
 This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_classify_buildings_in_lidar}
 \alias{wbt_classify_buildings_in_lidar}
-\title{Classify buildings in lidar}
+\title{Classify buildings in lidar
+Reclassifies a LiDAR points that lie within vector building footprints.}
 \usage{
 wbt_classify_buildings_in_lidar(
   input,
@@ -33,5 +34,7 @@ wbt_classify_buildings_in_lidar(
 Returns the tool text outputs.
 }
 \description{
+Classify buildings in lidar
 Reclassifies a LiDAR points that lie within vector building footprints.
 }
+\keyword{LiDARTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_conditioned_latin_hypercube}
 \alias{wbt_conditioned_latin_hypercube}
-\title{Conditioned latin hypercube}
+\title{Conditioned latin hypercube
+Implements conditioned Latin Hypercube sampling.}
 \usage{
 wbt_conditioned_latin_hypercube(
   inputs,
@@ -35,7 +36,7 @@ wbt_conditioned_latin_hypercube(
 
 \item{prob}{Probability of random resample or resampling worst strata between \verb{[0,1]}.}
 
-\item{threshold}{Objective function values below the threshold stop the resampling iterations.}
+\item{threshold}{Objective function values below the theshold stop the resampling iterations.}
 
 \item{temp}{Initial annealing temperature between \verb{[0,1]}.}
 
@@ -43,7 +44,7 @@ wbt_conditioned_latin_hypercube(
 
 \item{cycle}{Number of iterations before decaying annealing temperature.}
 
-\item{average}{Weight the continuous objective function by the 1/N contributing strata.}
+\item{average}{Weight the continuous objective funtion by the 1/N contributing strata.}
 
 \item{wd}{Changes the working directory.}
 
@@ -57,5 +58,7 @@ wbt_conditioned_latin_hypercube(
 Returns the tool text outputs.
 }
 \description{
+Conditioned latin hypercube
 Implements conditioned Latin Hypercube sampling.
 }
+\keyword{MathandStatsTools}

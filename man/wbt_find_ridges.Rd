@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_find_ridges}
 \alias{wbt_find_ridges}
-\title{Find ridges}
+\title{Find ridges
+Identifies potential ridge and peak grid cells.}
 \usage{
 wbt_find_ridges(
   dem,
@@ -33,5 +34,7 @@ wbt_find_ridges(
 Returns the tool text outputs.
 }
 \description{
+Find ridges
 Identifies potential ridge and peak grid cells.
 }
+\keyword{GeomorphometricAnalysis}

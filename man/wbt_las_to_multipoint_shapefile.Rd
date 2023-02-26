@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_las_to_multipoint_shapefile}
 \alias{wbt_las_to_multipoint_shapefile}
-\title{Las to multipoint shapefile}
+\title{Las to multipoint shapefile
+Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.}
 \usage{
 wbt_las_to_multipoint_shapefile(
   input,
@@ -27,5 +28,7 @@ wbt_las_to_multipoint_shapefile(
 Returns the tool text outputs.
 }
 \description{
+Las to multipoint shapefile
 Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

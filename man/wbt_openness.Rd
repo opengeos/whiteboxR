@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_openness}
 \alias{wbt_openness}
-\title{Openness}
+\title{Openness
+This tool calculates the topographic openness index from an input DEM.}
 \usage{
 wbt_openness(
   input,
@@ -36,5 +37,7 @@ wbt_openness(
 Returns the tool text outputs.
 }
 \description{
+Openness
 This tool calculates the topographic openness index from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

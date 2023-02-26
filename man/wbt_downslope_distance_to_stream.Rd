@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_downslope_distance_to_stream}
 \alias{wbt_downslope_distance_to_stream}
-\title{Downslope distance to stream}
+\title{Downslope distance to stream
+Measures distance to the nearest downslope stream cell.}
 \usage{
 wbt_downslope_distance_to_stream(
   dem,
@@ -36,5 +37,7 @@ wbt_downslope_distance_to_stream(
 Returns the tool text outputs.
 }
 \description{
+Downslope distance to stream
 Measures distance to the nearest downslope stream cell.
 }
+\keyword{HydrologicalAnalysis}

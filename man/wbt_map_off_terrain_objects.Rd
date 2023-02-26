@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_map_off_terrain_objects}
 \alias{wbt_map_off_terrain_objects}
-\title{Map off terrain objects}
+\title{Map off terrain objects
+Maps off-terrain objects in a digital elevation model (DEM).}
 \usage{
 wbt_map_off_terrain_objects(
   dem,
@@ -36,5 +37,7 @@ wbt_map_off_terrain_objects(
 Returns the tool text outputs.
 }
 \description{
+Map off terrain objects
 Maps off-terrain objects in a digital elevation model (DEM).
 }
+\keyword{GeomorphometricAnalysis}

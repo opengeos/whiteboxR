@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_fill_missing_data}
 \alias{wbt_fill_missing_data}
-\title{Fill missing data}
+\title{Fill missing data
+Fills NoData holes in a DEM.}
 \usage{
 wbt_fill_missing_data(
   input,
@@ -39,5 +40,7 @@ wbt_fill_missing_data(
 Returns the tool text outputs.
 }
 \description{
+Fill missing data
 Fills NoData holes in a DEM.
 }
+\keyword{GeomorphometricAnalysis}

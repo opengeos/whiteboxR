@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_find_lowest_or_highest_points}
 \alias{wbt_find_lowest_or_highest_points}
-\title{Find lowest or highest points}
+\title{Find lowest or highest points
+Locates the lowest and/or highest valued cells in a raster.}
 \usage{
 wbt_find_lowest_or_highest_points(
   input,
@@ -33,5 +34,7 @@ wbt_find_lowest_or_highest_points(
 Returns the tool text outputs.
 }
 \description{
+Find lowest or highest points
 Locates the lowest and/or highest valued cells in a raster.
 }
+\keyword{GISAnalysis}

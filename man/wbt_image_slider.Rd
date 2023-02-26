@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_image_slider}
 \alias{wbt_image_slider}
-\title{Image slider}
+\title{Image slider
+This tool creates an image slider from two input images.}
 \usage{
 wbt_image_slider(
   input1,
@@ -54,5 +55,7 @@ wbt_image_slider(
 Returns the tool text outputs.
 }
 \description{
+Image slider
 This tool creates an image slider from two input images.
 }
+\keyword{ImageProcessingTools}

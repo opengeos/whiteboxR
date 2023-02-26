@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_integer_division}
 \alias{wbt_integer_division}
-\title{Integer division}
+\title{Integer division
+Performs an integer division operation on two rasters or a raster and a constant value.}
 \usage{
 wbt_integer_division(
   input1,
@@ -33,5 +34,7 @@ wbt_integer_division(
 Returns the tool text outputs.
 }
 \description{
+Integer division
 Performs an integer division operation on two rasters or a raster and a constant value.
 }
+\keyword{MathandStatsTools}

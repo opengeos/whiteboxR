@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_construct_vector_tin}
 \alias{wbt_construct_vector_tin}
-\title{Construct vector tin}
+\title{Construct vector tin
+Creates a vector triangular irregular network (TIN) for a set of vector points.}
 \usage{
 wbt_construct_vector_tin(
   input,
@@ -39,5 +40,7 @@ wbt_construct_vector_tin(
 Returns the tool text outputs.
 }
 \description{
+Construct vector tin
 Creates a vector triangular irregular network (TIN) for a set of vector points.
 }
+\keyword{GISAnalysis}

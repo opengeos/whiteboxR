@@ -20,3 +20,4 @@ Convenience method for setting RUST_BACKTRACE options for debugging
 wbt_rust_backtrace(TRUE)
 }
 }
+\keyword{General}

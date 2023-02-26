@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_trend_surface}
 \alias{wbt_trend_surface}
-\title{Trend surface}
+\title{Trend surface
+Estimates the trend surface of an input raster file.}
 \usage{
 wbt_trend_surface(
   input,
@@ -33,5 +34,7 @@ wbt_trend_surface(
 Returns the tool text outputs.
 }
 \description{
+Trend surface
 Estimates the trend surface of an input raster file.
 }
+\keyword{MathandStatsTools}

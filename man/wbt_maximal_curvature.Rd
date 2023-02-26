@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_maximal_curvature}
 \alias{wbt_maximal_curvature}
-\title{Maximal curvature}
+\title{Maximal curvature
+Calculates a mean curvature raster from an input DEM.}
 \usage{
 wbt_maximal_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_maximal_curvature(
 Returns the tool text outputs.
 }
 \description{
+Maximal curvature
 Calculates a mean curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

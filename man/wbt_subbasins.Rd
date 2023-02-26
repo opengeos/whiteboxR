@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_subbasins}
 \alias{wbt_subbasins}
-\title{Subbasins}
+\title{Subbasins
+Identifies the catchments, or sub-basin, draining to each link in a stream network.}
 \usage{
 wbt_subbasins(
   d8_pntr,
@@ -36,5 +37,7 @@ wbt_subbasins(
 Returns the tool text outputs.
 }
 \description{
+Subbasins
 Identifies the catchments, or sub-basin, draining to each link in a stream network.
 }
+\keyword{HydrologicalAnalysis}

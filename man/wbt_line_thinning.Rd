@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_line_thinning}
 \alias{wbt_line_thinning}
-\title{Line thinning}
+\title{Line thinning
+Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.}
 \usage{
 wbt_line_thinning(
   input,
@@ -30,5 +31,7 @@ wbt_line_thinning(
 Returns the tool text outputs.
 }
 \description{
+Line thinning
 Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
 }
+\keyword{ImageProcessingTools}

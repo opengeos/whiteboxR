@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_canny_edge_detection}
 \alias{wbt_canny_edge_detection}
-\title{Canny edge detection}
+\title{Canny edge detection
+This tool performs a Canny edge-detection filter on an input image.}
 \usage{
 wbt_canny_edge_detection(
   input,
@@ -42,5 +43,7 @@ wbt_canny_edge_detection(
 Returns the tool text outputs.
 }
 \description{
+Canny edge detection
 This tool performs a Canny edge-detection filter on an input image.
 }
+\keyword{ImageProcessingToolsFilters}

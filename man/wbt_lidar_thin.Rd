@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_thin}
 \alias{wbt_lidar_thin}
-\title{Lidar thin}
+\title{Lidar thin
+Thins a LiDAR point cloud, reducing point density.}
 \usage{
 wbt_lidar_thin(
   input,
@@ -39,5 +40,7 @@ wbt_lidar_thin(
 Returns the tool text outputs.
 }
 \description{
+Lidar thin
 Thins a LiDAR point cloud, reducing point density.
 }
+\keyword{LiDARTools}

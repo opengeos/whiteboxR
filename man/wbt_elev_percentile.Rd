@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_elev_percentile}
 \alias{wbt_elev_percentile}
-\title{Elev percentile}
+\title{Elev percentile
+Calculates the elevation percentile raster from a DEM.}
 \usage{
 wbt_elev_percentile(
   dem,
@@ -39,5 +40,7 @@ wbt_elev_percentile(
 Returns the tool text outputs.
 }
 \description{
+Elev percentile
 Calculates the elevation percentile raster from a DEM.
 }
+\keyword{GeomorphometricAnalysis}

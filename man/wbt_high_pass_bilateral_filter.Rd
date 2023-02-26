@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_high_pass_bilateral_filter}
 \alias{wbt_high_pass_bilateral_filter}
-\title{High pass bilateral filter}
+\title{High pass bilateral filter
+Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).}
 \usage{
 wbt_high_pass_bilateral_filter(
   input,
@@ -36,5 +37,7 @@ wbt_high_pass_bilateral_filter(
 Returns the tool text outputs.
 }
 \description{
+High pass bilateral filter
 Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
 }
+\keyword{ImageProcessingToolsFilters}

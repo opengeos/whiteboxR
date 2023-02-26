@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_fetch_analysis}
 \alias{wbt_fetch_analysis}
-\title{Fetch analysis}
+\title{Fetch analysis
+Performs an analysis of fetch or upwind distance to an obstacle.}
 \usage{
 wbt_fetch_analysis(
   dem,
@@ -36,5 +37,7 @@ wbt_fetch_analysis(
 Returns the tool text outputs.
 }
 \description{
+Fetch analysis
 Performs an analysis of fetch or upwind distance to an obstacle.
 }
+\keyword{GeomorphometricAnalysis}

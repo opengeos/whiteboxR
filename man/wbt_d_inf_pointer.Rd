@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_d_inf_pointer}
 \alias{wbt_d_inf_pointer}
-\title{D inf pointer}
+\title{D inf pointer
+Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.}
 \usage{
 wbt_d_inf_pointer(
   dem,
@@ -30,5 +31,7 @@ wbt_d_inf_pointer(
 Returns the tool text outputs.
 }
 \description{
+D inf pointer
 Calculates a D-infinity flow pointer (flow direction) raster from an input DEM.
 }
+\keyword{HydrologicalAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_lidar_ransac_planes}
 \alias{wbt_lidar_ransac_planes}
-\title{Lidar ransac planes}
+\title{Lidar ransac planes
+Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.}
 \usage{
 wbt_lidar_ransac_planes(
   input,
@@ -54,5 +55,7 @@ wbt_lidar_ransac_planes(
 Returns the tool text outputs.
 }
 \description{
+Lidar ransac planes
 Performs a RANSAC analysis to identify points within a LiDAR point cloud that belong to linear planes.
 }
+\keyword{LiDARTools}

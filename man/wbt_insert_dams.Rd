@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_insert_dams}
 \alias{wbt_insert_dams}
-\title{Insert dams}
+\title{Insert dams
+Calculates the impoundment size resulting from damming a DEM.}
 \usage{
 wbt_insert_dams(
   dem,
@@ -36,5 +37,7 @@ wbt_insert_dams(
 Returns the tool text outputs.
 }
 \description{
+Insert dams
 Calculates the impoundment size resulting from damming a DEM.
 }
+\keyword{HydrologicalAnalysis}

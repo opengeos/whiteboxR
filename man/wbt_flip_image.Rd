@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_flip_image}
 \alias{wbt_flip_image}
-\title{Flip image}
+\title{Flip image
+Reflects an image in the vertical or horizontal axis.}
 \usage{
 wbt_flip_image(
   input,
@@ -33,5 +34,7 @@ wbt_flip_image(
 Returns the tool text outputs.
 }
 \description{
+Flip image
 Reflects an image in the vertical or horizontal axis.
 }
+\keyword{ImageProcessingTools}

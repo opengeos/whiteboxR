@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_classify_overlap_points}
 \alias{wbt_classify_overlap_points}
-\title{Classify overlap points}
+\title{Classify overlap points
+Classifies or filters LAS points in regions of overlapping flight lines.}
 \usage{
 wbt_classify_overlap_points(
   input,
@@ -39,5 +40,7 @@ wbt_classify_overlap_points(
 Returns the tool text outputs.
 }
 \description{
+Classify overlap points
 Classifies or filters LAS points in regions of overlapping flight lines.
 }
+\keyword{LiDARTools}

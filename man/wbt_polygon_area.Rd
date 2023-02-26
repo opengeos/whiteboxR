@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis.R
 \name{wbt_polygon_area}
 \alias{wbt_polygon_area}
-\title{Polygon area}
+\title{Polygon area
+Calculates the area of vector polygons.}
 \usage{
 wbt_polygon_area(
   input,
@@ -27,5 +28,7 @@ wbt_polygon_area(
 Returns the tool text outputs.
 }
 \description{
+Polygon area
 Calculates the area of vector polygons.
 }
+\keyword{GISAnalysis}

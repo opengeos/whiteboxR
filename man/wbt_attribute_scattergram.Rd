@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_attribute_scattergram}
 \alias{wbt_attribute_scattergram}
-\title{Attribute scattergram}
+\title{Attribute scattergram
+Creates a scattergram for two field values of a vector's attribute table.}
 \usage{
 wbt_attribute_scattergram(
   input,
@@ -39,5 +40,7 @@ wbt_attribute_scattergram(
 Returns the tool text outputs.
 }
 \description{
+Attribute scattergram
 Creates a scattergram for two field values of a vector's attribute table.
 }
+\keyword{MathandStatsTools}

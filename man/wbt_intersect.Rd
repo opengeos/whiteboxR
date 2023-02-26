@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_intersect}
 \alias{wbt_intersect}
-\title{Intersect}
+\title{Intersect
+Identifies the parts of features in common between two input vector layers.}
 \usage{
 wbt_intersect(
   input,
@@ -36,5 +37,7 @@ wbt_intersect(
 Returns the tool text outputs.
 }
 \description{
+Intersect
 Identifies the parts of features in common between two input vector layers.
 }
+\keyword{GISAnalysisOverlayTools}

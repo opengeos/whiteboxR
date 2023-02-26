@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_fill_depressions_wang_and_liu}
 \alias{wbt_fill_depressions_wang_and_liu}
-\title{Fill depressions wang and liu}
+\title{Fill depressions wang and liu
+Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.}
 \usage{
 wbt_fill_depressions_wang_and_liu(
   dem,
@@ -36,5 +37,7 @@ wbt_fill_depressions_wang_and_liu(
 Returns the tool text outputs.
 }
 \description{
+Fill depressions wang and liu
 Fills all of the depressions in a DEM using the Wang and Liu (2006) method. Depression breaching should be preferred in most cases.
 }
+\keyword{HydrologicalAnalysis}

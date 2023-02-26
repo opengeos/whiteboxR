@@ -2,7 +2,8 @@
 % Please edit documentation in R/precision_agriculture.R
 \name{wbt_yield_normalization}
 \alias{wbt_yield_normalization}
-\title{Yield normalization}
+\title{Yield normalization
+This tool can be used to normalize the yield points for a field.}
 \usage{
 wbt_yield_normalization(
   input,
@@ -45,5 +46,7 @@ wbt_yield_normalization(
 Returns the tool text outputs.
 }
 \description{
+Yield normalization
 This tool can be used to normalize the yield points for a field.
 }
+\keyword{PrecisionAgriculture}

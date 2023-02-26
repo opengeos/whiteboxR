@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_root_mean_square_error}
 \alias{wbt_root_mean_square_error}
-\title{Root mean square error}
+\title{Root mean square error
+Calculates the RMSE and other accuracy statistics.}
 \usage{
 wbt_root_mean_square_error(
   input,
@@ -30,5 +31,7 @@ wbt_root_mean_square_error(
 Returns the tool text outputs.
 }
 \description{
+Root mean square error
 Calculates the RMSE and other accuracy statistics.
 }
+\keyword{MathandStatsTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis.R
 \name{wbt_tophat_transform}
 \alias{wbt_tophat_transform}
-\title{Tophat transform}
+\title{Tophat transform
+Performs either a white or black top-hat transform on an input image.}
 \usage{
 wbt_tophat_transform(
   input,
@@ -39,5 +40,7 @@ wbt_tophat_transform(
 Returns the tool text outputs.
 }
 \description{
+Tophat transform
 Performs either a white or black top-hat transform on an input image.
 }
+\keyword{ImageProcessingTools}

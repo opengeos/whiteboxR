@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_tangential_curvature}
 \alias{wbt_tangential_curvature}
-\title{Tangential curvature}
+\title{Tangential curvature
+Calculates a tangential curvature raster from an input DEM.}
 \usage{
 wbt_tangential_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_tangential_curvature(
 Returns the tool text outputs.
 }
 \description{
+Tangential curvature
 Calculates a tangential curvature raster from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_multiscale_roughness}
 \alias{wbt_multiscale_roughness}
-\title{Multiscale roughness}
+\title{Multiscale roughness
+Calculates surface roughness over a range of spatial scales.}
 \usage{
 wbt_multiscale_roughness(
   dem,
@@ -42,5 +43,7 @@ wbt_multiscale_roughness(
 Returns the tool text outputs.
 }
 \description{
+Multiscale roughness
 Calculates surface roughness over a range of spatial scales.
 }
+\keyword{GeomorphometricAnalysis}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/image_analysis_filters.R
 \name{wbt_corner_detection}
 \alias{wbt_corner_detection}
-\title{Corner detection}
+\title{Corner detection
+Identifies corner patterns in boolean images using hit-and-miss pattern matching.}
 \usage{
 wbt_corner_detection(
   input,
@@ -30,5 +31,7 @@ wbt_corner_detection(
 Returns the tool text outputs.
 }
 \description{
+Corner detection
 Identifies corner patterns in boolean images using hit-and-miss pattern matching.
 }
+\keyword{ImageProcessingToolsFilters}

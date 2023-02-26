@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_set_nodata_value}
 \alias{wbt_set_nodata_value}
-\title{Set nodata value}
+\title{Set nodata value
+Assign a specified value in an input image to the NoData value.}
 \usage{
 wbt_set_nodata_value(
   input,
@@ -33,5 +34,7 @@ wbt_set_nodata_value(
 Returns the tool text outputs.
 }
 \description{
+Set nodata value
 Assign a specified value in an input image to the NoData value.
 }
+\keyword{DataTools}

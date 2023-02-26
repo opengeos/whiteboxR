@@ -2,7 +2,8 @@
 % Please edit documentation in R/data_tools.R
 \name{wbt_convert_nodata_to_zero}
 \alias{wbt_convert_nodata_to_zero}
-\title{Convert nodata to zero}
+\title{Convert nodata to zero
+Converts nodata values in a raster to zero.}
 \usage{
 wbt_convert_nodata_to_zero(
   input,
@@ -30,5 +31,7 @@ wbt_convert_nodata_to_zero(
 Returns the tool text outputs.
 }
 \description{
+Convert nodata to zero
 Converts nodata values in a raster to zero.
 }
+\keyword{DataTools}

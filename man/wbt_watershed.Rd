@@ -2,7 +2,8 @@
 % Please edit documentation in R/hydro_analysis.R
 \name{wbt_watershed}
 \alias{wbt_watershed}
-\title{Watershed}
+\title{Watershed
+Identifies the watershed, or drainage basin, draining to a set of target cells.}
 \usage{
 wbt_watershed(
   d8_pntr,
@@ -36,5 +37,7 @@ wbt_watershed(
 Returns the tool text outputs.
 }
 \description{
+Watershed
 Identifies the watershed, or drainage basin, draining to a set of target cells.
 }
+\keyword{HydrologicalAnalysis}

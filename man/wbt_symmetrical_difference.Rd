@@ -2,7 +2,8 @@
 % Please edit documentation in R/gis_analysis_overlay.R
 \name{wbt_symmetrical_difference}
 \alias{wbt_symmetrical_difference}
-\title{Symmetrical difference}
+\title{Symmetrical difference
+Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.}
 \usage{
 wbt_symmetrical_difference(
   input,
@@ -36,5 +37,7 @@ wbt_symmetrical_difference(
 Returns the tool text outputs.
 }
 \description{
+Symmetrical difference
 Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 }
+\keyword{GISAnalysisOverlayTools}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/terrain_analysis.R
 \name{wbt_accumulation_curvature}
 \alias{wbt_accumulation_curvature}
-\title{Accumulation curvature}
+\title{Accumulation curvature
+This tool calculates accumulation curvature from an input DEM.}
 \usage{
 wbt_accumulation_curvature(
   dem,
@@ -36,5 +37,7 @@ wbt_accumulation_curvature(
 Returns the tool text outputs.
 }
 \description{
+Accumulation curvature
 This tool calculates accumulation curvature from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

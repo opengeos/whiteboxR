@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_atan2}
 \alias{wbt_atan2}
-\title{Atan2}
+\title{Atan2
+Returns the 2-argument inverse tangent (atan2).}
 \usage{
 wbt_atan2(
   input_y,
@@ -33,5 +34,7 @@ wbt_atan2(
 Returns the tool text outputs.
 }
 \description{
+Atan2
 Returns the 2-argument inverse tangent (atan2).
 }
+\keyword{MathandStatsTools}

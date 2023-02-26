@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_recover_flightline_info}
 \alias{wbt_recover_flightline_info}
-\title{Recover flightline info}
+\title{Recover flightline info
+Associates LiDAR points by their flightlines.}
 \usage{
 wbt_recover_flightline_info(
   input,
@@ -42,5 +43,7 @@ wbt_recover_flightline_info(
 Returns the tool text outputs.
 }
 \description{
+Recover flightline info
 Associates LiDAR points by their flightlines.
 }
+\keyword{LiDARTools}

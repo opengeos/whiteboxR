@@ -2,7 +2,8 @@
 % Please edit documentation in R/lidar_analysis.R
 \name{wbt_sort_lidar}
 \alias{wbt_sort_lidar}
-\title{Sort lidar}
+\title{Sort lidar
+Sorts LiDAR points based on their properties.}
 \usage{
 wbt_sort_lidar(
   input,
@@ -33,5 +34,7 @@ wbt_sort_lidar(
 Returns the tool text outputs.
 }
 \description{
+Sort lidar
 Sorts LiDAR points based on their properties.
 }
+\keyword{LiDARTools}

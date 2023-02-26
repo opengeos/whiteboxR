@@ -2,7 +2,8 @@
 % Please edit documentation in R/machine_learning.R
 \name{wbt_logistic_regression}
 \alias{wbt_logistic_regression}
-\title{Logistic regression}
+\title{Logistic regression
+Performs a logistic regression analysis using training site polygons/points and predictor rasters.}
 \usage{
 wbt_logistic_regression(
   inputs,
@@ -42,5 +43,7 @@ wbt_logistic_regression(
 Returns the tool text outputs.
 }
 \description{
+Logistic regression
 Performs a logistic regression analysis using training site polygons/points and predictor rasters.
 }
+\keyword{MachineLearning}

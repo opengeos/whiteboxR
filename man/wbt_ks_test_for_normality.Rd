@@ -2,7 +2,8 @@
 % Please edit documentation in R/math_stat_analysis.R
 \name{wbt_ks_test_for_normality}
 \alias{wbt_ks_test_for_normality}
-\title{Ks test for normality}
+\title{Ks test for normality
+Evaluates whether the values in a raster are normally distributed.}
 \usage{
 wbt_ks_test_for_normality(
   input,
@@ -33,5 +34,7 @@ wbt_ks_test_for_normality(
 Returns the tool text outputs.
 }
 \description{
+Ks test for normality
 Evaluates whether the values in a raster are normally distributed.
 }
+\keyword{MathandStatsTools}
