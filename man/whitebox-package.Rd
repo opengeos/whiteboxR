@@ -18,7 +18,7 @@ An R frontend for the 'WhiteboxTools' library, which is an advanced geospatial d
 \item \strong{\code{whitebox.max_procs}} - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
 
-The package options can be overridden with system environment variables: \code{R_WHITEBOX_EXE_PATH} (character) and \code{R_WHITEBOX_VERBOSE}, respectively.
+The package options can be overridden with system environment variables: \code{R_WHITEBOX_EXE_PATH}, \code{R_WHITEBOX_WD}, \code{R_WHITEBOX_VERBOSE}, \code{R_WHITEBOX_COMPRESS_RASTERS} and \code{R_WHITEBOX_MAX_PROCS}.
 }
 
 \seealso{

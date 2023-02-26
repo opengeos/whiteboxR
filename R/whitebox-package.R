@@ -11,7 +11,7 @@
 #'
 #' - **`whitebox.max_procs`** - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: `-1` uses all of the available cores.
 #'
-#' The package options can be overridden with system environment variables: `R_WHITEBOX_EXE_PATH` (character) and `R_WHITEBOX_VERBOSE`, respectively.
+#' The package options can be overridden with system environment variables: `R_WHITEBOX_EXE_PATH`, `R_WHITEBOX_WD`, `R_WHITEBOX_VERBOSE`, `R_WHITEBOX_COMPRESS_RASTERS` and `R_WHITEBOX_MAX_PROCS`.
 #'
 #' @seealso [wbt_init()], [wbt_options()], [install_whitebox()]
 "_PACKAGE"
