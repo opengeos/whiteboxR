@@ -32,7 +32,9 @@ test_that("wbt toolchains with >1 input", {
   
   # dem1: set the CRS; use wbt_source() to control the temp file location
   demt <- file.path(tempdir(), "dem.tif")
-  dem1 <- wbt_source(terra::set.crs(terra::rast(dem), "EPSG:26918"), dsn = demt)
+  ras <- terra::rast(dem)
+  terra::set.crs(ras, "EPSG:26918")
+  dem1 <- wbt_source(ras, dsn = demt)
   
   # dem2: in temp directory
   # dem2 <- file.path(tempdir(), "DEM.tif")
