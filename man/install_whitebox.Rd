@@ -4,11 +4,11 @@
 \alias{wbt_install}
 \alias{install_whitebox}
 \alias{wbt_install_extension}
-\title{Download and Install WhiteboxTools}
+\title{Download and Install 'WhiteboxTools'}
 \usage{
-wbt_install(pkg_dir = find.package("whitebox"), force = FALSE)
+wbt_install(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 
-install_whitebox(pkg_dir = find.package("whitebox"), force = FALSE)
+install_whitebox(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 
 wbt_install_extension(
   extension = c("GeneralToolsetExtension", "AgricultureToolset",
@@ -19,7 +19,9 @@ wbt_install_extension(
 \arguments{
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
 
-\item{force}{logical. Default \code{FALSE}. Force install?}
+\item{force}{logical. Force install? Default \code{FALSE}. When \code{remove=TRUE} passed to \code{unlink()} to change permissions to allow removal of files/directories.}
+
+\item{remove}{logical. Remove contents of "WBT" folder from \code{pkg_dir}? Default: \code{FALSE}}
 
 \item{extension}{Extension name}
 
@@ -29,10 +31,14 @@ wbt_install_extension(
 Prints out the location of the WhiteboxTools binary, if found. \code{NULL} otherwise.
 }
 \description{
-This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+This function downloads the 'WhiteboxTools' binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+}
+\details{
+'WhiteboxTools' and all of its extensions can be uninstalled by passing the \code{remove=TRUE} argument.
 }
 \examples{
 \dontrun{
 install_whitebox()
 }
 }
+\keyword{General}

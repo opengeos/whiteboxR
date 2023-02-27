@@ -1,11 +1,14 @@
-#' Initialize WhiteboxTools
-#'
-#' `wbt_init()`: Check if a suitable WhiteboxTools executable is present. Search default path in package directory or set it manually with `exe_path`.
+#' Initialize 'WhiteboxTools'
+#' 
+#' `wbt_init()`: Check if a suitable 'WhiteboxTools' executable is present. Search default path in package directory or set it manually with `exe_path`.
 #'
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
 #' @param ... additional arguments to `wbt_options()`
+#' @param check_version Check version of 'WhiteboxTools' installed against version R package was built for? Default: `TRUE`
+#'
 #' @return `wbt_init()`: logical; `TRUE` if binary file is found at `exe_path`
 #' @export
+#' @keywords General
 #' @seealso [install_whitebox()] [whitebox]
 #' @examples
 #' \dontrun{
@@ -14,7 +17,9 @@
 #' # set path to binary as an argument
 #' # wbt_init(exe_path = "not/a/valid/path/whitebox_tools.exe")
 #' }
-wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
+wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
+                     ...,
+                     check_version = TRUE) {
 
   # optional parameters specified by ...
   initargs <- list(...)
@@ -51,6 +56,36 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
     if (wbt_verbose()) {
       message("WhiteboxTools Executable Path (whitebox.exe_path) reverted to:\n\t", new_exe_path)
     }
+  } 
+  if (check_version) {
+    # check version info, provide ONE message per session if mismatched
+    exv <- try(wbt_version(extract = TRUE), silent = TRUE)
+    if (is.na(exv)) {
+      exv <- "<NA>"
+    }
+    pkv <- try(attr(whitebox::wbttools, 'version'), silent = TRUE)
+    if (is.na(pkv)) {
+      pkv <- "<NA>"
+    }
+    if (!inherits(exv, 'try-error') && !inherits(pkv, 'try-error')) {
+      if (isTRUE(exv != pkv)) {
+        warned <- try(get("whitebox.warned_version_difference",
+                          envir = whitebox::whitebox.env),
+                      silent = TRUE)
+        if (inherits(warned, 'try-error')) {
+          warned <- FALSE
+        }
+        if (wbt_verbose() && isFALSE(warned)) {
+          message("NOTE: Installed WhiteboxTools version (", exv, 
+                  ") is ", ifelse(exv > pkv, "newer", "older"),
+                  " than the package data (", pkv, ").")
+          try(assign("whitebox.warned_version_difference",
+                     value = TRUE,
+                     envir = whitebox::whitebox.env),
+              silent = TRUE)
+        }
+      }
+    }
   }
   return(invisible(res1 && res2))
 }
@@ -70,6 +105,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE), ...) {
 #' @return `wbt_options()`: an invisible list containing current `whitebox.exe_path`, `whitebox.verbose`, `whitebox.compress_rasters`, and `whitebox.max_procs` options
 #' @rdname wbt_init
 #' @export
+#' @keywords General
 #' @examples
 #' \dontrun{
 #'
@@ -140,17 +176,16 @@ wbt_options <- function(exe_path = NULL,
   ))
 }
 
-#' @description `wbt_exe_path()`: Get the file path of the WhiteboxTools executable.
+#' @description `wbt_exe_path()`: Get the file path of the 'WhiteboxTools' executable.
 #'
 #' @details `wbt_exe_path()`: Checks system environment variable `R_WHITEBOX_EXE_PATH` and package option `whitebox.exe_path`. Set your desired path with either `Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")` or `options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")`. The default, backwards-compatible path is returned by `wbt_default_path()`
 #'
-#' @param exe_path Optional: User-supplied path to WhiteboxTools executable. Default: `NULL`
+#' @param exe_path Optional: User-supplied path to 'WhiteboxTools' executable. Default: `NULL`
 #' @param shell_quote Return `shQuote()` result?
 #'
-#' @aliases wbt_default_path
-#'
-#' @return Returns the file path of WhiteboxTools executable.
+#' @return Returns the file path of 'WhiteboxTools' executable.
 #' @export
+#' @keywords General
 #' @rdname wbt_init
 #' @examples
 #' \dontrun{
@@ -160,6 +195,7 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   syswbt <- Sys.getenv("R_WHITEBOX_EXE_PATH")
   pkgwbt <- getOption("whitebox.exe_path")
   defwbt <- wbt_default_path()
+  pthwbt <- Sys.which(basename(defwbt))
 
   if (!is.null(exe_path) && file.exists(exe_path)) {
     # user specified as argument
@@ -170,6 +206,9 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   } else if (!is.null(pkgwbt) && file.exists(pkgwbt)) {
     # user specified as package option
     res <- pkgwbt
+  } else if (!is.na(pthwbt) && pthwbt != "" && file.exists(pthwbt)) {
+    # whitebox_tools is on PATH
+    res <- pthwbt
   } else {
     res <- defwbt
   }
@@ -179,8 +218,11 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   }
   res
 }
-
+#' @description `wbt_default_path()`: Get the default file path of the 'WhiteboxTools' executable.
+#'
+#' @details `wbt_default_path()`: Returns a path to 'WhiteboxTools' executable including a platform-specific executable (with or without .exe extension)
 #' @export
+#' @keywords General
 #' @rdname wbt_init
 wbt_default_path <- function() {
 
@@ -191,12 +233,25 @@ wbt_default_path <- function() {
   if (os == "Windows") {
     exe <- "whitebox_tools.exe"
   }
-
-  # backwards compatible path
-  file.path(find.package("whitebox"), "WBT", exe)
+  file.path(wbt_data_dir(), "WBT", exe)
 }
 
-#' @description `wbt_wd()`: Get or set the WhiteboxTools working directory. Default: `""` (unset) is your R working directory if no other options are set.
+#' @description `wbt_data_dir()`: Get the directory where 'WhiteboxTools' data are stored.
+#'
+#' @details `wbt_data_dir()`: Uses platform-specific user data directory from `tools::R_user_dir(package = "whitebox", which = "data")` on R 4.0+. On R<4 returns the original default `find.package("whitebox")`.
+#' @export
+#' @keywords General
+#' @rdname wbt_init
+wbt_data_dir <- function() {
+  if (R.version$major >= 4) {
+    tools::R_user_dir(package = "whitebox", which = "data")
+  } else {
+    # backwards compatible path
+    find.package("whitebox")
+  }
+}
+
+#' @description `wbt_wd()`: Get or set the 'WhiteboxTools' working directory. Default: `""` (unset) is your R working directory if no other options are set.
 #'
 #' @param wd character; Default: `NULL`; if set the package option `whitebox.wd` is set specified path (if directory exists)
 #'
@@ -205,6 +260,7 @@ wbt_default_path <- function() {
 #' @details `wbt_wd()`: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`.
 #' @rdname wbt_init
 #' @export
+#' @keywords General
 #' @examples
 #' \dontrun{
 #'
@@ -253,13 +309,14 @@ wbt_wd <- function(wd = NULL) {
   invisible(res)
 }
 
-#' @description `wbt_verbose()`: Check verbose options for WhiteboxTools
+#' @description `wbt_verbose()`: Check verbose options for 'WhiteboxTools'
 #'
 #' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
 #'
 #' @return `wbt_verbose()`: logical; defaults to result of `interactive()`
 #' @rdname wbt_init
 #' @export
+#' @keywords General
 #' @examples
 #' \dontrun{
 #'
@@ -311,13 +368,14 @@ wbt_verbose <- function(verbose = NULL) {
   invisible(res)
 }
 
-#' @description `wbt_compress_rasters()`: Check raster compression option for WhiteboxTools. Default: `FALSE`
+#' @description `wbt_compress_rasters()`: Check raster compression option for 'WhiteboxTools'. Default: `FALSE`
 #'
 #' @param compress_rasters Default: `NULL`; if logical, set the package option `whitebox.compress_rasters` to specified value
 #'
 #' @return `wbt_compress_rasters()`: logical; defaults to `NA`
 #' @rdname wbt_init
 #' @export
+#' @keywords General
 #' @examples
 #' \dontrun{
 #'
@@ -369,6 +427,7 @@ wbt_compress_rasters <- function(compress_rasters = NULL) {
 #' @return `wbt_max_procs()`: integer; defaults to `NA_integer_`
 #' @rdname wbt_init
 #' @export
+#' @keywords General
 #' @examples
 #' \dontrun{
 #'
@@ -410,14 +469,20 @@ wbt_max_procs <- function(max_procs = NULL) {
 
 
 #' @export
+#' @keywords General
 #' @rdname install_whitebox
-wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
+wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
 
   stopifnot(is.logical(force))
+  stopifnot(is.logical(remove))
   stopifnot(length(pkg_dir) == 1)
   stopifnot(is.character(pkg_dir))
 
   pkg_dir <- path.expand(pkg_dir)
+
+  if (!is.na(remove) && remove) {
+    unlink(list.files(pkg_dir, recursive = TRUE, full.names = TRUE), force = force, recursive = TRUE)
+  }
 
   # Check for binary file in 'WBT' directory
   exe_path <- wbt_default_path()
@@ -433,7 +498,7 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
   }
 
   # if not in package directory, and user has not specified a path
-  if (!file.exists(exe_path) || pkg_dir != find.package('whitebox') || force) {
+  if (!file.exists(exe_path) || pkg_dir != wbt_default_path() || force) {
 
     # install_whitebox/wbt_install is 64-bit only
     if (.Machine$sizeof.pointer != 8) {
@@ -520,12 +585,15 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
 
 # many packages provide an "install_*" method; alias wbt_install mirrors the wbt_ prefix for most operations. Documentation refers to install_whitebox()
 
-#' Download and Install WhiteboxTools
+#' Download and Install 'WhiteboxTools'
+#' 
+#' This function downloads the 'WhiteboxTools' binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
 #'
-#' This function downloads the WhiteboxTools binary if needed. Pre-compiled binaries are only available for download for 64-bit Linux (Ubuntu 20.04), Windows and Mac OS (Intel) platforms. If you need WhiteboxTools for another platform follow the instructions here: \url{https://github.com/jblindsay/whitebox-tools}
+#' 'WhiteboxTools' and all of its extensions can be uninstalled by passing the `remove=TRUE` argument.
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
-#' @param force logical. Default `FALSE`. Force install?
+#' @param force logical. Force install? Default `FALSE`. When `remove=TRUE` passed to `unlink()` to change permissions to allow removal of files/directories.
+#' @param remove logical. Remove contents of "WBT" folder from `pkg_dir`? Default: `FALSE`
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
 #' @aliases wbt_install
 #' @examples
@@ -533,13 +601,15 @@ wbt_install <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
 #' install_whitebox()
 #' }
 #' @export
-install_whitebox <- function(pkg_dir = find.package("whitebox"), force = FALSE) {
-  wbt_install(pkg_dir = pkg_dir, force = force)
+#' @keywords General
+install_whitebox <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
+  wbt_install(pkg_dir = pkg_dir, force = force, remove = TRUE)
 }
 
 #' @param extension Extension name
 #' @param destdir Directory to create `/plugins/` directory for extracting extensions
 #' @export
+#' @keywords General
 #' @rdname install_whitebox
 #' @importFrom utils unzip
 wbt_install_extension <- function(extension = c(
@@ -577,8 +647,8 @@ wbt_install_extension <- function(extension = c(
   invisible(unlink(fn))
 }
 
-#' Activate WhiteboxTools Extension Products
-#'
+#' Activate 'WhiteboxTools' Extensions
+#' 
 #' @param email Email Address
 #' @param activation_key Activation Key
 #' @param seat Seat Number (Default `1`)
@@ -586,6 +656,7 @@ wbt_install_extension <- function(extension = c(
 #'
 #' @return `0` for success (invisibly). Try-error on error.
 #' @export
+#' @keywords General
 wbt_activate <- function(email, activation_key, seat = 1,
                          destdir = dirname(wbt_exe_path(shell_quote = FALSE))) {
   exeactivate <- ifelse(Sys.info()[["sysname"]] == "Windows",
@@ -594,10 +665,11 @@ wbt_activate <- function(email, activation_key, seat = 1,
   invisible(try(system(file.path(destdir, "plugins", exeactivate), input = input)))
 }
 
-#' Help description for WhiteboxTools
-#'
-#' @return Returns the help description for WhiteboxTools as an R character vector.
+#' Help description for 'WhiteboxTools'
+#' 
+#' @return Returns the help description for 'WhiteboxTools' as an R character vector.
 #' @export
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -612,10 +684,11 @@ wbt_help <- function() {
 }
 
 
-#' License information for WhiteboxTools
-#'
+#' License information for 'WhiteboxTools'
+#' 
 #' @return Returns the license information for WhiteboxTools as an R character vector.
 #' @export
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -630,30 +703,35 @@ wbt_license <- function() {
 }
 
 
-#' Version information for WhiteboxTools
+#' Version information for 'WhiteboxTools'
 #'
-#' @return Returns the version information for WhiteboxTools as an R character vector.
+#' @param extract Extract semantic version number from first line of result? Default: `FALSE`
+#'
+#' @return Returns the version information for 'WhiteboxTools' as an R character vector.
 #' @export
-#'
+#' @keywords General
 #' @examples
 #' \dontrun{
 #' wbt_version()
 #' }
-wbt_version <- function() {
-  ret <- wbt_system_call("--version")
+wbt_version <- function(extract = FALSE) {
+  ret <- wbt_system_call("--version", check_version = FALSE)
+  if (extract) {
+    return(gsub(".*\\bv([0-9\\.]+)\\b.*", "\\1", ret[1]))
+  }
   if (wbt_verbose()) {
     cat(ret, sep = "\n")
   }
   invisible(ret)
 }
 
-
-#' All available tools in WhiteboxTools
-#'
+#' All available tools in 'WhiteboxTools'
+#' 
 #' @param keywords Keywords may be used to search available tools. Default `"''"` returns all available tools.
 #'
 #' @return Return all available tools in WhiteboxTools that contain the keywords.
 #' @export
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -670,13 +748,14 @@ wbt_list_tools <- function(keywords = "''") {
 
 
 #' The toolbox for a specific tool in WhiteboxTools
-#'
+#' 
 #' Retrieve the toolbox for a specific tool.
 #'
 #' @param tool_name The name of the tool.
 #' @details Leaving `tool_name` as default `NULL` returns results for all tools, but does not work on Windows.
 #' @return Returns the toolbox for a specific tool.
 #' @export
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -699,8 +778,8 @@ wbt_toolbox <- function(tool_name = NULL) {
 }
 
 
-#' Help description for a specific tool in WhiteboxTools
-#'
+#' Help description for a specific tool in 'WhiteboxTools'
+#' 
 #' Retrieves the help description for a specific tool.
 #'
 #' @param tool_name The name of the tool.
@@ -708,6 +787,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 #' @return Returns the help description for a specific tool.
 #' @details Leaving `tool_name` as default `NULL` returns results for all tools, but does not work on Windows.
 #' @export
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -724,7 +804,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 }
 
 
-#' Tool parameter descriptions for a specific tool in WhiteboxTools
+#' Tool parameter descriptions for a specific tool in 'WhiteboxTools'
 #'
 #' Retrieves the tool parameter descriptions for a specific tool.
 #'
@@ -735,6 +815,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 #'
 #' @return Returns the tool parameter descriptions for a specific tool.
 #' @export
+#' @keywords General 
 #'
 #' @examples
 #' \dontrun{
@@ -749,13 +830,14 @@ wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
 }
 
 
-#' Source code for a specific tool in WhiteboxTools
+#' Source code for a specific tool in 'WhiteboxTools'
 #'
 #' Opens a web browser to view the source code for a specific tool on the projects source code repository.
 #' @param tool_name Name of the tool.
 #' @param viewer Show source code in browser? default: `TRUE`
 #' @return Returns a GitHub URL to view the source code of the tool.
-#' @export
+#' @export 
+#' @keywords General  
 #'
 #' @examples
 #' \dontrun{
@@ -773,7 +855,7 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
   invisible(ret)
 }
 
-#' Run a tool in WhiteboxTools by name
+#' Run a tool in 'WhiteboxTools' by name
 #'
 #' Runs a tool and specifies tool arguments. If the prefix "whitebox::" or "wbt_" is in `tool_name` it is removed to match the definitions in `wbt_list_tools()`
 #'
@@ -783,8 +865,8 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' @param command_only Return command that would be run with `system()`? Default: `FALSE`
 #'
 #' @return Returns the (character) output of the tool.
-#'
-#' @export
+#' @export 
+#' @keywords General
 #' @seealso \link{wbt_list_tools}
 #' @examples
 #' \dontrun{
@@ -850,7 +932,6 @@ wbt_internal_tool_name <- function(tool_name) {
   gsub("^(.)|_(.)", "\\U\\1\\2", gsub("^(whitebox::)?(wbt_)?", "", tool_name), perl = TRUE)
 }
 
-
 wbt_match_tool_name <- function(tool_name, result = c('tool_name', 'function_name')) {
   
   wbttools <- NULL
@@ -864,15 +945,26 @@ wbt_match_tool_name <- function(tool_name, result = c('tool_name', 'function_nam
   
 }
 
-
-# wrapper method for system()
+#' Wrapper method for `system()` calls of `whitebox_tools`
+#'
+#' @param argstring Concatenated string of parameters passed in tool command.
+#' @param tool_name 'WhiteboxTools' tool name
+#' @param command_only Return command only?
+#' @param ignore.stderr Ignore system() stderr output?
+#' @param shell_quote Should the executable path part of the command be quoted?
+#' @param check_version Should the version of 'WhiteboxTools' installed be checked against the version the package was built with?
+#' @param ... Additional arguments are passed to `wbt_init()`
+#' @keywords internal
+#' @noRd
 wbt_system_call <- function(argstring,
                             tool_name = NULL,
                             command_only = FALSE,
                             ignore.stderr = FALSE,
-                            shell_quote = TRUE) {
+                            shell_quote = TRUE,
+                            check_version = TRUE, 
+                            ...) {
 
-  wbt_init()
+  wbt_init(..., check_version = check_version)
   wbt_exe <- wbt_exe_path(shell_quote = shell_quote)
   args2 <- argstring
   # messages about misspecified arguments (e.g. tool_name to wbt_tool_help())
@@ -972,6 +1064,7 @@ wbt_file_path <- function(x, shell_quote = TRUE) {
 #'
 #' @return character.
 #' @export
+#' @keywords General datasets
 #'
 #' @examples
 #'
@@ -1011,7 +1104,8 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
 #'
 #' @return value of system environment variable `RUST_BACKTRACE`
 #' @export
-#' @examples 
+#' @keywords General
+#' @examples
 #' \dontrun{
 #' wbt_rust_backtrace(TRUE)
 #' }

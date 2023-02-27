@@ -25,7 +25,7 @@ wbt_split_with_lines(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Splits the lines or polygons in one layer using the lines in another layer.
 }
+\keyword{GISAnalysisOverlayTools}

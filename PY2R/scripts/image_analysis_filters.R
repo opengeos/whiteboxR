@@ -1,6 +1,6 @@
-#' Adaptive filter
+#' @title Adaptive filter
 #'
-#' Performs an adaptive filter on an image.
+#' @description Performs an adaptive filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -9,8 +9,10 @@
 #' @param threshold Difference from mean threshold, in standard deviations.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -39,9 +41,9 @@ wbt_adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold
 }
 
 
-#' Bilateral filter
+#' @title Bilateral filter
 #'
-#' A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
+#' @description A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -49,8 +51,10 @@ wbt_adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold
 #' @param sigma_int Standard deviation in intensity in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -76,9 +80,9 @@ wbt_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, 
 }
 
 
-#' Canny edge detection
+#' @title Canny edge detection
 #'
-#' This tool performs a Canny edge-detection filter on an input image.
+#' @description This tool performs a Canny edge-detection filter on an input image.
 #'
 #' @param input Name of the input raster image file.
 #' @param output Name of the output raster image file.
@@ -88,8 +92,10 @@ wbt_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma_int=1.0, 
 #' @param add_back Add the edge cells back to the input image.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -121,9 +127,9 @@ wbt_canny_edge_detection <- function(input, output, sigma=0.5, low=0.05, high=0.
 }
 
 
-#' Conservative smoothing filter
+#' @title Conservative smoothing filter
 #'
-#' Performs a conservative-smoothing filter on an image.
+#' @description Performs a conservative-smoothing filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -131,8 +137,10 @@ wbt_canny_edge_detection <- function(input, output, sigma=0.5, low=0.05, high=0.
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -158,16 +166,18 @@ wbt_conservative_smoothing_filter <- function(input, output, filterx=3, filtery=
 }
 
 
-#' Corner detection
+#' @title Corner detection
 #'
-#' Identifies corner patterns in boolean images using hit-and-miss pattern matching.
+#' @description Identifies corner patterns in boolean images using hit-and-miss pattern matching.
 #'
 #' @param input Input boolean image.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -187,9 +197,9 @@ wbt_corner_detection <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Diff of gaussian filter
+#' @title Diff of gaussian filter
 #'
-#' Performs a Difference of Gaussian (DoG) filter on an image.
+#' @description Performs a Difference of Gaussian (DoG) filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -197,8 +207,10 @@ wbt_corner_detection <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 #' @param sigma2 Standard deviation distance in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -224,9 +236,9 @@ wbt_diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, w
 }
 
 
-#' Diversity filter
+#' @title Diversity filter
 #'
-#' Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
+#' @description Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -234,8 +246,10 @@ wbt_diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, w
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -261,9 +275,9 @@ wbt_diversity_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 }
 
 
-#' Edge preserving mean filter
+#' @title Edge preserving mean filter
 #'
-#' Performs a simple edge-preserving mean filter on an input image.
+#' @description Performs a simple edge-preserving mean filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -271,8 +285,10 @@ wbt_diversity_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 #' @param threshold Maximum difference in values.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -296,9 +312,9 @@ wbt_edge_preserving_mean_filter <- function(input, output, threshold, filter=11,
 }
 
 
-#' Emboss filter
+#' @title Emboss filter
 #'
-#' Performs an emboss filter on an image, similar to a hillshade operation.
+#' @description Performs an emboss filter on an image, similar to a hillshade operation.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -306,8 +322,10 @@ wbt_edge_preserving_mean_filter <- function(input, output, threshold, filter=11,
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -333,17 +351,19 @@ wbt_emboss_filter <- function(input, output, direction="n", clip=0.0, wd=NULL, v
 }
 
 
-#' Fast almost gaussian filter
+#' @title Fast almost gaussian filter
 #'
-#' Performs a fast approximate Gaussian filter on an image.
+#' @description Performs a fast approximate Gaussian filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param sigma Standard deviation distance in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -366,17 +386,19 @@ wbt_fast_almost_gaussian_filter <- function(input, output, sigma=1.8, wd=NULL, v
 }
 
 
-#' Gaussian filter
+#' @title Gaussian filter
 #'
-#' Performs a Gaussian filter on an image.
+#' @description Performs a Gaussian filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param sigma Standard deviation distance in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -399,9 +421,9 @@ wbt_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL, verbose_mode
 }
 
 
-#' High pass bilateral filter
+#' @title High pass bilateral filter
 #'
-#' Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
+#' @description Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -409,8 +431,10 @@ wbt_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL, verbose_mode
 #' @param sigma_int Standard deviation in intensity in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -436,9 +460,9 @@ wbt_high_pass_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma
 }
 
 
-#' High pass filter
+#' @title High pass filter
 #'
-#' Performs a high-pass filter on an input image.
+#' @description Performs a high-pass filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -446,8 +470,10 @@ wbt_high_pass_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -473,9 +499,9 @@ wbt_high_pass_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 }
 
 
-#' High pass median filter
+#' @title High pass median filter
 #'
-#' Performs a high pass median filter on an input image.
+#' @description Performs a high pass median filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -484,8 +510,10 @@ wbt_high_pass_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 #' @param sig_digits Number of significant digits.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -514,9 +542,9 @@ wbt_high_pass_median_filter <- function(input, output, filterx=11, filtery=11, s
 }
 
 
-#' K nearest mean filter
+#' @title K nearest mean filter
 #'
-#' A k-nearest mean filter is a type of edge-preserving smoothing filter.
+#' @description A k-nearest mean filter is a type of edge-preserving smoothing filter.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -525,8 +553,10 @@ wbt_high_pass_median_filter <- function(input, output, filterx=11, filtery=11, s
 #' @param k k-value in pixels; this is the number of nearest-valued neighbours to use.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -555,9 +585,9 @@ wbt_k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5
 }
 
 
-#' Laplacian filter
+#' @title Laplacian filter
 #'
-#' Performs a Laplacian filter on an image.
+#' @description Performs a Laplacian filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -565,8 +595,10 @@ wbt_k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -592,17 +624,19 @@ wbt_laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, wd=N
 }
 
 
-#' Laplacian of gaussian filter
+#' @title Laplacian of gaussian filter
 #'
-#' Performs a Laplacian-of-Gaussian (LoG) filter on an image.
+#' @description Performs a Laplacian-of-Gaussian (LoG) filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param sigma Standard deviation in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -625,9 +659,9 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL,
 }
 
 
-#' Lee sigma filter
+#' @title Lee sigma filter
 #'
-#' Performs a Lee (Sigma) smoothing filter on an image.
+#' @description Performs a Lee (Sigma) smoothing filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -637,8 +671,10 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL,
 #' @param m M-threshold value the minimum allowable number of pixels within the intensity range.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -670,9 +706,9 @@ wbt_lee_sigma_filter <- function(input, output, filterx=11, filtery=11, sigma=10
 }
 
 
-#' Line detection filter
+#' @title Line detection filter
 #'
-#' Performs a line-detection filter on an image.
+#' @description Performs a line-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -681,8 +717,10 @@ wbt_lee_sigma_filter <- function(input, output, filterx=11, filtery=11, sigma=10
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -711,9 +749,9 @@ wbt_line_detection_filter <- function(input, output, variant="vertical", absvals
 }
 
 
-#' Majority filter
+#' @title Majority filter
 #'
-#' Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
+#' @description Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -721,8 +759,10 @@ wbt_line_detection_filter <- function(input, output, variant="vertical", absvals
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -748,9 +788,9 @@ wbt_majority_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, 
 }
 
 
-#' Maximum filter
+#' @title Maximum filter
 #'
-#' Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
+#' @description Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -758,8 +798,10 @@ wbt_majority_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, 
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -785,9 +827,9 @@ wbt_maximum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 }
 
 
-#' Mean filter
+#' @title Mean filter
 #'
-#' Performs a mean filter (low-pass filter) on an input image.
+#' @description Performs a mean filter (low-pass filter) on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -795,8 +837,10 @@ wbt_maximum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -822,9 +866,9 @@ wbt_mean_filter <- function(input, output, filterx=3, filtery=3, wd=NULL, verbos
 }
 
 
-#' Median filter
+#' @title Median filter
 #'
-#' Performs a median filter on an input image.
+#' @description Performs a median filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -833,8 +877,10 @@ wbt_mean_filter <- function(input, output, filterx=3, filtery=3, wd=NULL, verbos
 #' @param sig_digits Number of significant digits.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -863,9 +909,9 @@ wbt_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 }
 
 
-#' Minimum filter
+#' @title Minimum filter
 #'
-#' Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
+#' @description Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -873,8 +919,10 @@ wbt_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -900,9 +948,9 @@ wbt_minimum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 }
 
 
-#' Olympic filter
+#' @title Olympic filter
 #'
-#' Performs an olympic smoothing filter on an image.
+#' @description Performs an olympic smoothing filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -910,8 +958,10 @@ wbt_minimum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -937,9 +987,9 @@ wbt_olympic_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 }
 
 
-#' Percentile filter
+#' @title Percentile filter
 #'
-#' Performs a percentile filter on an input image.
+#' @description Performs a percentile filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -948,8 +998,10 @@ wbt_olympic_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 #' @param sig_digits Number of significant digits.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -978,17 +1030,19 @@ wbt_percentile_filter <- function(input, output, filterx=11, filtery=11, sig_dig
 }
 
 
-#' Prewitt filter
+#' @title Prewitt filter
 #'
-#' Performs a Prewitt edge-detection filter on an image.
+#' @description Performs a Prewitt edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1011,9 +1065,9 @@ wbt_prewitt_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FA
 }
 
 
-#' Range filter
+#' @title Range filter
 #'
-#' Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
+#' @description Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1021,8 +1075,10 @@ wbt_prewitt_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FA
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1048,17 +1104,19 @@ wbt_range_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 }
 
 
-#' Roberts cross filter
+#' @title Roberts cross filter
 #'
-#' Performs a Robert's cross edge-detection filter on an image.
+#' @description Performs a Robert's cross edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1081,17 +1139,19 @@ wbt_roberts_cross_filter <- function(input, output, clip=0.0, wd=NULL, verbose_m
 }
 
 
-#' Scharr filter
+#' @title Scharr filter
 #'
-#' Performs a Scharr edge-detection filter on an image.
+#' @description Performs a Scharr edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1114,9 +1174,9 @@ wbt_scharr_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FAL
 }
 
 
-#' Sobel filter
+#' @title Sobel filter
 #'
-#' Performs a Sobel edge-detection filter on an image.
+#' @description Performs a Sobel edge-detection filter on an image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1124,8 +1184,10 @@ wbt_scharr_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=FAL
 #' @param clip Optional amount to clip the distribution tails by, in percent (default is 0.0).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1151,9 +1213,9 @@ wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, wd=NULL, ve
 }
 
 
-#' Standard deviation filter
+#' @title Standard deviation filter
 #'
-#' Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
+#' @description Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1161,8 +1223,10 @@ wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, wd=NULL, ve
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1188,9 +1252,9 @@ wbt_standard_deviation_filter <- function(input, output, filterx=11, filtery=11,
 }
 
 
-#' Total filter
+#' @title Total filter
 #'
-#' Performs a total filter on an input image.
+#' @description Performs a total filter on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1198,8 +1262,10 @@ wbt_standard_deviation_filter <- function(input, output, filterx=11, filtery=11,
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1225,9 +1291,9 @@ wbt_total_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 }
 
 
-#' Unsharp masking
+#' @title Unsharp masking
 #'
-#' An image sharpening technique that enhances edges.
+#' @description An image sharpening technique that enhances edges.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -1236,8 +1302,10 @@ wbt_total_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 #' @param threshold Controls the minimal brightness change that will be sharpened.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -1266,9 +1334,9 @@ wbt_unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, thresho
 }
 
 
-#' User ined weights filter
+#' @title User ined weights filter
 #'
-#' Performs a user-defined weights filter on an image.
+#' @description Performs a user-defined weights filter on an image.
 #'
 #' @param input Input raster file.
 #' @param weights Input weights file.
@@ -1277,8 +1345,10 @@ wbt_unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, thresho
 #' @param normalize Normalize kernel weights? This can reduce edge effects and lessen the impact of data gaps (nodata) but is not suited when the kernel weights sum to zero.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingToolsFilters
 #'
 #' @return Returns the tool text outputs.
 #' @export

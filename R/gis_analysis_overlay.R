@@ -1,13 +1,15 @@
-#' Average overlay
+#' @title Average overlay
 #'
-#' Calculates the average for each grid cell from a group of raster images.
+#' @description Calculates the average for each grid cell from a group of raster images.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -27,17 +29,19 @@ wbt_average_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Clip
+#' @title Clip
 #'
-#' Extract all the features, or parts of features, that overlap with the features of the clip vector.
+#' @description Extract all the features, or parts of features, that overlap with the features of the clip vector.
 #'
 #' @param input Input vector file.
 #' @param clip Input clip polygon vector file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -58,9 +62,9 @@ wbt_clip <- function(input, clip, output, wd=NULL, verbose_mode=FALSE, compress_
 }
 
 
-#' Clip raster to polygon
+#' @title Clip raster to polygon
 #'
-#' Clips a raster to a vector polygon.
+#' @description Clips a raster to a vector polygon.
 #'
 #' @param input Input raster file.
 #' @param polygons Input vector polygons file.
@@ -68,8 +72,10 @@ wbt_clip <- function(input, clip, output, wd=NULL, verbose_mode=FALSE, compress_
 #' @param maintain_dimensions Maintain input raster dimensions?.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -93,17 +99,19 @@ wbt_clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensi
 }
 
 
-#' Count if
+#' @title Count if
 #'
-#' Counts the number of occurrences of a specified value in a cell-stack of rasters.
+#' @description Counts the number of occurrences of a specified value in a cell-stack of rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param value Search value (e.g. countif value = 5.0).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -124,17 +132,19 @@ wbt_count_if <- function(inputs, output, value, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Difference
+#' @title Difference
 #'
-#' Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
+#' @description Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -155,17 +165,19 @@ wbt_difference <- function(input, overlay, output, wd=NULL, verbose_mode=FALSE, 
 }
 
 
-#' Erase
+#' @title Erase
 #'
-#' Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
+#' @description Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
 #'
 #' @param input Input vector file.
 #' @param erase Input erase polygon vector file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -186,17 +198,19 @@ wbt_erase <- function(input, erase, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Erase polygon from raster
+#' @title Erase polygon from raster
 #'
-#' Erases (cuts out) a vector polygon from a raster.
+#' @description Erases (cuts out) a vector polygon from a raster.
 #'
 #' @param input Input raster file.
 #' @param polygons Input vector polygons file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -217,16 +231,18 @@ wbt_erase_polygon_from_raster <- function(input, polygons, output, wd=NULL, verb
 }
 
 
-#' Highest position
+#' @title Highest position
 #'
-#' Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
+#' @description Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -246,9 +262,9 @@ wbt_highest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, co
 }
 
 
-#' Intersect
+#' @title Intersect
 #'
-#' Identifies the parts of features in common between two input vector layers.
+#' @description Identifies the parts of features in common between two input vector layers.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -256,8 +272,10 @@ wbt_highest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, co
 #' @param snap Snap tolerance.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -281,17 +299,19 @@ wbt_intersect <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mod
 }
 
 
-#' Line intersections
+#' @title Line intersections
 #'
-#' Identifies points where the features of two vector line layers intersect.
+#' @description Identifies points where the features of two vector line layers intersect.
 #'
 #' @param input1 Input vector polyline file.
 #' @param input2 Input vector polyline file.
 #' @param output Output vector point file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -312,16 +332,18 @@ wbt_line_intersections <- function(input1, input2, output, wd=NULL, verbose_mode
 }
 
 
-#' Lowest position
+#' @title Lowest position
 #'
-#' Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
+#' @description Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -341,16 +363,18 @@ wbt_lowest_position <- function(inputs, output, wd=NULL, verbose_mode=FALSE, com
 }
 
 
-#' Max absolute overlay
+#' @title Max absolute overlay
 #'
-#' Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
+#' @description Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -370,16 +394,18 @@ wbt_max_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Max overlay
+#' @title Max overlay
 #'
-#' Evaluates the maximum value for each grid cell from a stack of input rasters.
+#' @description Evaluates the maximum value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -399,17 +425,19 @@ wbt_max_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Merge line segments
+#' @title Merge line segments
 #'
-#' Merges vector line segments into larger features.
+#' @description Merges vector line segments into larger features.
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -432,16 +460,18 @@ wbt_merge_line_segments <- function(input, output, snap=0.0, wd=NULL, verbose_mo
 }
 
 
-#' Min absolute overlay
+#' @title Min absolute overlay
 #'
-#' Evaluates the minimum absolute value for each grid cell from a stack of input rasters.
+#' @description Evaluates the minimum absolute value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -461,16 +491,18 @@ wbt_min_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE
 }
 
 
-#' Min overlay
+#' @title Min overlay
 #'
-#' Evaluates the minimum value for each grid cell from a stack of input rasters.
+#' @description Evaluates the minimum value for each grid cell from a stack of input rasters.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -490,16 +522,18 @@ wbt_min_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Multiply overlay
+#' @title Multiply overlay
 #'
-#' Calculates the sum for each grid cell from a group of raster images.
+#' @description Calculates the sum for each grid cell from a group of raster images.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -519,17 +553,19 @@ wbt_multiply_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, co
 }
 
 
-#' Percent equal to
+#' @title Percent equal to
 #'
-#' Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
+#' @description Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param comparison Input comparison raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -550,17 +586,19 @@ wbt_percent_equal_to <- function(inputs, comparison, output, wd=NULL, verbose_mo
 }
 
 
-#' Percent greater than
+#' @title Percent greater than
 #'
-#' Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
+#' @description Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param comparison Input comparison raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -581,17 +619,19 @@ wbt_percent_greater_than <- function(inputs, comparison, output, wd=NULL, verbos
 }
 
 
-#' Percent less than
+#' @title Percent less than
 #'
-#' Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
+#' @description Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
 #'
 #' @param inputs Input raster files.
 #' @param comparison Input comparison raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -612,17 +652,19 @@ wbt_percent_less_than <- function(inputs, comparison, output, wd=NULL, verbose_m
 }
 
 
-#' Pick from list
+#' @title Pick from list
 #'
-#' Outputs the value from a raster stack specified by a position raster.
+#' @description Outputs the value from a raster stack specified by a position raster.
 #'
 #' @param inputs Input raster files.
 #' @param pos_input Input position raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -643,16 +685,18 @@ wbt_pick_from_list <- function(inputs, pos_input, output, wd=NULL, verbose_mode=
 }
 
 
-#' Polygonize
+#' @title Polygonize
 #'
-#' Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
+#' @description Creates a polygon layer from two or more intersecting line features contained in one or more input vector line files.
 #'
 #' @param inputs Input vector polyline file.
 #' @param output Output vector polygon file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -672,17 +716,19 @@ wbt_polygonize <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress
 }
 
 
-#' Split with lines
+#' @title Split with lines
 #'
-#' Splits the lines or polygons in one layer using the lines in another layer.
+#' @description Splits the lines or polygons in one layer using the lines in another layer.
 #'
 #' @param input Input vector line or polygon file.
 #' @param split Input vector polyline file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -703,16 +749,18 @@ wbt_split_with_lines <- function(input, split, output, wd=NULL, verbose_mode=FAL
 }
 
 
-#' Sum overlay
+#' @title Sum overlay
 #'
-#' Calculates the sum for each grid cell from a group of raster images.
+#' @description Calculates the sum for each grid cell from a group of raster images.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -732,9 +780,9 @@ wbt_sum_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 }
 
 
-#' Symmetrical difference
+#' @title Symmetrical difference
 #'
-#' Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
+#' @description Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -742,8 +790,10 @@ wbt_sum_overlay <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compres
 #' @param snap Snap tolerance.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -767,9 +817,9 @@ wbt_symmetrical_difference <- function(input, overlay, output, snap=0.0, wd=NULL
 }
 
 
-#' Union
+#' @title Union
 #'
-#' Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
+#' @description Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
 #'
 #' @param input Input vector file.
 #' @param overlay Input overlay vector file.
@@ -777,8 +827,10 @@ wbt_symmetrical_difference <- function(input, overlay, output, snap=0.0, wd=NULL
 #' @param snap Snap tolerance.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -802,17 +854,19 @@ wbt_union <- function(input, overlay, output, snap=0.0, wd=NULL, verbose_mode=FA
 }
 
 
-#' Update nodata cells
+#' @title Update nodata cells
 #'
-#' Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
+#' @description Replaces the NoData values in an input raster with the corresponding values contained in a second update layer.
 #'
 #' @param input1 Input raster file 1.
 #' @param input2 Input raster file 2; update layer.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -833,9 +887,9 @@ wbt_update_nodata_cells <- function(input1, input2, output, wd=NULL, verbose_mod
 }
 
 
-#' Weighted overlay
+#' @title Weighted overlay
 #'
-#' Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
+#' @description Performs a weighted sum on multiple input rasters after converting each image to a common scale. The tool performs a multi-criteria evaluation (MCE).
 #'
 #' @param factors Input factor raster files.
 #' @param weights Weight values, contained in quotes and separated by commas or semicolons. Must have the same number as factors.
@@ -845,8 +899,10 @@ wbt_update_nodata_cells <- function(input1, input2, output, wd=NULL, verbose_mod
 #' @param scale_max Suitability scale maximum value (common values are 1.0, 100.0, and 255.0).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -876,17 +932,19 @@ wbt_weighted_overlay <- function(factors, weights, output, cost=NULL, constraint
 }
 
 
-#' Weighted sum
+#' @title Weighted sum
 #'
-#' Performs a weighted-sum overlay on multiple input raster images.
+#' @description Performs a weighted-sum overlay on multiple input raster images.
 #'
 #' @param inputs Input raster files.
 #' @param weights Weight values, contained in quotes and separated by commas or semicolons.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GISAnalysisOverlayTools
 #'
 #' @return Returns the tool text outputs.
 #' @export

@@ -1,3 +1,13 @@
+# whitebox 2.2.1
+
+ * Adds `wbt_data_dir()` for managing where WhiteboxTools "WBT" directory is installed.
+ 
+  * The new default path is a preferred location generated with `tools::R_user_dir(package="whitebox")` on R 4.0+
+  
+ * If `"whitebox_tools"` is found on your PATH, you no longer need any custom setup of `whitebox.exe_path`. The path and options will be detected automatically via `Sys.which("whitebox_tools")`.
+ 
+  * Custom options set within the session or environment take precedence over PATH.
+
 # whitebox 2.2.0
 
  * Updates for WhiteboxTools v2.2.0

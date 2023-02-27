@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -86,32 +86,57 @@
     <h2>Arguments</h2>
     <dl><dt>input</dt>
 <dd><p>Name of the input LiDAR points (leave blank to use all files in WorkingDirectory.</p></dd>
+
+
 <dt>output</dt>
 <dd><p>Output raster file (including extension).</p></dd>
+
+
 <dt>parameter</dt>
 <dd><p>Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'user_data'.</p></dd>
+
+
 <dt>returns</dt>
 <dd><p>Point return types to include; options are 'all' (default), 'last', 'first'.</p></dd>
+
+
 <dt>resolution</dt>
 <dd><p>Output raster's grid resolution.</p></dd>
+
+
 <dt>exclude_cls</dt>
 <dd><p>Optional exclude classes from interpolation; Valid class values range from 0 to 18, based on LAS specifications. Example, --exclude_cls='3,4,5,6,7,18'.</p></dd>
+
+
 <dt>minz</dt>
 <dd><p>Optional minimum elevation for inclusion in interpolation.</p></dd>
+
+
 <dt>maxz</dt>
 <dd><p>Optional maximum elevation for inclusion in interpolation.</p></dd>
+
+
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
+
+
 <dt>verbose_mode</dt>
 <dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+
+
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+
+
 <dt>command_only</dt>
 <dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the tool text outputs.</p>
+    
+
+<p>Returns the tool text outputs.</p>
     </div>
 
   </div>
@@ -126,7 +151,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

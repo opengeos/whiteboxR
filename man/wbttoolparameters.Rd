@@ -3,12 +3,24 @@
 \docType{data}
 \name{wbttoolparameters}
 \alias{wbttoolparameters}
-\title{WhiteboxTools Tool Parameters}
+\title{'WhiteboxTools' Tool Parameters}
 \format{
-A \code{data.frame} with 2169 observations of 13 variables
+An object of class \code{data.frame} with 2169 rows and 13 columns.
+}
+\source{
+\href{https://github.com/jblindsay/whitebox-tools/releases/}{WhiteboxTools}
+}
+\usage{
+wbttoolparameters
+}
+\description{
+This data set is a \code{data.frame} containing tool parameters and associated metadata
+}
+\section{Variables}{
+
 \itemize{
 \item \code{"function_name"} - R function name
-\item \code{"tool_name"} - WhiteboxTools tool name
+\item \code{"tool_name"} - 'WhiteboxTools' tool name
 \item \code{"name"} - parameter name
 \item \code{"flags"} - flags used to specify parameter on command line; comma separated
 \item \code{"description"} - parameter description
@@ -21,16 +33,9 @@ A \code{data.frame} with 2169 observations of 13 variables
 \item \code{"is_output"} - logical. Classification of 'output' parameters
 }
 }
-\source{
-\href{https://github.com/jblindsay/whitebox-tools/releases/}{WhiteboxTools}
-}
-\usage{
-wbttoolparameters
-}
-\description{
-This data set is a \code{data.frame} containing tool parameters and associated metadata
-}
+
 \seealso{
 \link{wbttools} \code{\link[=wbt_tool_parameters]{wbt_tool_parameters()}}
 }
+\keyword{General}
 \keyword{datasets}

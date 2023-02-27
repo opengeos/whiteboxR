@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_tool_help}
 \alias{wbt_tool_help}
-\title{Help description for a specific tool in WhiteboxTools}
+\title{Help description for a specific tool in 'WhiteboxTools'}
 \usage{
 wbt_tool_help(tool_name = NULL)
 }
@@ -23,3 +23,4 @@ Leaving \code{tool_name} as default \code{NULL} returns results for all tools, b
 wbt_tool_help("lidar_info")
 }
 }
+\keyword{General}

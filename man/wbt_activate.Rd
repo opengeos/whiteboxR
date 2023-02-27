@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_activate}
 \alias{wbt_activate}
-\title{Activate WhiteboxTools Extension Products}
+\title{Activate 'WhiteboxTools' Extensions}
 \usage{
 wbt_activate(
   email,
@@ -24,5 +24,6 @@ wbt_activate(
 \code{0} for success (invisibly). Try-error on error.
 }
 \description{
-Activate WhiteboxTools Extension Products
+Activate 'WhiteboxTools' Extensions
 }
+\keyword{General}

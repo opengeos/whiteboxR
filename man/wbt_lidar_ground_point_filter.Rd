@@ -43,7 +43,7 @@ wbt_lidar_ground_point_filter(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Identifies ground points within LiDAR dataset using a slope-based method.
 }
+\keyword{LiDARTools}

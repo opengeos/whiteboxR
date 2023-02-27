@@ -1,6 +1,6 @@
-#' Change vector analysis
+#' @title Change vector analysis
 #'
-#' Performs a change vector analysis on a two-date multi-spectral dataset.
+#' @description Performs a change vector analysis on a two-date multi-spectral dataset.
 #'
 #' @param date1 Input raster files for the earlier date.
 #' @param date2 Input raster files for the later date.
@@ -8,8 +8,10 @@
 #' @param direction Output vector Direction raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -31,9 +33,9 @@ wbt_change_vector_analysis <- function(date1, date2, magnitude, direction, wd=NU
 }
 
 
-#' Closing
+#' @title Closing
 #'
-#' A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
+#' @description A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -41,8 +43,10 @@ wbt_change_vector_analysis <- function(date1, date2, magnitude, direction, wd=NU
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -68,9 +72,9 @@ wbt_closing <- function(input, output, filterx=11, filtery=11, wd=NULL, verbose_
 }
 
 
-#' Create colour composite
+#' @title Create colour composite
 #'
-#' Creates a colour-composite image from three bands of multispectral imagery.
+#' @description Creates a colour-composite image from three bands of multispectral imagery.
 #'
 #' @param red Input red band image file.
 #' @param green Input green band image file.
@@ -81,8 +85,10 @@ wbt_closing <- function(input, output, filterx=11, filtery=11, wd=NULL, verbose_
 #' @param zeros Optional flag to indicate if zeros are nodata values.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -113,17 +119,19 @@ wbt_create_colour_composite <- function(red, green, blue, output, opacity=NULL, 
 }
 
 
-#' Flip image
+#' @title Flip image
 #'
-#' Reflects an image in the vertical or horizontal axis.
+#' @description Reflects an image in the vertical or horizontal axis.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param direction Direction of reflection; options include 'v' (vertical), 'h' (horizontal), and 'b' (both).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -146,9 +154,9 @@ wbt_flip_image <- function(input, output, direction="vertical", wd=NULL, verbose
 }
 
 
-#' Ihs to rgb
+#' @title Ihs to rgb
 #'
-#' Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.
+#' @description Converts intensity, hue, and saturation (IHS) images into red, green, and blue (RGB) images.
 #'
 #' @param intensity Input intensity file.
 #' @param hue Input hue file.
@@ -159,8 +167,10 @@ wbt_flip_image <- function(input, output, direction="vertical", wd=NULL, verbose
 #' @param output Output colour-composite file. Only used if individual bands are not specified.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -193,9 +203,9 @@ wbt_ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 }
 
 
-#' Image slider
+#' @title Image slider
 #'
-#' This tool creates an image slider from two input images.
+#' @description This tool creates an image slider from two input images.
 #'
 #' @param input1 Name of the left input image file.
 #' @param palette1 Left image palette; options are 'grey', 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'rgb'.
@@ -209,8 +219,10 @@ wbt_ihs_to_rgb <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 #' @param height Image height, in pixels.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -252,17 +264,19 @@ wbt_image_slider <- function(input1, input2, output, palette1="grey", reverse1=F
 }
 
 
-#' Image stack profile
+#' @title Image stack profile
 #'
-#' Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
+#' @description Plots an image stack profile (i.e. signature) for a set of points and multispectral images.
 #'
 #' @param inputs Input multispectral image files.
 #' @param points Input vector points file.
 #' @param output Output HTML file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -283,16 +297,18 @@ wbt_image_stack_profile <- function(inputs, points, output, wd=NULL, verbose_mod
 }
 
 
-#' Integral image
+#' @title Integral image
 #'
-#' Transforms an input image (summed area table) into its integral image equivalent.
+#' @description Transforms an input image (summed area table) into its integral image equivalent.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -312,16 +328,18 @@ wbt_integral_image <- function(input, output, wd=NULL, verbose_mode=FALSE, compr
 }
 
 
-#' Line thinning
+#' @title Line thinning
 #'
-#' Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
+#' @description Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -341,17 +359,19 @@ wbt_line_thinning <- function(input, output, wd=NULL, verbose_mode=FALSE, compre
 }
 
 
-#' Mosaic
+#' @title Mosaic
 #'
-#' Mosaics two or more images together.
+#' @description Mosaics two or more images together.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
 #' @param method Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -376,9 +396,9 @@ wbt_mosaic <- function(output, inputs=NULL, method="nn", wd=NULL, verbose_mode=F
 }
 
 
-#' Mosaic with feathering
+#' @title Mosaic with feathering
 #'
-#' Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
+#' @description Mosaics two images together using a feathering technique in overlapping areas to reduce edge-effects.
 #'
 #' @param input1 Input raster file to modify.
 #' @param input2 Input reference raster file.
@@ -387,8 +407,10 @@ wbt_mosaic <- function(output, inputs=NULL, method="nn", wd=NULL, verbose_mode=F
 #' @param weight .
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -415,9 +437,9 @@ wbt_mosaic_with_feathering <- function(input1, input2, output, method="cc", weig
 }
 
 
-#' Normalized difference index
+#' @title Normalized difference index
 #'
-#' Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
+#' @description Calculate a normalized-difference index (NDI) from two bands of multispectral image data.
 #'
 #' @param input1 Input image 1 (e.g. near-infrared band).
 #' @param input2 Input image 2 (e.g. red band).
@@ -426,8 +448,10 @@ wbt_mosaic_with_feathering <- function(input1, input2, output, method="cc", weig
 #' @param correction Optional adjustment value (e.g. 1, or 0.16 for the optimal soil adjusted vegetation index, OSAVI).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -454,9 +478,9 @@ wbt_normalized_difference_index <- function(input1, input2, output, clip=0.0, co
 }
 
 
-#' Opening
+#' @title Opening
 #'
-#' An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
+#' @description An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -464,8 +488,10 @@ wbt_normalized_difference_index <- function(input1, input2, output, clip=0.0, co
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -491,17 +517,19 @@ wbt_opening <- function(input, output, filterx=11, filtery=11, wd=NULL, verbose_
 }
 
 
-#' Remove spurs
+#' @title Remove spurs
 #'
-#' Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
+#' @description Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param iterations Maximum number of iterations.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -524,9 +552,9 @@ wbt_remove_spurs <- function(input, output, iterations=10, wd=NULL, verbose_mode
 }
 
 
-#' Resample
+#' @title Resample
 #'
-#' Resamples one or more input images into a destination image.
+#' @description Resamples one or more input images into a destination image.
 #'
 #' @param inputs Input raster files.
 #' @param output Output raster file.
@@ -535,8 +563,10 @@ wbt_remove_spurs <- function(input, output, iterations=10, wd=NULL, verbose_mode
 #' @param method Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -565,9 +595,9 @@ wbt_resample <- function(inputs, output, cell_size=NULL, base=NULL, method="cc",
 }
 
 
-#' Rgb to ihs
+#' @title Rgb to ihs
 #'
-#' Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images.
+#' @description Converts red, green, and blue (RGB) images into intensity, hue, and saturation (IHS) images.
 #'
 #' @param red Input red band image file. Optionally specified if colour-composite not specified.
 #' @param green Input green band image file. Optionally specified if colour-composite not specified.
@@ -578,8 +608,10 @@ wbt_resample <- function(inputs, output, cell_size=NULL, base=NULL, method="cc",
 #' @param saturation Output saturation raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -612,9 +644,9 @@ wbt_rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 }
 
 
-#' Split colour composite
+#' @title Split colour composite
 #'
-#' This tool splits an RGB colour composite image into separate multispectral images.
+#' @description This tool splits an RGB colour composite image into separate multispectral images.
 #'
 #' @param input Input colour composite image file.
 #' @param red Output red band file.
@@ -622,8 +654,10 @@ wbt_rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 #' @param blue Output blue band file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -651,16 +685,18 @@ wbt_split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, w
 }
 
 
-#' Thicken raster line
+#' @title Thicken raster line
 #'
-#' Thickens single-cell wide lines within a raster image.
+#' @description Thickens single-cell wide lines within a raster image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -680,9 +716,9 @@ wbt_thicken_raster_line <- function(input, output, wd=NULL, verbose_mode=FALSE, 
 }
 
 
-#' Tophat transform
+#' @title Tophat transform
 #'
-#' Performs either a white or black top-hat transform on an input image.
+#' @description Performs either a white or black top-hat transform on an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.
@@ -691,8 +727,10 @@ wbt_thicken_raster_line <- function(input, output, wd=NULL, verbose_mode=FALSE, 
 #' @param variant Optional variant value. Options include 'white' and 'black'.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
@@ -721,9 +759,9 @@ wbt_tophat_transform <- function(input, output, filterx=11, filtery=11, variant=
 }
 
 
-#' Write function memory insertion
+#' @title Write function memory insertion
 #'
-#' Performs a write function memory insertion for single-band multi-date change detection.
+#' @description Performs a write function memory insertion for single-band multi-date change detection.
 #'
 #' @param input1 Input raster file associated with the first date.
 #' @param input2 Input raster file associated with the second date.
@@ -731,8 +769,10 @@ wbt_tophat_transform <- function(input, output, filterx=11, filtery=11, variant=
 #' @param output Output raster file.
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
 #' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords ImageProcessingTools
 #'
 #' @return Returns the tool text outputs.
 #' @export
