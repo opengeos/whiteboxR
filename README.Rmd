@@ -15,15 +15,13 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
-[![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml) 
-[![whitebox Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR/)
-[![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR/)
-[![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
 [![CRAN download count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)
+[![whitebox Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/mit/)
+[![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio)
+[![Twitter Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
 <!-- badges: end -->
 
