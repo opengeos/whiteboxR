@@ -603,7 +603,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 #' @export
 #' @keywords General
 install_whitebox <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
-  wbt_install(pkg_dir = pkg_dir, force = force, remove = TRUE)
+  wbt_install(pkg_dir = pkg_dir, force = force, remove = remove)
 }
 
 #' @param extension Extension name
