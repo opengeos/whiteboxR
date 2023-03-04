@@ -481,7 +481,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
   pkg_dir <- path.expand(pkg_dir)
 
   if (!is.na(remove) && remove) {
-    unlink(list.files(pkg_dir, recursive = TRUE, full.names = TRUE), force = force, recursive = TRUE)
+    unlink(list.files(file.path(pkg_dir, "WBT"), recursive = TRUE, full.names = TRUE), force = force, recursive = TRUE)
   }
 
   # Check for binary file in 'WBT' directory
