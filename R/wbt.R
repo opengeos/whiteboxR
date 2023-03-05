@@ -478,7 +478,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
   stopifnot(length(pkg_dir) == 1)
   stopifnot(is.character(pkg_dir))
 
-  pkg_dir <- path.expand(pkg_dir)
+  pkg_dir <- normalizePath(pkg_dir, "/", FALSE)
 
   if (!is.na(remove) && remove) {
     unlink(list.files(file.path(pkg_dir, "WBT"), recursive = TRUE, full.names = TRUE), force = force, recursive = TRUE)
