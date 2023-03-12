@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
 [![CRAN download count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)
 [![whitebox Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/mit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
 [![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio)
@@ -37,7 +37,7 @@ This repository is related to the **whitebox** R package for geospatial analysis
 * CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
 * User Manual: <https://jblindsay.github.io/wbt_book/>
-* Free software: [MIT license](https://opensource.org/licenses/MIT)
+* Free software: [MIT license](https://opensource.org/license/MIT)
 
 
 **Contents**
@@ -229,12 +229,12 @@ If you would like to contribute to the project as a developer, follow these inst
 4. Push to the branch (git push origin my-new-feature)
 5. Create a new Pull Request
 
-Unless explicitly stated otherwise, any contribution intentionally submitted for inclusion in the work shall be licensed as the [MIT license](https://opensource.org/licenses/MIT) without any additional terms or conditions.
+Unless explicitly stated otherwise, any contribution intentionally submitted for inclusion in the work shall be licensed as the [MIT license](https://opensource.org/license/MIT) without any additional terms or conditions.
 
 
 ## License
 
-The whitebox **R** package is distributed under the [MIT license](https://opensource.org/licenses/MIT), a permissive open-source (free software) license.
+The whitebox **R** package is distributed under the [MIT license](https://opensource.org/license/MIT), a permissive open-source (free software) license.
 
 
 ## Reporting Bugs
