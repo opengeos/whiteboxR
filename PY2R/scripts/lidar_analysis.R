@@ -520,7 +520,7 @@ wbt_flightline_overlap <- function(input, output=NULL, resolution=1.0, wd=NULL, 
 #' @description Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
 #'
 #' @param input Input LiDAR file (including extension).
-#' @param output Output raster file (including extension).
+#' @param output Output lidar file (including extension).
 #' @param wd Changes the working directory.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
@@ -544,6 +544,59 @@ wbt_height_above_ground <- function(input, output=NULL, wd=NULL, verbose_mode=FA
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "height_above_ground"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
+#' @title Individual tree detection
+#'
+#' @description Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
+#'
+#' @param input Name of the input LiDAR file.
+#' @param output Name of the output vector points file.
+#' @param min_search_radius Minimum search radius (m).
+#' @param min_height Minimum height (m).
+#' @param max_search_radius Maximum search radius (m).
+#' @param max_height Maximum height (m).
+#' @param only_use_veg Only use veg. class points?.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords LiDARTools
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_individual_tree_detection <- function(input, output=NULL, min_search_radius=1.0, min_height=0.0, max_search_radius="", max_height="", only_use_veg=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  if (!is.null(output)) {
+    args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  }
+  if (!is.null(min_search_radius)) {
+    args <- paste(args, paste0("--min_search_radius=", min_search_radius))
+  }
+  if (!is.null(min_height)) {
+    args <- paste(args, paste0("--min_height=", min_height))
+  }
+  if (!is.null(max_search_radius)) {
+    args <- paste(args, paste0("--max_search_radius=", max_search_radius))
+  }
+  if (!is.null(max_height)) {
+    args <- paste(args, paste0("--max_height=", max_height))
+  }
+  if (only_use_veg) {
+    args <- paste(args, "--only_use_veg")
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "individual_tree_detection"
   wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
@@ -897,6 +950,7 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
 #' @param input Name of the input LiDAR points.
 #' @param output Name of the output vector lines file.
 #' @param interval Contour interval.
+#' @param base Base contour.
 #' @param smooth Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.
 #' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'user_data'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
@@ -913,7 +967,7 @@ wbt_lidar_colourize <- function(in_lidar, in_image, output, wd=NULL, verbose_mod
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, parameter="elevation", returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_lidar_contour <- function(input, output=NULL, interval=10.0, base=0.0, smooth=5, parameter="elevation", returns="all", exclude_cls=NULL, minz=NULL, maxz=NULL, max_triangle_edge_length=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -922,6 +976,9 @@ wbt_lidar_contour <- function(input, output=NULL, interval=10.0, smooth=5, param
   }
   if (!is.null(interval)) {
     args <- paste(args, paste0("--interval=", interval))
+  }
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
   }
   if (!is.null(smooth)) {
     args <- paste(args, paste0("--smooth=", smooth))
@@ -1458,7 +1515,7 @@ wbt_lidar_kappa_index <- function(input1, input2, output, class_accuracy, resolu
 #'
 #' @param input Input LiDAR file (including extension).
 #' @param output Output raster file (including extension).
-#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.
+#' @param parameter Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data', 'time'.
 #' @param returns Point return types to include; options are 'all' (default), 'last', 'first'.
 #' @param resolution Output raster's grid resolution.
 #' @param radius Search Radius.
@@ -2530,6 +2587,39 @@ wbt_normal_vectors <- function(input, output, radius=1.0, wd=NULL, verbose_mode=
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "normal_vectors"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
+#' @title Normalize lidar
+#'
+#' @description Normalizes a LiDAR point cloud.
+#'
+#' @param input Name of the input LiDAR file.
+#' @param output Name of the output LiDAR file.
+#' @param dtm Name of the input digital terrain model (DTM) raster file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords LiDARTools
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_normalize_lidar <- function(input, output, dtm, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  args <- paste(args, paste0("--dtm=", wbt_file_path(dtm)))
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "normalize_lidar"
   wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 

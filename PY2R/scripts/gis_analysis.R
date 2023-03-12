@@ -647,7 +647,7 @@ wbt_find_lowest_or_highest_points <- function(input, output, out_type="lowest", 
 
 #' @title Heat map
 #'
-#' @description This tool calculates a heat map, or kernel density estimation (KDE), for an input point set.
+#' @description Calculates a heat map, or kernel density estimation (KDE), for an input point set.
 #'
 #' @param input Name of the input points shapefile.
 #' @param weight_field Optional name of the attribute containing point weight.
@@ -1090,7 +1090,7 @@ wbt_polygon_area <- function(input, wd=NULL, verbose_mode=FALSE, compress_raster
 
 #' @title Polygon long axis
 #'
-#' @description This tool can be used to map the long axis of polygon features.
+#' @description Used to map the long axis of polygon features.
 #'
 #' @param input Input vector polygons file.
 #' @param output Output vector polyline file.
@@ -1150,7 +1150,7 @@ wbt_polygon_perimeter <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 
 #' @title Polygon short axis
 #'
-#' @description This tool can be used to map the short axis of polygon features.
+#' @description Used to map the short axis of polygon features.
 #'
 #' @param input Input vector polygons file.
 #' @param output Output vector polyline file.
@@ -1519,7 +1519,7 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=FA
 
 #' @title Split vector lines
 #'
-#' @description This tool can be used to split a vector line coverage into even-lengthed segments.
+#' @description Used to split a vector line coverage into even-lengthed segments.
 #'
 #' @param input Name of the input lines shapefile.
 #' @param output Name of the output lines shapefile.
@@ -1605,7 +1605,7 @@ wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=
 
 #' @title Travelling salesman problem
 #'
-#' @description This tool finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.
+#' @description Finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.
 #'
 #' @param input Name of the input points shapefile.
 #' @param output Name of the output lines shapefile.

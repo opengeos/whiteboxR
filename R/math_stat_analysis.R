@@ -495,7 +495,7 @@ wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, fiel
 #'
 #' @description Creates a histogram for the field values of a vector's attribute table.
 #'
-#' @param input Input raster file.
+#' @param input Input vector file.
 #' @param field Input field name in attribute table.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory.
@@ -596,7 +596,7 @@ wbt_ceil <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_raster
 
 #' @title Conditional evaluation
 #'
-#' @description This tool performs a conditional evaluation (if-then-else) operation on a raster.
+#' @description Performs a conditional evaluation (if-then-else) operation on a raster.
 #'
 #' @param input Name of the input raster file.
 #' @param statement Conditional statement e.g. value > 35.0. This statement must be a valid Rust statement.
@@ -1609,7 +1609,7 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
 #'
 #' @description Lists the unique values contained in a field within a vector's attribute table.
 #'
-#' @param input Input raster file.
+#' @param input Input vector file.
 #' @param field Input field name in attribute table.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory.
@@ -1634,6 +1634,35 @@ wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=F
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "list_unique_values"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
+#' @title List unique values raster
+#'
+#' @description Lists the unique values contained in a field within a vector's attribute table.
+#'
+#' @param input Input vector file.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords MathandStatsTools
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_list_unique_values_raster <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "list_unique_values_raster"
   wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 
@@ -2172,7 +2201,7 @@ wbt_random_sample <- function(base, output, num_samples=1000, wd=NULL, verbose_m
 
 #' @title Raster calculator
 #'
-#' @description This tool performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
+#' @description Performs a complex mathematical operations on one or more input raster images on a cell-to-cell basis.
 #'
 #' @param statement Statement e.g. cos("raster1") * 35.0 + "raster2". This statement must be a valid Rust statement.
 #' @param output Name of the output raster file.

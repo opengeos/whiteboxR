@@ -15,7 +15,7 @@ wbt_attribute_histogram(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input vector file.}
 
 \item{field}{Input field name in attribute table.}
 

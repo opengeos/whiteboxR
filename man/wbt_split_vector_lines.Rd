@@ -33,6 +33,6 @@ wbt_split_vector_lines(
 Returns the tool text outputs.
 }
 \description{
-This tool can be used to split a vector line coverage into even-lengthed segments.
+Used to split a vector line coverage into even-lengthed segments.
 }
 \keyword{GISAnalysis}

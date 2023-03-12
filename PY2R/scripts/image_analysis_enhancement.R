@@ -257,7 +257,7 @@ wbt_histogram_matching <- function(input, histo_file, output, wd=NULL, verbose_m
 
 #' @title Histogram matching two images
 #'
-#' @description This tool alters the cumulative distribution function of a raster image to that of another image.
+#' @description Alters the cumulative distribution function of a raster image to that of another image.
 #'
 #' @param input1 Input raster file to modify.
 #' @param input2 Input reference raster file.

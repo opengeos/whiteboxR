@@ -9,6 +9,7 @@ wbt_multiscale_topographic_position_image(
   meso,
   broad,
   output,
+  hillshade = NULL,
   lightness = 1.2,
   wd = NULL,
   verbose_mode = FALSE,
@@ -24,6 +25,8 @@ wbt_multiscale_topographic_position_image(
 \item{broad}{Input broad-scale topographic position (DEVmax) raster file.}
 
 \item{output}{Output raster file.}
+
+\item{hillshade}{Input optional hillshade raster file. Note: a multi-directional (360-degree option) hillshade tends to work best in this application.}
 
 \item{lightness}{Image lightness value (default is 1.2).}
 

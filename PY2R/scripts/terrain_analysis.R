@@ -363,6 +363,51 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
 }
 
 
+#' @title Dem void filling
+#'
+#' @description This tool can be used to fill the void areas of a DEM using another fill DEM data set.
+#'
+#' @param dem Name of the input raster DEM file, containing the void areas.
+#' @param fill Name of the input fill DEM file, containing the values used to fill the void areas in the other DEM.
+#' @param output Name of the output void-filled DEM file.
+#' @param mean_plane_dist Distance to void edge at which the mean-plane value is used as an offset, measured in grid cells.
+#' @param edge_treatment How should void-edge cells be treated? Options include 'use DEM' (default), 'use Fill', 'average'.
+#' @param weight_value Weight value used for IDW interpolation (default is 2.0).
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_dem_void_filling <- function(dem, fill, output, mean_plane_dist=20, edge_treatment="use DEM", weight_value=2.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--fill=", wbt_file_path(fill)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(mean_plane_dist)) {
+    args <- paste(args, paste0("--mean_plane_dist=", mean_plane_dist))
+  }
+  if (!is.null(edge_treatment)) {
+    args <- paste(args, paste0("--edge_treatment=", edge_treatment))
+  }
+  if (!is.null(weight_value)) {
+    args <- paste(args, paste0("--weight_value=", weight_value))
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "dem_void_filling"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
 #' @title Dev from mean elev
 #'
 #' @description Calculates deviation from mean elevation.
@@ -806,7 +851,7 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 
 #' @title Exposure towards wind flux
 #'
-#' @description This tool evaluates hydrologic connectivity within a DEM.
+#' @description Evaluates hydrologic connectivity within a DEM.
 #'
 #' @param dem Name of the input DEM raster file.
 #' @param output Name of the output raster file.
@@ -1056,7 +1101,7 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
 
 #' @title Gaussian scale space
 #'
-#' @description This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
+#' @description Uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
 #'
 #' @param dem Name of the input DEM raster file.
 #' @param points Name of the input vector points shapefile.
@@ -1477,7 +1522,7 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
 
 #' @title Local quadratic regression
 #'
-#' @description This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
+#' @description An implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
 #'
 #' @param dem Name of the input DEM raster file.
 #' @param output Name of the output raster file.
@@ -2046,6 +2091,69 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
 }
 
 
+#' @title Multiscale curvatures
+#'
+#' @description This tool calculates several multiscale curvatures and curvature-based indices from an input DEM.
+#'
+#' @param dem Name of the input raster DEM file.
+#' @param curv_type Curvature type.
+#' @param out_mag Output raster magnitude file.
+#' @param out_scale Output raster scale file.
+#' @param min_scale Minimum search neighbourhood radius in grid cells.
+#' @param step Step size as any positive non-zero integer.
+#' @param num_steps Number of steps.
+#' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
+#' @param log Display output values using a log-scale.
+#' @param standardize Should each scale be standardized to z-scores?.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_multiscale_curvatures <- function(dem, out_mag, curv_type="ProfileCurv", out_scale=NULL, min_scale=0, step=1, num_steps=1, step_nonlinearity=1.0, log=TRUE, standardize=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--out_mag=", wbt_file_path(out_mag)))
+  if (!is.null(curv_type)) {
+    args <- paste(args, paste0("--curv_type=", curv_type))
+  }
+  if (!is.null(out_scale)) {
+    args <- paste(args, paste0("--out_scale=", out_scale))
+  }
+  if (!is.null(min_scale)) {
+    args <- paste(args, paste0("--min_scale=", min_scale))
+  }
+  if (!is.null(step)) {
+    args <- paste(args, paste0("--step=", step))
+  }
+  if (!is.null(num_steps)) {
+    args <- paste(args, paste0("--num_steps=", num_steps))
+  }
+  if (!is.null(step_nonlinearity)) {
+    args <- paste(args, paste0("--step_nonlinearity=", step_nonlinearity))
+  }
+  if (log) {
+    args <- paste(args, "--log")
+  }
+  if (standardize) {
+    args <- paste(args, "--standardize")
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "multiscale_curvatures"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
 #' @title Multiscale elevation percentile
 #'
 #' @description Calculates surface roughness over a range of spatial scales.
@@ -2290,6 +2398,7 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 #' @param local Input local-scale topographic position (DEVmax) raster file.
 #' @param meso Input meso-scale topographic position (DEVmax) raster file.
 #' @param broad Input broad-scale topographic position (DEVmax) raster file.
+#' @param hillshade Input optional hillshade raster file. Note: a multi-directional (360-degree option) hillshade tends to work best in this application.
 #' @param output Output raster file.
 #' @param lightness Image lightness value (default is 1.2).
 #' @param wd Changes the working directory.
@@ -2301,13 +2410,16 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multiscale_topographic_position_image <- function(local, meso, broad, output, lightness=1.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_multiscale_topographic_position_image <- function(local, meso, broad, output, hillshade=NULL, lightness=1.2, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--local=", wbt_file_path(local)))
   args <- paste(args, paste0("--meso=", wbt_file_path(meso)))
   args <- paste(args, paste0("--broad=", wbt_file_path(broad)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(hillshade)) {
+    args <- paste(args, paste0("--hillshade=", hillshade))
+  }
   if (!is.null(lightness)) {
     args <- paste(args, paste0("--lightness=", lightness))
   }
@@ -3438,6 +3550,78 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "time_in_daylight"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
+#' @title Topo render
+#'
+#' @description This tool creates a pseudo-3D rendering from an input DEM, for the purpose of effective topographic visualization.
+#'
+#' @param dem Name of the input digital elevation model (DEM) raster file.
+#' @param output Name of the output raster file.
+#' @param palette Palette name; options are 'atlas', 'high_relief', 'arid', 'soft', 'earthtones', 'muted', 'light_quant', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', 'imhof', and 'white'.
+#' @param rev_palette Reverse the palette?.
+#' @param az Light source azimuth direction (degrees, 0-360).
+#' @param alt Light source altitude (degrees, 0-90).
+#' @param background_hgt_offset Offset height of background, in z-units.
+#' @param polygon Clipping polygon vector file (optional).
+#' @param background_clr Background red-green-blue (RGB) or red-green-blue-alpha (RGBA) colour, e.g. '`[255, 255, 245]`', '`[255, 255, 245, 200]`'.
+#' @param attenuation Attenuation parameter. Range is 0-4. Zero means no attenuation.
+#' @param ambient_light Ambient light parameter. Range is 0.0-0.7. Zero means no ambient light.
+#' @param z_factor Elevation multiplier, or a vertical exageration.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords GeomorphometricAnalysis
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_topo_render <- function(dem, output, palette="soft", rev_palette=FALSE, az=315.0, alt=30.0, background_hgt_offset=10.0, polygon=NULL, background_clr="[255, 255, 255]", attenuation=0.6, ambient_light=0.2, z_factor=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(palette)) {
+    args <- paste(args, paste0("--palette=", palette))
+  }
+  if (rev_palette) {
+    args <- paste(args, "--rev_palette")
+  }
+  if (!is.null(az)) {
+    args <- paste(args, paste0("--az=", az))
+  }
+  if (!is.null(alt)) {
+    args <- paste(args, paste0("--alt=", alt))
+  }
+  if (!is.null(background_hgt_offset)) {
+    args <- paste(args, paste0("--background_hgt_offset=", background_hgt_offset))
+  }
+  if (!is.null(polygon)) {
+    args <- paste(args, paste0("--polygon=", polygon))
+  }
+  if (!is.null(background_clr)) {
+    args <- paste(args, paste0("--background_clr=", background_clr))
+  }
+  args <- paste(args, paste0("--255=", wbt_file_path(255)))
+  if (!is.null(attenuation)) {
+    args <- paste(args, paste0("--attenuation=", attenuation))
+  }
+  if (!is.null(ambient_light)) {
+    args <- paste(args, paste0("--ambient_light=", ambient_light))
+  }
+  if (!is.null(z_factor)) {
+    args <- paste(args, paste0("--z_factor=", z_factor))
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "topo_render"
   wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 

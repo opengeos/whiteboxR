@@ -375,7 +375,7 @@ wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compr
 
 #' @title Modify no data value
 #'
-#' @description Converts nodata values in a raster to zero.
+#' @description Modifies nodata values in a raster.
 #'
 #' @param input Input raster file.
 #' @param new_value New NoData value.
@@ -697,9 +697,48 @@ wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=FALSE,
 }
 
 
+#' @title Remove raster polygon holes
+#'
+#' @description Removes polygon holes, or 'donut-holes', from raster polygons.
+#'
+#' @param input Name of the input raster image file.
+#' @param output Name of the output raster file.
+#' @param threshold Maximum size of removed holes, in grid cells. Blank for no threshold, i.e. remove all holes.
+#' @param use_diagonals Use diagonal neighbours during clumping operation.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords DataTools
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_remove_raster_polygon_holes <- function(input, output, threshold=3, use_diagonals=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(threshold)) {
+    args <- paste(args, paste0("--threshold=", threshold))
+  }
+  if (use_diagonals) {
+    args <- paste(args, "--use_diagonals")
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "remove_raster_polygon_holes"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
 #' @title Set nodata value
 #'
-#' @description Assign a specified value in an input image to the NoData value.
+#' @description Assign the NoData value for an input image.
 #'
 #' @param input Input raster file.
 #' @param output Output raster file.

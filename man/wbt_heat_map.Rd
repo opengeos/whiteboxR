@@ -45,6 +45,6 @@ wbt_heat_map(
 Returns the tool text outputs.
 }
 \description{
-This tool calculates a heat map, or kernel density estimation (KDE), for an input point set.
+Calculates a heat map, or kernel density estimation (KDE), for an input point set.
 }
 \keyword{GISAnalysis}
