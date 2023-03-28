@@ -33,6 +33,6 @@ wbt_set_nodata_value(
 Returns the tool text outputs.
 }
 \description{
-Assign a specified value in an input image to the NoData value.
+Assign the NoData value for an input image.
 }
 \keyword{DataTools}

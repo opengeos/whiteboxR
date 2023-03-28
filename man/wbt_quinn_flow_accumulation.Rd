@@ -45,6 +45,6 @@ wbt_quinn_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
-This tool calculates Quinn et al. (1995) flow accumulation.
+Calculates Quinn et al. (1995) flow accumulation.
 }
 \keyword{HydrologicalAnalysis}

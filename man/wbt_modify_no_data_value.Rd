@@ -30,6 +30,6 @@ wbt_modify_no_data_value(
 Returns the tool text outputs.
 }
 \description{
-Converts nodata values in a raster to zero.
+Modifies nodata values in a raster.
 }
 \keyword{DataTools}

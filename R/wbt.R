@@ -932,6 +932,19 @@ wbt_internal_tool_name <- function(tool_name) {
   gsub("^(.)|_(.)", "\\U\\1\\2", gsub("^(whitebox::)?(wbt_)?", "", tool_name), perl = TRUE)
 }
 
+wbt_match_tool_name <- function(tool_name, result = c('tool_name', 'function_name')) {
+  
+  wbttools <- NULL
+  load(system.file("data/wbttools.rda", package = "whitebox"))
+  
+  result <- match.arg(result, choices = c('tool_name', 'function_name'), several.ok = TRUE)
+  
+  idx <- match(tolower(wbttools$tool_name), tolower(gsub("[ _]", "", tool_name)))
+  
+  wbttools[idx[which(!is.na(idx))], result, drop = FALSE]
+  
+}
+
 #' Wrapper method for `system()` calls of `whitebox_tools`
 #'
 #' @param argstring Concatenated string of parameters passed in tool command.

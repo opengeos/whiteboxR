@@ -659,7 +659,7 @@ wbt_downslope_flowpath_length <- function(d8_pntr, output, watersheds=NULL, weig
 
 #' @title Edge contamination
 #'
-#' @description This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
+#' @description Identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
@@ -1578,7 +1578,7 @@ wbt_max_upslope_flowpath_length <- function(dem, output, wd=NULL, verbose_mode=F
 
 #' @title Max upslope value
 #'
-#' @description This tool calculates the maximum upslope value from an input values raster along flowpaths.
+#' @description Calculates the maximum upslope value from an input values raster along flowpaths.
 #'
 #' @param dem Input DEM; it must be depressionless.
 #' @param values Name of the input values raster file.
@@ -1693,7 +1693,7 @@ wbt_num_inflowing_neighbours <- function(dem, output, wd=NULL, verbose_mode=FALS
 
 #' @title Qin flow accumulation
 #'
-#' @description This tool calculates Qin et al. (2007) flow accumulation.
+#' @description Calculates Qin et al. (2007) flow accumulation.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
@@ -1748,7 +1748,7 @@ wbt_qin_flow_accumulation <- function(dem, output, out_type="specific contributi
 
 #' @title Quinn flow accumulation
 #'
-#' @description This tool calculates Quinn et al. (1995) flow accumulation.
+#' @description Calculates Quinn et al. (1995) flow accumulation.
 #'
 #' @param dem Name of the input DEM raster file; must be depressionless.
 #' @param output Name of the output raster file.
@@ -1840,7 +1840,7 @@ wbt_raise_walls <- function(input, dem, output, breach=NULL, height=100.0, wd=NU
 
 #' @title Rho8 flow accumulation
 #'
-#' @description This tool calculates Fairfield and Leymarie (1991) flow accumulation.
+#' @description Calculates Fairfield and Leymarie (1991) flow accumulation.
 #'
 #' @param input Input DEM or Rho8 pointer file; if a DEM is used, it must be depressionless.
 #' @param output Name of the output raster file.
@@ -1920,6 +1920,45 @@ wbt_rho8_pointer <- function(dem, output, esri_pntr=FALSE, wd=NULL, verbose_mode
     args <- paste(args, paste0("--compress_rasters=", compress_rasters))
   }
   tool_name <- "rho8_pointer"
+  wbt_run_tool(tool_name, args, verbose_mode, command_only)
+}
+
+
+#' @title River centerlines
+#'
+#' @description Maps river centerlines from an input water raster.
+#'
+#' @param input Name of the input raster image file.
+#' @param output Name of the output vector lines file.
+#' @param min_length Minimum line length, in grid cells.
+#' @param radius Search radius for joining distant endnodes, in grid cells.
+#' @param wd Changes the working directory.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
+#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#'
+#' @keywords HydrologicalAnalysis
+#'
+#' @return Returns the tool text outputs.
+#' @export
+wbt_river_centerlines <- function(input, output, min_length=3, radius=4, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+  wbt_init()
+  args <- ""
+  args <- paste(args, paste0("--input=", wbt_file_path(input)))
+  args <- paste(args, paste0("--output=", wbt_file_path(output)))
+  if (!is.null(min_length)) {
+    args <- paste(args, paste0("--min_length=", min_length))
+  }
+  if (!is.null(radius)) {
+    args <- paste(args, paste0("--radius=", radius))
+  }
+  if (!missing(wd)) {
+    args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
+  }
+  if (!missing(compress_rasters)) {
+    args <- paste(args, paste0("--compress_rasters=", compress_rasters))
+  }
+  tool_name <- "river_centerlines"
   wbt_run_tool(tool_name, args, verbose_mode, command_only)
 }
 

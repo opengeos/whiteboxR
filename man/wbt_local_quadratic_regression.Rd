@@ -33,6 +33,6 @@ wbt_local_quadratic_regression(
 Returns the tool text outputs.
 }
 \description{
-This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
+An implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
 }
 \keyword{GeomorphometricAnalysis}

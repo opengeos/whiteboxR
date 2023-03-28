@@ -30,6 +30,6 @@ wbt_polygon_short_axis(
 Returns the tool text outputs.
 }
 \description{
-This tool can be used to map the short axis of polygon features.
+Used to map the short axis of polygon features.
 }
 \keyword{GISAnalysis}

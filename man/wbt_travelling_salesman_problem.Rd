@@ -33,6 +33,6 @@ wbt_travelling_salesman_problem(
 Returns the tool text outputs.
 }
 \description{
-This tool finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.
+Finds approximate solutions to travelling salesman problems, the goal of which is to identify the shortest route connecting a set of locations.
 }
 \keyword{GISAnalysis}

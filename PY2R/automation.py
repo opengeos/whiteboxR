@@ -4,14 +4,15 @@
 # Step 2 - Create a new develop branch: git checkout -b develop
 # Step 3 - Delete the old WhiteboxTools_linux_amd64.zip in the root folder if needed
 # Step 4 - Run automation.py
-# Step 5 - Update version number and RoxygenNote in DESCRIPTION
-# Step 6 - Open whiteboxR.Rproj in RStudio and run build_check.R
-# Step 7 - Commit and push changes
-# Step 8 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
-# Step 9 - Merge pull request on GitHub
-# Step 10 - Switch to master branch and pull updates: git checkout master | git pull
-# Step 11 - Create R package: RStudio - Build - Build Source Package
-# Step 12 - Upload to R-Forge
+# Step 5 - Run scripts to update internal datasets (data-raw/wbttools2.R; if needed)
+# Step 6 - Update version number and RoxygenNote in DESCRIPTION
+# Step 7 - Open whiteboxR.Rproj in RStudio and run build_check.R
+# Step 8 - Commit and push changes
+# Step 9 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
+# Step 10 - Merge pull request on GitHub
+# Step 11 - Switch to master branch and pull updates: git checkout master | git pull
+# Step 12 - Create R package: RStudio - Build - Build Source Package
+# Step 13 - Upload to CRAN
 ##################################################################
 
 import os
@@ -263,6 +264,7 @@ toolboxes = {
     "# Math and Stats Tools #": "math_stat_analysis.R",
     "# Precision Agriculture #": "precision_agriculture.R",
     "# Stream Network Analysis #": "stream_network_analysis.R",
+    "# Whitebox Utilities #": "whitebox_utilities.R"
 }
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -335,6 +337,8 @@ with open(wbt_py) as f:
                     ):
                         # fix expected cross-reference (use code block)
                         doc_line = doc_line.replace("[0,1]", "`[0,1]`")
+                        doc_line = doc_line.replace("[255, 255, 245]", "`[255, 255, 245]`")
+                        doc_line = doc_line.replace("[255, 255, 245, 200]", "`[255, 255, 245, 200]`")
                         # fix reserved keywords used as argument names
                         if doc_line.startswith("function"):
                             doc_line = doc_line.replace("function ", "")

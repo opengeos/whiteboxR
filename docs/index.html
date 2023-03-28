@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.0</span>
       </span>
     </div>
 
@@ -54,6 +54,9 @@
     </li>
     <li>
       <a href="articles/demo.html">whitebox Demo</a>
+    </li>
+    <li>
+      <a href="articles/wbt-method.html">`wbt()` method: call 'Whitebox' tools by name</a>
     </li>
   </ul>
 </li>
@@ -103,7 +106,7 @@
 </li>
 <li>User Manual: <a href="https://jblindsay.github.io/wbt_book/" class="external-link uri">https://jblindsay.github.io/wbt_book/</a>
 </li>
-<li>Free software: <a href="https://opensource.org/licenses/MIT" class="external-link">MIT license</a>
+<li>Free software: <a href="https://opensource.org/license/MIT" class="external-link">MIT license</a>
 </li>
 </ul>
 <p><strong>Contents</strong></p>
@@ -237,7 +240,7 @@
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the whitebox-tools license</span></span>
 <span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_license</span>()</span>
 <span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools License</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Copyright 2017-2022 John Lindsay</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Copyright 2017-2023 John Lindsay</span></span>
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span></span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span></span>
@@ -256,7 +259,7 @@
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the whitebox-tools version</span></span>
 <span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_version</span>()</span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools v2.2.0 (c) Dr. John Lindsay 2017-2023</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023</span></span>
 <span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span></span>
 <span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span></span>
@@ -268,7 +271,7 @@
 <span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists tools with 'lidar' in tool name or description.</span></span>
 <span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_list_tools</span>(<span class="st">"lidar"</span>)</span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; All 47 Tools containing keywords:</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; All 50 Tools containing keywords:</span></span>
 <span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.</span></span>
 <span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.</span></span>
 <span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.</span></span>
@@ -316,40 +319,43 @@
 <span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.</span></span>
 <span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.</span></span>
 <span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ZlidarToLas: Converts one or more zlidar files into the LAS data format.</span></span>
-<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the help for a specific tool.</span></span>
-<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_tool_help</span>(<span class="st">"lidar_info"</span>)</span>
-<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarInfo</span></span>
-<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Description:</span></span>
-<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</span></span>
-<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Toolbox: LiDAR Tools</span></span>
-<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Parameters:</span></span>
-<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Flag               Description</span></span>
-<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -----------------  -----------</span></span>
-<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -i, --input        Input LiDAR file.</span></span>
-<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -o, --output       Output HTML file for summary report.</span></span>
-<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --density          Flag indicating whether or not to calculate the average point density and nominal point spacing.</span></span>
-<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --vlr              Flag indicating whether or not to print the variable length records (VLRs).</span></span>
-<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --geokeys          Flag indicating whether or not to print the geokeys.</span></span>
-<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Example usage:</span></span>
-<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &gt;&gt;./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span></span>
-<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span></span>
-<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieves the tool parameter descriptions for a specific tool.</span></span>
-<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_tool_parameters</span>(<span class="st">"slope"</span>)</span>
-<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></span>
-<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="co"># View the source code for a specific tool on the source code repository.</span></span>
-<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_view_code</span>(<span class="st">"breach_depressions"</span>)</span>
-<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></span></code></pre></div>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NormalizeLidar: Normalizes a LiDAR point cloud.</span></span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarShift: Shifts the x,y,z coordinates of a LiDAR file.</span></span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.</span></span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the help for a specific tool.</span></span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_tool_help</span>(<span class="st">"lidar_info"</span>)</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarInfo</span></span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Description:</span></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</span></span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Toolbox: LiDAR Tools</span></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Parameters:</span></span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Flag               Description</span></span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -----------------  -----------</span></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -i, --input        Input LiDAR file.</span></span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -o, --output       Output HTML file for summary report.</span></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --density          Flag indicating whether or not to calculate the average point density and nominal point spacing.</span></span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --vlr              Flag indicating whether or not to print the variable length records (VLRs).</span></span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --geokeys          Flag indicating whether or not to print the geokeys.</span></span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Example usage:</span></span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &gt;&gt;./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span></span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span></span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieves the tool parameter descriptions for a specific tool.</span></span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_tool_parameters</span>(<span class="st">"slope"</span>)</span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}</span></span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="co"># View the source code for a specific tool on the source code repository.</span></span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_view_code</span>(<span class="st">"breach_depressions"</span>)</span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; https://github.com/jblindsay/whitebox-tools/blob/master/whitebox-tools-app/src/tools/hydro_analysis/breach_depressions.rs</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="available-tools">Available Tools<a class="anchor" aria-label="anchor" href="#available-tools"></a>
 </h2>
-<p>The <strong><a href="https://github.com/jblindsay/whitebox-tools" class="external-link">WhiteboxTools</a></strong> library currently contains more than <strong>535</strong> tools, which are each grouped based on their main function into one of the following categories: Data Tools, GIS Analysis, Hydrological Analysis, Image Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream Network Analysis, and Terrain Analysis. For a listing of available tools, complete with documentation and usage details, please see the <a href="https://jblindsay.github.io/wbt_book/available_tools/index.html" class="external-link">‘WhiteboxTools’ User Manual</a>.</p>
+<p>The <strong><a href="https://github.com/jblindsay/whitebox-tools" class="external-link">WhiteboxTools</a></strong> library currently contains more than <strong>545</strong> tools, which are each grouped based on their main function into one of the following categories: Data Tools, GIS Analysis, Hydrological Analysis, Image Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream Network Analysis, and Terrain Analysis. For a listing of available tools, complete with documentation and usage details, please see the <a href="https://jblindsay.github.io/wbt_book/available_tools/index.html" class="external-link">‘WhiteboxTools’ User Manual</a>.</p>
 <p>If you are interested in using the ‘WhiteboxTools’ command-line program, check <a href="https://github.com/jblindsay/whitebox-tools#3-usage" class="external-link">‘WhiteboxTools’ Usage</a></p>
 </div>
 <div class="section level2">
@@ -363,12 +369,12 @@
 <li>Push to the branch (git push origin my-new-feature)</li>
 <li>Create a new Pull Request</li>
 </ol>
-<p>Unless explicitly stated otherwise, any contribution intentionally submitted for inclusion in the work shall be licensed as the <a href="https://opensource.org/licenses/MIT" class="external-link">MIT license</a> without any additional terms or conditions.</p>
+<p>Unless explicitly stated otherwise, any contribution intentionally submitted for inclusion in the work shall be licensed as the <a href="https://opensource.org/license/MIT" class="external-link">MIT license</a> without any additional terms or conditions.</p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
 </h2>
-<p>The whitebox <strong>R</strong> package is distributed under the <a href="https://opensource.org/licenses/MIT" class="external-link">MIT license</a>, a permissive open-source (free software) license.</p>
+<p>The whitebox <strong>R</strong> package is distributed under the <a href="https://opensource.org/license/MIT" class="external-link">MIT license</a>, a permissive open-source (free software) license.</p>
 </div>
 <div class="section level2">
 <h2 id="reporting-bugs">Reporting Bugs<a class="anchor" aria-label="anchor" href="#reporting-bugs"></a>
@@ -419,7 +425,7 @@
 <li><a href="https://cran.r-project.org/package=whitebox" class="external-link"><img src="https://www.r-pkg.org/badges/version/whitebox" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://cranlogs.r-pkg.org/badges/grand-total/whitebox" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/whitebox" alt="CRAN download count"></a></li>
 <li><a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="external-link"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="whitebox Manual"></a></li>
-<li><a href="https://opensource.org/licenses/mit/" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
+<li><a href="https://opensource.org/license/mit/" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
 <li><a href="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/giswqs/whiteboxR" class="external-link"><img src="https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg" alt="codecov"></a></li>
 <li><a href="https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio" class="external-link"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a></li>

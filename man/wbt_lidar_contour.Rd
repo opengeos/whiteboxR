@@ -8,6 +8,7 @@ wbt_lidar_contour(
   input,
   output = NULL,
   interval = 10,
+  base = 0,
   smooth = 5,
   parameter = "elevation",
   returns = "all",
@@ -27,6 +28,8 @@ wbt_lidar_contour(
 \item{output}{Name of the output vector lines file.}
 
 \item{interval}{Contour interval.}
+
+\item{base}{Base contour.}
 
 \item{smooth}{Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.}
 

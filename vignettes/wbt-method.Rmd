@@ -1,0 +1,357 @@
+---
+title: "`wbt()` method: call 'Whitebox' tools by name"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{`wbt()` and `wbt_result`}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = whitebox::check_whitebox_binary() & 
+          requireNamespace("terra", quietly = TRUE)
+)
+```
+
+# `wbt()`
+
+The `wbt()` method is a high-level wrapper function to manage flow of
+information between R and WhiteboxTools. With `wbt()` one can run sequential
+analyses in Whitebox while having R prepare inputs, generate commands, and
+visualize results.
+
+```{r}
+library(whitebox)
+```
+
+## Getting Started
+
+Know what tool you want to run but _can't remember the required parameters_?
+Just type `wbt("toolname")`
+
+```{r}
+wbt("slope")
+```
+
+Output produced on error and with invalid arguments helps guide use
+interactively by prompting with required and optional arguments as a checklist.
+
+## Result Objects
+
+All calls to `wbt()` return an S3 object with class `wbt_result`.
+
+```{r}
+# get file path of sample DEM
+dem <- sample_dem_data()
+
+wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif"))
+```
+
+Whether a system call succeeds or fails the parameters that were passed to the WhiteboxTools
+executable and references to any output file paths that were specified are
+returned. If output files reference spatial data (e.g. a GeoTIFF file) they may
+be converted to a file-based R object providing information about the result.
+
+```{r}
+wbt("slope", goof = dem, output = file.path(tempdir(), "slope.tif"))
+```
+
+When a call fails an informative error message issued, and the error will be cached
+inside the result. Prior runs references are stored as well for sequential tool runs; more on that below.
+
+### `wbt_result` class
+
+A `wbt_result` class object is a base R `list()` with standard element
+names (`"tool"`, `"args"`, `"stdout"`, `"crs"`, `"result"`, `"history"`) and
+the `"class"` attribute `"wbt_result"`.
+
+```{r}
+str(wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif")), max.level = 1)
+```
+
+Any `output` produced by the tool (usually file paths set by the user) will be
+included in the `wbt_result$result` list.
+
+### `wbt_result` on error
+
+If there is an error a `try-error` class object with an error message is
+returned in lieu of a list in `$result`
+
+```{r}
+# on error there is a try-error object in $result
+x <- wbt("slope")
+inherits(x$result, 'try-error')
+message(x$result[1])
+```
+
+## Vignette Topics
+
+We now will cover how the `wbt()` method and `wbt_result` class can be used for
+the following:
+
+ - Input and Output with R spatial objects
+
+ - Running Sequences of Tools (optionally: with pipe `|>` or `%>%`)
+
+ - Handling Coordinate Reference Systems
+
+# Input and Output with R spatial objects
+
+A feature of `wbt()` is that it handles input/output and file name management
+if you are using R objects as input. It can be an onerous task to manage files 
+for workflows involving many tool runs.
+
+If you use a `terra` object as input, you will get a `SpatRaster`. If you use 
+a `raster` object as your input object frontend, you will get a `RasterLayer`
+object as output for tools that produce a raster. There will be file paths 
+associated with that R object. 
+
+### Compare `raster` and `terra` as R raster object frontends
+
+```{r}
+if (requireNamespace("raster")) {
+  rdem <- raster::raster(dem)
+
+  # raster input; raster output
+  r1 <- wbt("slope", dem = rdem, output = file.path(tempdir(), "slope.tif"))
+  r1
+  class(r1$result$output)
+}
+```
+
+```{r}
+tdem <- terra::rast(dem)
+
+## terra input; terra output
+t1 <- wbt("slope", dem = tdem, output =  file.path(tempdir(), "slope.tif"))
+t1
+class(t1$result$output)
+```
+
+The user still needs to specify paths but `wbt()` eases the process
+of converting input objects to paths and reading output paths to R objects
+after the tool has run. In principle any R object that references a file with
+type that Whitebox supports can be handled under the current (simple; proof of
+concept) system. Using file-based representations may not be the most
+efficient, but allows for a tangible trail of the steps in a workflow to be
+followed that otherwise might be hard to track.
+
+# `wbt_source()`: rasters in memory, and vector data
+
+The terra and raster packages use pointers to a file/raster connection except 
+when a grid is entirely in memory. Processing these types of rasters with 
+whitebox requires writing out as a temporary GeoTIFF file for tool input. In general
+`wbt()` can handle this for you.
+
+Vector data (point, line and polygon geometries) are commonly stored stored in 
+sf data.frames, sp objects, or terra SpatVector objects. These types are
+read into memory on creation. 
+
+Reading vector data into R memory is
+not needed to run Whitebox tools, so `wbt_source()` provides a means to annotate objects 
+with information about source file path (similar to how terra/raster handle raster sources)
+such that they can be processed further  by `wbt()` with minimal overhead. 
+Objects like the terra SpatVectorProxy use delayed read by default. Passing a file path 
+to `wbt_source()` will create a SpatVectorProxy with necessary information for use with `wbt()`. 
+
+For instance, we can create a reference for a sample ESRI Shapefile via `wbt_source()`. The result is a SpatVectorProxy.
+
+```{r}
+library(terra)
+shp <- system.file("ex/lux.shp", package = "terra")
+x <- wbt_source(shp)
+x
+```
+
+The SpatVectorProxy provides a light-weight means to create an R object reference to a large file; allowing the "heavy" lifting for that file to be done primarily by WhiteboxTools (or GDAL via {terra}).
+
+At time of writing this document, WhiteboxTools does not support vector data inputs other than Shapefile. If we have, for example, a GeoPackage, `wbt_source()` will convert the input to a temporary shapefile and return a SpatVectorProxy that references that file. This object can then be used as input to `wbt()`.
+
+```{r}
+# load the data
+x2 <- query(x)
+
+# remove area column
+x2$AREA <- NULL
+
+# create a GeoPackage
+terra::writeVector(x2, filename = file.path(tempdir(), "lux.gpkg"), overwrite = TRUE)
+
+# now the source is a temporary .shp
+x3 <- wbt_source(file.path(tempdir(), "lux.gpkg"))
+
+wbt("polygon_area", input = x3)
+```
+
+# Running Sequences of Tools
+
+When you call `wbt()` and the first argument is a `wbt_result` the `output`
+from the input `wbt_result` is passed as the first `input` to the new tool run.
+
+This general "pass the output as the first input" works even if the first
+`input` parameter (`"-i"` flag) is something different such as `dem` or
+`input1`.
+
+This makes it possible to chain different operations together in a sequence.
+
+If all of the required parameters are specified the tool will be run.
+
+Here we run "Slope" on a DEM, then run "Slope" on it again to get a second
+derivative "curvature".
+
+```{r}
+x <- wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif"))
+x2 <- wbt(x, tool_name = "slope", output = file.path(tempdir(), "curvature.tif"))
+```
+
+## Using pipes
+
+Nested chained operation syntax can be transformed to use pipe operators ({base} R 4.1+ `|>` or {magrittr} `%>%`). This can improve the readability of the code (fewer nested parentheses) and the first argument transfer behavior allows results from each step to be transferred to the input of the next.
+
+```{r, eval = FALSE, purl = FALSE}
+wbt("slope", dem = dem, output = file.path(tempdir(), "slope.tif")) |>
+  wbt("slope", output = file.path(tempdir(), "curvature.tif"))
+```
+
+The `wbt_result` output that prints to the console will reflect the
+input/output parameters of the most recent tool run in a tool chain.
+
+```{r}
+x2
+```
+
+`wbt_result()` is the method to get `$result` for single runs or all `$result`
+in `$history` for chained runs from a `wbt_result` object.
+
+```{r}
+str(wbt_result(x2), max.level = 1)
+```
+
+The `$history` element is a list of the `wbt_result` from individual runs.
+
+```{r}
+str(x2$history, max.level = 1)
+```
+
+If you pass invalid results from one step to the next, you get an informative
+error message.
+
+```{r}
+x <- wbt("slope")
+wbt(x, "slope", output = file.path(tempdir(), "foo.tif"))
+```
+
+# Coordinate Reference Systems (CRS)
+
+On top of handling file paths it is necessary for Geographic Information
+Systems to handle Coordinate Reference System (CRS) information.  Many R tools
+in the GDAL/PROJ sphere require valid CRS to operate.
+
+WhiteboxTools will read the GeoKey information from your _GeoTIFF_ files
+specified by path and propagate that to the output file result. When you read
+those files with R, you should find that the original file's CRS has been
+transferred.
+
+`wbt()` and `wbt_result` help ensure consistent file and CRS information across
+sequences of operations and within calls--especially those _involving R spatial
+objects_.
+
+If you specified the CRS in R, or made the raster entirely in R, you might need
+a hand setting up the file-based representation that WhiteboxTools will use.
+This is easy enough to do with `crs()`, `writeRaster()` and the equivalent but
+often requires more boilerplate code than just specifying the argument, or
+having CRS propagate from input.
+
+For inputs that have a file-based representation (e.g. `RasterLayer` and
+`SpatRaster` objects) `wbt()` provides an interface where R objects can be
+substituted for file names and vice versa. User and workflow level attributes
+like CRS and working directory be handled at the same time.
+
+```{r}
+dem <- sample_dem_data()
+
+## equivalent to:
+# dem <- system.file("extdata/DEM.tif", package = "whitebox")
+```
+
+In the process of reading/writing files that may contain CRS information, such
+as this sample DEM, the CRS can be inspected, modified and propagated to file
+or R objects.
+
+## Setting the CRS
+
+If the CRS is specified in the input `SpatRaster` object, `wbt()` makes sure it is
+propagated to the R object result. `wbt()` does not alter or copy the source or 
+output files which may or may not have CRS information.
+
+```{r}
+araster <- terra::rast(dem)
+wbt("slope", dem = araster, output = file.path(tempdir(), "foo.tif"))
+```
+
+Alternately you can specify the `crs` argument to `wbt()` instead of `rast()`. This will directly set the `crs` element of the `wbt_result` of your output.
+
+```{r}
+wbt("slope", dem = terra::rast(dem), crs = "EPSG:26918", output = file.path(tempdir(), "foo.tif"))
+```
+
+In either case wherever you specify the `crs` argument the `crs` is
+stored in the `wbt_result` and propagated to the relevant output. Again, the
+source files are unchanged if they had no CRS or invalid CRS (until you write that updated CRS to file).
+
+If two input R objects have different (or no) CRS then the `wbt()` method will 
+provide a message to the user:
+
+```{r}
+r1 <- terra::rast(dem) # default: EPSG:26918
+r2 <- terra::deepcopy(r1)
+crs(r2) <- "EPSG:26917" # something else/wrong
+wbt("add", 
+    input1 = r1, 
+    input2 = r2, 
+    output = file.path(tempdir(), "foo.tif")
+   )
+```
+
+This message is suppressed and output CRS set accordingly if the `crs` argument is specified. This user set CRS is only in the SpatRaster object, and does not necessarily match that of the file used as input or returned as output.
+
+```{r}
+wbt("add", 
+    input1 = r1,
+    input2 = r2, 
+    crs = "EPSG:26918",
+    output = file.path(tempdir(), "foo.tif")
+   )
+```
+ <!--
+# Future Plans
+
+Future additions to this vignette may include:
+
+ - Managing WhiteboxTools working directories
+
+ - Managing WhiteboxTools file types
+ 
+In the future users will be able to:
+
+ - Set a temporary or persistent working
+directory and have output file paths/names auto-generated, allowing them to
+work entirely with R objects and `wbt_result` while making an intermediate file
+record in the background.
+
+ - Use a wrapper class for generic
+groups of Whitebox file types; allowing file name references for any R object
+or output file type to be stored: optimized/customizable read/write methods used for
+specific file types and generic .rda files with metadata for others.
+
+ - Batch of tool runs on e.g. watershed extents -->
+ 
+
+```{r, echo=FALSE} 
+# cleanup temp files
+unlink(list.files(".", pattern = "file.*tif$", full.names = TRUE))
+unlink(list.files(tempdir(), pattern = "file.*tif$", full.names = TRUE))
+```

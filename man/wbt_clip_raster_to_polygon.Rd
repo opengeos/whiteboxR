@@ -8,7 +8,7 @@ wbt_clip_raster_to_polygon(
   input,
   polygons,
   output,
-  maintain_dimensions = TRUE,
+  maintain_dimensions = FALSE,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE,

@@ -48,6 +48,6 @@ wbt_qin_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
-This tool calculates Qin et al. (2007) flow accumulation.
+Calculates Qin et al. (2007) flow accumulation.
 }
 \keyword{HydrologicalAnalysis}

@@ -45,6 +45,6 @@ wbt_rho8_flow_accumulation(
 Returns the tool text outputs.
 }
 \description{
-This tool calculates Fairfield and Leymarie (1991) flow accumulation.
+Calculates Fairfield and Leymarie (1991) flow accumulation.
 }
 \keyword{HydrologicalAnalysis}

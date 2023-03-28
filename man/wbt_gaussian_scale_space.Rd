@@ -54,6 +54,6 @@ wbt_gaussian_scale_space(
 Returns the tool text outputs.
 }
 \description{
-This tool uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
+Uses the fast Gaussian approximation algorithm to produce scaled land-surface parameter measurements from an input DEM.
 }
 \keyword{GeomorphometricAnalysis}

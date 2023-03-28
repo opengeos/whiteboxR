@@ -8,7 +8,7 @@ count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs
 [![whitebox
 Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT/)
 [![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio)
@@ -238,7 +238,7 @@ size of the filter kernel.
     # Prints the whitebox-tools license
     wbt_license()
     #> WhiteboxTools License
-    #> Copyright 2017-2022 John Lindsay
+    #> Copyright 2017-2023 John Lindsay
     #> 
     #> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
     #> associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -257,7 +257,7 @@ size of the filter kernel.
 
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v2.2.0 by Dr. John B. Lindsay (c) 2017-2023
+    #> WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
@@ -269,7 +269,7 @@ size of the filter kernel.
 
     # Lists tools with 'lidar' in tool name or description.
     wbt_list_tools("lidar")
-    #> All 48 Tools containing keywords:
+    #> All 50 Tools containing keywords:
     #> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
     #> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
     #> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
@@ -317,7 +317,9 @@ size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
     #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
@@ -351,7 +353,7 @@ size of the filter kernel.
 ## Available Tools
 
 The **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**
-library currently contains more than **535** tools, which are each
+library currently contains more than **545** tools, which are each
 grouped based on their main function into one of the following
 categories: Data Tools, GIS Analysis, Hydrological Analysis, Image
 Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream

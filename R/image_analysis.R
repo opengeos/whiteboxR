@@ -646,7 +646,7 @@ wbt_rgb_to_ihs <- function(intensity, hue, saturation, red=NULL, green=NULL, blu
 
 #' @title Split colour composite
 #'
-#' @description This tool splits an RGB colour composite image into separate multispectral images.
+#' @description Splits an RGB colour composite image into separate multispectral images.
 #'
 #' @param input Input colour composite image file.
 #' @param red Output red band file.

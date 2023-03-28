@@ -36,6 +36,6 @@ wbt_edge_contamination(
 Returns the tool text outputs.
 }
 \description{
-This tool identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
+Identifies grid cells within an input DEM that may be impacted by edge contamination for hydrological applications.
 }
 \keyword{HydrologicalAnalysis}

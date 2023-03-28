@@ -16,7 +16,7 @@ wbt_height_above_ground(
 \arguments{
 \item{input}{Input LiDAR file (including extension).}
 
-\item{output}{Output raster file (including extension).}
+\item{output}{Output lidar file (including extension).}
 
 \item{wd}{Changes the working directory.}
 

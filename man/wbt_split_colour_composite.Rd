@@ -36,6 +36,6 @@ wbt_split_colour_composite(
 Returns the tool text outputs.
 }
 \description{
-This tool splits an RGB colour composite image into separate multispectral images.
+Splits an RGB colour composite image into separate multispectral images.
 }
 \keyword{ImageProcessingTools}

@@ -72,9 +72,9 @@ This command always returns a "default" path, whether or not you have WhiteboxTo
 
 WhiteboxTools input and output are specified as file paths to rasters in GeoTIFF format, shapefiles, HTML output, LiDAR-related files, and more.
 
-In this vignette we will use the `terra` package for visualization. Just as easily we could have used `raster`, `stars` or other options available in the R ecosystem.
+In this vignette we will use the `terra` package for visualization. Just as easily we could have used `raster`, `stars` or other options available in the R ecosystem for handling the GeoTIFF output.
 
-Saving your "output" file paths as a variable so that you can use them later to load the file into an R object is the main way to view your output.
+The main way to view your output is to save "output" file paths as a variable so that you can use them after processing to load the result into an R spatial object.
 
 #### Working with Raster Data
 
@@ -199,7 +199,7 @@ NOTE: once you have set a working directory in a session, the directory needs to
 
 A helper method for setting the `whitebox.wd` option is `wbt_wd()`. 
 
-*To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. The next tool call will change the WhiteboxTools working directory setting to the new path. After this point the flag need not be specified [until you wish to change again]. 
+To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`. The next tool call will change the WhiteboxTools working directory setting to the new path. After this point the flag need not be specified [until you wish to change again]. 
 
 ```r
 wbt_wd("") # "" equivalent to getwd()
@@ -449,23 +449,17 @@ Finally, we compare results of `wbt_extract_streams()` with `wbt_tributary_ident
 
 ```{r}
 if (file.exists(file.path(wd, "toy_dem_streams.tif"))) {
-  # par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))
+  par(mfrow = c(2, 1), mar = c(3, 1, 2, 1))
   
   plot(
     rast(file.path(wd, "toy_dem_streams.tif")),
     main = "Streams",
-    col = "black",
-    axes = FALSE,
-    horizontal = TRUE,
-    box = FALSE
+    col = "black"
   )
   
   plot(
     rast(file.path(wd, "toy_dem_tributaries.tif")),
-    main = "TributaryIdentifier",
-    axes = FALSE,
-    horizontal = TRUE,
-    box = FALSE
+    main = "TributaryIdentifier"
   )
 }
 ```
