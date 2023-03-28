@@ -81,11 +81,11 @@ x <- wbt("slope", dem = dem, output = "slope.tif") |>
   wbt("slope", output = "torsion.tif") 
 
 # stack results with rast() and plot
-# use get_result(<wbt_result>)
+# use wbt_result(<wbt_result>)
 # - returns a list if there is more than one result in history
 # - create multilayer SpatRaster from list
 x |>
-  get_result() |>
+  wbt_result() |>
   terra::rast() |>
   plot()
 
@@ -106,7 +106,7 @@ x |>
   wbt("slope", output = "snap.tif") |>
   wbt("slope", output = "crackle.tif") |>
   wbt("slope", output = "pop.tif") |>
-  get_result() |> raster::stack() |> plot()
+  wbt_result() |> raster::stack() |> plot()
 
 # a wbt_result, with list of wbt_result in $history
 wbt("slope", dem = dem, output = "slope.tif") |> 

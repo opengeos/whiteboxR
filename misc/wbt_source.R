@@ -36,7 +36,7 @@ plot(t1)
 plot(t2)
 
 t3 <- wbt_add2(t1, t2, "output.tif") |> 
-  get_result() |> 
+  wbt_result() |> 
   rast() 
 plot(c(t1, t2, t3))
 

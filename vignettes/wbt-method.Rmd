@@ -223,11 +223,11 @@ input/output parameters of the most recent tool run in a tool chain.
 x2
 ```
 
-`get_result()` is the method to get `$result` for single runs or all `$result`
+`wbt_result()` is the method to get `$result` for single runs or all `$result`
 in `$history` for chained runs from a `wbt_result` object.
 
 ```{r}
-str(get_result(x2), max.level = 1)
+str(wbt_result(x2), max.level = 1)
 ```
 
 The `$history` element is a list of the `wbt_result` from individual runs.
@@ -351,6 +351,7 @@ specific file types and generic .rda files with metadata for others.
  
 
 ```{r, echo=FALSE} 
-# cleanup tif files in temp 
-unlink(list.files(tempdir(), pattern = "tif$", full.names = TRUE))
+# cleanup temp files
+unlink(list.files(".", pattern = "file.*tif$", full.names = TRUE))
+unlink(list.files(tempdir(), pattern = "file.*tif$", full.names = TRUE))
 ```

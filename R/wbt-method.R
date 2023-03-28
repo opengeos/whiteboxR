@@ -2,7 +2,7 @@
 #'
 #' You are required to specify all required arguments as either paths to files, or R object types that can be associated with a file.
 #'
-#' Supports SpatRaster / RasterLayer input / output. Arguments are transformed from their source class and passed to WhiteBox tools executable as standard character string arguments involving file paths.
+#' Supports SpatRaster / RasterLayer input / output. Arguments are transformed from their source class and passed to WhiteboxTools executable as standard character string arguments involving file paths.
 #'
 #' To print help for any tool, see `wbt_tool_help()`
 #'
@@ -15,7 +15,7 @@
 #' @details `tool_name` may be specified with or without quotes or `wbt_` prefix. e.g. `"wbt_slope"`, `wbt_slope`, `slope`, and `"slope"` are identical.
 #'
 #' @seealso [wbt_tool_help()]
-#'
+#' @keywords General
 #' @return a list with class `"wbt_result"` containing elements:
 #'    * `tool` - the tool name
 #'    * `args` - arguments passed to executable
@@ -50,7 +50,7 @@ wbt <- function(result,
 # constructors for wbt_result and wbt_error_result
 
 # TODO: think about result class structure
-wbt_result <- function(tool_name, args, stdout, crs, result) {
+.wbt_result_class <- function(tool_name, args, stdout, crs, result) {
   structure(
     list(
       tool = tool_name,
@@ -64,11 +64,13 @@ wbt_result <- function(tool_name, args, stdout, crs, result) {
 wbt_error_result <- function(tool_name, args, crs, message) {
   errm <- try(stop(), silent = TRUE)
   errm[1] <- message
-  wbt_result(tool_name = tool_name,
-             args = args,
-             stdout = NULL,
-             crs = crs,
-             result = errm)
+  .wbt_result_class(
+    tool_name = tool_name,
+    args = args,
+    stdout = NULL,
+    crs = crs,
+    result = errm
+  )
 }
 
 
@@ -126,8 +128,8 @@ print.wbt_result <- function(x, ...) {
                  collapse = ", "), "\n -",
           paste0(sapply(x$history[1:(length(x$history) - 1)], function(y)
             if (!is.null(y$tool))
-              return(paste0(y$tool," (", paste0(names(y$result), collapse=", "), "<",
-                     paste0(sapply(y$result, class), collapse=", "), ">)"))),
+              return(paste0(y$tool," (", paste0(names(y$result), collapse = ", "), "<",
+                     paste0(sapply(y$result, class), collapse = ", "), ">)"))),
             collapse = "\n - "))
     }
     cat("\n")
@@ -162,14 +164,14 @@ wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FA
 
   # add prior call in history
   res <- .wbt(tool_name, yrg, prm, crs = crs, verbose_mode = verbose_mode, command_only = command_only)
-  if (inherits(res, 'wbt_result')){
+  if (inherits(res, 'wbt_result')) {
     res$history <- c(result$history, list(res))
   }
   res
 }
 
 
-#' @description `get_result()`: return a combined list of results from either the history of a `wbt_result` (if present and `history=TRUE`), or the result of a `wbt_result`
+#' @description `wbt_result()`: return a combined list of results from either the history of a `wbt_result` (if present and `history=TRUE`), or the result of a `wbt_result`
 #' @param result an object of class `wbt_result`
 #' @param i Optional index of result list element to return as result. Default is whole list.
 #' @param history Default: `TRUE` returns a list of all history results
@@ -177,12 +179,12 @@ wbt.wbt_result <- function(result, tool_name, ..., crs = NULL, verbose_mode = FA
 #' @return list of result in `attribute` if `"history"` is present, otherwise the result in `attribute`. If `i` is specified, just the `i`th element of the list. 
 #' @export
 #' @rdname wbt
-get_result <- function(result, i = NULL, history = TRUE, attribute = "output") {
-  UseMethod("get_result")
+wbt_result <- function(result, i = NULL, history = TRUE, attribute = "output") {
+  UseMethod("wbt_result")
 }
 
 #' @export
-get_result.wbt_result <- function(result, i = NULL, history = TRUE, attribute = "output") {
+wbt_result.wbt_result <- function(result, i = NULL, history = TRUE, attribute = "output") {
   # if there is $history present, by default return a list of all the results
   if (!is.null(result[["history"]]) && history) {
     res <- sapply(result[["history"]], function(x) x$result[[attribute]])
@@ -204,7 +206,7 @@ get_result.wbt_result <- function(result, i = NULL, history = TRUE, attribute = 
 
 #' @export
 as.data.frame.wbt_result <- function(x, ...) {
-  outputlist <- get_result(x)
+  outputlist <- wbt_result(x)
   cbind(as.data.frame(unclass(x)[c("tool", "args", "stdout", "crs")],
                       ...)[rep(1, length(outputlist)),],
         data.frame(output = I(outputlist)))
@@ -247,7 +249,7 @@ wbt.character <- function(result, tool_name, ...,  crs = NULL, verbose_mode = FA
   }
 
   res <- .wbt(tool_name, yrg, prm, crs = crs, verbose_mode = verbose_mode, command_only = command_only)
-  if (inherits(res, 'wbt_result')){
+  if (inherits(res, 'wbt_result')) {
     res$history <- list(res)
   }
   res
@@ -350,12 +352,11 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     }
 
     # raster rasterlayer support
-    if (inherits(x, 'RasterLayer') || inherits(x, 'RasterStack') || inherits(x, 'RasterBrick')) {
+    if (inherits(x, c('RasterLayer', 'RasterStack', 'RasterBrick'))) {
       if (requireNamespace("raster")) {
         res <- try(raster::filename(x))
         attr(res, "package") <- "raster"
         return(res)
-        # return(try(x@file@name))
       }
     # terra spatraster support
     } else if (inherits(x, 'SpatRaster')) {
@@ -370,12 +371,9 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
         } else res <- res2
         attr(res, "package") <- "terra"
         return(res)
-        # return(try(x@ptr$filenames))
       }
     # vector data support
-    } else if (inherits(x, 'SpatVector') ||
-               inherits(x, 'SpatVectorProxy') ||
-               inherits(x, 'sf')) {
+    } else if (inherits(x, c('SpatVector', 'SpatVectorProxy', 'sf'))) {
       src <- attr(x, 'wbt_dsn')
 
       if (is.null(src)) {
@@ -384,8 +382,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
       }
 
       if (!is.null(src) && file.exists(src)) {
-        if (inherits(x, 'SpatVector') ||
-            inherits(x, 'SpatVectorProxy')) {
+        if (inherits(x, c('SpatVector', 'SpatVectorProxy'))) {
 
           attr(src, "package") <- "terra"
 
@@ -466,10 +463,10 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   res
 }
 
-.process_tool_params <- function (tool_name,
-                                  userargs,
-                                  result = NULL,
-                                  prm = .get_tool_params(tool_name)) {
+.process_tool_params <- function(tool_name,
+                                 userargs,
+                                 result = NULL,
+                                 prm = .get_tool_params(tool_name)) {
 
   # take output from result to augment as first input if not specified
   inputprm <- prm$argument_name[prm$is_input][1]
@@ -546,7 +543,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
     }
     errres <- .warninput(paste0("ERROR: ",
                                 paste0(c(invalid, reqprm),
-                                       collapse ="; ")))
+                                       collapse = "; ")))
     attr(errres, 'tool') <- tool_name
     attr(errres, 'args') <- newargs
     return(errres)
@@ -635,7 +632,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   newargs <- .wbt_args(tool_name = tool_name, args = args, params = params, crs = crs)
 
   if (inherits(newargs, 'try-error')) {
-    return(invisible(wbt_result(tool_name = tool_name,
+    return(invisible(.wbt_result_class(tool_name = tool_name,
                          args = attr(newargs, 'args'),
                          stdout = NULL,
                          crs = crs,
@@ -654,7 +651,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   }
 
   if (inherits(console, 'try-error')) {
-    return(invisible(wbt_result(tool_name = tool_name,
+    return(invisible(.wbt_result_class(tool_name = tool_name,
         args = newargs,
         stdout = console[1], # return the error message, and a try-error in result
         crs = crs,
@@ -670,7 +667,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   } 
   
   return(invisible(
-    wbt_result(
+    .wbt_result_class(
       tool_name = tool_name,
       args = newargs,
       stdout = console,

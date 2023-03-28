@@ -4,6 +4,7 @@ reference:
   desc: 
 - contents:
   - has_keyword("General")
+  - has_keyword("WhiteboxUtilities")
 - subtitle: Data Tools
   desc: 
 - contents:

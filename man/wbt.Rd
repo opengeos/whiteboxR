@@ -3,7 +3,7 @@
 \name{wbt}
 \alias{wbt}
 \alias{wbt.wbt_result}
-\alias{get_result}
+\alias{wbt_result}
 \alias{wbt.character}
 \alias{wbt.function}
 \alias{wbt.missing}
@@ -27,7 +27,7 @@ wbt(
   command_only = FALSE
 )
 
-get_result(result, i = NULL, history = TRUE, attribute = "output")
+wbt_result(result, i = NULL, history = TRUE, attribute = "output")
 
 \method{wbt}{character}(
   result,
@@ -91,10 +91,10 @@ list of result in \code{attribute} if \code{"history"} is present, otherwise the
 \description{
 You are required to specify all required arguments as either paths to files, or R object types that can be associated with a file.
 
-\code{get_result()}: return a combined list of results from either the history of a \code{wbt_result} (if present and \code{history=TRUE}), or the result of a \code{wbt_result}
+\code{wbt_result()}: return a combined list of results from either the history of a \code{wbt_result} (if present and \code{history=TRUE}), or the result of a \code{wbt_result}
 }
 \details{
-Supports SpatRaster / RasterLayer input / output. Arguments are transformed from their source class and passed to WhiteBox tools executable as standard character string arguments involving file paths.
+Supports SpatRaster / RasterLayer input / output. Arguments are transformed from their source class and passed to WhiteboxTools executable as standard character string arguments involving file paths.
 
 To print help for any tool, see \code{wbt_tool_help()}
 
@@ -103,3 +103,4 @@ To print help for any tool, see \code{wbt_tool_help()}
 \seealso{
 \code{\link[=wbt_tool_help]{wbt_tool_help()}}
 }
+\keyword{General}

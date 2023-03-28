@@ -1,4 +1,4 @@
-#' Initialize an R object containing vector data for use by WhiteboxTools
+#' Initialize an R object containing spatial data for use by WhiteboxTools
 #'
 #' @param x A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy
 #' @param dsn Data source path / file name
@@ -7,7 +7,7 @@
 #' @param ... Additional arguments passed to `terra::writeVector()` or `sf::st_write()`
 #' @param verbose Print information about data source and contents? 
 #' @return An R object with attributes `wbt_dsn` and `wbt_layer` set as needed to support reading and writing R objects from file by WhiteboxTools.
-#' 
+#' @keywords General
 #' @export
 wbt_source <- function(x,
                        dsn = NULL,
@@ -41,13 +41,13 @@ wbt_source <- function(x,
       
       # a SpatVectorProxy allows us to get some basic info without loading the whole file
       x <- terra::vect(x, proxy = TRUE)
-      attr(x, 'wbt_dsn') <- x@ptr$v$source
+      attr(x, 'wbt_dsn') <- terra::sources(x)
       attr(x, 'wbt_layer') <- layer
       return(x)
     }
   }
   
-    # NULL dsn (TODO: GDAL-supported dsn not supported by WBT)
+  # NULL dsn (TODO: GDAL-supported dsn not supported by WBT)
   if (is.null(dsn)) {
     # if (gpkg) {
     #   # default geopackage file paths

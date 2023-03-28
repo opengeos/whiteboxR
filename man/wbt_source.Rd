@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt_source.R
 \name{wbt_source}
 \alias{wbt_source}
-\title{Initialize an R object containing vector data for use by WhiteboxTools}
+\title{Initialize an R object containing spatial data for use by WhiteboxTools}
 \usage{
 wbt_source(
   x,
@@ -30,5 +30,6 @@ wbt_source(
 An R object with attributes \code{wbt_dsn} and \code{wbt_layer} set as needed to support reading and writing R objects from file by WhiteboxTools.
 }
 \description{
-Initialize an R object containing vector data for use by WhiteboxTools
+Initialize an R object containing spatial data for use by WhiteboxTools
 }
+\keyword{General}
