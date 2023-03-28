@@ -16,6 +16,9 @@
     <loc>/articles/index.html</loc>
   </url>
   <url>
+    <loc>/articles/wbt-method.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -311,6 +314,9 @@
   </url>
   <url>
     <loc>/reference/wbt_decrement.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_dem_void_filling.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_depth_in_sink.html</loc>
@@ -685,10 +691,16 @@
     <loc>/reference/wbt_increment.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_individual_tree_detection.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_init.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_insert_dams.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_install_wb_extension.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_integer_division.html</loc>
@@ -752,6 +764,9 @@
   </url>
   <url>
     <loc>/reference/wbt_las_to_zlidar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_launch_wb_runner.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_layer_footprint.html</loc>
@@ -908,6 +923,9 @@
   </url>
   <url>
     <loc>/reference/wbt_list_unique_values.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_list_unique_values_raster.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_ln.html</loc>
@@ -1084,6 +1102,9 @@
     <loc>/reference/wbt_multiply_overlay.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_multiscale_curvatures.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_multiscale_elevation_percentile.html</loc>
   </url>
   <url>
@@ -1118,6 +1139,9 @@
   </url>
   <url>
     <loc>/reference/wbt_normal_vectors.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_normalize_lidar.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_normalized_difference_index.html</loc>
@@ -1345,6 +1369,9 @@
     <loc>/reference/wbt_remove_polygon_holes.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_remove_raster_polygon_holes.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_remove_short_streams.html</loc>
   </url>
   <url>
@@ -1370,6 +1397,9 @@
   </url>
   <url>
     <loc>/reference/wbt_ring_curvature.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_river_centerlines.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_roberts_cross_filter.html</loc>
@@ -1460,6 +1490,9 @@
   </url>
   <url>
     <loc>/reference/wbt_sort_lidar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_source.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_spherical_std_dev_of_normals.html</loc>
@@ -1574,6 +1607,9 @@
   </url>
   <url>
     <loc>/reference/wbt_tophat_transform.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_topo_render.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_topographic_position_animation.html</loc>

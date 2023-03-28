@@ -1,5 +1,5 @@
 ---
-title: "`wbt()` and _wbt_result_"
+title: "`wbt()` method: call 'Whitebox' tools by name"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{`wbt()` and `wbt_result`}
