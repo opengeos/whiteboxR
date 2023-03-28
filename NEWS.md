@@ -1,12 +1,47 @@
+# whitebox 2.2.1
+
+ * Adds `wbt_data_dir()` for managing where WhiteboxTools "WBT" directory is installed.
+ 
+  * The new default path is a preferred location generated with `tools::R_user_dir(package="whitebox")` on R 4.0+
+  
+ * If `"whitebox_tools"` is found on your PATH, you no longer need any custom setup of `whitebox.exe_path`. The path and options will be detected automatically via `Sys.which("whitebox_tools")`.
+ 
+  * Custom options set within the session or environment take precedence over PATH.
+
+# whitebox 2.2.0
+
+ * Updates for WhiteboxTools v2.2.0
+
+ * `wbt_rust_backtrace()`, a helper method for debugging Rust-related failures of the command-line tool, is now exported
+
+ * `wbt_run_tool()`: Fix potentially length > 1 logic in `if()` statement for error status messages to avoid warnings/future errors
+
+ * `download.file()` `method="wininet"` has been deprecated so it is no longer in the possible set of methods to try on Windows when a download fails
+ 
+# whitebox 2.1.5
+
+ * Added `wbt_install_extension()` and `wbt_activate()` for downloading, installing and activating WhiteboxTools extensions
+
+ * `wbt_internal_tool_name()` now returns tool names in CamelCase, and these are the tool names passed via the command line
+ 
 # whitebox 2.1.4
 
+ * Suggest {terra} instead of {raster} and update demo vignette accordingly; drops {rgdal} suggest
+
+ * Add support for path expansion in `wd` arguments passed directly to tool functions; this was already supported for other methods of setting the working directory
+ 
  * Updates to `wbttools` and `wbttoolparameters` datasets
+ 
     * Fix for `argument_name='k'`
+    
     * Remove several one and two character flag aliases from `argument_name` and replace with full name
- * Suggest {terra} instead of {raster} and update demo vignette accordingly; drops {rgdal} suggest and fixes occasional related CI problems
+    
  * Add support for showing warning messages in regular interactive/verbose mode, thanks to @alenahav for reporting an issue (https://github.com/giswqs/whiteboxR/issues/75) with `wbt_fd8_flow_accumulation()`
- * Functions that take multiple files are auto-quoted by default; thanks to François-Nicolas Robinne for reporting issue ( https://github.com/giswqs/whiteboxR/issues/55) with `wbt_mosaic()`
- * Add support for path expansion in `wd` arguments passed directly to functions; this was already supported for other methods of setting the working directory
+ 
+ * Functions that take multiple files are auto-quoted by default; thanks to François-Nicolas Robinne for reporting issue (@FNRobinne; https://github.com/giswqs/whiteboxR/issues/55) with `wbt_mosaic()`
+ 
+ * Error output is now more verbose, ensuring relevant tool output is displayed to user on error regardless of verbosity, platform, etc. Thanks to Jeffrey W. Rozelle for reporting issue (@jwilliamrozelle; https://github.com/giswqs/whiteboxR/issues/80) with getting error messages about unsupported raster types
+ 
 
 # whitebox 2.1.3
 

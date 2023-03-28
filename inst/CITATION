@@ -1,7 +1,17 @@
 citHeader("To cite whitebox in publications use:")
-  
-citEntry(
-  entry    = "Article",
+
+bibentry(
+  bibtype = "Manual",
+  title = "'whitebox': 'WhiteboxTools' R Frontend",
+  author = "Qiusheng Wu, Andrew Brown",
+  note = "R package version 2.2.0",
+  url = "https://CRAN.R-project.org/package=whitebox",
+  year = "2022",
+  textVersion = "Wu, Q., Brown, A. (2022). whitebox: 'WhiteboxTools' R Frontend. R package version 2.2.0. <https://CRAN.R-project.org/package=whitebox>"
+)
+
+bibentry(
+  bibtype  = "Article",
   title    = "Whitebox GAT: A case study in geomorphometric analysis.",
   author   = "J. B. Lindsay",
   journal  = "Computers & Geosciences",

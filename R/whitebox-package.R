@@ -1,3 +1,5 @@
+#' @aliases whitebox-package whitebox whitebox.env
+#' @export whitebox.env
 #' @keywords internal
 #' @section Package options:
 #'
@@ -11,30 +13,35 @@
 #'
 #' - **`whitebox.max_procs`** - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: `-1` uses all of the available cores.
 #'
-#' The package options can be overridden with system environment variables: `R_WHITEBOX_EXE_PATH` (character) and `R_WHITEBOX_VERBOSE`, respectively.
+#' The package options can be overridden with system environment variables: `R_WHITEBOX_EXE_PATH`, `R_WHITEBOX_WD`, `R_WHITEBOX_VERBOSE`, `R_WHITEBOX_COMPRESS_RASTERS` and `R_WHITEBOX_MAX_PROCS`.
 #'
 #' @seealso [wbt_init()], [wbt_options()], [install_whitebox()]
 "_PACKAGE"
 
-#' WhiteboxTools Tool List
+# whitebox package environment
+whitebox.env <- new.env()
+
+#' 'WhiteboxTools' Tool List
 #'
 #' This data set is a `data.frame` containing tools by name and associated R function name
 #' @name wbttools
 #' @docType data
-#' @format A data.frame with 518 observations of 7 variables
-#' - `"tool_name"` - WhiteboxTools tool name
+#' @keywords General datasets
+#' @section Variables:
+#' - `"tool_name"` - 'WhiteboxTools' tool name
 #' - `"function_name"` - R function name
-#' - `"toolbox_name"` - WhiteboxTools toolbox name
-#' - `"label"` - WhiteboxTools tool label
+#' - `"toolbox_name"` - 'WhiteboxTools' toolbox name
+#' - `"label"` - 'WhiteboxTools' tool label
 #' - `"description"` - Brief description
-#' - `"github"` - Link to related code on GitHub
-#' - `"book"` - Link to WhiteboxTools Manual
+#' - `"github"` - Link to related code on 'GitHub'
+#' - `"book"` - Link to 'WhiteboxTools' Manual
+#' - `"is_extension"` - Tool is part of 'General Toolset Extension' (GTE), as opposed to the "open core"
 #' @source [WhiteboxTools](https://github.com/jblindsay/whitebox-tools/releases/)
 #' @seealso [wbttoolparameters] [wbt_list_tools()]
 #' @keywords datasets
 "wbttools"
 
-#' WhiteboxTools Tool Parameters
+#' 'WhiteboxTools' Tool Parameters
 #'
 #' This data set is a `data.frame` containing tool parameters and associated metadata
 #'
@@ -42,9 +49,10 @@
 #'
 #' @name wbttoolparameters
 #' @docType data
-#' @format A `data.frame` with 2082 observations of 13 variables
+#' @keywords General datasets
+#' @section Variables:
 #' - `"function_name"` - R function name
-#' - `"tool_name"` - WhiteboxTools tool name
+#' - `"tool_name"` - 'WhiteboxTools' tool name
 #' - `"name"` - parameter name
 #' - `"flags"` - flags used to specify parameter on command line; comma separated
 #' - `"description"` - parameter description
