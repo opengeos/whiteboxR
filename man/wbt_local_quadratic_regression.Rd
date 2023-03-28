@@ -25,7 +25,7 @@ wbt_local_quadratic_regression(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -33,5 +33,6 @@ wbt_local_quadratic_regression(
 Returns the tool text outputs.
 }
 \description{
-This tool is an implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
+An implementation of the constrained quadratic regression algorithm using a flexible window size described in Wood (1996).
 }
+\keyword{GeomorphometricAnalysis}

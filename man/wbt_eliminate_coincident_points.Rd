@@ -17,7 +17,7 @@ wbt_eliminate_coincident_points(
 \arguments{
 \item{input}{Input vector file.}
 
-\item{output}{Output vector polygon file.}
+\item{output}{Output vector points file.}
 
 \item{tolerance}{The distance tolerance for points.}
 
@@ -25,7 +25,7 @@ wbt_eliminate_coincident_points(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Removes any coincident, or nearly coincident, points from a vector points file.
 }
+\keyword{GISAnalysis}

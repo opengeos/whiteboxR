@@ -43,13 +43,13 @@ wbt_time_in_daylight(
 
 \item{start_time}{Starting hour to track shadows (e.g. 5, 5:00, 05:00:00). Assumes 24-hour time: HH:MM:SS. 'sunrise' is also a valid time.}
 
-\item{end_time}{Starting hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.}
+\item{end_time}{Ending hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.}
 
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -59,3 +59,4 @@ Returns the tool text outputs.
 \description{
 Calculates the proportion of time a location is not within an area of shadow.
 }
+\keyword{GeomorphometricAnalysis}

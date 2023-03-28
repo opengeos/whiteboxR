@@ -25,7 +25,7 @@ wbt_find_lowest_or_highest_points(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -35,3 +35,4 @@ Returns the tool text outputs.
 \description{
 Locates the lowest and/or highest valued cells in a raster.
 }
+\keyword{GISAnalysis}

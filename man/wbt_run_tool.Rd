@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_run_tool}
 \alias{wbt_run_tool}
-\title{Run a tool in WhiteboxTools by name}
+\title{Run a tool in 'WhiteboxTools' by name}
 \usage{
 wbt_run_tool(tool_name, args, verbose_mode = FALSE, command_only = FALSE)
 }
@@ -35,3 +35,4 @@ wbt_run_tool(tool_name, args)
 \seealso{
 \link{wbt_list_tools}
 }
+\keyword{General}

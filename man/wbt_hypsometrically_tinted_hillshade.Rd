@@ -34,7 +34,7 @@ wbt_hypsometrically_tinted_hillshade(
 
 \item{atmospheric}{Atmospheric effects weight (0.0-1.0).}
 
-\item{palette}{Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridi', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.}
+\item{palette}{Options include 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'purple', 'viridis', 'gn_yl', 'pi_y_g', 'bl_yl_rd', and 'deep'.}
 
 \item{reverse}{Optional flag indicating whether to use reverse the palette.}
 
@@ -46,7 +46,7 @@ wbt_hypsometrically_tinted_hillshade(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -56,3 +56,4 @@ Returns the tool text outputs.
 \description{
 Creates an colour shaded relief image from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

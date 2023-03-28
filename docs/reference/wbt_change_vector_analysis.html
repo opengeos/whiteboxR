@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -66,40 +66,57 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">wbt_change_vector_analysis</span><span class="op">(</span>
-  <span class="va">date1</span>,
-  <span class="va">date2</span>,
-  <span class="va">magnitude</span>,
-  <span class="va">direction</span>,
-  wd <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,
-  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,
-  command_only <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">wbt_change_vector_analysis</span><span class="op">(</span></span>
+<span>  <span class="va">date1</span>,</span>
+<span>  <span class="va">date2</span>,</span>
+<span>  <span class="va">magnitude</span>,</span>
+<span>  <span class="va">direction</span>,</span>
+<span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  command_only <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>date1</dt>
 <dd><p>Input raster files for the earlier date.</p></dd>
+
+
 <dt>date2</dt>
 <dd><p>Input raster files for the later date.</p></dd>
+
+
 <dt>magnitude</dt>
 <dd><p>Output vector magnitude raster file.</p></dd>
+
+
 <dt>direction</dt>
 <dd><p>Output vector Direction raster file.</p></dd>
+
+
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
+
+
 <dt>verbose_mode</dt>
 <dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+
+
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+
+
 <dt>command_only</dt>
 <dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the tool text outputs.</p>
+    
+
+<p>Returns the tool text outputs.</p>
     </div>
 
   </div>
@@ -114,7 +131,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -66,58 +66,87 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">wbt_shadow_animation</span><span class="op">(</span>
-  <span class="va">input</span>,
-  <span class="va">output</span>,
-  palette <span class="op">=</span> <span class="st">"atlas"</span>,
-  max_dist <span class="op">=</span> <span class="st">""</span>,
-  date <span class="op">=</span> <span class="st">"21/06/2021"</span>,
-  interval <span class="op">=</span> <span class="fl">15</span>,
-  location <span class="op">=</span> <span class="st">"43.5448/-80.2482/-4"</span>,
-  height <span class="op">=</span> <span class="fl">600</span>,
-  delay <span class="op">=</span> <span class="fl">250</span>,
-  label <span class="op">=</span> <span class="st">""</span>,
-  wd <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,
-  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,
-  command_only <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">wbt_shadow_animation</span><span class="op">(</span></span>
+<span>  <span class="va">input</span>,</span>
+<span>  <span class="va">output</span>,</span>
+<span>  palette <span class="op">=</span> <span class="st">"atlas"</span>,</span>
+<span>  max_dist <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  date <span class="op">=</span> <span class="st">"21/06/2021"</span>,</span>
+<span>  interval <span class="op">=</span> <span class="fl">15</span>,</span>
+<span>  location <span class="op">=</span> <span class="st">"43.5448/-80.2482/-4"</span>,</span>
+<span>  height <span class="op">=</span> <span class="fl">600</span>,</span>
+<span>  delay <span class="op">=</span> <span class="fl">250</span>,</span>
+<span>  label <span class="op">=</span> <span class="st">""</span>,</span>
+<span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  command_only <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>input</dt>
 <dd><p>Name of the input digital surface model (DSM) raster file.</p></dd>
+
+
 <dt>output</dt>
 <dd><p>Name of the output HTML file (*.html).</p></dd>
+
+
 <dt>palette</dt>
 <dd><p>DSM image palette; options are 'atlas', 'high_relief', 'arid', 'soft', 'muted', 'light_quant', 'purple', 'viridis', 'gn_yl', 'pi_y_g', 'bl_yl_rd', 'deep', and 'none'.</p></dd>
+
+
 <dt>max_dist</dt>
 <dd><p>Optional maximum search distance, in xy units. Minimum value is 5 x cell size.</p></dd>
+
+
 <dt>date</dt>
 <dd><p>Date in format DD/MM/YYYY.</p></dd>
+
+
 <dt>interval</dt>
 <dd><p>Time interval, in minutes (1-60).</p></dd>
+
+
 <dt>location</dt>
 <dd><p>Location, defined as Lat/Long/UTC-offset (e.g. 43.5448/-80.2482/-4).</p></dd>
+
+
 <dt>height</dt>
 <dd><p>Image height, in pixels.</p></dd>
+
+
 <dt>delay</dt>
 <dd><p>GIF time delay in milliseconds.</p></dd>
+
+
 <dt>label</dt>
 <dd><p>Label text (leave blank for none).</p></dd>
+
+
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
+
+
 <dt>verbose_mode</dt>
 <dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+
+
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+
+
 <dt>command_only</dt>
 <dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the tool text outputs.</p>
+    
+
+<p>Returns the tool text outputs.</p>
     </div>
 
   </div>
@@ -132,7 +161,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

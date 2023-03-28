@@ -7,7 +7,6 @@
 wbt_ruggedness_index(
   dem,
   output,
-  zfactor = NULL,
   wd = NULL,
   verbose_mode = FALSE,
   compress_rasters = FALSE,
@@ -19,13 +18,11 @@ wbt_ruggedness_index(
 
 \item{output}{Output raster file.}
 
-\item{zfactor}{Optional multiplier for when the vertical and horizontal units are not the same.}
-
 \item{wd}{Changes the working directory.}
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -35,3 +32,4 @@ Returns the tool text outputs.
 \description{
 Calculates the Riley et al.'s (1999) terrain ruggedness index from an input DEM.
 }
+\keyword{GeomorphometricAnalysis}

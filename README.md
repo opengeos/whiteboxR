@@ -3,20 +3,17 @@
 <!-- badges: start -->
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
-[![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
-[![whitebox
-Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/giswqs/whitebox-r-binder/master?urlpath=rstudio)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/giswqs/whiteboxR?branch=master&svg=true)](https://ci.appveyor.com/project/giswqs/whiteboxR/)
-[![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](https://giswqs.github.io/whiteboxR/)
-[![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter
-Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
 [![CRAN download
 count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)
+[![whitebox
+Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
+[![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio)
+[![Twitter
+Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
 <!-- badges: end -->
 
@@ -32,12 +29,12 @@ command-line program called
 -   Contributors:
     -   Dr. Qiusheng Wu (<https://wetlands.io> |
         <https://blog.gishub.org>)
-    -   Andrew G. Brown (<http://humus.rocks>)
+    -   Andrew G. Brown (<https://humus.rocks>)
 -   GitHub repo: <https://github.com/giswqs/whiteboxR>
 -   CRAN link: <https://cran.r-project.org/package=whitebox>
 -   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
 -   User Manual: <https://jblindsay.github.io/wbt_book/>
--   Free software: [MIT license](https://opensource.org/licenses/MIT)
+-   Free software: [MIT license](https://opensource.org/license/MIT)
 
 **Contents**
 
@@ -90,15 +87,7 @@ it with:
 
     install.packages("whitebox")
 
-### 2. R-Forge
-
-**whitebox** is also available on
-[R-Forge](https://r-forge.r-project.org/R/?group_id=2337), so you can
-install it with:
-
-    install.packages("whitebox", repos="http://R-Forge.R-project.org")
-
-### 3. GitHub
+### 2. GitHub
 
 You can alternatively install the development version of **whitebox**
 from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
@@ -108,7 +97,7 @@ from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
 
 ## Usage
 
-The function `wbt_init()` checks the path to the WhiteboxTools binary.
+The function `wbt_init()` checks the path to the ‘WhiteboxTools’ binary.
 
     wbt_init()
 
@@ -116,7 +105,7 @@ It (invisibly) returns a logical (TRUE/FALSE) value reflecting whether a
 file is found at one of the default paths, including those specified by
 package options. See `?whitebox::whitebox`.
 
-If you have WhiteboxTools installed already but in a non-standard
+If you have ‘WhiteboxTools’ installed already but in a non-standard
 location run `wbt_init(exe_path=...)` to set up your options for your
 current R session.
 
@@ -147,18 +136,18 @@ Check out this
 [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for
 examples.
 
-## Installing WhiteboxTools
+## Installing ‘WhiteboxTools’
 
 The quickest way to get started if you are on 64-bit Windows, Linux or
-MacOS architectures is to download and install the WhiteboxTools binary.
-A method `install_whitebox()` is provided to download a version of the
-binaries that corresponds to the wrapper functions available in the
-package.
+MacOS architectures is to download and install the ‘WhiteboxTools’
+binary. A method `install_whitebox()` is provided to download a version
+of the binaries that corresponds to the wrapper functions available in
+the package.
 
     whitebox::install_whitebox()
 
-By default this will install to your whitebox R package installation
-directory (e.g. in your R package library), subdirectory “WBT”.
+By default this will install ‘WhiteboxTools’ to your whitebox R package
+data directory (see `wbt_data_dir()`), subdirectory “WBT”.
 
 ## whitebox
 
@@ -166,8 +155,8 @@ directory (e.g. in your R package library), subdirectory “WBT”.
 
 Tool names in the whitebox R package can be called by corresponding
 function using `wbt_snake_case()` naming convention
-(e.g. `wbt_lidar_info()` R function for `"LidarInfo"` WhiteboxTools tool
-name).
+(e.g. `wbt_lidar_info()` R function for `"LidarInfo"` ‘WhiteboxTools’
+tool name).
 
 First we load the library and perform any necessary setup.
 
@@ -176,27 +165,26 @@ First we load the library and perform any necessary setup.
     # set up as needed
     wbt_init()
 
-Many WhiteboxTools will take GeoTIFF files as input. There is a sample
+Many ‘WhiteboxTools’ will take GeoTIFF files as input, but
+‘WhiteboxTools’ supports several grid input formats. There is a sample
 Digital Elevation Model (DEM) included in the whitebox package. You can
 get path as follows for this demo:
 
     # Set input raster DEM file
-    dem <- system.file("extdata", "DEM.tif", package = "whitebox")
+    dem <- sample_dem_data()
 
-We will use this DEM in and perform a sequence of processing routines.
+We will use this DEM in a sequence of ‘WhiteboxTools’ processing
+routines. Run tools by passing file paths for the input and output
+files.
 
-1.  Applies feature-preserving smoothing (FeaturePreservingSmoothing)
+1.  Apply feature-preserving smoothing (*FeaturePreservingSmoothing*)
 
-2.  Breaches depressions in a DEM (BreachDepressions)
+2.  Breach depressions in a DEM (*BreachDepressions*)
 
-3.  Calculates D-Infinity flow accumulation (DInfFlowAccumulation)
+3.  Calculate D-Infinity flow accumulation (*DInfFlowAccumulation*)
 
-Run tools passing file paths for input and output grids.
-
-In this case we will deal with GeoTIFF input, but WhiteboxTools supports
-several grid input formats.
-
-The `filter` argument sets the size of the filter kernel.
+The `filter` argument to `wbt_feature_preserving_smoothing()` sets the
+size of the filter kernel.
 
     ## 1. FeaturePreservingSmoothing
     wbt_feature_preserving_smoothing(
@@ -218,7 +206,7 @@ The `filter` argument sets the size of the filter kernel.
 
 <img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
-**About WhiteboxTools**
+**About ‘WhiteboxTools’**
 
     library(whitebox)
 
@@ -230,17 +218,19 @@ The `filter` argument sets the size of the filter kernel.
     #> WhiteboxTools Help
     #> 
     #> The following commands are recognized:
-    #> --cd, --wd       Changes the working directory; used in conjunction with --run flag.
-    #> -h, --help       Prints help information.
-    #> -l, --license    Prints the whitebox-tools license. Tool names may also be used, --license="Slope"
-    #> --listtools      Lists all available tools. Keywords may also be used, --listtools slope.
-    #> -r, --run        Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".
-    #> --toolbox        Prints the toolbox associated with a tool; --toolbox=Slope.
-    #> --toolhelp       Prints the help associated with a tool; --toolhelp="LidarInfo".
-    #> --toolparameters Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".
-    #> -v               Verbose mode. Without this flag, tool outputs will not be printed.
-    #> --viewcode       Opens the source code of a tool in a web browser; --viewcode="LidarInfo".
-    #> --version        Prints the version information.
+    #> --cd, --wd          Changes the working directory; used in conjunction with --run flag.
+    #> --compress_rasters  Sets the compress_raster option in the settings.json file; determines if newly created rasters are compressed. e.g. --compress_rasters=true
+    #> -h, --help          Prints help information.
+    #> -l, --license       Prints the whitebox-tools license. Tool names may also be used, --license="Slope"
+    #> --listtools         Lists all available tools. Keywords may also be used, --listtools slope.
+    #> --max_procs         Sets the maximum number of processors used. -1 = all available processors. e.g. --max_procs=2
+    #> -r, --run           Runs a tool; used in conjunction with --wd flag; -r="LidarInfo".
+    #> --toolbox           Prints the toolbox associated with a tool; --toolbox=Slope.
+    #> --toolhelp          Prints the help associated with a tool; --toolhelp="LidarInfo".
+    #> --toolparameters    Prints the parameters (in json form) for a specific tool; --toolparameters="LidarInfo".
+    #> -v                  Verbose mode. Without this flag, tool outputs will not be printed.
+    #> --viewcode          Opens the source code of a tool in a web browser; --viewcode="LidarInfo".
+    #> --version           Prints the version information.
     #> 
     #> Example Usage:
     #> >> ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys
@@ -248,7 +238,7 @@ The `filter` argument sets the size of the filter kernel.
     # Prints the whitebox-tools license
     wbt_license()
     #> WhiteboxTools License
-    #> Copyright 2017-2021 John Lindsay
+    #> Copyright 2017-2023 John Lindsay
     #> 
     #> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
     #> associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -267,7 +257,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v2.1.0 by Dr. John B. Lindsay (c) 2017-2022
+    #> WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
@@ -279,7 +269,7 @@ The `filter` argument sets the size of the filter kernel.
 
     # Lists tools with 'lidar' in tool name or description.
     wbt_list_tools("lidar")
-    #> All 47 Tools containing keywords:
+    #> All 50 Tools containing keywords:
     #> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
     #> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
     #> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
@@ -288,7 +278,7 @@ The `filter` argument sets the size of the filter kernel.
     #> FilterLidarClasses: Removes points in a LAS file with certain specified class values.
     #> FilterLidarScanAngles: Removes points in a LAS file with scan angles greater than a threshold.
     #> FindFlightlineEdgePoints: Identifies points along a flightline's edge in a LAS file.
-    #> FlightlineOverlap: Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight lines in each grid cell.
+    #> FlightlineOverlap: Reads a LiDAR (LAS) point file and outputs a raster containing the number of overlapping flight-lines in each grid cell.
     #> HeightAboveGround: Normalizes a LiDAR point cloud, providing the height above the nearest ground-classified point.
     #> LasToAscii: Converts one or more LAS files into ASCII text files.
     #> LasToMultipointShapefile: Converts one or more LAS files into MultipointZ vector Shapefiles. When the input parameter is not specified, the tool grids all LAS files contained within the working directory.
@@ -327,6 +317,9 @@ The `filter` argument sets the size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
+    #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
@@ -340,6 +333,7 @@ The `filter` argument sets the size of the filter kernel.
     #> -----------------  -----------
     #> -i, --input        Input LiDAR file.
     #> -o, --output       Output HTML file for summary report.
+    #> --density          Flag indicating whether or not to calculate the average point density and nominal point spacing.
     #> --vlr              Flag indicating whether or not to print the variable length records (VLRs).
     #> --geokeys          Flag indicating whether or not to print the geokeys.
     #> 
@@ -359,17 +353,17 @@ The `filter` argument sets the size of the filter kernel.
 ## Available Tools
 
 The **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**
-library currently contains more than **518** tools, which are each
+library currently contains more than **545** tools, which are each
 grouped based on their main function into one of the following
 categories: Data Tools, GIS Analysis, Hydrological Analysis, Image
 Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream
 Network Analysis, and Terrain Analysis. For a listing of available
 tools, complete with documentation and usage details, please see the
-[WhiteboxTools User
+[‘WhiteboxTools’ User
 Manual](https://jblindsay.github.io/wbt_book/available_tools/index.html).
 
-If you are interested in using the WhiteboxTools command-line program,
-check [WhiteboxTools
+If you are interested in using the ‘WhiteboxTools’ command-line program,
+check [‘WhiteboxTools’
 Usage](https://github.com/jblindsay/whitebox-tools#3-usage)
 
 ## Contributing
@@ -386,13 +380,13 @@ these instructions to get started:
 
 Unless explicitly stated otherwise, any contribution intentionally
 submitted for inclusion in the work shall be licensed as the [MIT
-license](https://opensource.org/licenses/MIT) without any additional
+license](https://opensource.org/license/MIT) without any additional
 terms or conditions.
 
 ## License
 
 The whitebox **R** package is distributed under the [MIT
-license](https://opensource.org/licenses/MIT), a permissive open-source
+license](https://opensource.org/license/MIT), a permissive open-source
 (free software) license.
 
 ## Reporting Bugs

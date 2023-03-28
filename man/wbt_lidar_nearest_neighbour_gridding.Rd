@@ -25,7 +25,7 @@ wbt_lidar_nearest_neighbour_gridding(
 
 \item{output}{Output raster file (including extension).}
 
-\item{parameter}{Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data'.}
+\item{parameter}{Interpolation parameter; options are 'elevation' (default), 'intensity', 'class', 'return_number', 'number_of_returns', 'scan angle', 'rgb', 'user data', 'time'.}
 
 \item{returns}{Point return types to include; options are 'all' (default), 'last', 'first'.}
 
@@ -43,7 +43,7 @@ wbt_lidar_nearest_neighbour_gridding(
 
 \item{verbose_mode}{Sets verbose mode. If verbose mode is \code{FALSE}, tools will not print output messages.}
 
-\item{compress_rasters}{Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.}
+\item{compress_rasters}{Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.}
 
 \item{command_only}{Return command that would be executed by \code{system()} rather than running tool.}
 }
@@ -53,3 +53,4 @@ Returns the tool text outputs.
 \description{
 Grids LiDAR files using nearest-neighbour scheme. When the input/output parameters are not specified, the tool grids all LAS files contained within the working directory.
 }
+\keyword{LiDARTools}

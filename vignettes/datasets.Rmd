@@ -32,17 +32,13 @@ This vignette provides an introduction to the data sets included in the `whitebo
 
 ### What version of WhiteboxTools are these data sets generated from?
 
-These data sets are built to correspond to tool names available in the most recent version of WhiteboxTools and correspond to tools available in the R package.
-
  - Current version: **`r attr(wbttools, "version")`**
 
-If you have a relatively recent version of WhiteboxTools the version should not be an issue, but the data sets are not dynamically generated from your whitebox installation.
+Internal data sets and functions defined in the R package correspond to tool names available in the most recent version of WhiteboxTools. Data sets are _not_ dynamically generated from your WhiteboxTools installation. Relatively recent versions of WhiteboxTools should be supported backward-compatibly, though any newer functionality will not be usable.
 
 ## WhiteboxTools Tool Names and R Function Names
 
-The first data set provides the relationship between tool names in WhiteboxTools and the corresponding exported function in the R package.
-
-It also gives the WhiteboxTools Toolbox name and a brief description.
+The first data set describes tool names in WhiteboxTools and the corresponding exported function in the R package, along with the WhiteboxTools Toolbox name and a brief description.
 
 ```{r}
 data("wbttools", package = "whitebox")
@@ -74,16 +70,18 @@ head(wbttools)
 
 The R function naming style differs from the tool names in WhiteboxTools, but the core words are the same.
 
-There are two steps to converting WhiteboxTools tool names to R  function names
- 1. `CamelCase` tool names change to `snake_case`
+
+R function names are derived from the WhiteboxTools name as follows:
+
+ 1. `PascalCase` tool names change to `snake_case`
  
- 2. All R function names have the prefix `wbt_`
+ 2. All R function names get the prefix `wbt_`
  
-So, `StreamSlopeContinuous` becomes `wbt_stream_slope_continuous()` in R.
+For example, `StreamSlopeContinuous` in WhiteboxTools becomes `wbt_stream_slope_continuous()` in R.
  
 ## WhiteboxTools Tool and Parameter Names
 
-The second data set provides details about the options by tool name. 
+The second data set provides details about the available function arguments by tool name. 
 
 ```{r}
 data("wbttoolparameters", package = "whitebox")

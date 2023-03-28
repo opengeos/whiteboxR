@@ -46,6 +46,9 @@
     <loc>/reference/wbt_accumulation_curvature.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_activate.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_adaptive_filter.html</loc>
   </url>
   <url>
@@ -145,6 +148,9 @@
     <loc>/reference/wbt_breach_single_cell_pits.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_breakline_mapping.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_buffer_raster.html</loc>
   </url>
   <url>
@@ -175,6 +181,9 @@
     <loc>/reference/wbt_classify_buildings_in_lidar.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_classify_lidar.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_classify_overlap_points.html</loc>
   </url>
   <url>
@@ -196,10 +205,19 @@
     <loc>/reference/wbt_clump.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_colourize_based_on_class.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_colourize_based_on_point_returns.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_compactness_ratio.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_conditional_evaluation.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_conditioned_latin_hypercube.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_conservative_smoothing_filter.html</loc>
@@ -296,6 +314,9 @@
   </url>
   <url>
     <loc>/reference/wbt_depth_in_sink.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_depth_to_water.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_dev_from_mean_elev.html</loc>
@@ -472,6 +493,9 @@
     <loc>/reference/wbt_fill_single_cell_pits.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_filter_lidar.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_filter_lidar_classes.html</loc>
   </url>
   <url>
@@ -559,10 +583,16 @@
     <loc>/reference/wbt_hack_stream_order.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_heat_map.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_height_above_ground.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_help.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_high_pass_bilateral_filter.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_high_pass_filter.html</loc>
@@ -766,6 +796,9 @@
     <loc>/reference/wbt_lidar_digital_surface_model.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_lidar_eigenvalue_features.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_lidar_elevation_slice.html</loc>
   </url>
   <url>
@@ -952,6 +985,9 @@
     <loc>/reference/wbt_max_upslope_flowpath_length.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_max_upslope_value.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_maximal_curvature.html</loc>
   </url>
   <url>
@@ -1021,6 +1057,9 @@
     <loc>/reference/wbt_modified_k_means_clustering.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_modify_lidar.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_modify_no_data_value.html</loc>
   </url>
   <url>
@@ -1040,6 +1079,9 @@
   </url>
   <url>
     <loc>/reference/wbt_multiply.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_multiply_overlay.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_multiscale_elevation_percentile.html</loc>
@@ -1148,6 +1190,9 @@
   </url>
   <url>
     <loc>/reference/wbt_pick_from_list.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_piecewise_contrast_stretch.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_plan_curvature.html</loc>
@@ -1270,6 +1315,9 @@
     <loc>/reference/wbt_reconcile_multiple_headers.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_recover_flightline_info.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_recreate_pass_lines.html</loc>
   </url>
   <url>
@@ -1342,6 +1390,9 @@
     <loc>/reference/wbt_run_tool.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_rust_backtrace.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_scharr_filter.html</loc>
   </url>
   <url>
@@ -1408,10 +1459,16 @@
     <loc>/reference/wbt_sobel_filter.html</loc>
   </url>
   <url>
+    <loc>/reference/wbt_sort_lidar.html</loc>
+  </url>
+  <url>
     <loc>/reference/wbt_spherical_std_dev_of_normals.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_split_colour_composite.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_split_lidar.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_split_vector_lines.html</loc>
@@ -1532,6 +1589,9 @@
   </url>
   <url>
     <loc>/reference/wbt_trace_downslope_flowpaths.html</loc>
+  </url>
+  <url>
+    <loc>/reference/wbt_travelling_salesman_problem.html</loc>
   </url>
   <url>
     <loc>/reference/wbt_trend_surface.html</loc>

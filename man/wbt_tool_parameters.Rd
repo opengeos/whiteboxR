@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_tool_parameters}
 \alias{wbt_tool_parameters}
-\title{Tool parameter descriptions for a specific tool in WhiteboxTools}
+\title{Tool parameter descriptions for a specific tool in 'WhiteboxTools'}
 \usage{
 wbt_tool_parameters(tool_name, quiet = FALSE)
 }
@@ -25,3 +25,4 @@ Retrieves the tool parameter descriptions for a specific tool.
 wbt_tool_parameters("lidar_info")
 }
 }
+\keyword{General}

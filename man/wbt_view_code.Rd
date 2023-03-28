@@ -2,7 +2,7 @@
 % Please edit documentation in R/wbt.R
 \name{wbt_view_code}
 \alias{wbt_view_code}
-\title{Source code for a specific tool in WhiteboxTools}
+\title{Source code for a specific tool in 'WhiteboxTools'}
 \usage{
 wbt_view_code(tool_name, viewer = FALSE)
 }
@@ -22,3 +22,4 @@ Opens a web browser to view the source code for a specific tool on the projects 
 wbt_view_code("breach_depressions")
 }
 }
+\keyword{General}

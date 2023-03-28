@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -66,49 +66,72 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">wbt_lidar_elevation_slice</span><span class="op">(</span>
-  <span class="va">input</span>,
-  <span class="va">output</span>,
-  minz <span class="op">=</span> <span class="cn">NULL</span>,
-  maxz <span class="op">=</span> <span class="cn">NULL</span>,
-  cls <span class="op">=</span> <span class="cn">FALSE</span>,
-  inclassval <span class="op">=</span> <span class="fl">2</span>,
-  outclassval <span class="op">=</span> <span class="fl">1</span>,
-  wd <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,
-  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,
-  command_only <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">wbt_lidar_elevation_slice</span><span class="op">(</span></span>
+<span>  <span class="va">input</span>,</span>
+<span>  <span class="va">output</span>,</span>
+<span>  minz <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  maxz <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  cls <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  inclassval <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  outclassval <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  command_only <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>input</dt>
 <dd><p>Input LiDAR file.</p></dd>
+
+
 <dt>output</dt>
 <dd><p>Output LiDAR file.</p></dd>
+
+
 <dt>minz</dt>
 <dd><p>Minimum elevation value (optional).</p></dd>
+
+
 <dt>maxz</dt>
 <dd><p>Maximum elevation value (optional).</p></dd>
+
+
 <dt>cls</dt>
 <dd><p>Optional boolean flag indicating whether points outside the range should be retained in output but reclassified.</p></dd>
+
+
 <dt>inclassval</dt>
 <dd><p>Optional parameter specifying the class value assigned to points within the slice.</p></dd>
+
+
 <dt>outclassval</dt>
 <dd><p>Optional parameter specifying the class value assigned to points within the slice.</p></dd>
+
+
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
+
+
 <dt>verbose_mode</dt>
 <dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+
+
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+
+
 <dt>command_only</dt>
 <dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the tool text outputs.</p>
+    
+
+<p>Returns the tool text outputs.</p>
     </div>
 
   </div>
@@ -123,7 +146,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

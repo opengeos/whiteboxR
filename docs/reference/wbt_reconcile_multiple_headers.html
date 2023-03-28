@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.1</span>
       </span>
     </div>
 
@@ -66,52 +66,77 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">wbt_reconcile_multiple_headers</span><span class="op">(</span>
-  <span class="va">input</span>,
-  <span class="va">region_field</span>,
-  <span class="va">yield_field</span>,
-  <span class="va">output</span>,
-  radius <span class="op">=</span> <span class="cn">NULL</span>,
-  min_yield <span class="op">=</span> <span class="cn">NULL</span>,
-  max_yield <span class="op">=</span> <span class="cn">NULL</span>,
-  mean_tonnage <span class="op">=</span> <span class="cn">NULL</span>,
-  wd <span class="op">=</span> <span class="cn">NULL</span>,
-  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,
-  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,
-  command_only <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">wbt_reconcile_multiple_headers</span><span class="op">(</span></span>
+<span>  <span class="va">input</span>,</span>
+<span>  <span class="va">region_field</span>,</span>
+<span>  <span class="va">yield_field</span>,</span>
+<span>  <span class="va">output</span>,</span>
+<span>  radius <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  min_yield <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  max_yield <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  mean_tonnage <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  command_only <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>input</dt>
 <dd><p>Name of the input points shapefile.</p></dd>
+
+
 <dt>region_field</dt>
 <dd><p>Name of the attribute containing region data.</p></dd>
+
+
 <dt>yield_field</dt>
 <dd><p>Name of the attribute containing yield data.</p></dd>
+
+
 <dt>output</dt>
 <dd><p>Name of the output points shapefile.</p></dd>
+
+
 <dt>radius</dt>
 <dd><p>Optional search radius, in metres. Only specify this value if you want to calculate locally normalized yield.</p></dd>
+
+
 <dt>min_yield</dt>
 <dd><p>Minimum yield value in output.</p></dd>
+
+
 <dt>max_yield</dt>
 <dd><p>Maximum yield value in output.</p></dd>
+
+
 <dt>mean_tonnage</dt>
 <dd><p>Use this optional parameter to force the output to have a certain overall average tonnage.</p></dd>
+
+
 <dt>wd</dt>
 <dd><p>Changes the working directory.</p></dd>
+
+
 <dt>verbose_mode</dt>
 <dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+
+
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by WhiteboxTools to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+
+
 <dt>command_only</dt>
 <dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Returns the tool text outputs.</p>
+    
+
+<p>Returns the tool text outputs.</p>
     </div>
 
   </div>
@@ -126,7 +151,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
