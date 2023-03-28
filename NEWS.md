@@ -1,6 +1,6 @@
 # whitebox 2.3.0
 
- * Updates for WhiteboxTools v2.3.0
+ * Updates for WhiteboxTools v2.3.0 (https://github.com/jblindsay/whitebox-tools/releases/tag/v2.3.0)
  
  * Add `wbt()`, `wbt_source()`, and related methods; new functionality for calling tools by name with various R object types as input. 
  
