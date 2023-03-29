@@ -34,7 +34,7 @@ command-line program called
 -   CRAN link: <https://cran.r-project.org/package=whitebox>
 -   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
 -   User Manual: <https://jblindsay.github.io/wbt_book/>
--   Free software: [MIT license](https://opensource.org/license/MIT)
+-   Free software: [MIT license](https://opensource.org/license/MIT/)
 
 **Contents**
 
@@ -317,9 +317,9 @@ size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
+    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
     #> NormalizeLidar: Normalizes a LiDAR point cloud.
     #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
-    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")

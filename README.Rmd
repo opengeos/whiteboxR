@@ -37,7 +37,7 @@ This repository is related to the **whitebox** R package for geospatial analysis
 * CRAN link: <https://cran.r-project.org/package=whitebox>
 * WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
 * User Manual: <https://jblindsay.github.io/wbt_book/>
-* Free software: [MIT license](https://opensource.org/license/MIT)
+* Free software: [MIT license](https://opensource.org/license/MIT/)
 
 
 **Contents**
