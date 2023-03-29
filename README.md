@@ -318,8 +318,8 @@ size of the filter kernel.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
     #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
-    #> NormalizeLidar: Normalizes a LiDAR point cloud.
     #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
@@ -380,7 +380,7 @@ these instructions to get started:
 
 Unless explicitly stated otherwise, any contribution intentionally
 submitted for inclusion in the work shall be licensed as the [MIT
-license](https://opensource.org/license/MIT) without any additional
+license](https://opensource.org/license/MIT/) without any additional
 terms or conditions.
 
 ## License
