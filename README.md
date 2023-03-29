@@ -317,9 +317,9 @@ size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
     #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
     #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
-    #> NormalizeLidar: Normalizes a LiDAR point cloud.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
@@ -386,7 +386,7 @@ terms or conditions.
 ## License
 
 The whitebox **R** package is distributed under the [MIT
-license](https://opensource.org/license/MIT), a permissive open-source
+license](https://opensource.org/license/MIT/), a permissive open-source
 (free software) license.
 
 ## Reporting Bugs

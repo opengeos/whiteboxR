@@ -234,7 +234,7 @@ Unless explicitly stated otherwise, any contribution intentionally submitted for
 
 ## License
 
-The whitebox **R** package is distributed under the [MIT license](https://opensource.org/license/MIT), a permissive open-source (free software) license.
+The whitebox **R** package is distributed under the [MIT license](https://opensource.org/license/MIT/), a permissive open-source (free software) license.
 
 
 ## Reporting Bugs
