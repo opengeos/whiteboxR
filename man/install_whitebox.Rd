@@ -6,18 +6,31 @@
 \alias{wbt_install_extension}
 \title{Download and Install 'WhiteboxTools'}
 \usage{
-wbt_install(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
+wbt_install(
+  pkg_dir = wbt_data_dir(),
+  platform = NULL,
+  force = FALSE,
+  remove = FALSE
+)
 
-install_whitebox(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
+install_whitebox(
+  pkg_dir = wbt_data_dir(),
+  platform = NULL,
+  force = FALSE,
+  remove = FALSE
+)
 
 wbt_install_extension(
   extension = c("GeneralToolsetExtension", "AgricultureToolset",
     "DemAndSpatialHydrologyToolset", "LidarAndRemoteSensingToolset"),
+  platform = NULL,
   destdir = dirname(wbt_exe_path(shell_quote = FALSE))
 )
 }
 \arguments{
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
+
+\item{platform}{character. Optional: suffix used for alternate platform names. Options include: \code{"linux_musl"}}
 
 \item{force}{logical. Force install? Default \code{FALSE}. When \code{remove=TRUE} passed to \code{unlink()} to change permissions to allow removal of files/directories.}
 

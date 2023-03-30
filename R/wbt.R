@@ -471,7 +471,7 @@ wbt_max_procs <- function(max_procs = NULL) {
 #' @export
 #' @keywords General
 #' @rdname install_whitebox
-wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
+wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE, remove = FALSE) {
 
   stopifnot(is.logical(force))
   stopifnot(is.logical(remove))
@@ -504,15 +504,23 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
     if (.Machine$sizeof.pointer != 8) {
       return(invisible(.unsupported()))
     }
-
-    if (os == "Linux") {
-      url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
-    } else if (os == "Windows") {
-      url <- "https://www.whiteboxgeo.com/WBT_Windows/WhiteboxTools_win_amd64.zip"
-    } else if (os == "Darwin") {
-      url <- "https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_amd64.zip"
+    
+    if (missing(platform)) {
+      if (os == "Linux") {
+        url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
+      } else if (os == "Windows") {
+        url <- "https://www.whiteboxgeo.com/WBT_Windows/WhiteboxTools_win_amd64.zip"
+      } else if (os == "Darwin") {
+        url <- "https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_amd64.zip"
+      } else {
+        return(invisible(.unsupported()))
+      }
     } else {
-      return(invisible(.unsupported()))
+      # supports alternative platforms/filenames 
+      # e.g. linux_musl, darwin_m_series
+      url <- paste0("https://www.whiteboxgeo.com/WBT_",
+               os, "/WhiteboxTools_",
+               platform, ".zip") 
     }
 
     filename <- basename(url)
@@ -592,6 +600,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 #' 'WhiteboxTools' and all of its extensions can be uninstalled by passing the `remove=TRUE` argument.
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
+#' @param platform character. Optional: suffix used for alternate platform names. Options include: `"linux_musl"`
 #' @param force logical. Force install? Default `FALSE`. When `remove=TRUE` passed to `unlink()` to change permissions to allow removal of files/directories.
 #' @param remove logical. Remove contents of "WBT" folder from `pkg_dir`? Default: `FALSE`
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.
@@ -602,8 +611,8 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE)
 #' }
 #' @export
 #' @keywords General
-install_whitebox <- function(pkg_dir = wbt_data_dir(), force = FALSE, remove = FALSE) {
-  wbt_install(pkg_dir = pkg_dir, force = force, remove = remove)
+install_whitebox <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE, remove = FALSE) {
+  wbt_install(pkg_dir = pkg_dir, platform = platform, force = force, remove = remove)
 }
 
 #' @param extension Extension name
@@ -618,6 +627,7 @@ wbt_install_extension <- function(extension = c(
                                   "DemAndSpatialHydrologyToolset",
                                   "LidarAndRemoteSensingToolset"
                                  ),
+                                  platform = NULL,
                                   destdir = dirname(wbt_exe_path(shell_quote = FALSE))) {
   extension <- match.arg(extension, c(
         "GeneralToolsetExtension",
@@ -628,10 +638,16 @@ wbt_install_extension <- function(extension = c(
 
   sn <- Sys.info()[["sysname"]]
   fn <- tempfile(extension, fileext = ".zip")
-  sufx <- switch(sn,
-                 "Windows" = "win",
-                 "Linux" = "linux",
-                 "Darwin" = "MacOS Intel")
+  if (missing(platform)) {
+    sufx <- switch(sn,
+                   "Windows" = "win",
+                   "Linux" = "linux",
+                   "Darwin" = "MacOS_Intel")
+  } else {
+    # non-default options include: linux_musl, MacOS_ARM
+    sufx <- platform 
+  }
+  
   # GTE
   if ("GeneralToolsetExtension" %in% extension) {
     url <- sprintf("https://www.whiteboxgeo.com/GTE_%s/%s_%s.zip", sn, "GeneralToolsetExtension", sufx)

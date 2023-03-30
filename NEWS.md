@@ -1,3 +1,7 @@
+# whitebox 2.3.1
+ 
+ * `wbt_install()` and `wbt_install_extension()` gain optional `platform` argument that is used as a suffix on ZIP file, allowing download of alternate binaries on Linux and macOS (Darwin).
+ 
 # whitebox 2.3.0
 
  * Updates for WhiteboxTools v2.3.0 (https://github.com/jblindsay/whitebox-tools/releases/tag/v2.3.0)
