@@ -511,7 +511,11 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
       } else if (os == "Windows") {
         url <- "https://www.whiteboxgeo.com/WBT_Windows/WhiteboxTools_win_amd64.zip"
       } else if (os == "Darwin") {
-        url <- "https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_amd64.zip"
+        suffix <- "amd64"
+        if (Sys.info()["machine"] == "arm64") {
+          suffix <- "arm64"
+        }
+        url <- paste0("https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_", suffix , ".zip")
       } else {
         return(invisible(.unsupported()))
       }
