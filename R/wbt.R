@@ -513,7 +513,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
       } else if (os == "Darwin") {
         suffix <- "amd64"
         if (Sys.info()["machine"] == "arm64") {
-          suffix <- "arm64"
+          suffix <- "darwin_m_series"
         }
         url <- paste0("https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_", suffix , ".zip")
       } else {
@@ -650,6 +650,10 @@ wbt_install_extension <- function(extension = c(
   } else {
     # non-default options include: linux_musl, MacOS_ARM
     sufx <- platform 
+  }
+  
+  if (sn == "Darwin" && Sys.info()["machine"] == "arm64") {
+    suffix <- "MacOS_ARM"
   }
   
   # GTE
