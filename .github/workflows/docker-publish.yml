@@ -35,7 +35,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            giswqs/leafmap
+            giswqs/whiteboxR
             ghcr.io/${{ github.repository }}
 
       - name: Build and push Docker images
