@@ -37,9 +37,12 @@ jobs:
           install.packages('terra', repos='https://rspatial.r-universe.dev')
         shell: Rscript {0}
 
-      - name: Install package
-        run: R CMD INSTALL .
-
+      - name: Install WhiteboxTools
+        run: |
+          library(whitebox)
+          install_whitebox()
+        shell: Rscript {0}
+        
       - name: Deploy package
         run: |
           git config --local user.name "$GITHUB_ACTOR"
