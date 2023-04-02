@@ -140,9 +140,13 @@ examples.
 
 The quickest way to get started if you are on 64-bit Windows, Linux or
 MacOS architectures is to download and install the ‘WhiteboxTools’
-binary. A method `install_whitebox()` is provided to download a version
-of the binaries that corresponds to the wrapper functions available in
-the package.
+binary. Linux binaries compiled with ‘musl’ instead of ‘glibc’ on Ubuntu
+22.04 are available with `platform="linux_musl"`. On MacOS, Intel and
+Apple ‘M’ series processors (‘arm64’) are supported.
+
+A method `install_whitebox()` is provided to download a version of the
+binaries that corresponds to the wrapper functions available in the
+package.
 
     whitebox::install_whitebox()
 
@@ -199,12 +203,12 @@ size of the filter kernel.
     ## 3. DInfFlowAccumulation
     wbt_d_inf_flow_accumulation(input = dem, output = "./flow_accum.tif")
 
-    if (requireNamespace('raster')) {
-      raster::plot(raster::raster("./flow_accum.tif"))
+    if (requireNamespace('terra')) {
+      terra::plot(terra::rast("./flow_accum.tif"))
     }
-    #> Loading required namespace: raster
+    #> Loading required namespace: terra
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-terra-plot-facc-1.jpeg" width="100%" />
 
 **About ‘WhiteboxTools’**
 
@@ -269,7 +273,7 @@ size of the filter kernel.
 
     # Lists tools with 'lidar' in tool name or description.
     wbt_list_tools("lidar")
-    #> All 50 Tools containing keywords:
+    #> All 63 Tools containing keywords:
     #> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
     #> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
     #> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
@@ -317,9 +321,22 @@ size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
-    #> NormalizeLidar: Normalizes a LiDAR point cloud.
     #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
+    #> ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.
+    #> LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.
+    #> ClassifyLidar: Classify points within a LiDAR point cloud based on point properties.
+    #> SortLidar: Sorts LiDAR points based on their properties.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
+    #> ModifyLidar: Modify points within a LiDAR point cloud based on point properties.
     #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> ColourizeBasedOnPointReturns: Sets the RGB values of a LiDAR point cloud based on the point returns.
+    #> LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.
+    #> SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
+    #> LidarSibsonInterpolation: This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
+    #> RecoverFlightlineInfo: Associates LiDAR points by their flightlines.
+    #> FilterLidar: Filters points within a LiDAR point cloud based on point properties.
+    #> LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.
+    #> SplitLidar: Splits LiDAR points up into a series of new files based on their properties.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")

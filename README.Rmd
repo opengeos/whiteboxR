@@ -7,6 +7,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
+  dev = 'jpeg',
   out.width = "100%"
 )
 ```
@@ -118,7 +119,9 @@ Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for
 
 ## Installing 'WhiteboxTools' 
 
-The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the 'WhiteboxTools' binary. A method `install_whitebox()` is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.
+The quickest way to get started if you are on 64-bit Windows, Linux or MacOS architectures is to download and install the 'WhiteboxTools' binary. Linux binaries compiled with 'musl' instead of 'glibc' on Ubuntu 22.04 are available with `platform="linux_musl"`. On MacOS, Intel and Apple 'M' series processors ('arm64') are supported.
+
+A method `install_whitebox()` is provided to download a version of the binaries that corresponds to the wrapper functions available in the package.
 
 ```{r, eval=FALSE}
 whitebox::install_whitebox()
@@ -174,9 +177,9 @@ wbt_breach_depressions(dem = "./smoothed.tif", output = "./breached.tif")
 wbt_d_inf_flow_accumulation(input = dem, output = "./flow_accum.tif")
 ```
 
-```{r}
-if (requireNamespace('raster')) {
-  raster::plot(raster::raster("./flow_accum.tif"))
+```{r terra-plot-facc}
+if (requireNamespace('terra')) {
+  terra::plot(terra::rast("./flow_accum.tif"))
 }
 ```
 
