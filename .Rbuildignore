@@ -1,6 +1,7 @@
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
 ^appveyor\.yml$
+^\.codecov\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
