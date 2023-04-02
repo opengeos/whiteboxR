@@ -1,0 +1,1 @@
+whitebox::install_whitebox()
