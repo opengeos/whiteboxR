@@ -39,13 +39,20 @@ command-line program called
 
 **Contents**
 
-1.  [Description](#description)
-2.  [Installation](#installation)
-3.  [Usage](#usage)
-4.  [Available Tools](#available-tools)
-5.  [Contributing](#contributing)
-6.  [License](#license)
-7.  [Reporting Bugs](#reporting-bugs)
+- [whitebox](#whitebox)
+  - [Description](#description)
+  - [Installation](#installation)
+    - [1. CRAN](#1-cran)
+    - [2. GitHub](#2-github)
+    - [3. Docker](#3-docker)
+  - [Usage](#usage)
+  - [Documentation](#documentation)
+  - [Installing ‘WhiteboxTools’](#installing-whiteboxtools)
+  - [whitebox](#whitebox-1)
+  - [Available Tools](#available-tools)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Reporting Bugs](#reporting-bugs)
 
 ## Description
 
@@ -95,6 +102,16 @@ from [GitHub](https://github.com/giswqs/whiteboxR) as follows:
 
     if (!require("remotes")) install.packages('remotes')
     remotes::install_github("giswqs/whiteboxR", build = FALSE)
+
+### 3. Docker
+
+whiteboxR is also available on [Docker Hub](https://hub.docker.com/r/giswqs/whiteboxr). Run the following command to start a Docker container with whiteboxR installed.
+
+```bash
+docker run -d -p 8787:8787 -e PASSWORD=mypassword -v ~/Documents:/home/rstudio/ giswqs/whiteboxr
+```
+
+Then open your web browser and navigate to `http://localhost:8787`. The default username is `rstudio` and the default password is `mypassword`.
 
 ## Usage
 
