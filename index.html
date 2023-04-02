@@ -88,6 +88,7 @@
 </h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <p><strong>WhiteboxTools</strong> R Frontend.</p>
 <p>This repository is related to the <strong>whitebox</strong> R package for geospatial analysis, which is an R frontend of a stand-alone executable command-line program called <strong><a href="https://github.com/jblindsay/whitebox-tools" class="external-link">WhiteboxTools</a></strong>.</p>
 <ul>
@@ -161,8 +162,8 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>??whitebox</span></code></pre></div>
 <p>For list of functions, try the <code>wbt_</code> prefix in your search:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>??wbt_</span></code></pre></div>
-<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="external-link">HERE</a>.</p>
-<p>Check out this <a href="https://giswqs.github.io/whiteboxR/articles/demo.html" class="external-link">demo</a> for examples.</p>
+<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://whietboxR.gishub.org/reference/index.html" class="external-link">HERE</a>.</p>
+<p>Check out this <a href="https://whietboxR.gishub.org/articles/demo.html" class="external-link">demo</a> for examples.</p>
 </div>
 <div class="section level2">
 <h2 id="installing-whiteboxtools">Installing ‘WhiteboxTools’<a class="anchor" aria-label="anchor" href="#installing-whiteboxtools"></a>
@@ -219,7 +220,7 @@
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the whitebox-tools help...a listing of available commands</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_help</span>()</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools Help</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following commands are recognized:</span></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --cd, --wd          Changes the working directory; used in conjunction with --run flag.</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --compress_rasters  Sets the compress_raster option in the settings.json file; determines if newly created rasters are compressed. e.g. --compress_rasters=true</span></span>
@@ -234,7 +235,7 @@
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -v                  Verbose mode. Without this flag, tool outputs will not be printed.</span></span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --viewcode          Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span></span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --version           Prints the version information.</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Example Usage:</span></span>
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span></span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
@@ -242,16 +243,16 @@
 <span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_license</span>()</span>
 <span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools License</span></span>
 <span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Copyright 2017-2023 John Lindsay</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span></span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span></span>
 <span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></span>
 <span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span></span>
 <span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; subject to the following conditions:</span></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span></span>
 <span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; portions of the Software.</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span></span>
 <span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></span>
 <span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span></span>
@@ -261,9 +262,9 @@
 <span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the whitebox-tools version</span></span>
 <span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_version</span>()</span>
 <span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023</span></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span></span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research</span></span>
 <span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span></span>
 <span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the toolbox for a specific tool.</span></span>
@@ -344,7 +345,7 @@
 <span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</span></span>
 <span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Toolbox: LiDAR Tools</span></span>
 <span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Parameters:</span></span>
-<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Flag               Description</span></span>
 <span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -----------------  -----------</span></span>
 <span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -i, --input        Input LiDAR file.</span></span>
@@ -352,8 +353,8 @@
 <span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --density          Flag indicating whether or not to calculate the average point density and nominal point spacing.</span></span>
 <span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --vlr              Flag indicating whether or not to print the variable length records (VLRs).</span></span>
 <span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --geokeys          Flag indicating whether or not to print the geokeys.</span></span>
-<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
 <span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Example usage:</span></span>
 <span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &gt;&gt;./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span></span>
 <span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span></span>
@@ -438,7 +439,7 @@
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=whitebox" class="external-link"><img src="https://www.r-pkg.org/badges/version/whitebox" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://cranlogs.r-pkg.org/badges/grand-total/whitebox" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/whitebox" alt="CRAN download count"></a></li>
-<li><a href="https://giswqs.github.io/whiteboxR/reference/index.html" class="external-link"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="whitebox Manual"></a></li>
+<li><a href="https://whietboxR.gishub.org/reference/index.html" class="external-link"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="whitebox Manual"></a></li>
 <li><a href="https://opensource.org/license/MIT/" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
 <li><a href="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/giswqs/whiteboxR" class="external-link"><img src="https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg" alt="codecov"></a></li>
