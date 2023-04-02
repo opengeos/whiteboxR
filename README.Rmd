@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
 [![CRAN download count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)
-[![whitebox Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
+[![whitebox Manual](https://img.shields.io/badge/docs-HTML-informational)](https://whietboxR.gishub.org/reference/index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT/)
 [![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/giswqs/whiteboxR)
@@ -113,9 +113,9 @@ For list of functions, try the `wbt_` prefix in your search:
 ??wbt_
 ```
 
-A complete list of functions available in the **whitebox** R package can be found [HERE](https://giswqs.github.io/whiteboxR/reference/index.html). 
+A complete list of functions available in the **whitebox** R package can be found [HERE](https://whietboxR.gishub.org/reference/index.html). 
 
-Check out this [demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for examples.
+Check out this [demo](https://whietboxR.gishub.org/articles/demo.html) for examples.
 
 ## Installing 'WhiteboxTools' 
 

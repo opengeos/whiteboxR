@@ -2,11 +2,11 @@
 
 <!-- badges: start -->
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/whitebox)](https://cran.r-project.org/package=whitebox)
 [![CRAN download
 count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)
 [![whitebox
-Manual](https://img.shields.io/badge/docs-HTML-informational)](https://giswqs.github.io/whiteboxR/reference/index.html)
+Manual](https://img.shields.io/badge/docs-HTML-informational)](https://whietboxR.gishub.org/reference/index.html)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT/)
 [![R-CMD-check](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml)
@@ -15,6 +15,7 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/giswqs?style=social)](https://twitter.com/giswqs)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
+
 <!-- badges: end -->
 
 **WhiteboxTools** R Frontend.
@@ -24,17 +25,17 @@ analysis, which is an R frontend of a stand-alone executable
 command-line program called
 **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**.
 
--   Authors: Dr. John Lindsay
-    (<https://jblindsay.github.io/ghrg/index.html>)
--   Contributors:
-    -   Dr. Qiusheng Wu (<https://wetlands.io> |
-        <https://blog.gishub.org>)
-    -   Andrew G. Brown (<https://humus.rocks>)
--   GitHub repo: <https://github.com/giswqs/whiteboxR>
--   CRAN link: <https://cran.r-project.org/package=whitebox>
--   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
--   User Manual: <https://jblindsay.github.io/wbt_book/>
--   Free software: [MIT license](https://opensource.org/license/MIT/)
+- Authors: Dr. John Lindsay
+  (<https://jblindsay.github.io/ghrg/index.html>)
+- Contributors:
+  - Dr. Qiusheng Wu (<https://wetlands.io> |
+    <https://blog.gishub.org>)
+  - Andrew G. Brown (<https://humus.rocks>)
+- GitHub repo: <https://github.com/giswqs/whiteboxR>
+- CRAN link: <https://cran.r-project.org/package=whitebox>
+- WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
+- User Manual: <https://jblindsay.github.io/wbt_book/>
+- Free software: [MIT license](https://opensource.org/license/MIT/)
 
 **Contents**
 
@@ -53,14 +54,14 @@ geospatial data analysis platform developed by Prof. John Lindsay
 ([webpage](https://jblindsay.github.io/ghrg/index.html);
 [jblindsay](https://github.com/jblindsay)) at the University of Guelph’s
 [Geomorphometry and Hydrogeomatics Research
-Group](https://jblindsay.github.io/ghrg/index.html). *WhiteboxTools* can
+Group](https://jblindsay.github.io/ghrg/index.html). _WhiteboxTools_ can
 be used to perform common geographical information systems (GIS)
 analysis operations, such as cost-distance analysis, distance buffering,
 and raster reclassification. Remote sensing and image processing tasks
 include image enhancement (e.g. panchromatic sharpening, contrast
 adjustments), image mosaicing, numerous filtering operations, simple
 classification (k-means), and common image transformations.
-*WhiteboxTools* also contains advanced tooling for spatial hydrological
+_WhiteboxTools_ also contains advanced tooling for spatial hydrological
 analysis (e.g. flow-accumulation, watershed delineation, stream network
 analysis, sink removal), terrain analysis (e.g. common terrain indices
 such as slope, curvatures, wetness index, hillshading; hypsometric
@@ -68,11 +69,11 @@ analysis; multi-scale topographic position analysis), and LiDAR data
 processing. LiDAR point clouds can be interrogated (LidarInfo,
 LidarHistogram), segmented, tiled and joined, analyzed for outliers,
 interpolated to rasters (DEMs, intensity images), and ground-points can
-be classified or filtered. *WhiteboxTools* is not a cartographic or
+be classified or filtered. _WhiteboxTools_ is not a cartographic or
 spatial data visualization package; instead it is meant to serve as an
 analytical backend for other data visualization software, mainly GIS.
 Suggested citation: Lindsay, J. B. (2016). Whitebox GAT: A case study in
-geomorphometric analysis. *Computers & Geosciences*, 95, 75-84. doi:
+geomorphometric analysis. _Computers & Geosciences_, 95, 75-84. doi:
 <http://dx.doi.org/10.1016/j.cageo.2016.07.003>
 
 ## Installation
@@ -130,10 +131,10 @@ For list of functions, try the `wbt_` prefix in your search:
 
 A complete list of functions available in the **whitebox** R package can
 be found
-[HERE](https://giswqs.github.io/whiteboxR/reference/index.html).
+[HERE](https://whietboxR.gishub.org/reference/index.html).
 
 Check out this
-[demo](https://giswqs.github.io/whiteboxR/articles/demo.html) for
+[demo](https://whietboxR.gishub.org/articles/demo.html) for
 examples.
 
 ## Installing ‘WhiteboxTools’
@@ -181,11 +182,11 @@ We will use this DEM in a sequence of ‘WhiteboxTools’ processing
 routines. Run tools by passing file paths for the input and output
 files.
 
-1.  Apply feature-preserving smoothing (*FeaturePreservingSmoothing*)
+1.  Apply feature-preserving smoothing (_FeaturePreservingSmoothing_)
 
-2.  Breach depressions in a DEM (*BreachDepressions*)
+2.  Breach depressions in a DEM (_BreachDepressions_)
 
-3.  Calculate D-Infinity flow accumulation (*DInfFlowAccumulation*)
+3.  Calculate D-Infinity flow accumulation (_DInfFlowAccumulation_)
 
 The `filter` argument to `wbt_feature_preserving_smoothing()` sets the
 size of the filter kernel.
@@ -220,7 +221,7 @@ size of the filter kernel.
     # Prints the whitebox-tools help...a listing of available commands
     wbt_help()
     #> WhiteboxTools Help
-    #> 
+    #>
     #> The following commands are recognized:
     #> --cd, --wd          Changes the working directory; used in conjunction with --run flag.
     #> --compress_rasters  Sets the compress_raster option in the settings.json file; determines if newly created rasters are compressed. e.g. --compress_rasters=true
@@ -235,7 +236,7 @@ size of the filter kernel.
     #> -v                  Verbose mode. Without this flag, tool outputs will not be printed.
     #> --viewcode          Opens the source code of a tool in a web browser; --viewcode="LidarInfo".
     #> --version           Prints the version information.
-    #> 
+    #>
     #> Example Usage:
     #> >> ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys
 
@@ -243,16 +244,16 @@ size of the filter kernel.
     wbt_license()
     #> WhiteboxTools License
     #> Copyright 2017-2023 John Lindsay
-    #> 
+    #>
     #> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
     #> associated documentation files (the "Software"), to deal in the Software without restriction,
     #> including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
     #> and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
     #> subject to the following conditions:
-    #> 
+    #>
     #> The above copyright notice and this permission notice shall be included in all copies or substantial
     #> portions of the Software.
-    #> 
+    #>
     #> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
     #> NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
     #> NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
@@ -262,9 +263,9 @@ size of the filter kernel.
     # Prints the whitebox-tools version
     wbt_version()
     #> WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023
-    #> 
+    #>
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
-    #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
+    #> the University of Guelph's Geomorphometry and Hydrogeomatics Research
     #> Group (GHRG). See www.whiteboxgeo.com for more details.
 
     # Prints the toolbox for a specific tool.
@@ -345,7 +346,7 @@ size of the filter kernel.
     #> Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.
     #> Toolbox: LiDAR Tools
     #> Parameters:
-    #> 
+    #>
     #> Flag               Description
     #> -----------------  -----------
     #> -i, --input        Input LiDAR file.
@@ -353,8 +354,8 @@ size of the filter kernel.
     #> --density          Flag indicating whether or not to calculate the average point density and nominal point spacing.
     #> --vlr              Flag indicating whether or not to print the variable length records (VLRs).
     #> --geokeys          Flag indicating whether or not to print the geokeys.
-    #> 
-    #> 
+    #>
+    #>
     #> Example usage:
     #> >>./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"
     #> ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las
@@ -411,7 +412,7 @@ license](https://opensource.org/license/MIT/), a permissive open-source
 whitebox is distributed as is and without warranty of suitability for
 application. If you encounter flaws with the software (i.e. bugs) please
 report the issue. Providing a detailed description of the conditions
-under which the bug occurred will help to identify the bug. *Use the
+under which the bug occurred will help to identify the bug. _Use the
 [Issues tracker](https://github.com/giswqs/whiteboxR/issues) on GitHub
 to report issues with the software and to request feature
-enchancements.* Please do not email Dr. Lindsay directly with bugs.
+enchancements._ Please do not email Dr. Lindsay directly with bugs.
