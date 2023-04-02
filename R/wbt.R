@@ -505,7 +505,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
       return(invisible(.unsupported()))
     }
     
-    if (missing(platform)) {
+    if (missing(platform) || is.null(platform)) {
       if (os == "Linux") {
         url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
       } else if (os == "Windows") {
@@ -642,11 +642,13 @@ wbt_install_extension <- function(extension = c(
 
   sn <- Sys.info()[["sysname"]]
   fn <- tempfile(extension, fileext = ".zip")
-  if (missing(platform)) {
+  if (missing(platform) || is.null(platform)) {
     sufx <- switch(sn,
                    "Windows" = "win",
                    "Linux" = "linux",
-                   "Darwin" = "MacOS_Intel")
+                   "Darwin" = switch(Sys.info()[["machine"]],
+                                     arm64 = "MacOS_ARM",
+                                     "MacOS_Intel"))
   } else {
     # non-default options include: linux_musl, MacOS_ARM
     sufx <- platform 
