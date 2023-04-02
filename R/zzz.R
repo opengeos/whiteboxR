@@ -37,7 +37,7 @@ check_whitebox_binary <- function(silent = TRUE) {
       "For whitebox package documentation, ask for help:\n",
       "    > ??whitebox\n",
       "\n",
-      "For more information visit https://whietboxR.gishub.org/\n",
+      "For more information visit https://whiteboxR.gishub.org/\n",
       "\n",
       "------------------------------------------------------------------------\n")
     message(msg)

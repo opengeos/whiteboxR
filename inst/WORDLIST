@@ -1,6 +1,5 @@
 AnisotropyLTP
 Anova
-AppVeyor
 Arcosh
 Arsinh
 Artanh
@@ -9,6 +8,7 @@ BACKTRACE
 BreachDepressions
 Breakline
 CMD
+CRS
 CamelCase
 Ceil
 Centre
@@ -27,6 +27,7 @@ DEVmax
 DIFFmax
 DInfFlowAccumulation
 DSM
+DTM
 DTW
 DUL
 Darboux
@@ -50,6 +51,9 @@ FlowAccumulation
 François
 Frontend
 GAT
+GDAL
+GeoKey
+GeoPackage
 GeoTIFF
 Geomorphometry
 Geomorphons
@@ -99,6 +103,7 @@ MultiQuadric
 Multidirectional
 MultipointZ
 Multiscale
+M’
 NDI
 NoData
 Northness
@@ -106,6 +111,7 @@ Num
 OSAVI
 OptionList
 POLYLINE
+PROJ
 PandD
 Parallelepiped
 Pennock
@@ -122,6 +128,9 @@ Qin
 RANSAC
 RBF
 README
+RGBA
+RStudio
+RasterLayer
 Rasterize
 Rasterizes
 Reclass
@@ -144,6 +153,8 @@ Sigmoidal
 Sinh
 Sobel
 SpatRaster
+SpatVector
+SpatVectorProxy
 Spillout
 Strahler
 Subbasins
@@ -154,6 +165,7 @@ ThinPlateSpline
 Tomasi
 Toolset
 Tophat
+Topo
 TotalCurvature
 Travelling
 UDSA
@@ -166,7 +178,9 @@ VLRs
 Viewshed
 Voronoi
 WBT
+WKT
 WhiteboxTools
+WhiteboxTools’
 Wiesehahn
 WorkingDirectory
 XYZ
@@ -189,6 +203,7 @@ breaklines
 brotli
 brovey
 cageo
+centerlines
 centred
 centres
 centroid
@@ -198,7 +213,6 @@ colour
 colourize
 colours
 countif
-cran
 csv
 curvedness
 darboux
@@ -209,9 +223,11 @@ differencing
 dinf
 directionality
 doi
+donut
 downslope
-dx
+earthtones
 enchancements
+endnodes
 epanechnikov
 et
 exe
@@ -224,16 +240,15 @@ flowaccumulation
 flowpath
 flowpaths
 frontend
+frontends
 geo
 geokeys
 geomorphometric
 geomorphon
 geomorphons
 geospatial
-ghrg
-gishub
-giswqs
-github
+glibc
+glibc’
 gn
 grey
 greytone
@@ -245,7 +260,6 @@ hillshade
 hillshading
 hillslope
 hillslopes
-http
 https
 hydrologic
 hydrological
@@ -253,11 +267,11 @@ hydroweight
 hypsometric
 idw
 ihs
+imhof
 impoundment
 ined
 inflowing
 inlier
-io
 jblindsay
 json
 kNN
@@ -268,6 +282,8 @@ lengthed
 lidar
 liu
 lq
+macOS
+magrittr
 medoid
 meso
 metres
@@ -278,6 +294,8 @@ mosaicing
 multipoint
 multiscale
 multispectral
+musl
+musl’
 ne
 neighbour
 neighbourhood
@@ -318,12 +336,14 @@ sigmoid
 sigmoidal
 silverman
 sinh
+sp
 spearman
 subbasins
 subfolder
 sw
 tanh
 terra
+th
 tif
 tophat
 topolography
@@ -341,11 +361,11 @@ viridi
 viridis
 wang
 watershedding
+wb
 wbt
 whiteboxR
-whiteboxgeo
-www
 xe
 xy
 yl
 zlidar
+’

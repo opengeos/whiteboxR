@@ -1,5 +1,7 @@
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
+^CNAME$
+^Dockerfile$
 ^appveyor\.yml$
 ^\.codecov\.yml$
 ^.*\.Rproj$

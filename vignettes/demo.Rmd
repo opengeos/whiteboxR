@@ -254,7 +254,7 @@ All of the other package options can similarly be set as environment variables. 
 
 Specify input and output paths, and any other options, as specified in package reference:
 
- - https://whietboxR.gishub.org/reference/index.html
+ - https://whiteboxR.gishub.org/reference/index.html
 
 For instance, "BreachDepressions" is used below to process a Digital Elevation Model (DEM) before we identify flow pathways. This tool uses uses Lindsay's (2016) algorithm, which is preferred over depression filling in most cases.
 
