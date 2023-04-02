@@ -1,0 +1,9 @@
+coverage:
+  status:
+    patch:
+      default:
+        target: 0%
+        threshold: 1%
+        branches:
+          - main
+        if_ci_failed: error
