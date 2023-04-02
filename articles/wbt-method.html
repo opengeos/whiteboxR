@@ -112,7 +112,18 @@ having R prepare inputs, generate commands, and visualize results.</p>
 <p>Know what tool you want to run but <em>can’t remember the required
 parameters</em>? Just type <code>wbt("toolname")</code></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Required arguments:</span></span>
+<span><span class="co">#&gt; - [ ] dem -- Input raster DEM file.</span></span>
+<span><span class="co">#&gt; - [ ] output -- Output raster file.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Optional arguments:</span></span>
+<span><span class="co">#&gt; - [ ] zfactor -- Optional multiplier for when the vertical and horizontal units are not the same.</span></span>
+<span><span class="co">#&gt; - [ ] units -- Units of output raster; options include 'degrees', 'radians', 'percent'</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; No parameters (Slope)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;  Slope ERROR: 'dem', 'output' required</span></span></code></pre></div>
 <p>Output produced on error and with invalid arguments helps guide use
 interactively by prompting with required and optional arguments as a
 checklist.</p>
@@ -126,14 +137,35 @@ checklist.</p>
 <code class="sourceCode R"><span><span class="co"># get file path of sample DEM</span></span>
 <span><span class="va">dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; dem  : '/home/runner/work/_temp/Library/whitebox/extdata/DEM.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/slope.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt;   File result:  //tmp/Rtmp8mLdSS/slope.tif exists (Last modified: 2023-04-02 18:25:45)</span></span></code></pre></div>
 <p>Whether a system call succeeds or fails the parameters that were
 passed to the WhiteboxTools executable and references to any output file
 paths that were specified are returned. If output files reference
 spatial data (e.g. a GeoTIFF file) they may be converted to a file-based
 R object providing information about the result.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, goof <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, goof <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error: invalid parameter 'goof'</span></span>
+<span><span class="co">#&gt; Required arguments:</span></span>
+<span><span class="co">#&gt; - [ ] dem -- Input raster DEM file.</span></span>
+<span><span class="co">#&gt; - [*] output -- Output raster file.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Optional arguments:</span></span>
+<span><span class="co">#&gt; - [ ] zfactor -- Optional multiplier for when the vertical and horizontal units are not the same.</span></span>
+<span><span class="co">#&gt; - [ ] units -- Units of output raster; options include 'degrees', 'radians', 'percent'</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; goof : '/home/runner/work/_temp/Library/whitebox/extdata/DEM.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/slope.tif' </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;  Slope ERROR: 'goof' invalid; 'dem' required</span></span></code></pre></div>
 <p>When a call fails an informative error message issued, and the error
 will be cached inside the result. Prior runs references are stored as
 well for sequential tool runs; more on that below.</p>
@@ -147,7 +179,17 @@ well for sequential tool runs; more on that below.</p>
 <code>"result"</code>, <code>"history"</code>) and the
 <code>"class"</code> attribute <code>"wbt_result"</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">dem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; List of 6</span></span>
+<span><span class="co">#&gt;  $ tool   : chr "Slope"</span></span>
+<span><span class="co">#&gt;  $ args   : chr "--dem=/home/runner/work/_temp/Library/whitebox/extdata/DEM.tif --output=/tmp/Rtmp8mLdSS/slope.tif"</span></span>
+<span><span class="co">#&gt;  $ stdout : chr "Slope - Elapsed Time (excluding I/O): 0.11s"</span></span>
+<span><span class="co">#&gt;  $ crs    : chr ""</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "package")= Named chr ""</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "names")= chr "dem"</span></span>
+<span><span class="co">#&gt;  $ result :List of 1</span></span>
+<span><span class="co">#&gt;  $ history:List of 1</span></span>
+<span><span class="co">#&gt;  - attr(*, "class")= chr "wbt_result"</span></span></code></pre></div>
 <p>Any <code>output</code> produced by the tool (usually file paths set
 by the user) will be included in the <code>wbt_result$result</code>
 list.</p>
@@ -161,8 +203,17 @@ error message is returned in lieu of a list in <code>$result</code></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># on error there is a try-error object in $result</span></span>
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Required arguments:</span></span>
+<span><span class="co">#&gt; - [ ] dem -- Input raster DEM file.</span></span>
+<span><span class="co">#&gt; - [ ] output -- Output raster file.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Optional arguments:</span></span>
+<span><span class="co">#&gt; - [ ] zfactor -- Optional multiplier for when the vertical and horizontal units are not the same.</span></span>
+<span><span class="co">#&gt; - [ ] units -- Units of output raster; options include 'degrees', 'radians', 'percent'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">inherits</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">result</span>, <span class="st">'try-error'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">result</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] TRUE</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">result</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ERROR: 'dem', 'output' required</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -201,14 +252,34 @@ object frontends<a class="anchor" aria-label="anchor" href="#compare-raster-and-
 <span>  <span class="va">r1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">rdem</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="va">r1</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">r1</span><span class="op">$</span><span class="va">result</span><span class="op">$</span><span class="va">output</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<span><span class="op">}</span></span>
+<span><span class="co">#&gt; Loading required namespace: raster</span></span>
+<span><span class="co">#&gt; [1] "RasterLayer"</span></span>
+<span><span class="co">#&gt; attr(,"package")</span></span>
+<span><span class="co">#&gt; [1] "raster"</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tdem</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">dem</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## terra input; terra output</span></span>
 <span><span class="va">t1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">tdem</span>, output <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">t1</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">t1</span><span class="op">$</span><span class="va">result</span><span class="op">$</span><span class="va">output</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; dem  : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d53113b2eb7.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/slope.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; dimensions  : 188, 237, 1  (nrow, ncol, nlyr)</span></span>
+<span><span class="co">#&gt; resolution  : 90, 90  (x, y)</span></span>
+<span><span class="co">#&gt; extent      : 664692, 686022, 4878904, 4895824  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt; coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) </span></span>
+<span><span class="co">#&gt; source      : slope.tif </span></span>
+<span><span class="co">#&gt; name        : slope</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">t1</span><span class="op">$</span><span class="va">result</span><span class="op">$</span><span class="va">output</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "SpatRaster"</span></span>
+<span><span class="co">#&gt; attr(,"package")</span></span>
+<span><span class="co">#&gt; [1] "terra"</span></span></code></pre></div>
 <p>The user still needs to specify paths but <code><a href="../reference/wbt.html">wbt()</a></code> eases
 the process of converting input objects to paths and reading output
 paths to R objects after the tool has run. In principle any R object
@@ -243,9 +314,18 @@ information for use with <code><a href="../reference/wbt.html">wbt()</a></code>.
 via <code><a href="../reference/wbt_source.html">wbt_source()</a></code>. The result is a SpatVectorProxy.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; terra 1.7.21</span></span>
 <span><span class="va">shp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"ex/lux.shp"</span>, package <span class="op">=</span> <span class="st">"terra"</span><span class="op">)</span></span>
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/wbt_source.html">wbt_source</a></span><span class="op">(</span><span class="va">shp</span><span class="op">)</span></span>
-<span><span class="va">x</span></span></code></pre></div>
+<span><span class="va">x</span></span>
+<span><span class="co">#&gt;  class       : SpatVectorProxy</span></span>
+<span><span class="co">#&gt;  geometry    : polygons </span></span>
+<span><span class="co">#&gt;  dimensions  : 12, 6  (geometries, attributes)</span></span>
+<span><span class="co">#&gt;  extent      : 5.826232, 6.16085, 49.94611, 50.18162  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt;  source      : lux.shp</span></span>
+<span><span class="co">#&gt;  coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
+<span><span class="co">#&gt;  names       :  ID_1 NAME_1  ID_2 NAME_2  AREA   POP</span></span>
+<span><span class="co">#&gt;  type        : &lt;num&gt;  &lt;chr&gt; &lt;num&gt;  &lt;chr&gt; &lt;num&gt; &lt;int&gt;</span></span></code></pre></div>
 <p>The SpatVectorProxy provides a light-weight means to create an R
 object reference to a large file; allowing the “heavy” lifting for that
 file to be done primarily by WhiteboxTools (or GDAL via {terra}).</p>
@@ -267,7 +347,20 @@ file. This object can then be used as input to <code><a href="../reference/wbt.h
 <span><span class="co"># now the source is a temporary .shp</span></span>
 <span><span class="va">x3</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/wbt_source.html">wbt_source</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"lux.gpkg"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"polygon_area"</span>, input <span class="op">=</span> <span class="va">x3</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"polygon_area"</span>, input <span class="op">=</span> <span class="va">x3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (PolygonArea) ---</span></span>
+<span><span class="co">#&gt; input    : '/tmp/Rtmp8mLdSS/lux.gpkg_file3d5349f0009c.shp' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt;  class       : SpatVectorProxy</span></span>
+<span><span class="co">#&gt;  geometry    : polygons </span></span>
+<span><span class="co">#&gt;  dimensions  : 12, 6  (geometries, attributes)</span></span>
+<span><span class="co">#&gt;  extent      : 5.826232, 6.16085, 49.94611, 50.18162  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt;  source      : lux.gpkg_file3d5349f0009c.shp</span></span>
+<span><span class="co">#&gt;  coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
+<span><span class="co">#&gt;  names       :  ID_1 NAME_1  ID_2 NAME_2   POP  AREA</span></span>
+<span><span class="co">#&gt;  type        : &lt;num&gt;  &lt;chr&gt; &lt;num&gt;  &lt;chr&gt; &lt;int&gt; &lt;num&gt;</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="running-sequences-of-tools">Running Sequences of Tools<a class="anchor" aria-label="anchor" href="#running-sequences-of-tools"></a>
@@ -304,21 +397,60 @@ next.</p>
 reflect the input/output parameters of the most recent tool run in a
 tool chain.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x2</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x2</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; dem  : '//tmp/Rtmp8mLdSS/slope.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/curvature.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt;   File result:  //tmp/Rtmp8mLdSS/curvature.tif exists (Last modified: 2023-04-02 18:25:47)</span></span>
+<span><span class="co">#&gt; --- HISTORY ---</span></span>
+<span><span class="co">#&gt; Prior results (n=1) for: Slope </span></span>
+<span><span class="co">#&gt;  - Slope (output&lt;character&gt;)</span></span></code></pre></div>
 <p><code><a href="../reference/wbt.html">wbt_result()</a></code> is the method to get <code>$result</code>
 for single runs or all <code>$result</code> in <code>$history</code> for
 chained runs from a <code>wbt_result</code> object.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/wbt.html">wbt_result</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="../reference/wbt.html">wbt_result</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  chr [1:2] "//tmp/Rtmp8mLdSS/slope.tif" "//tmp/Rtmp8mLdSS/curvature.tif"</span></span></code></pre></div>
 <p>The <code>$history</code> element is a list of the
 <code>wbt_result</code> from individual runs.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">x2</span><span class="op">$</span><span class="va">history</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">x2</span><span class="op">$</span><span class="va">history</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; List of 2</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr "wbt_result"</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr "wbt_result"</span></span></code></pre></div>
 <p>If you pass invalid results from one step to the next, you get an
 informative error message.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"slope"</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; Required arguments:</span></span>
+<span><span class="co">#&gt; - [ ] dem -- Input raster DEM file.</span></span>
+<span><span class="co">#&gt; - [ ] output -- Output raster file.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Optional arguments:</span></span>
+<span><span class="co">#&gt; - [ ] zfactor -- Optional multiplier for when the vertical and horizontal units are not the same.</span></span>
+<span><span class="co">#&gt; - [ ] units -- Units of output raster; options include 'degrees', 'radians', 'percent'</span></span>
+<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"slope"</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; NOTE: try-error result cannot be used as `dem`</span></span>
+<span><span class="co">#&gt; Required arguments:</span></span>
+<span><span class="co">#&gt; - [ ] dem -- Input raster DEM file.</span></span>
+<span><span class="co">#&gt; - [*] output -- Output raster file.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Optional arguments:</span></span>
+<span><span class="co">#&gt; - [ ] zfactor -- Optional multiplier for when the vertical and horizontal units are not the same.</span></span>
+<span><span class="co">#&gt; - [ ] units -- Units of output raster; options include 'degrees', 'radians', 'percent'</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/foo.tif' </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;  Slope ERROR: 'dem' required </span></span>
+<span><span class="co">#&gt; --- HISTORY ---</span></span>
+<span><span class="co">#&gt; Prior results (n=1) for: Slope </span></span>
+<span><span class="co">#&gt;  - Slope (&lt;character&gt;)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -364,13 +496,39 @@ and propagated to file or R objects.</p>
 which may or may not have CRS information.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">araster</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">dem</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">araster</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="va">araster</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; dem  : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d5358da78e8.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/foo.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; dimensions  : 188, 237, 1  (nrow, ncol, nlyr)</span></span>
+<span><span class="co">#&gt; resolution  : 90, 90  (x, y)</span></span>
+<span><span class="co">#&gt; extent      : 664692, 686022, 4878904, 4895824  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt; coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) </span></span>
+<span><span class="co">#&gt; source      : foo.tif </span></span>
+<span><span class="co">#&gt; name        : foo</span></span></code></pre></div>
 <p>Alternately you can specify the <code>crs</code> argument to
 <code><a href="../reference/wbt.html">wbt()</a></code> instead of <code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast()</a></code>. This will directly
 set the <code>crs</code> element of the <code>wbt_result</code> of your
 output.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">dem</span><span class="op">)</span>, crs <span class="op">=</span> <span class="st">"EPSG:26918"</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt.html">wbt</a></span><span class="op">(</span><span class="st">"slope"</span>, dem <span class="op">=</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">rast</a></span><span class="op">(</span><span class="va">dem</span><span class="op">)</span>, crs <span class="op">=</span> <span class="st">"EPSG:26918"</span>, output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Slope) ---</span></span>
+<span><span class="co">#&gt; dem  : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d5320adae84.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/foo.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; dimensions  : 188, 237, 1  (nrow, ncol, nlyr)</span></span>
+<span><span class="co">#&gt; resolution  : 90, 90  (x, y)</span></span>
+<span><span class="co">#&gt; extent      : 664692, 686022, 4878904, 4895824  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt; coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) </span></span>
+<span><span class="co">#&gt; source      : foo.tif </span></span>
+<span><span class="co">#&gt; name        : foo</span></span></code></pre></div>
 <p>In either case wherever you specify the <code>crs</code> argument the
 <code>crs</code> is stored in the <code>wbt_result</code> and propagated
 to the relevant output. Again, the source files are unchanged if they
@@ -386,7 +544,22 @@ file).</p>
 <span>    input1 <span class="op">=</span> <span class="va">r1</span>, </span>
 <span>    input2 <span class="op">=</span> <span class="va">r2</span>, </span>
 <span>    output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span></span>
-<span>   <span class="op">)</span></span></code></pre></div>
+<span>   <span class="op">)</span></span>
+<span><span class="co">#&gt; NOTE: Input CRS do not match.</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Add) ---</span></span>
+<span><span class="co">#&gt; input1   : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d53351ebfce.tif'</span></span>
+<span><span class="co">#&gt; input2   : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d5312ab59e4.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/foo.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; dimensions  : 188, 237, 1  (nrow, ncol, nlyr)</span></span>
+<span><span class="co">#&gt; resolution  : 90, 90  (x, y)</span></span>
+<span><span class="co">#&gt; extent      : 664692, 686022, 4878904, 4895824  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt; coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) </span></span>
+<span><span class="co">#&gt; source      : foo.tif </span></span>
+<span><span class="co">#&gt; name        : foo</span></span></code></pre></div>
 <p>This message is suppressed and output CRS set accordingly if the
 <code>crs</code> argument is specified. This user set CRS is only in the
 SpatRaster object, and does not necessarily match that of the file used
@@ -397,7 +570,21 @@ as input or returned as output.</p>
 <span>    input2 <span class="op">=</span> <span class="va">r2</span>, </span>
 <span>    crs <span class="op">=</span> <span class="st">"EPSG:26918"</span>,</span>
 <span>    output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"foo.tif"</span><span class="op">)</span></span>
-<span>   <span class="op">)</span></span></code></pre></div>
+<span>   <span class="op">)</span></span>
+<span><span class="co">#&gt; &lt;wbt_result&gt;</span></span>
+<span><span class="co">#&gt; --- PARAMETERS (Add) ---</span></span>
+<span><span class="co">#&gt; input1   : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d537bce6720.tif'</span></span>
+<span><span class="co">#&gt; input2   : '/home/runner/work/whiteboxR/whiteboxR/vignettes/file3d532ec4f126.tif'</span></span>
+<span><span class="co">#&gt; output   : '/tmp/Rtmp8mLdSS/foo.tif' </span></span>
+<span><span class="co">#&gt; --- RESULT ---</span></span>
+<span><span class="co">#&gt; $output</span></span>
+<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; dimensions  : 188, 237, 1  (nrow, ncol, nlyr)</span></span>
+<span><span class="co">#&gt; resolution  : 90, 90  (x, y)</span></span>
+<span><span class="co">#&gt; extent      : 664692, 686022, 4878904, 4895824  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt; coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) </span></span>
+<span><span class="co">#&gt; source      : foo.tif </span></span>
+<span><span class="co">#&gt; name        : foo</span></span></code></pre></div>
 <p><!--
 # Future Plans
 
