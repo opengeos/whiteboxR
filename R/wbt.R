@@ -218,6 +218,37 @@ wbt_exe_path <- function(exe_path = NULL, shell_quote = TRUE) {
   }
   res
 }
+
+#' @description `wbt_runner_path()`: Get the file path of the 'WhiteboxTools Runner' executable.
+#'
+#' @details `wbt_runner_path()`: Returns a path to 'WhiteboxTools Runner' including a platform-specific executable (with or without .exe extension)
+#' @export
+#' @keywords General
+#' @rdname wbt_init
+wbt_runner_path <- function(shell_quote = TRUE) {
+  bn <- "whitebox_runner"
+  os <- Sys.info()["sysname"]
+  if (os == "Windows") {
+    bn <- "whitebox_runner.exe"
+  }
+  res <- file.path(dirname(wbt_exe_path(shell_quote = FALSE)), bn)
+  if (shell_quote) {
+    return(shQuote(res))
+  }
+}
+
+#' @title Launch 'WhiteboxTools Runner' GUI
+#' @description `wbt_launch_runner()`: Launch the 'WhiteboxTools Runner' GUI at `wbt_runner_path()`
+#' @param clear_app_state Clear application state memory? Default: `FALSE`
+#' @details Opens the 'WhiteboxTools Runner' GUI included with WhiteboxTools Open Core v2.3.0 or higher.
+#' @seealso [wbt_runner_path()]
+#' @export
+#' @keywords General
+#' @rdname wbt_launch_runner
+wbt_launch_runner <- function(clear_app_state = FALSE) {
+  system(paste0(wbt_runner_path(), ifelse(clear_app_state, "--clear_app_state", "")))
+}
+
 #' @description `wbt_default_path()`: Get the default file path of the 'WhiteboxTools' executable.
 #'
 #' @details `wbt_default_path()`: Returns a path to 'WhiteboxTools' executable including a platform-specific executable (with or without .exe extension)

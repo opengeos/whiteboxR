@@ -2,6 +2,8 @@
  
  * `wbt_install()` and `wbt_install_extension()` gain optional `platform` argument that is used as a suffix on ZIP file, allowing download of alternate binaries on Linux and macOS (Darwin).
  
+ * Add `wbt_runner_path()` (analog of `wbt_exe_path()` for `whitebox_runner` GUI executable) and `wbt_launch_runner()` a simple function to launch the GUI.
+ 
 # whitebox 2.3.0
 
  * Updates for WhiteboxTools v2.3.0 (https://github.com/jblindsay/whitebox-tools/releases/tag/v2.3.0)

@@ -4,6 +4,7 @@
 \alias{wbt_init}
 \alias{wbt_options}
 \alias{wbt_exe_path}
+\alias{wbt_runner_path}
 \alias{wbt_default_path}
 \alias{wbt_data_dir}
 \alias{wbt_wd}
@@ -27,6 +28,8 @@ wbt_options(
 )
 
 wbt_exe_path(exe_path = NULL, shell_quote = TRUE)
+
+wbt_runner_path(shell_quote = TRUE)
 
 wbt_default_path()
 
@@ -86,6 +89,8 @@ Returns the file path of 'WhiteboxTools' executable.
 
 \code{wbt_exe_path()}: Get the file path of the 'WhiteboxTools' executable.
 
+\code{wbt_runner_path()}: Get the file path of the 'WhiteboxTools Runner' executable.
+
 \code{wbt_default_path()}: Get the default file path of the 'WhiteboxTools' executable.
 
 \code{wbt_data_dir()}: Get the directory where 'WhiteboxTools' data are stored.
@@ -100,6 +105,8 @@ Returns the file path of 'WhiteboxTools' executable.
 }
 \details{
 \code{wbt_exe_path()}: Checks system environment variable \code{R_WHITEBOX_EXE_PATH} and package option \code{whitebox.exe_path}. Set your desired path with either \code{Sys.setenv(R_WHITEBOX_EXE_PATH = "C:/path/to/whitebox_tools.exe")} or \code{options(whitebox.exe_path = "C:/path/to/whitebox_tools.exe")}. The default, backwards-compatible path is returned by \code{wbt_default_path()}
+
+\code{wbt_runner_path()}: Returns a path to 'WhiteboxTools Runner' including a platform-specific executable (with or without .exe extension)
 
 \code{wbt_default_path()}: Returns a path to 'WhiteboxTools' executable including a platform-specific executable (with or without .exe extension)
 
