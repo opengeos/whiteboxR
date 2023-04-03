@@ -88,7 +88,6 @@
 </h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
 <p><strong>WhiteboxTools</strong> R Frontend.</p>
 <p>This repository is related to the <strong>whitebox</strong> R package for geospatial analysis, which is an R frontend of a stand-alone executable command-line program called <strong><a href="https://github.com/jblindsay/whitebox-tools" class="external-link">WhiteboxTools</a></strong>.</p>
 <ul>
@@ -184,8 +183,8 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>??whitebox</span></code></pre></div>
 <p>For list of functions, try the <code>wbt_</code> prefix in your search:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>??wbt_</span></code></pre></div>
-<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://whietboxR.gishub.org/reference/index.html" class="external-link">HERE</a>.</p>
-<p>Check out this <a href="https://whietboxR.gishub.org/articles/demo.html" class="external-link">demo</a> for examples.</p>
+<p>A complete list of functions available in the <strong>whitebox</strong> R package can be found <a href="https://whiteboxR.gishub.org/reference/index.html" class="external-link">HERE</a>.</p>
+<p>Check out this <a href="https://whiteboxR.gishub.org/articles/demo.html" class="external-link">demo</a> for examples.</p>
 </div>
 <div class="section level2">
 <h2 id="installing-whiteboxtools">Installing ‘WhiteboxTools’<a class="anchor" aria-label="anchor" href="#installing-whiteboxtools"></a>
@@ -242,7 +241,7 @@
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the whitebox-tools help...a listing of available commands</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_help</span>()</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools Help</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following commands are recognized:</span></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --cd, --wd          Changes the working directory; used in conjunction with --run flag.</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --compress_rasters  Sets the compress_raster option in the settings.json file; determines if newly created rasters are compressed. e.g. --compress_rasters=true</span></span>
@@ -257,7 +256,7 @@
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -v                  Verbose mode. Without this flag, tool outputs will not be printed.</span></span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --viewcode          Opens the source code of a tool in a web browser; --viewcode="LidarInfo".</span></span>
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --version           Prints the version information.</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Example Usage:</span></span>
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &gt;&gt; ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys</span></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
@@ -265,16 +264,16 @@
 <span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_license</span>()</span>
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools License</span></span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Copyright 2017-2023 John Lindsay</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Permission is hereby granted, free of charge, to any person obtaining a copy of this software and</span></span>
 <span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; associated documentation files (the "Software"), to deal in the Software without restriction,</span></span>
 <span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,</span></span>
 <span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,</span></span>
 <span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; subject to the following conditions:</span></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The above copyright notice and this permission notice shall be included in all copies or substantial</span></span>
 <span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; portions of the Software.</span></span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT</span></span>
 <span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></span>
 <span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES</span></span>
@@ -284,9 +283,9 @@
 <span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the whitebox-tools version</span></span>
 <span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_version</span>()</span>
 <span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023</span></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; WhiteboxTools is an advanced geospatial data analysis platform developed at</span></span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research</span></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; the University of Guelph's Geomorphometry and Hydrogeomatics Research </span></span>
 <span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Group (GHRG). See www.whiteboxgeo.com for more details.</span></span>
 <span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the toolbox for a specific tool.</span></span>
@@ -343,22 +342,22 @@
 <span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.</span></span>
 <span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.</span></span>
 <span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ZlidarToLas: Converts one or more zlidar files into the LAS data format.</span></span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.</span></span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.</span></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.</span></span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ClassifyLidar: Classify points within a LiDAR point cloud based on point properties.</span></span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SortLidar: Sorts LiDAR points based on their properties.</span></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NormalizeLidar: Normalizes a LiDAR point cloud.</span></span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ModifyLidar: Modify points within a LiDAR point cloud based on point properties.</span></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarShift: Shifts the x,y,z coordinates of a LiDAR file.</span></span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ColourizeBasedOnPointReturns: Sets the RGB values of a LiDAR point cloud based on the point returns.</span></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.</span></span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.</span></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarSibsonInterpolation: This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.</span></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RecoverFlightlineInfo: Associates LiDAR points by their flightlines.</span></span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; FilterLidar: Filters points within a LiDAR point cloud based on point properties.</span></span>
-<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.</span></span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SplitLidar: Splits LiDAR points up into a series of new files based on their properties.</span></span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NormalizeLidar: Normalizes a LiDAR point cloud.</span></span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarShift: Shifts the x,y,z coordinates of a LiDAR file.</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.</span></span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.</span></span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; FilterLidar: Filters points within a LiDAR point cloud based on point properties.</span></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.</span></span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SortLidar: Sorts LiDAR points based on their properties.</span></span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ColourizeBasedOnPointReturns: Sets the RGB values of a LiDAR point cloud based on the point returns.</span></span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarSibsonInterpolation: This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.</span></span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ClassifyLidar: Classify points within a LiDAR point cloud based on point properties.</span></span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ModifyLidar: Modify points within a LiDAR point cloud based on point properties.</span></span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.</span></span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.</span></span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; SplitLidar: Splits LiDAR points up into a series of new files based on their properties.</span></span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.</span></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; RecoverFlightlineInfo: Associates LiDAR points by their flightlines.</span></span>
 <span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="co"># Prints the help for a specific tool.</span></span>
 <span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="fu">wbt_tool_help</span>(<span class="st">"lidar_info"</span>)</span>
@@ -367,7 +366,7 @@
 <span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Prints information about a LiDAR (LAS) dataset, including header, point return frequency, and classification data and information about the variable length records (VLRs) and geokeys.</span></span>
 <span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Toolbox: LiDAR Tools</span></span>
 <span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Parameters:</span></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Flag               Description</span></span>
 <span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -----------------  -----------</span></span>
 <span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -i, --input        Input LiDAR file.</span></span>
@@ -375,8 +374,8 @@
 <span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --density          Flag indicating whether or not to calculate the average point density and nominal point spacing.</span></span>
 <span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --vlr              Flag indicating whether or not to print the variable length records (VLRs).</span></span>
 <span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; --geokeys          Flag indicating whether or not to print the geokeys.</span></span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Example usage:</span></span>
 <span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &gt;&gt;./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"</span></span>
 <span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las</span></span>
@@ -461,7 +460,7 @@
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=whitebox" class="external-link"><img src="https://www.r-pkg.org/badges/version/whitebox" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://cranlogs.r-pkg.org/badges/grand-total/whitebox" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/whitebox" alt="CRAN download count"></a></li>
-<li><a href="https://whietboxR.gishub.org/reference/index.html" class="external-link"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="whitebox Manual"></a></li>
+<li><a href="https://whiteboxR.gishub.org/reference/index.html" class="external-link"><img src="https://img.shields.io/badge/docs-HTML-informational" alt="whitebox Manual"></a></li>
 <li><a href="https://opensource.org/license/MIT/" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
 <li><a href="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/giswqs/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/giswqs/whiteboxR" class="external-link"><img src="https://codecov.io/gh/giswqs/whiteboxR/branch/master/graph/badge.svg" alt="codecov"></a></li>
