@@ -11,12 +11,32 @@ FROM rocker/rstudio:latest
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     libxml2 \
-    git
+    git \
+    build-essential \
+    libproj-dev \
+    libgdal-dev \
+    libgeos-dev \
+    gdal-bin \
+    proj-bin \
+    libxt-dev \
+    libxml2-dev \
+    libsqlite3-dev \
+    libfribidi-dev \
+    libudunits2-dev
 
 RUN install2.r --error \
     --deps TRUE \
     devtools \
-    whitebox
+    whitebox \
+    Rcpp \
+    terra \
+    sf \
+    ggplot2 \
+    tidyterra \
+    rmarkdown \
+    httr \
+    caTools \
+    rprojroot
 
 COPY misc/install.R /home/rstudio/
 
