@@ -12,8 +12,8 @@ Encoding: UTF-8
 Language: en-US
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/giswqs/whiteboxR
-BugReports: https://github.com/giswqs/whiteboxR/issues
+URL: https://github.com/opengeos/whiteboxR
+BugReports: https://github.com/opengeos/whiteboxR/issues
 Suggests: knitr, rmarkdown, testthat, terra, sf, raster
 VignetteBuilder: knitr
 Depends: R (>= 3.0.0)

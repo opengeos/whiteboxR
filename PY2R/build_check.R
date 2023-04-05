@@ -21,5 +21,5 @@ devtools::check()
 pkgdown::build_site()
 # devtools::submit_cran()
 
-devtools::install_github("giswqs/whiteboxR")
-devtools::install_github("giswqs/whiteboxR@develop")
+devtools::install_github("opengeos/whiteboxR")
+devtools::install_github("opengeos/whiteboxR@develop")
