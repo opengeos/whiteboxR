@@ -1,9 +1,9 @@
 # Reference: https://aboland.ie/Docker.html
 # Build Steps:
 
-# docker build -t giswqs/whiteboxR .
+# docker build -t opengeos/whiteboxR .
 # docker push giswqs/whiteboxr:latest
-# docker run -d -p 8787:8787 -e PASSWORD=mypassword -v ~/Documents:/home/rstudio/ giswqs/whiteboxr
+# docker run -d -p 8787:8787 -e PASSWORD=mypassword -v ~/Documents:/home/rstudio/ opengeos/whiteboxr
 # Then open your web browser and navigate to `http://localhost:8787`. The default username is `rstudio` and the default password is `mypassword`.
 
 FROM rocker/rstudio:latest

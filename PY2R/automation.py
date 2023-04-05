@@ -8,7 +8,7 @@
 # Step 6 - Update version number and RoxygenNote in DESCRIPTION
 # Step 7 - Open whiteboxR.Rproj in RStudio and run build_check.R
 # Step 8 - Commit and push changes
-# Step 9 - Test installation from GitHub: devtools::install_github("giswqs/whiteboxR@develop")
+# Step 9 - Test installation from GitHub: devtools::install_github("opengeos/whiteboxR@develop")
 # Step 10 - Merge pull request on GitHub
 # Step 11 - Switch to master branch and pull updates: git checkout master | git pull
 # Step 12 - Create R package: RStudio - Build - Build Source Package

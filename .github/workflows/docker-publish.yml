@@ -41,7 +41,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            giswqs/whiteboxR
+            opengeos/whiteboxR
             ghcr.io/${{ github.repository }}
           tags: |
             latest

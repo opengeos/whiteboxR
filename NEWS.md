@@ -50,22 +50,22 @@
     
     * Remove several one and two character flag aliases from `argument_name` and replace with full name
     
- * Add support for showing warning messages in regular interactive/verbose mode, thanks to @alenahav for reporting an issue (https://github.com/giswqs/whiteboxR/issues/75) with `wbt_fd8_flow_accumulation()`
+ * Add support for showing warning messages in regular interactive/verbose mode, thanks to @alenahav for reporting an issue (https://github.com/opengeos/whiteboxR/issues/75) with `wbt_fd8_flow_accumulation()`
  
- * Functions that take multiple files are auto-quoted by default; thanks to François-Nicolas Robinne for reporting issue (@FNRobinne; https://github.com/giswqs/whiteboxR/issues/55) with `wbt_mosaic()`
+ * Functions that take multiple files are auto-quoted by default; thanks to François-Nicolas Robinne for reporting issue (@FNRobinne; https://github.com/opengeos/whiteboxR/issues/55) with `wbt_mosaic()`
  
- * Error output is now more verbose, ensuring relevant tool output is displayed to user on error regardless of verbosity, platform, etc. Thanks to Jeffrey W. Rozelle for reporting issue (@jwilliamrozelle; https://github.com/giswqs/whiteboxR/issues/80) with getting error messages about unsupported raster types
+ * Error output is now more verbose, ensuring relevant tool output is displayed to user on error regardless of verbosity, platform, etc. Thanks to Jeffrey W. Rozelle for reporting issue (@jwilliamrozelle; https://github.com/opengeos/whiteboxR/issues/80) with getting error messages about unsupported raster types
  
 
 # whitebox 2.1.3
 
  * Generated `whitebox_tools` commands no longer include flags for default arguments that are stored in settings.json unless specified by the user.
  
-   * Updates to fix issues with permissions to write _settings.json_; thanks to Henrik (@hewag1975) for reporting problems on Shiny Server (https://github.com/giswqs/whiteboxR/issues/67)
+   * Updates to fix issues with permissions to write _settings.json_; thanks to Henrik (@hewag1975) for reporting problems on Shiny Server (https://github.com/opengeos/whiteboxR/issues/67)
  
- * `wbt_install()` / `install_whitebox()` now removes the downloaded zip file on exit thanks to Christoph Stepper (@cstepper; https://github.com/giswqs/whiteboxR/issues/72)
+ * `wbt_install()` / `install_whitebox()` now removes the downloaded zip file on exit thanks to Christoph Stepper (@cstepper; https://github.com/opengeos/whiteboxR/issues/72)
  
- * New default arguments for `wbt_list_tools()`, `wbt_time_in_daylight()`, `wbt_shadow_image()` thanks to Jens Wiesehahn (@wiesehahn; https://github.com/giswqs/whiteboxR/issues/70, https://github.com/giswqs/whiteboxR/issues/73)
+ * New default arguments for `wbt_list_tools()`, `wbt_time_in_daylight()`, `wbt_shadow_image()` thanks to Jens Wiesehahn (@wiesehahn; https://github.com/opengeos/whiteboxR/issues/70, https://github.com/opengeos/whiteboxR/issues/73)
  
 # whitebox 2.1.2
 
@@ -73,7 +73,7 @@
  
 # whitebox 2.1.1
 
- * File path arguments to tools now automatically perform path expansion (converting `~` to your home directory with `path.expand()`). This also works on arguments that contain comma or semicolon delimited lists. (https://github.com/giswqs/whiteboxR/issues/62)
+ * File path arguments to tools now automatically perform path expansion (converting `~` to your home directory with `path.expand()`). This also works on arguments that contain comma or semicolon delimited lists. (https://github.com/opengeos/whiteboxR/issues/62)
  
  * Corrections to `wbttoolparameters` dataset (updated classification of input/output parameters) 
  

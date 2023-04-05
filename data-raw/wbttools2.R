@@ -2,7 +2,7 @@ library(reticulate)
 library(jsonlite)
 library(data.table)
 
-# assumes clone of https://github.com/giswqs/whiteboxgui in parent dir
+# assumes clone of https://github.com/opengeos/whiteboxgui in parent dir
 py_run_file("../whiteboxgui/whiteboxgui/whiteboxgui.py")
 py_run_string("with open('data-raw/whitebox_tools.json', 'w') as outfile:\n
                  json.dump(get_wbt_dict(reset = True), outfile)")
@@ -10,7 +10,7 @@ py_run_string("with open('data-raw/whitebox_ext.json', 'w') as outfile:\n
                  json.dump(get_ext_dict(reset = True), outfile)")
 
 ## get open core tool info
-# whitebox_json <- jsonlite::read_json("https://raw.githubusercontent.com/giswqs/whiteboxgui/master/whiteboxgui/data/whitebox_tools.json", simplifyVector = TRUE)
+# whitebox_json <- jsonlite::read_json("https://raw.githubusercontent.com/opengeos/whiteboxgui/master/whiteboxgui/data/whitebox_tools.json", simplifyVector = TRUE)
 whitebox_json <- read_json("data-raw/whitebox_tools.json")
 wbttools <- rbindlist(lapply(whitebox_json, function(x) as.data.frame(x[1:7])))
 colnames(wbttools)[1:3] <- c("tool_name", "function_name", "toolbox_name")

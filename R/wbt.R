@@ -1145,7 +1145,7 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
     }
   }
   if (fp == "") {
-    try(download.file("https://github.com/giswqs/whiteboxR/raw/master/inst/extdata/DEM.tif",
+    try(download.file("https://github.com/opengeos/whiteboxR/raw/master/inst/extdata/DEM.tif",
                       destfile = destfile,
                       mode = "wb", ...))
     if (missing(destfile)) {
