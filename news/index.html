@@ -45,7 +45,7 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/giswqs/whiteboxR/" class="external-link">
+  <a href="https://github.com/opengeos/whiteboxR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -60,7 +60,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href="https://github.com/giswqs/whiteboxR/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/opengeos/whiteboxR/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
@@ -104,18 +104,18 @@
 <ul><li><p>Fix for <code>argument_name='k'</code></p></li>
 <li><p>Remove several one and two character flag aliases from <code>argument_name</code> and replace with full name</p></li>
 </ul></li>
-<li><p>Add support for showing warning messages in regular interactive/verbose mode, thanks to <a href="https://github.com/alenahav" class="external-link">@alenahav</a> for reporting an issue (<a href="https://github.com/giswqs/whiteboxR/issues/75" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/75</a>) with <code><a href="../reference/wbt_fd8_flow_accumulation.html">wbt_fd8_flow_accumulation()</a></code></p></li>
-<li><p>Functions that take multiple files are auto-quoted by default; thanks to François-Nicolas Robinne for reporting issue (<a href="https://github.com/FNRobinne" class="external-link">@FNRobinne</a>; <a href="https://github.com/giswqs/whiteboxR/issues/55" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/55</a>) with <code><a href="../reference/wbt_mosaic.html">wbt_mosaic()</a></code></p></li>
-<li><p>Error output is now more verbose, ensuring relevant tool output is displayed to user on error regardless of verbosity, platform, etc. Thanks to Jeffrey W. Rozelle for reporting issue (<a href="https://github.com/jwilliamrozelle" class="external-link">@jwilliamrozelle</a>; <a href="https://github.com/giswqs/whiteboxR/issues/80" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/80</a>) with getting error messages about unsupported raster types</p></li>
+<li><p>Add support for showing warning messages in regular interactive/verbose mode, thanks to <a href="https://github.com/alenahav" class="external-link">@alenahav</a> for reporting an issue (<a href="https://github.com/opengeos/whiteboxR/issues/75" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/75</a>) with <code><a href="../reference/wbt_fd8_flow_accumulation.html">wbt_fd8_flow_accumulation()</a></code></p></li>
+<li><p>Functions that take multiple files are auto-quoted by default; thanks to François-Nicolas Robinne for reporting issue (<a href="https://github.com/FNRobinne" class="external-link">@FNRobinne</a>; <a href="https://github.com/opengeos/whiteboxR/issues/55" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/55</a>) with <code><a href="../reference/wbt_mosaic.html">wbt_mosaic()</a></code></p></li>
+<li><p>Error output is now more verbose, ensuring relevant tool output is displayed to user on error regardless of verbosity, platform, etc. Thanks to Jeffrey W. Rozelle for reporting issue (<a href="https://github.com/jwilliamrozelle" class="external-link">@jwilliamrozelle</a>; <a href="https://github.com/opengeos/whiteboxR/issues/80" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/80</a>) with getting error messages about unsupported raster types</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.1.3" id="whitebox-213">whitebox 2.1.3<a class="anchor" aria-label="anchor" href="#whitebox-213"></a></h2>
 <ul><li>
 <p>Generated <code>whitebox_tools</code> commands no longer include flags for default arguments that are stored in settings.json unless specified by the user.</p>
-<ul><li>Updates to fix issues with permissions to write <em>settings.json</em>; thanks to Henrik (<a href="https://github.com/hewag1975" class="external-link">@hewag1975</a>) for reporting problems on Shiny Server (<a href="https://github.com/giswqs/whiteboxR/issues/67" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/67</a>)</li>
+<ul><li>Updates to fix issues with permissions to write <em>settings.json</em>; thanks to Henrik (<a href="https://github.com/hewag1975" class="external-link">@hewag1975</a>) for reporting problems on Shiny Server (<a href="https://github.com/opengeos/whiteboxR/issues/67" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/67</a>)</li>
 </ul></li>
-<li><p><code><a href="../reference/install_whitebox.html">wbt_install()</a></code> / <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> now removes the downloaded zip file on exit thanks to Christoph Stepper (<a href="https://github.com/cstepper" class="external-link">@cstepper</a>; <a href="https://github.com/giswqs/whiteboxR/issues/72" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/72</a>)</p></li>
-<li><p>New default arguments for <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code>, <code><a href="../reference/wbt_time_in_daylight.html">wbt_time_in_daylight()</a></code>, <code><a href="../reference/wbt_shadow_image.html">wbt_shadow_image()</a></code> thanks to Jens Wiesehahn (<a href="https://github.com/wiesehahn" class="external-link">@wiesehahn</a>; <a href="https://github.com/giswqs/whiteboxR/issues/70" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/70</a>, <a href="https://github.com/giswqs/whiteboxR/issues/73" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/73</a>)</p></li>
+<li><p><code><a href="../reference/install_whitebox.html">wbt_install()</a></code> / <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> now removes the downloaded zip file on exit thanks to Christoph Stepper (<a href="https://github.com/cstepper" class="external-link">@cstepper</a>; <a href="https://github.com/opengeos/whiteboxR/issues/72" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/72</a>)</p></li>
+<li><p>New default arguments for <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code>, <code><a href="../reference/wbt_time_in_daylight.html">wbt_time_in_daylight()</a></code>, <code><a href="../reference/wbt_shadow_image.html">wbt_shadow_image()</a></code> thanks to Jens Wiesehahn (<a href="https://github.com/wiesehahn" class="external-link">@wiesehahn</a>; <a href="https://github.com/opengeos/whiteboxR/issues/70" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/70</a>, <a href="https://github.com/opengeos/whiteboxR/issues/73" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/73</a>)</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.1.2" id="whitebox-212">whitebox 2.1.2<small>2022-03-21</small><a class="anchor" aria-label="anchor" href="#whitebox-212"></a></h2>
@@ -123,7 +123,7 @@
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.1.1" id="whitebox-211">whitebox 2.1.1<small>2022-03-15</small><a class="anchor" aria-label="anchor" href="#whitebox-211"></a></h2>
-<ul><li><p>File path arguments to tools now automatically perform path expansion (converting <code>~</code> to your home directory with <code><a href="https://rdrr.io/r/base/path.expand.html" class="external-link">path.expand()</a></code>). This also works on arguments that contain comma or semicolon delimited lists. (<a href="https://github.com/giswqs/whiteboxR/issues/62" class="external-link uri">https://github.com/giswqs/whiteboxR/issues/62</a>)</p></li>
+<ul><li><p>File path arguments to tools now automatically perform path expansion (converting <code>~</code> to your home directory with <code><a href="https://rdrr.io/r/base/path.expand.html" class="external-link">path.expand()</a></code>). This also works on arguments that contain comma or semicolon delimited lists. (<a href="https://github.com/opengeos/whiteboxR/issues/62" class="external-link uri">https://github.com/opengeos/whiteboxR/issues/62</a>)</p></li>
 <li><p>Corrections to <code>wbttoolparameters</code> dataset (updated classification of input/output parameters)</p></li>
 <li><p>Fix for <code><a href="../reference/wbt_lidar_tin_gridding.html">wbt_lidar_tin_gridding()</a></code> <code>exclude_cls</code> argument</p></li>
 <li>
@@ -151,7 +151,7 @@
 <ul><li><p><code><a href="../reference/install_whitebox.html">whitebox::install_whitebox()</a></code> will call <code><a href="../reference/wbt_init.html">wbt_init()</a></code> on the <code>exe_path</code> after unpacking to target directory</p></li>
 <li><p><code><a href="../reference/wbt_init.html">wbt_init()</a></code> <code>exe_path</code>, <code><a href="../reference/wbt_init.html">wbt_wd()</a></code> <code>wd</code>, and <code><a href="../reference/install_whitebox.html">install_whitebox()</a></code> <code>pkg_dir</code> paths can be specified with shorthand <code>~</code> for home directory, which is expanded with <code><a href="https://rdrr.io/r/base/path.expand.html" class="external-link">path.expand()</a></code></p></li>
 <li><p>Unsetting working directories requires only a single call to <code>wbt_wd("")</code></p></li>
-<li><p>Functions no longer use <code><a href="https://rdrr.io/r/base/match.call.html" class="external-link">match.call()</a></code> so unconventional/automated methods for calling tools that do not have a parsable tool name in the call result now work (<a href="https://github.com/giswqs/whiteboxR/issues/45" class="external-link">#45</a>)</p></li>
+<li><p>Functions no longer use <code><a href="https://rdrr.io/r/base/match.call.html" class="external-link">match.call()</a></code> so unconventional/automated methods for calling tools that do not have a parsable tool name in the call result now work (<a href="https://github.com/opengeos/whiteboxR/issues/45" class="external-link">#45</a>)</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.5.1" id="whitebox-151">whitebox 1.5.1<a class="anchor" aria-label="anchor" href="#whitebox-151"></a></h2>
