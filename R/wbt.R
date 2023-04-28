@@ -341,7 +341,14 @@ wbt_wd <- function(wd = NULL) {
 }
 
 .wbt_wd_unset <- function() {
-  try(wbt_system_call(paste0("--wd=", shQuote(""))), silent = TRUE)
+  # this doesnt actually set the value ""
+  #  - try(wbt_system_call(paste0("--wd=", shQuote(""))), silent = TRUE)
+  try({
+    f <- file.path(dirname(wbt_exe_path(shell_quote = FALSE)), "settings.json")
+    x <- readLines(f, warn = FALSE)
+    x[grepl('^ *"working_directory": .*$', x)] <- '  "working_directory": "",'
+    writeLines(x, f)
+  })
 }
 
 #' @description `wbt_verbose()`: Check verbose options for 'WhiteboxTools'
