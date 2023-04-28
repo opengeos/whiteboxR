@@ -40,8 +40,9 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
       !is.null(wd) ||
       !is.null(verbose) ||
       !is.null(compress_rasters)) {
-    if (!length(wd) > 0 && wd == "") {
-      .wbt_wd_unset("")
+    
+    if (!is.null(wd) && length(wd) > 0 && (is.na(wd) || wd == "")) {
+      .wbt_wd_unset()
     }
     
     # set the path with wbt_options
