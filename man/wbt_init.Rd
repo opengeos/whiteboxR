@@ -112,7 +112,7 @@ Returns the file path of 'WhiteboxTools' executable.
 
 \code{wbt_data_dir()}: Uses platform-specific user data directory from \code{tools::R_user_dir(package = "whitebox", which = "data")} on R 4.0+. On R<4 returns the original default \code{find.package("whitebox")}.
 
-\code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which is equivalent to \code{wbt_wd(getwd())}.
+\code{wbt_wd()}: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the \code{wd} argument to \code{wbt_wd()} and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use \code{wbt_wd("")} which removes the \code{--wd} flag from commands and sets the \code{working_directory} value in the WhiteboxTools \emph{settings.json} to \code{""}.
 }
 \examples{
 \dontrun{
@@ -135,6 +135,9 @@ wbt_exe_path()
 \dontrun{
 
 ## wbt_wd():
+
+# no working directory set
+wbt_wd(wd = "")
 
 # set WBT working directory to R working directory
 wbt_wd(wd = getwd())

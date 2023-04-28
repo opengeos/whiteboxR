@@ -108,8 +108,8 @@ test_that("wbt setting and using working directories", {
   expect_length(list.files(pattern = basename(tf)), 0)
   expect_length(list.files(path = mywd, pattern = basename(tf)), 1)
 
-  # NA or "" are converted to getwd() with an attribute set to remove the flag after next
-  expect_equal(wbt_wd(NA), "")
+  # "" resets wd flag and returns ""
+  expect_equal(wbt_wd(""), "")
 
   # cleanup
   unlink(tf)
@@ -203,6 +203,8 @@ test_that("wbt raster compression (requires WhiteboxTools v2.1.0 or higher)", {
 
   skip_if(dem == "")
 
+  wbt_wd(getwd())
+  
   wbt_geomorphons(sample_dem_data(), output = "test_compressed.tif", compress_rasters = TRUE)
 
   wbt_geomorphons(sample_dem_data(), output = "test_no-compress.tif", compress_rasters = FALSE)

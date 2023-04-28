@@ -40,6 +40,11 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
       !is.null(wd) ||
       !is.null(verbose) ||
       !is.null(compress_rasters)) {
+    
+    if (!is.null(wd) && length(wd) > 0 && (is.na(wd) || wd == "")) {
+      .wbt_wd_unset()
+    }
+    
     # set the path with wbt_options
     wbt_options(exe_path = exe_path, ...)
   }
@@ -288,7 +293,7 @@ wbt_data_dir <- function() {
 #'
 #' @return `wbt_wd()`: character; when working directory is unset, will not add `--wd=` arguments to calls and should be the same as using `getwd()`. See Details.
 #'
-#' @details `wbt_wd()`: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use `wbt_wd("")` which is equivalent to `wbt_wd(getwd())`.
+#' @details `wbt_wd()`: Before you set the working directory in a session the default output will be in your current R working directory unless otherwise specified. You can change working directory at any time by setting the `wd` argument to `wbt_wd()` and running a tool. Note that once you have set a working directory, the directory needs to be set somewhere to "replace" the old value; just dropping the flag will not change the working directory back to the R working directory. To "unset" the option in the R package you can use `wbt_wd("")` which removes the `--wd` flag from commands and sets the `working_directory` value in the WhiteboxTools _settings.json_ to `""`.
 #' @rdname wbt_init
 #' @export
 #' @keywords General
@@ -296,28 +301,17 @@ wbt_data_dir <- function() {
 #' \dontrun{
 #'
 #' ## wbt_wd():
-#'
+#' 
+#' # no working directory set
+#' wbt_wd(wd = "")
+#' 
 #' # set WBT working directory to R working directory
 #' wbt_wd(wd = getwd())
 #' }
 wbt_wd <- function(wd = NULL) {
 
-  # system environment var takes precedence
-  syswd <- Sys.getenv("R_WHITEBOX_WD")
-  if (nchar(syswd) > 0 && dir.exists(syswd)) {
-    return(syswd)
-  }
-
   if (length(wd) > 0 && (is.na(wd) || wd == "")) {
-    curwd <- getwd()
-    if(wbt_verbose()) {
-      cat("Reset WhiteboxTools working directory to current R working directory:", curwd)
-    }
-    try(wbt_system_call(paste0("--wd=", curwd)), silent = TRUE)
-    if (wbt_verbose()) {
-      cat("Unset WhiteboxTools working directory flag `whitebox.wd` / `--wd`\n")
-    }
-    wd <- "" #structure(curwd, unset = TRUE)
+    .wbt_wd_unset()
   }
 
   if (is.character(wd)) {
@@ -325,6 +319,12 @@ wbt_wd <- function(wd = NULL) {
     wbt_options(wd = wd)
   }
 
+  # system environment var takes precedence
+  syswd <- Sys.getenv("R_WHITEBOX_WD")
+  if (nchar(syswd) > 0 && dir.exists(syswd)) {
+    return(syswd)
+  }
+  
   # package option checked next; if missing default is getwd() (unspecified should be same as getwd())
   res <- getOption("whitebox.wd")
 
@@ -333,11 +333,22 @@ wbt_wd <- function(wd = NULL) {
     res <- ""
   # otherwise, if the option is invalid directory message
   } else if (!is.null(res) && !dir.exists(res)) {
-    message("Invalid path for `whitebox.wd`: directory does not exist.\nDefaulting to current R working directory: ", getwd())
-    res <- getwd()
+    message("Invalid path for `whitebox.wd`: directory does not exist.\nDefaulting to \"\"")
+    res <- ""
   }
 
   invisible(res)
+}
+
+.wbt_wd_unset <- function() {
+  # this doesnt actually set the value ""
+  #  - try(wbt_system_call(paste0("--wd=", shQuote(""))), silent = TRUE)
+  try({
+    f <- file.path(dirname(wbt_exe_path(shell_quote = FALSE)), "settings.json")
+    x <- readLines(f, warn = FALSE)
+    x[grepl('^ *"working_directory": .*$', x)] <- '  "working_directory": "",'
+    writeLines(x, f)
+  })
 }
 
 #' @description `wbt_verbose()`: Check verbose options for 'WhiteboxTools'
@@ -581,8 +592,9 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
     }
     res <- -1
     for (method in c(if (os == "Windows") "internal", "libcurl", "auto")) {
-      if (!inherits(try(res <- utils::download.file(url, exe_zip, method = method), silent = TRUE),
-                    "try-error") && res == 0)
+      if (!inherits(try({
+        res <- utils::download.file(url, exe_zip, method = method)
+      }, silent = TRUE), "try-error") && res == 0)
         break
     }
 
@@ -612,7 +624,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
       cat("    wbt_version()\n")
 
       # call wbt_init (sets package option)
-      wbt_init(exe_path = exe_path_out)
+      wbt_init(exe_path = exe_path_out, wd = "")
     }
 
   } else if (!force) {
