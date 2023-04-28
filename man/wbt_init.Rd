@@ -35,7 +35,7 @@ wbt_default_path()
 
 wbt_data_dir()
 
-wbt_wd(wd = NULL, verbose = wbt_verbose())
+wbt_wd(wd = NULL)
 
 wbt_verbose(verbose = NULL)
 

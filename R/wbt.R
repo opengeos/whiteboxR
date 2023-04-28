@@ -617,10 +617,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
       cat("    wbt_version()\n")
 
       # call wbt_init (sets package option)
-      wbt_init(exe_path = exe_path_out)
-      
-      # unset any working directory that may be set in settings.json
-      .wbt_wd_unset()
+      wbt_init(exe_path = exe_path_out, wd = "")
     }
 
   } else if (!force) {
