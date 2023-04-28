@@ -4,6 +4,8 @@
  
  * Add `wbt_runner_path()` (analog of `wbt_exe_path()` for `whitebox_runner` GUI executable) and `wbt_launch_runner()` a simple function to launch the GUI.
  
+ * `wbt_wd("")` now sets the value of `working_directory` in the WhiteboxTools settings.json file to `""` and triggers background options to prevent `--wd` flag being added until a new working directory is set. This has been a long-standing issue, resolved following <https://github.com/opengeos/whiteboxR/issues/108>.
+ 
 # whitebox 2.3.0
 
  * Updates for WhiteboxTools v2.3.0 (https://github.com/jblindsay/whitebox-tools/releases/tag/v2.3.0)
