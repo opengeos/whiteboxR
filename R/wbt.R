@@ -240,6 +240,7 @@ wbt_runner_path <- function(shell_quote = TRUE) {
   if (shell_quote) {
     return(shQuote(res))
   }
+  res
 }
 
 #' @title Launch 'WhiteboxTools Runner' GUI
@@ -609,6 +610,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
     # subfolder WBT/whitebox_tools
     exe_path_out <- file.path(pkg_dir, "WBT", basename(exe_path))
     Sys.chmod(exe_path_out, '755')
+    Sys.chmod(file.path(dirname(exe_path_out), basename(wbt_runner_path(shell_quote = FALSE))), '755')
 
     # if (os == "Windows") {
     #   utils::unzip(exe_zip, exdir = pkg_dir)
