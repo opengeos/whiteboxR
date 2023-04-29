@@ -341,20 +341,45 @@ wbt_wd <- function(wd = NULL) {
 }
 
 .wbt_wd_unset <- function() {
-  # this doesnt actually set the value ""
-  #  - try(wbt_system_call(paste0("--wd=", shQuote(""))), silent = TRUE)
   try({
-    f <- wbt_settings_json()
-    if (file.exists(f)) {
-      x <- readLines(f, warn = FALSE)
-      x[grepl('^ *"working_directory": .*$', x)] <- '  "working_directory": "",'
-      writeLines(x, f)
+    f <- .wbt_settings_json()
+    if (!file.exists(f)) { 
+      # try to trigger creation of settings.json file if not present
+      wbt_system_call('--wd=""')
     }
-  })
+    # wipe out working directory
+    .wbt_settings(f, list(working_directory = ""))
+  }, silent = TRUE)
 }
 
-wbt_settings_json <- function() {
+.wbt_settings_json <- function() {
+  # TODO: what if this settings.json is not writable? 
+  #       should a working dir settings.json take precedence
   file.path(dirname(wbt_exe_path(shell_quote = FALSE)), "settings.json")
+}
+
+# f: a settings.json file (default format only: 1 line per setting)
+# x: a named list of key:value pairs
+.wbt_settings <- function(f, x) {
+  try({
+    if (file.exists(f)) {
+      xx <- readLines(f, warn = FALSE)
+      n <- names(x)
+      x <- lapply(x, function(y) {
+        if (is.logical(y)) {
+          return(tolower(isTRUE(y)))
+        } else if (is.numeric(y)) {
+          return(y)
+        } else {
+          return(paste0('"', y, '"'))
+        }
+      })
+      for (i in seq_along(x)) {
+        xx[grepl(sprintf('^ *"%s": .*$', n[i]), xx)] <- sprintf('  "%s": %s,', n[i], x[[i]])
+      }
+      writeLines(xx, f)
+    }
+  })
 }
 
 #' @description `wbt_verbose()`: Check verbose options for 'WhiteboxTools'
