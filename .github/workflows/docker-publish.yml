@@ -13,7 +13,7 @@ on:
 
 jobs:
   push_to_registries:
-    if: github.repository_owner == 'giswqs'
+    if: github.repository_owner == 'opengeos'
     name: Push Docker image to multiple registries
     runs-on: ubuntu-latest
     permissions:
