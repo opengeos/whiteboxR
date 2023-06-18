@@ -101,7 +101,7 @@ def function_block(line, ff):
                   + "\n"
               )
               ff.write("  }" + "\n")
-            elif '"' not in para and "wd" in para:
+            elif '"' not in para and "wd" in para or "base" in para:
               ff.write("  if (!missing(" + para + ")) {" + "\n")
               ff.write(
                   '    args <- paste(args, paste0("--'

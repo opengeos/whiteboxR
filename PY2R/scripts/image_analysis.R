@@ -578,8 +578,8 @@ wbt_resample <- function(inputs, output, cell_size=NULL, base=NULL, method="cc",
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!is.null(method)) {
     args <- paste(args, paste0("--method=", method))

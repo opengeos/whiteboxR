@@ -68,8 +68,8 @@ wbt_block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_s
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -113,8 +113,8 @@ wbt_block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_s
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -682,8 +682,8 @@ wbt_heat_map <- function(input, output, weight_field=NULL, bandwidth="", kernel=
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -739,8 +739,8 @@ wbt_idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0,
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -993,8 +993,8 @@ wbt_natural_neighbour_interpolation <- function(input, output, field=NULL, use_z
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (clip) {
     args <- paste(args, "--clip")
@@ -1042,8 +1042,8 @@ wbt_nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, ce
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!is.null(max_dist)) {
     args <- paste(args, paste0("--max_dist=", max_dist))
@@ -1230,8 +1230,8 @@ wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -1586,8 +1586,8 @@ wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=
   if (!is.null(resolution)) {
     args <- paste(args, paste0("--resolution=", resolution))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!is.null(max_triangle_edge_length)) {
     args <- paste(args, paste0("--max_triangle_edge_length=", max_triangle_edge_length))

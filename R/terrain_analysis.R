@@ -260,8 +260,8 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
   if (!is.null(interval)) {
     args <- paste(args, paste0("--interval=", interval))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!is.null(smooth)) {
     args <- paste(args, paste0("--smooth=", smooth))
@@ -304,8 +304,8 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
   if (!is.null(interval)) {
     args <- paste(args, paste0("--interval=", interval))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!is.null(smooth)) {
     args <- paste(args, paste0("--smooth=", smooth))
