@@ -839,8 +839,8 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -890,8 +890,8 @@ wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
@@ -937,8 +937,8 @@ wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRU
   if (!is.null(cell_size)) {
     args <- paste(args, paste0("--cell_size=", cell_size))
   }
-  if (!is.null(base)) {
-    args <- paste(args, paste0("--base=", base))
+  if (!missing(base)) {
+    args <- paste(args, paste0("--base=", wbt_file_path(base)))
   }
   if (!missing(wd)) {
     args <- paste(args, paste0("--wd=", wbt_file_path(wd)))
