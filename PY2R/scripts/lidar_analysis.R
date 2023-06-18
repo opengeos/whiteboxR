@@ -977,8 +977,8 @@ wbt_lidar_contour <- function(input, output=NULL, interval=10.0, base=0.0, smoot
   if (!is.null(interval)) {
     args <- paste(args, paste0("--interval=", interval))
   }
-  if (!missing(base)) {
-    args <- paste(args, paste0("--base=", wbt_file_path(base)))
+  if (!is.null(base)) {
+    args <- paste(args, paste0("--base=", base))
   }
   if (!is.null(smooth)) {
     args <- paste(args, paste0("--smooth=", smooth))

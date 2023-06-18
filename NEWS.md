@@ -2,7 +2,7 @@
 
  * Fix for file paths passed to optional `base` argument of `wbt_resample()`; thanks to @Pentaonia for reporting
    
-   * Also fixed are: `wbt_vector_lines_to_raster()`, `wbt_vector_points_to_raster()`, `wbt_vector_polygons_to_raster()`, `wbt_block_maximum_gridding()`, `wbt_block_minimum_gridding()`, `wbt_heat_map()`, `wbt_idw_interpolation()`, `wbt_natural_neighbour_interpolation()`, `wbt_nearest_neighbour_gridding()`, `wbt_radial_basis_function_interpolation()`, `wbt_tin_gridding()`, `wbt_lidar_contour()`, `wbt_contours_from_points()`, `wbt_contours_from_raster()`
+   * Also fixed are: `wbt_vector_lines_to_raster()`, `wbt_vector_points_to_raster()`, `wbt_vector_polygons_to_raster()`, `wbt_block_maximum_gridding()`, `wbt_block_minimum_gridding()`, `wbt_heat_map()`, `wbt_idw_interpolation()`, `wbt_natural_neighbour_interpolation()`, `wbt_nearest_neighbour_gridding()`, `wbt_radial_basis_function_interpolation()`, `wbt_tin_gridding()`
 
 # whitebox 2.3.1
  
