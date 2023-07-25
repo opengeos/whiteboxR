@@ -653,7 +653,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
 #' 'WhiteboxTools' and all of its extensions can be uninstalled by passing the `remove=TRUE` argument.
 #'
 #' @param pkg_dir default install path is to whitebox package "WBT" folder
-#' @param platform character. Optional: suffix used for alternate platform names. Options include: `"linux_musl"`
+#' @param platform character. Optional: suffix used for alternate platform names. On Linux, you can choose `"linux_amd64"` (default; Linux) or `"linux_musl"` for older glibc versions. On macOS Darwin you can choose `"darwin_amd64"` (default; macOS) or `"darwin_m_series"` for Apple M series hardware. Note that for `wbt_install_extension()` on the Apple M series use `"MacOS_ARM"`. Only one Windows binary is available: `"win_amd64"` (default; Windows).
 #' @param force logical. Force install? Default `FALSE`. When `remove=TRUE` passed to `unlink()` to change permissions to allow removal of files/directories.
 #' @param remove logical. Remove contents of "WBT" folder from `pkg_dir`? Default: `FALSE`
 #' @return Prints out the location of the WhiteboxTools binary, if found. `NULL` otherwise.

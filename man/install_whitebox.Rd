@@ -30,7 +30,7 @@ wbt_install_extension(
 \arguments{
 \item{pkg_dir}{default install path is to whitebox package "WBT" folder}
 
-\item{platform}{character. Optional: suffix used for alternate platform names. Options include: \code{"linux_musl"}}
+\item{platform}{character. Optional: suffix used for alternate platform names. On Linux, you can choose \code{"linux_amd64"} (default; Linux) or \code{"linux_musl"} for older glibc versions. On macOS Darwin you can choose \code{"darwin_amd64"} (default; macOS) or \code{"darwin_m_series"} for Apple M series hardware. Note that for \code{wbt_install_extension()} on the Apple M series use \code{"MacOS_ARM"}. Only one Windows binary is available: \code{"win_amd64"} (default; Windows).}
 
 \item{force}{logical. Force install? Default \code{FALSE}. When \code{remove=TRUE} passed to \code{unlink()} to change permissions to allow removal of files/directories.}
 
