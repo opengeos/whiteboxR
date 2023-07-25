@@ -106,7 +106,7 @@ build from source: <a href="https://github.com/jblindsay/whitebox-tools" class="
 
 
 <dt>platform</dt>
-<dd><p>character. Optional: suffix used for alternate platform names. Options include: <code>"linux_musl"</code></p></dd>
+<dd><p>character. Optional: suffix used for alternate platform names. On Linux, you can choose <code>"linux_amd64"</code> (default; Linux) or <code>"linux_musl"</code> for older glibc versions. On macOS Darwin you can choose <code>"darwin_amd64"</code> (default; macOS) or <code>"darwin_m_series"</code> for Apple M series hardware. Note that for <code>wbt_install_extension()</code> on the Apple M series use <code>"MacOS_ARM"</code>. Only one Windows binary is available: <code>"win_amd64"</code> (default; Windows).</p></dd>
 
 
 <dt>force</dt>
