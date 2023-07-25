@@ -556,7 +556,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
       } else if (os == "Darwin") {
         suffix <- "amd64"
         if (Sys.info()["machine"] == "arm64") {
-          suffix <- "darwin_m_series"
+          suffix <- "m_series"
         }
         url <- paste0("https://www.whiteboxgeo.com/WBT_Darwin/WhiteboxTools_darwin_", suffix , ".zip")
       } else {
