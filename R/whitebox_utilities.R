@@ -3,10 +3,10 @@
 #' @description Use to install a Whitebox extension product.
 #'
 #' @param install_extension Name of the extension product to install. Options include: 'General Toolset Extension', 'DEM & Spatial Hydrology Extension', 'Lidar & Remote Sensing Extension', and 'Agriculture Extension'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords WhiteboxUtilities
 #'
@@ -34,10 +34,10 @@ wbt_install_wb_extension <- function(install_extension="General Toolset Extensio
 #' @description Opens the Whitebox Runner application.
 #'
 #' @param clear_app_state Clear the application state memory?.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords WhiteboxUtilities
 #'

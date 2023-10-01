@@ -6,10 +6,10 @@
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -44,10 +44,10 @@ wbt_accumulation_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=N
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -81,10 +81,10 @@ wbt_aspect <- function(dem, output, zfactor=NULL, wd=NULL, verbose_mode=NULL, co
 #' @param output Name of the output lines shapefile.
 #' @param length Maximum segment length (m).
 #' @param dist Search distance, in grid cells, used in visibility analysis.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -120,10 +120,10 @@ wbt_assess_route <- function(routes, dem, output, length="", dist=20, wd=NULL, v
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param filter Size of the filter kernel.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -156,10 +156,10 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
 #' @param output Name of the output vector lines file.
 #' @param threshold Threshold value (0 - infinity but typcially 1 to 5 works well).
 #' @param min_length Minimum line length, in grid cells.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -194,10 +194,10 @@ wbt_breakline_mapping <- function(dem, output, threshold=2.0, min_length=3, wd=N
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param filter Size of the filter kernel.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -234,10 +234,10 @@ wbt_circular_variance_of_aspect <- function(dem, output, filter=11, wd=NULL, ver
 #' @param interval Contour interval.
 #' @param base Base contour height.
 #' @param smooth Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -287,10 +287,10 @@ wbt_contours_from_points <- function(input, output, field=NULL, use_z=FALSE, max
 #' @param base Base contour height.
 #' @param smooth Smoothing filter size (in num. points), e.g. 3, 5, 7, 9, 11.
 #' @param tolerance Tolerance factor, in degrees (0-45); determines generalization level.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -332,10 +332,10 @@ wbt_contours_from_raster <- function(input, output, interval=10.0, base=0.0, smo
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -373,10 +373,10 @@ wbt_curvedness <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose
 #' @param mean_plane_dist Distance to void edge at which the mean-plane value is used as an offset, measured in grid cells.
 #' @param edge_treatment How should void-edge cells be treated? Options include 'use DEM' (default), 'use Fill', 'average'.
 #' @param weight_value Weight value used for IDW interpolation (default is 2.0).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -416,10 +416,10 @@ wbt_dem_void_filling <- function(dem, fill, output, mean_plane_dist=20, edge_tre
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -455,10 +455,10 @@ wbt_dev_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL,
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -494,10 +494,10 @@ wbt_diff_from_mean_elev <- function(dem, output, filterx=11, filtery=11, wd=NULL
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -533,10 +533,10 @@ wbt_difference_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NUL
 #' @param output Output raster file.
 #' @param azimuth Wind azimuth in degrees.
 #' @param max_dist Optional maximum search distance (unspecified if none; in xy units).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -572,10 +572,10 @@ wbt_directional_relief <- function(dem, output, azimuth=0.0, max_dist=NULL, wd=N
 #' @param output Output raster file.
 #' @param drop Vertical drop value (default is 2.0).
 #' @param out_type Output type, options include 'tangent', 'degrees', 'radians', 'distance' (default is 'tangent').
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -612,10 +612,10 @@ wbt_downslope_index <- function(dem, output, drop=2.0, out_type="tangent", wd=NU
 #' @param filter Size of the filter kernel.
 #' @param norm_diff Maximum difference in normal vectors, in degrees.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -652,10 +652,10 @@ wbt_edge_density <- function(dem, output, filter=11, norm_diff=5.0, zfactor=NULL
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -686,10 +686,10 @@ wbt_elev_above_pit <- function(dem, output, wd=NULL, verbose_mode=NULL, compress
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
 #' @param sig_digits Number of significant digits.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -726,10 +726,10 @@ wbt_elev_percentile <- function(dem, output, filterx=11, filtery=11, sig_digits=
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -758,10 +758,10 @@ wbt_elev_relative_to_min_max <- function(dem, output, wd=NULL, verbose_mode=NULL
 #' @param dem Input raster DEM file.
 #' @param watersheds Input raster watersheds file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -799,10 +799,10 @@ wbt_elev_relative_to_watershed_min_max <- function(dem, watersheds, output, wd=N
 #' @param max_increment Maximum upwards increment between neighbouring cells on an embankment (in elevation units).
 #' @param spillout_slope Spillout slope (in degrees).
 #' @param remove_embankments Optional flag indicating whether to output a DEM with embankments removed (true) or an embankment raster map (false).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -858,10 +858,10 @@ wbt_embankment_mapping <- function(dem, road_vec, output, search_dist=2.5, min_r
 #' @param azimuth Wind azimuth, in degrees.
 #' @param max_dist Optional maximum search distance. Minimum value is 5 x cell size.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -903,10 +903,10 @@ wbt_exposure_towards_wind_flux <- function(dem, output, azimuth="", max_dist="",
 #' @param num_iter Number of iterations.
 #' @param max_diff Maximum allowable absolute elevation change (optional).
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -951,10 +951,10 @@ wbt_feature_preserving_smoothing <- function(dem, output, filter=11, norm_diff=1
 #' @param output Output raster file.
 #' @param azimuth Wind azimuth in degrees in degrees.
 #' @param hgt_inc Height increment value.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -991,10 +991,10 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 #' @param filter Filter size (cells).
 #' @param weight IDW weight value.
 #' @param no_edges Optional flag indicating whether to exclude NoData cells in edge regions.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1032,10 +1032,10 @@ wbt_fill_missing_data <- function(input, output, filter=11, weight=2.0, no_edges
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param line_thin Optional flag indicating whether post-processing line-thinning should be performed.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1068,10 +1068,10 @@ wbt_find_ridges <- function(dem, output, line_thin=TRUE, wd=NULL, verbose_mode=N
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1113,10 +1113,10 @@ wbt_gaussian_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL
 #' @param num_steps Number of steps.
 #' @param lsp Output land-surface parameter; one of 'AnisotropyLTP', 'Aspect', 'DiffMeanElev', 'Eastness', 'Elevation', 'Hillshade', 'MeanCurvature', 'Northness', 'PlanCurvature', 'ProfileCurvature', 'Ruggedness', 'Slope', 'TanCurvature', 'TotalCurvature'.
 #' @param z_factor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1166,10 +1166,10 @@ wbt_gaussian_scale_space <- function(dem, output, output_zscore, output_scale, p
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1209,10 +1209,10 @@ wbt_generating_function <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL
 #' @param skip Distance (in cells) to begin calculating lines-of-sight.
 #' @param forms Classify geomorphons into 10 common land morphologies, else output ternary pattern.
 #' @param residuals Convert elevation to residuals of a linear model.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1261,10 +1261,10 @@ wbt_geomorphons <- function(dem, output, search=50, threshold=0.0, fdist=0, skip
 #' @param azimuth Illumination source azimuth in degrees.
 #' @param altitude Illumination source altitude in degrees.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1303,10 +1303,10 @@ wbt_hillshade <- function(dem, output, azimuth=315.0, altitude=30.0, zfactor=NUL
 #' @param output Output raster file.
 #' @param azimuth Azimuth, in degrees.
 #' @param max_dist Optional maximum search distance (unspecified if none; in xy units). Minimum value is 5 x cell size.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1342,10 +1342,10 @@ wbt_horizon_angle <- function(dem, output, azimuth=0.0, max_dist=100.0, wd=NULL,
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1380,10 +1380,10 @@ wbt_horizontal_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0,
 #' @param inputs Input DEM files.
 #' @param watershed Input watershed files (optional).
 #' @param output Output HTML file (default name will be based on input file if unspecified).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1422,10 +1422,10 @@ wbt_hypsometric_analysis <- function(inputs, output, watershed=NULL, wd=NULL, ve
 #' @param reverse Optional flag indicating whether to use reverse the palette.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param full_mode Optional flag indicating whether to use full 360-degrees of illumination sources.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1482,10 +1482,10 @@ wbt_hypsometrically_tinted_hillshade <- function(dem, output, altitude=45.0, hs_
 #' @param step Step size as any positive non-zero integer.
 #' @param num_steps Number of steps.
 #' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1527,10 +1527,10 @@ wbt_local_hypsometric_analysis <- function(input, out_mag, out_scale, min_scale=
 #' @param dem Name of the input DEM raster file.
 #' @param output Name of the output raster file.
 #' @param filter Edge length of the filter kernel.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1563,10 +1563,10 @@ wbt_local_quadratic_regression <- function(dem, output, filter=3, wd=NULL, verbo
 #' @param output Output raster file.
 #' @param max_slope Maximum inter-cell absolute slope.
 #' @param min_size Minimum feature size, in grid cells.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1604,10 +1604,10 @@ wbt_map_off_terrain_objects <- function(dem, output, max_slope=40.0, min_size=1,
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1647,10 +1647,10 @@ wbt_max_anisotropy_dev <- function(dem, out_mag, out_scale, max_scale, min_scale
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1687,10 +1687,10 @@ wbt_max_anisotropy_dev_signature <- function(dem, points, output, max_scale, min
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param log Optional flag to request the output be log-transformed.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1725,10 +1725,10 @@ wbt_max_branch_length <- function(dem, output, log=FALSE, wd=NULL, verbose_mode=
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1762,10 +1762,10 @@ wbt_max_difference_from_mean <- function(dem, out_mag, out_scale, min_scale, max
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1797,10 +1797,10 @@ wbt_max_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=NUL
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1838,10 +1838,10 @@ wbt_max_elev_dev_signature <- function(dem, points, output, min_scale, max_scale
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1875,10 +1875,10 @@ wbt_max_elevation_deviation <- function(dem, out_mag, out_scale, min_scale, max_
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1908,10 +1908,10 @@ wbt_max_upslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=NULL,
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1947,10 +1947,10 @@ wbt_maximal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -1984,10 +1984,10 @@ wbt_mean_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2017,10 +2017,10 @@ wbt_min_downslope_elev_change <- function(dem, output, wd=NULL, verbose_mode=NUL
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2057,10 +2057,10 @@ wbt_minimal_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #' @param altitude Illumination source altitude in degrees.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param full_mode Optional flag indicating whether to use full 360-degrees of illumination sources.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2105,10 +2105,10 @@ wbt_multidirectional_hillshade <- function(dem, output, altitude=45.0, zfactor=N
 #' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
 #' @param log Display output values using a log-scale.
 #' @param standardize Should each scale be standardized to z-scores?.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2166,10 +2166,10 @@ wbt_multiscale_curvatures <- function(dem, out_mag, curv_type="ProfileCurv", out
 #' @param step Step size as any positive non-zero integer.
 #' @param num_steps Number of steps.
 #' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2217,10 +2217,10 @@ wbt_multiscale_elevation_percentile <- function(dem, out_mag, out_scale, sig_dig
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2260,10 +2260,10 @@ wbt_multiscale_roughness <- function(dem, out_mag, out_scale, max_scale, min_sca
 #' @param min_scale Minimum search neighbourhood radius in grid cells.
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param step Step size as any positive non-zero integer.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2304,10 +2304,10 @@ wbt_multiscale_roughness_signature <- function(dem, points, output, max_scale, m
 #' @param step Step size as any positive non-zero integer.
 #' @param num_steps Number of steps.
 #' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2353,10 +2353,10 @@ wbt_multiscale_std_dev_normals <- function(dem, out_mag, out_scale, min_scale=1,
 #' @param step Step size as any positive non-zero integer.
 #' @param num_steps Number of steps.
 #' @param step_nonlinearity Step nonlinearity factor (1.0-2.0 is typical).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2401,10 +2401,10 @@ wbt_multiscale_std_dev_normals_signature <- function(dem, points, output, min_sc
 #' @param hillshade Input optional hillshade raster file. Note: a multi-directional (360-degree option) hillshade tends to work best in this application.
 #' @param output Output raster file.
 #' @param lightness Image lightness value (default is 1.2).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2440,10 +2440,10 @@ wbt_multiscale_topographic_position_image <- function(local, meso, broad, output
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2471,10 +2471,10 @@ wbt_num_downslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=NULL
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2504,10 +2504,10 @@ wbt_num_upslope_neighbours <- function(dem, output, wd=NULL, verbose_mode=NULL, 
 #' @param pos_output Name of the positive openness output raster file.
 #' @param neg_output Name of the negative openness output raster file.
 #' @param dist Search distance, in grid cells.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2543,10 +2543,10 @@ wbt_openness <- function(input, pos_output, neg_output, dist=20, wd=NULL, verbos
 #' @param prof Profile curvature threshold value (default is 0.1).
 #' @param plan Plan curvature threshold value (default is 0.0).
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2588,10 +2588,10 @@ wbt_pennock_landform_class <- function(dem, output, slope=3.0, prof=0.1, plan=0.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2627,10 +2627,10 @@ wbt_percent_elev_range <- function(dem, output, filterx=3, filtery=3, wd=NULL, v
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2665,10 +2665,10 @@ wbt_plan_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, ve
 #' @param lines Input vector line file.
 #' @param surface Input raster surface file.
 #' @param output Output HTML file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2699,10 +2699,10 @@ wbt_profile <- function(lines, surface, output, wd=NULL, verbose_mode=NULL, comp
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2738,10 +2738,10 @@ wbt_profile_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL,
 #' @param output Output raster file.
 #' @param azimuth Illumination source azimuth.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2777,10 +2777,10 @@ wbt_relative_aspect <- function(dem, output, azimuth=0.0, zfactor=NULL, wd=NULL,
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2816,10 +2816,10 @@ wbt_relative_topographic_position <- function(dem, output, filterx=11, filtery=1
 #' @param output Output raster file.
 #' @param filter Filter size (cells).
 #' @param slope Slope threshold value.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2855,10 +2855,10 @@ wbt_remove_off_terrain_objects <- function(dem, output, filter=11, slope=15.0, w
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2894,10 +2894,10 @@ wbt_ring_curvature <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, ver
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2931,10 +2931,10 @@ wbt_rotor <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbose_mode
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -2965,10 +2965,10 @@ wbt_ruggedness_index <- function(dem, output, wd=NULL, verbose_mode=NULL, compre
 #' @param output Output raster file.
 #' @param sca_exponent SCA exponent value.
 #' @param slope_exponent Slope exponent value.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3011,10 +3011,10 @@ wbt_sediment_transport_index <- function(sca, slope, output, sca_exponent=0.4, s
 #' @param height Image height, in pixels.
 #' @param delay GIF time delay in milliseconds.
 #' @param label Label text (leave blank for none).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3071,10 +3071,10 @@ wbt_shadow_animation <- function(input, output, palette="atlas", max_dist="", da
 #' @param date Date in format DD/MM/YYYY.
 #' @param time Time in format HH::MM, e.g. 03:15AM or 14:30.
 #' @param location Location, defined as Lat/Long/UTC-offset (e.g. 43.5448/-80.2482/-4).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3118,10 +3118,10 @@ wbt_shadow_image <- function(input, output, palette="soft", max_dist="", date="2
 #' @param dem Name of the input raster DEM file.
 #' @param output Name of the output raster image file.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3154,10 +3154,10 @@ wbt_shape_index <- function(dem, output, zfactor=1.0, wd=NULL, verbose_mode=NULL
 #' @param output Output raster file.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param units Units of output raster; options include 'degrees', 'radians', 'percent'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3194,10 +3194,10 @@ wbt_slope <- function(dem, output, zfactor=NULL, units="degrees", wd=NULL, verbo
 #' @param bin_size Aspect bin size, in degrees.
 #' @param min_slope Minimum slope, in degrees.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3235,10 +3235,10 @@ wbt_slope_vs_aspect_plot <- function(input, output, bin_size=2.0, min_slope=0.1,
 #' @param inputs Input DEM files.
 #' @param watershed Input watershed files (optional).
 #' @param output Output HTML file (default name will be based on input file if unspecified).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3272,10 +3272,10 @@ wbt_slope_vs_elevation_plot <- function(inputs, output, watershed=NULL, wd=NULL,
 #' @param max_scale Maximum search neighbourhood radius in grid cells.
 #' @param dev_threshold DEVmax Threshold.
 #' @param scale_threshold DEVmax scale threshold.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3313,10 +3313,10 @@ wbt_smooth_vegetation_residual <- function(input, output, max_scale=30, dev_thre
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
 #' @param filter Size of the filter kernel.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3350,10 +3350,10 @@ wbt_spherical_std_dev_of_normals <- function(dem, output, filter=11, wd=NULL, ve
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3392,10 +3392,10 @@ wbt_standard_deviation_of_slope <- function(input, output, zfactor=NULL, filterx
 #' @param slope Input raster slope file.
 #' @param output Output raster file.
 #' @param exponent SCA exponent value.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3427,10 +3427,10 @@ wbt_stream_power_index <- function(sca, slope, output, exponent=1.0, wd=NULL, ve
 #'
 #' @param dem Input raster DEM file.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3460,10 +3460,10 @@ wbt_surface_area_ratio <- function(dem, output, wd=NULL, verbose_mode=NULL, comp
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3506,10 +3506,10 @@ wbt_tangential_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NU
 #' @param end_day End day of the year (1-365).
 #' @param start_time Starting hour to track shadows (e.g. 5, 5:00, 05:00:00). Assumes 24-hour time: HH:MM:SS. 'sunrise' is also a valid time.
 #' @param end_time Ending hour to track shadows (e.g. 21, 21:00, 21:00:00). Assumes 24-hour time: HH:MM:SS. 'sunset' is also a valid time.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3570,10 +3570,10 @@ wbt_time_in_daylight <- function(dem, output, lat, long, az_fraction=10.0, max_d
 #' @param attenuation Attenuation parameter. Range is 0-4. Zero means no attenuation.
 #' @param ambient_light Ambient light parameter. Range is 0.0-0.7. Zero means no ambient light.
 #' @param z_factor Elevation multiplier, or a vertical exageration.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3640,10 +3640,10 @@ wbt_topo_render <- function(dem, output, palette="soft", rev_palette=FALSE, az=3
 #' @param delay GIF time delay in milliseconds.
 #' @param label Label text (leave blank for none).
 #' @param dev_max Do you want to use DEVmax instead of DEV for measuring local topographic position?.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3697,10 +3697,10 @@ wbt_topographic_position_animation <- function(input, output, palette="bl_yl_rd"
 #' @param output Output raster file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Optional multiplier for when the vertical and horizontal units are not the same.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3736,10 +3736,10 @@ wbt_total_curvature <- function(dem, output, log=FALSE, zfactor=NULL, wd=NULL, v
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3775,10 +3775,10 @@ wbt_unsphericity <- function(dem, output, log=FALSE, zfactor=1.0, wd=NULL, verbo
 #' @param output Name of the output raster image file.
 #' @param log Display output values using a log-scale.
 #' @param zfactor Z conversion factor.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3814,10 +3814,10 @@ wbt_vertical_excess_curvature <- function(dem, output, log=FALSE, zfactor=1.0, w
 #' @param stations Input viewing station vector file.
 #' @param output Output raster file.
 #' @param height Viewing station height, in z units.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3851,10 +3851,10 @@ wbt_viewshed <- function(dem, stations, output, height=2.0, wd=NULL, verbose_mod
 #' @param output Output raster file.
 #' @param height Viewing station height, in z units.
 #' @param res_factor The resolution factor determines the density of measured viewsheds.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'
@@ -3889,10 +3889,10 @@ wbt_visibility_index <- function(dem, output, height=2.0, res_factor=2, wd=NULL,
 #' @param sca Input raster specific contributing area (SCA) file.
 #' @param slope Input raster slope file (in degrees).
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GeomorphometricAnalysis
 #'

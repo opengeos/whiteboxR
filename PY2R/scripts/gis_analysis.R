@@ -6,10 +6,10 @@
 #' @param output Output raster file.
 #' @param agg_factor Aggregation factor, in pixels.
 #' @param type Statistic used to fill output pixels.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -47,10 +47,10 @@ wbt_aggregate_raster <- function(input, output, agg_factor=2, type="mean", wd=NU
 #' @param output Output raster file.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -92,10 +92,10 @@ wbt_block_maximum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #' @param output Output raster file.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -134,10 +134,10 @@ wbt_block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param text_output Optional text output.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -168,10 +168,10 @@ wbt_centroid <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -201,10 +201,10 @@ wbt_centroid_vector <- function(input, output, wd=NULL, verbose_mode=NULL, compr
 #' @param output Output raster file.
 #' @param diag Flag indicating whether diagonal connections should be considered.
 #' @param zero_back Flag indicating whether zero values should be treated as a background.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -241,10 +241,10 @@ wbt_clump <- function(input, output, diag=TRUE, zero_back=FALSE, wd=NULL, verbos
 #' @param use_z Use the 'z' dimension of the Shapefile's geometry instead of an attribute field?.
 #' @param output Output vector polygon file.
 #' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -283,10 +283,10 @@ wbt_construct_vector_tin <- function(input, output, field=NULL, use_z=FALSE, max
 #' @param output Output vector polygon file.
 #' @param width The grid cell width.
 #' @param orientation Grid Orientation, 'horizontal' or 'vertical'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -321,10 +321,10 @@ wbt_create_hexagonal_vector_grid <- function(input, output, width, orientation="
 #' @param gradient Slope gradient in degrees (-85.0 to 85.0).
 #' @param aspect Aspect (direction) in degrees clockwise from north (0.0-360.0).
 #' @param constant Constant value.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -365,10 +365,10 @@ wbt_create_plane <- function(base, output, gradient=15.0, aspect=90.0, constant=
 #' @param height The grid cell height.
 #' @param xorig The grid origin x-coordinate.
 #' @param yorig The grid origin y-coordinate.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -406,10 +406,10 @@ wbt_create_rectangular_vector_grid <- function(input, output, width, height, xor
 #' @param field Dissolve field attribute (optional).
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -444,10 +444,10 @@ wbt_dissolve <- function(input, output, field=NULL, snap=0.0, wd=NULL, verbose_m
 #' @param input Input vector file.
 #' @param output Output vector points file.
 #' @param tolerance The distance tolerance for points.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -478,10 +478,10 @@ wbt_eliminate_coincident_points <- function(input, output, tolerance, wd=NULL, v
 #' @param output Output vector polyline file.
 #' @param dist The distance to extend.
 #' @param extend Extend direction, 'both ends' (default), 'line start', 'line end'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -513,10 +513,10 @@ wbt_extend_vector_lines <- function(input, output, dist, extend="both ends", wd=
 #'
 #' @param input Input vector lines or polygon file.
 #' @param output Output vector points file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -545,10 +545,10 @@ wbt_extract_nodes <- function(input, output, wd=NULL, verbose_mode=NULL, compres
 #' @param inputs Input raster files.
 #' @param points Input vector points file.
 #' @param out_text Output point values as text? Otherwise, the only output is to to the points file's attribute table.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -581,10 +581,10 @@ wbt_extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, 
 #' @param output Output raster file.
 #' @param threshold Remove features with fewer grid cells than this threshold value.
 #' @param background Background value.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -617,10 +617,10 @@ wbt_filter_raster_features_by_area <- function(input, output, threshold, backgro
 #' @param input Input raster file.
 #' @param output Output vector points file.
 #' @param out_type Output type; one of 'area' (default) and 'volume'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -656,10 +656,10 @@ wbt_find_lowest_or_highest_points <- function(input, output, out_type="lowest", 
 #' @param kernel Kernel type; one of 'uniform', 'triangular', 'epanechnikov', 'quartic', 'triweight', 'tricube', 'gaussian', 'cosine', 'logistic', 'sigmoid', 'silverman'.
 #' @param cell_size Optionally specified cell size of output raster, in metres. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -709,10 +709,10 @@ wbt_heat_map <- function(input, output, weight_field=NULL, bandwidth="", kernel=
 #' @param min_points Minimum number of points.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -759,10 +759,10 @@ wbt_idw_interpolation <- function(input, field, output, use_z=FALSE, weight=2.0,
 #'
 #' @param input Input raster or vector file.
 #' @param output Output vector polygon file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -790,10 +790,10 @@ wbt_layer_footprint <- function(input, output, wd=NULL, verbose_mode=NULL, compr
 #'
 #' @param input Input vector file.
 #' @param output Output vector file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -823,10 +823,10 @@ wbt_medoid <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raste
 #' @param output Output vector polygon file.
 #' @param criterion Minimization criterion; options include 'area' (default), 'length', 'width', and 'perimeter'.
 #' @param features Find the minimum bounding rectangles around each individual vector feature.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -861,10 +861,10 @@ wbt_minimum_bounding_box <- function(input, output, criterion="area", features=T
 #' @param input Input vector file.
 #' @param output Output vector polygon file.
 #' @param features Find the minimum bounding circle around each individual vector feature.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -896,10 +896,10 @@ wbt_minimum_bounding_circle <- function(input, output, features=TRUE, wd=NULL, v
 #' @param input Input vector file.
 #' @param output Output vector polygon file.
 #' @param features Find the minimum bounding envelop around each individual vector feature.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -931,10 +931,10 @@ wbt_minimum_bounding_envelope <- function(input, output, features=TRUE, wd=NULL,
 #' @param input Input vector file.
 #' @param output Output vector polygon file.
 #' @param features Find the hulls around each vector feature.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -970,10 +970,10 @@ wbt_minimum_convex_hull <- function(input, output, features=TRUE, wd=NULL, verbo
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
 #' @param clip Clip the data to the convex hull of the points?.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1021,10 +1021,10 @@ wbt_natural_neighbour_interpolation <- function(input, output, field=NULL, use_z
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
 #' @param max_dist Maximum search distance (optional).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1064,10 +1064,10 @@ wbt_nearest_neighbour_gridding <- function(input, field, output, use_z=FALSE, ce
 #' @description Calculates the area of vector polygons.
 #'
 #' @param input Input vector polygon file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1094,10 +1094,10 @@ wbt_polygon_area <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters
 #'
 #' @param input Input vector polygons file.
 #' @param output Output vector polyline file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1124,10 +1124,10 @@ wbt_polygon_long_axis <- function(input, output, wd=NULL, verbose_mode=NULL, com
 #' @description Calculates the perimeter of vector polygons.
 #'
 #' @param input Input vector polygon file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1154,10 +1154,10 @@ wbt_polygon_perimeter <- function(input, wd=NULL, verbose_mode=NULL, compress_ra
 #'
 #' @param input Input vector polygons file.
 #' @param output Output vector polyline file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1194,10 +1194,10 @@ wbt_polygon_short_axis <- function(input, output, wd=NULL, verbose_mode=NULL, co
 #' @param weight Weight parameter used in basis function.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1253,10 +1253,10 @@ wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=
 #' @param out_text Would you like to output polygon areas to text?.
 #' @param units Area units; options include 'grid cells' and 'map units'.
 #' @param zero_back Flag indicating whether zero values should be treated as a background.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1296,10 +1296,10 @@ wbt_raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cell
 #' @param input Input raster file.
 #' @param output Output raster file.
 #' @param assign Which variable would you like to assign to grid cells? Options include 'column', 'row', 'x', and 'y'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1333,10 +1333,10 @@ wbt_raster_cell_assignment <- function(input, output, assign="column", wd=NULL, 
 #' @param out_text Would you like to output polygon areas to text?.
 #' @param units Area units; options include 'grid cells' and 'map units'.
 #' @param zero_back Flag indicating whether zero values should be treated as a background.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1377,10 +1377,10 @@ wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid
 #' @param output Output raster file.
 #' @param reclass_vals Reclassification triplet values (new value; from value; to less than), e.g. '0.0;0.0;1.0;1.0;1.0;2.0'.
 #' @param assign_mode Optional Boolean flag indicating whether to operate in assign mode, reclass_vals values are interpreted as new value; old value pairs.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1415,10 +1415,10 @@ wbt_reclass <- function(input, output, reclass_vals, assign_mode=FALSE, wd=NULL,
 #' @param interval Class interval size.
 #' @param start_val Optional starting value (default is input minimum value).
 #' @param end_val Optional ending value (default is input maximum value).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1456,10 +1456,10 @@ wbt_reclass_equal_interval <- function(input, output, interval=10.0, start_val=N
 #' @param input Input raster file.
 #' @param reclass_file Input text file containing reclass ranges.
 #' @param output Output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1489,10 +1489,10 @@ wbt_reclass_from_file <- function(input, reclass_file, output, wd=NULL, verbose_
 #' @param input Input vector POLYLINE or POLYGON file.
 #' @param output Output vector file.
 #' @param filter The filter size, any odd integer greater than or equal to 3; default is 3.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1524,10 +1524,10 @@ wbt_smooth_vectors <- function(input, output, filter=3, wd=NULL, verbose_mode=NU
 #' @param input Name of the input lines shapefile.
 #' @param output Name of the output lines shapefile.
 #' @param length Maximum segment length (m).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1563,10 +1563,10 @@ wbt_split_vector_lines <- function(input, output, length=NULL, wd=NULL, verbose_
 #' @param resolution Output raster's grid resolution.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
 #' @param max_triangle_edge_length Optional maximum triangle edge length; triangles larger than this size will not be gridded.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1610,10 +1610,10 @@ wbt_tin_gridding <- function(input, output, field=NULL, use_z=FALSE, resolution=
 #' @param input Name of the input points shapefile.
 #' @param output Name of the output lines shapefile.
 #' @param duration Maximum duration, in seconds.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1646,10 +1646,10 @@ wbt_travelling_salesman_problem <- function(input, output, duration=60, wd=NULL,
 #' @param output Output vector polygon file.
 #' @param width The grid cell width.
 #' @param orientation Grid Orientation, 'horizontal' or 'vertical'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'
@@ -1681,10 +1681,10 @@ wbt_vector_hex_binning <- function(input, output, width, orientation="horizontal
 #'
 #' @param input Input vector points file.
 #' @param output Output vector polygon file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords GISAnalysis
 #'

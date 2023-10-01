@@ -349,15 +349,15 @@ with open(wbt_py) as f:
                         param = doc_line.replace("%", " percent")
                         ff.write("#' @param {}\n".format(param))
                     i = i + 1
-                ff.write("#' @param wd Changes the working directory.\n")
+                ff.write("#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.\n")
                 ff.write(
-                    "#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.\n"
+                    "#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.\n"
                 )
                 ff.write(
-                    "#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.\n"
+                    "#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.\n"
                 )
                 ff.write(
-                    "#' @param command_only Return command that would be executed by `system()` rather than running tool.\n"
+                    "#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.\n"
                 )
                 ff.write("#'\n")
                 ff.write("#' @keywords {}\n".format(tbx))

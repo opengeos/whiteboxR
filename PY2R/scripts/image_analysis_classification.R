@@ -6,10 +6,10 @@
 #' @param polys Name of the input training site polygons shapefile.
 #' @param field Name of the attribute containing class name data.
 #' @param output Name of the output report file (*.html).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords ImageProcessingToolsClassification
 #'
@@ -41,10 +41,10 @@ wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, v
 #' @param output Name of the output raster file.
 #' @param min_size Minimum feature size, in grid cells.
 #' @param method Grouping method; one of 'longest' (default), 'largest', and 'nearest'.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords ImageProcessingToolsClassification
 #'
@@ -80,10 +80,10 @@ wbt_generalize_classified_raster <- function(input, output, min_size=4, method="
 #' @param similarity Names of the input similarity images.
 #' @param output Name of the output raster file.
 #' @param min_size Minimum feature size, in grid cells.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords ImageProcessingToolsClassification
 #'
@@ -118,10 +118,10 @@ wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4
 #' @param threshold Distance threshold, in z-scores.
 #' @param steps Number of steps.
 #' @param min_area Minimum object area, in grid cells (1-8).
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords ImageProcessingToolsClassification
 #'
@@ -161,10 +161,10 @@ wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_
 #' @param field Name of the attribute containing class name data.
 #' @param output Name of the output raster file.
 #' @param threshold Distance threshold, in z-scores; blank for none.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords ImageProcessingToolsClassification
 #'
@@ -199,10 +199,10 @@ wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=
 #' @param polys Name of the input training site polygons shapefile.
 #' @param field Name of the attribute containing class name data.
 #' @param output Name of the output raster file.
-#' @param wd Changes the working directory.
-#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages.
-#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.
-#' @param command_only Return command that would be executed by `system()` rather than running tool.
+#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
+#' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
+#' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
+#' @param command_only Return command that would be executed by `system()` rather than running tool. Default: `FALSE`.
 #'
 #' @keywords ImageProcessingToolsClassification
 #'
