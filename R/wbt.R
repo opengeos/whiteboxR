@@ -154,8 +154,9 @@ wbt_options <- function(exe_path = NULL,
 
   if (!is.null(verbose)) {
     options(whitebox.verbose = verbose)
+    vs <- ifelse(verbose == "all", TRUE, verbose) # alias "all" -> TRUE
     try({
-      .wbt_settings(.wbt_settings_json(), list(verbose_mode = verbose))
+      .wbt_settings(.wbt_settings_json(), list(verbose_mode = vs))
     }, silent = TRUE)
   }
 
@@ -169,7 +170,7 @@ wbt_options <- function(exe_path = NULL,
   if (!is.null(max_procs)) {
     options(whitebox.max_procs = max_procs)
     try({
-      .wbt_settings(.wbt_settings_json(), list(max_procs = max_procs))
+      .wbt_settings(.wbt_settings_json(), list(max_procs = max_procs), comma = FALSE)
     }, silent = TRUE)
   }
 
@@ -366,7 +367,7 @@ wbt_wd <- function(wd = NULL) {
 
 # f: a settings.json file (default format only: 1 line per setting)
 # x: a named list of key:value pairs
-.wbt_settings <- function(f, x) {
+.wbt_settings <- function(f, x, comma = TRUE) {
   try({
     if (file.exists(f)) {
       xx <- readLines(f, warn = FALSE)
@@ -381,7 +382,7 @@ wbt_wd <- function(wd = NULL) {
         }
       })
       for (i in seq_along(x)) {
-        xx[grepl(sprintf('^ *"%s": .*$', n[i]), xx)] <- sprintf('  "%s": %s,', n[i], x[[i]])
+        xx[grepl(sprintf('^ *"%s": .*$', n[i]), xx)] <- sprintf(paste0('  "%s": %s', ifelse(comma, ",", "")), n[i], x[[i]])
       }
       writeLines(xx, f)
     }

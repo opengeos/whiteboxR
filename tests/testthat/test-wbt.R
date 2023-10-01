@@ -5,7 +5,7 @@ test_that("wbt default executable paths", {
 
 test_that("wbt verbosity", {
   expect_true(is.logical(wbt_verbose()))
-  expect_true(is.list(wbt_options(verbose = "foobar")))
+  expect_true(is.list(wbt_options(verbose = "all")))
 })
 
 test_that("wbt initialization [WhiteboxTools missing]", {
