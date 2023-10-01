@@ -101,9 +101,9 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
 #'
 #' - **`whitebox.wd`** - character. Path to WhiteboxTools working directory. Used as `--wd` argument for tools that support it when `wd` is not specified elsewhere.
 #'
-#' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? Default is result of `interactive()`. Individual tools may have `verbose_mode` setting that produce only single-line output when `FALSE`. These argument values are left as the defaults defined in the package documentation for that function. When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument.
+#' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument. Default is result of `interactive()` if R package options are unset. 
 #'
-#' - **`whitebox.compress_rasters`** - logical. Should raster output from WhiteboxTools be compressed? Default: `FALSE`. Set the value of `whitebox.compress_rasters` with `wbt_compress_rasters()` `compress_rasters` argument.
+#' - **`whitebox.compress_rasters`** - logical. Should raster output from WhiteboxTools be compressed? Default: `NULL` uses existing WhiteboxTools settings. Set the value of `whitebox.compress_rasters` with `wbt_compress_rasters()` `compress_rasters` argument.
 #'
 #' - **`whitebox.max_procs`** - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: `-1` uses all of the available cores.
 #'
@@ -172,7 +172,7 @@ wbt_options <- function(exe_path = NULL,
                                sysvrb),
     whitebox.compress_rasters = ifelse(nchar(syscpr) == 0,
                                        as.logical(getOption("whitebox.compress_rasters",
-                                                            default = FALSE)),
+                                                            default = NA)),
                                        syscpr),
     whitebox.max_proc = ifelse(nchar(sysmxp) == 0,
                                      as.integer(getOption("whitebox.max_proc",
@@ -354,9 +354,9 @@ wbt_wd <- function(wd = NULL) {
 
 #' @description `wbt_verbose()`: Check verbose options for 'WhiteboxTools'
 #'
-#' @param verbose Default: `NULL`; if logical, set the package option `whitebox.verbose` to specified value
+#' @param verbose logical. Default: `NULL`; if `TRUE` or `FALSE`, set the package option `whitebox.verbose` to specified value. Tool verbosity settings can be overridden in any `wbt_*()` function call by passing the `verbose_mode` argument directly.
 #'
-#' @return `wbt_verbose()`: logical; defaults to result of `interactive()`
+#' @return `wbt_verbose()`: logical; returns the result of option `"whitebox.verbose_mode"`, if unset defaults to result of `interactive()`.
 #' @rdname wbt_init
 #' @export
 #' @keywords General
@@ -411,11 +411,11 @@ wbt_verbose <- function(verbose = NULL) {
   invisible(res)
 }
 
-#' @description `wbt_compress_rasters()`: Check raster compression option for 'WhiteboxTools'. Default: `FALSE`
+#' @description `wbt_compress_rasters()`: Check raster compression option for 'WhiteboxTools'. Default behavior is based on WhiteboxTools settings.json, package options (if set). Raster compression settings can be overridden in any `wbt_*()` function call by passing the `compress_rasters` argument directly.
 #'
-#' @param compress_rasters Default: `NULL`; if logical, set the package option `whitebox.compress_rasters` to specified value
+#' @param compress_rasters logical. Default: `NULL`; if `TRUE` or `FALSE`, set the package option `whitebox.compress_rasters` to specified value.
 #'
-#' @return `wbt_compress_rasters()`: logical; defaults to `NA`
+#' @return `wbt_compress_rasters()`: logical; returns the result of option `"whitebox.compress_rasters"`, if unset defaults to `NA`.
 #' @rdname wbt_init
 #' @export
 #' @keywords General
