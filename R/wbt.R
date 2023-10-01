@@ -135,26 +135,42 @@ wbt_options <- function(exe_path = NULL,
 
   # check user input, set package options
   if (!is.null(exe_path)) {
-    if (file.exists(exe_path)) exe_path <- path.expand(exe_path)
+    if (file.exists(exe_path)) {
+      exe_path <- path.expand(exe_path)
+    } 
     options(whitebox.exe_path = exe_path)
   }
 
   if (!is.null(wd)) {
     # preserve attributes if any on wd
-    if (dir.exists(wd)) wd[1] <- path.expand(wd)
+    if (dir.exists(wd)) {
+      wd[1] <- path.expand(wd)
+    }
     options(whitebox.wd = wd)
+    try({
+      .wbt_settings(.wbt_settings_json(), list(working_directory = wd))
+    }, silent = TRUE)
   }
 
   if (!is.null(verbose)) {
     options(whitebox.verbose = verbose)
+    try({
+      .wbt_settings(.wbt_settings_json(), list(verbose_mode = verbose))
+    }, silent = TRUE)
   }
 
   if (!is.null(compress_rasters)) {
     options(whitebox.compress_rasters = compress_rasters)
+    try({
+      .wbt_settings(.wbt_settings_json(), list(compress_rasters = compress_rasters))
+    }, silent = TRUE)
   }
 
   if (!is.null(max_procs)) {
     options(whitebox.max_procs = max_procs)
+    try({
+      .wbt_settings(.wbt_settings_json(), list(max_procs = max_procs))
+    }, silent = TRUE)
   }
 
   invisible(list(
@@ -310,10 +326,6 @@ wbt_data_dir <- function() {
 #' }
 wbt_wd <- function(wd = NULL) {
 
-  if (length(wd) > 0 && (is.na(wd) || wd == "")) {
-    .wbt_wd_unset()
-  }
-
   if (is.character(wd)) {
     # if character input, set the package option "wd"
     wbt_options(wd = wd)
@@ -342,13 +354,7 @@ wbt_wd <- function(wd = NULL) {
 
 .wbt_wd_unset <- function() {
   try({
-    f <- .wbt_settings_json()
-    if (!file.exists(f)) { 
-      # try to trigger creation of settings.json file if not present
-      wbt_system_call('--wd=""')
-    }
-    # wipe out working directory
-    .wbt_settings(f, list(working_directory = ""))
+    .wbt_settings(.wbt_settings_json(), list(working_directory = ""))
   }, silent = TRUE)
 }
 
