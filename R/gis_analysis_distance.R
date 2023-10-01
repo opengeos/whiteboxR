@@ -15,7 +15,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -51,7 +51,7 @@ wbt_buffer_raster <- function(input, output, size, gridcells=FALSE, wd=NULL, ver
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--source=", wbt_file_path(source)))
@@ -85,7 +85,7 @@ wbt_cost_allocation <- function(source, backlink, output, wd=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--source=", wbt_file_path(source)))
@@ -120,7 +120,7 @@ wbt_cost_distance <- function(source, cost, out_accum, out_backlink, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--destination=", wbt_file_path(destination)))
@@ -155,7 +155,7 @@ wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -186,7 +186,7 @@ wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_euclidean_distance <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_euclidean_distance <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))

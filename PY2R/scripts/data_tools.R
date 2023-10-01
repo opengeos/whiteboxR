@@ -12,7 +12,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -42,7 +42,7 @@ wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -73,7 +73,7 @@ wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=FALSE, compres
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -104,7 +104,7 @@ wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_convert_raster_format <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_convert_raster_format <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -138,7 +138,7 @@ wbt_convert_raster_format <- function(input, output, wd=NULL, verbose_mode=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -179,7 +179,7 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -214,7 +214,7 @@ wbt_export_table_to_csv <- function(input, output, headers=TRUE, wd=NULL, verbos
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -251,7 +251,7 @@ wbt_fix_dangling_arcs <- function(input, output, dist="", wd=NULL, verbose_mode=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_join_tables <- function(input1, pkey, input2, fkey, import_field=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_join_tables <- function(input1, pkey, input2, fkey, import_field=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
@@ -287,7 +287,7 @@ wbt_join_tables <- function(input1, pkey, input2, fkey, import_field=NULL, wd=NU
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_lines_to_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_lines_to_polygons <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -321,7 +321,7 @@ wbt_lines_to_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE, co
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -357,7 +357,7 @@ wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
@@ -388,7 +388,7 @@ wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=FALSE, compr
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_modify_no_data_value <- function(input, new_value="-32768.0", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_modify_no_data_value <- function(input, new_value="-32768.0", wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -422,7 +422,7 @@ wbt_modify_no_data_value <- function(input, new_value="-32768.0", wd=NULL, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -459,7 +459,7 @@ wbt_multi_part_to_single_part <- function(input, output, exclude_holes=TRUE, wd=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="float", cell_size=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="float", cell_size=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--base=", wbt_file_path(base)))
@@ -499,7 +499,7 @@ wbt_new_raster_from_base <- function(base, output, value="nodata", data_type="fl
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_polygons_to_lines <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_polygons_to_lines <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -529,7 +529,7 @@ wbt_polygons_to_lines <- function(input, output, wd=NULL, verbose_mode=FALSE, co
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_print_geo_tiff_tags <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_print_geo_tiff_tags <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -559,7 +559,7 @@ wbt_print_geo_tiff_tags <- function(input, wd=NULL, verbose_mode=FALSE, compress
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -590,7 +590,7 @@ wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=FALS
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -621,7 +621,7 @@ wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=FAL
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -651,7 +651,7 @@ wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_reinitialize_attribute_table <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_reinitialize_attribute_table <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -681,7 +681,7 @@ wbt_reinitialize_attribute_table <- function(input, wd=NULL, verbose_mode=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -714,7 +714,7 @@ wbt_remove_polygon_holes <- function(input, output, wd=NULL, verbose_mode=FALSE,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_raster_polygon_holes <- function(input, output, threshold=3, use_diagonals=TRUE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_remove_raster_polygon_holes <- function(input, output, threshold=3, use_diagonals=TRUE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -752,7 +752,7 @@ wbt_remove_raster_polygon_holes <- function(input, output, threshold=3, use_diag
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_set_nodata_value <- function(input, output, back_value=0.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_set_nodata_value <- function(input, output, back_value=0.0, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -787,7 +787,7 @@ wbt_set_nodata_value <- function(input, output, back_value=0.0, wd=NULL, verbose
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_single_part_to_multi_part <- function(input, output, field=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_single_part_to_multi_part <- function(input, output, field=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -825,7 +825,7 @@ wbt_single_part_to_multi_part <- function(input, output, field=NULL, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -873,7 +873,7 @@ wbt_vector_lines_to_raster <- function(input, output, field="FID", nodata=TRUE, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -923,7 +923,7 @@ wbt_vector_points_to_raster <- function(input, output, field="FID", assign="last
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_vector_polygons_to_raster <- function(input, output, field="FID", nodata=TRUE, cell_size=NULL, base=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))

@@ -991,7 +991,7 @@ wbt_run_tool <- function(tool_name, args, verbose_mode = FALSE, command_only = F
     # in "all" mode the full output is shown
     cat(ret, sep = "\n")
     ret <- paste(tool_name, "-", ret[length(ret)])
-  } else if (!verbose_mode) {
+  } else if (is.null(verbose_mode) || !verbose_mode) {
     ret <- paste(tool_name, "-", ret[length(ret)])
   }
 

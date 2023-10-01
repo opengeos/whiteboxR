@@ -13,7 +13,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_boundary_shape_complexity <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_boundary_shape_complexity <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -43,7 +43,7 @@ wbt_boundary_shape_complexity <- function(input, output, wd=NULL, verbose_mode=F
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -74,7 +74,7 @@ wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_edge_proportion <- function(input, output, output_text=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_edge_proportion <- function(input, output, output_text=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -107,7 +107,7 @@ wbt_edge_proportion <- function(input, output, output_text=FALSE, wd=NULL, verbo
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -137,7 +137,7 @@ wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_ra
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_find_patch_or_class_edge_cells <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_find_patch_or_class_edge_cells <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -167,7 +167,7 @@ wbt_find_patch_or_class_edge_cells <- function(input, output, wd=NULL, verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_hole_proportion <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_hole_proportion <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -196,7 +196,7 @@ wbt_hole_proportion <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_linearity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_linearity_index <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -226,7 +226,7 @@ wbt_linearity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_ras
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_narrowness_index <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_narrowness_index <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -256,7 +256,7 @@ wbt_narrowness_index <- function(input, output, wd=NULL, verbose_mode=FALSE, com
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_patch_orientation <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_patch_orientation <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -285,7 +285,7 @@ wbt_patch_orientation <- function(input, wd=NULL, verbose_mode=FALSE, compress_r
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -316,7 +316,7 @@ wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=FALSE, compres
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_radius_of_gyration <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_radius_of_gyration <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -349,7 +349,7 @@ wbt_radius_of_gyration <- function(input, output, text_output=FALSE, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_related_circumscribing_circle <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_related_circumscribing_circle <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -378,7 +378,7 @@ wbt_related_circumscribing_circle <- function(input, wd=NULL, verbose_mode=FALSE
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -408,7 +408,7 @@ wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=FALSE, compr
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_shape_complexity_index_raster <- function(input, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_shape_complexity_index_raster <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))

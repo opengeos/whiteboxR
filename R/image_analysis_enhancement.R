@@ -14,7 +14,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -52,7 +52,7 @@ wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, wd=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_correct_vignetting <- function(input, pp, output, focal_length=304.8, image_width=228.6, n=4.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_correct_vignetting <- function(input, pp, output, focal_length=304.8, image_width=228.6, n=4.0, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -95,7 +95,7 @@ wbt_correct_vignetting <- function(input, pp, output, focal_length=304.8, image_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -133,7 +133,7 @@ wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, wd=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_gamma_correction <- function(input, output, gamma=0.5, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_gamma_correction <- function(input, output, gamma=0.5, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -168,7 +168,7 @@ wbt_gamma_correction <- function(input, output, gamma=0.5, wd=NULL, verbose_mode
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -203,7 +203,7 @@ wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL,
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_histogram_equalization <- function(input, output, num_tones=256, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_histogram_equalization <- function(input, output, num_tones=256, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -238,7 +238,7 @@ wbt_histogram_equalization <- function(input, output, num_tones=256, wd=NULL, ve
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_histogram_matching <- function(input, histo_file, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_histogram_matching <- function(input, histo_file, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -271,7 +271,7 @@ wbt_histogram_matching <- function(input, histo_file, output, wd=NULL, verbose_m
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_histogram_matching_two_images <- function(input1, input2, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_histogram_matching_two_images <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input1=", wbt_file_path(input1)))
@@ -306,7 +306,7 @@ wbt_histogram_matching_two_images <- function(input1, input2, output, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=256, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_min_max_contrast_stretch <- function(input, output, min_val, max_val, num_tones=256, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -347,7 +347,7 @@ wbt_min_max_contrast_stretch <- function(input, output, min_val, max_val, num_to
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL, composite=NULL, method="brovey", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=NULL, composite=NULL, method="brovey", wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--pan=", wbt_file_path(pan)))
@@ -396,7 +396,7 @@ wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both", num_tones=256, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both", num_tones=256, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -438,7 +438,7 @@ wbt_percentage_contrast_stretch <- function(input, output, clip=1.0, tail="both"
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -478,7 +478,7 @@ wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_tones=256, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, num_tones=256, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -520,7 +520,7 @@ wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_tones=256, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_standard_deviation_contrast_stretch <- function(input, output, stdev=2.0, num_tones=256, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))

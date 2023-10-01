@@ -12,7 +12,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_install_wb_extension <- function(install_extension="General Toolset Extension", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_install_wb_extension <- function(install_extension="General Toolset Extension", wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   if (!is.null(install_extension)) {
@@ -43,7 +43,7 @@ wbt_install_wb_extension <- function(install_extension="General Toolset Extensio
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_launch_wb_runner <- function(clear_app_state=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_launch_wb_runner <- function(clear_app_state=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   if (clear_app_state) {

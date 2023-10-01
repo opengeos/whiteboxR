@@ -19,7 +19,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, output, radius=NULL, min_yield=NULL, max_yield=NULL, mean_tonnage=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, output, radius=NULL, min_yield=NULL, max_yield=NULL, mean_tonnage=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -68,7 +68,7 @@ wbt_reconcile_multiple_headers <- function(input, region_field, yield_field, out
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, output_points, max_change_in_heading=25.0, ignore_zeros=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, output_points, max_change_in_heading=25.0, ignore_zeros=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -110,7 +110,7 @@ wbt_recreate_pass_lines <- function(input, yield_field_name, output_lines, outpu
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in_heading=25.0, flag_edges=FALSE, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in_heading=25.0, flag_edges=FALSE, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -156,7 +156,7 @@ wbt_remove_field_edge_points <- function(input, output, dist=NULL, max_change_in
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096, z_score_threshold=2.5, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096, z_score_threshold=2.5, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -204,7 +204,7 @@ wbt_yield_filter <- function(input, yield_field, pass_field, output, width=6.096
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_change_in_heading=25.0, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_change_in_heading=25.0, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -247,7 +247,7 @@ wbt_yield_map <- function(input, pass_field_name, output, width=6.096, max_chang
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_yield_normalization <- function(input, yield_field, output, standardize=FALSE, radius=NULL, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_yield_normalization <- function(input, yield_field, output, standardize=FALSE, radius=NULL, min_yield=0.0, max_yield=99999.9, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))

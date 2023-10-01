@@ -31,7 +31,7 @@ def function_header(line):
         line = line.replace(", i=None,", ", input=None,")
         line = line.replace("self, ", "")
         line = line.replace(
-            "callback=None", "wd=NULL, verbose_mode=FALSE, compress_rasters=False"
+            "callback=None", "wd=NULL, verbose_mode=NULL, compress_rasters=NULL"
         )
         line = line.replace('function=""', 'FUN=""')
         line = line.replace("False", "FALSE")

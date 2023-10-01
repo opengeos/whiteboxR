@@ -15,7 +15,7 @@
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
@@ -50,7 +50,7 @@ wbt_evaluate_training_sites <- function(inputs, polys, field, output, wd=NULL, v
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_generalize_classified_raster <- function(input, output, min_size=4, method="longest", wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_generalize_classified_raster <- function(input, output, min_size=4, method="longest", wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -89,7 +89,7 @@ wbt_generalize_classified_raster <- function(input, output, min_size=4, method="
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--input=", wbt_file_path(input)))
@@ -127,7 +127,7 @@ wbt_generalize_with_similarity <- function(input, similarity, output, min_size=4
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_area=4, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_area=4, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
@@ -170,7 +170,7 @@ wbt_image_segmentation <- function(inputs, output, threshold=0.5, steps=10, min_
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=NULL, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=NULL, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
@@ -208,7 +208,7 @@ wbt_min_dist_classification <- function(inputs, polys, field, output, threshold=
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_parallelepiped_classification <- function(inputs, polys, field, output, wd=NULL, verbose_mode=FALSE, compress_rasters=FALSE, command_only=FALSE) {
+wbt_parallelepiped_classification <- function(inputs, polys, field, output, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--inputs=", wbt_file_path(inputs)))
