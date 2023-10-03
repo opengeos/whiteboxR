@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.3</span>
       </span>
     </div>
 
@@ -74,8 +74,8 @@
 <span>  <span class="va">output</span>,</span>
 <span>  num_quantiles <span class="op">=</span> <span class="fl">5</span>,</span>
 <span>  wd <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  verbose_mode <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  compress_rasters <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  verbose_mode <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  compress_rasters <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  command_only <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -95,19 +95,19 @@
 
 
 <dt>wd</dt>
-<dd><p>Changes the working directory.</p></dd>
+<dd><p>Changes the working directory. Default: <code>NULL</code> will use the value in WhiteboxTools settings, see <code><a href="wbt_init.html">wbt_wd()</a></code> for details.</p></dd>
 
 
 <dt>verbose_mode</dt>
-<dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages.</p></dd>
+<dd><p>Sets verbose mode. If verbose mode is <code>FALSE</code>, tools will not print output messages. Default: <code>NULL</code> will use the value in WhiteboxTools settings, see <code><a href="wbt_init.html">wbt_verbose()</a></code> for details.</p></dd>
 
 
 <dt>compress_rasters</dt>
-<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters.</p></dd>
+<dd><p>Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: <code>NULL</code> will use the value in WhiteboxTools settings, see <code><a href="wbt_init.html">wbt_compress_rasters()</a></code> for details.</p></dd>
 
 
 <dt>command_only</dt>
-<dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool.</p></dd>
+<dd><p>Return command that would be executed by <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code> rather than running tool. Default: <code>FALSE</code>.</p></dd>
 
 </dl></div>
     <div id="value">

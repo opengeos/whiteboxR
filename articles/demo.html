@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">whitebox</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.3</span>
       </span>
     </div>
 
@@ -216,7 +216,7 @@ equivalent method is <code><a href="https://rdrr.io/pkg/raster/man/filename.html
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># the SpatRaster retains a reference to the input file name</span></span>
 <span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpiQIL0M/slope.tif"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/RtmpSJEAgR/slope.tif"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -534,7 +534,7 @@ analysis of stream networks.</p>
 <span>  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span>,</span>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_d8.tif"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.3s</span></span></code></pre></div>
+<span><span class="co">#&gt; d8_pointer - Elapsed Time (excluding I/O): 0.4s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_flow_accumulation-flow-accumulation">
@@ -550,7 +550,7 @@ cumulative flow</p>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,</span>
 <span>  out_type <span class="op">=</span> <span class="st">"cells"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
+<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.8s</span></span></code></pre></div>
 <div class="section level5">
 <h5 id="additional-flow-direction-and-accumulation-tools">Additional Flow Direction and Accumulation Tools<a class="anchor" aria-label="anchor" href="#additional-flow-direction-and-accumulation-tools"></a>
 </h5>
@@ -754,9 +754,9 @@ name or description.</p>
 <span><span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
 <span><span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span></span>
 <span><span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
-<span><span class="co">#&gt; QinFlowAccumulation: Calculates Qin et al. (2007) flow accumulation.</span></span>
+<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span>
 <span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span>
-<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span></code></pre></div>
+<span><span class="co">#&gt; QinFlowAccumulation: Calculates Qin et al. (2007) flow accumulation.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_tool_help">
