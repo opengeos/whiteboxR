@@ -52,9 +52,9 @@ wbt_max_procs(max_procs = NULL)
 
 \item{wd}{character; Default: \code{NULL}; if set the package option \code{whitebox.wd} is set specified path (if directory exists)}
 
-\item{verbose}{Default: \code{NULL}; if logical, set the package option \code{whitebox.verbose} to specified value}
+\item{verbose}{logical. Default: \code{NULL}; if \code{TRUE} or \code{FALSE}, set the package option \code{whitebox.verbose} to specified value. Tool verbosity settings can be overridden in any \verb{wbt_*()} function call by passing the \code{verbose_mode} argument directly.}
 
-\item{compress_rasters}{Default: \code{NULL}; if logical, set the package option \code{whitebox.compress_rasters} to specified value}
+\item{compress_rasters}{logical. Default: \code{NULL}; if \code{TRUE} or \code{FALSE}, set the package option \code{whitebox.compress_rasters} to specified value.}
 
 \item{max_procs}{Default: \code{NULL}; if integer, set the package option \code{whitebox.max_procs} to specified value}
 
@@ -69,9 +69,9 @@ Returns the file path of 'WhiteboxTools' executable.
 
 \code{wbt_wd()}: character; when working directory is unset, will not add \verb{--wd=} arguments to calls and should be the same as using \code{getwd()}. See Details.
 
-\code{wbt_verbose()}: logical; defaults to result of \code{interactive()}
+\code{wbt_verbose()}: logical; returns the result of option \code{"whitebox.verbose_mode"}, if unset defaults to result of \code{interactive()}.
 
-\code{wbt_compress_rasters()}: logical; defaults to \code{NA}
+\code{wbt_compress_rasters()}: logical; returns the result of option \code{"whitebox.compress_rasters"}, if unset defaults to \code{NA}.
 
 \code{wbt_max_procs()}: integer; defaults to \code{NA_integer_}
 }
@@ -82,8 +82,8 @@ Returns the file path of 'WhiteboxTools' executable.
 \itemize{
 \item \strong{\code{whitebox.exe_path}} - character. Path to executable file. The default value is the package installation directory, subdirectory \code{"WBT"}, followed by \code{whitebox_tools.exe} or \code{whitebox_tools}. Set the \code{whitebox.exe_path} option using \code{wbt_init()} \code{exe_path} argument
 \item \strong{\code{whitebox.wd}} - character. Path to WhiteboxTools working directory. Used as \code{--wd} argument for tools that support it when \code{wd} is not specified elsewhere.
-\item \strong{\code{whitebox.verbose}} - logical. Should standard output from calls to executable be \code{cat()} out for readability? Default is result of \code{interactive()}. Individual tools may have \code{verbose_mode} setting that produce only single-line output when \code{FALSE}. These argument values are left as the defaults defined in the package documentation for that function. When \code{whitebox.verbose=FALSE} no output is produced. Set the value of \code{whitebox.verbose} with \code{wbt_verbose()} \code{verbose} argument.
-\item \strong{\code{whitebox.compress_rasters}} - logical. Should raster output from WhiteboxTools be compressed? Default: \code{FALSE}. Set the value of \code{whitebox.compress_rasters} with \code{wbt_compress_rasters()} \code{compress_rasters} argument.
+\item \strong{\code{whitebox.verbose}} - logical. Should standard output from calls to executable be \code{cat()} out for readability? When \code{whitebox.verbose=FALSE} no output is produced. Set the value of \code{whitebox.verbose} with \code{wbt_verbose()} \code{verbose} argument. Default is result of \code{interactive()} if R package options are unset.
+\item \strong{\code{whitebox.compress_rasters}} - logical. Should raster output from WhiteboxTools be compressed? Default: \code{NULL} uses existing WhiteboxTools settings. Set the value of \code{whitebox.compress_rasters} with \code{wbt_compress_rasters()} \code{compress_rasters} argument.
 \item \strong{\code{whitebox.max_procs}} - integer. Maximum number of processes for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
 
@@ -99,7 +99,7 @@ Returns the file path of 'WhiteboxTools' executable.
 
 \code{wbt_verbose()}: Check verbose options for 'WhiteboxTools'
 
-\code{wbt_compress_rasters()}: Check raster compression option for 'WhiteboxTools'. Default: \code{FALSE}
+\code{wbt_compress_rasters()}: Check raster compression option for 'WhiteboxTools'. Default behavior is based on WhiteboxTools settings.json, package options (if set). Raster compression settings can be overridden in any \verb{wbt_*()} function call by passing the \code{compress_rasters} argument directly.
 
 \code{wbt_max_procs()}: Check maximum number of processes for  for tools that run in parallel or partially parallelize. Default: \code{-1} uses all of the available cores.
 }
