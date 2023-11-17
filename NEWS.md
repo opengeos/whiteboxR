@@ -1,6 +1,10 @@
+# whitebox 2.3.4
+
+ * Exported `wbt_file_path()`, a function previously used internally for creating safe, expanded, quoted, paths for building WhiteboxTools commands. 
+
 # whitebox 2.3.3
 
- * The default values for `compress_rasters` and `verbose_mode` have been set to NULL to better reflect that they are derived from the WhiteboxTools settings.json file.
+ * The default values for `compress_rasters` and `verbose_mode` have been set to `NULL` to better reflect that they are derived from the WhiteboxTools settings.json file.
 
    * See `wbt_options()` for more details. If the user specifies these arguments in a `wbt_*()` function call then the flag will be passed in the command line call. Otherwise the default `NULL` value is ignored. Links to the corresponding option-setting functions have been added to the documentation for all `wbt_*()` tool functions.
 

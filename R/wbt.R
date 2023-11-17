@@ -1120,14 +1120,51 @@ wbt_system_call <- function(argstring,
 }
 
 # support for path expansion in input/output file arguments
-wbt_file_path <- function(x, shell_quote = TRUE) {
-  stopifnot(length(x) == 1)
-  .shQuote <- function(x) if (shell_quote) shQuote(x) else x
-  sapply(x, function(y){
-    if (is.character(y)) {
-      .shQuote(paste0(path.expand(strsplit(y, ";|,")[[1]]), collapse = ","))
-    } else y
-  })
+
+#' Prepare File Paths for WhiteboxTools Commands
+#' 
+#' Performs path expansion with `path.expand()` and shell quotes with `shQuote()` the input paths. 
+#' 
+#' @details If an input vector contains `";"` or `","` this is considered, path expansion is performed on the substrings. If the input vector has length greater than `1`, the vector is concatenated with `","` or `";"` to create a single output string. 
+#' 
+#' @param x character. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools.
+#' @param shell_quote logical. Shell quotes around result? Default: `TRUE`
+#' @param delimiter character. Either `","` (default) or `";"` allowed by WhiteboxTools.
+#' @param check_exists logical. Check if file(s) in x exist? Useful for input values. Default: `FALSE`
+#'
+#' @return character. Length 1. A safe input string for use in WhiteboxTools commands, with paths expanded and concatenated, if necessary, and optionally shell quoted.
+#' @export
+#'
+#' @examples
+#' 
+#' wbt_file_path("./abc.tif")
+#' 
+#' wbt_file_path("./abc.tif;./def.tif")
+#' 
+#' wbt_file_path("./abc.tif,./def.tif")
+#' 
+#' wbt_file_path(c("./abc.tif", "./def.tif"))
+#' 
+#' wbt_file_path("~/abc.tif", shell_quote = FALSE)
+#' 
+#' wbt_file_path(c("~/abc.tif", "~/def.tif"))
+#' 
+wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists = FALSE) {
+  delimiter <- match.arg(trimws(delimiter), c(",", ";"))
+  x <- path.expand(strsplit(
+    paste0(as.character(x), collapse = ","), ";|,"
+  )[[1]])
+  if (check_exists) {
+    y <- !file.exists(x)
+    if (any(y)) {
+      stop(sprintf("File%s not found: %s", 
+                   ifelse(sum(y) > 1, "s",""),
+                   paste0(x[y], collapse = ", ")),
+           call. = FALSE)
+    }
+  }
+  x <- paste0(x, collapse = delimiter)
+  if (shell_quote) shQuote(x) else x
 }
 
 #' Convenience method for path to sample DEM
