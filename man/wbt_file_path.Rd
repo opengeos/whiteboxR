@@ -39,3 +39,4 @@ wbt_file_path("~/abc.tif", shell_quote = FALSE)
 wbt_file_path(c("~/abc.tif", "~/def.tif"))
 
 }
+\keyword{General}

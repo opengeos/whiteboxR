@@ -1135,6 +1135,8 @@ wbt_system_call <- function(argstring,
 #' @return character. Length 1. A safe input string for use in WhiteboxTools commands, with paths expanded and concatenated, if necessary, and optionally shell quoted.
 #' @export
 #'
+#' @keywords General
+#'
 #' @examples
 #' 
 #' wbt_file_path("./abc.tif")
