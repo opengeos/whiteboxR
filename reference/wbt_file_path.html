@@ -75,7 +75,7 @@
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
-<dd><p>character. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools.</p></dd>
+<dd><p>character or <code>terra</code> object. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools. If the object is of class <code>SpatRaster</code>, <code>SpatRasterCollection</code>, <code>SpatVector</code> or <code>SpatVectorProxy</code> the sources are extracted with <code><a href="https://rdrr.io/pkg/terra/man/sources.html" class="external-link">terra::sources()</a></code></p></dd>
 
 
 <dt>shell_quote</dt>
