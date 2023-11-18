@@ -37,7 +37,7 @@ wbt_balance_contrast_enhancement <- function(input, output, band_mean=100.0, wd=
 #'
 #' @description Corrects the darkening of images towards corners.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param pp Input principal point file.
 #' @param output Output raster file.
 #' @param focal_length Camera focal length, in millimeters.
@@ -121,7 +121,7 @@ wbt_direct_decorrelation_stretch <- function(input, output, k=0.5, clip=1.0, wd=
 #'
 #' @description Performs a gamma correction on an input images.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param gamma Gamma value.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -156,7 +156,7 @@ wbt_gamma_correction <- function(input, output, gamma=0.5, wd=NULL, verbose_mode
 #'
 #' @description Performs a Gaussian contrast stretch on input images.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -191,7 +191,7 @@ wbt_gaussian_contrast_stretch <- function(input, output, num_tones=256, wd=NULL,
 #'
 #' @description Performs a histogram equalization contrast enhancement on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param num_tones Number of tones in the output image.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -226,7 +226,7 @@ wbt_histogram_equalization <- function(input, output, num_tones=256, wd=NULL, ve
 #'
 #' @description Alters the statistical distribution of a raster image matching it to a specified PDF.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param histo_file Input reference probability distribution function (pdf) text file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -292,7 +292,7 @@ wbt_histogram_matching_two_images <- function(input1, input2, output, wd=NULL, v
 #'
 #' @description Performs a min-max contrast stretch on an input greytone image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param min_val Lower tail clip value.
 #' @param max_val Upper tail clip value.
@@ -382,7 +382,7 @@ wbt_panchromatic_sharpening <- function(pan, output, red=NULL, green=NULL, blue=
 #'
 #' @description Performs a percentage linear contrast stretch on input images.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param tail Specified which tails to clip; options include 'upper', 'lower', and 'both' (default is 'both').
@@ -464,7 +464,7 @@ wbt_piecewise_contrast_stretch <- function(input, output, FUN="", greytones=1024
 #'
 #' @description Performs a sigmoidal contrast stretch on input images.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param cutoff Cutoff value between 0.0 and 0.95.
 #' @param gain Gain value.
@@ -507,7 +507,7 @@ wbt_sigmoidal_contrast_stretch <- function(input, output, cutoff=0.0, gain=1.0, 
 #'
 #' @description Performs a standard-deviation contrast stretch on input images.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param stdev Standard deviation clip value.
 #' @param num_tones Number of tones in the output image.

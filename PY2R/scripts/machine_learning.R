@@ -45,7 +45,7 @@ wbt_dbscan <- function(inputs, output, scaling="Normalize", search_dist=0.01, mi
 #'
 #' @description Performs a k-means clustering operation on a multi-spectral dataset.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param out_html Output HTML report file.
 #' @param classes Number of classes.
@@ -249,7 +249,7 @@ wbt_logistic_regression <- function(inputs, training, field, scaling="Normalize"
 #'
 #' @description Performs a modified k-means clustering operation on a multi-spectral dataset.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param out_html Output HTML report file.
 #' @param start_clusters Initial number of clusters.

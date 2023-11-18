@@ -15,9 +15,9 @@ wbt_not(
 )
 }
 \arguments{
-\item{input1}{Input raster file.}
+\item{input1}{Input raster file path. See \code{wbt_file_path()} for details.}
 
-\item{input2}{Input raster file.}
+\item{input2}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output raster file.}
 

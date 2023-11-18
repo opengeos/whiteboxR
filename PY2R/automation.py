@@ -16,6 +16,7 @@
 ##################################################################
 
 import os
+import re
 import shutil
 import zipfile
 import urllib.request
@@ -347,6 +348,8 @@ with open(wbt_py) as f:
                             doc_line = doc_line.replace("i --", "input --")
                         doc_line = doc_line.replace("-- ", "")
                         param = doc_line.replace("%", " percent")
+                        param = re.sub("Input (raster|vector) file\\.", "Input \\1 file path. See `wbt_file_path()` for details.", param)
+                        param = re.sub("Input (raster|vector) files\\.", "Input \\1 file paths, concatenated with `\",\"` or `\";\"`. See `wbt_file_path()` for details.", param)
                         ff.write("#' @param {}\n".format(param))
                     i = i + 1
                 ff.write("#' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.\n")

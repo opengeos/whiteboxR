@@ -37,7 +37,7 @@ wbt_change_vector_analysis <- function(date1, date2, magnitude, direction, wd=NU
 #'
 #' @description A closing is a mathematical morphology operation involving an erosion (min filter) of a dilation (max filter) set.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -123,7 +123,7 @@ wbt_create_colour_composite <- function(red, green, blue, output, opacity=NULL, 
 #'
 #' @description Reflects an image in the vertical or horizontal axis.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param direction Direction of reflection; options include 'v' (vertical), 'h' (horizontal), and 'b' (both).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -301,7 +301,7 @@ wbt_image_stack_profile <- function(inputs, points, output, wd=NULL, verbose_mod
 #'
 #' @description Transforms an input image (summed area table) into its integral image equivalent.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -332,7 +332,7 @@ wbt_integral_image <- function(input, output, wd=NULL, verbose_mode=NULL, compre
 #'
 #' @description Performs line thinning a on Boolean raster image; intended to be used with the RemoveSpurs tool.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -363,7 +363,7 @@ wbt_line_thinning <- function(input, output, wd=NULL, verbose_mode=NULL, compres
 #'
 #' @description Mosaics two or more images together.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param method Resampling method; options include 'nn' (nearest neighbour), 'bilinear', and 'cc' (cubic convolution).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -482,7 +482,7 @@ wbt_normalized_difference_index <- function(input1, input2, output, clip=0.0, co
 #'
 #' @description An opening is a mathematical morphology operation involving a dilation (max filter) of an erosion (min filter) set.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -521,7 +521,7 @@ wbt_opening <- function(input, output, filterx=11, filtery=11, wd=NULL, verbose_
 #'
 #' @description Removes the spurs (pruning operation) from a Boolean line image; intended to be used on the output of the LineThinning tool.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param iterations Maximum number of iterations.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -556,7 +556,7 @@ wbt_remove_spurs <- function(input, output, iterations=10, wd=NULL, verbose_mode
 #'
 #' @description Resamples one or more input images into a destination image.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param cell_size Optionally specified cell size of output raster. Not used when base raster is specified.
 #' @param base Optionally specified input base raster file. Not used when a cell size is specified.
@@ -689,7 +689,7 @@ wbt_split_colour_composite <- function(input, red=NULL, green=NULL, blue=NULL, w
 #'
 #' @description Thickens single-cell wide lines within a raster image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -720,7 +720,7 @@ wbt_thicken_raster_line <- function(input, output, wd=NULL, verbose_mode=NULL, c
 #'
 #' @description Performs either a white or black top-hat transform on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.

@@ -2,7 +2,7 @@
 #'
 #' @description Calculates the average for each grid cell from a group of raster images.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -33,7 +33,7 @@ wbt_average_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Extract all the features, or parts of features, that overlap with the features of the clip vector.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param clip Input clip polygon vector file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -66,7 +66,7 @@ wbt_clip <- function(input, clip, output, wd=NULL, verbose_mode=NULL, compress_r
 #'
 #' @description Clips a raster to a vector polygon.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param polygons Input vector polygons file.
 #' @param output Output raster file.
 #' @param maintain_dimensions Maintain input raster dimensions?.
@@ -103,7 +103,7 @@ wbt_clip_raster_to_polygon <- function(input, polygons, output, maintain_dimensi
 #'
 #' @description Counts the number of occurrences of a specified value in a cell-stack of rasters.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param value Search value (e.g. countif value = 5.0).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -136,7 +136,7 @@ wbt_count_if <- function(inputs, output, value, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param overlay Input overlay vector file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -169,7 +169,7 @@ wbt_difference <- function(input, overlay, output, wd=NULL, verbose_mode=NULL, c
 #'
 #' @description Removes all the features, or parts of features, that overlap with the features of the erase vector polygon.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param erase Input erase polygon vector file.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -202,7 +202,7 @@ wbt_erase <- function(input, erase, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Erases (cuts out) a vector polygon from a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param polygons Input vector polygons file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -235,7 +235,7 @@ wbt_erase_polygon_from_raster <- function(input, polygons, output, wd=NULL, verb
 #'
 #' @description Identifies the stack position of the maximum value within a raster stack on a cell-by-cell basis.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -266,7 +266,7 @@ wbt_highest_position <- function(inputs, output, wd=NULL, verbose_mode=NULL, com
 #'
 #' @description Identifies the parts of features in common between two input vector layers.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param overlay Input overlay vector file.
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
@@ -336,7 +336,7 @@ wbt_line_intersections <- function(input1, input2, output, wd=NULL, verbose_mode
 #'
 #' @description Identifies the stack position of the minimum value within a raster stack on a cell-by-cell basis.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -367,7 +367,7 @@ wbt_lowest_position <- function(inputs, output, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Evaluates the maximum absolute value for each grid cell from a stack of input rasters.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -398,7 +398,7 @@ wbt_max_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL,
 #'
 #' @description Evaluates the maximum value for each grid cell from a stack of input rasters.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -429,7 +429,7 @@ wbt_max_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Merges vector line segments into larger features.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -464,7 +464,7 @@ wbt_merge_line_segments <- function(input, output, snap=0.0, wd=NULL, verbose_mo
 #'
 #' @description Evaluates the minimum absolute value for each grid cell from a stack of input rasters.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -495,7 +495,7 @@ wbt_min_absolute_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL,
 #'
 #' @description Evaluates the minimum value for each grid cell from a stack of input rasters.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -526,7 +526,7 @@ wbt_min_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Calculates the sum for each grid cell from a group of raster images.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -557,7 +557,7 @@ wbt_multiply_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL, com
 #'
 #' @description Calculates the percentage of a raster stack that have cell values equal to an input on a cell-by-cell basis.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param comparison Input comparison raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -590,7 +590,7 @@ wbt_percent_equal_to <- function(inputs, comparison, output, wd=NULL, verbose_mo
 #'
 #' @description Calculates the percentage of a raster stack that have cell values greater than an input on a cell-by-cell basis.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param comparison Input comparison raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -623,7 +623,7 @@ wbt_percent_greater_than <- function(inputs, comparison, output, wd=NULL, verbos
 #'
 #' @description Calculates the percentage of a raster stack that have cell values less than an input on a cell-by-cell basis.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param comparison Input comparison raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -656,7 +656,7 @@ wbt_percent_less_than <- function(inputs, comparison, output, wd=NULL, verbose_m
 #'
 #' @description Outputs the value from a raster stack specified by a position raster.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param pos_input Input position raster file.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -753,7 +753,7 @@ wbt_split_with_lines <- function(input, split, output, wd=NULL, verbose_mode=NUL
 #'
 #' @description Calculates the sum for each grid cell from a group of raster images.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -784,7 +784,7 @@ wbt_sum_overlay <- function(inputs, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Outputs the features that occur in one of the two vector inputs but not both, i.e. no overlapping features.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param overlay Input overlay vector file.
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
@@ -821,7 +821,7 @@ wbt_symmetrical_difference <- function(input, overlay, output, snap=0.0, wd=NULL
 #'
 #' @description Splits vector layers at their overlaps, creating a layer containing all the portions from both input and overlay layers.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param overlay Input overlay vector file.
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
@@ -936,7 +936,7 @@ wbt_weighted_overlay <- function(factors, weights, output, cost=NULL, constraint
 #'
 #' @description Performs a weighted-sum overlay on multiple input raster images.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param weights Weight values, contained in quotes and separated by commas or semicolons.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.

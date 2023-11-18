@@ -15,7 +15,7 @@ wbt_percent_equal_to(
 )
 }
 \arguments{
-\item{inputs}{Input raster files.}
+\item{inputs}{Input raster file paths, concatenated with \code{","} or \code{";"}. See \code{wbt_file_path()} for details.}
 
 \item{comparison}{Input comparison raster file.}
 

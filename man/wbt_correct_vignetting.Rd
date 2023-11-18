@@ -18,7 +18,7 @@ wbt_correct_vignetting(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{pp}{Input principal point file.}
 

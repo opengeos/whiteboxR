@@ -2,7 +2,7 @@
 #'
 #' @description Calculates the complexity of the boundaries of raster polygons.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -62,7 +62,7 @@ wbt_compactness_ratio <- function(input, wd=NULL, verbose_mode=NULL, compress_ra
 #'
 #' @description Calculate the proportion of cells in a raster polygon that are edge cells.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param output_text flag indicating whether a text report should also be output.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -126,7 +126,7 @@ wbt_elongation_ratio <- function(input, wd=NULL, verbose_mode=NULL, compress_ras
 #'
 #' @description Finds all cells located on the edge of patch or class features.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -215,7 +215,7 @@ wbt_linearity_index <- function(input, wd=NULL, verbose_mode=NULL, compress_rast
 #'
 #' @description Calculates the narrowness of raster polygons.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -304,7 +304,7 @@ wbt_perimeter_area_ratio <- function(input, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Calculates the distance of cells from their polygon's centroid.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param text_output Optional text output.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -397,7 +397,7 @@ wbt_shape_complexity_index <- function(input, wd=NULL, verbose_mode=NULL, compre
 #'
 #' @description Calculates the complexity of raster polygons or classes.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.

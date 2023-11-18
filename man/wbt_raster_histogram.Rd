@@ -14,7 +14,7 @@ wbt_raster_histogram(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 

@@ -15,7 +15,7 @@ wbt_histogram_matching(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{histo_file}{Input reference probability distribution function (pdf) text file.}
 

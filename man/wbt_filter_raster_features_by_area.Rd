@@ -16,7 +16,7 @@ wbt_filter_raster_features_by_area(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output raster file.}
 

@@ -15,7 +15,7 @@ wbt_reclass_from_file(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{reclass_file}{Input text file containing reclass ranges.}
 

@@ -15,7 +15,7 @@ wbt_weighted_sum(
 )
 }
 \arguments{
-\item{inputs}{Input raster files.}
+\item{inputs}{Input raster file paths, concatenated with \code{","} or \code{";"}. See \code{wbt_file_path()} for details.}
 
 \item{weights}{Weight values, contained in quotes and separated by commas or semicolons.}
 

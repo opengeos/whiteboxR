@@ -13,7 +13,7 @@ wbt_reinitialize_attribute_table(
 )
 }
 \arguments{
-\item{input}{Input vector file.}
+\item{input}{Input vector file path. See \code{wbt_file_path()} for details.}
 
 \item{wd}{Changes the working directory. Default: \code{NULL} will use the value in WhiteboxTools settings, see \code{wbt_wd()} for details.}
 

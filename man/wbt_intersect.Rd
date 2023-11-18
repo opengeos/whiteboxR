@@ -16,7 +16,7 @@ wbt_intersect(
 )
 }
 \arguments{
-\item{input}{Input vector file.}
+\item{input}{Input vector file path. See \code{wbt_file_path()} for details.}
 
 \item{overlay}{Input overlay vector file.}
 

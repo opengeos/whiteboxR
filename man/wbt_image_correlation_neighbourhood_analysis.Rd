@@ -18,9 +18,9 @@ wbt_image_correlation_neighbourhood_analysis(
 )
 }
 \arguments{
-\item{input1}{Input raster file.}
+\item{input1}{Input raster file path. See \code{wbt_file_path()} for details.}
 
-\item{input2}{Input raster file.}
+\item{input2}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output1}{Output correlation (r-value or rho) raster file.}
 

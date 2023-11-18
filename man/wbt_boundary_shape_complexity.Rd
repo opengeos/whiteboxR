@@ -14,7 +14,7 @@ wbt_boundary_shape_complexity(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output raster file.}
 

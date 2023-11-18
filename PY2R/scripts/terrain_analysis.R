@@ -986,7 +986,7 @@ wbt_fetch_analysis <- function(dem, output, azimuth=0.0, hgt_inc=0.05, wd=NULL, 
 #'
 #' @description Fills NoData holes in a DEM.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filter Filter size (cells).
 #' @param weight IDW weight value.

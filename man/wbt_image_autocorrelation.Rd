@@ -15,7 +15,7 @@ wbt_image_autocorrelation(
 )
 }
 \arguments{
-\item{inputs}{Input raster files.}
+\item{inputs}{Input raster file paths, concatenated with \code{","} or \code{";"}. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 

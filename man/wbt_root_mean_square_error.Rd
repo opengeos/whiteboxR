@@ -14,7 +14,7 @@ wbt_root_mean_square_error(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{base}{Input base raster file used for comparison.}
 

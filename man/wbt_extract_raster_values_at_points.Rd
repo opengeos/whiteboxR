@@ -15,7 +15,7 @@ wbt_extract_raster_values_at_points(
 )
 }
 \arguments{
-\item{inputs}{Input raster files.}
+\item{inputs}{Input raster file paths, concatenated with \code{","} or \code{";"}. See \code{wbt_file_path()} for details.}
 
 \item{points}{Input vector points file.}
 

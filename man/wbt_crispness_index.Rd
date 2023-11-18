@@ -14,7 +14,7 @@ wbt_crispness_index(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Optional output html file (default name will be based on input file if unspecified).}
 

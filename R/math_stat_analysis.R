@@ -2,8 +2,8 @@
 #'
 #' @description Performs a logical AND operator on two Boolean raster images.
 #'
-#' @param input1 Input raster file.
-#' @param input2 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
+#' @param input2 Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -35,8 +35,8 @@ wbt_and <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Performs a logical NOT operator on two Boolean raster images.
 #'
-#' @param input1 Input raster file.
-#' @param input2 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
+#' @param input2 Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -68,8 +68,8 @@ wbt_not <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Performs a logical OR operator on two Boolean raster images.
 #'
-#' @param input1 Input raster file.
-#' @param input2 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
+#' @param input2 Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -101,7 +101,7 @@ wbt_or <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compress_
 #'
 #' @description Calculates the absolute value of every cell in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -165,7 +165,7 @@ wbt_add <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Performs an analysis of variance (ANOVA) test on a raster dataset.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param features Feature definition (or class) raster.
 #' @param output Output HTML file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -198,7 +198,7 @@ wbt_anova <- function(input, features, output, wd=NULL, verbose_mode=NULL, compr
 #'
 #' @description Returns the inverse cosine (arccos) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -229,7 +229,7 @@ wbt_arc_cos <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rast
 #'
 #' @description Returns the inverse sine (arcsin) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -260,7 +260,7 @@ wbt_arc_sin <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rast
 #'
 #' @description Returns the inverse tangent (arctan) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -291,7 +291,7 @@ wbt_arc_tan <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rast
 #'
 #' @description Returns the inverse hyperbolic cosine (arcosh) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -322,7 +322,7 @@ wbt_arcosh <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raste
 #'
 #' @description Returns the inverse hyperbolic sine (arsinh) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -353,7 +353,7 @@ wbt_arsinh <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raste
 #'
 #' @description Returns the inverse hyperbolic tangent (arctanh) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -417,7 +417,7 @@ wbt_atan2 <- function(input_y, input_x, output, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Performs a correlation analysis on attribute fields from a vector database.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -450,7 +450,7 @@ wbt_attribute_correlation <- function(input, output=NULL, wd=NULL, verbose_mode=
 #'
 #' @description Performs a correlation on two input vector attributes within a neighbourhood search windows.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param field1 First input field name (dependent variable) in attribute table.
 #' @param field2 Second input field name (independent variable) in attribute table.
 #' @param radius Search Radius (in map units).
@@ -495,7 +495,7 @@ wbt_attribute_correlation_neighbourhood_analysis <- function(input, field1, fiel
 #'
 #' @description Creates a histogram for the field values of a vector's attribute table.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param field Input field name in attribute table.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -528,7 +528,7 @@ wbt_attribute_histogram <- function(input, field, output, wd=NULL, verbose_mode=
 #'
 #' @description Creates a scattergram for two field values of a vector's attribute table.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param fieldx Input field name in attribute table for the x-axis.
 #' @param fieldy Input field name in attribute table for the y-axis.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
@@ -567,7 +567,7 @@ wbt_attribute_scattergram <- function(input, fieldx, fieldy, output, trendline=F
 #'
 #' @description Returns the smallest (closest to negative infinity) value that is greater than or equal to the values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -708,7 +708,7 @@ wbt_conditioned_latin_hypercube <- function(inputs, output, samples=500, iterati
 #'
 #' @description Returns the cosine (cos) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -739,7 +739,7 @@ wbt_cos <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=
 #'
 #' @description Returns the hyperbolic cosine (cosh) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -770,7 +770,7 @@ wbt_cosh <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters
 #'
 #' @description Calculates the Crispness Index, which is used to quantify how crisp (or conversely how fuzzy) a probability image is.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Optional output html file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -836,7 +836,7 @@ wbt_cross_tabulation <- function(input1, input2, output, wd=NULL, verbose_mode=N
 #'
 #' @description Converts a raster image to its cumulative distribution function.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -867,7 +867,7 @@ wbt_cumulative_distribution <- function(input, output, wd=NULL, verbose_mode=NUL
 #'
 #' @description Decreases the values of each grid cell in an input raster by 1.0 (see also InPlaceSubtract).
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -964,7 +964,7 @@ wbt_equal_to <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, com
 #'
 #' @description Returns the exponential (base e) of values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -995,7 +995,7 @@ wbt_exp <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=
 #'
 #' @description Returns the exponential (base 2) of values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1026,7 +1026,7 @@ wbt_exp2 <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters
 #'
 #' @description Returns the largest (closest to positive infinity) value that is less than or equal to the values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1094,7 +1094,7 @@ wbt_greater_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL,
 #'
 #' @description Performs Moran's I analysis on two or more input images.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param contiguity Contiguity type.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1129,7 +1129,7 @@ wbt_image_autocorrelation <- function(inputs, output, contiguity="Rook", wd=NULL
 #'
 #' @description Performs image correlation on two or more input images.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1162,8 +1162,8 @@ wbt_image_correlation <- function(inputs, output=NULL, wd=NULL, verbose_mode=NUL
 #'
 #' @description Performs image correlation on two input images neighbourhood search windows.
 #'
-#' @param input1 Input raster file.
-#' @param input2 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
+#' @param input2 Input raster file path. See `wbt_file_path()` for details.
 #' @param output1 Output correlation (r-value or rho) raster file.
 #' @param output2 Output significance (p-value) raster file.
 #' @param filter Size of the filter kernel.
@@ -1254,7 +1254,7 @@ wbt_image_regression <- function(input1, input2, output, out_residuals=NULL, sta
 #'
 #' @description Performs an in-place addition operation (input1 += input2).
 #'
-#' @param input1 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
 #' @param input2 Input raster file or constant value.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1285,7 +1285,7 @@ wbt_in_place_add <- function(input1, input2, wd=NULL, verbose_mode=NULL, compres
 #'
 #' @description Performs an in-place division operation (input1 /= input2).
 #'
-#' @param input1 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
 #' @param input2 Input raster file or constant value.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1316,7 +1316,7 @@ wbt_in_place_divide <- function(input1, input2, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Performs an in-place multiplication operation (input1 *= input2).
 #'
-#' @param input1 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
 #' @param input2 Input raster file or constant value.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1347,7 +1347,7 @@ wbt_in_place_multiply <- function(input1, input2, wd=NULL, verbose_mode=NULL, co
 #'
 #' @description Performs an in-place subtraction operation (input1 -= input2).
 #'
-#' @param input1 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
 #' @param input2 Input raster file or constant value.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1378,7 +1378,7 @@ wbt_in_place_subtract <- function(input1, input2, wd=NULL, verbose_mode=NULL, co
 #'
 #' @description Increases the values of each grid cell in an input raster by 1.0. (see also InPlaceAdd).
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1473,7 +1473,7 @@ wbt_inverse_principal_component_analysis <- function(inputs, report, wd=NULL, ve
 #'
 #' @description Identifies NoData valued pixels in an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1537,7 +1537,7 @@ wbt_kappa_index <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, 
 #'
 #' @description Evaluates whether the values in a raster are normally distributed.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output HTML file.
 #' @param num_samples Number of samples. Leave blank to use whole image.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1609,7 +1609,7 @@ wbt_less_than <- function(input1, input2, output, incl_equals=FALSE, wd=NULL, ve
 #'
 #' @description Lists the unique values contained in a field within a vector's attribute table.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param field Input field name in attribute table.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1642,7 +1642,7 @@ wbt_list_unique_values <- function(input, field, output, wd=NULL, verbose_mode=N
 #'
 #' @description Lists the unique values contained in a field within a vector's attribute table.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
@@ -1671,7 +1671,7 @@ wbt_list_unique_values_raster <- function(input, wd=NULL, verbose_mode=NULL, com
 #'
 #' @description Returns the natural logarithm of values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1702,7 +1702,7 @@ wbt_ln <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=N
 #'
 #' @description Returns the base-10 logarithm of values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1733,7 +1733,7 @@ wbt_log10 <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raster
 #'
 #' @description Returns the base-2 logarithm of values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -1896,7 +1896,7 @@ wbt_multiply <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, com
 #'
 #' @description Changes the sign of values in a raster or the 0-1 values of a Boolean raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2063,7 +2063,7 @@ wbt_power <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compre
 #'
 #' @description Performs a principal component analysis (PCA) on a multi-spectral dataset.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output HTML report file.
 #' @param num_comp Number of component images to output; <= to num. input images.
 #' @param standardized Perform standardized PCA?.
@@ -2102,7 +2102,7 @@ wbt_principal_component_analysis <- function(inputs, output, num_comp=NULL, stan
 #'
 #' @description Transforms raster values into quantiles.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param num_quantiles Number of quantiles.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -2137,7 +2137,7 @@ wbt_quantiles <- function(input, output, num_quantiles=5, wd=NULL, verbose_mode=
 #'
 #' @description Creates an image containing random values.
 #'
-#' @param base Input raster file.
+#' @param base Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2168,7 +2168,7 @@ wbt_random_field <- function(base, output, wd=NULL, verbose_mode=NULL, compress_
 #'
 #' @description Creates an image containing randomly located sample grid cells with unique IDs.
 #'
-#' @param base Input raster file.
+#' @param base Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param num_samples Number of samples.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -2236,7 +2236,7 @@ wbt_raster_calculator <- function(output, statement="", wd=NULL, verbose_mode=NU
 #'
 #' @description Creates a histogram from raster values.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output HTML file (default name will be based on input file if unspecified).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2267,7 +2267,7 @@ wbt_raster_histogram <- function(input, output, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Measures a rasters min, max, average, standard deviation, num. non-nodata cells, and total.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
@@ -2296,7 +2296,7 @@ wbt_raster_summary_stats <- function(input, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Returns the reciprocal (i.e. 1 / z) of values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2327,7 +2327,7 @@ wbt_reciprocal <- function(input, output, wd=NULL, verbose_mode=NULL, compress_r
 #'
 #' @description Performs a min-max contrast stretch on an input greytone image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param out_min_val New minimum value in output image.
 #' @param out_max_val New maximum value in output image.
@@ -2370,7 +2370,7 @@ wbt_rescale_value_range <- function(input, output, out_min_val, out_max_val, cli
 #'
 #' @description Calculates the RMSE and other accuracy statistics.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param base Input base raster file used for comparison.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2401,7 +2401,7 @@ wbt_root_mean_square_error <- function(input, base, wd=NULL, verbose_mode=NULL, 
 #'
 #' @description Rounds the values in an input raster to the nearest integer value.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2432,7 +2432,7 @@ wbt_round <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raster
 #'
 #' @description Returns the sine (sin) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2463,7 +2463,7 @@ wbt_sin <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=
 #'
 #' @description Returns the hyperbolic sine (sinh) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2494,7 +2494,7 @@ wbt_sinh <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters
 #'
 #' @description Squares the values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2525,7 +2525,7 @@ wbt_square <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raste
 #'
 #' @description Returns the square root of the values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2589,7 +2589,7 @@ wbt_subtract <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, com
 #'
 #' @description Returns the tangent (tan) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2620,7 +2620,7 @@ wbt_tan <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters=
 #'
 #' @description Returns the hyperbolic tangent (tanh) of each values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2651,7 +2651,7 @@ wbt_tanh <- function(input, output, wd=NULL, verbose_mode=NULL, compress_rasters
 #'
 #' @description Converts a raster from radians to degrees.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2682,7 +2682,7 @@ wbt_to_degrees <- function(input, output, wd=NULL, verbose_mode=NULL, compress_r
 #'
 #' @description Converts a raster from degrees to radians.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2713,7 +2713,7 @@ wbt_to_radians <- function(input, output, wd=NULL, verbose_mode=NULL, compress_r
 #'
 #' @description Estimates the trend surface of an input raster file.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param order Polynomial order (1 to 10).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -2787,7 +2787,7 @@ wbt_trend_surface_vector_points <- function(input, field, output, cell_size, ord
 #'
 #' @description Truncates the values in a raster to the desired number of decimal places.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param num_decimals Number of decimals left after truncation (default is zero).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -2933,8 +2933,8 @@ wbt_wilcoxon_signed_rank_test <- function(input1, input2, output, num_samples=NU
 #'
 #' @description Performs a logical XOR operator on two Boolean raster images.
 #'
-#' @param input1 Input raster file.
-#' @param input2 Input raster file.
+#' @param input1 Input raster file path. See `wbt_file_path()` for details.
+#' @param input2 Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -2966,7 +2966,7 @@ wbt_xor <- function(input1, input2, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Standardizes the values in an input raster by converting to z-scores.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.

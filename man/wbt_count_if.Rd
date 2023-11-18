@@ -15,7 +15,7 @@ wbt_count_if(
 )
 }
 \arguments{
-\item{inputs}{Input raster files.}
+\item{inputs}{Input raster file paths, concatenated with \code{","} or \code{";"}. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output raster file.}
 

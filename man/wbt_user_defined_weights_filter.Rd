@@ -17,7 +17,7 @@ wbt_user_defined_weights_filter(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{weights}{Input weights file.}
 

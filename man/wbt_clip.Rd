@@ -15,7 +15,7 @@ wbt_clip(
 )
 }
 \arguments{
-\item{input}{Input vector file.}
+\item{input}{Input vector file path. See \code{wbt_file_path()} for details.}
 
 \item{clip}{Input clip polygon vector file.}
 

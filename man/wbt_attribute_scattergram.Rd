@@ -17,7 +17,7 @@ wbt_attribute_scattergram(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{fieldx}{Input field name in attribute table for the x-axis.}
 

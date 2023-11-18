@@ -14,7 +14,7 @@ wbt_modify_no_data_value(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{new_value}{New NoData value.}
 

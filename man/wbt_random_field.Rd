@@ -14,7 +14,7 @@ wbt_random_field(
 )
 }
 \arguments{
-\item{base}{Input raster file.}
+\item{base}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output raster file.}
 

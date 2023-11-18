@@ -2,7 +2,7 @@
 #'
 #' @description Performs an adaptive filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -45,7 +45,7 @@ wbt_adaptive_filter <- function(input, output, filterx=11, filtery=11, threshold
 #'
 #' @description A bilateral filter is an edge-preserving smoothing filter introduced by Tomasi and Manduchi (1998).
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma_dist Standard deviation in distance in pixels.
 #' @param sigma_int Standard deviation in intensity in pixels.
@@ -131,7 +131,7 @@ wbt_canny_edge_detection <- function(input, output, sigma=0.5, low=0.05, high=0.
 #'
 #' @description Performs a conservative-smoothing filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -201,7 +201,7 @@ wbt_corner_detection <- function(input, output, wd=NULL, verbose_mode=NULL, comp
 #'
 #' @description Performs a Difference of Gaussian (DoG) filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma1 Standard deviation distance in pixels.
 #' @param sigma2 Standard deviation distance in pixels.
@@ -240,7 +240,7 @@ wbt_diff_of_gaussian_filter <- function(input, output, sigma1=2.0, sigma2=4.0, w
 #'
 #' @description Assigns each cell in the output grid the number of different values in a moving window centred on each grid cell in the input raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -279,7 +279,7 @@ wbt_diversity_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 #'
 #' @description Performs a simple edge-preserving mean filter on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filter Size of the filter kernel.
 #' @param threshold Maximum difference in values.
@@ -316,7 +316,7 @@ wbt_edge_preserving_mean_filter <- function(input, output, threshold, filter=11,
 #'
 #' @description Performs an emboss filter on an image, similar to a hillshade operation.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param direction Direction of reflection; options include 'n', 's', 'e', 'w', 'ne', 'se', 'nw', 'sw'.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
@@ -355,7 +355,7 @@ wbt_emboss_filter <- function(input, output, direction="n", clip=0.0, wd=NULL, v
 #'
 #' @description Performs a fast approximate Gaussian filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma Standard deviation distance in pixels.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -390,7 +390,7 @@ wbt_fast_almost_gaussian_filter <- function(input, output, sigma=1.8, wd=NULL, v
 #'
 #' @description Performs a Gaussian filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma Standard deviation distance in pixels.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -425,7 +425,7 @@ wbt_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL, verbose_mode
 #'
 #' @description Performs a high-pass bilateral filter, by differencing an input image by the bilateral filter by Tomasi and Manduchi (1998).
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma_dist Standard deviation in distance in pixels.
 #' @param sigma_int Standard deviation in intensity in pixels.
@@ -464,7 +464,7 @@ wbt_high_pass_bilateral_filter <- function(input, output, sigma_dist=0.75, sigma
 #'
 #' @description Performs a high-pass filter on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -503,7 +503,7 @@ wbt_high_pass_filter <- function(input, output, filterx=11, filtery=11, wd=NULL,
 #'
 #' @description Performs a high pass median filter on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -546,7 +546,7 @@ wbt_high_pass_median_filter <- function(input, output, filterx=11, filtery=11, s
 #'
 #' @description A k-nearest mean filter is a type of edge-preserving smoothing filter.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -589,7 +589,7 @@ wbt_k_nearest_mean_filter <- function(input, output, filterx=11, filtery=11, k=5
 #'
 #' @description Performs a Laplacian filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param variant Optional variant value. Options include 3x3(1), 3x3(2), 3x3(3), 3x3(4), 5x5(1), and 5x5(2) (default is 3x3(1)).
 #' @param clip Optional amount to clip the distribution tails by, in percent.
@@ -628,7 +628,7 @@ wbt_laplacian_filter <- function(input, output, variant="3x3(1)", clip=0.0, wd=N
 #'
 #' @description Performs a Laplacian-of-Gaussian (LoG) filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma Standard deviation in pixels.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -663,7 +663,7 @@ wbt_laplacian_of_gaussian_filter <- function(input, output, sigma=0.75, wd=NULL,
 #'
 #' @description Performs a Lee (Sigma) smoothing filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -710,7 +710,7 @@ wbt_lee_sigma_filter <- function(input, output, filterx=11, filtery=11, sigma=10
 #'
 #' @description Performs a line-detection filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param variant Optional variant value. Options include 'v' (vertical), 'h' (horizontal), '45', and '135' (default is 'v').
 #' @param absvals Optional flag indicating whether outputs should be absolute values.
@@ -753,7 +753,7 @@ wbt_line_detection_filter <- function(input, output, variant="vertical", absvals
 #'
 #' @description Assigns each cell in the output grid the most frequently occurring value (mode) in a moving window centred on each grid cell in the input raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -792,7 +792,7 @@ wbt_majority_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, 
 #'
 #' @description Assigns each cell in the output grid the maximum value in a moving window centred on each grid cell in the input raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -831,7 +831,7 @@ wbt_maximum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 #'
 #' @description Performs a mean filter (low-pass filter) on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -870,7 +870,7 @@ wbt_mean_filter <- function(input, output, filterx=3, filtery=3, wd=NULL, verbos
 #'
 #' @description Performs a median filter on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -913,7 +913,7 @@ wbt_median_filter <- function(input, output, filterx=11, filtery=11, sig_digits=
 #'
 #' @description Assigns each cell in the output grid the minimum value in a moving window centred on each grid cell in the input raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -952,7 +952,7 @@ wbt_minimum_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 #'
 #' @description Performs an olympic smoothing filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -991,7 +991,7 @@ wbt_olympic_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, v
 #'
 #' @description Performs a percentile filter on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -1034,7 +1034,7 @@ wbt_percentile_filter <- function(input, output, filterx=11, filtery=11, sig_dig
 #'
 #' @description Performs a Prewitt edge-detection filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1069,7 +1069,7 @@ wbt_prewitt_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=NU
 #'
 #' @description Assigns each cell in the output grid the range of values in a moving window centred on each grid cell in the input raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -1108,7 +1108,7 @@ wbt_range_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 #'
 #' @description Performs a Robert's cross edge-detection filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1143,7 +1143,7 @@ wbt_roberts_cross_filter <- function(input, output, clip=0.0, wd=NULL, verbose_m
 #'
 #' @description Performs a Scharr edge-detection filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param clip Optional amount to clip the distribution tails by, in percent.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1178,7 +1178,7 @@ wbt_scharr_filter <- function(input, output, clip=0.0, wd=NULL, verbose_mode=NUL
 #'
 #' @description Performs a Sobel edge-detection filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param variant Optional variant value. Options include 3x3 and 5x5 (default is 3x3).
 #' @param clip Optional amount to clip the distribution tails by, in percent (default is 0.0).
@@ -1217,7 +1217,7 @@ wbt_sobel_filter <- function(input, output, variant="3x3", clip=0.0, wd=NULL, ve
 #'
 #' @description Assigns each cell in the output grid the standard deviation of values in a moving window centred on each grid cell in the input raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -1256,7 +1256,7 @@ wbt_standard_deviation_filter <- function(input, output, filterx=11, filtery=11,
 #'
 #' @description Performs a total filter on an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param filterx Size of the filter kernel in the x-direction.
 #' @param filtery Size of the filter kernel in the y-direction.
@@ -1295,7 +1295,7 @@ wbt_total_filter <- function(input, output, filterx=11, filtery=11, wd=NULL, ver
 #'
 #' @description An image sharpening technique that enhances edges.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param sigma Standard deviation distance in pixels.
 #' @param amount A percentage and controls the magnitude of each overshoot.
@@ -1338,7 +1338,7 @@ wbt_unsharp_masking <- function(input, output, sigma=0.75, amount=100.0, thresho
 #'
 #' @description Performs a user-defined weights filter on an image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param weights Input weights file.
 #' @param output Output raster file.
 #' @param center Kernel center cell; options include 'center', 'upper-left', 'upper-right', 'lower-left', 'lower-right'.

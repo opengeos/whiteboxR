@@ -14,7 +14,7 @@ wbt_attribute_correlation(
 )
 }
 \arguments{
-\item{input}{Input vector file.}
+\item{input}{Input vector file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output HTML file (default name will be based on input file if unspecified).}
 

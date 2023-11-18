@@ -14,7 +14,7 @@ wbt_raster_to_vector_polygons(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output vector polygons file.}
 

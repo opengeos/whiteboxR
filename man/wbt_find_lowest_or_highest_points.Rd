@@ -15,7 +15,7 @@ wbt_find_lowest_or_highest_points(
 )
 }
 \arguments{
-\item{input}{Input raster file.}
+\item{input}{Input raster file path. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output vector points file.}
 

@@ -2,7 +2,7 @@
 #'
 #' @description Aggregates a raster to a lower resolution.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param agg_factor Aggregation factor, in pixels.
 #' @param type Statistic used to fill output pixels.
@@ -131,7 +131,7 @@ wbt_block_minimum_gridding <- function(input, field, output, use_z=FALSE, cell_s
 #'
 #' @description Calculates the centroid, or average location, of raster polygon objects.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param text_output Optional text output.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -166,7 +166,7 @@ wbt_centroid <- function(input, output, text_output=FALSE, wd=NULL, verbose_mode
 #'
 #' @description Identifies the centroid point of a vector polyline or polygon feature or a group of vector points.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -197,7 +197,7 @@ wbt_centroid_vector <- function(input, output, wd=NULL, verbose_mode=NULL, compr
 #'
 #' @description Groups cells that form discrete areas, assigning them unique identifiers.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param diag Flag indicating whether diagonal connections should be considered.
 #' @param zero_back Flag indicating whether zero values should be treated as a background.
@@ -402,7 +402,7 @@ wbt_create_rectangular_vector_grid <- function(input, output, width, height, xor
 #'
 #' @description Removes the interior, or shared, boundaries within a vector polygon coverage.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param field Dissolve field attribute (optional).
 #' @param output Output vector file.
 #' @param snap Snap tolerance.
@@ -441,7 +441,7 @@ wbt_dissolve <- function(input, output, field=NULL, snap=0.0, wd=NULL, verbose_m
 #'
 #' @description Removes any coincident, or nearly coincident, points from a vector points file.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector points file.
 #' @param tolerance The distance tolerance for points.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -542,7 +542,7 @@ wbt_extract_nodes <- function(input, output, wd=NULL, verbose_mode=NULL, compres
 #'
 #' @description Extracts the values of raster(s) at vector point locations.
 #'
-#' @param inputs Input raster files.
+#' @param inputs Input raster file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param points Input vector points file.
 #' @param out_text Output point values as text? Otherwise, the only output is to to the points file's attribute table.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -577,7 +577,7 @@ wbt_extract_raster_values_at_points <- function(inputs, points, out_text=FALSE, 
 #'
 #' @description Removes small-area features from a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param threshold Remove features with fewer grid cells than this threshold value.
 #' @param background Background value.
@@ -614,7 +614,7 @@ wbt_filter_raster_features_by_area <- function(input, output, threshold, backgro
 #'
 #' @description Locates the lowest and/or highest valued cells in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output vector points file.
 #' @param out_type Output type; one of 'area' (default) and 'volume'.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -788,7 +788,7 @@ wbt_layer_footprint <- function(input, output, wd=NULL, verbose_mode=NULL, compr
 #'
 #' @description Calculates the medoid for a series of vector features contained in a shapefile.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -819,7 +819,7 @@ wbt_medoid <- function(input, output, wd=NULL, verbose_mode=NULL, compress_raste
 #'
 #' @description Creates a vector minimum bounding rectangle around vector features.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector polygon file.
 #' @param criterion Minimization criterion; options include 'area' (default), 'length', 'width', and 'perimeter'.
 #' @param features Find the minimum bounding rectangles around each individual vector feature.
@@ -858,7 +858,7 @@ wbt_minimum_bounding_box <- function(input, output, criterion="area", features=T
 #'
 #' @description Delineates the minimum bounding circle (i.e. smallest enclosing circle) for a group of vectors.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector polygon file.
 #' @param features Find the minimum bounding circle around each individual vector feature.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -893,7 +893,7 @@ wbt_minimum_bounding_circle <- function(input, output, features=TRUE, wd=NULL, v
 #'
 #' @description Creates a vector axis-aligned minimum bounding rectangle (envelope) around vector features.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector polygon file.
 #' @param features Find the minimum bounding envelop around each individual vector feature.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -928,7 +928,7 @@ wbt_minimum_bounding_envelope <- function(input, output, features=TRUE, wd=NULL,
 #'
 #' @description Creates a vector convex polygon around vector features.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector polygon file.
 #' @param features Find the hulls around each vector feature.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1248,7 +1248,7 @@ wbt_radial_basis_function_interpolation <- function(input, field, output, use_z=
 #'
 #' @description Calculates the area of polygons or classes within a raster image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param out_text Would you like to output polygon areas to text?.
 #' @param units Area units; options include 'grid cells' and 'map units'.
@@ -1293,7 +1293,7 @@ wbt_raster_area <- function(input, output=NULL, out_text=FALSE, units="grid cell
 #'
 #' @description Assign row or column number to cells.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param assign Which variable would you like to assign to grid cells? Options include 'column', 'row', 'x', and 'y'.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -1328,7 +1328,7 @@ wbt_raster_cell_assignment <- function(input, output, assign="column", wd=NULL, 
 #'
 #' @description Calculates the perimeters of polygons or classes within a raster image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param out_text Would you like to output polygon areas to text?.
 #' @param units Area units; options include 'grid cells' and 'map units'.
@@ -1373,7 +1373,7 @@ wbt_raster_perimeter <- function(input, output=NULL, out_text=FALSE, units="grid
 #'
 #' @description Reclassifies the values in a raster image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param reclass_vals Reclassification triplet values (new value; from value; to less than), e.g. '0.0;0.0;1.0;1.0;1.0;2.0'.
 #' @param assign_mode Optional Boolean flag indicating whether to operate in assign mode, reclass_vals values are interpreted as new value; old value pairs.
@@ -1410,7 +1410,7 @@ wbt_reclass <- function(input, output, reclass_vals, assign_mode=FALSE, wd=NULL,
 #'
 #' @description Reclassifies the values in a raster image based on equal-ranges.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param interval Class interval size.
 #' @param start_val Optional starting value (default is input minimum value).
@@ -1453,7 +1453,7 @@ wbt_reclass_equal_interval <- function(input, output, interval=10.0, start_val=N
 #'
 #' @description Reclassifies the values in a raster image using reclass ranges in a text file.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param reclass_file Input text file containing reclass ranges.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.

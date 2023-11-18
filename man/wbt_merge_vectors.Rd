@@ -14,7 +14,7 @@ wbt_merge_vectors(
 )
 }
 \arguments{
-\item{inputs}{Input vector files.}
+\item{inputs}{Input vector file paths, concatenated with \code{","} or \code{";"}. See \code{wbt_file_path()} for details.}
 
 \item{output}{Output vector file.}
 

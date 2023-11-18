@@ -31,7 +31,7 @@ wbt_add_point_coordinates_to_table <- function(input, wd=NULL, verbose_mode=NULL
 #'
 #' @description Removes null features and lines/polygons with fewer than the required number of vertices.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -62,7 +62,7 @@ wbt_clean_vector <- function(input, output, wd=NULL, verbose_mode=NULL, compress
 #'
 #' @description Converts nodata values in a raster to zero.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -93,7 +93,7 @@ wbt_convert_nodata_to_zero <- function(input, output, wd=NULL, verbose_mode=NULL
 #'
 #' @description Converts raster data from one format to another.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -167,7 +167,7 @@ wbt_csv_points_to_vector <- function(input, output, xfield=0, yfield=1, epsg=NUL
 #'
 #' @description Exports an attribute table to a CSV text file.
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param output Output csv file.
 #' @param headers Export field names as file header?.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
@@ -346,7 +346,7 @@ wbt_merge_table_with_csv <- function(input, pkey, csv, fkey, import_field=NULL, 
 #'
 #' @description Combines two or more input vectors of the same ShapeType creating a single, new output vector.
 #'
-#' @param inputs Input vector files.
+#' @param inputs Input vector file paths, concatenated with `","` or `";"`. See `wbt_file_path()` for details.
 #' @param output Output vector file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -377,7 +377,7 @@ wbt_merge_vectors <- function(inputs, output, wd=NULL, verbose_mode=NULL, compre
 #'
 #' @description Modifies nodata values in a raster.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param new_value New NoData value.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -579,7 +579,7 @@ wbt_raster_to_vector_lines <- function(input, output, wd=NULL, verbose_mode=NULL
 #'
 #' @description Converts a raster dataset to a vector of the POINT shapetype.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output vector points file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -610,7 +610,7 @@ wbt_raster_to_vector_points <- function(input, output, wd=NULL, verbose_mode=NUL
 #'
 #' @description Converts a raster dataset to a vector of the POLYGON shapetype.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output vector polygons file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -641,7 +641,7 @@ wbt_raster_to_vector_polygons <- function(input, output, wd=NULL, verbose_mode=N
 #'
 #' @description Reinitializes a vector's attribute table deleting all fields but the feature ID (FID).
 #'
-#' @param input Input vector file.
+#' @param input Input vector file path. See `wbt_file_path()` for details.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
 #' @param compress_rasters Sets the flag used by 'WhiteboxTools' to determine whether to use compression for output rasters. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_compress_rasters()` for details.
@@ -740,7 +740,7 @@ wbt_remove_raster_polygon_holes <- function(input, output, threshold=3, use_diag
 #'
 #' @description Assign the NoData value for an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param back_value Background value to set to nodata.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.

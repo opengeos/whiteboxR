@@ -2,7 +2,7 @@
 #'
 #' @description Maps a distance-based buffer around each non-background (non-zero/non-nodata) grid cell in an input image.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param size Buffer size.
 #' @param gridcells Optional flag to indicate that the 'size' threshold should be measured in grid cells instead of the default map units.
@@ -144,7 +144,7 @@ wbt_cost_pathway <- function(destination, backlink, output, zero_background=FALS
 #'
 #' @description Assigns grid cells in the output raster the value of the nearest target cell in the input image, measured by the Shih and Wu (2004) Euclidean distance transform.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -175,7 +175,7 @@ wbt_euclidean_allocation <- function(input, output, wd=NULL, verbose_mode=NULL, 
 #'
 #' @description Calculates the Shih and Wu (2004) Euclidean distance transform.
 #'
-#' @param input Input raster file.
+#' @param input Input raster file path. See `wbt_file_path()` for details.
 #' @param output Output raster file.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
