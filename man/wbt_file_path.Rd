@@ -7,7 +7,7 @@
 wbt_file_path(x, shell_quote = TRUE, delimiter = ",", check_exists = FALSE)
 }
 \arguments{
-\item{x}{character. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools.}
+\item{x}{character or \code{terra} object. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools. If the object is of class \code{SpatRaster}, \code{SpatRasterCollection}, \code{SpatVector} or \code{SpatVectorProxy} the sources are extracted with \code{terra::sources()}}
 
 \item{shell_quote}{logical. Shell quotes around result? Default: \code{TRUE}}
 

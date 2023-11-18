@@ -1,6 +1,6 @@
 # whitebox 2.3.4
 
- * Exported `wbt_file_path()`, a function previously used internally for creating safe, expanded, quoted, paths for building WhiteboxTools commands. 
+ * Exported `wbt_file_path()`, a function previously used internally for creating safe, expanded, quoted, paths for building WhiteboxTools commands. This function also supports the input of `terra` objects that are backed by file sources supported by WhiteboxTools.
 
 # whitebox 2.3.3
 

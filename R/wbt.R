@@ -1127,7 +1127,8 @@ wbt_system_call <- function(argstring,
 #' 
 #' @details If an input vector contains `";"` or `","` this is considered, path expansion is performed on the substrings. If the input vector has length greater than `1`, the vector is concatenated with `","` or `";"` to create a single output string. 
 #' 
-#' @param x character. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools.
+#' @param x character or `terra` object. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools. If the object is of class `SpatRaster`, `SpatRasterCollection`, `SpatVector` or `SpatVectorProxy` the sources are extracted with `terra::sources()`
+#' 
 #' @param shell_quote logical. Shell quotes around result? Default: `TRUE`
 #' @param delimiter character. Either `","` (default) or `";"` allowed by WhiteboxTools.
 #' @param check_exists logical. Check if file(s) in x exist? Useful for input values. Default: `FALSE`
@@ -1152,6 +1153,23 @@ wbt_system_call <- function(argstring,
 #' wbt_file_path(c("~/abc.tif", "~/def.tif"))
 #' 
 wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists = FALSE) {
+  if (inherits(x, c("RasterLayer", "RasterStack"))) {
+    if (requireNamespace("terra")) {
+      x <- terra::rast(x)
+    }
+  }
+  
+  if (inherits(x, c('SpatRaster','SpatRasterCollection', 
+                    'SpatVector', 'SpatVectorProxy'))) {
+    if (requireNamespace("terra")) {
+      x2 <- paste0(terra::sources(x), collapse = delimiter)
+      if (nchar(x2) == 0) {
+        stop("The supplied 'terra' object for `", as.character(substitute(x)),"` is not backed by a file. Try loading the object directly from the source file with `terra::rast()` or `terra::vect()`. Various raster formats and ESRI Shapefile are supported. See <https://www.whiteboxgeo.com/manual/wbt_book/supported_formats.html> for details.", call. = FALSE)
+      }
+      x <- x2
+    }
+  }
+  
   delimiter <- match.arg(trimws(delimiter), c(",", ";"))
   x <- path.expand(strsplit(
     paste0(as.character(x), collapse = ","), ";|,"
