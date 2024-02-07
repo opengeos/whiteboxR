@@ -1,3 +1,6 @@
+template:
+  bootstrap: 5
+
 reference:
 - title: \'WhiteboxTools\' R Reference
 - subtitle: General
