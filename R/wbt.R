@@ -606,7 +606,10 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
 
     # unzip to either whitebox package or user specified folder
     utils::unzip(exe_zip, exdir = pkg_dir)
-
+    ex_dir <- file.path(pkg_dir, gsub("\\.zip$", "", basename(exe_zip)))
+    file.copy(file.path(ex_dir, "WBT"), pkg_dir, recursive = TRUE)
+    file.remove(list.files(ex_dir, recursive = TRUE, full.names = TRUE))
+    
     # subfolder WBT/whitebox_tools
     exe_path_out <- file.path(pkg_dir, "WBT", basename(exe_path))
     Sys.chmod(exe_path_out, '755')

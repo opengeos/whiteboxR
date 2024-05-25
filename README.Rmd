@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/opengeos/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/opengeos/whiteboxR/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/opengeos/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/opengeos/whiteboxR)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio)
-[![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
+[![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://buymeacoffee.com/giswqs)
 <!-- badges: end -->
 
 **WhiteboxTools** R Frontend.

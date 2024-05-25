@@ -3,7 +3,6 @@
 \docType{package}
 \name{whitebox-package}
 \alias{whitebox-package}
-\alias{_PACKAGE}
 \alias{whitebox}
 \alias{whitebox.env}
 \title{whitebox: 'WhiteboxTools' R Frontend}

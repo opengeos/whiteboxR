@@ -18,6 +18,7 @@
 ^data-raw$
 ^revdep$
 ^_pkgdown\.yml$
+WhiteboxTools_linux_amd64/
 WBT/
 CRAN/
 PY2R/
@@ -25,3 +26,4 @@ binder/
 docs/
 misc/
 .vscode/
+^LICENSE\.md$

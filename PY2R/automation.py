@@ -271,7 +271,7 @@ toolboxes = {
 dir_path = os.path.dirname(os.path.realpath(__file__))
 wbt_py = os.path.join(dir_path, "whitebox_tools.py")
 root_dir = os.path.dirname(dir_path)
-WBT_dir = os.path.join(root_dir, "WBT")
+WBT_dir = os.path.join(root_dir, "WhiteboxTools_linux_amd64", "WBT")
 
 linux_tar = "WhiteboxTools_linux_amd64.zip"
 tar_path = os.path.join(root_dir, linux_tar)
@@ -289,7 +289,7 @@ print("Decompressing {} ...".format(linux_tar))
 with zipfile.ZipFile(tar_path, "r") as tar_ref:
     tar_ref.extractall(root_dir)
 
-shutil.copyfile(os.path.join(WBT_dir, "whitebox_tools.py"), wbt_py)
+shutil.copyfile(os.path.join( WBT_dir, "whitebox_tools.py"), wbt_py)
 
 # Generate R functions with documentation
 ff = None

@@ -154,7 +154,7 @@ wbt_average_normal_vector_angular_deviation <- function(dem, output, filter=11, 
 #'
 #' @param dem Name of the input raster image file.
 #' @param output Name of the output vector lines file.
-#' @param threshold Threshold value (0 - infinity but typcially 1 to 5 works well).
+#' @param threshold Threshold value (0 - infinity but typically 1 to 5 works well).
 #' @param min_length Minimum line length, in grid cells.
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
