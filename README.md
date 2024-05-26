@@ -8,11 +8,11 @@ count](https://cranlogs.r-pkg.org/badges/grand-total/whitebox)](https://cranlogs
 [![whitebox
 Manual](https://img.shields.io/badge/docs-HTML-informational)](https://whiteboxR.gishub.org/reference/index.html)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT/)
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
 [![R-CMD-check](https://github.com/opengeos/whiteboxR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/opengeos/whiteboxR/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/opengeos/whiteboxR/branch/master/graph/badge.svg)](https://app.codecov.io/gh/opengeos/whiteboxR)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/brownag/whitebox-r-binder/master?urlpath=rstudio)
-[![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://www.buymeacoffee.com/giswqs)
+[![Donate](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellowgreen.svg)](https://buymeacoffee.com/giswqs)
 <!-- badges: end -->
 
 **WhiteboxTools** R Frontend.
@@ -31,24 +31,17 @@ command-line program called
 -   CRAN link: <https://cran.r-project.org/package=whitebox>
 -   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
 -   User Manual: <https://jblindsay.github.io/wbt_book/>
--   Free software: [MIT license](https://opensource.org/license/MIT/)
+-   Free software: [MIT license](https://opensource.org/license/MIT)
 
 **Contents**
 
-- [whitebox](#whitebox)
-  - [Description](#description)
-  - [Installation](#installation)
-    - [1. CRAN](#1-cran)
-    - [2. GitHub](#2-github)
-    - [3. Docker](#3-docker)
-  - [Usage](#usage)
-  - [Documentation](#documentation)
-  - [Installing ‘WhiteboxTools’](#installing-whiteboxtools)
-  - [whitebox](#whitebox-1)
-  - [Available Tools](#available-tools)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Reporting Bugs](#reporting-bugs)
+1.  [Description](#description)
+2.  [Installation](#installation)
+3.  [Usage](#usage)
+4.  [Available Tools](#available-tools)
+5.  [Contributing](#contributing)
+6.  [License](#license)
+7.  [Reporting Bugs](#reporting-bugs)
 
 ## Description
 
@@ -98,16 +91,6 @@ from [GitHub](https://github.com/opengeos/whiteboxR) as follows:
 
     if (!require("remotes")) install.packages('remotes')
     remotes::install_github("opengeos/whiteboxR", build = FALSE)
-
-### 3. Docker
-
-whiteboxR is also available on [Docker Hub](https://hub.docker.com/r/giswqs/whiteboxr). Run the following command to start a Docker container with whiteboxR installed.
-
-```bash
-docker run -d -p 8787:8787 -e PASSWORD=mypassword -v ~/Documents:/home/rstudio/ giswqs/whiteboxr
-```
-
-Then open your web browser and navigate to `http://localhost:8787`. The default username is `rstudio` and the default password is `mypassword`.
 
 ## Usage
 
@@ -251,6 +234,7 @@ size of the filter kernel.
     #> Example Usage:
     #> >> ./whitebox_tools -r=lidar_info --cd="/path/to/data/" -i=input.las --vlr --geokeys
 
+
     # Prints the whitebox-tools license
     wbt_license()
     #> WhiteboxTools License
@@ -271,21 +255,24 @@ size of the filter kernel.
     #> OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
     #> CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
     # Prints the whitebox-tools version
     wbt_version()
-    #> WhiteboxTools v2.3.0 (c) Dr. John Lindsay 2017-2023
+    #> WhiteboxTools v2.4.0 (c) Dr. John Lindsay 2017-2023
     #> 
     #> WhiteboxTools is an advanced geospatial data analysis platform developed at
     #> the University of Guelph's Geomorphometry and Hydrogeomatics Research 
     #> Group (GHRG). See www.whiteboxgeo.com for more details.
 
+
     # Prints the toolbox for a specific tool.
     wbt_toolbox("AsciiToLas")
     #> LiDAR Tools
 
+
     # Lists tools with 'lidar' in tool name or description.
     wbt_list_tools("lidar")
-    #> All 63 Tools containing keywords:
+    #> All 66 Tools containing keywords:
     #> AsciiToLas: Converts one or more ASCII files containing LiDAR points into LAS files.
     #> ClassifyBuildingsInLidar: Reclassifies a LiDAR points that lie within vector building footprints.
     #> ClassifyOverlapPoints: Classifies or filters LAS points in regions of overlapping flight lines.
@@ -333,22 +320,26 @@ size of the filter kernel.
     #> NormalVectors: Calculates normal vectors for points within a LAS file and stores these data (XYZ vector components) in the RGB field.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
-    #> NormalizeLidar: Normalizes a LiDAR point cloud.
-    #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
-    #> SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
-    #> LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.
-    #> FilterLidar: Filters points within a LiDAR point cloud based on point properties.
-    #> ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.
-    #> SortLidar: Sorts LiDAR points based on their properties.
+    #> ModifyLidar: Modify points within a LiDAR point cloud based on point properties.
     #> ColourizeBasedOnPointReturns: Sets the RGB values of a LiDAR point cloud based on the point returns.
+    #> FilterLidarByReferenceSurface: Filters points within a LiDAR point cloud based on a reference surface.
+    #> SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
+    #> SortLidar: Sorts LiDAR points based on their properties.
+    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
+    #> SplitLidar: Splits LiDAR points up into a series of new files based on their properties.
+    #> RecoverFlightlineInfo: Associates LiDAR points by their flightlines.
+    #> ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.
+    #> LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.
+    #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> FilterLidarByPercentile: Filters points within a LiDAR point cloud based on local elevation percentile.
+    #> LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.
+    #> ImprovedGroundPointFilter: Filters points within a LiDAR point cloud based on a reference surface.
     #> LidarSibsonInterpolation: This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
     #> ClassifyLidar: Classify points within a LiDAR point cloud based on point properties.
-    #> ModifyLidar: Modify points within a LiDAR point cloud based on point properties.
-    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
     #> LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.
-    #> SplitLidar: Splits LiDAR points up into a series of new files based on their properties.
-    #> LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.
-    #> RecoverFlightlineInfo: Associates LiDAR points by their flightlines.
+    #> FilterLidar: Filters points within a LiDAR point cloud based on point properties.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
+
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
@@ -371,9 +362,11 @@ size of the filter kernel.
     #> >>./whitebox_tools -r=LidarInfo -v --wd="/path/to/data/" -i=file.las --vlr --geokeys"
     #> ./whitebox_tools -r=LidarInfo --wd="/path/to/data/" -i=file.las
 
+
     # Retrieves the tool parameter descriptions for a specific tool.
     wbt_tool_parameters("slope")
     #> {"parameters": [{"name":"Input DEM File","flags":["-i","--dem"],"description":"Input raster DEM file.","parameter_type":{"ExistingFile":"Raster"},"default_value":null,"optional":false},{"name":"Output File","flags":["-o","--output"],"description":"Output raster file.","parameter_type":{"NewFile":"Raster"},"default_value":null,"optional":false},{"name":"Z Conversion Factor","flags":["--zfactor"],"description":"Optional multiplier for when the vertical and horizontal units are not the same.","parameter_type":"Float","default_value":null,"optional":true},{"name":"Units","flags":["--units"],"description":"Units of output raster; options include 'degrees', 'radians', 'percent'","parameter_type":{"OptionList":["degrees","radians","percent"]},"default_value":"degrees","optional":true}]}
+
 
     # View the source code for a specific tool on the source code repository.
     wbt_view_code("breach_depressions")
@@ -382,7 +375,7 @@ size of the filter kernel.
 ## Available Tools
 
 The **[WhiteboxTools](https://github.com/jblindsay/whitebox-tools)**
-library currently contains more than **545** tools, which are each
+library currently contains more than **537** tools, which are each
 grouped based on their main function into one of the following
 categories: Data Tools, GIS Analysis, Hydrological Analysis, Image
 Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream
@@ -409,13 +402,13 @@ these instructions to get started:
 
 Unless explicitly stated otherwise, any contribution intentionally
 submitted for inclusion in the work shall be licensed as the [MIT
-license](https://opensource.org/license/MIT/) without any additional
+license](https://opensource.org/license/MIT) without any additional
 terms or conditions.
 
 ## License
 
 The whitebox **R** package is distributed under the [MIT
-license](https://opensource.org/license/MIT/), a permissive open-source
+license](https://opensource.org/license/MIT), a permissive open-source
 (free software) license.
 
 ## Reporting Bugs

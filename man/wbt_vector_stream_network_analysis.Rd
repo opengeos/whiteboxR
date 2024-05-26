@@ -6,9 +6,7 @@
 \usage{
 wbt_vector_stream_network_analysis(
   streams,
-  dem,
   output,
-  cutting_height = 10,
   snap = 0.1,
   wd = NULL,
   verbose_mode = NULL,
@@ -19,11 +17,7 @@ wbt_vector_stream_network_analysis(
 \arguments{
 \item{streams}{Name of the input streams vector file.}
 
-\item{dem}{Name of the input DEM raster file.}
-
 \item{output}{Name of the output lines shapefile.}
-
-\item{cutting_height}{Maximum ridge-cutting height (z units).}
 
 \item{snap}{Snap distance, in xy units (metres).}
 

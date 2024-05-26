@@ -29,6 +29,7 @@ RUN install2.r --error \
     devtools \
     whitebox \
     Rcpp \
+    Matrix \
     terra \
     sf \
     ggplot2 \
@@ -38,6 +39,4 @@ RUN install2.r --error \
     caTools \
     rprojroot
 
-COPY misc/install.R /home/rstudio/
-
-RUN Rscript /home/rstudio/install.R
+RUN Rscript -e "whitebox::install_whitebox()"

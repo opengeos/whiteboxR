@@ -1,3 +1,9 @@
+# whitebox 2.4.0
+
+ * Updates for WhiteboxTools v2.4.0 (https://github.com/jblindsay/whitebox-tools/releases/tag/v2.4.0)
+ 
+ * Fix for new ZIP file folder structure for WhiteboxTools v2.4.0+ in `wbt_install()` / `install_whitebox()`
+ 
 # whitebox 2.3.4
 
  * Exported `wbt_file_path()`, a function previously used internally for creating safe, expanded, quoted, paths for building WhiteboxTools commands. This function also supports the input of `terra` objects that are backed by file sources supported by WhiteboxTools.

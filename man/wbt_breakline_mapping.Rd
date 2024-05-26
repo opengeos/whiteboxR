@@ -20,7 +20,7 @@ wbt_breakline_mapping(
 
 \item{output}{Name of the output vector lines file.}
 
-\item{threshold}{Threshold value (0 - infinity but typcially 1 to 5 works well).}
+\item{threshold}{Threshold value (0 - infinity but typically 1 to 5 works well).}
 
 \item{min_length}{Minimum line length, in grid cells.}
 

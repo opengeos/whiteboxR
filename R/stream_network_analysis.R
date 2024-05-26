@@ -932,9 +932,7 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
 #' @description This tool performs common stream network analysis operations on an input vector stream file.
 #'
 #' @param streams Name of the input streams vector file.
-#' @param dem Name of the input DEM raster file.
 #' @param output Name of the output lines shapefile.
-#' @param cutting_height Maximum ridge-cutting height (z units).
 #' @param snap Snap distance, in xy units (metres).
 #' @param wd Changes the working directory. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_wd()` for details.
 #' @param verbose_mode Sets verbose mode. If verbose mode is `FALSE`, tools will not print output messages. Default: `NULL` will use the value in WhiteboxTools settings, see `wbt_verbose()` for details.
@@ -945,15 +943,11 @@ wbt_tributary_identifier <- function(d8_pntr, streams, output, esri_pntr=FALSE, 
 #'
 #' @return Returns the tool text outputs.
 #' @export
-wbt_vector_stream_network_analysis <- function(streams, dem, output, cutting_height=10.0, snap=0.1, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
+wbt_vector_stream_network_analysis <- function(streams, output, snap=0.1, wd=NULL, verbose_mode=NULL, compress_rasters=NULL, command_only=FALSE) {
   wbt_init()
   args <- ""
   args <- paste(args, paste0("--streams=", wbt_file_path(streams)))
-  args <- paste(args, paste0("--dem=", wbt_file_path(dem)))
   args <- paste(args, paste0("--output=", wbt_file_path(output)))
-  if (!is.null(cutting_height)) {
-    args <- paste(args, paste0("--cutting_height=", cutting_height))
-  }
   if (!is.null(snap)) {
     args <- paste(args, paste0("--snap=", snap))
   }

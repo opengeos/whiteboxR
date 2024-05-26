@@ -35,7 +35,7 @@ wbt_conditioned_latin_hypercube(
 
 \item{prob}{Probability of random resample or resampling worst strata between \verb{[0,1]}.}
 
-\item{threshold}{Objective function values below the theshold stop the resampling iterations.}
+\item{threshold}{Objective function values below the threshold stop the resampling iterations.}
 
 \item{temp}{Initial annealing temperature between \verb{[0,1]}.}
 
@@ -43,7 +43,7 @@ wbt_conditioned_latin_hypercube(
 
 \item{cycle}{Number of iterations before decaying annealing temperature.}
 
-\item{average}{Weight the continuous objective funtion by the 1/N contributing strata.}
+\item{average}{Weight the continuous objective function by the 1/N contributing strata.}
 
 \item{wd}{Changes the working directory. Default: \code{NULL} will use the value in WhiteboxTools settings, see \code{wbt_wd()} for details.}
 

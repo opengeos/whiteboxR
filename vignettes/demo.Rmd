@@ -335,7 +335,7 @@ Here we will take our processing of DEMs a bit further by performing several Whi
 
 We are interested in identifying and ranking tributaries of watercourses (streams and rivers).
 
-An R package that makes use of the `whitebox` R package is [hydroweight](https://github.com/bkielstr/hydroweight). Here is a brief example on the beginning of the `hydroweight` README showing how the breached DEM above can be used in a spatial analysis of stream networks.
+An R package that makes use of the `whitebox` R package is [hydroweight](https://github.com/GLFC-WET/hydroweight). Here is a brief example on the beginning of the `hydroweight` README showing how the breached DEM above can be used in a spatial analysis of stream networks.
 
 #### Setup
 
