@@ -18,6 +18,7 @@
 ^data-raw$
 ^revdep$
 ^_pkgdown\.yml$
+^\.pre-commit-config\.yaml$
 WhiteboxTools_linux_amd64/
 WBT/
 CRAN/
