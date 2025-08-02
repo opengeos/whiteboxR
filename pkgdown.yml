@@ -1,9 +1,8 @@
 pandoc: 3.1.11
-pkgdown: 2.0.9
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   datasets: datasets.html
   demo: demo.html
   wbt-method: wbt-method.html
-last_built: 2024-05-27T13:47Z
-
+last_built: 2025-08-02T04:13Z
