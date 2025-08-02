@@ -47,7 +47,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::covr, any::remotes, local::.
+          extra-packages: any::rcmdcheck, any::covr, any::remotes, testthat=?ignore-before-r=4.0.0, local::.
           needs: check
 
       - name: Install WhiteboxTools
