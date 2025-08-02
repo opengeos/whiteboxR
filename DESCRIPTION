@@ -10,7 +10,7 @@ License: MIT + file LICENSE
 SystemRequirements: WhiteboxTools (https://github.com/jblindsay/whitebox-tools/releases/latest)
 Encoding: UTF-8
 Language: en-US
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 URL: https://whiteboxr.gishub.org/, https://github.com/opengeos/whiteboxR
 BugReports: https://github.com/opengeos/whiteboxR/issues
