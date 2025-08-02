@@ -1,3 +1,7 @@
+# whitebox 2.4.1
+
+ * Rebuilt `wbttools` and `wbttoolparameters` with WhiteboxTools v2.4.0
+
 # whitebox 2.4.0
 
  * Updates for WhiteboxTools v2.4.0 (https://github.com/jblindsay/whitebox-tools/releases/tag/v2.4.0)

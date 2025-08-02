@@ -5,7 +5,7 @@
 \alias{wbttools}
 \title{'WhiteboxTools' Tool List}
 \format{
-An object of class \code{data.frame} with 537 rows and 8 columns.
+An object of class \code{data.frame} with 562 rows and 8 columns.
 }
 \source{
 \href{https://github.com/jblindsay/whitebox-tools/releases/}{WhiteboxTools}
