@@ -40,3 +40,4 @@ RUN install2.r --error \
     rprojroot
 
 RUN Rscript -e "whitebox::install_whitebox()"
+RUN Rscript -e "whitebox::wbt_install_extension()"
