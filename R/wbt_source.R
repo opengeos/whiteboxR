@@ -5,7 +5,7 @@
 #' @param layer Data layer
 #' @param force Force write of vector data to file? Default: FALSE (only write if file does not exist)
 #' @param ... Additional arguments passed to `terra::writeVector()` or `sf::st_write()`
-#' @param verbose Print information about data source and contents? 
+#' @param verbose Print information about data source and contents?
 #' @return An R object with attributes `wbt_dsn` and `wbt_layer` set as needed to support reading and writing R objects from file by WhiteboxTools.
 #' @keywords General
 #' @export
@@ -15,30 +15,30 @@ wbt_source <- function(x,
                        force = FALSE,
                        verbose = wbt_verbose(),
                        ...) {
-  
+
   if (!requireNamespace("terra")) {
     stop("package `terra` is required to convert vector sources to `wbt()`-compatible SpatVectorProxy", call. = FALSE)
   }
-  
+
   if (is.character(x)) {
     if (file.exists(x)) {
       # convert to shapefile if needed
       if (!grepl("\\.shp$", x)) {
         xp <- paste0(basename(x), "_", basename(tempfile()), ".shp")
         fp <- file.path(tempdir(), xp)
-        
+
         if (!requireNamespace("terra")) {
           stop("package `terra` is required to convert non-Shapefile vector sources to Shapefile")
         }
-      
-        x2 <- terra::vect(x)
+
+        x2 <- terra::vect(x, layer = layer)
         if (terra::writeVector(x2, fp)) {
           x <- fp
         } else {
           stop("Failed to convert `x` (", x, ") to Shapefile.")
         }
       }
-      
+
       # a SpatVectorProxy allows us to get some basic info without loading the whole file
       x <- terra::vect(x, proxy = TRUE)
       attr(x, 'wbt_dsn') <- terra::sources(x)
@@ -46,7 +46,7 @@ wbt_source <- function(x,
       return(x)
     }
   }
-  
+
   # NULL dsn (TODO: GDAL-supported dsn not supported by WBT)
   if (is.null(dsn)) {
     # if (gpkg) {
@@ -60,25 +60,25 @@ wbt_source <- function(x,
       bn <- layer
     } else bn <- "file"
     wd <- wbt_wd()
-    if (wd == "") 
+    if (wd == "")
       wd <- getwd()
     ext <- ".shp"
-    if (inherits(x, 'SpatRaster') || 
-        inherits(x, 'RasterLayer') || 
-        inherits(x, 'RasterStack') || 
+    if (inherits(x, 'SpatRaster') ||
+        inherits(x, 'RasterLayer') ||
+        inherits(x, 'RasterStack') ||
         inherits(x, 'RasterBrick')) {
       ext <- ".tif"
     }
     dsn <- tempfile(pattern = bn, tmpdir = wd, fileext = ext)
     # }
   }
-  
+
   if (!file.exists(dsn) || force) {
     # convert less common types to core types
     if (inherits(x, 'sfc') || inherits(x, 'Spatial')) {
       x <- sf::st_as_sf(x)
     }
-    
+
     # write to file/db
     if (inherits(x, 'SpatVector')) {
       terra::writeVector(x, filename = dsn, layer = layer, ...)
@@ -88,7 +88,7 @@ wbt_source <- function(x,
       terra::writeRaster(x, filename = dsn)
     }
   }
-  
+
   # set attributes
   # TODO: support for DBIConnection as dsn?
   if (file.exists(dsn)) {
@@ -122,7 +122,7 @@ wbt_add2 <- function(input1,
            verbose_mode = wbt_verbose(),
            compress_rasters = wbt_compress_rasters(),
            ...) {
-    
+
     wbt(
       "add",
       input1 = input1,
