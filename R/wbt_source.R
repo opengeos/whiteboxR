@@ -31,7 +31,7 @@ wbt_source <- function(x,
           stop("package `terra` is required to convert non-Shapefile vector sources to Shapefile")
         }
 
-        x2 <- terra::vect(x, layer = layer)
+        x2 <- terra::vect(x, layer = ifelse(is.null(layer), "", layer))
         if (terra::writeVector(x2, fp)) {
           x <- fp
         } else {
