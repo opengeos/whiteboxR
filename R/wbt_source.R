@@ -59,8 +59,11 @@ wbt_source <- function(x,
     }
     ext <- ".tif"
     src <- terra::sources(x)
-    if (src != "") {
-      dsn <- src
+    if (length(src) > 0 && any(nzchar(src))) {
+      if (length(src) > 1) {
+        message("Object 'x' has multiple source files; using first non-empty source path")
+      }
+      dsn <- src[which(nzchar(src))[1]]
     }
   }
 
@@ -74,8 +77,10 @@ wbt_source <- function(x,
     # only supported vector format is the ESRI Shapefile.
     # TODO: dbf limitations? use alternate wbt/gdal common format?
     if (!is.null(layer)) {
-      bn <- paste(pattern, layer, sep = "_")
-    } else bn <- pattern
+      bn <- paste(pattern, "_", layer)
+    } else {
+      bn <- pattern
+    }
     dsn <- tempfile(pattern = bn, tmpdir = tmpdir, fileext = ext)
     # }
   }
