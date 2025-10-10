@@ -18,9 +18,8 @@ wbt_source(
 \arguments{
 \item{x}{A terra SpatVector or sf object (in memory) or a path to a file that
 can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
-SpatRaster object. When \code{x} has multiple layers/bands, the first layer is
-used by default; use the \code{layer} argument to select a specific
-layer/band.}
+When \code{x} has multiple layers/bands, the first layer is used by default; use
+the \code{layer} argument to select a specific layer/band.}
 
 \item{dsn}{Data source path / file name}
 

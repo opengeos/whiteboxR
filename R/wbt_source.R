@@ -2,9 +2,8 @@
 #'
 #' @param x A terra SpatVector or sf object (in memory) or a path to a file that
 #'   can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
-#'   SpatRaster object. When `x` has multiple layers/bands, the first layer is
-#'   used by default; use the \code{layer} argument to select a specific
-#'   layer/band.
+#'   When `x` has multiple layers/bands, the first layer is used by default; use
+#'   the \code{layer} argument to select a specific layer/band.
 #' @param dsn Data source path / file name
 #' @param layer Data layer. For vectors, `layer` is interpreted as a layer
 #'   name (character); for rasters, `layer` is interpreted as a band index or
@@ -40,6 +39,17 @@ wbt_source <- function(x,
     if (!requireNamespace(pkg)) {
       stop("package `", pkg, "` is required to convert to `wbt()`-compatible data sources", call. = FALSE)
     }
+  }
+
+  .first_source <- function(x) {
+    src <- terra::sources(x)
+    if (length(src) > 0 && any(nzchar(src))) {
+      if (length(src) > 1) {
+        message("Object 'x' has multiple source files; using first non-empty source path")
+      }
+      src <- src[which(nzchar(src))[1]]
+    }
+    src
   }
 
   if (is.character(x)) {
@@ -88,9 +98,11 @@ wbt_source <- function(x,
         stop("Unhandled input object type")
       }
 
-      attr(x, 'wbt_dsn') <- terra::sources(x)
+      attr(x, 'wbt_dsn') <-  .first_source(x)
       attr(x, 'wbt_layer') <- layer
       return(x)
+    } else {
+      stop("File (", x, ") does not exist")
     }
   }
 
@@ -102,13 +114,8 @@ wbt_source <- function(x,
       x <- terra::rast(x)
     }
     ext <- ".tif"
-    src <- terra::sources(x)
-    if (length(src) > 0 && any(nzchar(src))) {
-      if (length(src) > 1) {
-        message("Object 'x' has multiple source files; using first non-empty source path")
-      }
-      dsn <- src[which(nzchar(src))[1]]
-    }
+
+    dsn <- .first_source(x)
   }
 
   # NULL dsn (TODO: GDAL-supported dsn not supported by WBT)
@@ -144,6 +151,9 @@ wbt_source <- function(x,
                            overwrite = force,
                            ...)
       } else if (inherits(x, 'SpatRaster')) {
+        if (is.null(layer) && terra::nlyr(x) > 1) {
+          x <- x[[1]]
+        }
         terra::writeRaster(x, filename = dsn, overwrite = force, ...)
       }
     } else {
