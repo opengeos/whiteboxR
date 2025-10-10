@@ -76,7 +76,7 @@ wbt_source <- function(x,
     if (!is.null(layer)) {
       bn <- paste(pattern, layer, sep = "_")
     } else bn <- pattern
-    dsn <- tempfile(pattern = bn, fileext = ext)
+    dsn <- tempfile(pattern = bn, tmpdir = tmpdir, fileext = ext)
     # }
   }
 
