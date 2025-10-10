@@ -1,11 +1,13 @@
 #' Initialize an R object containing spatial data for use by WhiteboxTools
 #'
-#' @param x A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy
+#' @param x A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy. Or a SpatRaster object that exists only in memory, or references a source file.
 #' @param dsn Data source path / file name
 #' @param layer Data layer
+#' @param tmpdir Directory to write temporary ESRI Shapefiles for vector input in memory or otherwise not already in shapefile. Default: `tempdir()`
+#' @param pattern Character vector giving the initial part of the temporary file name
 #' @param force Force write of vector data to file? Default: FALSE (only write if file does not exist)
-#' @param ... Additional arguments passed to `terra::writeVector()` or `sf::st_write()`
 #' @param verbose Print information about data source and contents?
+#' @param ... Additional arguments passed to `terra::writeVector()` or `sf::st_write()`
 #' @return An R object with attributes `wbt_dsn` and `wbt_layer` set as needed to support reading and writing R objects from file by WhiteboxTools.
 #' @keywords General
 #' @export
@@ -13,6 +15,8 @@ wbt_source <- function(x,
                        dsn = NULL,
                        layer = NULL,
                        force = FALSE,
+                       tmpdir = tempdir(),
+                       pattern = "wbt",
                        verbose = wbt_verbose(),
                        ...) {
 
@@ -24,8 +28,8 @@ wbt_source <- function(x,
     if (file.exists(x)) {
       # convert to shapefile if needed
       if (!grepl("\\.shp$", x)) {
-        xp <- paste0(basename(x), "_", basename(tempfile()), ".shp")
-        fp <- file.path(tempdir(), xp)
+        xp <- paste0(basename(x), "_", basename(tempfile(pattern = pattern)), ".shp")
+        fp <- file.path(tmpdir, xp)
 
         if (!requireNamespace("terra")) {
           stop("package `terra` is required to convert non-Shapefile vector sources to Shapefile")
@@ -47,6 +51,19 @@ wbt_source <- function(x,
     }
   }
 
+  ext <- ".shp"
+  if (inherits(x, c('SpatRaster', 'RasterLayer',
+                    'RasterStack', 'RasterBrick'))) {
+    if (!inherits(x, 'SpatRaster')) {
+      x <- terra::rast(x)
+    }
+    ext <- ".tif"
+    src <- terra::sources(x)
+    if (src != "") {
+      dsn <- src
+    }
+  }
+
   # NULL dsn (TODO: GDAL-supported dsn not supported by WBT)
   if (is.null(dsn)) {
     # if (gpkg) {
@@ -57,19 +74,9 @@ wbt_source <- function(x,
     # only supported vector format is the ESRI Shapefile.
     # TODO: dbf limitations? use alternate wbt/gdal common format?
     if (!is.null(layer)) {
-      bn <- layer
-    } else bn <- "file"
-    wd <- wbt_wd()
-    if (wd == "")
-      wd <- getwd()
-    ext <- ".shp"
-    if (inherits(x, 'SpatRaster') ||
-        inherits(x, 'RasterLayer') ||
-        inherits(x, 'RasterStack') ||
-        inherits(x, 'RasterBrick')) {
-      ext <- ".tif"
-    }
-    dsn <- tempfile(pattern = bn, tmpdir = wd, fileext = ext)
+      bn <- paste(pattern, layer, sep = "_")
+    } else bn <- pattern
+    dsn <- tempfile(pattern = bn, fileext = ext)
     # }
   }
 

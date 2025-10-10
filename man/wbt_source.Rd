@@ -9,18 +9,24 @@ wbt_source(
   dsn = NULL,
   layer = NULL,
   force = FALSE,
+  tmpdir = tempdir(),
+  pattern = "wbt",
   verbose = wbt_verbose(),
   ...
 )
 }
 \arguments{
-\item{x}{A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy}
+\item{x}{A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy. Or a SpatRaster object that exists only in memory, or references a source file.}
 
 \item{dsn}{Data source path / file name}
 
 \item{layer}{Data layer}
 
 \item{force}{Force write of vector data to file? Default: FALSE (only write if file does not exist)}
+
+\item{tmpdir}{Directory to write temporary ESRI Shapefiles for vector input in memory or otherwise not already in shapefile. Default: \code{tempdir()}}
+
+\item{pattern}{Character vector giving the initial part of the temporary file name}
 
 \item{verbose}{Print information about data source and contents?}
 
