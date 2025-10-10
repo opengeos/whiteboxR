@@ -77,7 +77,7 @@ wbt_source <- function(x,
     # only supported vector format is the ESRI Shapefile.
     # TODO: dbf limitations? use alternate wbt/gdal common format?
     if (!is.null(layer)) {
-      bn <- paste(pattern, "_", layer)
+      bn <- paste0(pattern, "_", layer)
     } else {
       bn <- pattern
     }
