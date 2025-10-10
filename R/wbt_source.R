@@ -2,9 +2,13 @@
 #'
 #' @param x A terra SpatVector or sf object (in memory) or a path to a file that
 #'   can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
-#'   SpatRaster objects with multiple
+#'   SpatRaster object. When `x` has multiple layers/bands, the first layer is
+#'   used by default; use the \code{layer} argument to select a specific
+#'   layer/band.
 #' @param dsn Data source path / file name
-#' @param layer Data layer
+#' @param layer Data layer. For vectors, `layer` is interpreted as a layer
+#'   name (character); for rasters, `layer` is interpreted as a band index or
+#'   name (integer OR character)
 #' @param tmpdir Directory to write temporary ESRI Shapefiles for vector input
 #'   in memory or otherwise not already in shapefile. Default: `tempdir()`
 #' @param pattern Character vector giving the initial part of the temporary file
@@ -13,7 +17,7 @@
 #'   if file does not exist and new file is needed)
 #' @param verbose Print information about data source and contents?
 #' @param ... Additional arguments passed to `terra::writeVector()` or
-#'   `sf::st_write()`
+#'   `sf::st_write()`, or `terra::writeRaster` (for rasters).
 #' @return An R object (SpatRaster, SpatVector, SpatVectorProxy, sf) with
 #'   attributes `wbt_dsn` and `wbt_layer` set as needed to support reading and
 #'   writing R objects from file by WhiteboxTools.
@@ -45,7 +49,7 @@ wbt_source <- function(x,
       # convert to shapefile if needed
       x2 <- try(terra::vect(x, layer = ifelse(is.null(layer), "", layer), proxy = TRUE), silent = TRUE)
       fp <- file.path(tmpdir, paste0(basename(x), "_", basename(tempfile(pattern = pattern))))
-      if (!inherits(x2, 'try-error') && !grepl("\\.shp$", x)) {
+      if (!inherits(x2, 'try-error') && !grepl("\\.shp$", x, ignore.case = TRUE)) {
         fp <- paste0(fp, ".shp")
 
         if (terra::writeVector(terra::query(x2), fp)) {
@@ -54,7 +58,7 @@ wbt_source <- function(x,
           stop("Failed to convert `x` (", x, ") to Shapefile.")
         }
       } else if (inherits(x2, 'try-error')) {
-        if (!grepl("\\.tiff?$", x) || length(layer) > 0) {
+        if (!grepl("\\.tiff?$", x, ignore.case = TRUE) || length(layer) > 0) {
           # try reading a raster file and writing to geotiff
           fp <- paste0(fp, ".tif")
           if (length(layer) > 0) {
@@ -134,12 +138,15 @@ wbt_source <- function(x,
         x <- terra::query(x)
       }
       if (inherits(x, 'SpatVector')) {
-        terra::writeVector(x, filename = dsn, layer = layer, ...)
+        terra::writeVector(x,
+                           filename = dsn,
+                           layer = layer,
+                           overwrite = force,
+                           ...)
       } else if (inherits(x, 'SpatRaster')) {
-        terra::writeRaster(x, filename = dsn, ...)
+        terra::writeRaster(x, filename = dsn, overwrite = force, ...)
       }
     } else {
-
       .check_pkg_ns("sf")
 
       # convert less common types to core types
@@ -148,7 +155,14 @@ wbt_source <- function(x,
       }
 
       if (inherits(x, 'sf')) {
-        sf::st_write(x, dsn = dsn, layer = layer, quiet = !verbose, ...)
+        sf::st_write(
+          x,
+          dsn = dsn,
+          layer = layer,
+          quiet = !verbose,
+          delete_dsn = force,
+          ...
+        )
       }
     }
   }

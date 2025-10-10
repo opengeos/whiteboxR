@@ -18,11 +18,15 @@ wbt_source(
 \arguments{
 \item{x}{A terra SpatVector or sf object (in memory) or a path to a file that
 can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
-SpatRaster objects with multiple}
+SpatRaster object. When \code{x} has multiple layers/bands, the first layer is
+used by default; use the \code{layer} argument to select a specific
+layer/band.}
 
 \item{dsn}{Data source path / file name}
 
-\item{layer}{Data layer}
+\item{layer}{Data layer. For vectors, \code{layer} is interpreted as a layer
+name (character); for rasters, \code{layer} is interpreted as a band index or
+name (integer OR character)}
 
 \item{force}{Force write of vector data to file? Default: FALSE (only write
 if file does not exist and new file is needed)}
@@ -36,7 +40,7 @@ name}
 \item{verbose}{Print information about data source and contents?}
 
 \item{...}{Additional arguments passed to \code{terra::writeVector()} or
-\code{sf::st_write()}}
+\code{sf::st_write()}, or \code{terra::writeRaster} (for rasters).}
 }
 \value{
 An R object (SpatRaster, SpatVector, SpatVectorProxy, sf) with
