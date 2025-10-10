@@ -7,7 +7,7 @@ bibentry(
   note = "R package version 2.4.2",
   url = "https://CRAN.R-project.org/package=whitebox",
   year = "2025",
-  textVersion = "Wu, Q., Brown, A. (2025). whitebox: 'WhiteboxTools' R Frontend. R package version 2.2.0. <https://CRAN.R-project.org/package=whitebox>"
+  textVersion = "Wu, Q., Brown, A. (2025). whitebox: 'WhiteboxTools' R Frontend. R package version 2.4.2. <https://CRAN.R-project.org/package=whitebox>"
 )
 
 bibentry(
