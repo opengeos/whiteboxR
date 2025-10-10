@@ -8,7 +8,7 @@
  
    * No longer writes temporary intermediate shapefiles to the working directory when passed a non-shapefile vector data source. 
       
-      * The temporary directory is used by default, unless new `tmpdir` argument is specified. This could be a breaking change if you were relying on the temporary files to be present in the WhiteboxTools working directory. Specify `wd = getwd()` or equivalent for old behavior.
+      * The temporary directory is used by default, unless new `tmpdir` argument is specified. This could be a breaking change if you were relying on the temporary files to be present in the WhiteboxTools working directory. Specify `tmpdir` in call to `wbt_source()` to make old behavior explicit.
    
    * Properly uses `layer` argument for data sources (e.g. GPKG) that may contain multiple vector layers of interest (thanks to @mps9506 for reporting; #132)
  
