@@ -16,24 +16,32 @@ wbt_source(
 )
 }
 \arguments{
-\item{x}{A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy. Or a SpatRaster object that exists only in memory, or references a source file.}
+\item{x}{A terra SpatVector or sf object (in memory) or a path to a file that
+can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
+SpatRaster objects with multiple}
 
 \item{dsn}{Data source path / file name}
 
 \item{layer}{Data layer}
 
-\item{force}{Force write of vector data to file? Default: FALSE (only write if file does not exist)}
+\item{force}{Force write of vector data to file? Default: FALSE (only write
+if file does not exist and new file is needed)}
 
-\item{tmpdir}{Directory to write temporary ESRI Shapefiles for vector input in memory or otherwise not already in shapefile. Default: \code{tempdir()}}
+\item{tmpdir}{Directory to write temporary ESRI Shapefiles for vector input
+in memory or otherwise not already in shapefile. Default: \code{tempdir()}}
 
-\item{pattern}{Character vector giving the initial part of the temporary file name}
+\item{pattern}{Character vector giving the initial part of the temporary file
+name}
 
 \item{verbose}{Print information about data source and contents?}
 
-\item{...}{Additional arguments passed to \code{terra::writeVector()} or \code{sf::st_write()}}
+\item{...}{Additional arguments passed to \code{terra::writeVector()} or
+\code{sf::st_write()}}
 }
 \value{
-An R object with attributes \code{wbt_dsn} and \code{wbt_layer} set as needed to support reading and writing R objects from file by WhiteboxTools.
+An R object (SpatRaster, SpatVector, SpatVectorProxy, sf) with
+attributes \code{wbt_dsn} and \code{wbt_layer} set as needed to support reading and
+writing R objects from file by WhiteboxTools.
 }
 \description{
 Initialize an R object containing spatial data for use by WhiteboxTools
