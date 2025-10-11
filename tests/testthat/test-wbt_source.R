@@ -7,7 +7,7 @@ test_that("wbt_source (raster) works", {
 
     x <- attr(src, "wbt_dsn")
 
-    expect_true(grepl(".tif$", x))
+    expect_true(grepl("\.tif$", x))
     expect_true(file.exists(x))
 
     dem <- terra::rast(f)
@@ -16,7 +16,7 @@ test_that("wbt_source (raster) works", {
 
     x <- attr(src, "wbt_dsn")
 
-    expect_true(grepl(".tif$", x))
+    expect_true(grepl("\.tif$", x))
     expect_true(file.exists(x))
 
     tf <- tempfile(fileext = ".grd")
@@ -26,7 +26,7 @@ test_that("wbt_source (raster) works", {
 
     x <- attr(src, "wbt_dsn")
 
-    expect_true(grepl(".tif$", x))
+    expect_true(grepl("\.tif$", x))
     expect_true(file.exists(x))
 
     unlink(tf)
@@ -41,7 +41,7 @@ test_that("wbt_source (vector) works", {
 
     x <- attr(src, "wbt_dsn")
 
-    expect_true(grepl(".shp$", x))
+    expect_true(grepl("\.shp$", x))
     expect_true(file.exists(x))
 
     dem <- terra::vect(f)
@@ -49,7 +49,7 @@ test_that("wbt_source (vector) works", {
 
     x <- attr(src, "wbt_dsn")
 
-    expect_true(grepl(".shp$", x))
+    expect_true(grepl("\.shp$", x))
     expect_true(file.exists(x))
 
     tf <- tempfile(fileext = ".geojson")
@@ -59,7 +59,7 @@ test_that("wbt_source (vector) works", {
 
     x <- attr(src, "wbt_dsn")
 
-    expect_true(grepl(".shp$", x))
+    expect_true(grepl("\.shp$", x))
     expect_true(file.exists(x))
 
     unlink(tf)

@@ -36,7 +36,7 @@ wbt_source <- function(x,
   }
 
   .check_pkg_ns <- function(pkg) {
-    if (!requireNamespace(pkg)) {
+    if (!requireNamespace(pkg, quietly = TRUE)) {
       stop("package `", pkg, "` is required to convert to `wbt()`-compatible data sources", call. = FALSE)
     }
   }
@@ -67,7 +67,7 @@ wbt_source <- function(x,
         if (!inherits(res, 'try-error') && file.exists(fp)) {
           x <- fp
         } else {
-          stop("Failed to write `x` (", x, ") to Shapefile: ", fp, ".")
+          stop("Failed to write `x` (", x, ") to Shapefile: ", fp, "\n", res[1], call. = FALSE)
         }
       } else if (inherits(x2, 'try-error')) {
         if (!grepl("\\.tiff?$", x, ignore.case = TRUE) || length(layer) > 0) {
@@ -78,11 +78,11 @@ wbt_source <- function(x,
           } else {
             x2 <- terra::rast(x)
           }
-          res <- try(terra::writeRaster(x2, fp), silent = !verbose)
+          res <- try(terra::writeRaster(x2, fp), silent = TRUE)
           if (!inherits(res, 'try-error') && file.exists(fp)) {
             x <- fp
           } else {
-            stop("Failed to convert `x` (", x, ") to GeoTIFF: ", fp)
+            stop("Failed to write `x` (", x, ") to GeoTIFF: ", fp, "\n", res, call. = FALSE)
           }
         }
         x <- terra::rast(x)
