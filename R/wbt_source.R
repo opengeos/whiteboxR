@@ -95,7 +95,7 @@ wbt_source <- function(x,
       }
 
       if (!inherits(x, c("SpatRaster", "SpatVectorProxy"))) {
-        stop("Unhandled input object type")
+        stop("Unhandled input object type: ", paste(class(x), collapse = ", "))
       }
 
       attr(x, 'wbt_dsn') <-  .first_source(x)
@@ -115,7 +115,9 @@ wbt_source <- function(x,
     }
     ext <- ".tif"
 
-    dsn <- .first_source(x)
+    if (is.null(dsn)) {
+      dsn <- .first_source(x)
+    }
   }
 
   # NULL dsn (TODO: GDAL-supported dsn not supported by WBT)
@@ -151,7 +153,9 @@ wbt_source <- function(x,
                            overwrite = force,
                            ...)
       } else if (inherits(x, 'SpatRaster')) {
-        if (is.null(layer) && terra::nlyr(x) > 1) {
+        if (!is.null(layer)) {
+          x <- x[[layer[1]]]
+        } else if (terra::nlyr(x) > 1) {
           x <- x[[1]]
         }
         terra::writeRaster(x, filename = dsn, overwrite = force, ...)
