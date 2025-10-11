@@ -119,7 +119,10 @@ wbt_source <- function(x,
     ext <- ".tif"
 
     if (is.null(dsn)) {
-      dsn <- .first_source(x)
+      src <- .first_source(x)
+      if (nzchar(src)) {
+        dsn <- src
+      }
     }
   }
 
