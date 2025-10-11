@@ -32,7 +32,7 @@ test_that("wbt_source (raster) works", {
     expect_true(grepl("\\.tif$", x))
     expect_true(file.exists(x))
 
-    tf <- tempfile(fileext = ".grd")
+    tf <- tempfile(fileext = ".gpkg")
     terra::writeRaster(dem, tf)
 
     # raster source from non-geotiff
@@ -80,7 +80,7 @@ test_that("wbt_source (vector) works", {
     expect_true(grepl("\\.shp$", x))
     expect_true(file.exists(x))
 
-    tf <- tempfile(fileext = ".geojson")
+    tf <- tempfile(fileext = ".gpkg")
     terra::writeVector(vf, tf)
 
     # vector source from non-shapefile
