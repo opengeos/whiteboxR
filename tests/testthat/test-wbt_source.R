@@ -3,6 +3,8 @@ test_that("wbt_source (raster) works", {
     skip_if_not_installed("terra")
 
     f <- sample_dem_data()
+
+    # raster source from geotiff path
     src <- wbt_source(f)
 
     x <- attr(src, "wbt_dsn")
@@ -12,7 +14,18 @@ test_that("wbt_source (raster) works", {
 
     dem <- terra::rast(f)
 
-    src <- wbt_source(f)
+    # raster source from spatraster (with source file)
+    src <- wbt_source(dem)
+
+    x <- attr(src, "wbt_dsn")
+
+    expect_true(grepl("\\.tif$", x))
+    expect_true(file.exists(x))
+
+    dem2 <- dem*2
+
+    # raster source from spatraster (in memory)
+    src <- wbt_source(dem)
 
     x <- attr(src, "wbt_dsn")
 
@@ -22,6 +35,7 @@ test_that("wbt_source (raster) works", {
     tf <- tempfile(fileext = ".grd")
     terra::writeRaster(dem, tf)
 
+    # raster source from non-geotiff
     src <- wbt_source(tf)
 
     x <- attr(src, "wbt_dsn")
@@ -37,6 +51,8 @@ test_that("wbt_source (vector) works", {
     skip_if_not_installed("terra")
 
     f <- sample_soils_data()
+
+    # vector source from shapefile
     src <- wbt_source(f)
 
     x <- attr(src, "wbt_dsn")
@@ -44,8 +60,20 @@ test_that("wbt_source (vector) works", {
     expect_true(grepl("\\.shp$", x))
     expect_true(file.exists(x))
 
-    dem <- terra::vect(f)
-    src <- wbt_source(dem)
+    vf <- terra::vect(f)
+
+    # vector source from spatvector (in memory)
+    src <- wbt_source(vf)
+
+    x <- attr(src, "wbt_dsn")
+
+    expect_true(grepl("\\.shp$", x))
+    expect_true(file.exists(x))
+
+    vf2 <- terra::vect(f, proxy = TRUE)
+
+    # vector source from spatvectorproxy
+    src <- wbt_source(vf2)
 
     x <- attr(src, "wbt_dsn")
 
@@ -53,8 +81,9 @@ test_that("wbt_source (vector) works", {
     expect_true(file.exists(x))
 
     tf <- tempfile(fileext = ".geojson")
-    terra::writeVector(dem, tf)
+    terra::writeVector(vf, tf)
 
+    # vector source from non-shapefile
     src <- wbt_source(tf)
 
     x <- attr(src, "wbt_dsn")
