@@ -33,10 +33,19 @@ test_that("wbt_source (raster) works", {
     expect_true(file.exists(x))
 
     tf <- tempfile(fileext = ".gpkg")
-    terra::writeRaster(dem, tf)
+    terra::writeRaster(dem, tf, gdal=c("RASTER_TABLE=one"))
+    terra::writeRaster(dem*2, tf, gdal=c("RASTER_TABLE=two","APPEND_SUBDATASET=YES"))
 
     # raster source from non-geotiff
     src <- wbt_source(tf)
+
+    x <- attr(src, "wbt_dsn")
+
+    expect_true(grepl("\\.tif$", x))
+    expect_true(file.exists(x))
+
+    # raster source from non-geotiff
+    src <- wbt_source(tf, layer = "two")
 
     x <- attr(src, "wbt_dsn")
 
@@ -81,10 +90,20 @@ test_that("wbt_source (vector) works", {
     expect_true(file.exists(x))
 
     tf <- tempfile(fileext = ".gpkg")
-    terra::writeVector(vf, tf)
+
+    terra::writeVector(vf, tf, layer = "one")
+    terra::writeVector(vf, tf, layer = "two", insert = TRUE)
 
     # vector source from non-shapefile
-    src <- wbt_source(tf)
+    src <- expect_warning(wbt_source(tf))
+    # warning for multiple layers but unspecified
+
+    x <- attr(src, "wbt_dsn")
+
+    expect_true(grepl("\\.shp$", x))
+    expect_true(file.exists(x))
+
+    src <- wbt_source(tf, layer = "two")
 
     x <- attr(src, "wbt_dsn")
 
