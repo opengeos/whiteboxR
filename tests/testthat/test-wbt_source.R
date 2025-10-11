@@ -25,7 +25,7 @@ test_that("wbt_source (raster) works", {
     dem2 <- dem*2
 
     # raster source from spatraster (in memory)
-    src <- wbt_source(dem)
+    src <- wbt_source(dem2)
 
     x <- attr(src, "wbt_dsn")
 
@@ -33,8 +33,8 @@ test_that("wbt_source (raster) works", {
     expect_true(file.exists(x))
 
     tf <- tempfile(fileext = ".gpkg")
-    terra::writeRaster(dem, tf, gdal=c("RASTER_TABLE=one"))
-    terra::writeRaster(dem*2, tf, gdal=c("RASTER_TABLE=two","APPEND_SUBDATASET=YES"))
+    terra::writeRaster(dem, tf, gdal = c("RASTER_TABLE=one"))
+    terra::writeRaster(dem2, tf, gdal = c("RASTER_TABLE=two", "APPEND_SUBDATASET=YES"))
 
     # raster source from non-geotiff
     src <- wbt_source(tf)
