@@ -94,7 +94,7 @@ wbt_source <- function(x,
       }
 
       if (is.character(x) && !file.exists(x)) {
-        stop("File (", x, ") does not exist")
+        stop("File (", x, ") does not exist", call. = FALSE)
       }
 
       if (!inherits(x, c("SpatRaster", "SpatVectorProxy"))) {
@@ -105,7 +105,7 @@ wbt_source <- function(x,
       attr(x, 'wbt_layer') <- layer
       return(x)
     } else {
-      stop("File (", x, ") does not exist")
+      stop("File (", x, ") does not exist", call. = FALSE)
     }
   }
 
