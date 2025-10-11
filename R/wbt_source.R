@@ -155,7 +155,6 @@ wbt_source <- function(x,
       if (inherits(x, 'SpatVector')) {
         terra::writeVector(x,
                            filename = dsn,
-                           layer = layer,
                            overwrite = force,
                            ...)
       } else if (inherits(x, 'SpatRaster')) {
@@ -178,7 +177,6 @@ wbt_source <- function(x,
         sf::st_write(
           x,
           dsn = dsn,
-          layer = layer,
           quiet = !verbose,
           delete_dsn = force,
           ...
