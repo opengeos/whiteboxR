@@ -70,7 +70,17 @@ wbt_source <- function(x,
           stop("Failed to write `x` (", x, ") to Shapefile: ", fp, "\n", res[1], call. = FALSE)
         }
       } else if (inherits(x2, 'try-error')) {
-        if (!grepl("\\.tiff?$", x, ignore.case = TRUE) || length(layer) > 0) {
+        is_geotiff <- grepl("\\.tiff?$", x, ignore.case = TRUE)
+
+        # check if we need to write a new file
+        #  - not a geotiff OR
+        #  - a layer is specified that is not the first layer
+        write_new_file <- !is_geotiff ||
+          (length(layer) > 0 &&
+            layer[1] != 1 &&
+            layer[1] != names(terra::rast(x))[1])
+
+        if (write_new_file) {
           # try reading a raster file and writing to geotiff
           fp <- paste0(fp, ".tif")
           if (length(layer) > 0) {
@@ -82,7 +92,15 @@ wbt_source <- function(x,
           if (!inherits(res, 'try-error') && file.exists(fp)) {
             x <- fp
           } else {
-            stop("Failed to write `x` (", x, ") to GeoTIFF: ", fp, "\n", res, call. = FALSE)
+            stop(
+              "Failed to write `x` (",
+              x,
+              ") to GeoTIFF: ",
+              fp,
+              "\n",
+              res,
+              call. = FALSE
+            )
           }
         }
         x <- terra::rast(x)
