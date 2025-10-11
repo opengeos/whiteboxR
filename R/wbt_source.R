@@ -45,7 +45,9 @@ wbt_source <- function(x,
     src <- terra::sources(x)
     if (length(src) > 0 && any(nzchar(src))) {
       if (length(src) > 1) {
-        message("Object 'x' has multiple source files; using first non-empty source path")
+        if (verbose) {
+          message("object 'x' has multiple source files; using first non-empty source path")
+        }
       }
       src <- src[which(nzchar(src))[1]]
     }
