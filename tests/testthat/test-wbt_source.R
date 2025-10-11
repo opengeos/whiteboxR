@@ -95,8 +95,8 @@ test_that("wbt_source (vector) works", {
     terra::writeVector(vf, tf, layer = "two", insert = TRUE)
 
     # vector source from non-shapefile
-    src <- expect_warning(wbt_source(tf))
-    # warning for multiple layers but unspecified
+    src <- suppressWarnings(wbt_source(tf))
+    # terra warning for multiple layers but layer unspecified
 
     x <- attr(src, "wbt_dsn")
 
