@@ -63,11 +63,11 @@ wbt_source <- function(x,
       fp <- file.path(tmpdir, paste0(basename(x), "_", basename(tempfile(pattern = pattern))))
       if (!inherits(x2, 'try-error') && !grepl("\\.shp$", x, ignore.case = TRUE)) {
         fp <- paste0(fp, ".shp")
-
-        if (terra::writeVector(terra::query(x2), fp)) {
+        res <- try(terra::writeVector(terra::query(x2), fp), silent = !verbose)
+        if (!inherits(res, 'try-error') && file.exists(fp)) {
           x <- fp
         } else {
-          stop("Failed to convert `x` (", x, ") to Shapefile.")
+          stop("Failed to write `x` (", x, ") to Shapefile: ", fp, ".")
         }
       } else if (inherits(x2, 'try-error')) {
         if (!grepl("\\.tiff?$", x, ignore.case = TRUE) || length(layer) > 0) {
@@ -78,10 +78,11 @@ wbt_source <- function(x,
           } else {
             x2 <- terra::rast(x)
           }
-          if (terra::writeRaster(x2, fp)) {
+          res <- try(terra::writeRaster(x2, fp), silent = !verbose)
+          if (!inherits(res, 'try-error') && file.exists(fp)) {
             x <- fp
           } else {
-            stop("Failed to convert `x` (", x, ") to GeoTIFF")
+            stop("Failed to convert `x` (", x, ") to GeoTIFF: ", fp)
           }
         }
         x <- terra::rast(x)
