@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">whitebox</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -134,7 +134,7 @@ into an R spatial object.</p>
 <p>A demonstration employing the {terra} package follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; terra 1.8.61</span></span>
+<span><span class="co">#&gt; terra 1.8.73</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://whiteboxr.gishub.org/" class="external-link">whitebox</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># DEMO: calculate slope with WhiteboxTools and raster</span></span>
@@ -142,7 +142,7 @@ into an R spatial object.</p>
 <span><span class="co"># Typically the input/output paths are stored as variables</span></span>
 <span></span>
 <span><span class="co"># sample DEM input GeoTIFF</span></span>
-<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/extdata-gis.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># output file (to be created)</span></span>
 <span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"slope.tif"</span><span class="op">)</span></span></code></pre></div>
@@ -189,7 +189,7 @@ equivalent method is <code><a href="https://rdrr.io/pkg/raster/man/filename.html
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># the SpatRaster retains a reference to the input file name</span></span>
 <span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmpu8k8rP/slope.tif"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/RtmpcChyHE/slope.tif"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -373,7 +373,7 @@ uses Lindsay’s (2016) algorithm, which is preferred over depression
 filling in most cases.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># sample DEM file path in package extdata folder</span></span>
-<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/extdata-gis.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># output file name</span></span>
 <span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></span>
@@ -388,7 +388,7 @@ the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> fun
 string.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># sample DEM file path in package extdata folder</span></span>
-<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/extdata-gis.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># output file name</span></span>
 <span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></span>
@@ -413,7 +413,7 @@ WhiteboxTools.</p>
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># sample DEM file path in package extdata folder</span></span>
-<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">input</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/extdata-gis.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># output file name</span></span>
 <span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"output.tif"</span><span class="op">)</span></span></code></pre></div>
@@ -425,7 +425,7 @@ tool)<a class="anchor" aria-label="anchor" href="#run-wbt_breach_depressions-bre
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># run breach_depressions tool</span></span>
 <span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
-<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.8s</span></span></code></pre></div>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="visualize-results-with-terra">Visualize results with <code>terra</code><a class="anchor" aria-label="anchor" href="#visualize-results-with-terra"></a>
@@ -469,7 +469,7 @@ analysis of stream networks.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Sample DEM from whitebox package</span></span>
-<span><span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/sample_dem_data.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">toy_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/extdata-gis.html">sample_dem_data</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">toy_dem</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">rast</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">toy_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Generate wd as a temporary directory. </span></span>
@@ -565,10 +565,10 @@ word: <code>wbt_list_tools(keyword = "flow pointer")</code></p>
 <span><span class="co">#&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.</span></span>
 <span><span class="co">#&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</span></span>
 <span><span class="co">#&gt; QinFlowAccumulation: Calculates Qin et al. (2007) flow accumulation.</span></span>
-<span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span>
-<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span>
 <span><span class="co">#&gt; MaxUpslopeValue: Calculates the maximum upslope value from an input values raster along flowpaths.</span></span>
-<span><span class="co">#&gt; ConvergenceIndex: Calculates Qin et al. (2007) flow accumulation.</span></span></code></pre>
+<span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span>
+<span><span class="co">#&gt; ConvergenceIndex: Calculates Qin et al. (2007) flow accumulation.</span></span>
+<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span></code></pre>
 <p>This is just an example of the wealth of tool options made available
 by the WhiteboxTools platform.</p>
 </div>
@@ -728,9 +728,9 @@ name or description.</p>
 <span><span class="co">#&gt; FD8FlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
 <span><span class="co">#&gt; FlowAccumulationFullWorkflow: Resolves all of the depressions in a DEM, outputting a breached DEM, an aspect-aligned non-divergent flow pointer, and a flow accumulation raster.</span></span>
 <span><span class="co">#&gt; MDInfFlowAccumulation: Calculates an FD8 flow accumulation raster from an input DEM.</span></span>
-<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span>
+<span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span>
 <span><span class="co">#&gt; QinFlowAccumulation: Calculates Qin et al. (2007) flow accumulation.</span></span>
-<span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span></code></pre></div>
+<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="wbt_tool_help">

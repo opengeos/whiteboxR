@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">whitebox</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,8 @@
 <span>  dsn <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  layer <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  force <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  tmpdir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  pattern <span class="op">=</span> <span class="st">"wbt"</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="fu"><a href="wbt_init.html">wbt_verbose</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -60,7 +62,10 @@
 
 
 <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
-<dd><p>A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy</p></dd>
+<dd><p>A terra SpatVector or sf object (in memory) or a path to a file that
+can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
+When <code>x</code> has multiple layers/bands, the first layer is used by default; use
+the <code>layer</code> argument to select a specific layer/band.</p></dd>
 
 
 <dt id="arg-dsn">dsn<a class="anchor" aria-label="anchor" href="#arg-dsn"></a></dt>
@@ -68,11 +73,24 @@
 
 
 <dt id="arg-layer">layer<a class="anchor" aria-label="anchor" href="#arg-layer"></a></dt>
-<dd><p>Data layer</p></dd>
+<dd><p>Data layer. For vectors, <code>layer</code> is interpreted as a layer
+name (character); for rasters, <code>layer</code> is interpreted as a band index or
+name (integer OR character)</p></dd>
 
 
 <dt id="arg-force">force<a class="anchor" aria-label="anchor" href="#arg-force"></a></dt>
-<dd><p>Force write of vector data to file? Default: FALSE (only write if file does not exist)</p></dd>
+<dd><p>Force write of vector data to file? Default: FALSE (only write
+if file does not exist and new file is needed)</p></dd>
+
+
+<dt id="arg-tmpdir">tmpdir<a class="anchor" aria-label="anchor" href="#arg-tmpdir"></a></dt>
+<dd><p>Directory to write temporary ESRI Shapefiles for vector input
+in memory or otherwise not already in shapefile. Default: <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code></p></dd>
+
+
+<dt id="arg-pattern">pattern<a class="anchor" aria-label="anchor" href="#arg-pattern"></a></dt>
+<dd><p>Character vector giving the initial part of the temporary file
+name</p></dd>
 
 
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
@@ -80,12 +98,15 @@
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Additional arguments passed to <code><a href="https://rspatial.github.io/terra/reference/writeVector.html" class="external-link">terra::writeVector()</a></code> or <code><a href="https://r-spatial.github.io/sf/reference/st_write.html" class="external-link">sf::st_write()</a></code></p></dd>
+<dd><p>Additional arguments passed to <code><a href="https://rspatial.github.io/terra/reference/writeVector.html" class="external-link">terra::writeVector()</a></code> or
+<code><a href="https://r-spatial.github.io/sf/reference/st_write.html" class="external-link">sf::st_write()</a></code>, or <code><a href="https://rspatial.github.io/terra/reference/writeRaster.html" class="external-link">terra::writeRaster</a></code> (for rasters).</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>An R object with attributes <code>wbt_dsn</code> and <code>wbt_layer</code> set as needed to support reading and writing R objects from file by WhiteboxTools.</p>
+    <p>An R object (SpatRaster, SpatVector, SpatVectorProxy, sf) with
+attributes <code>wbt_dsn</code> and <code>wbt_layer</code> set as needed to support reading and
+writing R objects from file by WhiteboxTools.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
