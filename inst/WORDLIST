@@ -8,11 +8,9 @@ BACKTRACE
 BreachDepressions
 Breakline
 CMD
-CRS
 CamelCase
 Ceil
 Centre
-Centroid
 Christoph
 ClassificationError
 Colour
@@ -52,6 +50,7 @@ François
 Frontend
 GAT
 GDAL
+GPKG
 GeoKey
 GeoPackage
 GeoTIFF
@@ -77,7 +76,6 @@ InPlaceAdd
 InPlaceSubtract
 InverseMultiQuadric
 Isobasins
-JSON
 JandR
 Jens
 Jenson
@@ -108,6 +106,7 @@ NDI
 NoData
 Northness
 Num
+ORCID
 OSAVI
 OptionList
 POLYLINE
@@ -136,7 +135,6 @@ Rasterizes
 Reclass
 Reinitializes
 RemoveSpurs
-Rescale
 Rgb
 Robinne
 Rosenfeld
@@ -206,7 +204,6 @@ cageo
 centerlines
 centred
 centres
-centroid
 cls
 codecov
 colour
@@ -219,7 +216,6 @@ darboux
 decorrelation
 depressionless
 dev
-differencing
 dinf
 directionality
 doi
@@ -282,7 +278,6 @@ lengthed
 lidar
 liu
 lq
-macOS
 magrittr
 medoid
 meso
@@ -303,12 +298,10 @@ neighbouring
 neighbours
 nn
 nodata
-normals
 num
 nw
 olympic
 parallelepiped
-parallelize
 parsable
 pearson
 planchon
@@ -318,13 +311,10 @@ pre
 pts
 quant
 quartic
-quartile
 ransac
 raster's
-rasters
 rbf
 reclass
-repo
 rgb
 rgdal
 sca
@@ -332,7 +322,6 @@ scattergram
 se
 shapetype
 sibson
-sigmoid
 sigmoidal
 silverman
 sinh
@@ -358,7 +347,6 @@ vals
 viewshed
 viewsheds
 viridi
-viridis
 wang
 watershedding
 wb

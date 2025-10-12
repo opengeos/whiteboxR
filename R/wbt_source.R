@@ -1,49 +1,146 @@
 #' Initialize an R object containing spatial data for use by WhiteboxTools
 #'
-#' @param x A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy
+#' @param x A terra SpatVector or sf object (in memory) or a path to a file that
+#'   can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
+#'   When `x` has multiple layers/bands, the first layer is used by default; use
+#'   the \code{layer} argument to select a specific layer/band.
 #' @param dsn Data source path / file name
-#' @param layer Data layer
-#' @param force Force write of vector data to file? Default: FALSE (only write if file does not exist)
-#' @param ... Additional arguments passed to `terra::writeVector()` or `sf::st_write()`
+#' @param layer Data layer. For vectors, `layer` is interpreted as a layer
+#'   name (character); for rasters, `layer` is interpreted as a band index or
+#'   name (integer OR character)
+#' @param tmpdir Directory to write temporary ESRI Shapefiles for vector input
+#'   in memory or otherwise not already in shapefile. Default: `tempdir()`
+#' @param pattern Character vector giving the initial part of the temporary file
+#'   name
+#' @param force Force write of vector data to file? Default: FALSE (only write
+#'   if file does not exist and new file is needed)
 #' @param verbose Print information about data source and contents?
-#' @return An R object with attributes `wbt_dsn` and `wbt_layer` set as needed to support reading and writing R objects from file by WhiteboxTools.
+#' @param ... Additional arguments passed to `terra::writeVector()` or
+#'   `sf::st_write()`, or `terra::writeRaster` (for rasters).
+#' @return An R object (SpatRaster, SpatVector, SpatVectorProxy, sf) with
+#'   attributes `wbt_dsn` and `wbt_layer` set as needed to support reading and
+#'   writing R objects from file by WhiteboxTools.
 #' @keywords General
 #' @export
 wbt_source <- function(x,
                        dsn = NULL,
                        layer = NULL,
                        force = FALSE,
+                       tmpdir = tempdir(),
+                       pattern = "wbt",
                        verbose = wbt_verbose(),
                        ...) {
 
-  if (!requireNamespace("terra")) {
-    stop("package `terra` is required to convert vector sources to `wbt()`-compatible SpatVectorProxy", call. = FALSE)
+  if (length(layer) > 1) {
+    stop("argument `layer` must have length 1 or 0 (NULL)", call. = FALSE)
+  }
+
+  .check_pkg_ns <- function(pkg) {
+    if (!requireNamespace(pkg, quietly = TRUE)) {
+      stop("package `", pkg, "` is required to convert to `wbt()`-compatible data sources", call. = FALSE)
+    }
+  }
+
+  .first_source <- function(x) {
+    src <- terra::sources(x)
+    if (length(src) > 0 && any(nzchar(src))) {
+      if (length(src) > 1) {
+        if (verbose) {
+          message("object 'x' has multiple source files; using first non-empty source path")
+        }
+      }
+      src <- src[which(nzchar(src))[1]]
+    }
+    src
   }
 
   if (is.character(x)) {
     if (file.exists(x)) {
+      .check_pkg_ns("terra")
+
       # convert to shapefile if needed
-      if (!grepl("\\.shp$", x)) {
-        xp <- paste0(basename(x), "_", basename(tempfile()), ".shp")
-        fp <- file.path(tempdir(), xp)
-
-        if (!requireNamespace("terra")) {
-          stop("package `terra` is required to convert non-Shapefile vector sources to Shapefile")
-        }
-
-        x2 <- terra::vect(x, layer = ifelse(is.null(layer), "", layer))
-        if (terra::writeVector(x2, fp)) {
+      x2 <- try(terra::vect(x, layer = ifelse(is.null(layer), "", layer), proxy = TRUE), silent = TRUE)
+      fp <- file.path(tmpdir, paste0(basename(x), "_", basename(tempfile(pattern = pattern))))
+      if (!inherits(x2, 'try-error') && !grepl("\\.shp$", x, ignore.case = TRUE)) {
+        fp <- paste0(fp, ".shp")
+        res <- try(terra::writeVector(terra::query(x2), fp), silent = !verbose)
+        if (!inherits(res, 'try-error') && file.exists(fp)) {
           x <- fp
         } else {
-          stop("Failed to convert `x` (", x, ") to Shapefile.")
+          stop("Failed to write `x` (", x, ") to Shapefile: ", fp, "\n", res[1], call. = FALSE)
         }
+      } else if (inherits(x2, 'try-error')) {
+        is_geotiff <- grepl("\\.tiff?$", x, ignore.case = TRUE)
+
+        # check if we need to write a new file
+        #  - not a geotiff OR
+        #  - a layer is specified that is not the first layer
+        write_new_file <- !is_geotiff ||
+          (length(layer) > 0 &&
+            layer[1] != 1 &&
+            layer[1] != names(terra::rast(x))[1])
+
+        if (write_new_file) {
+          # try reading a raster file and writing to geotiff
+          fp <- paste0(fp, ".tif")
+          if (length(layer) > 0) {
+            x2 <- terra::rast(x, lyrs = layer[1])
+          } else {
+            x2 <- terra::rast(x)
+          }
+          res <- try(terra::writeRaster(x2, fp), silent = TRUE)
+          if (!inherits(res, 'try-error') && file.exists(fp)) {
+            x <- fp
+          } else {
+            stop(
+              "Failed to write `x` (",
+              x,
+              ") to GeoTIFF: ",
+              fp,
+              "\n",
+              res,
+              call. = FALSE
+            )
+          }
+        }
+        x <- terra::rast(x)
       }
 
-      # a SpatVectorProxy allows us to get some basic info without loading the whole file
-      x <- terra::vect(x, proxy = TRUE)
-      attr(x, 'wbt_dsn') <- terra::sources(x)
+      if (!inherits(x, 'SpatRaster')) {
+        # a SpatVectorProxy allows us to get some basic info without loading the whole file
+        x <- terra::vect(x, proxy = TRUE)
+      }
+
+      if (is.character(x) && !file.exists(x)) {
+        stop("File (", x, ") does not exist", call. = FALSE)
+      }
+
+      if (!inherits(x, c("SpatRaster", "SpatVectorProxy"))) {
+        stop("Unhandled input object type: ", paste(class(x), collapse = ", "))
+      }
+
+      attr(x, 'wbt_dsn') <-  .first_source(x)
       attr(x, 'wbt_layer') <- layer
       return(x)
+    } else {
+      stop("File (", x, ") does not exist", call. = FALSE)
+    }
+  }
+
+  ext <- ".shp"
+  if (inherits(x, c('SpatRaster', 'RasterLayer',
+                    'RasterStack', 'RasterBrick'))) {
+    .check_pkg_ns("terra")
+    if (!inherits(x, 'SpatRaster')) {
+      x <- terra::rast(x)
+    }
+    ext <- ".tif"
+
+    if (is.null(dsn)) {
+      src <- .first_source(x)
+      if (nzchar(src)) {
+        dsn <- src
+      }
     }
   }
 
@@ -57,35 +154,52 @@ wbt_source <- function(x,
     # only supported vector format is the ESRI Shapefile.
     # TODO: dbf limitations? use alternate wbt/gdal common format?
     if (!is.null(layer)) {
-      bn <- layer
-    } else bn <- "file"
-    wd <- wbt_wd()
-    if (wd == "")
-      wd <- getwd()
-    ext <- ".shp"
-    if (inherits(x, 'SpatRaster') ||
-        inherits(x, 'RasterLayer') ||
-        inherits(x, 'RasterStack') ||
-        inherits(x, 'RasterBrick')) {
-      ext <- ".tif"
+      bn <- paste0(pattern, "_", layer)
+    } else {
+      bn <- pattern
     }
-    dsn <- tempfile(pattern = bn, tmpdir = wd, fileext = ext)
+    dsn <- tempfile(pattern = bn, tmpdir = tmpdir, fileext = ext)
     # }
   }
 
   if (!file.exists(dsn) || force) {
-    # convert less common types to core types
-    if (inherits(x, 'sfc') || inherits(x, 'Spatial')) {
-      x <- sf::st_as_sf(x)
-    }
 
-    # write to file/db
-    if (inherits(x, 'SpatVector')) {
-      terra::writeVector(x, filename = dsn, layer = layer, ...)
-    } else if (inherits(x, 'sf')) {
-      sf::st_write(x, dsn = dsn, layer = layer, quiet = !verbose, ...)
-    } else if (inherits(x, 'SpatRaster')) {
-      terra::writeRaster(x, filename = dsn)
+      # write to file/db
+    if (inherits(x, c('SpatVector', 'SpatVectorProxy', 'SpatRaster'))) {
+      .check_pkg_ns("terra")
+      if (inherits(x, 'SpatVectorProxy')) {
+        x <- terra::query(x)
+      }
+      if (inherits(x, 'SpatVector')) {
+        terra::writeVector(x,
+                           filename = dsn,
+                           overwrite = force,
+                           ...)
+      } else if (inherits(x, 'SpatRaster')) {
+        if (!is.null(layer)) {
+          x <- x[[layer[1]]]
+        } else if (terra::nlyr(x) > 1) {
+          x <- x[[1]]
+        }
+        terra::writeRaster(x, filename = dsn, overwrite = force, ...)
+      }
+    } else {
+      .check_pkg_ns("sf")
+
+      # convert less common types to core types
+      if (inherits(x, 'sfc') || inherits(x, 'Spatial')) {
+        x <- sf::st_as_sf(x)
+      }
+
+      if (inherits(x, 'sf')) {
+        sf::st_write(
+          x,
+          dsn = dsn,
+          quiet = !verbose,
+          delete_dsn = force,
+          ...
+        )
+      }
     }
   }
 

@@ -26,7 +26,7 @@ The package options can be overridden with system environment variables: \code{R
 \code{\link[=wbt_init]{wbt_init()}}, \code{\link[=wbt_options]{wbt_options()}}, \code{\link[=install_whitebox]{install_whitebox()}}
 }
 \author{
-\strong{Maintainer}: Andrew Brown \email{brown.andrewg@gmail.com} [contributor]
+\strong{Maintainer}: Andrew Brown \email{brown.andrewg@gmail.com} (\href{https://orcid.org/0000-0002-4565-533X}{ORCID})
 
 Authors:
 \itemize{

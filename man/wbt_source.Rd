@@ -9,25 +9,42 @@ wbt_source(
   dsn = NULL,
   layer = NULL,
   force = FALSE,
+  tmpdir = tempdir(),
+  pattern = "wbt",
   verbose = wbt_verbose(),
   ...
 )
 }
 \arguments{
-\item{x}{A terra SpatVector or sf object, or a path to a file that can be read as a SpatVectorProxy}
+\item{x}{A terra SpatVector or sf object (in memory) or a path to a file that
+can be read as a SpatVectorProxy. Or a memory or file-based SpatRaster.
+When \code{x} has multiple layers/bands, the first layer is used by default; use
+the \code{layer} argument to select a specific layer/band.}
 
 \item{dsn}{Data source path / file name}
 
-\item{layer}{Data layer}
+\item{layer}{Data layer. For vectors, \code{layer} is interpreted as a layer
+name (character); for rasters, \code{layer} is interpreted as a band index or
+name (integer OR character)}
 
-\item{force}{Force write of vector data to file? Default: FALSE (only write if file does not exist)}
+\item{force}{Force write of vector data to file? Default: FALSE (only write
+if file does not exist and new file is needed)}
+
+\item{tmpdir}{Directory to write temporary ESRI Shapefiles for vector input
+in memory or otherwise not already in shapefile. Default: \code{tempdir()}}
+
+\item{pattern}{Character vector giving the initial part of the temporary file
+name}
 
 \item{verbose}{Print information about data source and contents?}
 
-\item{...}{Additional arguments passed to \code{terra::writeVector()} or \code{sf::st_write()}}
+\item{...}{Additional arguments passed to \code{terra::writeVector()} or
+\code{sf::st_write()}, or \code{terra::writeRaster} (for rasters).}
 }
 \value{
-An R object with attributes \code{wbt_dsn} and \code{wbt_layer} set as needed to support reading and writing R objects from file by WhiteboxTools.
+An R object (SpatRaster, SpatVector, SpatVectorProxy, sf) with
+attributes \code{wbt_dsn} and \code{wbt_layer} set as needed to support reading and
+writing R objects from file by WhiteboxTools.
 }
 \description{
 Initialize an R object containing spatial data for use by WhiteboxTools

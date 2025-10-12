@@ -67,6 +67,55 @@ whitebox.env <- new.env()
 #' @keywords datasets
 "wbttoolparameters"
 
+#' Convenience method for path to sample DEM and soils data
+#'
+#' Get a file path to DEM.tif or STATSGO2.shp stored in extdata subfolder of whitebox package installation directory.
+#'
+#' @param destfile Path to target location of sample data. Will be downloaded if does not exist. Defaults to file path of extdata subfolder of whitebox package installation directory.
+#' @param ... additional arguments to download.file()
+#'
+#' @return character.
+#' @export
+#' @keywords General datasets
+#' @rdname extdata-gis
+#' @examples
+#'
+#' if (check_whitebox_binary()) {
+#'   wbt_slope(sample_dem_data(), output = "slope.tif")
+#' }
+#' unlink(c('slope.tif', 'settings.json'))
+#' @importFrom utils download.file
+sample_dem_data <- function(destfile = file.path(system.file('extdata', package="whitebox"), 'DEM.tif'), ...) {
+    if (missing(destfile)) {
+        fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
+    } else {
+        if (!file.exists(destfile)) {
+            fp <- ""
+        } else {
+            fp <- destfile
+        }
+    }
+    if (fp == "") {
+        try(download.file("https://github.com/opengeos/whiteboxR/raw/master/inst/extdata/DEM.tif",
+                          destfile = destfile,
+                          mode = "wb", ...))
+        if (missing(destfile)) {
+            fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
+        } else {
+            if (file.exists(destfile)) {
+                fp <- destfile
+            }
+        }
+    }
+    fp
+}
+
+#' @export
+#' @rdname extdata-gis
+sample_soils_data <- function() {
+    system.file("extdata", "STATSGO2.shp", package = "whitebox")[1]
+}
+
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start

@@ -16,6 +16,7 @@ whiteboxR.Rproj
 *.shx
 *.prj
 *.dbf
+*.cpg
 *.tif
 settings.json
 __MACOSX

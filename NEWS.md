@@ -1,3 +1,17 @@
+# whitebox 2.4.2
+
+ * `wbt_source()`: now accepts `tmpdir` argument which defaults to `tempdir()` (not `getwd()` or `wbt_wd()`) that is used for storing the intermediate shapefiles needed for WhiteboxTools
+ 
+   * Also, the pattern for temporary file names is now customizable via `pattern` argument
+ 
+ * Bug fixes for `wbt_source()`:
+ 
+   * No longer writes temporary intermediate files to the working directory when passed a non-shapefile vector or non-GeoTIFF raster data source. 
+      
+      * The temporary directory is used by default, unless new `tmpdir` argument is specified. This could be a breaking change if you were relying on the temporary files to be present in the WhiteboxTools working directory. Specify `tmpdir` in call to `wbt_source()` to make old behavior explicit.
+   
+   * Properly uses `layer` argument for data sources (e.g. GPKG) that may contain multiple vector layers or raster bands of interest (thanks to @mps9506 for reporting; #132)
+ 
 # whitebox 2.4.1
 
  * Rebuilt `wbttools` and `wbttoolparameters` with WhiteboxTools v2.4.0

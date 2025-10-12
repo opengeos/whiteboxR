@@ -1,5 +1,5 @@
 #' Initialize 'WhiteboxTools'
-#' 
+#'
 #' `wbt_init()`: Check if a suitable 'WhiteboxTools' executable is present. Search default path in package directory or set it manually with `exe_path`.
 #'
 #' @param exe_path Default `exe_path` is result of `wbt_exe_path()` which checks a few user-settable options before defaulting to the package installation directory sub-directory "WBT". May be overridden if a custom path is needed.
@@ -40,11 +40,11 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
       !is.null(wd) ||
       !is.null(verbose) ||
       !is.null(compress_rasters)) {
-    
+
     if (!is.null(wd) && length(wd) > 0 && (is.na(wd) || wd == "")) {
       .wbt_wd_unset()
     }
-    
+
     # set the path with wbt_options
     wbt_options(exe_path = exe_path, ...)
   }
@@ -61,7 +61,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
     if (wbt_verbose()) {
       message("WhiteboxTools Executable Path (whitebox.exe_path) reverted to:\n\t", new_exe_path)
     }
-  } 
+  }
   if (check_version) {
     # check version info, provide ONE message per session if mismatched
     exv <- try(wbt_version(extract = TRUE), silent = TRUE)
@@ -81,7 +81,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
           warned <- FALSE
         }
         if (wbt_verbose() && isFALSE(warned)) {
-          message("NOTE: Installed WhiteboxTools version (", exv, 
+          message("NOTE: Installed WhiteboxTools version (", exv,
                   ") is ", ifelse(exv > pkv, "newer", "older"),
                   " than the package data (", pkv, ").")
           try(assign("whitebox.warned_version_difference",
@@ -101,7 +101,7 @@ wbt_init <- function(exe_path = wbt_exe_path(shell_quote = FALSE),
 #'
 #' - **`whitebox.wd`** - character. Path to WhiteboxTools working directory. Used as `--wd` argument for tools that support it when `wd` is not specified elsewhere.
 #'
-#' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument. Default is result of `interactive()` if R package options are unset. 
+#' - **`whitebox.verbose`** - logical. Should standard output from calls to executable be `cat()` out for readability? When `whitebox.verbose=FALSE` no output is produced. Set the value of `whitebox.verbose` with `wbt_verbose()` `verbose` argument. Default is result of `interactive()` if R package options are unset.
 #'
 #' - **`whitebox.compress_rasters`** - logical. Should raster output from WhiteboxTools be compressed? Default: `NULL` uses existing WhiteboxTools settings. Set the value of `whitebox.compress_rasters` with `wbt_compress_rasters()` `compress_rasters` argument.
 #'
@@ -302,10 +302,10 @@ wbt_data_dir <- function() {
 #' \dontrun{
 #'
 #' ## wbt_wd():
-#' 
+#'
 #' # no working directory set
 #' wbt_wd(wd = "")
-#' 
+#'
 #' # set WBT working directory to R working directory
 #' wbt_wd(wd = getwd())
 #' }
@@ -325,7 +325,7 @@ wbt_wd <- function(wd = NULL) {
   if (nchar(syswd) > 0 && dir.exists(syswd)) {
     return(syswd)
   }
-  
+
   # package option checked next; if missing default is getwd() (unspecified should be same as getwd())
   res <- getOption("whitebox.wd")
 
@@ -547,7 +547,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
     if (.Machine$sizeof.pointer != 8) {
       return(invisible(.unsupported()))
     }
-    
+
     if (missing(platform) || is.null(platform)) {
       if (os == "Linux") {
         url <- "https://www.whiteboxgeo.com/WBT_Linux/WhiteboxTools_linux_amd64.zip"
@@ -563,11 +563,11 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
         return(invisible(.unsupported()))
       }
     } else {
-      # supports alternative platforms/filenames 
+      # supports alternative platforms/filenames
       # e.g. linux_musl, darwin_m_series
       url <- paste0("https://www.whiteboxgeo.com/WBT_",
                os, "/WhiteboxTools_",
-               platform, ".zip") 
+               platform, ".zip")
     }
 
     filename <- basename(url)
@@ -609,7 +609,7 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
     ex_dir <- file.path(pkg_dir, gsub("\\.zip$", "", basename(exe_zip)))
     file.copy(file.path(ex_dir, "WBT"), pkg_dir, recursive = TRUE)
     file.remove(list.files(ex_dir, recursive = TRUE, full.names = TRUE))
-    
+
     # subfolder WBT/whitebox_tools
     exe_path_out <- file.path(pkg_dir, "WBT", basename(exe_path))
     Sys.chmod(exe_path_out, '755')
@@ -646,11 +646,11 @@ wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE
 # many packages provide an "install_*" method; alias wbt_install mirrors the wbt_ prefix for most operations. Documentation refers to install_whitebox()
 
 #' Download and Install 'WhiteboxTools'
-#' 
+#'
 #' This function downloads the 'WhiteboxTools' binary if needed. Pre-compiled binaries are
 #' only available for download for 64-bit Linux (default compiled with glibc on Ubuntu 22.04;
 #' use `platform="linux_musl"` for musl/earlier versions of glibc), Windows and Mac OS (ARM and
-#' Intel) platforms. If you need WhiteboxTools for another platform follow the instructions to 
+#' Intel) platforms. If you need WhiteboxTools for another platform follow the instructions to
 #' build from source: \url{https://github.com/jblindsay/whitebox-tools}
 #'
 #' 'WhiteboxTools' and all of its extensions can be uninstalled by passing the `remove=TRUE` argument.
@@ -703,13 +703,13 @@ wbt_install_extension <- function(extension = c(
                                      "MacOS_Intel"))
   } else {
     # non-default options include: linux_musl, MacOS_ARM
-    sufx <- platform 
+    sufx <- platform
   }
-  
+
   if (sn == "Darwin" && Sys.info()["machine"] == "arm64") {
     suffix <- "MacOS_ARM"
   }
-  
+
   # GTE
   if ("GeneralToolsetExtension" %in% extension) {
     url <- sprintf("https://www.whiteboxgeo.com/GTE_%s/%s_%s.zip", sn, "GeneralToolsetExtension", sufx)
@@ -726,7 +726,7 @@ wbt_install_extension <- function(extension = c(
 }
 
 #' Activate 'WhiteboxTools' Extensions
-#' 
+#'
 #' @param email Email Address
 #' @param activation_key Activation Key
 #' @param seat Seat Number (Default `1`)
@@ -744,7 +744,7 @@ wbt_activate <- function(email, activation_key, seat = 1,
 }
 
 #' Help description for 'WhiteboxTools'
-#' 
+#'
 #' @return Returns the help description for 'WhiteboxTools' as an R character vector.
 #' @export
 #' @keywords General
@@ -763,7 +763,7 @@ wbt_help <- function() {
 
 
 #' License information for 'WhiteboxTools'
-#' 
+#'
 #' @return Returns the license information for WhiteboxTools as an R character vector.
 #' @export
 #' @keywords General
@@ -804,7 +804,7 @@ wbt_version <- function(extract = FALSE) {
 }
 
 #' All available tools in 'WhiteboxTools'
-#' 
+#'
 #' @param keywords Keywords may be used to search available tools. Default `"''"` returns all available tools.
 #'
 #' @return Return all available tools in WhiteboxTools that contain the keywords.
@@ -826,7 +826,7 @@ wbt_list_tools <- function(keywords = "''") {
 
 
 #' The toolbox for a specific tool in WhiteboxTools
-#' 
+#'
 #' Retrieve the toolbox for a specific tool.
 #'
 #' @param tool_name The name of the tool.
@@ -857,7 +857,7 @@ wbt_toolbox <- function(tool_name = NULL) {
 
 
 #' Help description for a specific tool in 'WhiteboxTools'
-#' 
+#'
 #' Retrieves the help description for a specific tool.
 #'
 #' @param tool_name The name of the tool.
@@ -893,7 +893,7 @@ wbt_tool_help <- function(tool_name = NULL) {
 #'
 #' @return Returns the tool parameter descriptions for a specific tool.
 #' @export
-#' @keywords General 
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -914,8 +914,8 @@ wbt_tool_parameters <- function(tool_name, quiet = FALSE) {
 #' @param tool_name Name of the tool.
 #' @param viewer Show source code in browser? default: `TRUE`
 #' @return Returns a GitHub URL to view the source code of the tool.
-#' @export 
-#' @keywords General  
+#' @export
+#' @keywords General
 #'
 #' @examples
 #' \dontrun{
@@ -943,7 +943,7 @@ wbt_view_code <- function(tool_name, viewer = FALSE) {
 #' @param command_only Return command that would be run with `system()`? Default: `FALSE`
 #'
 #' @return Returns the (character) output of the tool.
-#' @export 
+#' @export
 #' @keywords General
 #' @seealso \link{wbt_list_tools}
 #' @examples
@@ -1011,16 +1011,16 @@ wbt_internal_tool_name <- function(tool_name) {
 }
 
 wbt_match_tool_name <- function(tool_name, result = c('tool_name', 'function_name')) {
-  
+
   wbttools <- NULL
   load(system.file("data/wbttools.rda", package = "whitebox"))
-  
+
   result <- match.arg(result, choices = c('tool_name', 'function_name'), several.ok = TRUE)
-  
+
   idx <- match(tolower(wbttools$tool_name), tolower(gsub("[ _]", "", tool_name)))
-  
+
   wbttools[idx[which(!is.na(idx))], result, drop = FALSE]
-  
+
 }
 
 #' Wrapper method for `system()` calls of `whitebox_tools`
@@ -1039,7 +1039,7 @@ wbt_system_call <- function(argstring,
                             command_only = FALSE,
                             ignore.stderr = FALSE,
                             shell_quote = TRUE,
-                            check_version = TRUE, 
+                            check_version = TRUE,
                             ...) {
 
   wbt_init(..., check_version = check_version)
@@ -1125,13 +1125,13 @@ wbt_system_call <- function(argstring,
 # support for path expansion in input/output file arguments
 
 #' Prepare File Paths for WhiteboxTools Commands
-#' 
-#' Performs path expansion with `path.expand()` and shell quotes with `shQuote()` the input paths. 
-#' 
-#' @details If an input vector contains `";"` or `","` this is considered, path expansion is performed on the substrings. If the input vector has length greater than `1`, the vector is concatenated with `","` or `";"` to create a single output string. 
-#' 
+#'
+#' Performs path expansion with `path.expand()` and shell quotes with `shQuote()` the input paths.
+#'
+#' @details If an input vector contains `";"` or `","` this is considered, path expansion is performed on the substrings. If the input vector has length greater than `1`, the vector is concatenated with `","` or `";"` to create a single output string.
+#'
 #' @param x character or `terra` object. Vector of file paths or strings of file paths for passing as arguments to WhiteboxTools. If the object is of class `SpatRaster`, `SpatRasterCollection`, `SpatVector` or `SpatVectorProxy` the sources are extracted with `terra::sources()`
-#' 
+#'
 #' @param shell_quote logical. Shell quotes around result? Default: `TRUE`
 #' @param delimiter character. Either `","` (default) or `";"` allowed by WhiteboxTools.
 #' @param check_exists logical. Check if file(s) in x exist? Useful for input values. Default: `FALSE`
@@ -1142,27 +1142,27 @@ wbt_system_call <- function(argstring,
 #' @keywords General
 #'
 #' @examples
-#' 
+#'
 #' wbt_file_path("./abc.tif")
-#' 
+#'
 #' wbt_file_path("./abc.tif;./def.tif")
-#' 
+#'
 #' wbt_file_path("./abc.tif,./def.tif")
-#' 
+#'
 #' wbt_file_path(c("./abc.tif", "./def.tif"))
-#' 
+#'
 #' wbt_file_path("~/abc.tif", shell_quote = FALSE)
-#' 
+#'
 #' wbt_file_path(c("~/abc.tif", "~/def.tif"))
-#' 
+#'
 wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists = FALSE) {
   if (inherits(x, c("RasterLayer", "RasterStack"))) {
     if (requireNamespace("terra")) {
       x <- terra::rast(x)
     }
   }
-  
-  if (inherits(x, c('SpatRaster','SpatRasterCollection', 
+
+  if (inherits(x, c('SpatRaster','SpatRasterCollection',
                     'SpatVector', 'SpatVectorProxy'))) {
     if (requireNamespace("terra")) {
       x2 <- paste0(terra::sources(x), collapse = delimiter)
@@ -1172,7 +1172,7 @@ wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists =
       x <- x2
     }
   }
-  
+
   delimiter <- match.arg(trimws(delimiter), c(",", ";"))
   x <- path.expand(strsplit(
     paste0(as.character(x), collapse = ","), ";|,"
@@ -1180,7 +1180,7 @@ wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists =
   if (check_exists) {
     y <- !file.exists(x)
     if (any(y)) {
-      stop(sprintf("File%s not found: %s", 
+      stop(sprintf("File%s not found: %s",
                    ifelse(sum(y) > 1, "s",""),
                    paste0(x[y], collapse = ", ")),
            call. = FALSE)
@@ -1190,48 +1190,6 @@ wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists =
   if (shell_quote) shQuote(x) else x
 }
 
-#' Convenience method for path to sample DEM
-#'
-#' Get a file path to DEM.tif stored in extdata subfolder of whitebox package installation directory. If needed, download the TIFF file from GitHub.
-#'
-#' @param destfile Path to target location of sample data. Will be downloaded if does not exist. Defaults to file path of extdata subfolder of whitebox package installation directory.
-#' @param ... additional arguments to download.file()
-#'
-#' @return character.
-#' @export
-#' @keywords General datasets
-#'
-#' @examples
-#'
-#' if (check_whitebox_binary()) {
-#'   wbt_slope(sample_dem_data(), output = "slope.tif")
-#' }
-#' unlink(c('slope.tif', 'settings.json'))
-#' @importFrom utils download.file
-sample_dem_data <- function(destfile = file.path(system.file('extdata', package="whitebox"), 'DEM.tif'), ...) {
-  if (missing(destfile)) {
-    fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
-  } else {
-    if (!file.exists(destfile)) {
-      fp <- ""
-    } else {
-      fp <- destfile
-    }
-  }
-  if (fp == "") {
-    try(download.file("https://github.com/opengeos/whiteboxR/raw/master/inst/extdata/DEM.tif",
-                      destfile = destfile,
-                      mode = "wb", ...))
-    if (missing(destfile)) {
-      fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
-    } else {
-      if (file.exists(destfile)) {
-        fp <- destfile
-      }
-    }
-  }
-  fp
-}
 
 #' Convenience method for setting RUST_BACKTRACE options for debugging
 #'
