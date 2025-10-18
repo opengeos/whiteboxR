@@ -2,6 +2,8 @@ test_that("wbt_source (raster) works", {
 
     skip_if_not_installed("terra")
 
+    expect_error(wbt_source("does_not_exist.tif"))
+
     f <- sample_dem_data()
 
     skip_if(!file.exists(f))
