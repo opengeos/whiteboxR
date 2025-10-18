@@ -96,15 +96,29 @@ sample_dem_data <- function(destfile = file.path(system.file('extdata', package=
         }
     }
     if (fp == "") {
-        try(download.file("https://github.com/opengeos/whiteboxR/raw/master/inst/extdata/DEM.tif",
-                          destfile = destfile,
-                          mode = "wb", ...))
+        # If file doesn't exist, try to download it
+        # First, determine the best location for the download
         if (missing(destfile)) {
-            fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
-        } else {
-            if (file.exists(destfile)) {
-                fp <- destfile
+            # Check if package installation directory is writable
+            pkg_extdata <- system.file('extdata', package="whitebox")
+            if (nzchar(pkg_extdata) && file.access(pkg_extdata, 2) == 0) {
+                # Package extdata is writable, use it
+                destfile <- file.path(pkg_extdata, 'DEM.tif')
+            } else {
+                # Package extdata is not writable (e.g., on CRAN), use temp directory
+                destfile <- file.path(tempdir(), 'whitebox_DEM.tif')
             }
+        }
+        
+        result <- try(download.file("https://github.com/opengeos/whiteboxR/raw/master/inst/extdata/DEM.tif",
+                          destfile = destfile,
+                          mode = "wb", ...), silent = TRUE)
+        
+        if (!inherits(result, "try-error") && file.exists(destfile)) {
+            fp <- destfile
+        } else {
+            # Download failed, check one more time if file appeared in package directory
+            fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
         }
     }
     fp

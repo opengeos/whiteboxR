@@ -3,6 +3,7 @@ test_that("wbt_source (raster) works", {
     skip_if_not_installed("terra")
 
     f <- sample_dem_data()
+    skip_if(f == "")
 
     # raster source from geotiff path
     src <- wbt_source(f)
@@ -60,6 +61,7 @@ test_that("wbt_source (vector) works", {
     skip_if_not_installed("terra")
 
     f <- sample_soils_data()
+    skip_if(f == "")
 
     # vector source from shapefile
     src <- wbt_source(f)
