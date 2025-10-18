@@ -11,7 +11,7 @@
 ^\.travis\.yml$
 ^\.github$
 ^WhiteboxTools_linux_amd64\.zip$
-^.*\.tif$
+^[^/]*\.tif$
 ^.*\.json$
 ^doc$
 ^Meta$
