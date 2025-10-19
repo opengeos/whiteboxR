@@ -317,24 +317,24 @@ size of the filter kernel.
     #> SelectTilesByPolygon: Copies LiDAR tiles overlapping with a polygon into an output directory.
     #> ZlidarToLas: Converts one or more zlidar files into the LAS data format.
     #> LidarSibsonInterpolation: This tool interpolates one or more LiDAR tiles using Sibson's natural neighbour method.
-    #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
-    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
-    #> FilterLidarByReferenceSurface: Filters points within a LiDAR point cloud based on a reference surface.
-    #> ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.
-    #> NormalizeLidar: Normalizes a LiDAR point cloud.
-    #> LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.
-    #> FilterLidarByPercentile: Filters points within a LiDAR point cloud based on local elevation percentile.
-    #> FilterLidar: Filters points within a LiDAR point cloud based on point properties.
     #> ClassifyLidar: Classify points within a LiDAR point cloud based on point properties.
+    #> SortLidar: Sorts LiDAR points based on their properties.
+    #> SplitLidar: Splits LiDAR points up into a series of new files based on their properties.
+    #> ModifyLidar: Modify points within a LiDAR point cloud based on point properties.
+    #> LidarPointReturnAnalysis: This tool performs a quality control check on the return values of points in a LiDAR file.
+    #> NormalizeLidar: Normalizes a LiDAR point cloud.
     #> RecoverFlightlineInfo: Associates LiDAR points by their flightlines.
+    #> FilterLidarByReferenceSurface: Filters points within a LiDAR point cloud based on a reference surface.
+    #> LidarShift: Shifts the x,y,z coordinates of a LiDAR file.
+    #> FilterLidarByPercentile: Filters points within a LiDAR point cloud based on local elevation percentile.
+    #> LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.
+    #> IndividualTreeDetection: Identifies points in a LiDAR point cloud that are associated with the tops of individual trees.
+    #> LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.
+    #> FilterLidar: Filters points within a LiDAR point cloud based on point properties.
+    #> ImprovedGroundPointFilter: Filters points within a LiDAR point cloud based on a reference surface.
     #> ColourizeBasedOnPointReturns: Sets the RGB values of a LiDAR point cloud based on the point returns.
     #> SmoothVegetationResidual: This tool can smooth the residual roughness due to vegetation cover in LiDAR DEMs.
-    #> SplitLidar: Splits LiDAR points up into a series of new files based on their properties.
-    #> ImprovedGroundPointFilter: Filters points within a LiDAR point cloud based on a reference surface.
-    #> ModifyLidar: Modify points within a LiDAR point cloud based on point properties.
-    #> LidarEigenvalueFeatures: Calculate eigenvalue-based metrics from a LiDAR point cloud.
-    #> SortLidar: Sorts LiDAR points based on their properties.
-    #> LidarContour: This tool creates a vector contour coverage from an input LiDAR point file.
+    #> ColourizeBasedOnClass: Sets the RGB values of a LiDAR point cloud based on the point classification values.
 
     # Prints the help for a specific tool.
     wbt_tool_help("lidar_info")
