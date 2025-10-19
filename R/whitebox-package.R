@@ -91,7 +91,7 @@ sample_dem_data <- function(destfile = NULL, ...) {
         if (!dir.exists(dn)) {
             dir.create(dn, showWarnings = FALSE, recursive = TRUE)
         }
-        file.copy(fp, destfile)
+        file.copy(fp, destfile, ...)
         if (file.exists(destfile)) {
             fp <- destfile
         } else {
@@ -114,7 +114,7 @@ sample_soils_data <- function(destfile = NULL, ...) {
         bn <- tools::file_path_sans_ext(basename(destfile))
         fps <- file.path(dirname(destfile),
                          paste0(bn, ".", tools::file_ext(fn)))
-        file.copy(fn, fps)
+        file.copy(fn, fps, ...)
         if (all(file.exists(fps))) {
             fp <- fps[grep("\\.shp$", fps)[1]]
         } else {
