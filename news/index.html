@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">whitebox</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.4.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.4.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,9 +35,23 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/opengeos/whiteboxR/blob/v2.4.2/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/opengeos/whiteboxR/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="2.4.3" id="whitebox-243">whitebox 2.4.3<a class="anchor" aria-label="anchor" href="#whitebox-243"></a></h2>
+<ul><li>
+<p>Fix for CRAN check (<a href="https://github.com/opengeos/whiteboxR/issues/135" class="external-link">#135</a>)</p>
+<ul><li><p>GeoTIFF DEM sample data (<em>extdata/DEM.tif</em>) previously excluded, along with all other TIFF files, by <em>.Rbuildignore</em> is now explicitly included</p></li>
+<li>
+<p>Fix for behavior of <code><a href="../reference/extdata-gis.html">sample_dem_data()</a></code> <code>destfile</code> argument:</p>
+<ul><li><p>Errors thrown from invalid sources from new <code><a href="../reference/wbt_source.html">wbt_source()</a></code> (introduced in v2.4.2) revealed an underlying issue with sample data assets. Invalid source errors are now intentionally captured and tested, and inclusion of the extdata file should ensure other parts of tests work as expected</p></li>
+<li><p>When <code>destfile</code> unset and no local file present, <code><a href="../reference/extdata-gis.html">sample_dem_data()</a></code> no longer attempts to download and write to the user package library (<strong>which is read-only on CRAN</strong>)</p></li>
+<li><p><code>destfile</code> now intended for copying the sample dataset from package <em>extdata</em> folder, for workflows that need the sample data outside of the package library</p></li>
+</ul></li>
+</ul></li>
+<li><p><code><a href="../reference/extdata-gis.html">sample_soils_data()</a></code> now supports <code>destfile</code> (just like <code><a href="../reference/extdata-gis.html">sample_dem_data()</a></code>)</p></li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="2.4.2" id="whitebox-242">whitebox 2.4.2<a class="anchor" aria-label="anchor" href="#whitebox-242"></a></h2><p class="text-muted">CRAN release: 2025-10-14</p>
 <ul><li>
