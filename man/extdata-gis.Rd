@@ -5,17 +5,14 @@
 \alias{sample_soils_data}
 \title{Convenience method for path to sample DEM and soils data}
 \usage{
-sample_dem_data(
-  destfile = file.path(system.file("extdata", package = "whitebox"), "DEM.tif"),
-  ...
-)
+sample_dem_data(destfile = NULL, ...)
 
-sample_soils_data()
+sample_soils_data(destfile = NULL, ...)
 }
 \arguments{
 \item{destfile}{Path to target location of sample data. Will be downloaded if does not exist. Defaults to file path of extdata subfolder of whitebox package installation directory.}
 
-\item{...}{additional arguments to download.file()}
+\item{...}{additional arguments to \code{file.copy()} e.g. \code{overwrite}}
 }
 \value{
 character.

@@ -514,6 +514,7 @@ wbt_max_procs <- function(max_procs = NULL) {
 #' @export
 #' @keywords General
 #' @rdname install_whitebox
+#' @importFrom utils download.file
 wbt_install <- function(pkg_dir = wbt_data_dir(), platform = NULL, force = FALSE, remove = FALSE) {
 
   stopifnot(is.logical(force))
