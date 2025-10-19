@@ -72,7 +72,7 @@ whitebox.env <- new.env()
 #' Get a file path to DEM.tif or STATSGO2.shp stored in extdata subfolder of whitebox package installation directory.
 #'
 #' @param destfile Path to target location of sample data. Will be downloaded if does not exist. Defaults to file path of extdata subfolder of whitebox package installation directory.
-#' @param ... additional arguments to download.file()
+#' @param ... additional arguments to `file.copy()` e.g. `overwrite`
 #'
 #' @return character.
 #' @export
@@ -84,36 +84,45 @@ whitebox.env <- new.env()
 #'   wbt_slope(sample_dem_data(), output = "slope.tif")
 #' }
 #' unlink(c('slope.tif', 'settings.json'))
-#' @importFrom utils download.file
-sample_dem_data <- function(destfile = file.path(system.file('extdata', package="whitebox"), 'DEM.tif'), ...) {
-    if (missing(destfile)) {
-        fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
-    } else {
-        if (!file.exists(destfile)) {
-            fp <- ""
-        } else {
+sample_dem_data <- function(destfile = NULL, ...) {
+    fp <- system.file("extdata", "DEM.tif", package = "whitebox")[1]
+    if (!missing(destfile)) {
+        dn <- dirname(destfile)
+        if (!dir.exists(dn)) {
+            dir.create(dn, showWarnings = FALSE, recursive = TRUE)
+        }
+        file.copy(fp, destfile, ...)
+        if (file.exists(destfile)) {
             fp <- destfile
-        }
-    }
-    if (fp == "") {
-        try(download.file("https://github.com/opengeos/whiteboxR/raw/master/inst/extdata/DEM.tif",
-                          destfile = destfile,
-                          mode = "wb", ...))
-        if (missing(destfile)) {
-            fp <- system.file("extdata/DEM.tif", package = "whitebox")[1]
         } else {
-            if (file.exists(destfile)) {
-                fp <- destfile
-            }
+            stop(sprintf("Failed to copy '%s' to '%s'", fp, destfile))
         }
     }
-    fp
+    normalizePath(fp, mustWork = FALSE)
 }
 
 #' @export
 #' @rdname extdata-gis
-sample_soils_data <- function() {
-    system.file("extdata", "STATSGO2.shp", package = "whitebox")[1]
+sample_soils_data <- function(destfile = NULL, ...) {
+    fp <- system.file("extdata", "STATSGO2.shp", package = "whitebox")[1]
+    if (!missing(destfile)) {
+        dn <- dirname(destfile)
+        if (!dir.exists(dn)) {
+            dir.create(dn, showWarnings = FALSE, recursive = TRUE)
+        }
+        fn <- list.files(dirname(fp), pattern = "STATSGO2", full.names = TRUE)
+        bn <- tools::file_path_sans_ext(basename(destfile))
+        fps <- file.path(dirname(destfile),
+                         paste0(bn, ".", tools::file_ext(fn)))
+        file.copy(fn, fps, ...)
+        if (all(file.exists(fps))) {
+            fp <- fps[grep("\\.shp$", fps)[1]]
+        } else {
+            stop(sprintf("Failed to copy '%s' to '%s'", fp, 
+                 file.path(dirname(destfile), paste0(bn, ".shp"))))
+        }
+    }
+    normalizePath(fp, mustWork = FALSE)
 }
 
 # The following block is used by usethis to automatically manage

@@ -1,3 +1,19 @@
+# whitebox 2.4.3
+  
+  * Fix for CRAN check (#135)
+
+    * GeoTIFF DEM sample data (_extdata/DEM.tif_) previously excluded, along with all other TIFF files, by _.Rbuildignore_ is now explicitly included
+
+    * Fix for behavior of `sample_dem_data()` `destfile` argument: 
+        
+        * Errors thrown from invalid sources from new `wbt_source()` (introduced in v2.4.2) revealed an underlying issue with sample data assets. Invalid source errors are now intentionally captured and tested, and inclusion of the extdata file should ensure other parts of tests work as expected
+
+        * When `destfile` unset and no local file present, `sample_dem_data()` no longer attempts to download and write to the user package library (**which is read-only on CRAN**)
+
+        * `destfile` now intended for copying the sample dataset from package _extdata_ folder, for workflows that need the sample data outside of the package library
+
+  * `sample_soils_data()` now supports `destfile` (just like `sample_dem_data()`)
+
 # whitebox 2.4.2
 
  * `wbt_source()`: now accepts `tmpdir` argument which defaults to `tempdir()` (not `getwd()` or `wbt_wd()`) that is used for storing the intermediate shapefiles needed for WhiteboxTools
