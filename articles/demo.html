@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>whitebox Demo • whitebox</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="whitebox Demo">
 </head>
@@ -61,7 +61,7 @@
       <h1>whitebox Demo</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/opengeos/whiteboxR/blob/v2.4.3/vignettes/demo.Rmd" class="external-link"><code>vignettes/demo.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/opengeos/whiteboxR/blob/master/vignettes/demo.Rmd" class="external-link"><code>vignettes/demo.Rmd</code></a></small>
       <div class="d-none name"><code>demo.Rmd</code></div>
     </div>
 
@@ -134,7 +134,6 @@ into an R spatial object.</p>
 <p>A demonstration employing the {terra} package follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; terra 1.8.74</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://whiteboxr.gishub.org/" class="external-link">whitebox</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># DEMO: calculate slope with WhiteboxTools and raster</span></span>
@@ -178,7 +177,7 @@ from <code>output</code> and compare the two.</p>
 <span>    axes <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p><img src="demo_files/figure-html/unnamed-chunk-8-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-8-2.png" width="576"></p>
+<p><img src="demo_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="576"><img src="demo_files/figure-html/unnamed-chunk-8-2.png" class="r-plt" alt="" width="576"></p>
 <p>The <code>SpatRaster</code>, <code>RasterLayer</code> and related
 classes in the terra and raster packages are perfect for maintaining the
 linkage between file output and an R object with the data in or out of
@@ -189,7 +188,7 @@ equivalent method is <code><a href="https://rdrr.io/pkg/raster/man/filename.html
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># the SpatRaster retains a reference to the input file name</span></span>
 <span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/sources.html" class="external-link">sources</a></span><span class="op">(</span><span class="va">outputras</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpQHTsMd/slope.tif"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp25xTj2/slope.tif"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -210,7 +209,8 @@ download the latest binaries that correspond to the available version of
 the R package. However, this is not required. You may download/compile
 WhiteboxTools yourself and install anywhere for use with the
 <code>whitebox</code> R package.</p>
-<p>For general information consult the WhiteboxTools User Manual: <a href="https://www.whiteboxgeo.com/manual/wbt_book/install.html" class="external-link uri">https://www.whiteboxgeo.com/manual/wbt_book/install.html</a></p>
+<p>For general information consult the WhiteboxTools User Manual: <a href="https://web.archive.org/web/20250716014848/https://whiteboxgeo.com/manual/wbt_book/install.html" class="external-link uri">https://web.archive.org/web/20250716014848/https://whiteboxgeo.com/manual/wbt_book/install.html</a>
+(archived copy)</p>
 <p>For more details on building from source see: <a href="https://github.com/jblindsay/whitebox-tools" class="external-link uri">https://github.com/jblindsay/whitebox-tools</a></p>
 </div>
 <div class="section level3">
@@ -380,7 +380,7 @@ filling in most cases.</p>
 <span></span>
 <span><span class="co"># run breach_depressions tool</span></span>
 <span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
-<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.5s</span></span></code></pre></div>
 <p>For more info see: <code><a href="../reference/wbt_breach_depressions.html">?wbt_breach_depressions</a></code></p>
 <p>These <code>wbt_*_tool_name_*()</code> functions are wrappers around
 the <code><a href="../reference/wbt_run_tool.html">wbt_run_tool()</a></code> function that does the
@@ -395,7 +395,7 @@ string.</p>
 <span></span>
 <span><span class="co"># run breach_depressions tool</span></span>
 <span><span class="fu"><a href="../reference/wbt_run_tool.html">wbt_run_tool</a></span><span class="op">(</span>tool_name <span class="op">=</span> <span class="st">"BreachDepressions"</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"--dem="</span>, <span class="va">input</span>, <span class="st">" --output="</span>, <span class="va">output</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
+<span><span class="co">#&gt; BreachDepressions - Elapsed Time (excluding I/O): 0.5s</span></span></code></pre></div>
 <p>The above method of creating
 <code>wbt_breach_depressions(dem = ..., output = ...)</code> to handle
 <code>wbt_run_tool("BreachDepressions", args = ...)</code> makes it easy
@@ -425,7 +425,7 @@ tool)<a class="anchor" aria-label="anchor" href="#run-wbt_breach_depressions-bre
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># run breach_depressions tool</span></span>
 <span><span class="fu"><a href="../reference/wbt_breach_depressions.html">wbt_breach_depressions</a></span><span class="op">(</span>dem <span class="op">=</span> <span class="va">input</span>, output <span class="op">=</span> <span class="va">output</span><span class="op">)</span></span>
-<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.5s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="visualize-results-with-terra">Visualize results with <code>terra</code><a class="anchor" aria-label="anchor" href="#visualize-results-with-terra"></a>
@@ -446,7 +446,7 @@ tool)<a class="anchor" aria-label="anchor" href="#run-wbt_breach_depressions-bre
 <span>  <span class="co"># inspect numeric difference (output - input) </span></span>
 <span>  <span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span> <span class="op">-</span> <span class="va">input</span>, axes <span class="op">=</span> <span class="cn">FALSE</span>,  main <span class="op">=</span> <span class="st">"Difference ([Breached Depressions] - [DEM])"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p><img src="demo_files/figure-html/unnamed-chunk-17-1.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-17-2.png" width="576"><img src="demo_files/figure-html/unnamed-chunk-17-3.png" width="576"></p>
+<p><img src="demo_files/figure-html/unnamed-chunk-17-1.png" class="r-plt" alt="" width="576"><img src="demo_files/figure-html/unnamed-chunk-17-2.png" class="r-plt" alt="" width="576"><img src="demo_files/figure-html/unnamed-chunk-17-3.png" class="r-plt" alt="" width="576"></p>
 </div>
 </div>
 <div class="section level3">
@@ -493,7 +493,7 @@ analysis of stream networks.</p>
 <span>  dem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem.tif"</span><span class="op">)</span>,</span>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached.tif"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.7s</span></span></code></pre></div>
+<span><span class="co">#&gt; breach_depressions - Elapsed Time (excluding I/O): 0.4s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="wbt_d8_pointer-calculate-flow-direction">
@@ -523,7 +523,7 @@ cumulative flow</p>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_breached_accum.tif"</span><span class="op">)</span>,</span>
 <span>  out_type <span class="op">=</span> <span class="st">"cells"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.5s</span></span></code></pre></div>
+<span><span class="co">#&gt; d8_flow_accumulation - Elapsed Time (excluding I/O): 0.3s</span></span></code></pre></div>
 <div class="section level5">
 <h5 id="additional-flow-direction-and-accumulation-tools">Additional Flow Direction and Accumulation Tools<a class="anchor" aria-label="anchor" href="#additional-flow-direction-and-accumulation-tools"></a>
 </h5>
@@ -564,11 +564,11 @@ word: <code>wbt_list_tools(keyword = "flow pointer")</code></p>
 <span><span class="co">#&gt; Rho8Pointer: Calculates a stochastic Rho8 flow pointer raster from an input DEM.</span></span>
 <span><span class="co">#&gt; SnapPourPoints: Moves outlet points used to specify points of interest in a watershedding operation to the cell with the highest flow accumulation in its neighbourhood.</span></span>
 <span><span class="co">#&gt; TraceDownslopeFlowpaths: Traces downslope flowpaths from one or more target sites (i.e. seed points).</span></span>
-<span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span>
+<span><span class="co">#&gt; QinFlowAccumulation: Calculates Qin et al. (2007) flow accumulation.</span></span>
 <span><span class="co">#&gt; MaxUpslopeValue: Calculates the maximum upslope value from an input values raster along flowpaths.</span></span>
-<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span>
+<span><span class="co">#&gt; QuinnFlowAccumulation: Calculates Quinn et al. (1995) flow accumulation.</span></span>
 <span><span class="co">#&gt; ConvergenceIndex: Calculates Qin et al. (2007) flow accumulation.</span></span>
-<span><span class="co">#&gt; QinFlowAccumulation: Calculates Qin et al. (2007) flow accumulation.</span></span></code></pre>
+<span><span class="co">#&gt; Rho8FlowAccumulation: Calculates Fairfield and Leymarie (1991) flow accumulation.</span></span></code></pre>
 <p>This is just an example of the wealth of tool options made available
 by the WhiteboxTools platform.</p>
 </div>
@@ -609,7 +609,7 @@ because it takes takes two inputs:</p>
 <span>  streams <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_streams.tif"</span><span class="op">)</span>,</span>
 <span>  output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">wd</span>, <span class="st">"toy_dem_tributaries.tif"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.1s</span></span></code></pre></div>
+<span><span class="co">#&gt; tributary_identifier - Elapsed Time (excluding I/O): 0.0s</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="compare-results">Compare results<a class="anchor" aria-label="anchor" href="#compare-results"></a>
@@ -631,7 +631,7 @@ with <code><a href="../reference/wbt_tributary_identifier.html">wbt_tributary_id
 <span>    main <span class="op">=</span> <span class="st">"TributaryIdentifier"</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<p><img src="demo_files/figure-html/unnamed-chunk-25-1.png" width="576"></p>
+<p><img src="demo_files/figure-html/unnamed-chunk-25-1.png" class="r-plt" alt="" width="576"></p>
 </div>
 </div>
 </div>
@@ -712,7 +712,7 @@ available commands for executable</p>
 </h3>
 <p>Use <code><a href="../reference/wbt_list_tools.html">wbt_list_tools()</a></code> to list all available tools in
 WhiteboxTools. In version 2.4.0 there are over 484 tools! See all the
-available <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html" class="external-link">toolboxes</a>
+available <a href="https://web.archive.org/web/20250201062922/https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html" class="external-link">toolboxes</a>
 and <a href="https://www.whiteboxgeo.com/whitebox-geospatial-extensions/" class="external-link">extensions</a>.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/wbt_list_tools.html">wbt_list_tools</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -1302,7 +1302,7 @@ GitHub page.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
