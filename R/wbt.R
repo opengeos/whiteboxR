@@ -1168,7 +1168,7 @@ wbt_file_path <- function(x, shell_quote = TRUE, delimiter = ",", check_exists =
     if (requireNamespace("terra")) {
       x2 <- paste0(terra::sources(x), collapse = delimiter)
       if (nchar(x2) == 0) {
-        stop("The supplied 'terra' object for `", as.character(substitute(x)),"` is not backed by a file. Try loading the object directly from the source file with `terra::rast()` or `terra::vect()`. Various raster formats and ESRI Shapefile are supported. See <https://www.whiteboxgeo.com/manual/wbt_book/supported_formats.html> for details.", call. = FALSE)
+        stop("The supplied 'terra' object for `", as.character(substitute(x)),"` is not backed by a file. Try loading the object directly from the source file with `terra::rast()` or `terra::vect()`. Various raster formats and ESRI Shapefile are supported. See <https://web.archive.org/web/20250823162611/https://www.whiteboxgeo.com/manual/wbt_book/supported_formats.html> for details.", call. = FALSE)
       }
       x <- x2
     }

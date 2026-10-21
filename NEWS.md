@@ -1,3 +1,7 @@
+# whitebox (development version)
+
+  * Updated links to the WhiteboxTools User Manual, which is no longer hosted online, to point to archived copies on the Wayback Machine (#139)
+
 # whitebox 2.4.3
   
   * Fix for CRAN check (#135)

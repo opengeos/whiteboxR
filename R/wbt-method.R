@@ -559,7 +559,7 @@ wbt.missing <- function(result, tool_name, ..., crs = NULL, verbose_mode = FALSE
   }
   lapply(args[names(args) %in% "output"], function(x) {
     # TODO: user defined file patterns and customizable methods
-    # https://jblindsay.github.io/wbt_book/supported_formats.html
+    # https://web.archive.org/web/20250823162611/https://www.whiteboxgeo.com/manual/wbt_book/supported_formats.html
 
     # support for GeoTIFF
     if (!is.na(x) & (endsWith(x, ".tif") | endsWith(x, ".tiff"))) {

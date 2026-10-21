@@ -30,7 +30,7 @@ command-line program called
 -   GitHub repo: <https://github.com/opengeos/whiteboxR>
 -   CRAN link: <https://cran.r-project.org/package=whitebox>
 -   WhiteboxTools: <https://github.com/jblindsay/whitebox-tools>
--   User Manual: <https://jblindsay.github.io/wbt_book/>
+-   User Manual: <https://web.archive.org/web/20251221124711/https://www.whiteboxgeo.com/manual/wbt_book/intro.html> (archived copy; the original site is no longer online)
 -   Free software: [MIT license](https://opensource.org/license/MIT)
 
 **Contents**
@@ -375,7 +375,7 @@ Analysis, LiDAR Analysis, Mathematical and Statistical Analysis, Stream
 Network Analysis, and Terrain Analysis. For a listing of available
 tools, complete with documentation and usage details, please see the
 [‘WhiteboxTools’ User
-Manual](https://jblindsay.github.io/wbt_book/available_tools/index.html).
+Manual](https://web.archive.org/web/20250201062922/https://www.whiteboxgeo.com/manual/wbt_book/available_tools/index.html).
 
 If you are interested in using the ‘WhiteboxTools’ command-line program,
 check [‘WhiteboxTools’
